@@ -1,0 +1,70 @@
+name: Build Quizee APK and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant Execute Permission to Gradlew
+        run: chmod +x gradlew || true
+
+      - name: Build Android APK with Gradle
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Copy Generated APK to Website docs folder
+        run: |
+          mkdir -p docs
+          cp app/build/outputs/apk/debug/app-debug.apk docs/quizee.apk
+          ls -lh docs/quizee.apk
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Quizee-APK
+          path: docs/quizee.apk
+
+      - name: Commit APK to docs folder (for GitHub Pages hosting)
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add docs/quizee.apk
+          git diff-index --quiet HEAD || git commit -m "Auto-build Quizee APK [skip ci]"
+          git push || true
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs'
+
+  deploy-pages:
+    needs: build-apk
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

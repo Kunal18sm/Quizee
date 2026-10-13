@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand & Accent Colors -->
+    <color name="primary">#4F46E5</color>
+    <color name="primary_dark">#3730A3</color>
+    <color name="primary_light">#EEF2FF</color>
+    <color name="accent">#818CF8</color>
+
+    <!-- Quiz Answer Feedback Colors -->
+    <color name="correct_green">#10B981</color>
+    <color name="correct_green_dark">#059669</color>
+    <color name="correct_green_light">#D1FAE5</color>
+
+    <color name="wrong_red">#EF4444</color>
+    <color name="wrong_red_dark">#DC2626</color>
+    <color name="wrong_red_light">#FEE2E2</color>
+
+    <!-- Neutral Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="background_light">#F8FAFC</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="border_color">#E2E8F0</color>
+
+    <!-- Dark Theme / Lock Screen Colors -->
+    <color name="lock_bg_dark">#0F172A</color>
+    <color name="lock_card_dark">#1E293B</color>
+    <color name="lock_border_dark">#334155</color>
+    <color name="lock_text_primary">#F8FAFC</color>
+    <color name="lock_text_secondary">#94A3B8</color>
+
+    <!-- Option Defaults -->
+    <color name="option_default_bg">#F1F5F9</color>
+    <color name="option_default_border">#CBD5E1</color>
+    <color name="option_default_text">#1E293B</color>
+</resources>
