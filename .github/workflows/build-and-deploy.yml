@@ -30,10 +30,11 @@ jobs:
       - name: Build Android APK with Gradle
         run: ./gradlew assembleDebug --no-daemon
 
-      - name: Copy Generated APK to Website docs folder
+      - name: Copy Generated APK to Website docs and root
         run: |
           mkdir -p docs
           cp app/build/outputs/apk/debug/app-debug.apk docs/quizee.apk
+          cp app/build/outputs/apk/debug/app-debug.apk quizee.apk
           ls -lh docs/quizee.apk
 
       - name: Upload APK Artifact
@@ -42,13 +43,20 @@ jobs:
           name: Quizee-APK
           path: docs/quizee.apk
 
-      - name: Commit APK to docs folder (for GitHub Pages hosting)
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add docs/quizee.apk
-          git diff-index --quiet HEAD || git commit -m "Auto-build Quizee APK [skip ci]"
-          git push || true
+      - name: Create or Update GitHub Release with APK
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: "Quizee v1.0 (Static GK 2026 Edition)"
+          body: |
+            ## 📱 Quizee App v1.0 Released!
+            - **2,580+ Static GK Questions** from the 2026 syllabus
+            - **App Locker**: Answer 5 MCQs to unlock your selected apps
+            - **Instant Feedback**: Green ✓ for correct, Red ✗ for wrong
+            - Download `quizee.apk` below directly on your Android phone!
+          files: docs/quizee.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
@@ -56,7 +64,7 @@ jobs:
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'docs'
+          path: '.'
 
   deploy-pages:
     needs: build-apk
