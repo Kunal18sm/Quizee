@@ -11,10 +11,20 @@ import com.quizlock.app.ui.QuizLockActivity
 
 class AppLockAccessibilityService : AccessibilityService() {
 
+    companion object {
+        @Volatile
+        var isRunning: Boolean = false
+    }
+
     private lateinit var prefsManager: PreferencesManager
     private var lastInterceptedPackage: String? = null
     private var lastInterceptTime: Long = 0
     private var lastActiveUnlockedPackage: String? = null
+
+    override fun onServiceConnected() {
+        super.onServiceConnected()
+        isRunning = true
+    }
 
     override fun onCreate() {
         super.onCreate()
@@ -131,6 +141,7 @@ class AppLockAccessibilityService : AccessibilityService() {
 
     override fun onDestroy() {
         super.onDestroy()
+        isRunning = false
         QuizOverlayManager.dismiss()
     }
 }

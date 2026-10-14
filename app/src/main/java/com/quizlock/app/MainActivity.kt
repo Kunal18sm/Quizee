@@ -2,6 +2,7 @@ package com.quizlock.app
 
 import android.accessibilityservice.AccessibilityServiceInfo
 import android.app.AppOpsManager
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
@@ -11,7 +12,9 @@ import android.os.Bundle
 import android.os.Process
 import android.provider.Settings
 import android.text.Editable
+import android.text.TextUtils
 import android.text.TextWatcher
+import androidx.core.content.ContextCompat
 import android.view.View
 import android.view.accessibility.AccessibilityManager
 import android.widget.Toast
@@ -208,11 +211,13 @@ class MainActivity : AppCompatActivity() {
 
         if (hasAccessibility) {
             binding.btnPermAccessibility.text = "Enabled ✓"
+            binding.btnPermAccessibility.setTextColor(ContextCompat.getColor(this, R.color.correct_green))
             binding.btnPermAccessibility.isEnabled = false
             // If accessibility is enabled, hide the restricted settings banner!
             binding.cardRestrictedSettings.visibility = View.GONE
         } else {
             binding.btnPermAccessibility.text = "Enable"
+            binding.btnPermAccessibility.setTextColor(ContextCompat.getColor(this, R.color.white))
             binding.btnPermAccessibility.isEnabled = true
             // If Android 13+ and accessibility not granted, show the helper banner
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -224,17 +229,21 @@ class MainActivity : AppCompatActivity() {
 
         if (hasOverlay) {
             binding.btnPermOverlay.text = "Enabled ✓"
+            binding.btnPermOverlay.setTextColor(ContextCompat.getColor(this, R.color.correct_green))
             binding.btnPermOverlay.isEnabled = false
         } else {
             binding.btnPermOverlay.text = "Enable"
+            binding.btnPermOverlay.setTextColor(ContextCompat.getColor(this, R.color.white))
             binding.btnPermOverlay.isEnabled = true
         }
 
         if (hasUsage) {
             binding.btnPermUsage.text = "Enabled ✓"
+            binding.btnPermUsage.setTextColor(ContextCompat.getColor(this, R.color.correct_green))
             binding.btnPermUsage.isEnabled = false
         } else {
             binding.btnPermUsage.text = "Enable"
+            binding.btnPermUsage.setTextColor(ContextCompat.getColor(this, R.color.white))
             binding.btnPermUsage.isEnabled = true
         }
 
@@ -247,14 +256,64 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isAccessibilityServiceEnabled(): Boolean {
-        val am = getSystemService(Context.ACCESSIBILITY_SERVICE) as? AccessibilityManager ?: return false
-        val enabledServices = am.getEnabledAccessibilityServiceList(AccessibilityServiceInfo.FEEDBACK_GENERIC)
-        val expectedServiceName = "${packageName}/${AppLockAccessibilityService::class.java.canonicalName}"
-        for (service in enabledServices) {
-            if (service.id.equals(expectedServiceName, ignoreCase = true)) {
-                return true
-            }
+        // 1. Direct memory check: If service instance is running and connected
+        if (AppLockAccessibilityService.isRunning) {
+            return true
         }
+
+        // 2. Settings.Secure check (Official Android system database of enabled accessibility services)
+        try {
+            val accessibilityEnabled = Settings.Secure.getInt(
+                contentResolver,
+                Settings.Secure.ACCESSIBILITY_ENABLED,
+                0
+            )
+            if (accessibilityEnabled == 1) {
+                val settingValue = Settings.Secure.getString(
+                    contentResolver,
+                    Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES
+                )
+                if (!settingValue.isNullOrBlank()) {
+                    val splitter = TextUtils.SimpleStringSplitter(':')
+                    splitter.setString(settingValue)
+                    while (splitter.hasNext()) {
+                        val accessService = splitter.next()
+                        val unflattened = ComponentName.unflattenFromString(accessService)
+                        if (unflattened != null && unflattened.packageName.equals(packageName, ignoreCase = true)) {
+                            return true
+                        }
+                        if (accessService.contains(packageName, ignoreCase = true) &&
+                            accessService.contains("AppLockAccessibilityService", ignoreCase = true)) {
+                            return true
+                        }
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            // Fall through to AccessibilityManager
+        }
+
+        // 3. AccessibilityManager check with FEEDBACK_ALL_MASK to check all registered feedback types
+        try {
+            val am = getSystemService(Context.ACCESSIBILITY_SERVICE) as? AccessibilityManager
+            if (am != null) {
+                val enabledServices = am.getEnabledAccessibilityServiceList(AccessibilityServiceInfo.FEEDBACK_ALL_MASK)
+                for (service in enabledServices) {
+                    val info = service.resolveInfo?.serviceInfo
+                    if (info != null && info.packageName.equals(packageName, ignoreCase = true)) {
+                        return true
+                    }
+                    val id = service.id ?: ""
+                    if (id.contains(packageName, ignoreCase = true) &&
+                        id.contains("AppLockAccessibilityService", ignoreCase = true)) {
+                        return true
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            // Ignore
+        }
+
         return false
     }
 

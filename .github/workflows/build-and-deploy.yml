@@ -78,11 +78,12 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2.0.2
-          name: "Quizee v2.0.2 (Direct App Overlay + Open App Flow + True Dark Theme)"
+          tag_name: v2.0.3
+          name: "Quizee v2.0.3 (Direct App Overlay + Instant Accessibility Detection + True Dark Theme)"
           body: |
-            ## 📱 Quizee App v2.0.2 Released!
+            ## 📱 Quizee App v2.0.3 Released!
             - **Direct App Overlay**: Quiz card appears directly ON TOP of the selected app (e.g. YouTube, Instagram), without switching to Quizee app!
+            - **Instant Accessibility Detection**: Multi-layer detection automatically reflects 'Enabled ✓' as soon as permission is turned on.
             - **Open App Flow**: After answering 5 MCQs (right or wrong), tap the dedicated 'Open App' button to launch the locked application.
             - **Permanent True Dark Theme**: Complete dark mode aesthetic across the entire app and components.
             - **Android 13/14/15 Support**: Removed QUERY_ALL_PACKAGES for Play Protect safety, added Restricted Settings guide.
