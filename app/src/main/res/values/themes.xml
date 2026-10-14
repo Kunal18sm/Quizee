@@ -25,8 +25,8 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:colorBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowDimEnabled">true</item>
-        <item name="android:windowDimAmount">0.75</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.75</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:statusBarColor">#B3000000</item>
         <item name="android:navigationBarColor">#B3000000</item>
