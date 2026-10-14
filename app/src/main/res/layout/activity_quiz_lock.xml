@@ -404,14 +404,16 @@
                     android:paddingBottom="24dp"
                     android:visibility="gone">
 
-                    <!-- Celebratory Icon Badge -->
+                    <!-- Celebratory / Status Icon Badge -->
                     <FrameLayout
+                        android:id="@+id/flCompletedBadge"
                         android:layout_width="72dp"
                         android:layout_height="72dp"
                         android:background="@drawable/bg_card"
                         android:backgroundTint="#064E3B">
 
                         <ImageView
+                            android:id="@+id/ivCompletedIcon"
                             android:layout_width="38dp"
                             android:layout_height="38dp"
                             android:layout_gravity="center"
@@ -453,7 +455,7 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <!-- Prominent OPEN APP Button -->
+                    <!-- Prominent OPEN APP Button (Shown when score >= 3) -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnOpenApp"
                         style="@style/Widget.Material3.Button"
@@ -470,6 +472,26 @@
                         app:iconGravity="textStart"
                         app:iconPadding="10dp"
                         app:iconSize="22dp"
+                        app:iconTint="@color/white" />
+
+                    <!-- Prominent RETRY & REVISE Button (Shown when score < 3) -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRetryQuiz"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="22dp"
+                        android:text="RETRY &amp; REVISE (SAME QUESTIONS)"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:backgroundTint="@color/primary"
+                        app:cornerRadius="16dp"
+                        app:icon="@drawable/ic_quiz"
+                        app:iconGravity="textStart"
+                        app:iconPadding="10dp"
+                        app:iconSize="20dp"
                         app:iconTint="@color/white" />
 
                     <!-- Optional Exit Button -->

@@ -167,6 +167,25 @@ object QuizOverlayManager {
         binding.btnOpenApp.setOnClickListener {
             onOpenAppClicked(context, packageName)
         }
+
+        binding.btnRetryQuiz.setOnClickListener {
+            onRetryQuizClicked(context, binding)
+        }
+    }
+
+    private fun onRetryQuizClicked(
+        context: Context,
+        binding: ActivityQuizLockBinding
+    ) {
+        // Reset score and restart quiz with the EXACT SAME questions for revision
+        score = 0
+        currentQuestionIndex = 0
+        isAnswerLocked = false
+
+        binding.layoutQuizCompleted.visibility = View.GONE
+        binding.layoutActiveQuiz.visibility = View.VISIBLE
+
+        displayQuestion(context, binding, currentQuestionIndex)
     }
 
     private fun loadQuizQuestions(
@@ -296,19 +315,50 @@ object QuizOverlayManager {
         binding: ActivityQuizLockBinding,
         packageName: String
     ) {
-        // Mark app unlocked regardless of score
-        PreferencesManager.getInstance(context).markAppUnlocked(packageName)
+        val total = questions.size
+        val hasPassed = score >= 3
 
         // Switch to Completed View
         binding.layoutActiveQuiz.visibility = View.GONE
         binding.layoutQuizCompleted.visibility = View.VISIBLE
 
-        binding.tvCompletedSubtitle.text = "You've answered all 5 MCQs.\n$currentAppName is unlocked!"
-        binding.tvFinalScore.text = "Score: $score / ${questions.size} Correct"
-        binding.btnOpenApp.text = if (currentAppName.isNotBlank() && currentAppName != "App") {
-            "OPEN ${currentAppName.uppercase()}"
+        if (hasPassed) {
+            // Unlocked when score >= 3
+            PreferencesManager.getInstance(context).markAppUnlocked(packageName)
+
+            binding.flCompletedBadge.backgroundTintList =
+                ContextCompat.getColorStateList(context, R.color.correct_green_light)
+            binding.ivCompletedIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_unlock))
+            binding.ivCompletedIcon.imageTintList =
+                ContextCompat.getColorStateList(context, R.color.correct_green)
+
+            binding.tvCompletedTitle.text = "🎉 App Unlocked!"
+            binding.tvCompletedSubtitle.text = "Awesome! You scored $score / $total.\n$currentAppName is unlocked."
+            binding.tvFinalScore.text = "Score: $score / $total Correct (Passed ✓)"
+            binding.tvFinalScore.setTextColor(ContextCompat.getColor(context, R.color.correct_green))
+
+            binding.btnOpenApp.visibility = View.VISIBLE
+            binding.btnOpenApp.text = if (currentAppName.isNotBlank() && currentAppName != "App") {
+                "OPEN ${currentAppName.uppercase()}"
+            } else {
+                "OPEN APP"
+            }
+            binding.btnRetryQuiz.visibility = View.GONE
         } else {
-            "OPEN APP"
+            // Failed: Needs at least 3 correct -> Retry same questions for revision
+            binding.flCompletedBadge.backgroundTintList =
+                ContextCompat.getColorStateList(context, R.color.wrong_red_light)
+            binding.ivCompletedIcon.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_lock))
+            binding.ivCompletedIcon.imageTintList =
+                ContextCompat.getColorStateList(context, R.color.wrong_red)
+
+            binding.tvCompletedTitle.text = "❌ Need 3/5 to Unlock"
+            binding.tvCompletedSubtitle.text = "You scored $score / $total.\nYou need at least 3 correct answers to unlock $currentAppName.\nTap Retry below to revise these same questions!"
+            binding.tvFinalScore.text = "Score: $score / $total (Need At Least 3)"
+            binding.tvFinalScore.setTextColor(ContextCompat.getColor(context, R.color.wrong_red))
+
+            binding.btnOpenApp.visibility = View.GONE
+            binding.btnRetryQuiz.visibility = View.VISIBLE
         }
     }
 
