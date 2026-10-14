@@ -46,13 +46,15 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.0
-          name: "Quizee v1.0 (Static GK 2026 Edition)"
+          tag_name: v2.0.0
+          name: "Quizee v2.0 (Compact Floating Card + Open App Button + Dark Theme)"
           body: |
-            ## 📱 Quizee App v1.0 Released!
-            - **2,580+ Static GK Questions** from the 2026 syllabus
-            - **App Locker**: Answer 5 MCQs to unlock your selected apps
-            - **Instant Feedback**: Green ✓ for correct, Red ✗ for wrong
+            ## 📱 Quizee App v2.0 Released!
+            - **Compact Floating Overlay**: Sleek dark popup card that doesn't block the entire screen.
+            - **Open App Flow**: After answering 5 MCQs (right or wrong), tap the dedicated 'Open App' button to launch the locked application.
+            - **Android 13/14/15 Support**: Removed QUERY_ALL_PACKAGES for Play Protect safety, added Restricted Settings guide.
+            - **Full Dark Theme**: Modern dark aesthetic across all screens.
+            - **2,584 Static GK Questions**: Comprehensive question bank from 2026 syllabus.
             - Download `quizee.apk` below directly on your Android phone!
           files: docs/quizee.apk
         env:

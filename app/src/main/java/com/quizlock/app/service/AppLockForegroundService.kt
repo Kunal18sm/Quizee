@@ -5,6 +5,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
+import android.app.usage.UsageEvents
 import android.app.usage.UsageStatsManager
 import android.content.Context
 import android.content.Intent
@@ -24,11 +25,12 @@ class AppLockForegroundService : Service() {
     private lateinit var prefsManager: PreferencesManager
     private var isMonitoring = false
     private var lastForegroundPackage: String? = null
+    private var lastInterceptTime: Long = 0
 
     companion object {
         private const val CHANNEL_ID = "quiz_lock_monitor_channel"
         private const val NOTIFICATION_ID = 1001
-        private const val POLL_INTERVAL_MS = 1000L
+        private const val POLL_INTERVAL_MS = 500L
 
         fun startService(context: Context) {
             val intent = Intent(context, AppLockForegroundService::class.java)
@@ -78,33 +80,62 @@ class AppLockForegroundService : Service() {
             getSystemService(Context.USAGE_STATS_SERVICE) as? UsageStatsManager ?: return
 
         val endTime = System.currentTimeMillis()
-        val startTime = endTime - 3000
+        val startTime = endTime - 2500
 
-        val stats = usageStatsManager.queryUsageStats(
-            UsageStatsManager.INTERVAL_DAILY,
-            startTime,
-            endTime
-        )
+        var currentPkg: String? = null
 
-        if (!stats.isNullOrEmpty()) {
-            val mostRecent = stats.maxByOrNull { it.lastTimeUsed }
-            val currentPkg = mostRecent?.packageName ?: return
-
-            if (currentPkg != packageName && currentPkg != "com.android.systemui") {
-                if (prefsManager.isAppLocked(currentPkg) &&
-                    !prefsManager.isAppInUnlockedSession(currentPkg) &&
-                    currentPkg != lastForegroundPackage
+        // Try UsageEvents first (more responsive & accurate on Android 8+)
+        try {
+            val usageEvents = usageStatsManager.queryEvents(startTime, endTime)
+            val event = UsageEvents.Event()
+            while (usageEvents.hasNextEvent()) {
+                usageEvents.getNextEvent(event)
+                if (event.eventType == UsageEvents.Event.ACTIVITY_RESUMED ||
+                    event.eventType == UsageEvents.Event.MOVE_TO_FOREGROUND
                 ) {
-                    lastForegroundPackage = currentPkg
-                    val lockIntent = Intent(this, QuizLockActivity::class.java).apply {
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or
-                                Intent.FLAG_ACTIVITY_CLEAR_TOP or
-                                Intent.FLAG_ACTIVITY_SINGLE_TOP
-                        putExtra(QuizLockActivity.EXTRA_LOCKED_PACKAGE_NAME, currentPkg)
-                    }
-                    startActivity(lockIntent)
+                    currentPkg = event.packageName
                 }
             }
+        } catch (e: Exception) {
+            currentPkg = null
+        }
+
+        // Fallback to queryUsageStats if UsageEvents gave nothing
+        if (currentPkg == null) {
+            val stats = usageStatsManager.queryUsageStats(
+                UsageStatsManager.INTERVAL_DAILY,
+                startTime,
+                endTime
+            )
+            if (!stats.isNullOrEmpty()) {
+                val mostRecent = stats.maxByOrNull { it.lastTimeUsed }
+                currentPkg = mostRecent?.packageName
+            }
+        }
+
+        val pkg = currentPkg ?: return
+
+        // Ignore our own app, system UI, and common system overlays
+        if (pkg == packageName || pkg == "com.android.systemui" || pkg.startsWith("com.google.android.inputmethod")) {
+            return
+        }
+
+        if (prefsManager.isAppLocked(pkg) && !prefsManager.isAppInUnlockedSession(pkg)) {
+            val now = System.currentTimeMillis()
+            if (pkg == lastForegroundPackage && (now - lastInterceptTime) < 1500) {
+                return
+            }
+
+            lastForegroundPackage = pkg
+            lastInterceptTime = now
+
+            val lockIntent = Intent(this, QuizLockActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or
+                        Intent.FLAG_ACTIVITY_CLEAR_TOP or
+                        Intent.FLAG_ACTIVITY_SINGLE_TOP
+                putExtra(QuizLockActivity.EXTRA_LOCKED_PACKAGE_NAME, pkg)
+            }
+            startActivity(lockIntent)
         }
     }
 

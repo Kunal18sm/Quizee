@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light">
+    android:background="@color/bg_dark">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary">
+        android:background="@color/bg_dark">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Manage Questions"
-            app:titleTextColor="@color/white"
-            app:navigationIconTint="@color/white" />
+            app:titleTextColor="@color/text_primary"
+            app:navigationIconTint="@color/text_primary" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

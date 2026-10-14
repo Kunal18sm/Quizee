@@ -10,15 +10,21 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
-        tools:ignore="QueryAllPackagesPermission" />
     <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Safe queries element instead of QUERY_ALL_PACKAGES to comply with Play Protect -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizLock">
 
@@ -32,7 +38,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Quiz Lock Screen Activity -->
+        <!-- Floating Quiz Lock Screen Dialog -->
         <activity
             android:name=".ui.QuizLockActivity"
             android:exported="false"
@@ -40,7 +46,7 @@
             android:excludeFromRecents="true"
             android:noHistory="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.QuizLock.LockScreen"
+            android:theme="@style/Theme.Quizee.FloatingDialog"
             android:windowSoftInputMode="adjustNothing" />
 
         <!-- Quiz Question Manager Activity -->

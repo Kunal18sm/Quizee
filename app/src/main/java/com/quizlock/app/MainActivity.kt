@@ -5,7 +5,6 @@ import android.app.AppOpsManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -19,6 +18,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.quizlock.app.data.AppInfo
 import com.quizlock.app.data.PreferencesManager
 import com.quizlock.app.databinding.ActivityMainBinding
@@ -48,6 +48,11 @@ class MainActivity : AppCompatActivity() {
         setupUI()
         setupListeners()
         loadInstalledApps()
+
+        // Start foreground monitor if any apps are locked
+        if (prefsManager.getLockedPackages().isNotEmpty()) {
+            AppLockForegroundService.startService(this)
+        }
     }
 
     override fun onResume() {
@@ -60,7 +65,6 @@ class MainActivity : AppCompatActivity() {
             prefsManager.setAppLocked(app.packageName, isLocked)
             updateLockedCount()
             if (isLocked) {
-                // Ensure foreground service is running
                 AppLockForegroundService.startService(this)
             }
         }
@@ -72,25 +76,55 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
+        // Android 13+ Restricted Settings Fix: Open App Info Directly
+        binding.btnFixRestrictedSettings.setOnClickListener {
+            openAppDetailsSettings()
+        }
+
+        binding.btnHelpRestricted.setOnClickListener {
+            showRestrictedSettingsDialog()
+        }
+
         binding.btnPermAccessibility.setOnClickListener {
-            val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
-            startActivity(intent)
-            Toast.makeText(this, "Find 'Quizee' and turn it ON", Toast.LENGTH_LONG).show()
+            val hasAccessibility = isAccessibilityServiceEnabled()
+            if (!hasAccessibility) {
+                try {
+                    val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
+                    startActivity(intent)
+                    Toast.makeText(
+                        this,
+                        "Find 'Quizee'. If disabled/greyed out, use 'Fix Restricted Settings'!",
+                        Toast.LENGTH_LONG
+                    ).show()
+                } catch (e: Exception) {
+                    openAppDetailsSettings()
+                }
+            }
         }
 
         binding.btnPermOverlay.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                val intent = Intent(
-                    Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                    Uri.parse("package:$packageName")
-                )
-                startActivity(intent)
+                try {
+                    val intent = Intent(
+                        Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:$packageName")
+                    )
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    val intent = Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION)
+                    startActivity(intent)
+                }
             }
         }
 
         binding.btnPermUsage.setOnClickListener {
-            val intent = Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
-            startActivity(intent)
+            try {
+                val intent = Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS)
+                startActivity(intent)
+                Toast.makeText(this, "Find 'Quizee' and allow Usage Access", Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
 
         binding.btnTestQuiz.setOnClickListener {
@@ -113,6 +147,40 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    private fun openAppDetailsSettings() {
+        try {
+            val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS).apply {
+                data = Uri.parse("package:$packageName")
+            }
+            startActivity(intent)
+            Toast.makeText(
+                this,
+                "Tap 3 dots (⋮) top right -> 'Allow restricted settings'",
+                Toast.LENGTH_LONG
+            ).show()
+        } catch (e: Exception) {
+            Toast.makeText(this, "Could not open app settings", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun showRestrictedSettingsDialog() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Android 13/14/15 Restricted Settings")
+            .setMessage(
+                "On modern Android phones, apps installed outside Google Play have accessibility temporarily greyed out.\n\n" +
+                "How to unlock in 3 quick steps:\n" +
+                "1. Tap 'Open Settings' below (opens Quizee App Info).\n" +
+                "2. Tap the 3 dots (⋮) in the top-right corner.\n" +
+                "3. Tap 'Allow restricted settings' and confirm your PIN/Fingerprint.\n\n" +
+                "After that, you can toggle Accessibility ON normally!"
+            )
+            .setPositiveButton("Open Settings") { _, _ ->
+                openAppDetailsSettings()
+            }
+            .setNegativeButton("Got It", null)
+            .show()
+    }
+
     private fun updatePermissionStatus() {
         val hasAccessibility = isAccessibilityServiceEnabled()
         val hasOverlay = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -123,16 +191,24 @@ class MainActivity : AppCompatActivity() {
         if (hasAccessibility) {
             binding.btnPermAccessibility.text = "Enabled ✓"
             binding.btnPermAccessibility.isEnabled = false
+            // If accessibility is enabled, hide the restricted settings banner!
+            binding.cardRestrictedSettings.visibility = View.GONE
         } else {
-            binding.btnPermAccessibility.text = "Grant"
+            binding.btnPermAccessibility.text = "Enable"
             binding.btnPermAccessibility.isEnabled = true
+            // If Android 13+ and accessibility not granted, show the helper banner
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                binding.cardRestrictedSettings.visibility = View.VISIBLE
+            } else {
+                binding.cardRestrictedSettings.visibility = View.GONE
+            }
         }
 
         if (hasOverlay) {
             binding.btnPermOverlay.text = "Enabled ✓"
             binding.btnPermOverlay.isEnabled = false
         } else {
-            binding.btnPermOverlay.text = "Grant"
+            binding.btnPermOverlay.text = "Enable"
             binding.btnPermOverlay.isEnabled = true
         }
 
@@ -140,15 +216,15 @@ class MainActivity : AppCompatActivity() {
             binding.btnPermUsage.text = "Enabled ✓"
             binding.btnPermUsage.isEnabled = false
         } else {
-            binding.btnPermUsage.text = "Grant"
+            binding.btnPermUsage.text = "Enable"
             binding.btnPermUsage.isEnabled = true
         }
 
-        // Hide permission banner if essential permissions are enabled
-        if (hasAccessibility && hasOverlay) {
-            binding.cardPermissions.visibility = View.GONE
-        } else {
-            binding.cardPermissions.visibility = View.VISIBLE
+        // Keep foreground service active if usage or accessibility is ready
+        if (hasUsage || hasAccessibility) {
+            if (prefsManager.getLockedPackages().isNotEmpty()) {
+                AppLockForegroundService.startService(this)
+            }
         }
     }
 

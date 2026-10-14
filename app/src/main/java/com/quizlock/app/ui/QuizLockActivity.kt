@@ -30,6 +30,7 @@ class QuizLockActivity : AppCompatActivity() {
     private lateinit var questionRepo: QuestionRepository
 
     private var targetPackageName: String? = null
+    private var targetAppName: String = "App"
     private var quizQuestions: List<Question> = emptyList()
     private var currentQuestionIndex = 0
     private var score = 0
@@ -96,12 +97,20 @@ class QuizLockActivity : AppCompatActivity() {
         binding.btnExitHome.setOnClickListener {
             exitToHomeScreen()
         }
+
+        binding.btnExitCompleted.setOnClickListener {
+            exitToHomeScreen()
+        }
+
+        binding.btnOpenApp.setOnClickListener {
+            openTargetApp()
+        }
     }
 
     private fun setupBackPressHandler() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
-                // Prevent user from bypassing the lock - return to Home Screen
+                // If quiz is not finished, prevent bypass - return to home screen
                 exitToHomeScreen()
             }
         })
@@ -121,13 +130,14 @@ class QuizLockActivity : AppCompatActivity() {
         try {
             val pm = packageManager
             val appInfo = pm.getApplicationInfo(pkg, 0)
-            val appName = pm.getApplicationLabel(appInfo).toString()
+            targetAppName = pm.getApplicationLabel(appInfo).toString()
             val icon = pm.getApplicationIcon(appInfo)
 
-            binding.tvLockedAppName.text = "$appName is Locked"
+            binding.tvLockedAppName.text = "$targetAppName is Locked"
             binding.ivLockedAppIcon.setImageDrawable(icon)
             binding.ivLockedAppIcon.imageTintList = null
         } catch (e: PackageManager.NameNotFoundException) {
+            targetAppName = "App"
             binding.tvLockedAppName.text = "App Locked"
         }
     }
@@ -138,7 +148,8 @@ class QuizLockActivity : AppCompatActivity() {
 
         if (quizQuestions.isEmpty()) {
             Toast.makeText(this, "No quiz questions found! Unlocking.", Toast.LENGTH_SHORT).show()
-            unlockAndFinish()
+            targetPackageName?.let { prefsManager.markAppUnlocked(it) }
+            openTargetApp()
             return
         }
 
@@ -170,7 +181,7 @@ class QuizLockActivity : AppCompatActivity() {
             optionTexts[i].text = optionText
             optionBadges[i].text = badges[i]
 
-            // Reset visual style to default
+            // Reset visual style to dark default
             optionContainers[i].background = ContextCompat.getDrawable(this, R.drawable.bg_option_default)
             optionContainers[i].isEnabled = true
             optionIcons[i].visibility = View.GONE
@@ -204,7 +215,7 @@ class QuizLockActivity : AppCompatActivity() {
             }
         }
 
-        // Wait 1.2s to show clear visual feedback, then proceed
+        // Wait 1.0s to show clear visual feedback, then proceed
         handler.postDelayed({
             currentQuestionIndex++
             if (currentQuestionIndex < quizQuestions.size) {
@@ -212,7 +223,7 @@ class QuizLockActivity : AppCompatActivity() {
             } else {
                 onQuizCompleted()
             }
-        }, 1200)
+        }, 1000)
     }
 
     private fun setOptionAsCorrect(index: Int) {
@@ -230,18 +241,39 @@ class QuizLockActivity : AppCompatActivity() {
     }
 
     private fun onQuizCompleted() {
-        Toast.makeText(
-            this,
-            "🎉 Quiz Completed! Score: $score/${quizQuestions.size}. App Unlocked!",
-            Toast.LENGTH_LONG
-        ).show()
-
-        unlockAndFinish()
-    }
-
-    private fun unlockAndFinish() {
+        // Mark package as unlocked regardless of score
         targetPackageName?.let { pkg ->
             prefsManager.markAppUnlocked(pkg)
+        }
+
+        // Switch to the Completed Screen with prominent "Open App" button
+        binding.layoutActiveQuiz.visibility = View.GONE
+        binding.layoutQuizCompleted.visibility = View.VISIBLE
+
+        binding.tvCompletedSubtitle.text = "You've answered all 5 MCQs.\n$targetAppName is unlocked!"
+        binding.tvFinalScore.text = "Score: $score / ${quizQuestions.size} Correct"
+        binding.btnOpenApp.text = if (targetAppName.isNotBlank() && targetAppName != "App") {
+            "OPEN $targetAppName"
+        } else {
+            "OPEN APP"
+        }
+    }
+
+    private fun openTargetApp() {
+        val pkg = targetPackageName
+        if (pkg != null) {
+            try {
+                val launchIntent = packageManager.getLaunchIntentForPackage(pkg)
+                if (launchIntent != null) {
+                    launchIntent.addFlags(
+                        Intent.FLAG_ACTIVITY_NEW_TASK or
+                        Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED
+                    )
+                    startActivity(launchIntent)
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
         }
         finish()
     }

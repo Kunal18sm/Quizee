@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizee — Smart Quiz App Locker | Download APK</title>
-    <meta name="description" content="Quizee: Mobile apps par quiz lock lagao aur screen time ko Static GK knowledge me badlo. 2,580+ MCQs, Instant Green/Red feedback.">
+    <title>Quizee v2.0 — Smart Quiz App Locker | Download APK</title>
+    <meta name="description" content="Quizee v2.0: Mobile apps par floating quiz lock lagao. 5 MCQs answer karne ke baad 'Open App' se app unlock karein. 2,584+ Static GK MCQs, Instant Green/Red feedback.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     
     <!-- Google Fonts -->
@@ -14,16 +14,17 @@
 
     <style>
         :root {
-            --primary: #4f46e5;
-            --primary-glow: #6366f1;
-            --secondary: #7c3aed;
+            --primary: #6366f1;
+            --primary-glow: #818cf8;
+            --secondary: #4f46e5;
             --correct-green: #10b981;
             --wrong-red: #ef4444;
-            --bg-dark: #090d16;
-            --card-bg: #111827;
-            --card-border: #1f293d;
+            --bg-dark: #0b0f19;
+            --card-bg: #151d2c;
+            --card-border: #2b384e;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
+            --amber: #f59e0b;
         }
 
         * {
@@ -45,7 +46,7 @@
             width: 500px;
             height: 500px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(9, 13, 22, 0) 70%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(11, 15, 25, 0) 70%);
             z-index: 0;
             pointer-events: none;
         }
@@ -81,7 +82,7 @@
             width: 44px;
             height: 44px;
             border-radius: 12px;
-            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
         }
 
         .logo-text {
@@ -98,31 +99,30 @@
             color: #fff;
             padding: 10px 20px;
             border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
             font-size: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            transition: all 0.25s ease;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
         }
 
         .nav-btn:hover {
             background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            padding: 70px 0 60px;
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
             align-items: center;
             gap: 48px;
+            padding: 70px 0 60px;
         }
 
         @media (max-width: 900px) {
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding: 40px 0;
             }
         }
 
@@ -130,29 +130,29 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 6px 16px;
-            border-radius: 30px;
             background: rgba(99, 102, 241, 0.12);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            color: #c7d2fe;
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            padding: 6px 14px;
+            border-radius: 30px;
             font-size: 13px;
             font-weight: 600;
-            margin-bottom: 24px;
+            color: #a5b4fc;
+            margin-bottom: 20px;
         }
 
         .badge-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background-color: var(--correct-green);
-            box-shadow: 0 0 8px var(--correct-green);
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
         }
 
         h1 {
-            font-size: 50px;
+            font-size: 46px;
             font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -1.5px;
+            line-height: 1.18;
+            letter-spacing: -1.2px;
             margin-bottom: 20px;
         }
 
@@ -163,13 +163,13 @@
         }
 
         @media (max-width: 600px) {
-            h1 { font-size: 36px; }
+            h1 { font-size: 34px; }
         }
 
         .hero-desc {
-            font-size: 18px;
+            font-size: 17px;
             color: var(--text-muted);
-            margin-bottom: 34px;
+            margin-bottom: 30px;
             max-width: 540px;
         }
 
@@ -181,32 +181,28 @@
         }
 
         @media (max-width: 900px) {
-            .hero-actions {
-                justify-content: center;
-            }
-            .hero-desc {
-                margin: 0 auto 34px;
-            }
+            .hero-actions { justify-content: center; }
+            .hero-desc { margin: 0 auto 30px; }
         }
 
         .btn-download {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
             color: #ffffff;
             padding: 16px 32px;
             border-radius: 14px;
             text-decoration: none;
             font-size: 16px;
             font-weight: 700;
-            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.5);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.5);
             transition: all 0.3s ease;
         }
 
         .btn-download:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 30px -5px rgba(79, 70, 229, 0.65);
+            box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.65);
         }
 
         .btn-download svg {
@@ -248,20 +244,25 @@
             .apk-meta { justify-content: center; }
         }
 
-        /* Interactive Phone Mockup */
+        /* Interactive Phone Mockup (Floating Dialog Overlay) */
         .mockup-wrap {
             display: flex;
             justify-content: center;
         }
 
         .phone-mockup {
-            width: 320px;
-            background: #0f172a;
+            width: 330px;
+            background: #090d16;
             border: 8px solid #1e293b;
             border-radius: 40px;
-            padding: 20px 16px;
-            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(99, 102, 241, 0.2);
+            padding: 16px 14px 20px;
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(99, 102, 241, 0.25);
             position: relative;
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-image: radial-gradient(circle at 50% 10%, #172033 0%, #090d16 80%);
         }
 
         .phone-notch {
@@ -269,40 +270,54 @@
             height: 14px;
             background: #1e293b;
             border-radius: 10px;
-            margin: 0 auto 16px;
+            margin: 0 auto 12px;
+        }
+
+        /* Floating Dialog Card inside phone */
+        .floating-dialog {
+            background: var(--card-bg);
+            border: 1.5px solid var(--card-border);
+            border-radius: 20px;
+            padding: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
         }
 
         .phone-header {
-            text-align: center;
-            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--card-border);
         }
 
         .phone-header img {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            margin-bottom: 6px;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
         }
 
         .phone-header h4 {
-            font-size: 16px;
+            font-size: 14px;
             color: #f8fafc;
             margin-bottom: 2px;
+            text-align: left;
         }
 
         .phone-header p {
             font-size: 11px;
             color: #94a3b8;
+            text-align: left;
         }
 
         .progress-box {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: #818cf8;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .progress-bar-bg {
@@ -311,11 +326,11 @@
             background: #1e293b;
             border-radius: 4px;
             overflow: hidden;
-            margin-bottom: 14px;
+            margin-bottom: 12px;
         }
 
         .progress-bar-fill {
-            width: 40%;
+            width: 20%;
             height: 100%;
             background: #818cf8;
             border-radius: 4px;
@@ -323,11 +338,11 @@
         }
 
         .mockup-card {
-            background: #1e293b;
-            border-radius: 14px;
-            padding: 12px;
-            border: 1px solid #334155;
-            margin-bottom: 12px;
+            background: #1c2638;
+            border-radius: 12px;
+            padding: 10px 12px;
+            border: 1px solid #2b384e;
+            margin-bottom: 10px;
         }
 
         .mockup-category {
@@ -335,29 +350,28 @@
             font-weight: 700;
             color: #818cf8;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .mockup-question {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
             color: #f8fafc;
-            margin-top: 4px;
+            margin-top: 3px;
             line-height: 1.4;
         }
 
         .mockup-options {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
         }
 
         .mockup-option {
-            background: #1e293b;
-            border: 1.5px solid #334155;
-            border-radius: 12px;
-            padding: 10px 12px;
-            font-size: 12px;
+            background: #1a2436;
+            border: 1.5px solid #2e3d56;
+            border-radius: 10px;
+            padding: 8px 10px;
+            font-size: 11px;
             color: #e2e8f0;
             display: flex;
             align-items: center;
@@ -371,17 +385,18 @@
         }
 
         .opt-badge {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            background: #334155;
+            background: #2b384e;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 700;
             margin-right: 8px;
             color: #fff;
+            flex-shrink: 0;
         }
 
         .mockup-option.correct {
@@ -397,10 +412,10 @@
         }
 
         .demo-tip {
-            font-size: 11px;
+            font-size: 10px;
             color: #a5b4fc;
             text-align: center;
-            margin-top: 12px;
+            margin-top: 10px;
             font-style: italic;
         }
 
@@ -409,7 +424,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
-            margin: 40px 0 80px;
+            margin: 40px 0 70px;
         }
 
         @media (max-width: 768px) {
@@ -425,7 +440,7 @@
         }
 
         .stat-number {
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 800;
             background: linear-gradient(135deg, #fff 0%, #818cf8 100%);
             -webkit-background-clip: text;
@@ -442,7 +457,7 @@
         /* Features Section */
         .section-title {
             text-align: center;
-            font-size: 34px;
+            font-size: 32px;
             font-weight: 800;
             letter-spacing: -0.5px;
             margin-bottom: 12px;
@@ -450,17 +465,17 @@
 
         .section-desc {
             text-align: center;
-            font-size: 16px;
             color: var(--text-muted);
+            font-size: 15px;
             max-width: 600px;
-            margin: 0 auto 48px;
+            margin: 0 auto 40px;
         }
 
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
-            margin-bottom: 90px;
+            margin-bottom: 80px;
         }
 
         @media (max-width: 860px) {
@@ -471,27 +486,18 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 20px;
-            padding: 28px;
+            padding: 30px;
             transition: all 0.3s ease;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
             border-color: rgba(99, 102, 241, 0.4);
-            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
+            transform: translateY(-4px);
         }
 
         .feature-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 14px;
-            background: rgba(99, 102, 241, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(99, 102, 241, 0.25);
+            font-size: 32px;
+            margin-bottom: 16px;
         }
 
         .feature-card h3 {
@@ -509,18 +515,18 @@
 
         /* Steps Section */
         .steps-box {
-            background: linear-gradient(180deg, #111827 0%, #0c1222 100%);
+            background: linear-gradient(180deg, #151d2c 0%, #0d1320 100%);
             border: 1px solid var(--card-border);
             border-radius: 24px;
-            padding: 48px 36px;
-            margin-bottom: 90px;
+            padding: 44px 32px;
+            margin-bottom: 80px;
         }
 
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-top: 36px;
+            gap: 20px;
+            margin-top: 32px;
         }
 
         @media (max-width: 860px) {
@@ -535,14 +541,14 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
             color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
             font-size: 15px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .step-item h4 {
@@ -558,19 +564,49 @@
             line-height: 1.5;
         }
 
+        /* Restricted Settings Alert Box */
+        .restricted-alert-box {
+            background: #251b08;
+            border: 1.5px solid #543a0c;
+            border-radius: 18px;
+            padding: 24px;
+            margin-top: 28px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .alert-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .alert-content h4 {
+            font-size: 16px;
+            color: var(--amber);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .alert-content p {
+            font-size: 13px;
+            color: #fde68a;
+            line-height: 1.6;
+        }
+
         /* Download Section */
         .download-cta-box {
-            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.25) 0%, rgba(17, 24, 39, 0.95) 70%);
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.25) 0%, rgba(21, 29, 44, 0.95) 70%);
             border: 1px solid rgba(99, 102, 241, 0.35);
             border-radius: 28px;
             padding: 56px 36px;
             text-align: center;
             margin-bottom: 80px;
-            box-shadow: 0 20px 50px -15px rgba(79, 70, 229, 0.25);
+            box-shadow: 0 20px 50px -15px rgba(99, 102, 241, 0.25);
         }
 
         .download-cta-box h2 {
-            font-size: 36px;
+            font-size: 34px;
             font-weight: 800;
             margin-bottom: 14px;
         }
@@ -579,12 +615,12 @@
             font-size: 16px;
             color: #cbd5e1;
             max-width: 580px;
-            margin: 0 auto 32px;
+            margin: 0 auto 30px;
         }
 
         footer {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 32px 0;
+            padding: 30px 0;
             text-align: center;
             font-size: 13px;
             color: var(--text-muted);
@@ -610,7 +646,7 @@
             </a>
             <div style="display:flex; gap:12px;">
                 <a href="https://github.com/Kunal18sm/Quizee/releases" target="_blank" class="nav-btn">GitHub Releases</a>
-                <a href="https://github.com/Kunal18sm/Quizee/releases/download/v1.0.0/quizee.apk" class="nav-btn" style="background:#4f46e5;">Download APK</a>
+                <a href="quizee.apk" download="quizee.apk" class="nav-btn" style="background:#6366f1;">Download APK</a>
             </div>
         </nav>
 
@@ -619,71 +655,87 @@
             <div>
                 <div class="badge">
                     <span class="badge-dot"></span>
-                    Static GK 2026 Edition • 2,580+ MCQs Loaded
+                    v2.0 • Compact Floating Window + Open App Flow
                 </div>
-                <h1>App Lock Karo,<br><span>5 MCQs Answer Karke</span> Unlock Karo!</h1>
+                <h1>App Lock Karo,<br><span>5 MCQs Khel Kar 'Open App'</span> Se Unlock Karo!</h1>
                 <p class="hero-desc">
-                    Quizee aapke selected phone apps (Instagram, Games, YouTube, etc.) par ek smart knowledge lock lagata hai. App open karte hi 5 MCQs aayenge — har right answer par <b>Green ✓</b> aur wrong par <b>Red ✗</b> instant feedback!
+                    Quizee aapke selected phone apps (Instagram, Games, YouTube, etc.) par ek <b>chota floating quiz card</b> dikhata hai. 5 MCQs answer karne ke baad <b>"Open App"</b> button aayega jisse app open ho jayega — right answer par <b>Green ✓</b> aur wrong par <b>Red ✗</b> instant feedback!
                 </p>
                 <div class="hero-actions">
-                    <a href="https://github.com/Kunal18sm/Quizee/releases/download/v1.0.0/quizee.apk" class="btn-download" download="Quizee.apk">
+                    <a href="quizee.apk" class="btn-download" download="quizee.apk">
                         <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                        Download APK (v1.0)
+                        Download APK (v2.0)
                     </a>
                     <a href="https://github.com/Kunal18sm/Quizee/releases" target="_blank" class="btn-secondary">
                         Releases Page ↗
                     </a>
                 </div>
                 <div class="apk-meta">
-                    <span>📱 Android 8.0+ Supported</span>
-                    <span>⚡ Safe & Lightweight (5.1 MB)</span>
-                    <span>🎯 100% Offline Ready</span>
+                    <span>📱 Android 8.0 - 15 Supported</span>
+                    <span>⚡ Safe &amp; Play Protect Compliant</span>
+                    <span>🎯 2,584 GK Questions</span>
                 </div>
             </div>
 
-            <!-- Interactive App Demo Mockup -->
+            <!-- Interactive App Demo Mockup (Floating Card Dialog) -->
             <div class="mockup-wrap">
                 <div class="phone-mockup">
                     <div class="phone-notch"></div>
-                    <div class="phone-header">
-                        <img src="assets/icon.png" alt="Quizee App Icon">
-                        <h4>🔒 Instagram is Locked</h4>
-                        <p>Answer 5 MCQs to unlock this app</p>
+
+                    <!-- Floating Card -->
+                    <div class="floating-dialog" id="demoDialogCard">
+                        <div class="phone-header">
+                            <img src="assets/icon.png" alt="Quizee App Icon">
+                            <div>
+                                <h4>🔒 Instagram is Locked</h4>
+                                <p>Answer 5 MCQs to unlock</p>
+                            </div>
+                        </div>
+
+                        <!-- Active Quiz Content -->
+                        <div id="demoActiveQuiz">
+                            <div class="progress-box">
+                                <span id="demoProgressText">Question 1 of 5</span>
+                                <span id="demoScoreText">Score: 0</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" id="demoProgressBar"></div>
+                            </div>
+
+                            <div class="mockup-card">
+                                <div class="mockup-category" id="demoCategory">Geography &amp; Superlatives</div>
+                                <div class="mockup-question" id="demoQuestion">Which is the longest river in India?</div>
+                            </div>
+
+                            <div class="mockup-options" id="demoOptionsBox">
+                                <!-- Options rendered via JS -->
+                            </div>
+
+                            <div class="demo-tip">👆 Click any option above to experience instant Green/Red feedback!</div>
+                        </div>
+
+                        <!-- Quiz Completed View with "OPEN APP" button -->
+                        <div id="demoCompletedQuiz" style="display:none; text-align:center; padding: 12px 6px;">
+                            <div style="width:48px; height:48px; border-radius:50%; background:#064e3b; margin:0 auto 10px; display:flex; align-items:center; justify-content:center; font-size:24px;">
+                                🔓
+                            </div>
+                            <h4 style="font-size:16px; font-weight:800; color:#f8fafc; margin-bottom:4px;">🎉 Quiz Completed!</h4>
+                            <p style="font-size:12px; color:#94a3b8; margin-bottom:10px;">You answered all 5 MCQs.<br>Instagram is now unlocked!</p>
+                            <div id="demoFinalScoreBadge" style="display:inline-block; background:#1c2638; border:1px solid #2b384e; padding:4px 14px; border-radius:8px; font-size:12px; font-weight:700; color:#10b981; margin-bottom:14px;">
+                                Score: 5 / 5 Correct
+                            </div>
+                            
+                            <!-- Big Open App Button -->
+                            <button id="btnDemoOpenApp" onclick="handleDemoOpenApp()" style="width:100%; background:#10b981; color:#fff; border:none; border-radius:12px; padding:12px; font-size:14px; font-weight:800; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;">
+                                <span>🚀 OPEN INSTAGRAM</span>
+                            </button>
+
+                            <button onclick="restartDemo()" style="margin-top:10px; background:none; border:none; color:#64748b; font-size:11px; cursor:pointer; text-decoration:underline;">
+                                Restart Demo ↺
+                            </button>
+                        </div>
                     </div>
 
-                    <div class="progress-box">
-                        <span id="demoProgressText">Question 1 of 5</span>
-                        <span id="demoScoreText">Score: 0</span>
-                    </div>
-                    <div class="progress-bar-bg">
-                        <div class="progress-bar-fill" id="demoProgressBar"></div>
-                    </div>
-
-                    <div class="mockup-card">
-                        <div class="mockup-category" id="demoCategory">Geography & Superlatives</div>
-                        <div class="mockup-question" id="demoQuestion">Which is the longest river in India?</div>
-                    </div>
-
-                    <div class="mockup-options" id="demoOptionsBox">
-                        <div class="mockup-option" onclick="handleDemoAnswer(this, false, 0)">
-                            <span class="opt-badge">A</span>
-                            <span>Godavari (1,465 km)</span>
-                        </div>
-                        <div class="mockup-option" onclick="handleDemoAnswer(this, true, 1)">
-                            <span class="opt-badge">B</span>
-                            <span>The Ganges (2,525 km)</span>
-                        </div>
-                        <div class="mockup-option" onclick="handleDemoAnswer(this, false, 2)">
-                            <span class="opt-badge">C</span>
-                            <span>Narmada (1,315 km)</span>
-                        </div>
-                        <div class="mockup-option" onclick="handleDemoAnswer(this, false, 3)">
-                            <span class="opt-badge">D</span>
-                            <span>Yamuna (1,376 km)</span>
-                        </div>
-                    </div>
-
-                    <div class="demo-tip">👆 Click any option above to experience instant Green/Red feedback!</div>
                 </div>
             </div>
         </section>
@@ -703,21 +755,21 @@
                 <div class="stat-label">Per Unlock Session</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">0 ms</div>
-                <div class="stat-label">Instant App Detection</div>
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Secure &amp; Play Protect Safe</div>
             </div>
         </section>
 
         <!-- Features Section -->
         <section>
-            <h2 class="section-title">Quizee Kyu Khaas Hai?</h2>
+            <h2 class="section-title">Quizee v2.0 Kyu Khaas Hai?</h2>
             <p class="section-desc">Screen time ko productively utilize karne aur exams ki practice ke liye sabse behtareen app locker.</p>
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>One-Tap App Locking</h3>
-                    <p>Phone me installed kisi bhi app (Social Media, Games, Browsers) ko list se search karke ek tap me lock karein.</p>
+                    <div class="feature-icon">🪟</div>
+                    <h3>Compact Floating Card</h3>
+                    <p>Pura screen block karne ke bajaye ek chota, modern floating card overlay aata hai jo elegant and responsive hai.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🟢</div>
@@ -725,24 +777,24 @@
                     <p>Option click karte hi right answer turant green ho jayega aur wrong select karne par red, sath hi sahi answer highlight hoga.</p>
                 </div>
                 <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Dedicated "Open App" Button</h3>
+                    <p>5 MCQs pure hone ke baad (sahi ya galat), 'Open App' button tap karte hi aapka target locked app launch ho jayega.</p>
+                </div>
+                <div class="feature-card">
                     <div class="feature-icon">📚</div>
-                    <h3>2,580+ Static GK Bank</h3>
-                    <p>National Parks, Rivers, Dams, Forts, Books & Authors, Sports Terms, Nobel Prize 2025 aur 34 topics ka complete syllabus.</p>
+                    <h3>2,584 Static GK Bank</h3>
+                    <p>National Parks, Rivers, Dams, Forts, Books &amp; Authors, Sports Terms, Nobel Prize aur 34 topics ka complete syllabus.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
-                    <h3>Bypass-Proof Protection</h3>
-                    <p>Back dabane par app sidha Home Screen par bhejta hai, bina 5 MCQs answer kiye locked app open nahi ho sakti.</p>
+                    <h3>Android 13/14/15 Support</h3>
+                    <p>Restricted settings ka 1-click guide aur Play Protect compliant launcher discovery bina unnecessary high-risk permissions ke.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Zero Battery Drain</h3>
-                    <p>Native Android Accessibility Service engine jo 0% extra battery kharch kiye instant background monitoring karta hai.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✏️</div>
-                    <h3>Custom Question Manager</h3>
-                    <p>App me diye gaye "Questions" menu se aap phone se hi direct apne naye custom MCQs add ya delete kar sakte hain.</p>
+                    <div class="feature-icon">🌙</div>
+                    <h3>Full Dark Theme</h3>
+                    <p>Aankho ke liye aaramdayak premium dark theme jo OLED screens par battery bhi bachata hai.</p>
                 </div>
             </div>
         </section>
@@ -756,11 +808,11 @@
                 <div class="step-item">
                     <div class="step-num">1</div>
                     <h4>APK Download Karein</h4>
-                    <p>Upar diye gaye <b>Download APK</b> button par tap karein aur file save karein.</p>
+                    <p>Upar diye gaye <b>Download APK</b> button par tap karein aur file phone me save karein.</p>
                 </div>
                 <div class="step-item">
                     <div class="step-num">2</div>
-                    <h4>Install Permitted Karein</h4>
+                    <h4>Install Allow Karein</h4>
                     <p>Agar Android bole <i>"Install unknown apps"</i>, to browser ko allow karke Install par click karein.</p>
                 </div>
                 <div class="step-item">
@@ -774,24 +826,36 @@
                     <p>Jin apps par quiz lagana hai unka switch ON karein. Now enjoy productive study!</p>
                 </div>
             </div>
+
+            <!-- Android 13+ Restricted Settings Alert -->
+            <div class="restricted-alert-box">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-content">
+                    <h4>Android 13, 14 &amp; 15 Users Ke Liye Important Note:</h4>
+                    <p>
+                        Agar Accessibility toggle greyed out ya <i>"Restricted setting / Disabled for security reason"</i> dikhaye to chinta na karein! Ye Android ka naya sideload security feature hai.<br>
+                        <b>Ise 10 second me fix karein:</b> Phone Settings &gt; Apps &gt; Quizee kholein &gt; Top-right corner me <b>3 vertical dots (⋮)</b> par tap karein &gt; <b>"Allow restricted settings"</b> select karein aur PIN dalein. Ab Accessibility turant ON ho jayegi!
+                    </p>
+                </div>
+            </div>
         </section>
 
         <!-- Download Banner -->
         <section class="download-cta-box">
             <h2>Ready to Transform Your Screen Time?</h2>
-            <p>Abhi Quizee download karein aur har din 50+ GK questions bina alag se time nikale sikhna shuru karein!</p>
-            <a href="https://github.com/Kunal18sm/Quizee/releases/download/v1.0.0/quizee.apk" class="btn-download" download="Quizee.apk" style="font-size: 18px; padding: 18px 40px;">
+            <p>Abhi Quizee v2.0 download karein aur har din 50+ GK questions bina alag se time nikale sikhna shuru karein!</p>
+            <a href="quizee.apk" class="btn-download" download="quizee.apk" style="font-size: 18px; padding: 18px 40px;">
                 <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                Download Quizee APK Now
+                Download Quizee v2.0 APK
             </a>
             <div style="margin-top:16px;">
-                <a href="https://github.com/Kunal18sm/Quizee/releases" target="_blank" style="color:#a5b4fc; text-decoration:none; font-size:14px; font-weight:600;">Or view all GitHub Releases ↗</a>
+                <a href="https://github.com/Kunal18sm/Quizee/releases" target="_blank" style="color:#a5b4fc; text-decoration:none; font-size:14px; font-weight:600;">Or view GitHub Releases ↗</a>
             </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <p>© 2026 Quizee App. Powered by Static GK 2026 Question Bank. Built with Native Android.</p>
+            <p>© 2026 Quizee App v2.0. Powered by Static GK 2026 Question Bank. Built with Native Android.</p>
         </footer>
     </div>
 
@@ -877,16 +941,33 @@
                 if (currentIdx < sampleQuestions.length) {
                     loadQuestion(currentIdx);
                 } else {
-                    document.getElementById('demoCategory').textContent = "🎉 Demo Completed";
-                    document.getElementById('demoQuestion').textContent = `Great Job! Score: ${score}/5. The locked app is now unlocked!`;
-                    document.getElementById('demoOptionsBox').innerHTML = `
-                        <div style="text-align:center; padding: 20px 0;">
-                            <a href="https://github.com/Kunal18sm/Quizee/releases/download/v1.0.0/quizee.apk" download="Quizee.apk" style="display:inline-block; background:#10b981; color:#fff; font-weight:700; font-size:13px; padding:10px 20px; border-radius:10px; text-decoration:none;">Download Full App (2,580+ MCQs)</a>
-                        </div>
-                    `;
+                    // Show Completion view with Open App button
+                    document.getElementById('demoActiveQuiz').style.display = 'none';
+                    document.getElementById('demoCompletedQuiz').style.display = 'block';
+                    document.getElementById('demoFinalScoreBadge').textContent = `Score: ${score} / 5 Correct`;
                 }
-            }, 1200);
+            }, 1000);
         }
+
+        function handleDemoOpenApp() {
+            const btn = document.getElementById('btnDemoOpenApp');
+            btn.innerHTML = '<span>🚀 Instagram Launched!</span>';
+            btn.style.background = '#6366f1';
+        }
+
+        function restartDemo() {
+            currentIdx = 0;
+            score = 0;
+            document.getElementById('demoActiveQuiz').style.display = 'block';
+            document.getElementById('demoCompletedQuiz').style.display = 'none';
+            const btn = document.getElementById('btnDemoOpenApp');
+            btn.innerHTML = '<span>🚀 OPEN INSTAGRAM</span>';
+            btn.style.background = '#10b981';
+            loadQuestion(0);
+        }
+
+        // Initialize demo on load
+        loadQuestion(0);
     </script>
 </body>
 </html>

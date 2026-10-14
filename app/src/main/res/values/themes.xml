@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base application theme. -->
-    <style name="Theme.QuizLock" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Base application theme (Modern Dark Theme) -->
+    <style name="Theme.QuizLock" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
-        <item name="android:windowBackground">@color/background_light</item>
-        <item name="android:statusBarColor">@color/primary</item>
-        <item name="android:windowLightStatusBar">false</item>
-    </style>
-
-    <!-- Fullscreen Lock Screen Theme -->
-    <style name="Theme.QuizLock.LockScreen" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:windowBackground">@color/lock_bg_dark</item>
-        <item name="android:statusBarColor">@color/lock_bg_dark</item>
-        <item name="android:navigationBarColor">@color/lock_bg_dark</item>
+        <item name="colorSurface">@color/card_dark</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowLightNavigationBar">false</item>
-        <item name="android:windowFullscreen">false</item>
     </style>
+
+    <!-- Floating Dialog Theme for Quiz Lock Screen -->
+    <style name="Theme.Quizee.FloatingDialog" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowDimEnabled">true</item>
+        <item name="android:windowDimAmount">0.75</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">#B3000000</item>
+        <item name="android:navigationBarColor">#B3000000</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <!-- Legacy style alias -->
+    <style name="Theme.QuizLock.LockScreen" parent="Theme.Quizee.FloatingDialog" />
 </resources>
