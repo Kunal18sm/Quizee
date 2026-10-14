@@ -56,7 +56,7 @@ class PreferencesManager(context: Context) {
     }
 
     fun getUnlockTimeoutMinutes(): Int {
-        return prefs.getInt(KEY_UNLOCK_TIMEOUT_MINUTES, 10)
+        return prefs.getInt(KEY_UNLOCK_TIMEOUT_MINUTES, 5)
     }
 
     fun markAppUnlocked(packageName: String) {
@@ -73,6 +73,10 @@ class PreferencesManager(context: Context) {
             unlockedSessions.remove(packageName)
             return false
         }
+    }
+
+    fun lockSession(packageName: String) {
+        unlockedSessions.remove(packageName)
     }
 
     fun lockAllSessions() {

@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <!-- Safe queries element instead of QUERY_ALL_PACKAGES to comply with Play Protect -->
+    <!-- Safe queries element to comply with Google Play Protect -->
     <queries>
         <intent>
             <action android:name="android.intent.action.MAIN" />
@@ -38,13 +38,14 @@
             </intent-filter>
         </activity>
 
-        <!-- Floating Quiz Lock Screen Dialog -->
+        <!-- Floating Quiz Lock Dialog: Isolated Task (taskAffinity="" prevents Quizee from opening) -->
         <activity
             android:name=".ui.QuizLockActivity"
             android:exported="false"
-            android:launchMode="singleTop"
+            android:launchMode="singleInstance"
+            android:taskAffinity=""
             android:excludeFromRecents="true"
-            android:noHistory="false"
+            android:noHistory="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Quizee.FloatingDialog"
             android:windowSoftInputMode="adjustNothing" />

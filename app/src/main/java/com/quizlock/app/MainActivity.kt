@@ -66,6 +66,16 @@ class MainActivity : AppCompatActivity() {
             updateLockedCount()
             if (isLocked) {
                 AppLockForegroundService.startService(this)
+                val hasOverlay = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    Settings.canDrawOverlays(this)
+                } else true
+                if (!hasOverlay) {
+                    Toast.makeText(
+                        this,
+                        "Enable 'Display Over Other Apps' permission so Quiz opens on top of ${app.name}!",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
             }
         }
 
@@ -128,10 +138,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnTestQuiz.setOnClickListener {
-            val testIntent = Intent(this, QuizLockActivity::class.java).apply {
-                putExtra(QuizLockActivity.EXTRA_LOCKED_PACKAGE_NAME, packageName)
+            val canOverlay = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                Settings.canDrawOverlays(this)
+            } else true
+
+            if (canOverlay) {
+                com.quizlock.app.service.QuizOverlayManager.show(this, packageName)
+            } else {
+                val testIntent = Intent(this, QuizLockActivity::class.java).apply {
+                    putExtra(QuizLockActivity.EXTRA_LOCKED_PACKAGE_NAME, packageName)
+                }
+                startActivity(testIntent)
             }
-            startActivity(testIntent)
         }
 
         binding.btnQuestions.setOnClickListener {

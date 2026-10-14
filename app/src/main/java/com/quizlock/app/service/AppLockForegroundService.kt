@@ -9,10 +9,12 @@ import android.app.usage.UsageEvents
 import android.app.usage.UsageStatsManager
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
+import android.provider.Settings
 import androidx.core.app.NotificationCompat
 import com.quizlock.app.MainActivity
 import com.quizlock.app.R
@@ -84,7 +86,7 @@ class AppLockForegroundService : Service() {
 
         var currentPkg: String? = null
 
-        // Try UsageEvents first (more responsive & accurate on Android 8+)
+        // Try UsageEvents first (responsive & accurate)
         try {
             val usageEvents = usageStatsManager.queryEvents(startTime, endTime)
             val event = UsageEvents.Event()
@@ -100,7 +102,7 @@ class AppLockForegroundService : Service() {
             currentPkg = null
         }
 
-        // Fallback to queryUsageStats if UsageEvents gave nothing
+        // Fallback to queryUsageStats
         if (currentPkg == null) {
             val stats = usageStatsManager.queryUsageStats(
                 UsageStatsManager.INTERVAL_DAILY,
@@ -120,7 +122,19 @@ class AppLockForegroundService : Service() {
             return
         }
 
+        // Check if home launcher is active
+        if (isHomePackage(pkg)) {
+            if (QuizOverlayManager.isShowing()) {
+                QuizOverlayManager.dismiss()
+            }
+            return
+        }
+
         if (prefsManager.isAppLocked(pkg) && !prefsManager.isAppInUnlockedSession(pkg)) {
+            if (QuizOverlayManager.isShowingFor(pkg)) {
+                return
+            }
+
             val now = System.currentTimeMillis()
             if (pkg == lastForegroundPackage && (now - lastInterceptTime) < 1500) {
                 return
@@ -129,13 +143,34 @@ class AppLockForegroundService : Service() {
             lastForegroundPackage = pkg
             lastInterceptTime = now
 
-            val lockIntent = Intent(this, QuizLockActivity::class.java).apply {
-                flags = Intent.FLAG_ACTIVITY_NEW_TASK or
-                        Intent.FLAG_ACTIVITY_CLEAR_TOP or
-                        Intent.FLAG_ACTIVITY_SINGLE_TOP
-                putExtra(QuizLockActivity.EXTRA_LOCKED_PACKAGE_NAME, pkg)
+            val canOverlay = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                Settings.canDrawOverlays(this)
+            } else true
+
+            if (canOverlay) {
+                QuizOverlayManager.show(this, pkg)
+            } else {
+                val lockIntent = Intent(this, QuizLockActivity::class.java).apply {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or
+                            Intent.FLAG_ACTIVITY_CLEAR_TOP or
+                            Intent.FLAG_ACTIVITY_SINGLE_TOP or
+                            Intent.FLAG_ACTIVITY_NO_ANIMATION
+                    putExtra(QuizLockActivity.EXTRA_LOCKED_PACKAGE_NAME, pkg)
+                }
+                startActivity(lockIntent)
             }
-            startActivity(lockIntent)
+        }
+    }
+
+    private fun isHomePackage(pkgName: String): Boolean {
+        try {
+            val intent = Intent(Intent.ACTION_MAIN).apply {
+                addCategory(Intent.CATEGORY_HOME)
+            }
+            val resolveInfo = packageManager.resolveActivity(intent, PackageManager.MATCH_DEFAULT_ONLY)
+            return pkgName == resolveInfo?.activityInfo?.packageName
+        } catch (e: Exception) {
+            return false
         }
     }
 
