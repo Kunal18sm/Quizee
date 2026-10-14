@@ -30,6 +30,15 @@ jobs:
       - name: Build Android APK with Gradle
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
+      - name: Upload Build Reports if Failed
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-failure-reports
+          path: |
+            app/build/reports/
+            app/build/outputs/logs/
+
       - name: Copy Generated APK to Website docs and root
         run: |
           mkdir -p docs
