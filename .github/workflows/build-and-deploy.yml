@@ -51,6 +51,17 @@ jobs:
             app/build/reports/
             app/build/outputs/logs/
 
+      - name: Push Build Log to Git on Failure
+        if: failure()
+        run: |
+          git config user.name "Kunal18sm"
+          git config user.email "Kunal18sm@users.noreply.github.com"
+          git checkout -B ci-debug
+          cp build_output.log ci_build_error.log || true
+          git add ci_build_error.log
+          git commit -m "ci: capture build error log" || true
+          git push -f origin ci-debug || true
+
       - name: Copy Generated APK to Website docs and root
         run: |
           mkdir -p docs
