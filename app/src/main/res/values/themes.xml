@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base application theme (Modern Dark Theme) -->
-    <style name="Theme.QuizLock" parent="Theme.Material3.Dark.NoActionBar">
+    <!-- Base application theme (Permanent Modern Dark Theme) -->
+    <style name="Theme.QuizLock" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
         <item name="colorSurface">@color/card_dark</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/card_dark_elevated</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
         <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:colorBackground">@color/bg_dark</item>
         <item name="android:statusBarColor">@color/bg_dark</item>
         <item name="android:navigationBarColor">@color/bg_dark</item>
         <item name="android:windowLightStatusBar">false</item>
@@ -14,7 +18,10 @@
     </style>
 
     <!-- Floating Dialog Theme for Quiz Lock Screen -->
-    <style name="Theme.Quizee.FloatingDialog" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.Quizee.FloatingDialog" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorSurface">@color/card_dark</item>
+        <item name="colorOnSurface">@color/text_primary</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:colorBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>

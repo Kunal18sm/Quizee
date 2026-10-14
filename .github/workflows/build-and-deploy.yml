@@ -28,7 +28,7 @@ jobs:
         run: chmod +x gradlew || true
 
       - name: Build Android APK with Gradle
-        run: ./gradlew assembleDebug --no-daemon
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: Copy Generated APK to Website docs and root
         run: |
@@ -46,14 +46,14 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2.0.1
-          name: "Quizee v2.0.1 (Direct App Overlay + Open App Flow)"
+          tag_name: v2.0.2
+          name: "Quizee v2.0.2 (Direct App Overlay + Open App Flow + True Dark Theme)"
           body: |
-            ## 📱 Quizee App v2.0.1 Released!
+            ## 📱 Quizee App v2.0.2 Released!
             - **Direct App Overlay**: Quiz card appears directly ON TOP of the selected app (e.g. YouTube, Instagram), without switching to Quizee app!
             - **Open App Flow**: After answering 5 MCQs (right or wrong), tap the dedicated 'Open App' button to launch the locked application.
+            - **Permanent True Dark Theme**: Complete dark mode aesthetic across the entire app and components.
             - **Android 13/14/15 Support**: Removed QUERY_ALL_PACKAGES for Play Protect safety, added Restricted Settings guide.
-            - **Full Dark Theme**: Modern dark aesthetic across all screens.
             - **2,584 Static GK Questions**: Comprehensive question bank from 2026 syllabus.
             - Download `quizee.apk` below directly on your Android phone!
           files: docs/quizee.apk
