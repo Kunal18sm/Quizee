@@ -28,7 +28,19 @@ jobs:
         run: chmod +x gradlew || true
 
       - name: Build Android APK with Gradle
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        run: |
+          set -o pipefail
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee build_output.log || {
+            BUILD_CODE=$?
+            echo "====================== BUILD LOG FAILURE ======================"
+            tail -n 120 build_output.log
+            echo "================================================================"
+            echo "### ❌ Gradle Build Failed" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            tail -n 100 build_output.log >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            exit $BUILD_CODE
+          }
 
       - name: Upload Build Reports if Failed
         if: failure()
