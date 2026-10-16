@@ -78,17 +78,23 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2.0.4
-          name: "Quizee v2.0.4 (3/5 Passing Rule + Same Question Revision + 3D Brand Icon)"
+          tag_name: v2.1.0
+          name: "Quizee v2.1.0 (5,300+ Static GK & BlackBook English Vocabulary MCQs)"
           body: |
-            ## 📱 Quizee App v2.0.4 Released!
+            ## 📱 Quizee App v2.1.0 Released!
+            - **Massive 5,315 Questions Bank**: Complete BlackBook English Vocabulary (2,731 questions) + 2026 Static GK (2,584 questions)!
+            - **Complete English Vocabulary Coverage**:
+              - One Word Substitutions (OWS Top 200 & SSC Masters)
+              - Idioms & Phrases (Top 200 & PYQs)
+              - Synonyms & Antonyms (Common List & Most Repeated)
+              - Correct Spelling Tests (200 Most Repeated)
+              - Phrasal Verbs & Fixed Prepositions
+              - Confusing Homonyms & Homophones
+              - The Hindu Vocabulary & Foreign Words & Root Words
             - **3/5 Passing Rule**: Minimum 3 correct answers required out of 5 to unlock any app!
-            - **Instant Revision / Retry**: If score < 3, app stays locked and lets you retry the EXACT same questions until you learn and pass.
-            - **Stunning New 3D Brand Icon**: Premium glowing padlock + quiz question mark logo with neon rim lights.
+            - **Instant Revision / Retry**: If score < 3, app stays locked and lets you retry the exact same questions until you learn and pass.
             - **Direct App Overlay**: Quiz card appears directly ON TOP of the selected app (e.g. YouTube, Instagram), without switching to Quizee app!
-            - **Instant Accessibility Detection**: Multi-layer detection automatically reflects 'Enabled ✓' as soon as permission is turned on.
-            - **Permanent True Dark Theme**: Complete dark mode aesthetic across the entire app and components.
-            - **2,584 Static GK Questions**: Comprehensive question bank from 2026 syllabus.
+            - **Permanent True Dark Theme & 3D Brand Icon**: Premium glowing padlock + quiz question mark logo.
             - Download `quizee.apk` below directly on your Android phone!
           files: docs/quizee.apk
         env:
