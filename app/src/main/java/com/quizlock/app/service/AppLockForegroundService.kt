@@ -7,8 +7,10 @@ import android.app.PendingIntent
 import android.app.Service
 import android.app.usage.UsageEvents
 import android.app.usage.UsageStatsManager
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Handler
@@ -28,6 +30,15 @@ class AppLockForegroundService : Service() {
     private var isMonitoring = false
     private var lastForegroundPackage: String? = null
     private var lastInterceptTime: Long = 0
+
+    private val screenOffReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            if (intent?.action == Intent.ACTION_SCREEN_OFF) {
+                // When screen turns off, re-lock all sessions
+                prefsManager.lockAllSessions()
+            }
+        }
+    }
 
     companion object {
         private const val CHANNEL_ID = "quiz_lock_monitor_channel"
@@ -52,6 +63,9 @@ class AppLockForegroundService : Service() {
         super.onCreate()
         prefsManager = PreferencesManager.getInstance(this)
         createNotificationChannel()
+
+        val filter = IntentFilter(Intent.ACTION_SCREEN_OFF)
+        registerReceiver(screenOffReceiver, filter)
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -211,6 +225,11 @@ class AppLockForegroundService : Service() {
         super.onDestroy()
         isMonitoring = false
         handler.removeCallbacksAndMessages(null)
+        try {
+            unregisterReceiver(screenOffReceiver)
+        } catch (e: Exception) {
+            // Ignore if not registered
+        }
     }
 
     override fun onBind(intent: Intent?): IBinder? = null

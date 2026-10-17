@@ -78,23 +78,15 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2.1.0
-          name: "Quizee v2.1.0 (5,300+ Static GK & BlackBook English Vocabulary MCQs)"
+          tag_name: v2.2.0
+          name: "Quizee v2.2.0 (Screen-Off Lock Session + Hindi Meanings in Synonyms & Antonyms)"
           body: |
-            ## 📱 Quizee App v2.1.0 Released!
-            - **Massive 5,315 Questions Bank**: Complete BlackBook English Vocabulary (2,731 questions) + 2026 Static GK (2,584 questions)!
-            - **Complete English Vocabulary Coverage**:
-              - One Word Substitutions (OWS Top 200 & SSC Masters)
-              - Idioms & Phrases (Top 200 & PYQs)
-              - Synonyms & Antonyms (Common List & Most Repeated)
-              - Correct Spelling Tests (200 Most Repeated)
-              - Phrasal Verbs & Fixed Prepositions
-              - Confusing Homonyms & Homophones
-              - The Hindu Vocabulary & Foreign Words & Root Words
-            - **3/5 Passing Rule**: Minimum 3 correct answers required out of 5 to unlock any app!
-            - **Instant Revision / Retry**: If score < 3, app stays locked and lets you retry the exact same questions until you learn and pass.
-            - **Direct App Overlay**: Quiz card appears directly ON TOP of the selected app (e.g. YouTube, Instagram), without switching to Quizee app!
-            - **Permanent True Dark Theme & 3D Brand Icon**: Premium glowing padlock + quiz question mark logo.
+            ## 📱 Quizee App v2.2.0 Released!
+            - **No More Re-Locking During Usage**: Once an app is unlocked by passing the quiz, it remains unlocked for the entire phone session without interrupting you. Apps re-lock cleanly when the phone screen is turned off / locked.
+            - **Hindi Meanings for English Synonyms & Antonyms**: All 1,070+ synonym & antonym questions now display Hindi meanings for the main question word as well as all 4 options for fast, effective learning.
+            - **Massive 5,300+ Question Bank**: Complete BlackBook English Vocabulary + Static GK 2026.
+            - **3/5 Passing Rule & Smart Revision**: Unlock with 3/5 or revise identical questions on retry.
+            - **Direct App Overlay**: Floating quiz card appears directly over target apps without opening Quizee.
             - Download `quizee.apk` below directly on your Android phone!
           files: docs/quizee.apk
         env:

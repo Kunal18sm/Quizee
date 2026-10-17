@@ -1,7 +1,10 @@
 package com.quizlock.app.service
 
 import android.accessibilityservice.AccessibilityService
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.os.Build
 import android.provider.Settings
@@ -19,7 +22,15 @@ class AppLockAccessibilityService : AccessibilityService() {
     private lateinit var prefsManager: PreferencesManager
     private var lastInterceptedPackage: String? = null
     private var lastInterceptTime: Long = 0
-    private var lastActiveUnlockedPackage: String? = null
+
+    private val screenOffReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            if (intent?.action == Intent.ACTION_SCREEN_OFF) {
+                // When screen turns off, re-lock all sessions
+                prefsManager.lockAllSessions()
+            }
+        }
+    }
 
     override fun onServiceConnected() {
         super.onServiceConnected()
@@ -29,6 +40,9 @@ class AppLockAccessibilityService : AccessibilityService() {
     override fun onCreate() {
         super.onCreate()
         prefsManager = PreferencesManager.getInstance(this)
+
+        val filter = IntentFilter(Intent.ACTION_SCREEN_OFF)
+        registerReceiver(screenOffReceiver, filter)
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
@@ -49,11 +63,6 @@ class AppLockAccessibilityService : AccessibilityService() {
             if (QuizOverlayManager.isShowing()) {
                 QuizOverlayManager.dismiss()
             }
-            // Re-lock previous app session when user returns home
-            lastActiveUnlockedPackage?.let {
-                prefsManager.lockSession(it)
-                lastActiveUnlockedPackage = null
-            }
             return
         }
 
@@ -61,14 +70,7 @@ class AppLockAccessibilityService : AccessibilityService() {
         if (prefsManager.isAppLocked(pkgName)) {
             // If already in an unlocked session (user currently using it after passing quiz)
             if (prefsManager.isAppInUnlockedSession(pkgName)) {
-                lastActiveUnlockedPackage = pkgName
                 return
-            }
-
-            // User switched to a different locked app or left previous
-            if (lastActiveUnlockedPackage != null && lastActiveUnlockedPackage != pkgName) {
-                prefsManager.lockSession(lastActiveUnlockedPackage!!)
-                lastActiveUnlockedPackage = null
             }
 
             // If overlay is already showing for this exact package, don't recreate
@@ -103,14 +105,6 @@ class AppLockAccessibilityService : AccessibilityService() {
                 }
                 startActivity(lockIntent)
             }
-        } else {
-            // User switched to an unlocked app
-            lastActiveUnlockedPackage?.let {
-                if (it != pkgName) {
-                    prefsManager.lockSession(it)
-                    lastActiveUnlockedPackage = null
-                }
-            }
         }
     }
 
@@ -143,5 +137,10 @@ class AppLockAccessibilityService : AccessibilityService() {
         super.onDestroy()
         isRunning = false
         QuizOverlayManager.dismiss()
+        try {
+            unregisterReceiver(screenOffReceiver)
+        } catch (e: Exception) {
+            // Ignore if not registered
+        }
     }
 }

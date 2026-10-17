@@ -306,6 +306,7 @@ class QuizLockActivity : AppCompatActivity() {
     private fun openTargetApp() {
         val pkg = targetPackageName
         if (pkg != null) {
+            prefsManager.markAppUnlocked(pkg)
             try {
                 val launchIntent = packageManager.getLaunchIntentForPackage(pkg)
                 if (launchIntent != null) {

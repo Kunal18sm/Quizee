@@ -14,8 +14,10 @@ class PreferencesManager(context: Context) {
         private const val KEY_QUESTIONS_COUNT = "questions_count"
         private const val KEY_UNLOCK_TIMEOUT_MINUTES = "unlock_timeout_minutes"
         
-        // In-memory unlocked session cache: packageName -> expirationTimestamp
-        private val unlockedSessions = mutableMapOf<String, Long>()
+        // In-memory unlocked session cache: set of currently unlocked package names.
+        // Once an app is unlocked by passing the quiz, it remains unlocked during phone usage
+        // until the phone screen is turned off / locked (Intent.ACTION_SCREEN_OFF).
+        private val unlockedSessions = java.util.Collections.synchronizedSet(mutableSetOf<String>())
 
         @Volatile
         private var instance: PreferencesManager? = null
@@ -60,19 +62,11 @@ class PreferencesManager(context: Context) {
     }
 
     fun markAppUnlocked(packageName: String) {
-        val durationMillis = getUnlockTimeoutMinutes() * 60 * 1000L
-        val expiry = System.currentTimeMillis() + durationMillis
-        unlockedSessions[packageName] = expiry
+        unlockedSessions.add(packageName)
     }
 
     fun isAppInUnlockedSession(packageName: String): Boolean {
-        val expiry = unlockedSessions[packageName] ?: return false
-        if (System.currentTimeMillis() < expiry) {
-            return true
-        } else {
-            unlockedSessions.remove(packageName)
-            return false
-        }
+        return unlockedSessions.contains(packageName)
     }
 
     fun lockSession(packageName: String) {

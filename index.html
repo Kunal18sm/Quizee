@@ -841,7 +841,7 @@
                 <div class="hero-actions">
                     <a href="https://github.com/Kunal18sm/Quizee/releases/latest/download/quizee.apk" class="btn-download" download="quizee.apk">
                         <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                        Download APK (v2.1)
+                        Download APK (v2.2)
                     </a>
                     <a href="quizee.apk" download="quizee.apk" class="btn-secondary">
                         Mirror Download
@@ -1098,15 +1098,21 @@
     <script>
         const sampleQuestions = [
             {
-                category: "English: One Word Substitution",
-                question: "A person who loves all mankind and helps those in need:",
-                options: ["Misanthrope", "Philanthropist", "Somnambulist", "Choreographer"],
+                category: "English: Synonyms",
+                question: "Select the most appropriate SYNONYM of the given word: 'Abandon' (छोड़ देना)",
+                options: ["Abash (लज्जित करना)", "Useless (बेकार)", "Narrow (संकीर्ण / तंग)", "Desert (छोड़ देना)"],
+                correct: 3
+            },
+            {
+                category: "English: Antonyms",
+                question: "Select the most appropriate ANTONYM of the given word: 'Abandon' (छोड़ देना)",
+                options: ["Convenient (सुविधाजनक)", "Retain (बनाये रखना)", "Abdicate (त्यागना)", "Discriminate (भेदभाव)"],
                 correct: 1
             },
             {
-                category: "English: Idioms & Phrases",
-                question: "What is the meaning of: 'Once in a blue moon'?",
-                options: ["Very frequently", "Rarely and infrequently", "During nighttime", "In deep thought"],
+                category: "English: One Word Substitution",
+                question: "A person who loves all mankind and helps those in need:",
+                options: ["Misanthrope", "Philanthropist", "Somnambulist", "Choreographer"],
                 correct: 1
             },
             {
@@ -1120,12 +1126,6 @@
                 question: "Select the CORRECTLY spelt word:",
                 options: ["Accomodate", "Accommodate", "Acommodate", "Acomodate"],
                 correct: 1
-            },
-            {
-                category: "National Parks & Sanctuaries",
-                question: "Kaziranga National Park is located in which state?",
-                options: ["Assam", "West Bengal", "Odisha", "Bihar"],
-                correct: 0
             }
         ];
 
