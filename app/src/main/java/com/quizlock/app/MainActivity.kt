@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var prefsManager: PreferencesManager
+    private lateinit var dailyStudyManager: com.quizlock.app.data.DailyStudyManager
     private lateinit var appAdapter: AppListAdapter
     private val installedApps = mutableListOf<AppInfo>()
 
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         prefsManager = PreferencesManager.getInstance(this)
+        dailyStudyManager = com.quizlock.app.data.DailyStudyManager.getInstance(this)
 
         setupUI()
         setupListeners()
@@ -61,6 +63,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         updatePermissionStatus()
+        updateDailyTargetUI()
     }
 
     private fun setupUI() {
@@ -157,6 +160,31 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnQuestions.setOnClickListener {
             startActivity(Intent(this, QuestionManageActivity::class.java))
+        }
+
+        binding.btnToggleDailyTarget.setOnClickListener {
+            val currentTarget = dailyStudyManager.getTargetSize()
+            val newTarget = if (currentTarget == 30) 20 else 30
+            dailyStudyManager.setTargetSize(newTarget)
+            Toast.makeText(this, "Daily Target updated to $newTarget Questions/Day", Toast.LENGTH_SHORT).show()
+            updateDailyTargetUI()
+        }
+
+        binding.btnReviewDailyBank.setOnClickListener {
+            showReviewDailyBankDialog()
+        }
+
+        binding.btnAdvanceNextDay.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Advance to Next Day?")
+                .setMessage("Are you sure you want to advance to the next day's question bank now?\n\nToday's progress will be saved and you will unlock tomorrow's questions right away.")
+                .setPositiveButton("Advance") { _, _ ->
+                    dailyStudyManager.advanceToNextDayManually()
+                    Toast.makeText(this, "Unlocked Next Day's Question Bank!", Toast.LENGTH_SHORT).show()
+                    updateDailyTargetUI()
+                }
+                .setNegativeButton("Cancel", null)
+                .show()
         }
 
         binding.etSearchApp.addTextChangedListener(object : TextWatcher {
@@ -384,5 +412,86 @@ class MainActivity : AppCompatActivity() {
     private fun updateLockedCount() {
         val lockedCount = prefsManager.getLockedPackages().size
         binding.tvLockedCount.text = "$lockedCount Apps Protected with Quizee"
+    }
+
+    private fun updateDailyTargetUI() {
+        dailyStudyManager.ensureDailyBankReady()
+        val progress = dailyStudyManager.getDailyProgress()
+        val targetSize = progress.targetSize
+
+        if (progress.isSundayRevision) {
+            binding.tvDailyDayTitle.text = "📅 Sunday Mega Revision"
+            binding.tvDailyStreak.text = "🔥 ${progress.streak} Day Streak"
+            binding.tvDailyMasteryCount.text = "${progress.masteredCount} / ${progress.targetSize} Mastered"
+            binding.tvDailyStatusSubtitle.text = "Weekly Revision Test • ${progress.targetSize} Week Questions"
+
+            binding.btnToggleDailyTarget.text = "Sunday Mode"
+            binding.btnToggleDailyTarget.isEnabled = false
+            binding.btnReviewDailyBank.text = "Review Week's ${progress.targetSize} Qs"
+
+            binding.pbDailyMastery.max = progress.targetSize
+            binding.pbDailyMastery.progress = progress.masteredCount
+
+            binding.tvDailySubjectBreakdown.text =
+                "🎯 Sunday Mega Test: Comprehensive review of all subjects practiced Monday to Saturday!"
+        } else {
+            binding.tvDailyDayTitle.text = "🎯 Day ${progress.dayNumber} • Target Bank"
+            binding.tvDailyStreak.text = "🔥 ${progress.streak} Day Streak"
+            binding.tvDailyMasteryCount.text = "${progress.masteredCount} / ${progress.targetSize} Mastered"
+
+            val subtitle = when {
+                progress.isFullyMastered -> "🎉 All ${progress.targetSize} questions mastered for today!"
+                progress.mistakeCount > 0 -> "⚡ Active in lock quizzes • ${progress.mistakeCount} to revise"
+                else -> "Active in your lock screen quizzes (${progress.seenCount}/${progress.targetSize} seen)"
+            }
+            binding.tvDailyStatusSubtitle.text = subtitle
+
+            binding.btnToggleDailyTarget.text = "$targetSize Qs / Day"
+            binding.btnToggleDailyTarget.isEnabled = true
+            binding.btnReviewDailyBank.text = "Review Today's $targetSize Qs"
+
+            binding.pbDailyMastery.max = progress.targetSize
+            binding.pbDailyMastery.progress = progress.masteredCount
+
+            val quota = dailyStudyManager.getQuotaForTarget(targetSize)
+            binding.tvDailySubjectBreakdown.text =
+                "Eng ${quota.english} • GK ${quota.staticGk} • Hist ${quota.history} • Geo ${quota.geography} • Bio ${quota.biology} • Pol ${quota.polity} • Eco ${quota.economics}"
+        }
+    }
+
+    private fun showReviewDailyBankDialog() {
+        val dialog = android.app.Dialog(this)
+        val dialogBinding = com.quizlock.app.databinding.DialogReviewDailyBankBinding.inflate(layoutInflater)
+        dialog.setContentView(dialogBinding.root)
+        dialog.window?.setLayout(
+            android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+            android.view.ViewGroup.LayoutParams.MATCH_PARENT
+        )
+        dialog.window?.setBackgroundDrawable(android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT))
+
+        val progress = dailyStudyManager.getDailyProgress()
+        if (progress.isSundayRevision) {
+            dialogBinding.tvDialogTitle.text = "📅 Sunday Mega Revision Bank"
+            dialogBinding.tvDialogSubtitle.text = "All ${progress.targetSize} questions practiced across this past week"
+        } else {
+            dialogBinding.tvDialogTitle.text = "🎯 Day ${progress.dayNumber} • Learning Bank"
+            dialogBinding.tvDialogSubtitle.text = "These ${progress.targetSize} questions repeat across your lock quizzes today"
+        }
+
+        val bank = dailyStudyManager.getTodayBankQuestions()
+        val adapter = com.quizlock.app.ui.DailyReviewAdapter(
+            masteredIds = dailyStudyManager.getMasteredIds(),
+            mistakeIds = dailyStudyManager.getMistakeIds(),
+            seenIds = dailyStudyManager.getSeenIds()
+        )
+        dialogBinding.rvDailyQuestions.layoutManager = LinearLayoutManager(this)
+        dialogBinding.rvDailyQuestions.adapter = adapter
+        adapter.submitList(bank)
+
+        dialogBinding.btnCloseDialog.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 }

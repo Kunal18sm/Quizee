@@ -11,7 +11,17 @@ class QuestionRepository private constructor(private val context: Context) {
     private val prefs: SharedPreferences =
         context.getSharedPreferences(PREFS_QUESTIONS, Context.MODE_PRIVATE)
     private val gson = Gson()
+
     private val questionsList = mutableListOf<Question>()
+
+    // Subject-wise cached lists for daily curriculum slicing
+    val englishQuestions = mutableListOf<Question>()
+    val staticGkQuestions = mutableListOf<Question>()
+    val historyQuestions = mutableListOf<Question>()
+    val geographyQuestions = mutableListOf<Question>()
+    val biologyQuestions = mutableListOf<Question>()
+    val polityQuestions = mutableListOf<Question>()
+    val economicsQuestions = mutableListOf<Question>()
 
     companion object {
         private const val PREFS_QUESTIONS = "quiz_questions_storage"
@@ -32,8 +42,15 @@ class QuestionRepository private constructor(private val context: Context) {
 
     private fun loadQuestions() {
         questionsList.clear()
-        
-        // 1. Load the comprehensive 2,500+ Static GK questions from assets
+        englishQuestions.clear()
+        staticGkQuestions.clear()
+        historyQuestions.clear()
+        geographyQuestions.clear()
+        biologyQuestions.clear()
+        polityQuestions.clear()
+        economicsQuestions.clear()
+
+        // 1. Load clean, high-yield SSC CGL subject banks from assets
         loadFromAssets()
 
         // 2. Load any custom questions added by user
@@ -51,28 +68,45 @@ class QuestionRepository private constructor(private val context: Context) {
         }
     }
 
-    private fun loadFromAssets() {
+    private fun loadSubjectAsset(assetName: String, targetList: MutableList<Question>) {
         try {
-            context.assets.open("questions.json").use { inputStream ->
+            context.assets.open(assetName).use { inputStream ->
                 InputStreamReader(inputStream).use { reader ->
                     val type = object : TypeToken<List<Question>>() {}.type
                     val list: List<Question> = gson.fromJson(reader, type)
+                    targetList.addAll(list)
                     questionsList.addAll(list)
                 }
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            // Fallback hardcoded questions if asset cannot be read
+        }
+    }
+
+    private fun loadFromAssets() {
+        loadSubjectAsset("english_questions.json", englishQuestions)
+        loadSubjectAsset("static_gk_questions.json", staticGkQuestions)
+        loadSubjectAsset("history_questions.json", historyQuestions)
+        loadSubjectAsset("geography_questions.json", geographyQuestions)
+        loadSubjectAsset("biology_questions.json", biologyQuestions)
+        loadSubjectAsset("polity_questions.json", polityQuestions)
+        loadSubjectAsset("economics_questions.json", economicsQuestions)
+
+        if (questionsList.isEmpty()) {
             loadHardcodedDefaults()
         }
     }
 
     private fun loadHardcodedDefaults() {
-        questionsList.add(Question(1, "What is the capital of France?", listOf("Berlin", "Madrid", "Paris", "Rome"), 2, "General"))
-        questionsList.add(Question(2, "Which planet is known as Red Planet?", listOf("Venus", "Mars", "Jupiter", "Saturn"), 1, "Science"))
-        questionsList.add(Question(3, "What is 15 × 6?", listOf("80", "90", "85", "95"), 1, "Math"))
-        questionsList.add(Question(4, "Android language?", listOf("Kotlin", "Swift", "Ruby", "PHP"), 0, "Tech"))
-        questionsList.add(Question(5, "Continents on Earth?", listOf("5", "6", "7", "8"), 2, "Geography"))
+        val defaults = listOf(
+            Question(1, "What is the capital of France?", listOf("Berlin", "Madrid", "Paris", "Rome"), 2, "General"),
+            Question(2, "Which planet is known as Red Planet?", listOf("Venus", "Mars", "Jupiter", "Saturn"), 1, "Science"),
+            Question(3, "What is 15 × 6?", listOf("80", "90", "85", "95"), 1, "Math"),
+            Question(4, "Android language?", listOf("Kotlin", "Swift", "Ruby", "PHP"), 0, "Tech"),
+            Question(5, "Continents on Earth?", listOf("5", "6", "7", "8"), 2, "Geography")
+        )
+        questionsList.addAll(defaults)
+        staticGkQuestions.addAll(defaults)
     }
 
     fun getAllQuestions(): List<Question> {
@@ -82,7 +116,25 @@ class QuestionRepository private constructor(private val context: Context) {
         return ArrayList(questionsList)
     }
 
+    /**
+     * Retrieves questions for the active lock session.
+     * Delegates to DailyStudyManager to return questions from Today's Bank
+     * with smart mistake priority & sequential curriculum.
+     */
     fun getRandomQuestions(count: Int = 5): List<Question> {
+        return try {
+            val dailyQuestions = DailyStudyManager.getInstance(context).getQuizQuestions(count)
+            if (dailyQuestions.isNotEmpty()) {
+                dailyQuestions
+            } else {
+                fallbackRandom(count)
+            }
+        } catch (e: Exception) {
+            fallbackRandom(count)
+        }
+    }
+
+    private fun fallbackRandom(count: Int): List<Question> {
         val all = getAllQuestions()
         if (all.isEmpty()) return emptyList()
         val shuffled = all.shuffled()
@@ -96,6 +148,13 @@ class QuestionRepository private constructor(private val context: Context) {
 
     fun deleteQuestion(id: Long) {
         questionsList.removeAll { it.id == id }
+        englishQuestions.removeAll { it.id == id }
+        staticGkQuestions.removeAll { it.id == id }
+        historyQuestions.removeAll { it.id == id }
+        geographyQuestions.removeAll { it.id == id }
+        biologyQuestions.removeAll { it.id == id }
+        polityQuestions.removeAll { it.id == id }
+        economicsQuestions.removeAll { it.id == id }
         saveQuestions()
     }
 

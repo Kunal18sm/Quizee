@@ -217,7 +217,10 @@ class QuizLockActivity : AppCompatActivity() {
 
         triggerHapticFeedback()
 
-        if (selectedIndex == correctIndex) {
+        val isCorrect = selectedIndex == correctIndex
+        com.quizlock.app.data.DailyStudyManager.getInstance(this).recordAnswer(q.id, isCorrect)
+
+        if (isCorrect) {
             // Correct answer selected -> turns GREEN
             score++
             binding.tvScoreBadge.text = "Score: $score"

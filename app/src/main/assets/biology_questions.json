@@ -1,0 +1,3806 @@
+[
+  {
+    "question": "Bos mutus is the scientific name for: बोस ूटस िकसका वैािनक नाम है ?",
+    "options": [
+      "Wild Yak/ जंगली याक",
+      "Horse/ घोड़ा",
+      "Ox/ बैल",
+      "Buffalo/ भस"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5662
+  },
+  {
+    "question": "Which is the smallest bone in the human body? मानव शरीर की सबसे छोटी ही कौन सी है ?",
+    "options": [
+      "Incus/ थूणक",
+      "Stapes/ ेपीज",
+      "Malleus/ मैलेउस",
+      "Metatarsal/ पिदकीय"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5663
+  },
+  {
+    "question": "’Canis lupus’ is commonly known as___. ‘",
+    "options": [
+      "Cow",
+      "Goat",
+      "Gray wolf",
+      "Hen"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5664
+  },
+  {
+    "question": "’Capra aegagrus hircus’ is commonly known as_____. ‘",
+    "options": [
+      "Cow",
+      "Goat",
+      "Hen",
+      "Dog"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5665
+  },
+  {
+    "question": "‘Megaptera novaeangliae’ is commonly known as_____. ‘",
+    "options": [
+      "African wild cat",
+      "Bumblebee",
+      "Tree frog",
+      "Humpback whale"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5666
+  },
+  {
+    "question": "Malus pumila is the botanical name of the _____tree",
+    "options": [
+      "Banana",
+      "Apple",
+      "Orange",
+      "Watermelon"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5667
+  },
+  {
+    "question": "Citrullus lanatus is the botanical name for______",
+    "options": [
+      "Apple",
+      "Watermelon",
+      "Orange",
+      "Banana"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5668
+  },
+  {
+    "question": "Bos mutus is the scientific name for:",
+    "options": [
+      "Wild Yak",
+      "Horse",
+      "Ox",
+      "Buffalo"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5669
+  },
+  {
+    "question": "What is the scientific name of peacock ?",
+    "options": [
+      "Psittacula Eupartia",
+      "Pavo Cristatus",
+      "Eudynamys scolopaceus",
+      "Molpastes Cafer"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5670
+  },
+  {
+    "question": "The Lion Tailed Macaque is also called _______",
+    "options": [
+      "Silver Baboon",
+      "Beard Baboon",
+      "Black Baboon",
+      "Houler Baboon"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5671
+  },
+  {
+    "question": "Cobalamin is the scientific name of Vitamin _____",
+    "options": [
+      "B1",
+      "C",
+      "B12",
+      "E"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5672
+  },
+  {
+    "question": "_______ are commonly known as comb jellies./ ______",
+    "options": [
+      "Platyhelminthes",
+      "Arthropoda",
+      "Ctenophora",
+      "Mollusca"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5673
+  },
+  {
+    "question": "Which of the following has the highest protein content per gram?",
+    "options": [
+      "Apple",
+      "Soyabean",
+      "Wheat",
+      "Groundnut"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5674
+  },
+  {
+    "question": "The National Institute of Nutrition is located in :",
+    "options": [
+      "Shillong",
+      "Indore",
+      "Mumbai",
+      "Hyderabad"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5675
+  },
+  {
+    "question": "Deficiency of which of the following nutrients is the most common cause of goiters?",
+    "options": [
+      "Iron",
+      "VitamiC",
+      "Calcium",
+      "Iodine"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5676
+  },
+  {
+    "question": "Which of the following is a fat-soluble vitamin that plays a role in www.ssccglpinnacle.com support@ssccglpinnacle.com Ph. 09729327755, 09817390373 433 http://t.me/yoursmahboob_classes BIOLOGY blood clotting, bone metabolism and regulating blood calcium levels",
+    "options": [
+      "Vitamin C",
+      "Vitamin B",
+      "Vitamin K",
+      "Vitamin A"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5677
+  },
+  {
+    "question": "There are three types of heterotrophs. Which of the following is NOT one of them?",
+    "options": [
+      "Consumers",
+      "Carnivores",
+      "Omnivores",
+      "Herbivores"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5678
+  },
+  {
+    "question": "Which vitamin is prepared by our body in the presence of sunlight?",
+    "options": [
+      "Vitamin A",
+      "Vitamin C",
+      "Vitamin D",
+      "Vitamin B"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5679
+  },
+  {
+    "question": "Human body creates Vitamin____from sunlight",
+    "options": [
+      "D",
+      "B",
+      "C",
+      "A"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5680
+  },
+  {
+    "question": "Which of the following is richest in Vitamin C?",
+    "options": [
+      "Soya Milk",
+      "Apple",
+      "Amla",
+      "Carrot"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5681
+  },
+  {
+    "question": "For the autotrophic form of nutrition, _____ is necessary",
+    "options": [
+      "Chlorophyll and oxygen",
+      "Methane",
+      "Carbon monoxide and water",
+      "Carbon dioxide, water, chlorophyll and sunlight"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5682
+  },
+  {
+    "question": "Which of the following vitamin is related to Osteoporosis?",
+    "options": [
+      "Vitamin B",
+      "Vitamin A",
+      "Vitamin C",
+      "Vitamin D"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5683
+  },
+  {
+    "question": "In which of the following type of organism autotrophic nutrition is found?",
+    "options": [
+      "Fungi",
+      "Virus",
+      "Protozoa",
+      "Bacteria"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5684
+  },
+  {
+    "question": "The commonly used Vitamin B Complex is constituted of how many vitamins ?",
+    "options": [
+      "8",
+      "12",
+      "10",
+      "6"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5685
+  },
+  {
+    "question": "What percent of energy is transmitted from one trophic level to another in a food chain?",
+    "options": [
+      "0.2",
+      "0.1",
+      "0.15",
+      "0.05"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5686
+  },
+  {
+    "question": "Which of the following nutrients stores maximum energy per gram?",
+    "options": [
+      "Vitamins",
+      "Proteins",
+      "Fat",
+      "Roughage"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5687
+  },
+  {
+    "question": "Select the water soluble vitamin among the following?",
+    "options": [
+      "Vitamin K",
+      "Vitamin D",
+      "Vitamin C",
+      "Vitamin A"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5688
+  },
+  {
+    "question": "Vitamin B Complex consists of how many vitamins?",
+    "options": [
+      "5",
+      "8",
+      "6",
+      "7"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5689
+  },
+  {
+    "question": "Which of the following is a water soluble vitamin?",
+    "options": [
+      "Vitamin C",
+      "Vitamin D",
+      "Vitamin A",
+      "Vitamin K"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5690
+  },
+  {
+    "question": "Proteins are assembled from how many amino acids?",
+    "options": [
+      "10",
+      "5",
+      "20",
+      "15"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5691
+  },
+  {
+    "question": "During photosynthesis, green plants use energy from sunlight to synthesize ____________ with carbon dioxide and water",
+    "options": [
+      "Sucrose",
+      "Glucose",
+      "galactose",
+      "fructose"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5692
+  },
+  {
+    "question": "Name the tissue that transport food to various parts of a plant",
+    "options": [
+      "Parenchyma",
+      "Xylem",
+      "Phloem",
+      "Sclerenchyma"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5693
+  },
+  {
+    "question": "Photosynthesis process occurs in the presence of _____",
+    "options": [
+      "Sulphur",
+      "Chlorophyll and Sunlight",
+      "Nitrogen",
+      "Cadmium"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5694
+  },
+  {
+    "question": "In plants, Phloem is responsible for the transportation of ______",
+    "options": [
+      "Food",
+      "Carbon Dioxide",
+      "Water",
+      "Minerals"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5695
+  },
+  {
+    "question": "Which process helps in the absorption and upward movement of water and minerals from the roots to the leaves?",
+    "options": [
+      "Sedimentation",
+      "Condensation",
+      "Accumulation",
+      "Transpiration"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5696
+  },
+  {
+    "question": "Which plant tissue is responsible for transport of water and minerals from roots to the leaves?",
+    "options": [
+      "Phloem",
+      "Xylem",
+      "Stomata",
+      "Pith"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5697
+  },
+  {
+    "question": "Which of these is the energy conversion that happens in the process called photosynthesis?",
+    "options": [
+      "Potential Energy to Chemical Energy",
+      "Light Energy to Chemical Energy",
+      "Heat Energy to Chemical Energy",
+      "Heat Energy to Light Energy"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5698
+  },
+  {
+    "question": "Which part of a plant cell traps sunlight to make sugar?",
+    "options": [
+      "Chloroplast",
+      "Starch grain",
+      "Chromoplast",
+      "Leucoplast"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5699
+  },
+  {
+    "question": "Autotrophic organisms’ carbon and energy related needs are fulfilled by ______ process",
+    "options": [
+      "Photoautotrophs",
+      "Photosynthesis",
+      "Hibernation",
+      "Bio Synthesis"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5700
+  },
+  {
+    "question": "How many molecules of ATP are obtained by the respiration of one molecule of glucose?",
+    "options": [
+      "4",
+      "2",
+      "38",
+      "36"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5701
+  },
+  {
+    "question": "Which of the following is a communicable disease?",
+    "options": [
+      "Measles",
+      "Scurvy",
+      "Asthma",
+      "Diabetes"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5702
+  },
+  {
+    "question": "During photosynthesis, green plants use energy from sunlight to synthesize ____________ with carbon dioxide and water",
+    "options": [
+      "Sucrose",
+      "Glucose",
+      "galactose",
+      "fructose"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5703
+  },
+  {
+    "question": "Which of the following is NOT a symptom of Wilson's disease?",
+    "options": [
+      "Problems with speech, swallowing or physical coordination",
+      "Uncontrolled movements or muscle stiffness",
+      "Fluid build-up in the legs or abdomen",
+      "Night blindness"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5704
+  },
+  {
+    "question": "A deficiency of ____________ is a disease of rickets. _____________",
+    "options": [
+      "Vitamin C",
+      "Vitamin A",
+      "Vitamin B",
+      "Vitamin D"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5705
+  },
+  {
+    "question": "The deficiency of which nutrient causes night blindness?",
+    "options": [
+      "Vitamin K",
+      "Vitamin C",
+      "Proteins",
+      "Vitamin A"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5706
+  },
+  {
+    "question": "Night blindness is caused by the deficiency of vitamin _____",
+    "options": [
+      "K",
+      "A",
+      "C",
+      "B12"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5707
+  },
+  {
+    "question": "Which of the following is NOT a water borne disease?",
+    "options": [
+      "Typhoid",
+      "Mumps",
+      "Hepatitis",
+      "Cholera"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5708
+  },
+  {
+    "question": "Which of the following is NOT a water borne disease?",
+    "options": [
+      "Typhoid",
+      "Mumps",
+      "Hepatitis",
+      "Cholera"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5709
+  },
+  {
+    "question": "The Bacille Calmette-Guerin vaccine(popularly called BCG vaccine) is a vaccine to prevent which of these diseases?",
+    "options": [
+      "Jaundice",
+      "Typhoid",
+      "Tuberculosis",
+      "Polio"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5710
+  },
+  {
+    "question": "Which part of the human body gets affected by the illness osteoporosis?",
+    "options": [
+      "Bones",
+      "Lungs",
+      "Brain",
+      "Kidney"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5711
+  },
+  {
+    "question": "Which one of the following is an X-linked, recessive disorder caused by the deficiency of functional plasma clotting factor VIII(FVIII), which may be inherited or arise from spontaneous mutation?",
+    "options": [
+      "Multiple Myeloma",
+      "Leukemia",
+      "Venous Thrombosis",
+      "Haemophilia A"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5712
+  },
+  {
+    "question": "Hypokalaemia is caused by the deficiency of ________",
+    "options": [
+      "Iodine",
+      "Potassium",
+      "Iron",
+      "Calcium"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5713
+  },
+  {
+    "question": "Identify the disease caused by the deficiency of Vitamin B1",
+    "options": [
+      "Ariboflavinosis",
+      "Beriberi",
+      "Rickets",
+      "Glossitis"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5714
+  },
+  {
+    "question": "__________ is an inherited blood disorder due to which people suffering from this condition are unable to make haemoglobin. _______",
+    "options": [
+      "Bone Marrow failure",
+      "Thalassemia",
+      "Stroke",
+      "Thrombosis"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5715
+  },
+  {
+    "question": "Which of the following is the vector of Malaria?",
+    "options": [
+      "Aedes Mosquito",
+      "Anopheles Mosquito",
+      "Sand Fly",
+      "Fleas"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5716
+  },
+  {
+    "question": "Poor vision in humans can be due to the deficiency of ______",
+    "options": [
+      "Iron",
+      "Vitamin A",
+      "Iodine",
+      "Vitamin D"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5717
+  },
+  {
+    "question": "_______is a commonly used medicine that can help treat pain and reduce high body temperature. _______",
+    "options": [
+      "Dextromethorphan",
+      "Bismuth",
+      "Paracetamol",
+      "Guaifenesin"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5718
+  },
+  {
+    "question": "Diabetes is a condition in which the level of _____in an individual’s blood becomes too high",
+    "options": [
+      "sucrose",
+      "glucose",
+      "galactose",
+      "maltose"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5719
+  },
+  {
+    "question": "Nyctophobia is the fear of:",
+    "options": [
+      "Birds",
+      "Darkness",
+      "Animals",
+      "Light"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5720
+  },
+  {
+    "question": "Beri Beri is caused due to lack of ____",
+    "options": [
+      "vitamin B3",
+      "vitamin B6",
+      "vitamin B1",
+      "vitamin B12"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5721
+  },
+  {
+    "question": "Which of the following diseases is caused by a virus?",
+    "options": [
+      "Tetanus",
+      "Leprosy",
+      "Rubella",
+      "Malaria"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5722
+  },
+  {
+    "question": "Which of the following diseases is caused by severe deficiency of proteins?",
+    "options": [
+      "Kwashiorkor",
+      "Anaemia",
+      "Osteoporosis",
+      "Goiter"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5723
+  },
+  {
+    "question": "Hepatitis is caused by _____",
+    "options": [
+      "Parasite",
+      "Bacteria",
+      "Virus",
+      "Fungi"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5724
+  },
+  {
+    "question": "Which of the following is a Communicable disease?",
+    "options": [
+      "Measles",
+      "Asthma",
+      "Diabetes",
+      "Alzheimer"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5725
+  },
+  {
+    "question": "Rotavirus vaccine is used to prevent which disease?",
+    "options": [
+      "Polio",
+      "Diarrhoea",
+      "AIDS",
+      "Hepatitis"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5726
+  },
+  {
+    "question": "Which of the following diseases is caused by a virus?",
+    "options": [
+      "Ringworm",
+      "Cholera",
+      "Measles",
+      "Typhoid"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5727
+  },
+  {
+    "question": "Goitre is caused due to lack of which hormone in the body ?",
+    "options": [
+      "Thyroxine",
+      "Adrenaline",
+      "Testosterone",
+      "Estrogen"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5728
+  },
+  {
+    "question": "In humans, the deficiency of which vitamin leads to the disease Berry Berry ?",
+    "options": [
+      "Vitamin D",
+      "Vitamin A",
+      "Vitamin C",
+      "Vitamin B1"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5729
+  },
+  {
+    "question": "Which of the following is not a communicable disease ?",
+    "options": [
+      "Diabetes",
+      "TB",
+      "Chicken Pox",
+      "Cholera"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5730
+  },
+  {
+    "question": "Anthrax is caused by :",
+    "options": [
+      "Virus",
+      "Bacteria",
+      "Fungus",
+      "Protozoa"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5731
+  },
+  {
+    "question": "Kala Azar is caused by which organism ?",
+    "options": [
+      "Escherichia coli",
+      "Azobacter",
+      "Clostridium",
+      "Leishmania"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5732
+  },
+  {
+    "question": "Typhoid and T.B are which kind of diseases ?",
+    "options": [
+      "Bacterial",
+      "Virus caused",
+      "Protozoa",
+      "Fungal"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5733
+  },
+  {
+    "question": "Which of the following is not a water-born disease ?",
+    "options": [
+      "Hepatitis A",
+      "Measles",
+      "Typhoid",
+      "Cholera"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5734
+  },
+  {
+    "question": "The deficiency of which of the following leads to the Pellagra disease ?",
+    "options": [
+      "Vitamin B5",
+      "Vitamin B2",
+      "Riboflavin",
+      "Niacin"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5735
+  },
+  {
+    "question": "Which mosquito carries the parasite of malaria ?",
+    "options": [
+      "Female Anopheles",
+      "Male Anopheles",
+      "Male Aedes Egypti",
+      "Female Aedes Egypti"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5736
+  },
+  {
+    "question": "What is the mode of transmission of disease ‘Yellow vein mosaic of bhindi (okra)’?",
+    "options": [
+      "Insect",
+      "Seeds",
+      "Water",
+      "Air"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5737
+  },
+  {
+    "question": "Which of the following diseases has been eradicated worldwide ?",
+    "options": [
+      "dracunculiasis",
+      "chicken Pox",
+      "Plague",
+      "Smallpox"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5738
+  },
+  {
+    "question": "The name of which disease among the following means 'evil inﬂuence of the stars'?",
+    "options": [
+      "Cholera",
+      "Plague",
+      "Inﬂuenza",
+      "Typhoid"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5739
+  },
+  {
+    "question": "Which one of the following diseases is caused mainly by the deﬁciency of Vitamin C?",
+    "options": [
+      "Goitre",
+      "Rickets",
+      "Scurvy",
+      "Kwashiorkor"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5740
+  },
+  {
+    "question": "Xerophthalmia is caused due to the deficiency of vitamin ______",
+    "options": [
+      "C",
+      "K",
+      "D",
+      "A"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5741
+  },
+  {
+    "question": "Pernicious anaemia is caused by the deficiency of vitamin ______",
+    "options": [
+      "B1",
+      "B2",
+      "B6",
+      "B12"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5742
+  },
+  {
+    "question": "Which of the following diseases is NOT tr Sol. mitted from one person to another?",
+    "options": [
+      "Cirrhosis",
+      "Hepatitis B",
+      "AIDS",
+      "Syphilis"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5743
+  },
+  {
+    "question": "which of the following can be diagnosed with the Widal test?",
+    "options": [
+      "Typhoid fever",
+      "Tuberculosis",
+      "Cancer",
+      "AIDS"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5744
+  },
+  {
+    "question": "Which of the following is caused by a virus named 'Varicella Zoster'?",
+    "options": [
+      "Chickenpox",
+      "Polio",
+      "Cholera",
+      "Rabies"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5745
+  },
+  {
+    "question": "Deficiency of which of the following vitamins causes Night Blindness?",
+    "options": [
+      "Vitamin C",
+      "Vitamin A",
+      "Vitamin D",
+      "Vitamin B"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5746
+  },
+  {
+    "question": "Haemophobia is the fear of:",
+    "options": [
+      "darkness",
+      "heights",
+      "water",
+      "blood"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5747
+  },
+  {
+    "question": "Which causative microorganism is responsible for the common cold and influenza (flu)?",
+    "options": [
+      "Viruses",
+      "Protozoa",
+      "Fungi",
+      "Bacteria"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5748
+  },
+  {
+    "question": "What disease is caused by insulin deficiency?",
+    "options": [
+      "Multiple Sclerosis",
+      "Diabetes mellitus",
+      "Scleroderma",
+      "Rheumatoid arthritis (RA)"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5749
+  },
+  {
+    "question": "Which of the following eye disorders is known as ‘lazy eye’? /",
+    "options": [
+      "Myopia",
+      "Presbyopia",
+      "Hypermetropia",
+      "Amblyopia"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5750
+  },
+  {
+    "question": "Deficiency of thiamine results in ______",
+    "options": [
+      "Rickets",
+      "Pellagra",
+      "Beriberi",
+      "Scurvy"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5751
+  },
+  {
+    "question": "'Leukopenia' is an abnormal ______",
+    "options": [
+      "increase in red blood cells",
+      "decrease in white blood cells",
+      "decrease in red blood cells",
+      "increase in white blood cells"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5752
+  },
+  {
+    "question": "Depression is a ______ disorder",
+    "options": [
+      "mood",
+      "dissociative",
+      "schizophrenic",
+      "somatoform"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5753
+  },
+  {
+    "question": "Which of the following viruses is responsible for causing influenza?",
+    "options": [
+      "Varicella virus",
+      "Rubeola virus",
+      "Myxovirus",
+      "Poliovirus"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5754
+  },
+  {
+    "question": "Which of the following viruses is responsible for causing influenza?",
+    "options": [
+      "Varicella virus",
+      "Rubeola virus",
+      "Myxovirus",
+      "Poliovirus"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5755
+  },
+  {
+    "question": "Conjunctivitis is an infection primarily related to ______",
+    "options": [
+      "Knee",
+      "Heart",
+      "Eye",
+      "Stomach"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5756
+  },
+  {
+    "question": "Polio is caused by which of the following organisms?",
+    "options": [
+      "Fungi",
+      "Bacteria",
+      "Protozoa",
+      "Virus"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5757
+  },
+  {
+    "question": "Leukaemia is a cancer of the:",
+    "options": [
+      "skin",
+      "blood",
+      "lungs",
+      "uterus"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5758
+  },
+  {
+    "question": "Tumours that normally remain confined to their original location and do not spread to other parts of the body and cause little damage are called ______ tumours",
+    "options": [
+      "premalignant",
+      "benign",
+      "active",
+      "malignant"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5759
+  },
+  {
+    "question": "Which of the following is the third stage in the metamorphosis of a butterfly?",
+    "options": [
+      "Egg",
+      "Pupa",
+      "Adult",
+      "Larva"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5760
+  },
+  {
+    "question": "Which of the creatures is oviparous?",
+    "options": [
+      "Frog",
+      "Rabbit",
+      "Mouse",
+      "Squirrel"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5761
+  },
+  {
+    "question": "In humans, fertilisation usually takes place in the ______",
+    "options": [
+      "Ovary",
+      "Vagina",
+      "Fallopian tube",
+      "Uterus"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5762
+  },
+  {
+    "question": "Reproduction in Humans occurs through which type of fertilisation ?",
+    "options": [
+      "Internal Fertilisation",
+      "In Vitro Fertilisation",
+      "External Fertilization",
+      "Ex Vitro Fertilization"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5763
+  },
+  {
+    "question": "During fertilisation in living beings, fusion of male and female gametes takes place to form a cell called :",
+    "options": [
+      "Ovum",
+      "Sperm",
+      "Embryo",
+      "Zygote"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5764
+  },
+  {
+    "question": "Which of the following is the primary sex organ in females?",
+    "options": [
+      "Fallopian tube",
+      "Ovary",
+      "Uterus",
+      "Vagina"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5765
+  },
+  {
+    "question": "The phenomenon whereby the female gamete undergoes development to form new organisms without fertilisation in some organisms like honey bees, some lizards and birds is called:",
+    "options": [
+      "Budding",
+      "Fragmentation",
+      "Apomixis",
+      "Parthenogenesis"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5766
+  },
+  {
+    "question": "Which of the following gases reduces the oxygen carrying capacity of the blood? www.ssccglpinnacle.com support@ssccglpinnacle.com Ph. 09729327755, 09817390373 446 http://t.me/yoursmahboob_classes BIOLOGY",
+    "options": [
+      "Nitric oxide",
+      "Carbon dioxide",
+      "Carbon Monoxide",
+      "Nitrous oxide"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5767
+  },
+  {
+    "question": "In which part of the female flower does fertilisation take place?",
+    "options": [
+      "Ovary",
+      "Stigma",
+      "Filament",
+      "Style"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5768
+  },
+  {
+    "question": "Which of the following are flowerless plants that produce cones and seeds in which seeds are not encased within an ovary?",
+    "options": [
+      "Gymnosperms",
+      "Angiosperms",
+      "Bryophytes",
+      "Hydrophytes"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5769
+  },
+  {
+    "question": "Which of the following are flowerless plants that produce cones and seeds in which seeds are not encased within an ovary?",
+    "options": [
+      "Gymnosperms",
+      "Angiosperms",
+      "Bryophytes",
+      "Hydrophytes"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5770
+  },
+  {
+    "question": "Which type of reproduction occurs in hydra?",
+    "options": [
+      "Fragmentation",
+      "Budding",
+      "Binary Fission",
+      "Spore Formation"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5771
+  },
+  {
+    "question": "Which among the following is the male part of a flower ?",
+    "options": [
+      "Stigma",
+      "Stamen",
+      "Pistil",
+      "Style"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5772
+  },
+  {
+    "question": "What is the term used for pollination by wind?",
+    "options": [
+      "Endophily",
+      "Siciophily",
+      "Anemophily",
+      "Angioplasty"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5773
+  },
+  {
+    "question": "The development of a fruit without fertilization is called______?",
+    "options": [
+      "Gametogamy",
+      "Parthenocarpy",
+      "Hybridogenesis",
+      "Apomixis"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5774
+  },
+  {
+    "question": "What is the yellow dust present in the middle of a flower called?",
+    "options": [
+      "Stomata",
+      "Pollen",
+      "Sperm",
+      "Zygote"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5775
+  },
+  {
+    "question": "DNA is stored majorly in ___ of the cell",
+    "options": [
+      "golgi body",
+      "cytoplasm",
+      "plasma membrane",
+      "nucleus"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5776
+  },
+  {
+    "question": "The term ‘Mitochondria’ was coined by:",
+    "options": [
+      "J E Salk",
+      "Carl Benda",
+      "Charles Laveran",
+      "Antonie van Leeuwenhoek"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5777
+  },
+  {
+    "question": "_____are called suicidal bags of the cell. _______",
+    "options": [
+      "Golgi Apparatus",
+      "Lysosomes",
+      "Ribosomes",
+      "Mitochondria"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5778
+  },
+  {
+    "question": "Which of the following cell organelles is known as a suicidal bag?/",
+    "options": [
+      "Golgi Apparatus",
+      "Mitochondria",
+      "Lysosome",
+      "Endoplasmic reticulum"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5779
+  },
+  {
+    "question": "Which of the following cell organelle contains DNA apart from nucleus?",
+    "options": [
+      "Cytoplasm",
+      "Golgi Apparatus",
+      "Mitochondria",
+      "Ribosome"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5780
+  },
+  {
+    "question": "Which of the following is NOT a feature of Eukaryotic cells?",
+    "options": [
+      "Nucleus well organized",
+      "Mitochondria present",
+      "Chloroplast absent in plant cells",
+      "Nuclear membrane present"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5781
+  },
+  {
+    "question": "Which cell organelle helps in keeping the cell clean by digesting any external matter and bad cell organelles?",
+    "options": [
+      "Golgi Apparatus",
+      "Mitochondria",
+      "Plastits",
+      "Lysosome"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5782
+  },
+  {
+    "question": "Which cell organelle has its own DNA and Ribosomes ?",
+    "options": [
+      "Leukoplast",
+      "Chromoplast",
+      "Cell Vacuole",
+      "Mitochondria"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5783
+  },
+  {
+    "question": "Which protein protects the epithelial cells from damage?",
+    "options": [
+      "Collagen",
+      "Elastin",
+      "Actin",
+      "Keratin"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5784
+  },
+  {
+    "question": "The entire content of a living cell is known as ______ which includes the cytoplasm and the nucleus",
+    "options": [
+      "mitochondria",
+      "lysosomes",
+      "protoplasm",
+      "cell membrane"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5785
+  },
+  {
+    "question": "In normal cells, the process of the flow of genetic information from DNA to RNA is called:",
+    "options": [
+      "transportation",
+      "transcription",
+      "translocation",
+      "translation"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5786
+  },
+  {
+    "question": "____is known as the suicide bag of the cell ? ____",
+    "options": [
+      "Lysosome",
+      "Cellulose",
+      "Lignin",
+      "Protoplasm"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5787
+  },
+  {
+    "question": "The scentific study of a cell is called:",
+    "options": [
+      "cytology",
+      "histology",
+      "physiology",
+      "taxonomy"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5788
+  },
+  {
+    "question": "______are called the 'Powerhouses' of the cell. ______",
+    "options": [
+      "Lungs",
+      "Mitochondria",
+      "Pituitary glands",
+      "Arteries"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5789
+  },
+  {
+    "question": "Which of the following cell organelles is responsible for the storage, modification and packaging of products in vesicles?",
+    "options": [
+      "Mitochondria",
+      "Plastids",
+      "Golgi apparatus",
+      "Endoplasmic reticulum"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5790
+  },
+  {
+    "question": "Where is Rhodopsin , also called visual purple , located in the human body?",
+    "options": [
+      "Hair",
+      "Hand",
+      "Nail",
+      "Eye"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5791
+  },
+  {
+    "question": "Which of the following instruments is used for visual examination of eardrum?",
+    "options": [
+      "Phonograph",
+      "Polygraph",
+      "Otoscope",
+      "Optometer"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5792
+  },
+  {
+    "question": "The pigment that gives human skin, hair and eyes their colour is called:",
+    "options": [
+      "phthalocyanine",
+      "melanin",
+      "quinacridone",
+      "alizarin"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5793
+  },
+  {
+    "question": "Tears in the eyes are produced by which of the following glands?",
+    "options": [
+      "Lacrimal gland",
+      "Thyroid gland",
+      "Pituitary gland",
+      "Hypothalamus gland"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5794
+  },
+  {
+    "question": "Olfactory receptors are located in our:",
+    "options": [
+      "Nose",
+      "Tongue",
+      "Ears",
+      "Eyes"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5795
+  },
+  {
+    "question": "Skin is which of the following types of membrane ?",
+    "options": [
+      "Serous membrane",
+      "Cutaneous membrane",
+      "Synovial membrane",
+      "Mucous membrane"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5796
+  },
+  {
+    "question": "Which part of Human ear collects sound from its surrounding?",
+    "options": [
+      "Pinna",
+      "Anvil",
+      "Cochlea",
+      "Hammer"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5797
+  },
+  {
+    "question": "Which muscles in the skin contract to make the hairs on our skin stand up straight (goosebumps) when we are cold or frightened?",
+    "options": [
+      "Elastin",
+      "Epidermis",
+      "Collagen",
+      "Arrector pili"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5798
+  },
+  {
+    "question": "The function of the retina is to:",
+    "options": [
+      "close the eyes through the eyelids to prevent damage to the lens from excessive light",
+      "process the information gathered by photoreceptor cells and send it to the brain to decide what the picture is",
+      "lubricate the eye by releasing tears in a controlled way",
+      "adjust the focus of the lens for formation of a clear image"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5799
+  },
+  {
+    "question": "The____helps in equalising the pressure on either sides of the eardrum",
+    "options": [
+      "cochlear nerve",
+      "malleus",
+      "incus",
+      "eustachian tube"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5800
+  },
+  {
+    "question": "Which cells in our body are popularly called \"soldiers of the human body\"?",
+    "options": [
+      "Eosinophils",
+      "White blood cells",
+      "Red blood cells",
+      "Basophils"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5801
+  },
+  {
+    "question": "Which of the following gases reduces the oxygen carrying capacity of the blood?",
+    "options": [
+      "Nitric oxide",
+      "Carbon dioxide",
+      "Carbon Monoxide",
+      "Nitrous oxide"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5802
+  },
+  {
+    "question": "Which of the following is NOT a valve of the Heart?",
+    "options": [
+      "Mitral",
+      "Aortic",
+      "Tricuspid",
+      "Septum"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5803
+  },
+  {
+    "question": "The right pulmonary artery is_____",
+    "options": [
+      "longer than the left",
+      "wider than the left",
+      "shorter than the left",
+      "of the same size as the left"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5804
+  },
+  {
+    "question": "Which of the following is the universal recipient blood group?",
+    "options": [
+      "O",
+      "B",
+      "A",
+      "AB"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5805
+  },
+  {
+    "question": "The process of blood clotting is called_____",
+    "options": [
+      "coagulation",
+      "thrombocytopenia",
+      "haemophilia",
+      "homophobia"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5806
+  },
+  {
+    "question": "Which component of blood fights against the germs entering into human body ?",
+    "options": [
+      "Haemoglobin",
+      "Red Blood Cells",
+      "Platelets",
+      "White Blood Cells"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5807
+  },
+  {
+    "question": "Which reptile have four-chambered heart?",
+    "options": [
+      "Tortoise",
+      "King Cobra",
+      "Chameleon",
+      "Crocodile"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5808
+  },
+  {
+    "question": "Which of the following has a two-chambered heart?",
+    "options": [
+      "Human beings",
+      "Sparrows",
+      "Monkey",
+      "Fishes"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5809
+  },
+  {
+    "question": "Which chamber of human heart gets oxygen rich blood from the lungs ?",
+    "options": [
+      "Left Ventricle",
+      "Left Atrium",
+      "Right Ventricle",
+      "Right Atrium"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5810
+  },
+  {
+    "question": "______ carries oxygenated blood from the lungs to the heart",
+    "options": [
+      "Aorta",
+      "Renal artery",
+      "Pulmonary vein",
+      "Vena Cava"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5811
+  },
+  {
+    "question": "The blood vessels that carry blood from the heart to the various parts of the body are called:",
+    "options": [
+      "arteries",
+      "veins",
+      "septum",
+      "capillaries"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5812
+  },
+  {
+    "question": "Blood clot is formed because of the presence of certain cells presence in blood called :",
+    "options": [
+      "lymphocytes",
+      "erythrocytes",
+      "chondrocytes",
+      "platelets"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5813
+  },
+  {
+    "question": "Which part of the body is responsible for the red blood cells? /",
+    "options": [
+      "Lungs",
+      "Heart",
+      "Brain",
+      "Bone Marrow"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5814
+  },
+  {
+    "question": "Who performs the task of capturing oxygen in the blood?",
+    "options": [
+      "Red blood cells",
+      "Chlorophyll",
+      "White blood cells",
+      "Haemoglobin"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5815
+  },
+  {
+    "question": "Which of the following blood groups is called the ‘Universal Receiver’?",
+    "options": [
+      "AB+",
+      "O+",
+      "A+",
+      "O–"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5816
+  },
+  {
+    "question": "Which of the following carries blood from the heart to the kidneys?",
+    "options": [
+      "Renal vein",
+      "Coronary artery",
+      "Vena cava",
+      "Renal artery"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5817
+  },
+  {
+    "question": "The sino-artrialnode is located in the ______",
+    "options": [
+      "bladder",
+      "heart",
+      "brain",
+      "stomach"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5818
+  },
+  {
+    "question": "Crocodiles have ______ heart chambers",
+    "options": [
+      "three",
+      "four",
+      "five",
+      "two"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5819
+  },
+  {
+    "question": "A healthy individual has 12-16 grams of haemoglobin in every ______ ml of blood",
+    "options": [
+      "100",
+      "1000",
+      "10000",
+      "100000"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5820
+  },
+  {
+    "question": "Which organ is responsible to remove the Nitrogenous waste from the human body ?",
+    "options": [
+      "Liver",
+      "Kidneys",
+      "Lungs",
+      "Pancreas"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5821
+  },
+  {
+    "question": "Gloremulus and Bowman’s capsule are parts of which organ of the body ?",
+    "options": [
+      "Heart",
+      "Kidneys",
+      "Lungs",
+      "Liver"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5822
+  },
+  {
+    "question": "Dialysis is advised to the patient in case of which human organ is damaged or not functioning properly?",
+    "options": [
+      "Kidneys",
+      "Liver",
+      "Stomach",
+      "Heart"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5823
+  },
+  {
+    "question": "Identify the organ which is located on both sides in the human body",
+    "options": [
+      "Spleen",
+      "Liver",
+      "Kidney",
+      "Bladder"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5824
+  },
+  {
+    "question": "Sweating or perspiration is nature’s way of______",
+    "options": [
+      "releasing excess salt from the body",
+      "warding off harmful insects through the bad odour of the sweat",
+      "releasing excess water from the body",
+      "lowering the internal temperature of the body"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5825
+  },
+  {
+    "question": "Which of these is an excretory organ of the human body?",
+    "options": [
+      "Heart",
+      "Skin",
+      "Brain",
+      "Muscles"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5826
+  },
+  {
+    "question": "Name the gland that controls the functioning of other endocrine glands",
+    "options": [
+      "Pancreas",
+      "Pituitary gland",
+      "Pineal gland",
+      "Adrenal gland"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5827
+  },
+  {
+    "question": "What is the primary function of eccrine glands ?",
+    "options": [
+      "to produce sweat",
+      "to produce color of the skin",
+      "to produce body hair",
+      "to produce growth hormones"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5828
+  },
+  {
+    "question": "How many parathyroid glands are present on the back side of the thyroid gland in humans?",
+    "options": [
+      "Six",
+      "Three",
+      "Five",
+      "Four"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5829
+  },
+  {
+    "question": "The upper part of the respiratory tract is provided with small hair-like structures called ______",
+    "options": [
+      "Bronchi",
+      "Cilia",
+      "Villi",
+      "Alveoli"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5830
+  },
+  {
+    "question": "Which part of the human respiratory system exchanges gases ?",
+    "options": [
+      "Bronchi",
+      "Trachea",
+      "Bronchioles",
+      "Alveoli"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5831
+  },
+  {
+    "question": "Exchange of gases occurs through which part of the plant tissue?",
+    "options": [
+      "Phloem",
+      "Stomata",
+      "Xylem",
+      "Midrid"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5832
+  },
+  {
+    "question": "Which of the following is known as the energy currency of the cell?",
+    "options": [
+      "Adenosine Diphosphate",
+      "Adenosine Triphosphate",
+      "Glycine Triphosphate",
+      "Adenosine Phosphate"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5833
+  },
+  {
+    "question": "Which of the following is present between the lungs?",
+    "options": [
+      "Thymus",
+      "Pituitary",
+      "Hypothalamus",
+      "Pineal"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5834
+  },
+  {
+    "question": "Which of the following parts of the human body releases carbon dioxide, brought in by the blood, from the rest of the body?",
+    "options": [
+      "Trachea",
+      "Alveoli",
+      "Larynx",
+      "Bronchi"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5835
+  },
+  {
+    "question": "How many ‘canine teeth’ does an adult human have?",
+    "options": [
+      "8",
+      "4",
+      "3",
+      "2"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5836
+  },
+  {
+    "question": "Bariatric surgery brings changes in a person's __________",
+    "options": [
+      "Heart",
+      "nasal passage",
+      "Lungs",
+      "Digestive System"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5837
+  },
+  {
+    "question": "Which of the following is a vestigial organ?",
+    "options": [
+      "Heart",
+      "Kidney",
+      "Lungs",
+      "Appendix"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5838
+  },
+  {
+    "question": "In which of the following organs of the human body are carbohydrates stored as glycogen?",
+    "options": [
+      "Stomach",
+      "Liver",
+      "Small intestine",
+      "Large intestine"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5839
+  },
+  {
+    "question": "Which of the below mentioned human organs can regrow after damage in adults?",
+    "options": [
+      "Kidney",
+      "Liver",
+      "Gallbladder",
+      "Lung"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5840
+  },
+  {
+    "question": "In which part of the alimentary canal, the complete digestion of fat takes place?",
+    "options": [
+      "Large intestine",
+      "Small intestine",
+      "Stomach",
+      "Mouth"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5841
+  },
+  {
+    "question": "Which is the longest part in the digestive system of the human body ?",
+    "options": [
+      "Pancreatic duct",
+      "Small intestine",
+      "Large intestine",
+      "Oesophagus"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5842
+  },
+  {
+    "question": "Digestion of food begins in which part of the alimentary canal in human beings?",
+    "options": [
+      "Stomach",
+      "Small intestine",
+      "Large intestine",
+      "Mouth"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5843
+  },
+  {
+    "question": "Which substance covers the root of the tooth?",
+    "options": [
+      "Cementum",
+      "Pulp",
+      "Dentin",
+      "Enamel"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5844
+  },
+  {
+    "question": "The pouch connected to the junction of small intestine and the large intestine is called:",
+    "options": [
+      "condyle",
+      "caecum",
+      "coccyx",
+      "axilla"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5845
+  },
+  {
+    "question": "In which of the following parts of the human digestive system is the digestion of food completed?",
+    "options": [
+      "Small Intestine",
+      "Large Intestine",
+      "Mouth",
+      "Stomach"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5846
+  },
+  {
+    "question": "Which among the following is the food tube?",
+    "options": [
+      "Larynx",
+      "Thymus",
+      "Oesophagus",
+      "Aorta"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5847
+  },
+  {
+    "question": "The inner walls of small intestine have thousands of finger-like outgrowths. These are called:",
+    "options": [
+      "Villi",
+      "Lumps",
+      "Benign",
+      "Myomas"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5848
+  },
+  {
+    "question": "Which of the following organs are NOT parts of the Alimentary canal?",
+    "options": [
+      "Colon and rectum",
+      "Buccal cavity and Oesophagus",
+      "Stomach and intestine",
+      "Liver and pancreas"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5849
+  },
+  {
+    "question": "Hydrochloric acid is secreted in which part of our digestive system?",
+    "options": [
+      "Mouth",
+      "Stomach",
+      "Liver",
+      "Small intestine"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5850
+  },
+  {
+    "question": "Which one of the following is a degenerative disorder of the brain and one of several conditions that cause dementia, a progressive decline of mental functions resulting in memory loss and confusion?",
+    "options": [
+      "Schizophrenia",
+      "Alzheimer’s disease",
+      "Amnesia",
+      "Concussion"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5851
+  },
+  {
+    "question": "The_____in the human body controls every activity that you perform",
+    "options": [
+      "respiratory system",
+      "nervous system",
+      "digestive system",
+      "reproductive system"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5852
+  },
+  {
+    "question": "The hypothalamus, a small region of the _______ plays a crucial role in many important functions of the human body",
+    "options": [
+      "Stomach",
+      "Liver",
+      "Kidney",
+      "Brain"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5853
+  },
+  {
+    "question": "Identify the largest muscle in the human body",
+    "options": [
+      "Sartorius",
+      "Iliopsoas",
+      "Gluteus Maximus",
+      "Latissimus Dorsi"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5854
+  },
+  {
+    "question": "Which part of the brain maintains posture and balance of the human body?",
+    "options": [
+      "Cerebrum",
+      "Pons",
+      "Cerebellum",
+      "Medulla"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5855
+  },
+  {
+    "question": "Hypothalamus is part of which organ of the Human body?",
+    "options": [
+      "Brain",
+      "Heart",
+      "Spinal Cord",
+      "Liver"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5856
+  },
+  {
+    "question": "Which organ is responsible for activity and the hand-eye coordination in the human body ?",
+    "options": [
+      "Liver",
+      "Kidneys",
+      "Brain",
+      "Heart"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5857
+  },
+  {
+    "question": "Dendrites and Axon are parts of which cell ?",
+    "options": [
+      "Neuron",
+      "Nephron",
+      "White blood cells",
+      "Red blood cells"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5858
+  },
+  {
+    "question": "Which of the following is NOT a part of the brain?",
+    "options": [
+      "Pinna",
+      "Medulla",
+      "Pons",
+      "Thalamus"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5859
+  },
+  {
+    "question": "Which of the following terms is associated with the anatomy of the human heart?",
+    "options": [
+      "Cerebellum",
+      "Medulla",
+      "Aorta",
+      "Cerebrum"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5860
+  },
+  {
+    "question": "Which part of the brain is instrumental in making it possible for a person to perform activity such as picking up a pencil from the floor?",
+    "options": [
+      "Hypothalamus",
+      "Cerebellum",
+      "Cerebrum",
+      "Cranium"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5861
+  },
+  {
+    "question": "Which is the largest bone in the human body?",
+    "options": [
+      "Femur",
+      "Incus",
+      "Malleus",
+      "Stapes"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5862
+  },
+  {
+    "question": "Which is the smallest bone in the human body?",
+    "options": [
+      "Incus",
+      "Stapes",
+      "Malleus",
+      "Metatarsal"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5863
+  },
+  {
+    "question": "Which of these bones is not a part of the human ear?",
+    "options": [
+      "Femur",
+      "Malleus",
+      "Stapes",
+      "Incus"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5864
+  },
+  {
+    "question": "Which of the following flowers is botanically known as Dianthus?",
+    "options": [
+      "Rose",
+      "Daffodil",
+      "Lily",
+      "Carnation"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5865
+  },
+  {
+    "question": "_____is the stigma of Crocus Sativus L",
+    "options": [
+      "Saffron",
+      "Turmeric",
+      "Artichoke",
+      "Ginger"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5866
+  },
+  {
+    "question": "Which of the following plants is Bryophyta ?",
+    "options": [
+      "Moss",
+      "Algae",
+      "Fern",
+      "Cycus"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5867
+  },
+  {
+    "question": "’Amoeba’ belongs to which of the following kingdom?",
+    "options": [
+      "Monera",
+      "Fungi",
+      "Protista",
+      "Animalia"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5868
+  },
+  {
+    "question": "What is Cryptogamae?",
+    "options": [
+      "Plants having covered seeds",
+      "Flowering plants",
+      "Non-flowering plants",
+      "Plants having uncovered seeds"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5869
+  },
+  {
+    "question": "Plants having no isolated structural form are called _______",
+    "options": [
+      "Gymnosperms",
+      "Bryophyta",
+      "Thallophyta",
+      "Fungus"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5870
+  },
+  {
+    "question": "Which of the following is not an example of Bryophyta ?",
+    "options": [
+      "Funaria",
+      "Martia",
+      "Chara",
+      "Rechesia"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5871
+  },
+  {
+    "question": "In the plant kingdom, ‘Ferns and Fern Allies’ belong to which group?",
+    "options": [
+      "Gymnosperms",
+      "Thallophyta",
+      "Bryophyta",
+      "Pteridophyta"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5872
+  },
+  {
+    "question": "Which of the following is a distinctive characteristic of angiosperm?",
+    "options": [
+      "Thick bark",
+      "small roots",
+      "Long leaf",
+      "Concealed seeds"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5873
+  },
+  {
+    "question": "Colour of the plants is green due to the presence of:",
+    "options": [
+      "Chlorophyll",
+      "Urea",
+      "Carbon dioxide",
+      "Oxygen"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5874
+  },
+  {
+    "question": "What is Coppersmith Barbet?",
+    "options": [
+      "Kitak",
+      "Herbivores",
+      "Bird",
+      "Carnivorous creatures"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5875
+  },
+  {
+    "question": "Which of the following divisions of plants does NOT have a well differentiated body?",
+    "options": [
+      "Pteridophyta",
+      "Gymnosperms",
+      "Thallophyta",
+      "Bryophyta"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5876
+  },
+  {
+    "question": "In which part of a plant are mesophyll cells found?",
+    "options": [
+      "Seed",
+      "Leaf",
+      "Stem",
+      "Root"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5877
+  },
+  {
+    "question": "Pineapple is a ______ plant",
+    "options": [
+      "Hydrophyte",
+      "Mesophyte",
+      "Xerophyte",
+      "Hygrophyte"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5878
+  },
+  {
+    "question": "Which of the following are the 5 groups that plants are divided into?",
+    "options": [
+      "Mollusca, Bryophytes, Pteridophytes, Gymnosperms and Angiosperms",
+      "Thallophytes, Bryophytes, Pteridophytes, Gymnosperms and Angiosperms",
+      "Arthropoda, Bryophytes, Pteridophytes, Gymnosperms and Angiosperms",
+      "Annelida, Bryophytes, Pteridophytes, Gymnosperms and Angiosperms"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5879
+  },
+  {
+    "question": "Octopus is an example of Phylum_______",
+    "options": [
+      "Echinodermata",
+      "Hemichordata",
+      "Arthrpoda",
+      "Mollusca"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5880
+  },
+  {
+    "question": "_______ is often referred to as the amphibians of the animal world. _______",
+    "options": [
+      "Thallophyta",
+      "Phanerogam",
+      "Bryophyta",
+      "Pteridophyta"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5881
+  },
+  {
+    "question": "Which of the following is not a characteristic of Chordate ?",
+    "options": [
+      "The central nervous system is dorsal, hollow and single",
+      "A posterior anal portion (tail) is present",
+      "Notochord is absent",
+      "The heart is abdominal"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5882
+  },
+  {
+    "question": "Red worms have a structure named _______ which helps them in grinding their food",
+    "options": [
+      "Esophagus",
+      "Crop",
+      "Intestine",
+      "Gizzard"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5883
+  },
+  {
+    "question": "Which of the following is not a Vertebral animal ?",
+    "options": [
+      "Snail",
+      "Birds",
+      "Mammals",
+      "Fish"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5884
+  },
+  {
+    "question": "Jellyfish are an example of which type of phylum?",
+    "options": [
+      "Phylum-Ctenophora",
+      "Phylum-Porifera",
+      "Phylum- Cnidaria",
+      "Phylum- Protozoa"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5885
+  },
+  {
+    "question": "Snails belong to Phylum:",
+    "options": [
+      "Echinodermata",
+      "Mollusca",
+      "Arthropoda",
+      "Chordata"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5886
+  },
+  {
+    "question": "Crocodiles have a _____ chambered heart",
+    "options": [
+      "two",
+      "four",
+      "three",
+      "single"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5887
+  },
+  {
+    "question": "Which of the following kingdoms consists of prokaryotic cells?",
+    "options": [
+      "Monera",
+      "Animalia",
+      "Fungi",
+      "Protista"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5888
+  },
+  {
+    "question": "Which of the following types of organisms have an open circulatory system?",
+    "options": [
+      "Nematoda",
+      "Mollusca",
+      "Annelida",
+      "Birds"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5889
+  },
+  {
+    "question": "Which of the following is a vertebrate?",
+    "options": [
+      "Snake",
+      "Roundworm",
+      "Millipede",
+      "Earthworm"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5890
+  },
+  {
+    "question": "Nuclear membrane is absent in organisms that fall under the kingdom ______",
+    "options": [
+      "Fungi",
+      "Monera",
+      "Plantae",
+      "Animalia"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5891
+  },
+  {
+    "question": "With reference to taxonomic categories, the term ‘Mammalia’ is a/an ______",
+    "options": [
+      "order",
+      "class",
+      "family",
+      "phylum"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5892
+  },
+  {
+    "question": "Which symbiotic bacteria are responsible for determining nitrogen?/",
+    "options": [
+      "Rhizobium",
+      "Pseudomonas",
+      "Lactobacillus",
+      "Azotobacter"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5893
+  },
+  {
+    "question": "Which of the following is a group of bacteria found in human intestines, whose presence in water indicates contamination by disease-causing microorganisms?",
+    "options": [
+      "Streptococcus",
+      "Pseudomonas",
+      "Clostridium",
+      "Coliform"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5894
+  },
+  {
+    "question": "Which of the following is NOT unicellular ?",
+    "options": [
+      "Amoeba",
+      "Spirogyra",
+      "Plasmodium",
+      "Paramecium"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5895
+  },
+  {
+    "question": "Organisms such as bacteria, viruses, fungi, protozoans, helminths, etc., that cause diseases in humans are called ______",
+    "options": [
+      "frugivores",
+      "predators",
+      "pathogens",
+      "antigens"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5896
+  },
+  {
+    "question": "Which hormone leads to the expulsion of milk from the breast during suckling?",
+    "options": [
+      "Estrogen",
+      "Oxytocin",
+      "Prolactin",
+      "Progesterone"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5897
+  },
+  {
+    "question": "The enzyme, Lipase is produced by which organ of the body?",
+    "options": [
+      "Lung",
+      "Salivary Gland",
+      "Liver",
+      "Pancreas"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5898
+  },
+  {
+    "question": "Somatotropin’ is another name for______",
+    "options": [
+      "Digestive juice",
+      "Laughing gas",
+      "Tear gas",
+      "Growth hormone"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5899
+  },
+  {
+    "question": "Which of the following hormones is known to be helpful in coping with stress?",
+    "options": [
+      "Serotonin",
+      "Testosterone",
+      "Calcitonin",
+      "Melatonin"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5900
+  },
+  {
+    "question": "Enzymes are____that act as catalysts within the living cells",
+    "options": [
+      "calcium",
+      "carbohydrates",
+      "vitamins",
+      "proteins"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5901
+  },
+  {
+    "question": "Which enzyme is found in the pancreatic juice responsible for the digestion of proteins ?",
+    "options": [
+      "Tripsin",
+      "Pepsin",
+      "Amylase",
+      "Yupase"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5902
+  },
+  {
+    "question": "Which tissue has heavily thickened lignified walls?",
+    "options": [
+      "Collenchyma",
+      "Parenchyma",
+      "Aerenchyma",
+      "Sclerenchyma"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5903
+  },
+  {
+    "question": "The Atrial wall of the human heart secretes a very important peptide hormone. What is the name of that hormone?",
+    "options": [
+      "ADH",
+      "CCK",
+      "ANF",
+      "GIP"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5904
+  },
+  {
+    "question": "The human saliva contains an enzyme called salivary ______ that breaks down starch, a complex molecule, into sugar",
+    "options": [
+      "lipase",
+      "amylase",
+      "peptidase",
+      "protease"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5905
+  },
+  {
+    "question": "In respect of classification of algae, the members of Phaeophyceae are commonly called:",
+    "options": [
+      "brown algae",
+      "white algae",
+      "green algae",
+      "red algae"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5906
+  },
+  {
+    "question": "Who won the Nobel Prize in 1906 for his neuron doctrine? www.ssccglpinnacle.com support@ssccglpinnacle.com Ph. 09729327755, 09817390373 468 http://t.me/yoursmahboob_classes BIOLOGY 1906",
+    "options": [
+      "Pierre Curie",
+      "Santiago Ramón y Cajal",
+      "Henry Moseley",
+      "Luis Alvarez"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5907
+  },
+  {
+    "question": "Which scientist discovered the ‘Penicillin’?",
+    "options": [
+      "Louis Pasteur",
+      "Alexander Fleming",
+      "Robert Koch",
+      "Emst Chain"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5908
+  },
+  {
+    "question": "Who discovered the first vaccine for smallpox?",
+    "options": [
+      "Louis Pasteur",
+      "Edward Jenner",
+      "Alexander Fleming",
+      "John Hunter"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5909
+  },
+  {
+    "question": "The phrase ‘Survival of the fittest’ as a way of describing the mechanism of natural selection was coined by __________",
+    "options": [
+      "Louis Pasteur",
+      "Charles Babbage",
+      "Herbert Spencer",
+      "Marie Curie"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5910
+  },
+  {
+    "question": "Who among the following discovered the circulation of blood?",
+    "options": [
+      "William Harvey",
+      "Florence Rena Sabin",
+      "Ernst Heinrich Weber",
+      "Van Leeuwenhoek"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5911
+  },
+  {
+    "question": "____is known as the ‘Father of Indian Ornithology’ ______",
+    "options": [
+      "Salim Ali",
+      "John James Audubon",
+      "Konrad Lorenz",
+      "Allan Octavian Hume"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5912
+  },
+  {
+    "question": "DNA was first isolated, analysed and recognised as a unique macromolecule by _________ in 1869",
+    "options": [
+      "Friedrich Miescher",
+      "William Astbury",
+      "Oswald Avery",
+      "Alfred Hershey"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5913
+  },
+  {
+    "question": "Penicillin, one of the world’s first antibiotic, was discovered by:",
+    "options": [
+      "Marie Curie",
+      "Alexander Fleming",
+      "Alexander Graham Bell",
+      "Pierre Curie"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5914
+  },
+  {
+    "question": "Which of the following scientist is related to the discovery of crescograph?",
+    "options": [
+      "Meghnad Saha",
+      "Homi J. Bhabha",
+      "Satyendra Nath Bose",
+      "Jagdish Chandra Bose"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5915
+  },
+  {
+    "question": "Who invented penicillin?",
+    "options": [
+      "Galileo Galilei",
+      "Alexander Fleming",
+      "Evangelista Torricelli",
+      "Theordore H.Maiman"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5916
+  },
+  {
+    "question": "Who among the following suggested that life must have developed from simple inorganic molecules?",
+    "options": [
+      "Gregor Mendel",
+      "J.B.S. Haldane",
+      "Charles Darwin",
+      "Stanley L. Miller"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5917
+  },
+  {
+    "question": "There is No vaccine for which of the following hepatitis viruses?",
+    "options": [
+      "Hepatitis A",
+      "Hepatitis D",
+      "Hepatitis B",
+      "Hepatitis C"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5918
+  },
+  {
+    "question": "Which botanist is credited with creating one of the first widely used natural systems of plant classification?",
+    "options": [
+      "Joseph Banks",
+      "August Wilhelm Eichler",
+      "Joseph Dalton Hooker",
+      "Robert Brown"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5919
+  },
+  {
+    "question": "Whose invention led to the development of polio vaccine?",
+    "options": [
+      "Linus Pauling",
+      "Jonas Salk",
+      "Robert Wellberg",
+      "Ernest Haeckel"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5920
+  },
+  {
+    "question": "Who discovered cells in the human body?",
+    "options": [
+      "Charles Darwin",
+      "Robert Hooke",
+      "Herbert Spencer",
+      "Albert Einstein"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5921
+  },
+  {
+    "question": "Christiaan Barnard is famous for:",
+    "options": [
+      "first publishing tables of logarithms",
+      "performing the world's first human heart transplant",
+      "delivering the world's first test-tube baby",
+      "cloning the first mammal ever"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5922
+  },
+  {
+    "question": "Which scientist won the Nobel Prize in 1915 for describing the nature of the structure of chlorophyll in plants and also noted magnesium as the central element in its structure? 1915",
+    "options": [
+      "James Watson",
+      "Werner Heisenberg",
+      "Hermann Muller",
+      "Richard Willstätter"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5923
+  },
+  {
+    "question": "Who is referred to as the ‘Darwin of the 20th Century’?",
+    "options": [
+      "Katherine Esau",
+      "Ernst Mayr",
+      "Har Gobind Khorana",
+      "Marshall Warren Nirenberg"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5924
+  },
+  {
+    "question": "_____ is a scientific discipline concerned with the study of plant pollen, sopres, and certain microscopic planktonic organisms, in both living and fossil form. ______",
+    "options": [
+      "Paleobotany",
+      "Ethnobotany",
+      "Dendrology",
+      "Palynology"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5925
+  },
+  {
+    "question": "____is the branch of zoology concerned with the study of amphibians. _____",
+    "options": [
+      "Herpetology",
+      "Ethology",
+      "Mammalogy",
+      "Morphology"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5926
+  },
+  {
+    "question": "_____is the study of the microanatomy of cells, tissues and organs as seen through a microscope. _______",
+    "options": [
+      "Paleontology",
+      "Histology",
+      "Ichthyology",
+      "Entomology"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5927
+  },
+  {
+    "question": "________ is that branch of Botany which is related to structure and study of Biology. _____",
+    "options": [
+      "Ecology",
+      "Anatomy",
+      "Chronobiology",
+      "Mycology"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5928
+  },
+  {
+    "question": "Apiculture is the technique of scientific rearing of_____in a specially designed wooden box",
+    "options": [
+      "Honey bees",
+      "Silkworms",
+      "Moths",
+      "Termites"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5929
+  },
+  {
+    "question": "_ ____is the study of viruses",
+    "options": [
+      "Mycology",
+      "Virology",
+      "Protozoology",
+      "Parasitology"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5930
+  },
+  {
+    "question": "_____ is the study of fungi. ______",
+    "options": [
+      "Geobiology",
+      "Mycology",
+      "Chronobiology",
+      "Gerontology"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5931
+  },
+  {
+    "question": "_ ______ is the study of ancient plants, like mosses, that grow in moist, humid environments. ______",
+    "options": [
+      "Ethnobotany",
+      "Bryology",
+      "Palynology",
+      "Dendrology"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5932
+  },
+  {
+    "question": "The branch of medical science that deals with the kidneys is known as:",
+    "options": [
+      "Ophthalmology",
+      "Cardiology",
+      "Otorhinolaryngology",
+      "Nephrology"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5933
+  },
+  {
+    "question": "Which of these words refers to the scientific study of domestic dogs?",
+    "options": [
+      "cynology",
+      "carpology",
+      "Chrematistics",
+      "Craniology"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5934
+  },
+  {
+    "question": "Chiropody is a branch of science related to which part of the body?",
+    "options": [
+      "Kidney",
+      "Lungs",
+      "Liver",
+      "Feet"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5935
+  },
+  {
+    "question": "' Peodology' is the science of:",
+    "options": [
+      "skin disease",
+      "ground water",
+      "soil",
+      "childhood illness"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5936
+  },
+  {
+    "question": "In 1930, which scientist was awarded the Nobel Prize for describing the human ABO blood group system? 1930",
+    "options": [
+      "Karl Landsteiner",
+      "Albert Claude",
+      "Roger Guillemin",
+      "George Wald"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5937
+  },
+  {
+    "question": "What is Marble Cancer?",
+    "options": [
+      "Disease in animals due to marble mines",
+      "Soil degradation due to marble mines",
+      "Cancer in humans due to working in mines",
+      "Corrosion of marble due to acid rain"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5938
+  },
+  {
+    "question": "What is the definition for the term ‘ Hibernation’?",
+    "options": [
+      "A state of hyperactivity in spring time among birds",
+      "Building of habitat (nests) by birds to save themselves during the rainy season",
+      "A state of reduced metabolic activity during winter season among some animals",
+      "A habit of food conservation during summer season for winters among animals"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5939
+  },
+  {
+    "question": "Which of the following plants is Carnivorous?",
+    "options": [
+      "Cyprus Vine",
+      "Venus Flytrap",
+      "Amaryllis",
+      "Hyacinth"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5940
+  },
+  {
+    "question": "Which of the following is the smallest bird in the world?",
+    "options": [
+      "Finch",
+      "Diamond Firetail",
+      "Bee Hummingbird",
+      "Robin"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5941
+  },
+  {
+    "question": "Which is the distinctive characteristic of ‘marsupials’?",
+    "options": [
+      "They lay eggs",
+      "They hibernate in winter",
+      "They carry young ones in pouches",
+      "They migrate from one place to another"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5942
+  },
+  {
+    "question": "The_____ is the stem-like part of the leaf that joins the blade to the stem. _______",
+    "options": [
+      "Stipules",
+      "Petiole",
+      "Midrib",
+      "Vein"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5943
+  },
+  {
+    "question": "Flower colours of red, pink, blue and purple come mainly from pigments called ______",
+    "options": [
+      "Carotenoids",
+      "Lycopene",
+      "Chlorophyll",
+      "Anthocyanins"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5944
+  },
+  {
+    "question": "The thin layer of living cells just inside the bark of a tree is called_______",
+    "options": [
+      "Pith",
+      "Crawn",
+      "Xylem",
+      "Cambium"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5945
+  },
+  {
+    "question": "Which of the following is an example of terrestrial habitat?",
+    "options": [
+      "Grassland",
+      "Lagoon",
+      "Rocks",
+      "Swamp"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5946
+  },
+  {
+    "question": "A biochemical compound is any:",
+    "options": [
+      "mineral-based compound found in living things",
+      "sulfur-based compound found in living things",
+      "carbon-based compound found in living things",
+      "hydrogen-based compound found in living things"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5947
+  },
+  {
+    "question": "A wound stops bleeding due to the process of clot formation called:",
+    "options": [
+      "fermentation",
+      "coagulation",
+      "transfusion",
+      "incubation"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5948
+  },
+  {
+    "question": "Hiccups in humans generally occur due to the forceful downward shifting of the:",
+    "options": [
+      "diaphragm",
+      "trachea",
+      "lungs",
+      "larynx"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5949
+  },
+  {
+    "question": "Which of the following is NOT one of the great paradigms of biology?",
+    "options": [
+      "Mendel's laws of inheritance",
+      "Archimedes’ principle",
+      "Establishment of comparative biochemistry",
+      "Darwin’s theory of evolution"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5950
+  },
+  {
+    "question": "Persea Americana is commonly known as_____",
+    "options": [
+      "Avocado",
+      "Watermelon",
+      "Orange",
+      "Grapes"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5951
+  },
+  {
+    "question": "Excessive amount of ____in the body causes gout",
+    "options": [
+      "uric acid",
+      "lactic acid",
+      "nitric acid",
+      "acetic acid"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5952
+  },
+  {
+    "question": "In humans, each cell normally contains_____pairs of chromosomes",
+    "options": [
+      "22",
+      "24",
+      "23",
+      "21"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5953
+  },
+  {
+    "question": "Mucosa, Submucosa, Muscularis and Adventitia are the four layers of the ____wall",
+    "options": [
+      "Stomach",
+      "Gastrointestinal",
+      "Throat",
+      "Nasal"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5954
+  },
+  {
+    "question": "Which combination of paternal chromosome results in a female?",
+    "options": [
+      "ZX",
+      "XX",
+      "YZ",
+      "XY"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5955
+  },
+  {
+    "question": "Which micronutrient is supplied by soil to plant?",
+    "options": [
+      "Phosphorous",
+      "Calcium",
+      "Zinc",
+      "Nitrogen"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5956
+  },
+  {
+    "question": "Silk is obtained from which type of organism?",
+    "options": [
+      "Moth",
+      "Goat",
+      "Sheep",
+      "Butterfly"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5957
+  },
+  {
+    "question": "Which of the following pairs represents a parasitic relationship?",
+    "options": [
+      "Algae-Coral reefs",
+      "Ticks on Dog",
+      "Remora Fish-Sharks",
+      "Cattle Egrets - Livestock"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5958
+  },
+  {
+    "question": "The mouth of Mollusca contains a file-like rasping organ for feeding which is called_______",
+    "options": [
+      "chitinous",
+      "radula",
+      "parapodia",
+      "coelomate"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5959
+  },
+  {
+    "question": "In human muscle cells, which chemical compound is formed by the fragmentation of glucose in the absence of oxygen?",
+    "options": [
+      "Lactic acid",
+      "Methanol",
+      "Carbon dioxide",
+      "Ethanol"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5960
+  },
+  {
+    "question": "Which of the following organisms reproduce by Spore Formation?",
+    "options": [
+      "Bryophyllum",
+      "Planara",
+      "Rhizopus",
+      "Plasmodium"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5961
+  },
+  {
+    "question": "The _______ era is also known as the ‘ age of mammals’ ______",
+    "options": [
+      "Palaeozoic",
+      "Cenozoic",
+      "Neozoic",
+      "Mesozoic"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5962
+  },
+  {
+    "question": "in the context of trans - fats , which of the following statements is NOT correct ?",
+    "options": [
+      "They are produced from the industrial process of hydrogenation",
+      "WHO has called for their elimination by 2023",
+      "They have a shorter shelf- life than natural fats",
+      "Their consumption increases LDL cholesterol and decreases HDL cholesterol"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5963
+  },
+  {
+    "question": "The part of a stem arises is known as :",
+    "options": [
+      "node",
+      "tuber",
+      "carpel",
+      "bud"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5964
+  },
+  {
+    "question": "In biological terms, _____ is a relationship between two organisms in which one organism benefits and the other is unaffected",
+    "options": [
+      "Amensalism",
+      "Mutualism",
+      "Commensalism",
+      "Parasitism"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5965
+  },
+  {
+    "question": "Which of the following is used to control pest fish?",
+    "options": [
+      "Predacides",
+      "Piscicides",
+      "Herbicides",
+      "Ovicides"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5966
+  },
+  {
+    "question": "Which of the following is a natural flame retardant?",
+    "options": [
+      "Skin",
+      "RNA",
+      "DNA",
+      "Flowers"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5967
+  },
+  {
+    "question": "Which among the following is a non-biodegradable waste?",
+    "options": [
+      "Dead animals",
+      "Vegetables",
+      "Plastic",
+      "Flowers"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5968
+  },
+  {
+    "question": "The solar tracking (moving in the sun's direction) of the sunflower is called ______",
+    "options": [
+      "Phototropism",
+      "Thigmotropism",
+      "Heliotropism",
+      "Hydrotropism"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5969
+  },
+  {
+    "question": "Locomotion in ______ takes place with the help of a muscular foot. _____",
+    "options": [
+      "jellyfish",
+      "snails",
+      "earthworms",
+      "None"
+    ],
+    "correctIndex": 1,
+    "category": "Biology",
+    "id": 5970
+  },
+  {
+    "question": "Which of the following is a breed of sheep?",
+    "options": [
+      "Barbari",
+      "Jamunapari",
+      "Mecheri",
+      "Beetal"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5971
+  },
+  {
+    "question": "Which among the following birds impersonates the calls of other birds to steal food?",
+    "options": [
+      "Owl",
+      "Eagle",
+      "Mynah",
+      "Drongo"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5972
+  },
+  {
+    "question": "What are supporting roots coming out of lower ends of the stem of maize and sugarcane called?",
+    "options": [
+      "Stilt Root",
+      "Tertiary Root",
+      "Primary Root",
+      "Prop Root"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5973
+  },
+  {
+    "question": "Which of the following does NOT fall under the category of oilseeds?",
+    "options": [
+      "Oats",
+      "Groundnut",
+      "Sesame",
+      "Soyabean"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5974
+  },
+  {
+    "question": "Called the farmer’s ‘friend’, the ______ helps in the breakdown of complex organic matter as well as in loosening of the soil",
+    "options": [
+      "locust",
+      "rat",
+      "earthworm",
+      "weed"
+    ],
+    "correctIndex": 2,
+    "category": "Biology",
+    "id": 5975
+  },
+  {
+    "question": "Detritivores in the soil break down detritus into smaller particles. This process is called ______",
+    "options": [
+      "leaching",
+      "catabolism",
+      "mineralisation",
+      "fragmentation"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5976
+  },
+  {
+    "question": "When a host is exposed to antigens, which may be in the form of living or dead microbes or other proteins, antibodies are produced in the host body. This type of immunity is called ______ immunity",
+    "options": [
+      "active",
+      "passive",
+      "strong",
+      "acquired"
+    ],
+    "correctIndex": 0,
+    "category": "Biology",
+    "id": 5977
+  },
+  {
+    "question": "The upward and downward growth of shoots and roots, respectively, in response to the pull of gravity is called ______",
+    "options": [
+      "hydrotropism",
+      "chemotropism",
+      "phototropism",
+      "geotropism"
+    ],
+    "correctIndex": 3,
+    "category": "Biology",
+    "id": 5978
+  }
+]

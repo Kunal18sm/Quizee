@@ -271,7 +271,10 @@ object QuizOverlayManager {
 
         triggerHapticFeedback(context)
 
-        if (selectedIndex == correctIndex) {
+        val isCorrect = selectedIndex == correctIndex
+        com.quizlock.app.data.DailyStudyManager.getInstance(context).recordAnswer(q.id, isCorrect)
+
+        if (isCorrect) {
             // Correct answer
             score++
             binding.tvScoreBadge.text = "Score: $score"

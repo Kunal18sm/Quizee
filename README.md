@@ -1,60 +1,48 @@
-# 📱 Quiz App Locker (Android) - 2,580+ Static GK Questions Edition
+# 📱 Quizee - SSC CGL Daily Mastery & App Locker
 
-Android Mobile Application jo selected apps par ek interactive **Quiz Lock** lagati hai. Jab bhi user kisi locked app (jaise Instagram, WhatsApp, Games, etc.) ko open karega, to pehle **5 MCQs** ka answer karna hoga.
+An intelligent Android App Locker & Microlearning System designed for competitive exams (SSC CGL, CHSL, CPO, Railways, State Exams). Instead of completely random questions, Quizee automatically curates a structured **Daily Target Bank (30 or 20 Questions)** following a sequential, chapter-wise curriculum. Every time you open a locked app (like Instagram, YouTube, etc.), it tests you on these 30 questions with **Mistake-Priority Spaced Repetition**, permanently committing high-yield questions to memory!
 
 ---
 
-## ✨ Features & Functionality
+## ✨ Core Features & Functionality
 
-1. **5 MCQ Quiz Lock Screen**:
-   - Selected app open karte hi Quiz Screen overlay display hoti hai.
-   - Database me moujood **2,584 Static GK questions** me se randomly 5 MCQs aate hain.
-   - Exit to Home Screen button diya gaya hai taaki bina quiz complete kiye locked app open na ho sake.
-2. **Instant Color Feedback**:
-   - Option par click karte hi agar answer **Correct** hai to option **Green (`#10B981`)** ho jata hai with ✓ check icon.
-   - Agar wrong option select kiya to clicked option **Red (`#EF4444`)** ho jata hai with ✗ cross icon, aur **Correct answer automatically Green** ho jata hai.
-3. **App Selection Dashboard**:
-   - Phone me installed sabhi apps ki list real icons aur names ke saath dikhayi deti hai.
-   - Live Search bar se kisi bhi app ko turant dhund kar Switch on/off karke lock kar sakte hain.
-4. **Comprehensive Static GK Bank (2,584 MCQs Loaded)**:
-   - 128-page Static GK 2026 PDF ka ek-ek topic aur row cover kiya gaya hai:
-     - 485 Sports Terminology MCQs
-     - 444 Wildlife Sanctuaries & National Parks (All States) MCQs
-     - 255 Dams in India (River & State) MCQs
-     - 231 Famous Books and Authors MCQs
-     - 209 Dances of India (Classical & Folk State-wise) MCQs
-     - 83 Stadiums in India MCQs
-     - 74 Military Exercises (Domestic, Bilateral, Multilateral) MCQs
-     - 65 Historic Forts of India MCQs
-     - 63 First in World & India (Male & Milestones) MCQs
-     - 62 Famous Personalities & Nicknames MCQs
-     - 57 Famous Museums of India MCQs
-     - 55 Important Institutions in India MCQs
-     - 50 Countries, Capitals, Currencies & Parliaments MCQs
-     - 49 Important Full Forms MCQs
-     - 45 Superlatives of India MCQs
-     - 42 First in World & India (Female) MCQs
-     - 38 Inventions and Inventors MCQs
-     - 31 Rivers of India MCQs
-     - 30 Mountain Peaks in India MCQs
-     - 28 Thermal Power Plants MCQs
-     - 21 Waterfalls in India MCQs
-     - 21 Awards and Honours MCQs
-     - 18 World Heritage Sites MCQs
-     - 16 Famous Temples in India MCQs
-     - 16 International Airports in India MCQs
-     - 16 International Boundary Lines MCQs
-     - 14 Space Centres & ISRO Agencies MCQs
-     - 12 Sports Personalities Nicknames MCQs
-     - 11 Major Sea Ports of India MCQs
-     - 9 Major Crops and Producing States MCQs
-     - 9 Famous Gardens in India MCQs
-     - 6 Biosphere Reserves MCQs
-     - 6 Nobel Prize Winners 2025 MCQs
-5. **Custom Quiz Management (In-App)**:
-   - App me upar **"Questions"** button par tap karke phone se hi direct naye questions add ya delete kar sakte hain.
-6. **Test Quiz Mode**:
-   - Dashboard me **"Test Quiz"** button diya gaya hai jisse aap bina kisi app ko lock kiye turant quiz screen ka visual feedback check kar sakte hain.
+### 1. 🎯 Daily Structured Learning Engine (30 or 20 Questions/Day)
+- **Zero Randomness in Bank Selection:** Questions are not picked randomly. Every subject maintains a persistent pointer and advances sequentially through the syllabus chapter-by-chapter.
+- **Balanced SSC CGL Daily Quota (30 Qs / Day Mode):**
+  - 📖 **English Vocab (8 Qs):** Synonyms, Antonyms, OWS, Idioms, Spellings, Phrasal Verbs
+  - 🏆 **Static GK (6 Qs):** Dances, Art & Culture, Books/Authors, 106 National Parks, Dams
+  - 📜 **Indian History (5 Qs):** Ancient $\to$ Medieval $\to$ Modern chronological flow
+  - 🏛️ **Indian Polity (3 Qs):** Constitution, Articles, Amendments, Parliament
+  - 🧬 **Biology (3 Qs):** Human Physiology, Diseases, Cell, Plant Kingdom
+  - 🌍 **Geography (3 Qs):** Rivers, Mountains, Climate, Physical Geography
+  - 📈 **Economics (2 Qs):** Banking, Inflation, Five Year Plans, Core Terms
+- **Customizable Target:** Toggle between **30 Qs/Day (Fast-Track)** and **20 Qs/Day (Relaxed)** directly from the home screen dashboard!
+- **Automatic Midnight Rollover:** Advances to the next day's questions automatically every midnight, with manual "Next Day" override option.
+
+### 2. 🧠 Smart Mistake-Priority Sampling (Lock Screen Quizzes)
+- Whenever a locked app is launched, Quizee displays **5 MCQs** sampled from **Today's 30-Question Bank**.
+- **Weak-Point Auto-Detection:** If you answer a question incorrectly, Quizee immediately prioritizes that question in subsequent lock quizzes until you answer it correctly!
+- **Unseen Question Priority:** Ensures all 30 questions are presented before repeating mastered ones.
+
+### 3. 👁️ Today's Bank Review & Progress Meter
+- **Dashboard Progress Bar:** Shows live count of *"X / 30 Mastered"* and current *"🔥 Day Streak"*.
+- **Review Today's Bank:** Tap *"Review Today's 30 Qs"* to view all 30 questions with options, highlighted correct answers, and status badges (`Mastered`, `Needs Revision`, `In Progress`, `Unseen`).
+
+### 4. 📚 100% High-Yield SSC CGL Question Bank (6,517 MCQs)
+Filtered and pruned of all low-yield junk (foreign words, obscure sanctuaries, elementary school full forms, single-term fillers):
+- **English Vocabulary:** 2,620 MCQs (BlackBook PYQs)
+- **Static GK:** 1,554 MCQs (106 National Parks, Classical Dances, Famous Books, Superlatives)
+- **Indian History:** 984 MCQs (Complete Chronology)
+- **Geography:** 503 MCQs
+- **Biology:** 317 MCQs
+- **Indian Polity:** 271 MCQs
+- **Economics:** 268 MCQs
+
+### 5. 🛡️ Rock-Solid App Locking & Floating Overlay
+- **Instant Accessibility Open Detector:** Catches target apps immediately.
+- **Floating Overlay:** Seamless quiz card displays on top of target app.
+- **Haptic Feedback & Instant Visuals:** Green for correct, Red for wrong with instant reveal.
+- **Screen-Off Session Management:** Once unlocked by passing the quiz (3/5 score), the app stays unlocked until screen turns off.
 
 ---
 
@@ -66,33 +54,39 @@ quizeApp/
 │   ├── src/main/
 │   │   ├── AndroidManifest.xml
 │   │   ├── assets/
-│   │   │   └── questions.json            <-- 2,584 Complete Static GK MCQs (745 KB)
+│   │   │   ├── english_questions.json      <-- 2,620 Vocab MCQs
+│   │   │   ├── static_gk_questions.json    <-- 1,554 High-Yield Static GK MCQs
+│   │   │   ├── history_questions.json      <-- 984 History MCQs
+│   │   │   ├── geography_questions.json    <-- 503 Geography MCQs
+│   │   │   ├── biology_questions.json      <-- 317 Biology MCQs
+│   │   │   ├── polity_questions.json       <-- 271 Polity MCQs
+│   │   │   └── economics_questions.json    <-- 268 Economics MCQs
 │   │   ├── java/com/quizlock/app/
-│   │   │   ├── MainActivity.kt           <-- Apps list & Permissions dashboard
+│   │   │   ├── MainActivity.kt             <-- Daily Target Dashboard & App Selector
 │   │   │   ├── data/
-│   │   │   │   ├── Question.kt           <-- MCQ data model
-│   │   │   │   ├── QuestionRepository.kt  <-- Question loader & manager
-│   │   │   │   └── PreferencesManager.kt  <-- Lock settings & sessions
+│   │   │   │   ├── DailyStudyManager.kt    <-- Sequential Curriculum & Spaced Repetition Engine
+│   │   │   │   ├── QuestionRepository.kt   <-- 7 Subject Banks Loader
+│   │   │   │   ├── Question.kt             <-- MCQ Model
+│   │   │   │   └── PreferencesManager.kt   <-- Lock Settings & Sessions
 │   │   │   ├── service/
-│   │   │   │   ├── AppLockAccessibilityService.kt <-- Instant app open detector
-│   │   │   │   └── AppLockForegroundService.kt    <-- Fallback background monitor
+│   │   │   │   ├── QuizOverlayManager.kt   <-- Floating Lock Card
+│   │   │   │   ├── AppLockAccessibilityService.kt <-- Instant App Monitor
+│   │   │   │   └── AppLockForegroundService.kt
 │   │   │   └── ui/
-│   │   │       ├── QuizLockActivity.kt    <-- 5 MCQ Lock Screen (Green/Red feedback)
-│   │   │       └── QuestionManageActivity.kt <-- Questions Editor screen
-│   │   └── res/                          <-- Layouts, Colors, Drawables
+│   │   │       ├── DailyReviewAdapter.kt   <-- Review Today's Bank List Adapter
+│   │   │       ├── QuizLockActivity.kt     <-- Full Screen Quiz Activity
+│   │   │       ├── QuestionManageActivity.kt
+│   │   │       └── AppListAdapter.kt
+│   │   └── res/                            <-- Layouts, Drawables, Styles
 ├── build.gradle.kts
 └── settings.gradle.kts
 ```
 
 ---
 
-## 🚀 How to Run the App
+## 🚀 How to Run & Build
 
-1. **Android Studio** open karein.
-2. **Open** par click karein aur is folder ko select karein: `c:\Users\yash9\OneDrive\Desktop\quizeApp`.
-3. Gradle sync complete hone de.
-4. Apna phone USB debugging se connect karein ya Emulator start karke **Run (Green Play Button)** dabayein.
-5. Phone me app open hone ke baad:
-   - **Accessibility Service** enable karein ("Quiz Lock" ON karein).
-   - **Display Over Other Apps** permission grant karein.
-   - Jin apps ko lock karna hai unka switch ON kar dein!
+1. Open in **Android Studio** (`File > Open` -> select `quizeApp`).
+2. Sync Gradle files and connect your Android device or start an emulator.
+3. Tap **Run** (Green Play Button).
+4. Or push to GitHub to automatically build and release the APK via **GitHub Actions** (`.github/workflows/build-and-deploy.yml`).

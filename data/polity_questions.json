@@ -1,0 +1,3254 @@
+[
+  {
+    "question": "In 1967, which of the following languages was included in the list of state languages of the Indian Constitution ? 1967 म भारत के संिवधान म राजभाषाओं की सूची म िनिलखत म से कौन सी भाषा को शािमल िकया गया था ?",
+    "options": [
+      "Bengali",
+      "Sindhi",
+      "Telugu",
+      "Tamil"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 5979
+  },
+  {
+    "question": "Which of the following Articles of the Constitution of India gurantees the Right to Freedom of Religion? भारत के संिवधान के िनिलखत म से कौन सा अनुछे द धम का तंता का अिधकार दान करता है ?",
+    "options": [
+      "Articles 14-18",
+      "Articles 19-22",
+      "Articles 23-24",
+      "Articles 25-28"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 5980
+  },
+  {
+    "question": "The Right against exploitation is a _____. शोषण के िव अिधकार एक _____ है |",
+    "options": [
+      "Constitutional Right",
+      "Method",
+      "Fundamental Right",
+      "Legal Right"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 5981
+  },
+  {
+    "question": "Inter-State Council was set up by the recommendations of which committee? अंतराीय परषद की थापना िकस सिमित की िसफारश पर की गयी थी ?",
+    "options": [
+      "Sarkaria committee/ सरकारया आयोग",
+      "Y V Reddy Committee/ वाई वी रे ी सिमित",
+      "TSR Subramanian committee/ टीएसआर सुमम सिमित",
+      "Chandrababu Naidu committee/ चंबाबू नायडू सिमित"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 5982
+  },
+  {
+    "question": "______ are the guidelines laid down by the Supreme Court for specific requirements and procedures, which the police have to follow to arrest, detain and interrogate any person. ______ िविश आवकताओं और ियाओं के िलए सुीम कोट ारा िनधारत िदशा-िनदश ह, िजनका पालन पुिलस को िकसी भी को िगरार करने, िहरासत म लेने और पूछताछ करने के िलए करना पड़ता है |",
+    "options": [
+      "K.C Roberto Guidelines",
+      "D. K Basu Guidelines",
+      "Menka Guidelines",
+      "Vishakha Guidelines"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 5983
+  },
+  {
+    "question": "Upper House of the Indian Parliament is also known as _____. भारतीय संसद के ऊपरी सदन को _____ नाम से भी जाना जाता है |",
+    "options": [
+      "Lok Sabha/ लोकसभा",
+      "Rajya Sabha",
+      "Vidhan Parishad/ िवधान परषद्",
+      "Vidhan Sabha/ िवधान सभा"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 5984
+  },
+  {
+    "question": "Any act passed by the parliament becomes a law only after the approval of _______. _______ की ीकृ ित ा होने के बाद ही संसद ारा पारत कोई अिधिनयम कानून बनता है |",
+    "options": [
+      "Law Minister",
+      "President",
+      "Supreme Court",
+      "Prime Minister"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 5985
+  },
+  {
+    "question": "Who is the Supreme Commander of the defence forces of India ? भारत के सुरा बलों के सव सेनापित कौन होते ह ?",
+    "options": [
+      "President/ रा पित",
+      "Chief of Defence/ रा मुख",
+      "Prime Minister/ धानमंी",
+      "Defence Minister/ रा मंी"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 5986
+  },
+  {
+    "question": "As per the Constitution of India, Panchayats at the intermediate level may NOT be constituted in a State having a population not exceeding:",
+    "options": [
+      "Thiry Lakhs",
+      "Forty Lakhs",
+      "Ten Lakhs",
+      "Twenty Lakhs"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 5987
+  },
+  {
+    "question": "The First Health Minister of Independent India was?",
+    "options": [
+      "Maulana Abdul Kalam Azad",
+      "Sardar Vallabhbhai Patel",
+      "Vijayalakshmi Pandit",
+      "Rajkumari Amrit Kaur"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 5988
+  },
+  {
+    "question": "The inaugural session of the Supreme Court of India took place on____",
+    "options": [
+      "28th January 1950",
+      "29th January 1950",
+      "31th January 1950",
+      "26th January 1950"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 5989
+  },
+  {
+    "question": "Who was appointed as Assembly’s Constitutional Adviser in 1946 during the framing of Indian Constitution ?",
+    "options": [
+      "B. N. Rau",
+      "B. R. Ammi Ayengar",
+      "K.M. Munbedkar",
+      "Gopalswashi"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 5990
+  },
+  {
+    "question": "Which of the following is NOT a Constitutional body ?",
+    "options": [
+      "Finance Commission",
+      "NITI Aayog",
+      "National Commision for Scheduled Tribes",
+      "Election Commission"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 5991
+  },
+  {
+    "question": "Which of the following adjectives is NOT a part of the Preamble ?",
+    "options": [
+      "Liberty",
+      "Tolerant",
+      "Sovereign",
+      "Secular"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 5992
+  },
+  {
+    "question": "How many members were there in the drafting committee of Indian Constitution?",
+    "options": [
+      "5",
+      "7",
+      "3",
+      "10"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 5993
+  },
+  {
+    "question": "Who had headed the drafting committee of the constitution ?",
+    "options": [
+      "Dr. B.R. Ambedkar",
+      "Jawaharlal Nehru",
+      "V. P. Menon",
+      "Sardar Vallabhbhai Patel"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 5994
+  },
+  {
+    "question": "Who headed the Provincial Constitution Committee?",
+    "options": [
+      "Dr. Rajendra Prasad",
+      "Sardar Vallabhbhai Patel",
+      "V.P. Menon",
+      "Jawaharlal Nehru"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 5995
+  },
+  {
+    "question": "Which type of Citizenship is provided by the Constitution of India?",
+    "options": [
+      "Single citizenship",
+      "Regional citizenship",
+      "Dual citizenship",
+      "Temporary citizenship"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 5996
+  },
+  {
+    "question": "When did the Constituent Assembly adopt the Constitution of India?",
+    "options": [
+      "26th November 1949",
+      "26th January 1950",
+      "26th November 1947",
+      "26th January 1947"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 5997
+  },
+  {
+    "question": "In 1967, which of the following languages was included in the list of state languages of the Indian Constitution ? 1967",
+    "options": [
+      "Bengali",
+      "Sindhi",
+      "Telugu",
+      "Tamil"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 5998
+  },
+  {
+    "question": "Who is considered as the father of Indian Constitution ?",
+    "options": [
+      "Rajendra Prashad",
+      "Bal Gangadhar Tilak",
+      "Jawaharlal Nehru",
+      "Bhim Rao Ambedkar"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 5999
+  },
+  {
+    "question": "Who among the following was not a part of the Constituent Assembly responsible to draft the constitution ?",
+    "options": [
+      "Mahatma Gandhi",
+      "Sardar Vallabhbhai Patel",
+      "Jawaharlal Nehru",
+      "Dr. B.R. Ambedkar"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6000
+  },
+  {
+    "question": "Who was the Chairman of the Drafting Committee of the Constituent Assembly of India?",
+    "options": [
+      "Rajendra Prasa d",
+      "Sardar Vallabhbhai Patel",
+      "Jawaharlal Nehru",
+      "BR Ambedkar"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6001
+  },
+  {
+    "question": "On which day is Constitution Day celebrated every year in India?",
+    "options": [
+      "30 November",
+      "15 October",
+      "26 November",
+      "2 October"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6002
+  },
+  {
+    "question": "Who was the chairman of the drafting committee of the Constitution of India? /",
+    "options": [
+      "Mohammad Saadullah",
+      "B.R. Ambedkar",
+      "Sardar Vallabhbhai Patel",
+      "K.M. Munshi"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6003
+  },
+  {
+    "question": "Who described the preamble of Indian Constitution as the 'Political horoscope of the Indian Constitution'? /",
+    "options": [
+      "NA Palkhiwala",
+      "Kanhaiyalal Maniklal Munshi",
+      "Thakurdas Bhargav",
+      "Bhimrao Ramji Ambedkar"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6004
+  },
+  {
+    "question": "When was the first Constituent Assembly election held in India? /",
+    "options": [
+      "1947",
+      "1946",
+      "1949",
+      "1948"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6005
+  },
+  {
+    "question": "In which year did Motilal Nehru (Chairman) and eight other Congress leaders draft a constitution for India? /",
+    "options": [
+      "1925",
+      "1950",
+      "1928",
+      "1930"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6006
+  },
+  {
+    "question": "Which of the following is NOT a feature of the Indian Federal System?",
+    "options": [
+      "Written Constitution",
+      "Independent judiciary to settle disputes",
+      "Single-tier government",
+      "Division of powers between the Centre and the States"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6007
+  },
+  {
+    "question": "The ideals of Liberty, Equality and Fraternity (contained in the Preamble of the Constitution of India) are borrowed from the constitution of which country?",
+    "options": [
+      "Australia",
+      "Canada",
+      "Germany",
+      "France"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6008
+  },
+  {
+    "question": "The idea of residual powers in Indian constitution has been taken from the constitution of:",
+    "options": [
+      "South Africa",
+      "Canada",
+      "Japan",
+      "USA"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6009
+  },
+  {
+    "question": "Which of the following features of Indian constitution was taken from Soviet Socialist Republic ?",
+    "options": [
+      "Fundamental Rights",
+      "Five-year plans",
+      "Preamble",
+      "Concurrent list"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6010
+  },
+  {
+    "question": "The power of judicial review in the Indian constitution and the provision of independence of judiciary is taken from which country?",
+    "options": [
+      "Australia",
+      "Germany",
+      "Japan",
+      "America"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6011
+  },
+  {
+    "question": "In the Indian Constitution, the Principle of Liberty is borrowed from which of the following countries?",
+    "options": [
+      "UK",
+      "Japan",
+      "France",
+      "Germany"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6012
+  },
+  {
+    "question": "The makers of the Indian constitution took the principle of freedom, equality and fraternity from which constitution ?",
+    "options": [
+      "French Constitution",
+      "Canada’s Constitution",
+      "British Constitution",
+      "Ireland’s Constitution"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6013
+  },
+  {
+    "question": "Financial Emergency provisions of Indian Constitution have been borrowed from_______",
+    "options": [
+      "Canadian Constitution",
+      "American Constitution",
+      "Irish Constitution",
+      "German Constitution"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6014
+  },
+  {
+    "question": "Which of the following Articles of the Constitution of India deals with the Uniform Civil Code?",
+    "options": [
+      "Article 43",
+      "Article 44",
+      "Article 45",
+      "Article 46"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6015
+  },
+  {
+    "question": "In which part of the Indian Constitution are centre-state relations mentioned?",
+    "options": [
+      "Part IV (Article 227 to 234)",
+      "Part XI (Article 245 to 255)",
+      "Part X (Article 234 to 240)",
+      "Part XII (Article 265 to 277)"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6016
+  },
+  {
+    "question": "Right to move freely throughout the territory of India’ is a fundamental right under____ of the Constitution of India",
+    "options": [
+      "Article 24",
+      "Article 21",
+      "Article 14",
+      "Article 19"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6017
+  },
+  {
+    "question": "Which of the following articles promote equal justice and free legal aid for all citizens?",
+    "options": [
+      "39A",
+      "32A",
+      "43A",
+      "48A"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6018
+  },
+  {
+    "question": "Article __________ of the Constitution of India gives the Election Commission the power to supervise elections to the Parliament and state legislatures",
+    "options": [
+      "314",
+      "342",
+      "324",
+      "341"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6019
+  },
+  {
+    "question": "Which article of the Constitution of India talks about the provisions for impeachment of the President of India?",
+    "options": [
+      "Article 51",
+      "Article 61",
+      "Article 54",
+      "Article 63"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6020
+  },
+  {
+    "question": "Which article of the Constitution of India provides that each Indian state will have a governor?",
+    "options": [
+      "Article 152",
+      "Article 153",
+      "Article 151",
+      "Article 154"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6021
+  },
+  {
+    "question": "________ of the Constitution of India deals with emergency due to www.ssccglpinnacle.com support@ssccglpinnacle.com Ph. 09729327755, 09817390373 229 http://t.me/yoursmahboob_classes POLITY war, external aggression or armed rebellion",
+    "options": [
+      "Article 350",
+      "Article 352",
+      "Article 347",
+      "Article 269"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6022
+  },
+  {
+    "question": "Which of the following article of the Constitution of India is related to the system of election of President?",
+    "options": [
+      "Article 55",
+      "Article 61",
+      "Article 65",
+      "Article 51"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6023
+  },
+  {
+    "question": "Under Article___ of the Constitution of India, the quorum to constitute a sitting of the House is one-tenth of the total number of Members of the House",
+    "options": [
+      "100",
+      "101",
+      "102",
+      "103"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6024
+  },
+  {
+    "question": "The Judges of the Supreme Court are appointed by the President under Article_____of the Constitution of India",
+    "options": [
+      "217",
+      "124(2)",
+      "224(1)",
+      "21"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6025
+  },
+  {
+    "question": "Which article of Indian Constitution deals with discrimination against any Indian citizens on various grounds?",
+    "options": [
+      "Article 11",
+      "Article 19",
+      "Article 13",
+      "Article 15"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6026
+  },
+  {
+    "question": "How many Schedules are there in the Indian Constitution?",
+    "options": [
+      "14",
+      "12",
+      "11",
+      "13"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6027
+  },
+  {
+    "question": "In which article of the Indian Constitution, the eradication of untouchability has been mentioned ?",
+    "options": [
+      "Article 16",
+      "Article 21",
+      "Article 25",
+      "Article 17"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6028
+  },
+  {
+    "question": "Which of the following Articles is related to Jammu & Kashmir state of India ?",
+    "options": [
+      "Article 378",
+      "Article 374",
+      "Article 370",
+      "Article 366"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6029
+  },
+  {
+    "question": "Which article in indian Constitution states about Fundamental Duties ?",
+    "options": [
+      "Article 31 C",
+      "Article 21 A",
+      "Article 15",
+      "Article 51 A"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6030
+  },
+  {
+    "question": "The Subject of Sports comes under which list of Indian Constitution?",
+    "options": [
+      "Union list",
+      "State list",
+      "Residuary list",
+      "Concurrent list"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6031
+  },
+  {
+    "question": "Which Schedule of Indian Constitution contains the provisions on Panchayat Raj Institutions?",
+    "options": [
+      "10th Schedule",
+      "Eleventh Schedule",
+      "Ninth Schedule",
+      "Twelfth Schedule"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6032
+  },
+  {
+    "question": "Which of the following articles is related to Right to Freedom of Religion in the Indian Constitution?",
+    "options": [
+      "Article 20",
+      "Article 30",
+      "Article 15",
+      "Article 25"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6033
+  },
+  {
+    "question": "The Sixth Schedule of the Indian Constitution does NOT exercise its control to the tribal areas of which of the following states?",
+    "options": [
+      "Manipur",
+      "Tripura",
+      "Assam",
+      "Meghalaya"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6034
+  },
+  {
+    "question": "Which part of the Indian Constitution contains the provisions on the Union Territories?",
+    "options": [
+      "Part VIII",
+      "Part VII",
+      "Part IX",
+      "Part IXB"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6035
+  },
+  {
+    "question": "Which of the Article of Indian Constitution tells about the election of the President?",
+    "options": [
+      "Article 51 A",
+      "Article 54",
+      "Article 51",
+      "Article 53"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6036
+  },
+  {
+    "question": "Which article of Indian Constitution gives guarantees for the protection of life and individual freedom ?",
+    "options": [
+      "Article 21 A",
+      "Article 20",
+      "Article 21",
+      "Article 22"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6037
+  },
+  {
+    "question": "Which part was added in the Indian Constitution by the 73rd constitutional act ? 73",
+    "options": [
+      "Part IX",
+      "Part IX-B",
+      "Part IX-A",
+      "Part X"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6038
+  },
+  {
+    "question": "Under which article, every citizen of India has been given the right to health ?",
+    "options": [
+      "Article 19",
+      "Article 20",
+      "Article 21-A",
+      "Article 21"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6039
+  },
+  {
+    "question": "Which part of the Indian Constitution enlists the Fundamental Rights?",
+    "options": [
+      "Part-IV",
+      "Part-V",
+      "Part-III",
+      "Part-II"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6040
+  },
+  {
+    "question": "Agriculture as a subject is included in which list of the Constitution?",
+    "options": [
+      "Residuary Powers",
+      "Union list",
+      "State list",
+      "Concurrent list"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6041
+  },
+  {
+    "question": "According to which article of the Indian Constitution, the president rule is implemented in a state ?",
+    "options": [
+      "Article 368",
+      "Article 356",
+      "Article 350",
+      "Article 325"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6042
+  },
+  {
+    "question": "Originally, how many articles were in the Indian Constitution ?",
+    "options": [
+      "440",
+      "395",
+      "310",
+      "442"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6043
+  },
+  {
+    "question": "Which article of the Indian Constitution states that the ‘Law declared by the Supreme Court is to be binding on all courts’ within the territory of India ?",
+    "options": [
+      "Article 127",
+      "Article 133",
+      "Article 147",
+      "Article 141"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6044
+  },
+  {
+    "question": "Under which article of the constitution of India can members of the Anglo Indian community be nominated to the Lok Sabha by the President?",
+    "options": [
+      "326",
+      "330",
+      "342",
+      "331"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6045
+  },
+  {
+    "question": "In India, which of the following articles of the Constitution of India provides for the formation of a new state? www.ssccglpinnacle.com support@ssccglpinnacle.com Ph. 09729327755, 09817390373 233 http://t.me/yoursmahboob_classes POLITY",
+    "options": [
+      "Article 1",
+      "Article 3",
+      "Article 2",
+      "Article 9"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6046
+  },
+  {
+    "question": "The powers, privileges and immunities of either House Parliament and of its Committees and Members have mainly been laid down in article _______ of the Constitution of India",
+    "options": [
+      "115",
+      "107",
+      "105",
+      "102"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6047
+  },
+  {
+    "question": "Matters, which are not points of order, can be raised by way of Special Mentions under Rule _______ of Lok Sabha",
+    "options": [
+      "377",
+      "302",
+      "223",
+      "214"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6048
+  },
+  {
+    "question": "Which article of the Constitution of India provisions for reservations of seats for scheduled castes and scheduled tribes in the House of People?",
+    "options": [
+      "Article 325",
+      "Article 321",
+      "Article 330",
+      "Article 335"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6049
+  },
+  {
+    "question": "Which of the following Articles of the Constitution of India is associated with the election of the President of India?",
+    "options": [
+      "Article 103",
+      "Article 78",
+      "Article 74",
+      "Article 54"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6050
+  },
+  {
+    "question": "Which of the following articles of Indian Constitution provides for the appointment of a Finance Commission?",
+    "options": [
+      "Article 300",
+      "Article 290",
+      "Article 320",
+      "Article 280"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6051
+  },
+  {
+    "question": "Which of the following schedules of the Constitution of India contains the format of oaths to be taken by different constitutional functionaries?",
+    "options": [
+      "4th schedule",
+      "5th schedule",
+      "3rd schedule",
+      "2nd schedule"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6052
+  },
+  {
+    "question": "According to which article of the constitution of India shall the council of ministers be collectively responsible to the Lok Sabha?",
+    "options": [
+      "Article 29",
+      "Article 75",
+      "Article 35",
+      "Article 302"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6053
+  },
+  {
+    "question": "Which Article of the Constitution of India states that ‘all authorities, civil and judicial, in the territory of India shall act in aid of the Supreme Court’?",
+    "options": [
+      "Article 137",
+      "Article 121",
+      "Article 144",
+      "Article 157"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6054
+  },
+  {
+    "question": "As per the Constitution of India , the subject of ‘Livestock and animal husbandry’ is included in the:",
+    "options": [
+      "Residuary list",
+      "State list",
+      "Union list",
+      "Concurrent list"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6055
+  },
+  {
+    "question": "Article 17 of the Constitution of India deals with the abolition of _____",
+    "options": [
+      "sati",
+      "untouchability",
+      "titles",
+      "slavery"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6056
+  },
+  {
+    "question": "Which Article of the Indian Constitution prohibits discrimination on the grounds of religion, race, caste, sex and place of birth?",
+    "options": [
+      "Article 23",
+      "Article 25",
+      "Article 19",
+      "Article 15"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6057
+  },
+  {
+    "question": "Part VIII of the Constitution of India deals with ______",
+    "options": [
+      "Panchayats",
+      "Union Territories",
+      "Municipalities",
+      "State s"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6058
+  },
+  {
+    "question": "The National Commission for Backward Classes (NCBC) was formed by insertion of Article ______ in the Constitution of India",
+    "options": [
+      "338B",
+      "338A",
+      "328B",
+      "328A"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6059
+  },
+  {
+    "question": "Under which Article of the Indian Constitution are special provisions provided to language spoken in a section of the population?",
+    "options": [
+      "Article 337",
+      "Article 35 7",
+      "Article 347",
+      "Article 374"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6060
+  },
+  {
+    "question": "Under which Article can the Parliament amend the Constitution?",
+    "options": [
+      "Article 374",
+      "Article 74",
+      "Article 269",
+      "Article 368"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6061
+  },
+  {
+    "question": "Which of the following Articles is related to the Ancillary powers of the Supreme Court?",
+    "options": [
+      "Article 150",
+      "Article 143",
+      "Article 138",
+      "Article 140"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6062
+  },
+  {
+    "question": "Which of the following Articles of the Constitution of India gurantees the Right to Freedom of Religion?",
+    "options": [
+      "Articles 14-18",
+      "Articles 19-22",
+      "Articles 23-24",
+      "Articles 25-28"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6063
+  },
+  {
+    "question": "Which of the following is one of the Articles of the Constitution of India that mentions the Comptroller and Auditor General of India?",
+    "options": [
+      "156",
+      "352",
+      "280",
+      "148"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6064
+  },
+  {
+    "question": "Which of the following schedules of the Constitution of India has been INCORRECTLY matched with its content?",
+    "options": [
+      "Second-Schedule-Languages",
+      "First Schedule-The states and the union territories",
+      "Third Schedule-Forms of oath or affirmations",
+      "Fourth Schedule-Allocation of seats in the council of states"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6065
+  },
+  {
+    "question": "Article_______of the Constitution of India deals with provisions related to the administration and control of Scheduled Areas and Scheduled Tribes",
+    "options": [
+      "222(1)",
+      "244(1) www.ssccglpinnacle.com support@ssccglpinnacle.com Ph. 09729327755, 09817390373 236 http:",
+      "222(2)",
+      "244(2)"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6066
+  },
+  {
+    "question": "Which of the following articles of the Constitution of India has a provision for financial emergency?",
+    "options": [
+      "Article 365",
+      "Article 356",
+      "Article 330",
+      "Article 360"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6067
+  },
+  {
+    "question": "Which article of the Constitution of India mentions that the Lok Sabha must have a Speaker and a Deputy Speaker?",
+    "options": [
+      "Article 93",
+      "Article 85",
+      "Article 100",
+      "Article 97"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6068
+  },
+  {
+    "question": "Which of the following Articles of the Constitution of India has a provision for the Constitution of Legislatures in States?",
+    "options": [
+      "167",
+      "168",
+      "163",
+      "165"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6069
+  },
+  {
+    "question": "What is the provision of Article 49 of the Constitution of India? /",
+    "options": [
+      "Provision for free and compulsory education for children",
+      "Protection of monuments and places and objects of natural importance",
+      "Prohibition of employment of children (Under the age of 14) in factories and mines",
+      "Promotion of international peace and security"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6070
+  },
+  {
+    "question": "What is the provision of Article 49 of the Constitution of India? /",
+    "options": [
+      "Provision for free and compulsory education for children",
+      "Protection of monuments and places and objects of natural importance",
+      "Prohibition of employment of children (Under the age of 14) in factories and mines",
+      "Promotion of international peace and security"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6071
+  },
+  {
+    "question": "Which of the following articles of the Constitution of India provides constitutional remedies for the enforcement of fundamental rights? /",
+    "options": [
+      "Article 40",
+      "Article 36",
+      "Article 38",
+      "Article 32"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6072
+  },
+  {
+    "question": "As per Article 80 of the Constitution of India, what can be the maximum strength of Rajya Sabha? /",
+    "options": [
+      "245",
+      "250",
+      "235",
+      "240"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6073
+  },
+  {
+    "question": "Which Article of the Constitution of India provides that there shall be a Council of Ministers with the Prime Minister as its head? /",
+    "options": [
+      "Article 74(1)",
+      "Article 34",
+      "Article 44",
+      "Article 21(1)"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6074
+  },
+  {
+    "question": "The Constitution under Article ______ mandates the Election Commission, to conduct elections to the Parliament and the State Legislatures. /",
+    "options": [
+      "312",
+      "324",
+      "330",
+      "298"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6075
+  },
+  {
+    "question": "Which article in the Constitution of India empowers the President of India to promulgate ordinances when the Parliament is in recess? /",
+    "options": [
+      "Article 232",
+      "Article 312",
+      "Article 123",
+      "Article 213"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6076
+  },
+  {
+    "question": "How many fundamental duties are set out in Part IV-A (Article 51A) of the Constitution of India? /",
+    "options": [
+      "9",
+      "11",
+      "10",
+      "12"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6077
+  },
+  {
+    "question": "As per the eighth Schedule of the Constitution of India, how many languages are referred to as scheduled languages? /",
+    "options": [
+      "14",
+      "20",
+      "22",
+      "18"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6078
+  },
+  {
+    "question": "Which of the following Articles ensures to provide free and compulsory education to all children in the age group of six to fourteen years as a Fundamental Right to Education? /",
+    "options": [
+      "20A",
+      "14",
+      "18A",
+      "21A"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6079
+  },
+  {
+    "question": "Which Article of the Constitution of India states the directive principles of state policy on ‘promotion of international peace and security’?",
+    "options": [
+      "Article 49",
+      "Article 51",
+      "Article 69",
+      "Article 62"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6080
+  },
+  {
+    "question": "Which Article of the Constitution deals with formation of New States?",
+    "options": [
+      "Article",
+      "Article",
+      "Article",
+      "Article"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6081
+  },
+  {
+    "question": "Who among the following drafted Article 370 of the Constitution of India?",
+    "options": [
+      "Jawaharlal Nehru",
+      "Bhim Rao Ambedkar",
+      "Gopalaswami Ayyangar",
+      "Raghubar Das"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6082
+  },
+  {
+    "question": "The definition of ‘money bills’ is given in which article of the Constitution of India?",
+    "options": [
+      "Article 44",
+      "Article 110",
+      "Article 33",
+      "Article 93"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6083
+  },
+  {
+    "question": "Under which Article of the Indian Constitution are Indian citizens guaranteed the right to six fundamental freedoms?",
+    "options": [
+      "Article 1",
+      "Article 31",
+      "Article 26",
+      "Article 19 www.ssccglpinnacle.com support@ssccglpinnacle.com Ph. 09729327755, 09817390373 239 http:"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6084
+  },
+  {
+    "question": "Which article of the Constitution of India states that no citizen can be discriminated against on the basis of his/her religion, race, caste, sex or place of birth?",
+    "options": [
+      "Article 15",
+      "Article 45",
+      "Article 23",
+      "Article 39"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6085
+  },
+  {
+    "question": "Which article of the Indian Constitution prohibits trafficking in human beings and forced Labour?",
+    "options": [
+      "Article 25",
+      "Article 23",
+      "Article 13",
+      "Article 5"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6086
+  },
+  {
+    "question": "Which among the following Articles of the Constitution of India deals with the right to free and compulsory education of all children in the age group of 6-14 years?",
+    "options": [
+      "74",
+      "21A",
+      "101",
+      "31A"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6087
+  },
+  {
+    "question": "In the year 1978, the _______ amendment eliminated the right to acquire, hold and dispose of property as a fundamental right",
+    "options": [
+      "41st",
+      "43rd",
+      "44th",
+      "42nd"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6088
+  },
+  {
+    "question": "_________ Constitution Amendment Act, 2002 provided for free and compulsory elementary education to all children. _________",
+    "options": [
+      "84th",
+      "85th",
+      "86th",
+      "87th"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6089
+  },
+  {
+    "question": "The Constitution of India was amended for the first time in which year?",
+    "options": [
+      "1951",
+      "1954",
+      "1961",
+      "1960"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6090
+  },
+  {
+    "question": "The 124th Amendment Bill, 2019 deals with: 1 24",
+    "options": [
+      "Triple Talaq",
+      "Privatisation of Air India",
+      "GST",
+      "Economic Reservation"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6091
+  },
+  {
+    "question": "Which part of the constitution is related to the amendments in the constitution ?",
+    "options": [
+      "Part XV",
+      "Part X",
+      "Part VIII",
+      "Part XX"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6092
+  },
+  {
+    "question": "When was the first amendment made to the Indian Constitution ?",
+    "options": [
+      "1954",
+      "1951",
+      "1953",
+      "1952"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6093
+  },
+  {
+    "question": "Article 21-A was introduced by which Constitutional Amendment Act?",
+    "options": [
+      "93rd",
+      "85th",
+      "73rd",
+      "86th"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6094
+  },
+  {
+    "question": "Which Constitutional Amendment Act introduced Anti-Defection Provisions in the Constitution?",
+    "options": [
+      "52nd Constitutional Amendment Act",
+      "44th Constitutional Amendment Act",
+      "86th Constitutional Amendment Act",
+      "43rd Constitutional Amendment Act"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6095
+  },
+  {
+    "question": "Which amendment of the Constitution is called as the ‘mini constitution of India’ and was brought in during the national emergency in the year 1976?",
+    "options": [
+      "54th",
+      "25th",
+      "24th",
+      "42nd"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6096
+  },
+  {
+    "question": "Which part was added in the Indian Constitution by the 74th Amendment Act of 1992?. 1992",
+    "options": [
+      "IX A",
+      "IX",
+      "IX C",
+      "IX B"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6097
+  },
+  {
+    "question": "Which amendment limited the size of the council of ministers to 15% of the total size of the house ?",
+    "options": [
+      "74th",
+      "86th",
+      "91st",
+      "61st"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6098
+  },
+  {
+    "question": "Which schedule of the Indian Constitution is related to the Municipalities ?",
+    "options": [
+      "11th",
+      "10th",
+      "9th",
+      "12th"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6099
+  },
+  {
+    "question": "Under which constitutional amendment act, the Preamble of the Constitution was amended ?",
+    "options": [
+      "52nd",
+      "56th",
+      "44th",
+      "42nd"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6100
+  },
+  {
+    "question": "Which amendment made it mandatory for the President to give his assent to the Constitutional Amendment bills?",
+    "options": [
+      "24th",
+      "58th",
+      "44th",
+      "28th"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6101
+  },
+  {
+    "question": "_________ Constitution Amendment Act, 2002 provided for free and compulsory elementary education to all children. _______",
+    "options": [
+      "84th",
+      "85th",
+      "86th",
+      "87th"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6102
+  },
+  {
+    "question": "Under which of the following Amendments to the Constitution of India is defection to another party after election made illegal?",
+    "options": [
+      "92nd",
+      "61st",
+      "52nd",
+      "86th"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6103
+  },
+  {
+    "question": "In which year was the first amendment to the Constitution of India made?",
+    "options": [
+      "1950",
+      "1952",
+      "1951",
+      "1953"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6104
+  },
+  {
+    "question": "When was the 44th Constitutional Amendment Act enacted? 44",
+    "options": [
+      "1978",
+      "1975",
+      "1976",
+      "1972"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6105
+  },
+  {
+    "question": "Which of the following words was inserted in the Preamble by the Constitution (42nd Amendment) Act, 1976? /",
+    "options": [
+      "Equality",
+      "Liberty",
+      "Justice",
+      "Socialist"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6106
+  },
+  {
+    "question": "Which of the following articles of the Constitution of India was invoked by the Kerala government to file a petition against the Citizenship (Amendment) Act (CAA) in the Supreme Court on 14 January 2020? /",
+    "options": [
+      "Article 131",
+      "Article 23",
+      "Article 368",
+      "Article 17"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6107
+  },
+  {
+    "question": "As per the Constitution ninety-first amendment act, 2003, the total number of Ministers, including the Chief Minister, in the Council of Ministers in a State cannot exceed ______ of the total number of members of the Legislative Assembly of that State. /",
+    "options": [
+      "15%",
+      "10%",
+      "20%",
+      "25%"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6108
+  },
+  {
+    "question": "The first hour of every parliamentary meeting is for _____",
+    "options": [
+      "Point of Order",
+      "Discussion on Money bill",
+      "Question hour",
+      "Zero hour"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6109
+  },
+  {
+    "question": "Which of the following writs provides a remedy for a person who has been unlawfully held in prison ?",
+    "options": [
+      "Certiorari",
+      "Habeas Corpus",
+      "Mandamus",
+      "Prohibition"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6110
+  },
+  {
+    "question": "Which of the following is NOT related to fundamental rights ?",
+    "options": [
+      "Right to form association",
+      "Right to education",
+      "Right to life",
+      "Right to property"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6111
+  },
+  {
+    "question": "Forming an association in India is ______",
+    "options": [
+      "Fundamental Right",
+      "Legal right",
+      "Natural Right",
+      "Constitutional Right"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6112
+  },
+  {
+    "question": "The Right of Children to Free and Compulsory Education (RTE) Act, which gives every child aged 6-14 the fundamental right for education, was assented to in which year?",
+    "options": [
+      "2001",
+      "1975",
+      "2009",
+      "1947"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6113
+  },
+  {
+    "question": "The Right against exploitation is a _____",
+    "options": [
+      "Constitutional Right",
+      "Method",
+      "Fundamental Right",
+      "Legal Right"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6114
+  },
+  {
+    "question": "When was the right to property removed from the list of fundamental rights?",
+    "options": [
+      "1975",
+      "1980",
+      "1978",
+      "1977"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6115
+  },
+  {
+    "question": "India is called a secular country because citizens have the fundamental right to: /",
+    "options": [
+      "freedom of speech and expression",
+      "move freely throughout India",
+      "live with human dignity",
+      "freedom to profess religion of one's choice"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6116
+  },
+  {
+    "question": "The Malimath Committee Report deals with :",
+    "options": [
+      "Judicial delays",
+      "textile sector reforms",
+      "criminal justice system reforms",
+      "stock market reforms"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6117
+  },
+  {
+    "question": "Which panel set up by the Government of India suggested total decontrol of the sugar industry?",
+    "options": [
+      "RamSevak Panel",
+      "Rangarajan Panel",
+      "RadheShyam Panel",
+      "Sri Krishna Panel"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6118
+  },
+  {
+    "question": "The _____________ was a group of seven Members of Parliament from the United Kingdom, constituted to suggest constitutional reforms for British India. ______",
+    "options": [
+      "Fraser Commission",
+      "Hunter Commission",
+      "Sargent Commission",
+      "Simon Commission"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6119
+  },
+  {
+    "question": "Which of the following committees recommended inclusion of fundamental duties?",
+    "options": [
+      "Tarapore Committee",
+      "Radha Krishnan Committee",
+      "Swaran Singh Committee",
+      "Balwantrai Mehta Committee"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6120
+  },
+  {
+    "question": "Inter-State Council was set up by the recommendations of which committee?",
+    "options": [
+      "Sarkaria committee",
+      "Y V Reddy Committee",
+      "TSR Subramanian committee",
+      "Chandrababu Naidu committee"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6121
+  },
+  {
+    "question": "The Vijay Kelkar Committee was formed to study and evaluate _______. _______",
+    "options": [
+      "Public-Private participation model",
+      "The state of sugar mills",
+      "Privatisation of Air India",
+      "Poverty in India"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6122
+  },
+  {
+    "question": "Second Backward Classes Commission is also known as _______",
+    "options": [
+      "Mandal Commission",
+      "Tendulkar Commission",
+      "Nehru Commission",
+      "Ambedkar Commission"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6123
+  },
+  {
+    "question": "______ are the guidelines laid down by the Supreme Court for specific requirements and procedures, which the police have to follow to arrest, detain and interrogate any person. ______",
+    "options": [
+      "K.C Roberto Guidelines",
+      "D. K Basu Guidelines",
+      "Menka Guidelines",
+      "Vishakha Guidelines"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6124
+  },
+  {
+    "question": "Which Commission was appointed by the central government to examine issues related to Centre-State Relations?",
+    "options": [
+      "Mandal Commission",
+      "Sarkaria Commission",
+      "Nanavati Commission",
+      "Kothari Commission"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6125
+  },
+  {
+    "question": "When did the Sarkaria Commission submit its report?",
+    "options": [
+      "1986",
+      "1984",
+      "1985",
+      "1988"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6126
+  },
+  {
+    "question": "Name the first ever judge of the Supreme Court against whom the motion of impeachment was introduced into Parliament in Independent India",
+    "options": [
+      "Justice Viraswami",
+      "Justice Ramaswami",
+      "Justice Mahajan",
+      "Justice Subba Rao"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6127
+  },
+  {
+    "question": "In case of death of the President and the Vice President of India, the ____________ will act as the President of India",
+    "options": [
+      "Parliament chosen candidate",
+      "Prime Minister of India",
+      "Chief Justice of India",
+      "Attorney General of India"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6128
+  },
+  {
+    "question": "In case the President of Indian wants to resign, he would address his resignation to the _____________",
+    "options": [
+      "Chief Justice of India",
+      "Vice President of India",
+      "Chief Election Commissioner of India",
+      "Prime Minister of India"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6129
+  },
+  {
+    "question": "Who was the prime minister of India during “the Emergency” between the years 1975 to 1977? 1975",
+    "options": [
+      "Indira Gandhi",
+      "Rajiv Gandhi",
+      "Morarji Desai",
+      "Charan Singh"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6130
+  },
+  {
+    "question": "The maximum number of nominated members to Lok Sabha is:",
+    "options": [
+      "4",
+      "3",
+      "1",
+      "2"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6131
+  },
+  {
+    "question": "The power to summon the Houses of Parliament is vested with the _______",
+    "options": [
+      "Prime Minister",
+      "Speaker",
+      "Vice President",
+      "President"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6132
+  },
+  {
+    "question": "The Parliament of India consists of __________",
+    "options": [
+      "President House of the People and Council of States",
+      "House of the People",
+      "House of the People and Council of States",
+      "Council of States"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6133
+  },
+  {
+    "question": "Which of the following is called the ‘popular chamber’?",
+    "options": [
+      "State Assembly",
+      "Rajya Sabha",
+      "Lok Sabha",
+      "Gram Sabha"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6134
+  },
+  {
+    "question": "The power to enquire into and decide all the doubts and disputes arising out of election of the president is vested in: www.ssccglpinnacle.com support@ssccglpinnacle.com Ph. 09729327755, 09817390373 248 http://t.me/yoursmahboob_classes POLITY",
+    "options": [
+      "The Chairman of Rajya Sabha",
+      "The Prime Minister of India",
+      "The Supreme Court",
+      "The Election Commission"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6135
+  },
+  {
+    "question": "Who presides over the joint sitting of the two Houses of Parliament?",
+    "options": [
+      "Prime Minister",
+      "The Speaker of the Lok Sabha",
+      "The Vice President",
+      "President"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6136
+  },
+  {
+    "question": "The quorum to constitute a sitting of the Lok Sabha is_____of the total number of Members of the House under article 100(3) of the Constitution of India",
+    "options": [
+      "one-tenth",
+      "one-fifth",
+      "one-third",
+      "half"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6137
+  },
+  {
+    "question": "After 1994, how many sessions of the Rajya Sabha are usually held in a year? 1994",
+    "options": [
+      "four",
+      "two",
+      "three",
+      "six"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6138
+  },
+  {
+    "question": "____was the Chief Justice of India from January 1950 to November 1951",
+    "options": [
+      "Bijan Kumar Mukherjea",
+      "Harilal Jekisundas Kania",
+      "Mehr Chand Mahajan",
+      "Bhuvaneshwar Prasad Sinha"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6139
+  },
+  {
+    "question": "Who appoints the chief justice of India ?",
+    "options": [
+      "Prime Minister",
+      "Loksabha Speaker",
+      "Vice-President",
+      "President"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6140
+  },
+  {
+    "question": "Who among the following became the country’s Vice President twice ?",
+    "options": [
+      "Bhairon Singh Shekhawat",
+      "Mohammad Hidayatullah",
+      "Sarvepalli Radhakrishnan",
+      "K R Narayanan"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6141
+  },
+  {
+    "question": "Which of the following statements regarding the Lok sabha is NOT correct ?",
+    "options": [
+      "Central council of ministers is collectively responsible to the Lok Sabha",
+      "Whether the bill is a money bill or not, the final decision will be taken by the leader of the opposition",
+      "Money bill can be presented only in the Lok Sabha",
+      "The No-confidence motion against the council of ministers can be presented only in the Lok Sabha"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6142
+  },
+  {
+    "question": "When was the first Lok Sabha constituted ?",
+    "options": [
+      "1950",
+      "1948",
+      "1952",
+      "1951"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6143
+  },
+  {
+    "question": "Who among the following has the power to promulgate ordinance ?",
+    "options": [
+      "Prime Minister",
+      "President",
+      "Chief Justice of the Supreme Court",
+      "Defence Minister"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6144
+  },
+  {
+    "question": "As per Article 274 of constitution, whose prior recommendation is required to the Bills affecting taxation ?",
+    "options": [
+      "Chairman of Rajya Sabha",
+      "Union Finance Minister",
+      "President",
+      "Prime MInister"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6145
+  },
+  {
+    "question": "Who among the following takes part in the election of the President of India?",
+    "options": [
+      "Elected Members of both the houses of Parliament and Legislative Assemblies of the states",
+      "Elected and nominated members of both the houses of Parliament",
+      "Elected members of both the houses of Parliament only",
+      "Elected and nominated members both the houses of Parliament and Legislative Assemblies of the states"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6146
+  },
+  {
+    "question": "Upper House of the Indian Parliament is also known as _____",
+    "options": [
+      "Lok Sabha",
+      "Rajya Sabha",
+      "Vidhan Parishad",
+      "Vidhan Sabha"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6147
+  },
+  {
+    "question": "Who has to resign when the No-Confidence Motion is passed in the Lok Sabha ?",
+    "options": [
+      "Lok Sabha Speaker",
+      "The leader of Opposition",
+      "Council of Ministers",
+      "President"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6148
+  },
+  {
+    "question": "Any act passed by the parliament becomes a law only after the approval of _______. _______",
+    "options": [
+      "Law Minister",
+      "President",
+      "Supreme Court",
+      "Prime Minister"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6149
+  },
+  {
+    "question": "Who among the following does NOT take part in the election of the President of India ?",
+    "options": [
+      "Elected Members of State Assembly",
+      "Elected Members of the Lok Sabha",
+      "Elected Member of Rajya Sabha",
+      "Nominated Members of Parliament"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6150
+  },
+  {
+    "question": "Who presides over the joint sitting of Lok Sabha and the Rajya Sabha?",
+    "options": [
+      "Speaker of Lok Sabha",
+      "Deputy Speaker of Lok sabha",
+      "Prime Minister",
+      "Vice President"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6151
+  },
+  {
+    "question": "Rule ____ (of the Rules of Procedure and conduct of business in Lok Sabha) does NOT involve formal motion before the Parliament House, hence no voting",
+    "options": [
+      "158",
+      "186",
+      "149",
+      "193"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6152
+  },
+  {
+    "question": "In Parliament, who takes the final decision on whether a Bill is a Money Bill or not?",
+    "options": [
+      "Vice President",
+      "Speaker",
+      "Finance Minister",
+      "Prime Minister"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6153
+  },
+  {
+    "question": "In the context of Indian parliament what is 'Zero Hour'?",
+    "options": [
+      "Time immediately after Question Hour",
+      "Time in the last half of the parliamentary proceeding",
+      "Time before Question Hour",
+      "Time in the first half of the parliamentary proceeding"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6154
+  },
+  {
+    "question": "How many sessions of the Lok Sabha are normally held in a year?",
+    "options": [
+      "7",
+      "5",
+      "3",
+      "2"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6155
+  },
+  {
+    "question": "The first session of the Lok Sabha commenced on_______",
+    "options": [
+      "26th January 1950",
+      "15th August 1947",
+      "15th August 1951",
+      "13th May 1952"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6156
+  },
+  {
+    "question": "Who decides the admissibility of Questions in Lok Sabha?",
+    "options": [
+      "Speaker",
+      "Prime minister",
+      "Deputy speaker",
+      "Vice president"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6157
+  },
+  {
+    "question": "In Parliamentary proceedings, how many matters per day as per their priority in the ballot are allowed to be raised during ‘Zero Hour’?",
+    "options": [
+      "21",
+      "18",
+      "19",
+      "20"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6158
+  },
+  {
+    "question": "Which of the following Parliamentary Committee does NOT draw any members from Rajya Sabha?",
+    "options": [
+      "Committee on Estimates",
+      "Committee on Petitions",
+      "Committee on Public Undertakings",
+      "Committee on Public Accounts"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6159
+  },
+  {
+    "question": "On any issue pertaining to the disqualification of any member of Lok Sabha under the 10th Schedule of Indian Constitution, the final decision is taken by_______",
+    "options": [
+      "Speaker, Lok Sabha",
+      "Vice-President of India",
+      "President of India",
+      "Election Commision of India"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6160
+  },
+  {
+    "question": "Who appoints the Advocate General of states?",
+    "options": [
+      "Governor of the state",
+      "Chief Minister of the state",
+      "Chief Justice of the high court",
+      "President of India"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6161
+  },
+  {
+    "question": "Which of the following statements is correct?",
+    "options": [
+      "The Governor has no power to grant pardon in respect of punishment or sentence inflicted by Court Martial",
+      "The President has no power to grant pardon in respect of punishment or sentence inflicted by Court Martial",
+      "The Governor has power to grant pardon in case of a death sentence",
+      "The Governor has no power to suspend, remit or commute a sentence of death"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6162
+  },
+  {
+    "question": "Who acts as the President during a casual vacancy that arises due to the death of the President?",
+    "options": [
+      "Nominated Lok Sabha member",
+      "Vice-President",
+      "Lok Sabha Speaker",
+      "Chief Justice of India"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6163
+  },
+  {
+    "question": "Who among the following can be removed by the process of impeachment? /",
+    "options": [
+      "The Governor of India",
+      "The Prime Minister of India",
+      "The Chief Minister of India",
+      "The President of India"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6164
+  },
+  {
+    "question": "How many members of the Rajya Sabha can be nominated by the President of India? /",
+    "options": [
+      "14 members",
+      "10 members",
+      "16 members",
+      "12 members"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6165
+  },
+  {
+    "question": "Which of the following statements is correct?/",
+    "options": [
+      "The President submits his resignation to the Speaker of the Lok Sabha",
+      "The President submits his resignation to the Vice-President",
+      "The President submits his resignation to the Chief Justice of India",
+      "The President submits his resignation to the Prime Minister"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6166
+  },
+  {
+    "question": "Which of the following statements is correct? /",
+    "options": [
+      "The Vice-President can dissolve the Legislative Council of a State",
+      "The Governor can dissolve the Legislative Assembly of a State",
+      "The Speaker of the Lok Sabha can dissolve the Lok Sabha",
+      "The President can dissolve the Rajya Sabha"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6167
+  },
+  {
+    "question": "Which of the following statements is NOT correct about Rajya Sabha? /",
+    "options": [
+      "It has powers that protect the rights of states against the union",
+      "It can amend a money bill",
+      "Twelve of its members are nominated by the President",
+      "It is the upper house of the Parliament of India"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6168
+  },
+  {
+    "question": "The President of India can hold office for a term of ______ year/s. /",
+    "options": [
+      "5",
+      "3",
+      "1",
+      "10"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6169
+  },
+  {
+    "question": "In which year did the first Elected Parliament with two houses come into being in India?",
+    "options": [
+      "1952",
+      "1953",
+      "1954",
+      "1955"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6170
+  },
+  {
+    "question": "Who was elected as the protem Speaker of the 17th Lok Sabha? 17",
+    "options": [
+      "Somnath Chatterjee",
+      "Om Birla",
+      "Virendra Kumar",
+      "Sumitra Mahajan"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6171
+  },
+  {
+    "question": "The minimum age criteria for appointment as the Vice President of India is____",
+    "options": [
+      "30",
+      "21",
+      "35",
+      "25"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6172
+  },
+  {
+    "question": "Former President Pranab Mukherjee won the first Lok Sabha Election in the year ______",
+    "options": [
+      "1980",
+      "1991",
+      "2004",
+      "1998"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6173
+  },
+  {
+    "question": "Who appoints Governor of the state in India ?",
+    "options": [
+      "PMO",
+      "Prime Minister",
+      "President",
+      "Cabinet Committee on Appointments"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6174
+  },
+  {
+    "question": "Who was the President of India during the emergency of 1975-1977? 1975-1977",
+    "options": [
+      "R Venkataraman",
+      "Varahagiri Venkatagiri",
+      "Fakhruddin Ali Ahmed",
+      "Giani Zail Singh"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6175
+  },
+  {
+    "question": "Who became the acting prime minister of India after the death of Jawaharlal Nehru in 1964? 1964",
+    "options": [
+      "V P Singh",
+      "Morarji Desai",
+      "Gulzarilal Nanda",
+      "Charan Singh"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6176
+  },
+  {
+    "question": "Who among the following is the longest serving President of India?",
+    "options": [
+      "Neelam Sanjiva Reddy",
+      "Shankar Dayal Sharma",
+      "Rajendra Prasad",
+      "R Venkataraman"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6177
+  },
+  {
+    "question": "Who is the Supreme Commander of the defence forces of India ?",
+    "options": [
+      "President",
+      "Chief of Defence",
+      "Prime Minister",
+      "Defence Minister"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6178
+  },
+  {
+    "question": "In which of the following countries, the Presidential System of Government does not exist?",
+    "options": [
+      "USA",
+      "Russia",
+      "Turkey",
+      "India"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6179
+  },
+  {
+    "question": "The President of India has the same powers and functions as ______",
+    "options": [
+      "President of USA",
+      "President of China",
+      "President of Turkey",
+      "Queen of Britain"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6180
+  },
+  {
+    "question": "Who is the head of the State and is the highest formal authority in India ?",
+    "options": [
+      "Prime Minister",
+      "President",
+      "Parliament",
+      "Vice-President"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6181
+  },
+  {
+    "question": "Who appoints the Comptroller and Auditor General of India ?",
+    "options": [
+      "Prime Minister",
+      "President",
+      "Chief Justice of India",
+      "Supreme Court"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6182
+  },
+  {
+    "question": "Which of the following Prime Ministers has served a term of 13 days ?",
+    "options": [
+      "Atal Bihari Vajpayee",
+      "Morarji Desai",
+      "Charan Singh",
+      "Jawaharlal Nehru"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6183
+  },
+  {
+    "question": "Who hoists the national flag at the Red Fort on Independence Day?",
+    "options": [
+      "Governor",
+      "Chief Justice",
+      "Prime Minister",
+      "President"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6184
+  },
+  {
+    "question": "The National Board for Micro, Small and Medium Enterprises meets once every _________ month in a year. /",
+    "options": [
+      "2",
+      "6",
+      "3",
+      "9"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6185
+  },
+  {
+    "question": "What is the term of the elected representatives of a Gram Panchayat?",
+    "options": [
+      "5 years",
+      "3 years",
+      "2 years",
+      "4 years"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6186
+  },
+  {
+    "question": "What is the tenure of a Panchayat as per the 73rd constitutional amendment act ? 73",
+    "options": [
+      "4 years",
+      "3 years",
+      "6 years",
+      "5 years"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6187
+  },
+  {
+    "question": "Elections to Panchayats in a State are conducted by _____",
+    "options": [
+      "Election Commission of India",
+      "Joint Public Service Commission",
+      "State Election Commission",
+      "Gram Sabha"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6188
+  },
+  {
+    "question": "On which date did the NITI Aayog replace the Planning Commission?",
+    "options": [
+      "1st of January 2017",
+      "1st of January 2014",
+      "1st of January 2016",
+      "1st of January 2015"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6189
+  },
+  {
+    "question": "How many tiers are there in a Panchayati Raj structure?",
+    "options": [
+      "Three",
+      "Four",
+      "Five",
+      "Two"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6190
+  },
+  {
+    "question": "Who was the first president of Independent India?",
+    "options": [
+      "Sarvapalli Radhakrishnan",
+      "Rajendra Prasad",
+      "Ram Nath Kovind",
+      "Pranab Mukherjee"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6191
+  },
+  {
+    "question": "The Supreme Court has declared access to the internet a fundamental right under Article ________ of the Indian Constitution",
+    "options": [
+      "17",
+      "21",
+      "14",
+      "19"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6192
+  },
+  {
+    "question": "What is the tenure of the Chief Election Commissioner of India?",
+    "options": [
+      "6 years or up to the age of 65 years, whichever is earlier. 6",
+      "4 years or up to the age of 65 years, whichever is earlier. 4",
+      "5 Years or up to the age of 65 years, whichever is earlier. 5",
+      "3 years or up to the age of 65 years, whichever is earlier. 3"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6193
+  },
+  {
+    "question": "How many agro-climatic zones (ACZ) are characterized by the Planning Commission of India? /",
+    "options": [
+      "30",
+      "15",
+      "10",
+      "20"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6194
+  },
+  {
+    "question": "When was the Backward and Minority Communities Employees Federation (BAMCEF) established in India? /",
+    "options": [
+      "1979",
+      "1980",
+      "1978",
+      "1989 www.ssccglpinnacle.com support@ssccglpinnacle.com Ph. 09729327755, 09817390373 258 http:"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6195
+  },
+  {
+    "question": "The election to constitute a Panchayat should be completed before the expiration of a period of ______ from the date of its dissolution. /",
+    "options": [
+      "eight months",
+      "one year",
+      "six months",
+      "two months"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6196
+  },
+  {
+    "question": "Union Legislature alone can make laws on matters related to ______. _____",
+    "options": [
+      "public health",
+      "police",
+      "railways",
+      "local self-government"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6197
+  },
+  {
+    "question": "Who implements Model Code of Conduct for elections in India ?",
+    "options": [
+      "Parliament",
+      "Supreme Court",
+      "Returning Officer",
+      "Election Commission"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6198
+  },
+  {
+    "question": "When was the five-year plan started in India ?",
+    "options": [
+      "1958",
+      "1951",
+      "1955",
+      "1947"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6199
+  },
+  {
+    "question": "The Mahalanobis Plan of development was adopted during which Five Year Plan?",
+    "options": [
+      "Third",
+      "Fourth",
+      "First",
+      "Second"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6200
+  },
+  {
+    "question": "How many members are present in the Sri Lankan Parliament?",
+    "options": [
+      "210",
+      "215",
+      "232",
+      "225"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6201
+  },
+  {
+    "question": "Who among the following was the first President of Pakistan?",
+    "options": [
+      "Zulfikar Ali Bhutto",
+      "Yahya Khan",
+      "Iskander Mirza",
+      "Ayub Khan"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6202
+  },
+  {
+    "question": "Which of the following countries has the largest parliament in the world?",
+    "options": [
+      "UK",
+      "India",
+      "China",
+      "Japan"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6203
+  },
+  {
+    "question": "The maximum strength of Bangladeshi parliament is _____",
+    "options": [
+      "350",
+      "340",
+      "322",
+      "363"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6204
+  },
+  {
+    "question": "Who among the following is/was the longest serving Prime Minister of Bangladesh?",
+    "options": [
+      "Khalida Zia",
+      "Sheikh Mujibur Rahman",
+      "Shah Azizur Rahman",
+      "Sheikh Hasina"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6205
+  },
+  {
+    "question": "How many provinces is the country of Nepal divided into?",
+    "options": [
+      "5",
+      "7",
+      "4",
+      "6"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6206
+  },
+  {
+    "question": "Who among the following is/was the longest serving governor of an Indian state?",
+    "options": [
+      "Lakshmi Kant Jha",
+      "Padmaja Naidu",
+      "N D Tiwari",
+      "Sarojini Naidu"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6207
+  },
+  {
+    "question": "Which one of the following Union Territories has been granted with a partial statehood ship?",
+    "options": [
+      "Puducherry",
+      "Daman and Diu",
+      "Dadra and Nagar Haveli",
+      "Lakshadweep"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6208
+  },
+  {
+    "question": "The Lok Sabha elected after the 2019 elections is the ________ Lok Sabha. 2019",
+    "options": [
+      "18th",
+      "16th",
+      "15th",
+      "17th"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6209
+  },
+  {
+    "question": "Which party government announced the formation of a second backward classes commission in 1978?",
+    "options": [
+      "Indian National Congress Party",
+      "Bharatiya Janata Party",
+      "Janata Party",
+      "United Democratic Party"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6210
+  },
+  {
+    "question": "In which year was the Communist Party formed in India ?",
+    "options": [
+      "1925",
+      "1922",
+      "1927",
+      "1930"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6211
+  },
+  {
+    "question": "How many times has the National Emergency been declared by the President in the country ?",
+    "options": [
+      "3",
+      "4",
+      "2",
+      "1"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6212
+  },
+  {
+    "question": "Our National Anthem ‘Jan Gan Man’ is adopted from which language?",
+    "options": [
+      "Hindi",
+      "Marathi",
+      "Assamese",
+      "Bangla"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6213
+  },
+  {
+    "question": "In which year the National Food Security Act was passed in India ?",
+    "options": [
+      "2011",
+      "2013",
+      "2012",
+      "2014"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6214
+  },
+  {
+    "question": "The High Court of Kerala and Lakshadweep is situated at :",
+    "options": [
+      "Ernakulam",
+      "Thrissur",
+      "Kochi",
+      "Kannur"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6215
+  },
+  {
+    "question": "Which of the following countries was the earliest to give women the right to vote?",
+    "options": [
+      "Australia",
+      "France",
+      "UK",
+      "USA"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6216
+  },
+  {
+    "question": "Andaman and Nicobar jurisdiction comes under which High Court ?",
+    "options": [
+      "Andhra Pradesh",
+      "Calcutta",
+      "Madras",
+      "Odisha"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6217
+  },
+  {
+    "question": "In which year the Union and Railway budgets were merged ?",
+    "options": [
+      "2017",
+      "2016",
+      "2018",
+      "2015"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6218
+  },
+  {
+    "question": "The decisions given by the Supreme Court of India are to _____",
+    "options": [
+      "Any region of a state",
+      "All states and union teritorries except Jammu and Kashmir",
+      "Only district courts",
+      "All Indian courts"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6219
+  },
+  {
+    "question": "Which one is the largest appellate court of India ?",
+    "options": [
+      "High Court",
+      "District Court",
+      "Supreme Court",
+      "Consumer Court"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6220
+  },
+  {
+    "question": "Who was the first Chief Justice of Independent India?",
+    "options": [
+      "B.K. Mukherjee",
+      "S.R. Das",
+      "M. Patanjali Sastri",
+      "Harilal J. Kania"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6221
+  },
+  {
+    "question": "Who conducts the elections of Lok Sabha in India?",
+    "options": [
+      "Election Commission",
+      "Union Public Service Commission",
+      "Parliament",
+      "Delimitation Commission"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6222
+  },
+  {
+    "question": "Which of the following is NOT a Federal country ?",
+    "options": [
+      "Canada",
+      "Brazil",
+      "China",
+      "Australia"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6223
+  },
+  {
+    "question": "Who among the following presented the Union budget of India for maximum times?",
+    "options": [
+      "RK Shanmukham Chetty",
+      "Pranab Mukherjee",
+      "Morarji Desai",
+      "P. Chidambaram"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6224
+  },
+  {
+    "question": "Who presided over the 15th Finance Commission ? 15",
+    "options": [
+      "Y.V Reddy",
+      "N.K Singh",
+      "Amitabh Kant",
+      "Urjit Patel"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6225
+  },
+  {
+    "question": "Which of the following is NOT a scheduled language of India ?",
+    "options": [
+      "Rajasthani",
+      "Sindhi",
+      "Manipuri",
+      "Bodo"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6226
+  },
+  {
+    "question": "When was the Nationalist Congress Party formed ?",
+    "options": [
+      "1999",
+      "1992",
+      "1980",
+      "1984"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6227
+  },
+  {
+    "question": "In which of the following states there is a bicameral legislature",
+    "options": [
+      "Punjab",
+      "Goa",
+      "Bihar",
+      "Sikkim"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6228
+  },
+  {
+    "question": "Who was the first National Security Advisor of India?",
+    "options": [
+      "Pankaj Singh",
+      "Manmohan Singh",
+      "Prof. Rajinder Khanna",
+      "Brajesh Mishra"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6229
+  },
+  {
+    "question": "In which year, the first Gender Budget Statement appeared in the Union Budget of India ?",
+    "options": [
+      "2001-02",
+      "2005-06",
+      "2010-11",
+      "2007-08 www.ssccglpinnacle.com support@ssccglpinnacle.com Ph. 09729327755, 09817390373 263 http:"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6230
+  },
+  {
+    "question": "What is the election called in a political parliamentary / assembly constituency to fill the vacancy arising during the tenure of the government?",
+    "options": [
+      "Bypolls",
+      "Council Elections",
+      "Mini Elections",
+      "Tri-Elections"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6231
+  },
+  {
+    "question": "First full time female Finance Minister of India is ______",
+    "options": [
+      "Sarojini Naidu",
+      "Maneka Gandhi",
+      "Nirmala Sitharaman",
+      "Indira Gandhi"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6232
+  },
+  {
+    "question": "When was the Citizenship act passed ?",
+    "options": [
+      "1952",
+      "1955",
+      "1960",
+      "1965"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6233
+  },
+  {
+    "question": "When was the Representation of the People Act passed ?",
+    "options": [
+      "1951",
+      "1949",
+      "1955",
+      "1945"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6234
+  },
+  {
+    "question": "Under Article 21 of the constitution the right to livelihood as part of the right to life was retained due to which case?",
+    "options": [
+      "Shankari Prasad Case",
+      "Olga Tellis vs Bombay Municipal Corporation",
+      "Maneka Gandhi vs VOI case",
+      "N Nagaraj Vs VOI case"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6235
+  },
+  {
+    "question": "In which form of government, rulers are directly elected by the people of the country?",
+    "options": [
+      "Democracy",
+      "Dictatorship",
+      "Autocracy",
+      "Republic"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6236
+  },
+  {
+    "question": "Who among the following was appointed as the first Deputy Speaker of the Lok Sabha?",
+    "options": [
+      "M. Ananthasayanam Ayyangar",
+      "G V Mavalankar",
+      "Vithalbhai J Patel",
+      "V Narahari Rao"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6237
+  },
+  {
+    "question": "As per the Table of Precedence, who among the following enjoys the highest ceremonial protocol?",
+    "options": [
+      "Holders of Bharat Ratna",
+      "Judges of the Supreme Court of India",
+      "Cabinet ministers of the Union",
+      "Deputy Chairman of Rajya Sabha"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6238
+  },
+  {
+    "question": "Ram Vilas Paswan is the president of which party?",
+    "options": [
+      "Bahujan Samaj Party",
+      "Republican Party of India",
+      "Samajwadi Party",
+      "Lok Janshakti Party"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6239
+  },
+  {
+    "question": "In which year the first ever motion to remove a Supreme court justice signed , by 108 members of the Parliament?",
+    "options": [
+      "1984",
+      "1991",
+      "1978",
+      "1996"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6240
+  },
+  {
+    "question": "How many policies does the Institutional Mechanism of Federalism accommodate?",
+    "options": [
+      "Two",
+      "One",
+      "Four",
+      "Three"
+    ],
+    "correctIndex": 0,
+    "category": "Polity",
+    "id": 6241
+  },
+  {
+    "question": "As of January 2020,_____has the maximum number of seats in the Rajya Sabha",
+    "options": [
+      "Tamil Nadu",
+      "Karnataka",
+      "Uttar Pradesh",
+      "Maharashtra"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6242
+  },
+  {
+    "question": "As of Feb 2020, how many members represent the state of Uttar Pradesh in Lok Sabha?",
+    "options": [
+      "48",
+      "80",
+      "62",
+      "39"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6243
+  },
+  {
+    "question": "Which among the following states has the highest representation in the Lok Sabha?",
+    "options": [
+      "Rajasthan",
+      "Andhra Pradesh",
+      "Tamil Nadu",
+      "Uttar Pradesh"
+    ],
+    "correctIndex": 3,
+    "category": "Polity",
+    "id": 6244
+  },
+  {
+    "question": "How many Lok Sabha constituencies are there in Rajasthan?",
+    "options": [
+      "28",
+      "20",
+      "25",
+      "30"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6245
+  },
+  {
+    "question": "Who appoints the Chief Justice of India?",
+    "options": [
+      "President of India in consultation with senior judges of Supreme Court and High Court",
+      "President of India in consultation with senior judges of Supreme Court",
+      "President of India",
+      "Judges of Supreme Court and High Court"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6246
+  },
+  {
+    "question": "Bangladesh was a part of Pakistan from ______ to ______",
+    "options": [
+      "1947; 1962",
+      "1947; 1971",
+      "1947; 1958",
+      "1947; 1989"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6247
+  },
+  {
+    "question": "On the night of ______ 1975, Indira Gandhi recommended the imposition of Emergency to president Fakhruddin Ali Ahmed. 1975",
+    "options": [
+      "1st June",
+      "22nd May",
+      "25th June",
+      "1st July"
+    ],
+    "correctIndex": 2,
+    "category": "Polity",
+    "id": 6248
+  },
+  {
+    "question": "What does the writ of 'Mandamus' mean? '",
+    "options": [
+      "By what Warrants",
+      "We Command",
+      "To be Certified",
+      "You May Have the Body"
+    ],
+    "correctIndex": 1,
+    "category": "Polity",
+    "id": 6249
+  }
+]

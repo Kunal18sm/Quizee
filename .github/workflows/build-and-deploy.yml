@@ -78,15 +78,15 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2.2.0
-          name: "Quizee v2.2.0 (Screen-Off Lock Session + Hindi Meanings in Synonyms & Antonyms)"
+          tag_name: v2.3.0
+          name: "Quizee v2.3.0 (Daily Sequential Curriculum & Sunday Weekly Mega Revision)"
           body: |
-            ## 📱 Quizee App v2.2.0 Released!
-            - **No More Re-Locking During Usage**: Once an app is unlocked by passing the quiz, it remains unlocked for the entire phone session without interrupting you. Apps re-lock cleanly when the phone screen is turned off / locked.
-            - **Hindi Meanings for English Synonyms & Antonyms**: All 1,070+ synonym & antonym questions now display Hindi meanings for the main question word as well as all 4 options for fast, effective learning.
-            - **Massive 5,300+ Question Bank**: Complete BlackBook English Vocabulary + Static GK 2026.
-            - **3/5 Passing Rule & Smart Revision**: Unlock with 3/5 or revise identical questions on retry.
-            - **Direct App Overlay**: Floating quiz card appears directly over target apps without opening Quizee.
+            ## 📱 Quizee App v2.3.0 Released!
+            - **Sequential Daily Learning Engine**: Practice 30 (or 20) structured questions daily following a line-wise, chapter-wise curriculum (English, Static GK, History, Geography, Biology, Polity, Economics).
+            - **Sunday Weekly Mega Revision**: On Sundays, no new questions are added. Instead, all questions practiced throughout the week are combined for a comprehensive weekly revision test!
+            - **Smart Mistake-Priority Spaced Repetition**: Questions answered incorrectly in lock quizzes are automatically prioritized until mastered.
+            - **100% High-Yield SSC CGL Bank (6,517 MCQs)**: All low-yield filler questions pruned away for maximum retention.
+            - **Dashboard Mastery Meter & Review Mode**: Track daily progress, day streak, and review today's bank in 1 tap.
             - Download `quizee.apk` below directly on your Android phone!
           files: docs/quizee.apk
         env:

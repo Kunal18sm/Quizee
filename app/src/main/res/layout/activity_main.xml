@@ -61,6 +61,168 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <!-- Daily Learning Target & Curriculum Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDailyTarget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                app:cardBackgroundColor="@color/card_dark"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="1.5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Day and Streak Header -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvDailyDayTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🎯 Day 1 • Target Bank"
+                            android:textColor="@color/text_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvDailyStreak"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_option_default"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:text="🔥 1 Day Streak"
+                            android:textColor="@color/warning_amber"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <!-- Mastery Progress Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvDailyMasteryCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 / 30 Mastered"
+                                android:textColor="@color/primary_light"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvDailyStatusSubtitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Active in your lock screen quizzes"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnToggleDailyTarget"
+                            style="@style/Widget.Material3.Button.TonalButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="30 Qs / Day"
+                            android:textSize="12sp"
+                            app:backgroundTint="@color/card_dark_elevated"
+                            app:strokeColor="@color/border_dark"
+                            app:strokeWidth="1dp" />
+                    </LinearLayout>
+
+                    <!-- Horizontal Progress Bar -->
+                    <ProgressBar
+                        android:id="@+id/pbDailyMastery"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="12dp"
+                        android:max="30"
+                        android:progress="0"
+                        android:progressTint="@color/correct_green"
+                        android:progressBackgroundTint="@color/border_dark" />
+
+                    <!-- Subject Quota Breakdown Chips / Summary -->
+                    <TextView
+                        android:id="@+id/tvDailySubjectBreakdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Eng 8 • GK 6 • Hist 5 • Pol 3 • Bio 3 • Geo 3 • Eco 2"
+                        android:textColor="@color/text_muted"
+                        android:textSize="11sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="12dp"
+                        android:background="@color/border_dark_subtle" />
+
+                    <!-- Action Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnReviewDailyBank"
+                            style="@style/Widget.Material3.Button.TonalButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:text="Review Today's 30 Qs"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp"
+                            app:backgroundTint="@color/card_dark_elevated"
+                            app:icon="@drawable/ic_visibility"
+                            app:iconTint="@color/accent"
+                            app:strokeColor="@color/border_dark"
+                            app:strokeWidth="1dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnAdvanceNextDay"
+                            style="@style/Widget.Material3.Button.TonalButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Next Day"
+                            android:textColor="@color/accent"
+                            android:textSize="12sp"
+                            app:backgroundTint="@color/card_dark_elevated"
+                            app:icon="@drawable/ic_forward"
+                            app:iconTint="@color/accent"
+                            app:strokeColor="@color/border_dark"
+                            app:strokeWidth="1dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
             <!-- Android 13+ Restricted Settings Helper Banner -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardRestrictedSettings"
