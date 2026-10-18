@@ -187,6 +187,9 @@ class QuizLockActivity : AppCompatActivity() {
         binding.progressBar.progress = index + 1
         binding.tvScoreBadge.text = "Score: $score"
 
+        val progress = com.quizlock.app.data.DailyStudyManager.getInstance(this).getDailyProgress()
+        binding.tvQuizStreakBadge.text = "🔥 ${progress.streak} Day Streak"
+
         binding.tvCategory.text = q.category
         binding.tvQuestionText.text = q.question
 
