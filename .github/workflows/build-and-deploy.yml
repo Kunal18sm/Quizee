@@ -78,10 +78,10 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2.3.0
-          name: "Quizee v2.3.0 (Daily Sequential Curriculum & Sunday Weekly Mega Revision)"
+          tag_name: v2.3.1
+          name: "Quizee v2.3.1 - Target Toggle & Sunday Mega Revision Fix"
           body: |
-            ## 📱 Quizee App v2.3.0 Released!
+            ## 📱 Quizee App v2.3.1 Released!
             - **Sequential Daily Learning Engine**: Practice 30 (or 20) structured questions daily following a line-wise, chapter-wise curriculum (English, Static GK, History, Geography, Biology, Polity, Economics).
             - **Sunday Weekly Mega Revision**: On Sundays, no new questions are added. Instead, all questions practiced throughout the week are combined for a comprehensive weekly revision test!
             - **Smart Mistake-Priority Spaced Repetition**: Questions answered incorrectly in lock quizzes are automatically prioritized until mastered.

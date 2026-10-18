@@ -99,7 +99,9 @@ class DailyStudyManager private constructor(private val context: Context) {
         if (validSize != getTargetSize()) {
             prefs.edit().putInt(KEY_TARGET_SIZE, validSize).apply()
             // Regenerate today's bank with new quota
-            generateTodayBank()
+            if (!isSundayRevisionActive()) {
+                generateRegularDayBank()
+            }
         }
     }
 
@@ -127,6 +129,13 @@ class DailyStudyManager private constructor(private val context: Context) {
         }
     }
 
+    fun isSundayRevisionActive(): Boolean {
+        val isSunday = isTodaySunday()
+        val dayNum = prefs.getInt(KEY_DAY_NUMBER, 1)
+        val weeklyIds = getSavedIdList(KEY_WEEKLY_BANK_IDS)
+        return isSunday && dayNum > 1 && weeklyIds.isNotEmpty()
+    }
+
     private fun getCurrentDateString(): String = dateFormat.format(Date())
 
     private fun getYesterdayDateString(): String {
@@ -139,9 +148,18 @@ class DailyStudyManager private constructor(private val context: Context) {
     fun ensureDailyBankReady() {
         val todayStr = getCurrentDateString()
         val lastDateStr = prefs.getString(KEY_LAST_DATE, null)
-        val isSunday = isTodaySunday()
         val currentWeek = Calendar.getInstance().get(Calendar.WEEK_OF_YEAR)
         val savedWeek = prefs.getInt(KEY_CURRENT_WEEK_OF_YEAR, -1)
+        val dayNum = prefs.getInt(KEY_DAY_NUMBER, 1)
+
+        // Fix migration: if Day 1 had an accidental 60-question pool from previous build, clean it up!
+        if (dayNum <= 1) {
+            val currentBank = getSavedIdList(KEY_TODAY_BANK_IDS)
+            if (currentBank.size > 30) {
+                prefs.edit().putString(KEY_WEEKLY_BANK_IDS, gson.toJson(emptyList<Long>())).apply()
+                generateTodayBank()
+            }
+        }
 
         if (lastDateStr == null) {
             // First time initialization
@@ -150,6 +168,7 @@ class DailyStudyManager private constructor(private val context: Context) {
                 .putInt(KEY_DAY_NUMBER, 1)
                 .putInt(KEY_STREAK, 1)
                 .putInt(KEY_CURRENT_WEEK_OF_YEAR, currentWeek)
+                .putString(KEY_WEEKLY_BANK_IDS, gson.toJson(emptyList<Long>()))
                 .apply()
             generateTodayBank()
         } else if (lastDateStr != todayStr) {
@@ -159,16 +178,15 @@ class DailyStudyManager private constructor(private val context: Context) {
             val newStreak = if (lastDateStr == yesterdayStr) currentStreak + 1 else 1
             val currentDayNum = prefs.getInt(KEY_DAY_NUMBER, 1)
 
-            // On Sunday, we DO NOT advance pointers! Pointers stay frozen for Sunday weekly revision.
-            // On Monday through Saturday, advance pointers by quota.
-            if (!isSunday) {
-                // If yesterday was NOT Sunday, advance pointers by previous day's quota
+            // On Sunday revision, we DO NOT advance pointers! Pointers stay frozen for Sunday weekly revision.
+            // On regular study days, advance pointers by quota.
+            if (!isSundayRevisionActive()) {
                 advancePointersByQuota()
             }
 
             // If it's Monday or a new calendar week, start fresh weekly accumulation
             if (Calendar.getInstance().get(Calendar.DAY_OF_WEEK) == Calendar.MONDAY || savedWeek != currentWeek) {
-                if (!isSunday) {
+                if (!isTodaySunday()) {
                     prefs.edit()
                         .putString(KEY_WEEKLY_BANK_IDS, gson.toJson(emptyList<Long>()))
                         .putInt(KEY_CURRENT_WEEK_OF_YEAR, currentWeek)
@@ -195,9 +213,7 @@ class DailyStudyManager private constructor(private val context: Context) {
     @Synchronized
     fun advanceToNextDayManually() {
         // User manually wants next bank
-        if (!isTodaySunday()) {
-            advancePointersByQuota()
-        }
+        advancePointersByQuota()
         val currentDayNum = prefs.getInt(KEY_DAY_NUMBER, 1)
         val currentStreak = prefs.getInt(KEY_STREAK, 1)
 
@@ -207,7 +223,7 @@ class DailyStudyManager private constructor(private val context: Context) {
             .putInt(KEY_STREAK, currentStreak + 1)
             .apply()
 
-        generateTodayBank()
+        generateRegularDayBank()
     }
 
     private fun advancePointersByQuota() {
@@ -253,71 +269,57 @@ class DailyStudyManager private constructor(private val context: Context) {
     }
 
     private fun generateTodayBank() {
+        if (isSundayRevisionActive()) {
+            generateSundayRevisionBank()
+        } else {
+            generateRegularDayBank()
+        }
+    }
+
+    private fun generateSundayRevisionBank() {
+        val weeklyIds = getSavedIdList(KEY_WEEKLY_BANK_IDS)
+        prefs.edit()
+            .putString(KEY_TODAY_BANK_IDS, gson.toJson(weeklyIds))
+            .putString(KEY_TODAY_SEEN_IDS, gson.toJson(emptyList<Long>()))
+            .putString(KEY_TODAY_MASTERED_IDS, gson.toJson(emptyList<Long>()))
+            .putString(KEY_TODAY_MISTAKE_IDS, gson.toJson(emptyList<Long>()))
+            .apply()
+    }
+
+    private fun generateRegularDayBank() {
         val repo = QuestionRepository.getInstance(context)
         val quota = getQuotaForTarget(getTargetSize())
-        val isSunday = isTodaySunday()
 
-        if (isSunday) {
-            // SUNDAY MEGA REVISION:
-            // Load all questions accumulated from Monday through Saturday!
-            val weeklyIds = getSavedIdList(KEY_WEEKLY_BANK_IDS).toMutableList()
+        val engPtr = prefs.getInt(KEY_PTR_ENGLISH, 0)
+        val gkPtr = prefs.getInt(KEY_PTR_STATIC_GK, 0)
+        val histPtr = prefs.getInt(KEY_PTR_HISTORY, 0)
+        val geoPtr = prefs.getInt(KEY_PTR_GEOGRAPHY, 0)
+        val bioPtr = prefs.getInt(KEY_PTR_BIOLOGY, 0)
+        val polPtr = prefs.getInt(KEY_PTR_POLITY, 0)
+        val ecoPtr = prefs.getInt(KEY_PTR_ECONOMICS, 0)
 
-            // If empty (e.g. brand new user started on Sunday), populate with current week questions
-            val bankIds = if (weeklyIds.isNotEmpty()) {
-                weeklyIds
-            } else {
-                val initial = mutableListOf<Question>()
-                initial.addAll(sliceSequential(repo.englishQuestions, 0, quota.english * 2))
-                initial.addAll(sliceSequential(repo.staticGkQuestions, 0, quota.staticGk * 2))
-                initial.addAll(sliceSequential(repo.historyQuestions, 0, quota.history * 2))
-                initial.addAll(sliceSequential(repo.geographyQuestions, 0, quota.geography * 2))
-                initial.addAll(sliceSequential(repo.biologyQuestions, 0, quota.biology * 2))
-                initial.addAll(sliceSequential(repo.polityQuestions, 0, quota.polity * 2))
-                initial.addAll(sliceSequential(repo.economicsQuestions, 0, quota.economics * 2))
-                val ids = initial.map { it.id }
-                prefs.edit().putString(KEY_WEEKLY_BANK_IDS, gson.toJson(ids)).apply()
-                ids
-            }
+        val selected = mutableListOf<Question>()
+        selected.addAll(sliceSequential(repo.englishQuestions, engPtr, quota.english))
+        selected.addAll(sliceSequential(repo.staticGkQuestions, gkPtr, quota.staticGk))
+        selected.addAll(sliceSequential(repo.historyQuestions, histPtr, quota.history))
+        selected.addAll(sliceSequential(repo.geographyQuestions, geoPtr, quota.geography))
+        selected.addAll(sliceSequential(repo.biologyQuestions, bioPtr, quota.biology))
+        selected.addAll(sliceSequential(repo.polityQuestions, polPtr, quota.polity))
+        selected.addAll(sliceSequential(repo.economicsQuestions, ecoPtr, quota.economics))
 
-            prefs.edit()
-                .putString(KEY_TODAY_BANK_IDS, gson.toJson(bankIds))
-                .putString(KEY_TODAY_SEEN_IDS, gson.toJson(emptyList<Long>()))
-                .putString(KEY_TODAY_MASTERED_IDS, gson.toJson(emptyList<Long>()))
-                .putString(KEY_TODAY_MISTAKE_IDS, gson.toJson(emptyList<Long>()))
-                .apply()
-        } else {
-            // MONDAY THROUGH SATURDAY (Regular Sequential Progression):
-            val engPtr = prefs.getInt(KEY_PTR_ENGLISH, 0)
-            val gkPtr = prefs.getInt(KEY_PTR_STATIC_GK, 0)
-            val histPtr = prefs.getInt(KEY_PTR_HISTORY, 0)
-            val geoPtr = prefs.getInt(KEY_PTR_GEOGRAPHY, 0)
-            val bioPtr = prefs.getInt(KEY_PTR_BIOLOGY, 0)
-            val polPtr = prefs.getInt(KEY_PTR_POLITY, 0)
-            val ecoPtr = prefs.getInt(KEY_PTR_ECONOMICS, 0)
+        val bankIds = selected.map { it.id }
 
-            val selected = mutableListOf<Question>()
-            selected.addAll(sliceSequential(repo.englishQuestions, engPtr, quota.english))
-            selected.addAll(sliceSequential(repo.staticGkQuestions, gkPtr, quota.staticGk))
-            selected.addAll(sliceSequential(repo.historyQuestions, histPtr, quota.history))
-            selected.addAll(sliceSequential(repo.geographyQuestions, geoPtr, quota.geography))
-            selected.addAll(sliceSequential(repo.biologyQuestions, bioPtr, quota.biology))
-            selected.addAll(sliceSequential(repo.polityQuestions, polPtr, quota.polity))
-            selected.addAll(sliceSequential(repo.economicsQuestions, ecoPtr, quota.economics))
+        // Accumulate into weekly bank for Sunday's revision
+        val currentWeekly = getSavedIdList(KEY_WEEKLY_BANK_IDS).toMutableSet()
+        currentWeekly.addAll(bankIds)
+        prefs.edit().putString(KEY_WEEKLY_BANK_IDS, gson.toJson(currentWeekly.toList())).apply()
 
-            val bankIds = selected.map { it.id }
-
-            // Accumulate into weekly bank for Sunday's revision
-            val currentWeekly = getSavedIdList(KEY_WEEKLY_BANK_IDS).toMutableSet()
-            currentWeekly.addAll(bankIds)
-            prefs.edit().putString(KEY_WEEKLY_BANK_IDS, gson.toJson(currentWeekly.toList())).apply()
-
-            prefs.edit()
-                .putString(KEY_TODAY_BANK_IDS, gson.toJson(bankIds))
-                .putString(KEY_TODAY_SEEN_IDS, gson.toJson(emptyList<Long>()))
-                .putString(KEY_TODAY_MASTERED_IDS, gson.toJson(emptyList<Long>()))
-                .putString(KEY_TODAY_MISTAKE_IDS, gson.toJson(emptyList<Long>()))
-                .apply()
-        }
+        prefs.edit()
+            .putString(KEY_TODAY_BANK_IDS, gson.toJson(bankIds))
+            .putString(KEY_TODAY_SEEN_IDS, gson.toJson(emptyList<Long>()))
+            .putString(KEY_TODAY_MASTERED_IDS, gson.toJson(emptyList<Long>()))
+            .putString(KEY_TODAY_MISTAKE_IDS, gson.toJson(emptyList<Long>()))
+            .apply()
     }
 
     fun getTodayBankQuestions(): List<Question> {
@@ -403,9 +405,9 @@ class DailyStudyManager private constructor(private val context: Context) {
         ensureDailyBankReady()
         val dayNum = prefs.getInt(KEY_DAY_NUMBER, 1)
         val streak = prefs.getInt(KEY_STREAK, 1)
-        val isSunday = isTodaySunday()
+        val isSundayRev = isSundayRevisionActive()
         val todayBankIds = getSavedIdList(KEY_TODAY_BANK_IDS)
-        val targetSize = if (isSunday) todayBankIds.size.coerceAtLeast(1) else getTargetSize()
+        val targetSize = if (isSundayRev) todayBankIds.size.coerceAtLeast(1) else getTargetSize()
 
         val seenCount = getSavedIdList(KEY_TODAY_SEEN_IDS).size
         val masteredCount = getSavedIdList(KEY_TODAY_MASTERED_IDS).size
@@ -418,7 +420,7 @@ class DailyStudyManager private constructor(private val context: Context) {
             seenCount = seenCount.coerceAtMost(targetSize),
             masteredCount = masteredCount.coerceAtMost(targetSize),
             mistakeCount = mistakeCount,
-            isSundayRevision = isSunday,
+            isSundayRevision = isSundayRev,
             weeklyPoolSize = todayBankIds.size
         )
     }

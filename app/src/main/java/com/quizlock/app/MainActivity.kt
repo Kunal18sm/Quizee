@@ -417,27 +417,26 @@ class MainActivity : AppCompatActivity() {
     private fun updateDailyTargetUI() {
         dailyStudyManager.ensureDailyBankReady()
         val progress = dailyStudyManager.getDailyProgress()
-        val targetSize = progress.targetSize
+        val configuredTarget = dailyStudyManager.getTargetSize()
+
+        // Daily Target toggle button is ALWAYS visible, enabled, and shows active quota
+        binding.btnToggleDailyTarget.text = "$configuredTarget Qs / Day"
+        binding.btnToggleDailyTarget.isEnabled = true
+
+        binding.tvDailyStreak.text = "🔥 ${progress.streak} Day Streak"
+        binding.tvDailyMasteryCount.text = "${progress.masteredCount} / ${progress.targetSize} Mastered"
+
+        binding.pbDailyMastery.max = progress.targetSize
+        binding.pbDailyMastery.progress = progress.masteredCount
 
         if (progress.isSundayRevision) {
             binding.tvDailyDayTitle.text = "📅 Sunday Mega Revision"
-            binding.tvDailyStreak.text = "🔥 ${progress.streak} Day Streak"
-            binding.tvDailyMasteryCount.text = "${progress.masteredCount} / ${progress.targetSize} Mastered"
             binding.tvDailyStatusSubtitle.text = "Weekly Revision Test • ${progress.targetSize} Week Questions"
-
-            binding.btnToggleDailyTarget.text = "Sunday Mode"
-            binding.btnToggleDailyTarget.isEnabled = false
             binding.btnReviewDailyBank.text = "Review Week's ${progress.targetSize} Qs"
-
-            binding.pbDailyMastery.max = progress.targetSize
-            binding.pbDailyMastery.progress = progress.masteredCount
-
             binding.tvDailySubjectBreakdown.text =
                 "🎯 Sunday Mega Test: Comprehensive review of all subjects practiced Monday to Saturday!"
         } else {
             binding.tvDailyDayTitle.text = "🎯 Day ${progress.dayNumber} • Target Bank"
-            binding.tvDailyStreak.text = "🔥 ${progress.streak} Day Streak"
-            binding.tvDailyMasteryCount.text = "${progress.masteredCount} / ${progress.targetSize} Mastered"
 
             val subtitle = when {
                 progress.isFullyMastered -> "🎉 All ${progress.targetSize} questions mastered for today!"
@@ -445,15 +444,9 @@ class MainActivity : AppCompatActivity() {
                 else -> "Active in your lock screen quizzes (${progress.seenCount}/${progress.targetSize} seen)"
             }
             binding.tvDailyStatusSubtitle.text = subtitle
+            binding.btnReviewDailyBank.text = "Review Today's ${progress.targetSize} Qs"
 
-            binding.btnToggleDailyTarget.text = "$targetSize Qs / Day"
-            binding.btnToggleDailyTarget.isEnabled = true
-            binding.btnReviewDailyBank.text = "Review Today's $targetSize Qs"
-
-            binding.pbDailyMastery.max = progress.targetSize
-            binding.pbDailyMastery.progress = progress.masteredCount
-
-            val quota = dailyStudyManager.getQuotaForTarget(targetSize)
+            val quota = dailyStudyManager.getQuotaForTarget(configuredTarget)
             binding.tvDailySubjectBreakdown.text =
                 "Eng ${quota.english} • GK ${quota.staticGk} • Hist ${quota.history} • Geo ${quota.geography} • Bio ${quota.biology} • Pol ${quota.polity} • Eco ${quota.economics}"
         }
