@@ -43,7 +43,7 @@ class AppLockForegroundService : Service() {
     companion object {
         private const val CHANNEL_ID = "quiz_lock_monitor_channel"
         private const val NOTIFICATION_ID = 1001
-        private const val POLL_INTERVAL_MS = 500L
+        private const val POLL_INTERVAL_MS = 350L
 
         fun startService(context: Context) {
             val intent = Intent(context, AppLockForegroundService::class.java)

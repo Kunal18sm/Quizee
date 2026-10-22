@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Quizee</string>
-    <string name="accessibility_service_desc">Enables Quizee to detect when protected apps are opened and prompt you with a 5-question quiz.</string>
     <string name="notification_channel_name">Quizee Protection</string>
     <string name="notification_channel_desc">Active protection monitoring locked applications.</string>
     <string name="service_running_title">Quizee is Active</string>
     <string name="service_running_desc">Protecting your selected applications.</string>
 
     <!-- Permissions -->
-    <string name="perm_accessibility_title">Accessibility Service</string>
-    <string name="perm_accessibility_desc">Required to instantly detect when a locked app is launched.</string>
     <string name="perm_overlay_title">Display Over Other Apps</string>
     <string name="perm_overlay_desc">Required to show the 5 MCQ quiz screen on top of the locked app.</string>
     <string name="perm_usage_title">Usage Access</string>
-    <string name="perm_usage_desc">Allows Quiz Lock to monitor app foreground status reliably.</string>
+    <string name="perm_usage_desc">Allows Quizee to detect foreground apps reliably without affecting UPI/banking apps.</string>
     <string name="grant_permission">Enable</string>
     <string name="permission_granted">Enabled ✓</string>
 
@@ -24,4 +21,8 @@
     <string name="exit_to_home">Exit to Home</string>
     <string name="congratulations">Quiz Completed!</string>
     <string name="unlocked_message">App Unlocked successfully.</string>
+
+    <!-- Practice Test -->
+    <string name="practice_test_title">Self Practice Test</string>
+    <string name="practice_test_subtitle">Practice starting &amp; active questions</string>
 </resources>

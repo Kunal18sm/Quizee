@@ -225,17 +225,17 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Android 13+ Restricted Settings Helper Banner -->
+            <!-- Self Practice Test Card (New Feature) -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardRestrictedSettings"
+                android:id="@+id/cardPracticeTest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="14dp"
-                app:cardBackgroundColor="@color/warning_amber_bg"
-                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="@color/card_dark"
+                app:cardCornerRadius="18dp"
                 app:cardElevation="0dp"
-                app:strokeColor="@color/warning_amber_border"
-                app:strokeWidth="2dp">
+                app:strokeColor="@color/primary"
+                app:strokeWidth="1.5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -249,66 +249,128 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="22dp"
-                            android:layout_height="22dp"
-                            android:src="@drawable/ic_lock"
-                            app:tint="@color/warning_amber" />
-
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
                             android:layout_weight="1"
-                            android:text="Android 13+ Accessibility Disabled?"
-                            android:textColor="@color/warning_amber"
-                            android:textSize="14sp"
+                            android:text="📝 Self Practice Test"
+                            android:textColor="@color/text_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_option_default"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:text="Foundational Qs"
+                            android:textColor="@color/correct_green"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:lineSpacingExtra="2dp"
-                        android:text="If phone says 'Restricted setting / Disabled for security reason':\n1. Tap 'Fix Restricted Settings' below\n2. Tap 3 dots (⋮) in top right\n3. Tap 'Allow restricted settings' &amp; enter PIN\n4. Come back and enable Accessibility!"
-                        android:textColor="#FDE68A"
+                        android:layout_marginTop="4dp"
+                        android:text="Select how many questions to test from your active &amp; starting syllabus:"
+                        android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
 
+                    <!-- Quick count chips row -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal">
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnFixRestrictedSettings"
-                            style="@style/Widget.Material3.Button"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/btnCount10"
+                            style="@style/Widget.Material3.Button.TonalButton"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Fix Restricted Settings"
-                            android:textColor="@color/black"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:text="10"
+                            android:textColor="@color/text_primary"
                             android:textSize="12sp"
-                            android:textStyle="bold"
-                            app:backgroundTint="@color/warning_amber"
-                            app:cornerRadius="10dp" />
+                            app:backgroundTint="@color/card_dark_elevated"
+                            app:cornerRadius="8dp" />
 
                         <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnHelpRestricted"
-                            style="@style/Widget.Material3.Button.TextButton"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/btnCount20"
+                            style="@style/Widget.Material3.Button.TonalButton"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="See Guide"
-                            android:textColor="@color/warning_amber"
-                            android:textSize="12sp" />
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:text="20"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp"
+                            app:backgroundTint="@color/card_dark_elevated"
+                            app:cornerRadius="8dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCount30"
+                            style="@style/Widget.Material3.Button"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:text="30"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            app:backgroundTint="@color/primary"
+                            app:cornerRadius="8dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCount40"
+                            style="@style/Widget.Material3.Button.TonalButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="1"
+                            android:text="40"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp"
+                            app:backgroundTint="@color/card_dark_elevated"
+                            app:cornerRadius="8dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCount50"
+                            style="@style/Widget.Material3.Button.TonalButton"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="50"
+                            android:textColor="@color/text_primary"
+                            android:textSize="12sp"
+                            app:backgroundTint="@color/card_dark_elevated"
+                            app:cornerRadius="8dp" />
                     </LinearLayout>
+
+                    <!-- Start Practice Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnStartPracticeTest"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:paddingVertical="12dp"
+                        android:text="⚡ Start Practice Test (30 Questions)"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/primary"
+                        app:cornerRadius="12dp" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Required Permissions Card -->
+            <!-- Required Permissions Card (Safe for Banking & UPI Apps) -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardPermissions"
                 android:layout_width="match_parent"
@@ -329,20 +391,20 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Required Permissions"
+                        android:text="Required Permissions (Safe for Banking Apps)"
                         android:textColor="@color/text_primary"
-                        android:textSize="16sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Enable permissions so Quizee can show quiz popups when locked apps open."
+                        android:text="Enable permissions so Quizee can show quiz popups over locked apps (No Accessibility needed!)."
                         android:textColor="@color/text_secondary"
                         android:textSize="12sp" />
 
-                    <!-- Accessibility Row -->
+                    <!-- Overlay Row -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -359,49 +421,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="1. Accessibility Service"
-                                android:textColor="@color/text_primary"
-                                android:textSize="13sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Instantly detects locked app launch"
-                                android:textColor="@color/text_secondary"
-                                android:textSize="11sp" />
-                        </LinearLayout>
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnPermAccessibility"
-                            style="@style/Widget.Material3.Button.TonalButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Enable"
-                            android:textSize="12sp"
-                            app:backgroundTint="@color/card_dark_elevated"
-                            app:strokeColor="@color/border_dark"
-                            app:strokeWidth="1dp" />
-                    </LinearLayout>
-
-                    <!-- Overlay Row -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="2. Display Over Other Apps"
+                                android:text="1. Display Over Other Apps"
                                 android:textColor="@color/text_primary"
                                 android:textSize="13sp"
                                 android:textStyle="bold" />
@@ -443,7 +463,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="3. Usage Access (Active Monitor)"
+                                android:text="2. Usage Access (App Detector)"
                                 android:textColor="@color/text_primary"
                                 android:textSize="13sp"
                                 android:textStyle="bold" />
@@ -451,7 +471,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Monitors foreground apps reliably"
+                                android:text="Reliably detects locked app launch (UPI safe)"
                                 android:textColor="@color/text_secondary"
                                 android:textSize="11sp" />
                         </LinearLayout>

@@ -1,8 +1,6 @@
 package com.quizlock.app
 
-import android.accessibilityservice.AccessibilityServiceInfo
 import android.app.AppOpsManager
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
@@ -12,11 +10,9 @@ import android.os.Bundle
 import android.os.Process
 import android.provider.Settings
 import android.text.Editable
-import android.text.TextUtils
 import android.text.TextWatcher
 import androidx.core.content.ContextCompat
 import android.view.View
-import android.view.accessibility.AccessibilityManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -25,9 +21,9 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.quizlock.app.data.AppInfo
 import com.quizlock.app.data.PreferencesManager
 import com.quizlock.app.databinding.ActivityMainBinding
-import com.quizlock.app.service.AppLockAccessibilityService
 import com.quizlock.app.service.AppLockForegroundService
 import com.quizlock.app.ui.AppListAdapter
+import com.quizlock.app.ui.PracticeTestActivity
 import com.quizlock.app.ui.QuestionManageActivity
 import com.quizlock.app.ui.QuizLockActivity
 import kotlinx.coroutines.Dispatchers
@@ -41,6 +37,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var dailyStudyManager: com.quizlock.app.data.DailyStudyManager
     private lateinit var appAdapter: AppListAdapter
     private val installedApps = mutableListOf<AppInfo>()
+    private var selectedPracticeCount: Int = 30
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -92,31 +89,41 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-        // Android 13+ Restricted Settings Fix: Open App Info Directly
-        binding.btnFixRestrictedSettings.setOnClickListener {
-            openAppDetailsSettings()
-        }
+        // Practice Test Count Selection
+        val countButtons = listOf(
+            Pair(binding.btnCount10, 10),
+            Pair(binding.btnCount20, 20),
+            Pair(binding.btnCount30, 30),
+            Pair(binding.btnCount40, 40),
+            Pair(binding.btnCount50, 50)
+        )
 
-        binding.btnHelpRestricted.setOnClickListener {
-            showRestrictedSettingsDialog()
-        }
-
-        binding.btnPermAccessibility.setOnClickListener {
-            val hasAccessibility = isAccessibilityServiceEnabled()
-            if (!hasAccessibility) {
-                try {
-                    val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
-                    startActivity(intent)
-                    Toast.makeText(
-                        this,
-                        "Find 'Quizee'. If disabled/greyed out, use 'Fix Restricted Settings'!",
-                        Toast.LENGTH_LONG
-                    ).show()
-                } catch (e: Exception) {
-                    openAppDetailsSettings()
+        fun updateCountSelection(selected: Int) {
+            selectedPracticeCount = selected
+            countButtons.forEach { (btn, count) ->
+                if (count == selected) {
+                    btn.backgroundTintList = ContextCompat.getColorStateList(this, R.color.primary)
+                    btn.setTextColor(ContextCompat.getColor(this, R.color.white))
+                } else {
+                    btn.backgroundTintList = ContextCompat.getColorStateList(this, R.color.card_dark_elevated)
+                    btn.setTextColor(ContextCompat.getColor(this, R.color.text_primary))
                 }
             }
+            binding.btnStartPracticeTest.text = "⚡ Start Practice Test ($selected Questions)"
         }
+
+        countButtons.forEach { (btn, count) ->
+            btn.setOnClickListener {
+                updateCountSelection(count)
+            }
+        }
+
+        binding.btnStartPracticeTest.setOnClickListener {
+            PracticeTestActivity.start(this, selectedPracticeCount)
+        }
+
+        // Initialize 30 questions selected by default
+        updateCountSelection(30)
 
         binding.btnPermOverlay.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -212,48 +219,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showRestrictedSettingsDialog() {
-        MaterialAlertDialogBuilder(this)
-            .setTitle("Android 13/14/15 Restricted Settings")
-            .setMessage(
-                "On modern Android phones, apps installed outside Google Play have accessibility temporarily greyed out.\n\n" +
-                "How to unlock in 3 quick steps:\n" +
-                "1. Tap 'Open Settings' below (opens Quizee App Info).\n" +
-                "2. Tap the 3 dots (⋮) in the top-right corner.\n" +
-                "3. Tap 'Allow restricted settings' and confirm your PIN/Fingerprint.\n\n" +
-                "After that, you can toggle Accessibility ON normally!"
-            )
-            .setPositiveButton("Open Settings") { _, _ ->
-                openAppDetailsSettings()
-            }
-            .setNegativeButton("Got It", null)
-            .show()
-    }
-
     private fun updatePermissionStatus() {
-        val hasAccessibility = isAccessibilityServiceEnabled()
         val hasOverlay = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Settings.canDrawOverlays(this)
         } else true
         val hasUsage = hasUsageStatsPermission()
-
-        if (hasAccessibility) {
-            binding.btnPermAccessibility.text = "Enabled ✓"
-            binding.btnPermAccessibility.setTextColor(ContextCompat.getColor(this, R.color.correct_green))
-            binding.btnPermAccessibility.isEnabled = false
-            // If accessibility is enabled, hide the restricted settings banner!
-            binding.cardRestrictedSettings.visibility = View.GONE
-        } else {
-            binding.btnPermAccessibility.text = "Enable"
-            binding.btnPermAccessibility.setTextColor(ContextCompat.getColor(this, R.color.white))
-            binding.btnPermAccessibility.isEnabled = true
-            // If Android 13+ and accessibility not granted, show the helper banner
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                binding.cardRestrictedSettings.visibility = View.VISIBLE
-            } else {
-                binding.cardRestrictedSettings.visibility = View.GONE
-            }
-        }
 
         if (hasOverlay) {
             binding.btnPermOverlay.text = "Enabled ✓"
@@ -275,74 +245,10 @@ class MainActivity : AppCompatActivity() {
             binding.btnPermUsage.isEnabled = true
         }
 
-        // Keep foreground service active if usage or accessibility is ready
-        if (hasUsage || hasAccessibility) {
-            if (prefsManager.getLockedPackages().isNotEmpty()) {
-                AppLockForegroundService.startService(this)
-            }
+        // Keep foreground service active if usage permission is granted and apps are locked
+        if (hasUsage && prefsManager.getLockedPackages().isNotEmpty()) {
+            AppLockForegroundService.startService(this)
         }
-    }
-
-    private fun isAccessibilityServiceEnabled(): Boolean {
-        // 1. Direct memory check: If service instance is running and connected
-        if (AppLockAccessibilityService.isRunning) {
-            return true
-        }
-
-        // 2. Settings.Secure check (Official Android system database of enabled accessibility services)
-        try {
-            val accessibilityEnabled = Settings.Secure.getInt(
-                contentResolver,
-                Settings.Secure.ACCESSIBILITY_ENABLED,
-                0
-            )
-            if (accessibilityEnabled == 1) {
-                val settingValue = Settings.Secure.getString(
-                    contentResolver,
-                    Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES
-                )
-                if (!settingValue.isNullOrBlank()) {
-                    val splitter = TextUtils.SimpleStringSplitter(':')
-                    splitter.setString(settingValue)
-                    while (splitter.hasNext()) {
-                        val accessService = splitter.next()
-                        val unflattened = ComponentName.unflattenFromString(accessService)
-                        if (unflattened != null && unflattened.packageName.equals(packageName, ignoreCase = true)) {
-                            return true
-                        }
-                        if (accessService.contains(packageName, ignoreCase = true) &&
-                            accessService.contains("AppLockAccessibilityService", ignoreCase = true)) {
-                            return true
-                        }
-                    }
-                }
-            }
-        } catch (e: Exception) {
-            // Fall through to AccessibilityManager
-        }
-
-        // 3. AccessibilityManager check with FEEDBACK_ALL_MASK to check all registered feedback types
-        try {
-            val am = getSystemService(Context.ACCESSIBILITY_SERVICE) as? AccessibilityManager
-            if (am != null) {
-                val enabledServices = am.getEnabledAccessibilityServiceList(AccessibilityServiceInfo.FEEDBACK_ALL_MASK)
-                for (service in enabledServices) {
-                    val info = service.resolveInfo?.serviceInfo
-                    if (info != null && info.packageName.equals(packageName, ignoreCase = true)) {
-                        return true
-                    }
-                    val id = service.id ?: ""
-                    if (id.contains(packageName, ignoreCase = true) &&
-                        id.contains("AppLockAccessibilityService", ignoreCase = true)) {
-                        return true
-                    }
-                }
-            }
-        } catch (e: Exception) {
-            // Ignore
-        }
-
-        return false
     }
 
     private fun hasUsageStatsPermission(): Boolean {

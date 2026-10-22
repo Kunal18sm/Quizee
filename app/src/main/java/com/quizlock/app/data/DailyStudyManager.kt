@@ -330,6 +330,13 @@ class DailyStudyManager private constructor(private val context: Context) {
         return all.filter { it.id in bankIds }
     }
 
+    fun getWeeklyBankQuestions(): List<Question> {
+        val weeklyIds = getSavedIdList(KEY_WEEKLY_BANK_IDS).toSet()
+        if (weeklyIds.isEmpty()) return emptyList()
+        val repo = QuestionRepository.getInstance(context)
+        return repo.getAllQuestions().filter { it.id in weeklyIds }
+    }
+
     /**
      * Smart Quiz Sampling (5 questions from Today's Bank):
      * 1. Priority 1: Mistakes made earlier today (so user corrects them!)

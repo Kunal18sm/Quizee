@@ -134,6 +134,67 @@ class QuestionRepository private constructor(private val context: Context) {
         }
     }
 
+    /**
+     * Retrieves practice questions for in-app self testing (10, 20, 30, 40, 50 questions).
+     * GUARANTEES that questions are strictly from the starting/foundational chapters
+     * and active daily/weekly study pool, NEVER grabbing hard/advanced questions
+     * from the far end of the subject banks.
+     */
+    fun getPracticeTestQuestions(count: Int): List<Question> {
+        if (questionsList.isEmpty()) {
+            loadQuestions()
+        }
+        val dailyManager = DailyStudyManager.getInstance(context)
+        val todayBank = dailyManager.getTodayBankQuestions()
+        val weeklyBank = dailyManager.getWeeklyBankQuestions()
+
+        val activePool = LinkedHashSet<Question>()
+        activePool.addAll(todayBank)
+        activePool.addAll(weeklyBank)
+
+        // If the user requested count is covered by active pool, sample from active pool
+        if (count <= activePool.size && activePool.isNotEmpty()) {
+            val mistakeIds = dailyManager.getMistakeIds()
+            val seenIds = dailyManager.getSeenIds()
+
+            val mistakes = activePool.filter { it.id in mistakeIds }.shuffled()
+            val unseen = activePool.filter { it.id !in seenIds && it.id !in mistakeIds }.shuffled()
+            val others = activePool.filter { it.id in seenIds && it.id !in mistakeIds }.shuffled()
+
+            val selected = mutableListOf<Question>()
+            selected.addAll(mistakes)
+            if (selected.size < count) selected.addAll(unseen.take(count - selected.size))
+            if (selected.size < count) selected.addAll(others.take(count - selected.size))
+            return selected.shuffled()
+        }
+
+        // If count is larger (e.g. 40 or 50 questions requested on early days),
+        // we take starting foundational questions from the START (index 0 onwards)
+        // of each subject curriculum. NEVER random questions from the deep end!
+        val selected = LinkedHashSet<Question>()
+        selected.addAll(activePool)
+
+        // Proportional quota from the START of each subject bank
+        val engQuota = ((count * 28) / 100) + 4
+        val gkQuota = ((count * 20) / 100) + 4
+        val histQuota = ((count * 16) / 100) + 3
+        val geoQuota = ((count * 10) / 100) + 2
+        val bioQuota = ((count * 10) / 100) + 2
+        val polQuota = ((count * 10) / 100) + 2
+        val ecoQuota = ((count * 6) / 100) + 2
+
+        selected.addAll(englishQuestions.take(engQuota))
+        selected.addAll(staticGkQuestions.take(gkQuota))
+        selected.addAll(historyQuestions.take(histQuota))
+        selected.addAll(geographyQuestions.take(geoQuota))
+        selected.addAll(biologyQuestions.take(bioQuota))
+        selected.addAll(polityQuestions.take(polQuota))
+        selected.addAll(economicsQuestions.take(ecoQuota))
+
+        val list = selected.toList().shuffled()
+        return if (list.size >= count) list.take(count) else list
+    }
+
     private fun fallbackRandom(count: Int): List<Question> {
         val all = getAllQuestions()
         if (all.isEmpty()) return emptyList()
