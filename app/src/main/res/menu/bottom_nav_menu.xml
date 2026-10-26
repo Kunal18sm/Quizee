@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_daily"
+        android:icon="@drawable/ic_target"
+        android:title="Daily Target" />
+
+    <item
+        android:id="@+id/nav_practice"
+        android:icon="@drawable/ic_practice"
+        android:title="Practice Hub" />
+
+    <item
+        android:id="@+id/nav_locker"
+        android:icon="@drawable/ic_lock"
+        android:title="App Locker" />
+
+    <item
+        android:id="@+id/nav_questions"
+        android:icon="@drawable/ic_menu_questions"
+        android:title="Question Bank" />
+</menu>

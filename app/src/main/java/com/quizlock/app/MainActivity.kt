@@ -39,6 +39,13 @@ class MainActivity : AppCompatActivity() {
     private val installedApps = mutableListOf<AppInfo>()
     private var selectedPracticeCount: Int = 30
 
+    companion object {
+        private const val PAGE_DAILY = 0
+        private const val PAGE_PRACTICE = 1
+        private const val PAGE_LOCKER = 2
+        private const val PAGE_QUESTIONS = 3
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -49,6 +56,7 @@ class MainActivity : AppCompatActivity() {
 
         setupUI()
         setupListeners()
+        setupBottomNavigation()
         loadInstalledApps()
 
         // Start foreground monitor if any apps are locked
@@ -198,6 +206,14 @@ class MainActivity : AppCompatActivity() {
                 .show()
         }
 
+        binding.btnManageQuestionsPage.setOnClickListener {
+            startActivity(Intent(this, QuestionManageActivity::class.java))
+        }
+
+        binding.btnTestQuizPage.setOnClickListener {
+            binding.btnTestQuiz.performClick()
+        }
+
         binding.etSearchApp.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -205,6 +221,39 @@ class MainActivity : AppCompatActivity() {
             }
             override fun afterTextChanged(s: Editable?) {}
         })
+    }
+
+    private fun setupBottomNavigation() {
+        binding.bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_daily -> {
+                    showPage(PAGE_DAILY)
+                    true
+                }
+                R.id.nav_practice -> {
+                    showPage(PAGE_PRACTICE)
+                    true
+                }
+                R.id.nav_locker -> {
+                    showPage(PAGE_LOCKER)
+                    true
+                }
+                R.id.nav_questions -> {
+                    showPage(PAGE_QUESTIONS)
+                    true
+                }
+                else -> false
+            }
+        }
+        // Default to Daily Target page
+        showPage(PAGE_DAILY)
+    }
+
+    private fun showPage(page: Int) {
+        binding.layoutPageDaily.visibility = if (page == PAGE_DAILY) View.VISIBLE else View.GONE
+        binding.layoutPagePractice.visibility = if (page == PAGE_PRACTICE) View.VISIBLE else View.GONE
+        binding.layoutPageLocker.visibility = if (page == PAGE_LOCKER) View.VISIBLE else View.GONE
+        binding.layoutPageQuestions.visibility = if (page == PAGE_QUESTIONS) View.VISIBLE else View.GONE
     }
 
     private fun openAppDetailsSettings() {

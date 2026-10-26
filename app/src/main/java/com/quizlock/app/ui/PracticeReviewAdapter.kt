@@ -17,8 +17,13 @@ data class PracticeReviewItem(
 )
 
 class PracticeReviewAdapter(
-    private val items: List<PracticeReviewItem>
+    private var items: List<PracticeReviewItem>
 ) : RecyclerView.Adapter<PracticeReviewAdapter.ViewHolder>() {
+
+    fun updateList(newItems: List<PracticeReviewItem>) {
+        items = newItems
+        notifyDataSetChanged()
+    }
 
     class ViewHolder(val binding: ItemPracticeReviewBinding) :
         RecyclerView.ViewHolder(binding.root)

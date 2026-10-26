@@ -145,8 +145,8 @@ class CustomPracticeActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         topicAdapter = PracticeTopicAdapter(
             topics = emptyList(),
-            onSetClick = { set ->
-                startSingleSetTest(set)
+            onSetClick = { set, is50Count ->
+                startSingleSetTest(set, is50Count)
             },
             onTestAllTopicClick = { topic ->
                 startFullTopicTest(topic)
@@ -216,15 +216,27 @@ class CustomPracticeActivity : AppCompatActivity() {
         binding.tvMultiSelectSummary.text = "Selected: ${selectedCategories.size} Topics (Pool: $poolSize Questions)"
     }
 
-    private fun startSingleSetTest(set: PracticeSet) {
-        val title = "${set.topicDisplayName} - Set ${set.setNumber}"
-        val subtitle = "${set.totalQuestions} Questions (Q ${set.startRange} to ${set.endRange})"
+    private fun startSingleSetTest(set: PracticeSet, is50Count: Boolean) {
+        val qIds = if (is50Count && set.questionIds.size > 50) {
+            set.questionIds.shuffled().take(50).toLongArray()
+        } else {
+            set.questionIds.toLongArray()
+        }
+
+        val title = if (is50Count && set.questionIds.size > 50) {
+            "${set.topicDisplayName} - Set ${set.setNumber} (50 Qs Drill)"
+        } else {
+            "${set.topicDisplayName} - Set ${set.setNumber}"
+        }
+
+        val subtitle = "${qIds.size} Questions • Set ${set.setNumber}"
+
         PracticeTestActivity.startWithQuestions(
             context = this,
-            questionIds = set.questionIds.toLongArray(),
+            questionIds = qIds,
             title = title,
             subtitle = subtitle,
-            setKey = set.setKey
+            setKey = if (!is50Count) set.setKey else "${set.setKey}_50"
         )
     }
 

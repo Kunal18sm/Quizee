@@ -13,7 +13,7 @@ import com.quizlock.app.databinding.ItemPracticeTopicBinding
 
 class PracticeTopicAdapter(
     private var topics: List<PracticeTopic>,
-    private val onSetClick: (PracticeSet) -> Unit,
+    private val onSetClick: (set: PracticeSet, is50Count: Boolean) -> Unit,
     private val onTestAllTopicClick: (PracticeTopic) -> Unit,
     private val onSelectionChanged: (Set<String>) -> Unit
 ) : RecyclerView.Adapter<PracticeTopicAdapter.TopicViewHolder>() {
@@ -93,8 +93,8 @@ class PracticeTopicAdapter(
             binding.layoutSetsContainer.visibility = if (isExpanded) View.VISIBLE else View.GONE
 
             if (isExpanded) {
-                val setAdapter = PracticeSetAdapter(topic.sets) { set ->
-                    onSetClick(set)
+                val setAdapter = PracticeSetAdapter(topic.sets) { set, is50Count ->
+                    onSetClick(set, is50Count)
                 }
                 binding.rvTopicSets.layoutManager = LinearLayoutManager(ctx)
                 binding.rvTopicSets.adapter = setAdapter

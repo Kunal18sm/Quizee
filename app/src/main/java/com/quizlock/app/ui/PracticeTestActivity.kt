@@ -412,9 +412,73 @@ class PracticeTestActivity : AppCompatActivity() {
             )
         }
 
+        val wrongList = reviewResults.filter { !it.isCorrect && it.selectedIndex != -1 }
+        val correctList = reviewResults.filter { it.isCorrect }
+        val skippedList = reviewResults.filter { it.selectedIndex == -1 }
+
+        // Dedicated Mistakes Card
+        if (wrongList.isNotEmpty()) {
+            binding.cardMistakesAlert.visibility = View.VISIBLE
+            binding.tvMistakesAlertTitle.text = "❌ ${wrongList.size} Wrong Answers"
+
+            binding.btnRetestMistakes.text = "⚡ Retest Mistakes (${wrongList.size} Qs)"
+            binding.btnRetestMistakes.setOnClickListener {
+                val mistakeIds = wrongList.map { it.question.id }.toLongArray()
+                PracticeTestActivity.startWithQuestions(
+                    context = this,
+                    questionIds = mistakeIds,
+                    title = "Mistakes Drill (${mistakeIds.size} Qs)",
+                    subtitle = "Focusing only on questions missed in previous test",
+                    setKey = "mistakes_${System.currentTimeMillis()}"
+                )
+                finish()
+            }
+
+            binding.btnViewMistakesOnly.setOnClickListener {
+                applyReviewFilter("WRONG", wrongList)
+            }
+        } else {
+            binding.cardMistakesAlert.visibility = View.GONE
+        }
+
+        // Setup Filter Buttons text
+        binding.btnFilterAll.text = "All (${reviewResults.size})"
+        binding.btnFilterWrong.text = "❌ Wrong (${wrongList.size})"
+        binding.btnFilterCorrect.text = "✓ Correct (${correctList.size})"
+        binding.btnFilterSkipped.text = "⏭️ Skipped (${skippedList.size})"
+
+        binding.btnFilterAll.setOnClickListener { applyReviewFilter("ALL", reviewResults) }
+        binding.btnFilterWrong.setOnClickListener { applyReviewFilter("WRONG", wrongList) }
+        binding.btnFilterCorrect.setOnClickListener { applyReviewFilter("CORRECT", correctList) }
+        binding.btnFilterSkipped.setOnClickListener { applyReviewFilter("SKIPPED", skippedList) }
+
         // Set up review adapter
         val adapter = PracticeReviewAdapter(reviewResults)
         binding.rvReviewQuestions.adapter = adapter
+    }
+
+    private fun applyReviewFilter(filter: String, items: List<PracticeReviewItem>) {
+        val filterButtons = listOf(
+            binding.btnFilterAll to "ALL",
+            binding.btnFilterWrong to "WRONG",
+            binding.btnFilterCorrect to "CORRECT",
+            binding.btnFilterSkipped to "SKIPPED"
+        )
+
+        filterButtons.forEach { (btn, type) ->
+            if (type == filter) {
+                btn.backgroundTintList = ContextCompat.getColorStateList(this, R.color.primary)
+                btn.setTextColor(ContextCompat.getColor(this, R.color.white))
+                btn.strokeWidth = 0
+            } else {
+                btn.backgroundTintList = ContextCompat.getColorStateList(this, R.color.card_dark_elevated)
+                btn.setTextColor(ContextCompat.getColor(this, R.color.text_primary))
+                btn.strokeColor = ContextCompat.getColorStateList(this, R.color.border_dark)
+                btn.strokeWidth = 2
+            }
+        }
+
+        (binding.rvReviewQuestions.adapter as? PracticeReviewAdapter)?.updateList(items)
     }
 
     private fun vibrateDevice(isError: Boolean) {

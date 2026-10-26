@@ -78,19 +78,24 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2.4.0
-          name: "Quizee v2.4.0 - Ultimate Custom Practice Hub & Notification Fix"
+          tag_name: v2.4.1
+          name: "Quizee v2.4.1 - Bottom Navigation Bar, 50 Qs Drill & Mistakes Review"
           body: |
-            ## 📱 Quizee App v2.4.0 Released!
-            - **🎯 Ultimate Custom Practice Hub**:
-              - **Subject Filter**: Practice complete subjects (English, Static GK, History, Geography, Biology, Polity, Economics).
-              - **Topic Drill-down**: Practice specific chapters (Antonyms, Synonyms, Freedom Struggle, Dances of India, National Parks, etc.).
-              - **100-Question Sequential Sets**: Topics chunked into structured Sets of 100 questions (e.g. Set 1: 1-100, Set 2: 101-200) with visual mastery badges (🏆 Mastered, ⚠️ Needs Revision, ⚪ Unattempted).
-              - **Multi-Topic Mixed Mock Builder**: Check multiple topics to generate customized 25, 50, or 100 question mock tests!
-              - **"Resume Where You Left Off" Banner**: Jump right back into your last practiced set with 1 tap.
-            - **🛡️ Notification Lock Fix**: Fixed bug where incoming notifications (like YouTube, WhatsApp, FCM sync) erroneously triggered the quiz overlay. Quiz overlay now strictly triggers only when the locked app's activity is launched into the foreground!
-            - **Sequential Daily Learning Engine**: Practice 30 (or 20) structured questions daily with Mistake-Priority Spaced Repetition.
-            - **100% High-Yield SSC CGL Bank (6,517 MCQs)**: All low-yield filler questions pruned away for maximum retention.
+            ## 📱 Quizee App v2.4.1 Released!
+            - **📱 Modern Bottom Navigation Bar**:
+              - Clean 4-tab interface separating **Daily Target**, **Practice Hub**, **App Locker**, and **Question Bank**.
+              - Eliminates chaotic single-screen scrolling with fast, organized, dedicated modular views.
+            - **⚡ 50 Questions Drill vs Full Set Option**:
+              - In Custom Practice Sets (100 Qs), choose between a rapid **⚡ 50 Qs Drill** (randomly sampled) or the **📖 Full Set (100 Qs)**.
+              - Works seamlessly for individual sets or multi-topic mixed mock drills.
+            - **❌ Dedicated Mistakes & Wrong Answers Section**:
+              - Dedicated alert card on test completion showing all wrong questions in one place.
+              - **"⚡ Retest Mistakes Only"**: Instantly launches a focused drill on only the questions you missed!
+              - Interactive review filters: **All**, **❌ Wrong**, **✓ Correct**, **⏭️ Skipped**.
+            - **🛡️ Notification Lock Fix**:
+              - Strictly ignores background notifications (e.g. YouTube, WhatsApp, FCM) so the quiz only triggers when you genuinely launch the locked app into the foreground.
+            - **📚 6,517 High-Yield Questions**:
+              - 100% offline SSC CGL curriculum across English Vocab, Static GK, History, Geography, Biology, Polity, and Economics.
             - Download `quizee.apk` below directly on your Android phone!
           files: docs/quizee.apk
         env:

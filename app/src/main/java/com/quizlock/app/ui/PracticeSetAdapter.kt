@@ -1,6 +1,7 @@
 package com.quizlock.app.ui
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,7 @@ import com.quizlock.app.databinding.ItemPracticeSetBinding
 
 class PracticeSetAdapter(
     private var sets: List<PracticeSet>,
-    private val onSetClick: (PracticeSet) -> Unit
+    private val onSetClick: (set: PracticeSet, is50Count: Boolean) -> Unit
 ) : RecyclerView.Adapter<PracticeSetAdapter.SetViewHolder>() {
 
     fun updateSets(newSets: List<PracticeSet>) {
@@ -40,12 +41,12 @@ class PracticeSetAdapter(
             val ctx = binding.root.context
 
             binding.tvSetTitle.text = "Set ${set.setNumber} (Q ${set.startRange} – ${set.endRange})"
-            binding.tvSetSubtitle.text = "${set.totalQuestions} Questions • Sequential Curriculum"
+            binding.tvSetSubtitle.text = "${set.totalQuestions} Questions • Sequential Bank"
 
+            // Status Badge
             if (set.isCompleted) {
-                binding.btnStartSet.text = "Retest 🔁"
-                binding.btnStartSet.backgroundTintList = ContextCompat.getColorStateList(ctx, R.color.card_dark_elevated)
-                binding.btnStartSet.setTextColor(ContextCompat.getColor(ctx, R.color.primary_light))
+                binding.btnStartFull.text = "Retest All (${set.totalQuestions}) 🔁"
+                binding.btnStart50.text = "⚡ Retest 50 Qs"
 
                 when {
                     set.accuracyPercent >= 80 -> {
@@ -62,20 +63,28 @@ class PracticeSetAdapter(
                     }
                 }
             } else {
-                binding.btnStartSet.text = "Start ⚡"
-                binding.btnStartSet.backgroundTintList = ContextCompat.getColorStateList(ctx, R.color.primary)
-                binding.btnStartSet.setTextColor(ContextCompat.getColor(ctx, R.color.white))
+                binding.btnStartFull.text = "📖 Full Set (${set.totalQuestions} Qs)"
+                binding.btnStart50.text = "⚡ 50 Qs Drill"
 
                 binding.tvSetStatusBadge.text = "Unattempted"
                 binding.tvSetStatusBadge.setTextColor(ContextCompat.getColor(ctx, R.color.text_muted))
             }
 
-            binding.btnStartSet.setOnClickListener {
-                onSetClick(set)
+            // If set has 50 or fewer questions, 50 Qs drill button is redundant
+            if (set.totalQuestions <= 50) {
+                binding.btnStart50.visibility = View.GONE
+                binding.btnStartFull.text = "Start (${set.totalQuestions} Qs) ⚡"
+            } else {
+                binding.btnStart50.visibility = View.VISIBLE
             }
 
-            binding.cardSetRoot.setOnClickListener {
-                onSetClick(set)
+            // Click Handlers
+            binding.btnStart50.setOnClickListener {
+                onSetClick(set, true)
+            }
+
+            binding.btnStartFull.setOnClickListener {
+                onSetClick(set, false)
             }
         }
     }

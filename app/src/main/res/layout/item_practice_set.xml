@@ -5,76 +5,96 @@
     android:id="@+id/cardSetRoot"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="4dp"
+    android:layout_marginVertical="5dp"
     app:cardBackgroundColor="@color/card_dark_elevated"
-    app:cardCornerRadius="12dp"
+    app:cardCornerRadius="14dp"
     app:cardElevation="0dp"
     app:strokeColor="@color/border_dark"
-    app:strokeWidth="1dp">
+    app:strokeWidth="1.2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="12dp">
 
+        <!-- Title & Status Badge Row -->
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tvSetTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Set 1 (Q 1 – 100)"
-                    android:textColor="@color/text_primary"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvSetStatusBadge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/bg_option_default"
-                    android:paddingHorizontal="8dp"
-                    android:paddingVertical="2dp"
-                    android:text="Unattempted"
-                    android:textColor="@color/text_muted"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tvSetSubtitle"
+                android:id="@+id/tvSetTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Set 1 (Q 1 – 100)"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSetStatusBadge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:text="100 Questions • Sequential Curriculum"
-                android:textColor="@color/text_secondary"
-                android:textSize="11sp" />
+                android:background="@drawable/bg_option_default"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="Unattempted"
+                android:textColor="@color/text_muted"
+                android:textSize="10sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnStartSet"
-            style="@style/Widget.Material3.Button.TonalButton"
+        <TextView
+            android:id="@+id/tvSetSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start ⚡"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:backgroundTint="@color/primary"
-            app:cornerRadius="8dp" />
+            android:layout_marginTop="3dp"
+            android:text="100 Questions • Sequential Curriculum"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp" />
+
+        <!-- Dual Action Buttons: 50 Questions Drill vs Full Set -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStart50"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="⚡ 50 Qs Drill"
+                android:textColor="@color/primary_light"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/card_dark"
+                app:cornerRadius="8dp"
+                app:strokeColor="@color/border_dark"
+                app:strokeWidth="1dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartFull"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="📖 Full Set (100 Qs)"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/primary"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

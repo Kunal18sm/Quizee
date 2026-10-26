@@ -49,20 +49,33 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <!-- Main Pages Container -->
+    <FrameLayout
+        android:id="@+id/containerPages"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
+        android:layout_marginBottom="64dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
+        <!-- ============================================== -->
+        <!-- PAGE 1: 🎯 DAILY TARGET (Microlearning Engine) -->
+        <!-- ============================================== -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/layoutPageDaily"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:padding="16dp"
+            android:paddingBottom="80dp"
+            android:visibility="visible">
 
-            <!-- Daily Learning Target & Curriculum Card -->
-            <com.google.android.material.card.MaterialCardView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardDailyTarget"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -226,7 +239,66 @@
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Self Practice Test Card (New Feature) -->
-            <com.google.android.material.card.MaterialCardView
+
+                <!-- Daily Target Study Tips Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/border_dark"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="💡 Spaced Repetition Mastery"
+                            android:textColor="@color/warning_amber"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:lineSpacingExtra="2dp"
+                            android:text="• Questions you get wrong in lock quizzes are instantly prioritized until you master them.\n• All 30 daily questions advance chapter-by-chapter through the syllabus.\n• On Sundays, Quizee combines all 6 days into a Mega Weekly Revision!"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- ============================================== -->
+        <!-- PAGE 2: 📚 PRACTICE HUB (Custom Sets & Mocks) -->
+        <!-- ============================================== -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/layoutPagePractice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:padding="16dp"
+            android:paddingBottom="80dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardPracticeTest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -391,7 +463,66 @@
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Required Permissions Card (Safe for Banking & UPI Apps) -->
-            <com.google.android.material.card.MaterialCardView
+
+                <!-- Syllabus Bank Summary Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/border_dark"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📊 6,517 High-Yield Questions"
+                            android:textColor="@color/primary_light"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:lineSpacingExtra="2dp"
+                            android:text="• English Vocab: 2,620 MCQs (9 Topics)\n• Static GK: 1,554 MCQs (33 Topics)\n• History: 984 MCQs (18 Chapters)\n• Geography: 503 MCQs\n• Biology: 317 MCQs\n• Polity: 271 MCQs\n• Economics: 268 MCQs\n\nTap 'Custom Practice Hub' above to test 50/100-question sets or mix multiple chapters!"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- ============================================== -->
+        <!-- PAGE 3: 🔒 APP LOCKER (Apps & Permissions)     -->
+        <!-- ============================================== -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/layoutPageLocker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:padding="16dp"
+            android:paddingBottom="80dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardPermissions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -513,7 +644,8 @@
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Search and Filter -->
-            <com.google.android.material.card.MaterialCardView
+
+                <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
@@ -584,8 +716,117 @@
                 android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="false" />
 
-        </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
-    </androidx.core.widget.NestedScrollView>
+        <!-- ============================================== -->
+        <!-- PAGE 4: ❓ QUESTION BANK (Management & Test)   -->
+        <!-- ============================================== -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/layoutPageQuestions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:padding="16dp"
+            android:paddingBottom="80dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Question Bank Header Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="1.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📚 Master Question Repository"
+                            android:textColor="@color/text_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="6,517 high-yield questions stored 100% offline. You can also add custom questions or trigger test overlay quizzes."
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                        <!-- Action Buttons Row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnManageQuestionsPage"
+                                style="@style/Widget.Material3.Button"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="6dp"
+                                android:layout_weight="1"
+                                android:text="Manage Questions"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:backgroundTint="@color/primary"
+                                app:cornerRadius="10dp" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnTestQuizPage"
+                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Test Overlay"
+                                android:textColor="@color/primary_light"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:backgroundTint="@color/card_dark_elevated"
+                                app:cornerRadius="10dp"
+                                app:strokeColor="@color/border_dark"
+                                app:strokeWidth="1dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </FrameLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_gravity="bottom"
+        android:background="@color/card_dark"
+        app:elevation="8dp"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
