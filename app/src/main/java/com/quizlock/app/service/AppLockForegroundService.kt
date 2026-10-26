@@ -96,43 +96,54 @@ class AppLockForegroundService : Service() {
             getSystemService(Context.USAGE_STATS_SERVICE) as? UsageStatsManager ?: return
 
         val endTime = System.currentTimeMillis()
-        val startTime = endTime - 2500
+        val startTime = endTime - 2000
 
-        var currentPkg: String? = null
+        var topResumedPackage: String? = null
+        var isTopStillActive = false
 
-        // Try UsageEvents first (responsive & accurate)
         try {
             val usageEvents = usageStatsManager.queryEvents(startTime, endTime)
             val event = UsageEvents.Event()
             while (usageEvents.hasNextEvent()) {
                 usageEvents.getNextEvent(event)
-                if (event.eventType == UsageEvents.Event.ACTIVITY_RESUMED ||
-                    event.eventType == UsageEvents.Event.MOVE_TO_FOREGROUND
-                ) {
-                    currentPkg = event.packageName
+                when (event.eventType) {
+                    UsageEvents.Event.ACTIVITY_RESUMED -> {
+                        // Crucial: Only consider real activity resumption (not background processes or notification services)
+                        if (!event.className.isNullOrBlank()) {
+                            topResumedPackage = event.packageName
+                            isTopStillActive = true
+                        }
+                    }
+                    UsageEvents.Event.ACTIVITY_PAUSED,
+                    UsageEvents.Event.ACTIVITY_STOPPED -> {
+                        // If the currently resumed app was paused or stopped, it is no longer top active
+                        if (event.packageName == topResumedPackage) {
+                            isTopStillActive = false
+                        }
+                    }
+                    UsageEvents.Event.KEYGUARD_SHOWN -> {
+                        isTopStillActive = false
+                    }
                 }
             }
         } catch (e: Exception) {
-            currentPkg = null
+            topResumedPackage = null
+            isTopStillActive = false
         }
 
-        // Fallback to queryUsageStats
-        if (currentPkg == null) {
-            val stats = usageStatsManager.queryUsageStats(
-                UsageStatsManager.INTERVAL_DAILY,
-                startTime,
-                endTime
-            )
-            if (!stats.isNullOrEmpty()) {
-                val mostRecent = stats.maxByOrNull { it.lastTimeUsed }
-                currentPkg = mostRecent?.packageName
-            }
+        // Only proceed if an actual activity was resumed and is still active on screen
+        if (!isTopStillActive) {
+            return
         }
 
-        val pkg = currentPkg ?: return
+        val pkg = topResumedPackage ?: return
 
-        // Ignore our own app, system UI, and common system overlays
-        if (pkg == packageName || pkg == "com.android.systemui" || pkg.startsWith("com.google.android.inputmethod")) {
+        // Ignore our own app, system UI (notifications/lockscreen/quick settings), and keyboards
+        if (pkg == packageName || 
+            pkg == "com.android.systemui" || 
+            pkg.startsWith("com.google.android.inputmethod") ||
+            pkg.contains("systemui")
+        ) {
             return
         }
 

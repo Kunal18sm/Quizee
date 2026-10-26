@@ -66,6 +66,14 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
 
+        <!-- Ultimate Custom Practice Hub Activity (Subject, Topic & 100-Question Sets) -->
+        <activity
+            android:name=".ui.CustomPracticeActivity"
+            android:exported="false"
+            android:label="Custom Practice Hub"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+
         <!-- Reliable Foreground Service to monitor locked applications (Safe for UPI/Banking apps) -->
         <service
             android:name=".service.AppLockForegroundService"

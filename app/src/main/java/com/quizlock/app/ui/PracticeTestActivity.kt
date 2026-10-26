@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.quizlock.app.R
 import com.quizlock.app.data.DailyStudyManager
+import com.quizlock.app.data.PracticeRepository
 import com.quizlock.app.data.Question
 import com.quizlock.app.data.QuestionRepository
 import com.quizlock.app.databinding.ActivityPracticeTestBinding
@@ -27,8 +28,14 @@ class PracticeTestActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPracticeTestBinding
     private lateinit var questionRepo: QuestionRepository
     private lateinit var dailyStudyManager: DailyStudyManager
+    private lateinit var practiceRepo: PracticeRepository
 
     private var targetCount: Int = 30
+    private var customQuestionIds: LongArray? = null
+    private var testTitle: String = "Practice Mock Test"
+    private var testSubtitle: String = ""
+    private var setKey: String? = null
+
     private var questions: List<Question> = emptyList()
     private var currentIndex: Int = 0
     private var score: Int = 0
@@ -42,10 +49,30 @@ class PracticeTestActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_QUESTION_COUNT = "extra_question_count"
+        const val EXTRA_QUESTION_IDS = "extra_question_ids"
+        const val EXTRA_TEST_TITLE = "extra_test_title"
+        const val EXTRA_TEST_SUBTITLE = "extra_test_subtitle"
+        const val EXTRA_SET_KEY = "extra_set_key"
 
         fun start(context: Context, questionCount: Int) {
             val intent = Intent(context, PracticeTestActivity::class.java).apply {
                 putExtra(EXTRA_QUESTION_COUNT, questionCount)
+            }
+            context.startActivity(intent)
+        }
+
+        fun startWithQuestions(
+            context: Context,
+            questionIds: LongArray,
+            title: String,
+            subtitle: String = "",
+            setKey: String? = null
+        ) {
+            val intent = Intent(context, PracticeTestActivity::class.java).apply {
+                putExtra(EXTRA_QUESTION_IDS, questionIds)
+                putExtra(EXTRA_TEST_TITLE, title)
+                putExtra(EXTRA_TEST_SUBTITLE, subtitle)
+                putExtra(EXTRA_SET_KEY, setKey)
             }
             context.startActivity(intent)
         }
@@ -58,8 +85,15 @@ class PracticeTestActivity : AppCompatActivity() {
 
         questionRepo = QuestionRepository.getInstance(this)
         dailyStudyManager = DailyStudyManager.getInstance(this)
+        practiceRepo = PracticeRepository.getInstance(this)
 
-        targetCount = intent.getIntExtra(EXTRA_QUESTION_COUNT, 30).coerceIn(5, 100)
+        targetCount = intent.getIntExtra(EXTRA_QUESTION_COUNT, 30).coerceIn(5, 500)
+        customQuestionIds = intent.getLongArrayExtra(EXTRA_QUESTION_IDS)
+        testTitle = intent.getStringExtra(EXTRA_TEST_TITLE) ?: "Practice Mock Test"
+        testSubtitle = intent.getStringExtra(EXTRA_TEST_SUBTITLE) ?: ""
+        setKey = intent.getStringExtra(EXTRA_SET_KEY)
+
+        binding.tvTestTitle.text = testTitle
 
         initViews()
         setupBackPressHandler()
@@ -147,8 +181,13 @@ class PracticeTestActivity : AppCompatActivity() {
     }
 
     private fun loadQuestions() {
-        // Guaranteed starting & active foundational questions
-        questions = questionRepo.getPracticeTestQuestions(targetCount)
+        val customIds = customQuestionIds
+        questions = if (customIds != null && customIds.isNotEmpty()) {
+            val loaded = practiceRepo.getQuestionsByIds(customIds.toList())
+            if (loaded.isEmpty()) questionRepo.getPracticeTestQuestions(targetCount) else loaded
+        } else {
+            questionRepo.getPracticeTestQuestions(targetCount)
+        }
 
         if (questions.isEmpty()) {
             Toast.makeText(this, "No practice questions available", Toast.LENGTH_SHORT).show()
@@ -359,6 +398,19 @@ class PracticeTestActivity : AppCompatActivity() {
             "$subject: $subCorrect/${list.size}"
         }
         binding.tvSubjectBreakdownSummary.text = if (breakdownText.isNotBlank()) breakdownText else "All starting subjects tested"
+
+        // Save set progress if this was a practice set or custom test
+        val currentSetKey = setKey
+        if (!currentSetKey.isNullOrEmpty()) {
+            practiceRepo.saveSetResult(
+                setKey = currentSetKey,
+                score = correct,
+                total = total,
+                title = testTitle,
+                subtitle = testSubtitle.ifBlank { "$correct/$total Correct ($percentage%)" },
+                questionIds = questions.map { it.id }
+            )
+        }
 
         // Set up review adapter
         val adapter = PracticeReviewAdapter(reviewResults)

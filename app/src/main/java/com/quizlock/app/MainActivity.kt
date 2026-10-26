@@ -122,6 +122,10 @@ class MainActivity : AppCompatActivity() {
             PracticeTestActivity.start(this, selectedPracticeCount)
         }
 
+        binding.btnOpenCustomPractice.setOnClickListener {
+            com.quizlock.app.ui.CustomPracticeActivity.start(this)
+        }
+
         // Initialize 30 questions selected by default
         updateCountSelection(30)
 

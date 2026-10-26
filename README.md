@@ -38,11 +38,22 @@ Filtered and pruned of all low-yield junk (foreign words, obscure sanctuaries, e
 - **Indian Polity:** 271 MCQs
 - **Economics:** 268 MCQs
 
-### 5. 🛡️ Rock-Solid App Locking & Floating Overlay
-- **Instant Accessibility Open Detector:** Catches target apps immediately.
+### 5. 🎯 Ultimate Custom Practice Hub (Subject, Topic & 100-Question Sets)
+- **Subject-Wise Self Drills:** Practice full mocks of any single subject (English, Static GK, History, Geography, Biology, Polity, or Economics).
+- **Topic & Chapter Breakdown:** Drill into specific sub-topics (e.g. Antonyms, Synonyms, OWS, Modern History: Freedom Struggle, Dances of India, National Parks).
+- **100-Question Structured Sets:** Every large topic is automatically chunked into manageable sets of 100 questions (e.g., Antonyms Set 1: Q1–100, Set 2: Q101–200) with visual mastery badges:
+  - 🏆 **Mastered:** $\ge$80% accuracy
+  - ⚠️ **Needs Revision:** <80% accuracy
+  - ⚪ **Unattempted:** Ready to start
+- **Multi-Topic Mixed Mock Builder:** Tick checkboxes across multiple topics and choose 25, 50, or 100 questions to generate customized mixed mock tests.
+- **⚡ Resume Where You Left Off:** Smart top banner remembers your last active set, score, and progress so you never lose your place.
+
+### 6. 🛡️ Rock-Solid App Locking & Notification Protection
+- **Reliable Foreground Activity Detection:** Strictly monitors `ACTIVITY_RESUMED` events of locked apps. Background notifications (such as YouTube push alerts, media playback, WhatsApp) never trigger the quiz overlay!
 - **Floating Overlay:** Seamless quiz card displays on top of target app.
 - **Haptic Feedback & Instant Visuals:** Green for correct, Red for wrong with instant reveal.
 - **Screen-Off Session Management:** Once unlocked by passing the quiz (3/5 score), the app stays unlocked until screen turns off.
+
 
 ---
 
