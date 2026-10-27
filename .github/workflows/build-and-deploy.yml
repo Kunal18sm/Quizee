@@ -67,6 +67,7 @@ jobs:
           mkdir -p docs
           cp app/build/outputs/apk/debug/app-debug.apk docs/quizee.apk
           cp app/build/outputs/apk/debug/app-debug.apk quizee.apk
+          cp index.html docs/index.html || true
           ls -lh docs/quizee.apk
 
       - name: Upload APK Artifact
