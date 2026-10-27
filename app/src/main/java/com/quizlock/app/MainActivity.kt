@@ -207,7 +207,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnStartDailyDrill.setOnClickListener {
-            val targetQuestions = dailyStudyManager.getTodayQuestions()
+            val targetQuestions = dailyStudyManager.getTodayBankQuestions()
             if (targetQuestions.isNotEmpty()) {
                 val qIds = targetQuestions.map { it.id }.toLongArray()
                 PracticeTestActivity.startWithQuestions(
@@ -222,7 +222,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnReviewMistakesPractice.setOnClickListener {
-            val mistakes = dailyStudyManager.getReviewMistakesQuestions()
+            val mistakeIds = dailyStudyManager.getMistakeIds().toList()
+            val mistakes = if (mistakeIds.isNotEmpty()) {
+                com.quizlock.app.data.PracticeRepository.getInstance(this).getQuestionsByIds(mistakeIds)
+            } else emptyList()
+
             if (mistakes.isNotEmpty()) {
                 val qIds = mistakes.map { it.id }.toLongArray()
                 PracticeTestActivity.startWithQuestions(
