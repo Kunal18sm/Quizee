@@ -23,7 +23,11 @@ import com.quizlock.app.R
 import com.quizlock.app.data.PreferencesManager
 import com.quizlock.app.data.Question
 import com.quizlock.app.data.QuestionRepository
+import com.quizlock.app.data.TranslationHelper
 import com.quizlock.app.databinding.ActivityQuizLockBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 object QuizOverlayManager {
 
@@ -33,6 +37,7 @@ object QuizOverlayManager {
     private var currentAppName: String = "App"
     private var isShowingState: Boolean = false
     private var appContext: Context? = null
+    private var isHindiMode: Boolean = false
 
     private var questions: List<Question> = emptyList()
     private var currentQuestionIndex: Int = 0
@@ -171,6 +176,13 @@ object QuizOverlayManager {
         binding.btnRetryQuiz.setOnClickListener {
             onRetryQuizClicked(context, binding)
         }
+
+        binding.btnTranslate.setOnClickListener {
+            if (currentQuestionIndex in questions.indices) {
+                isHindiMode = !isHindiMode
+                applyLanguage(context, binding, questions[currentQuestionIndex])
+            }
+        }
     }
 
     private fun onRetryQuizClicked(
@@ -232,23 +244,55 @@ object QuizOverlayManager {
         binding.tvQuizStreakBadge.text = "🔥 ${progress.streak} Day Streak"
 
         binding.tvCategory.text = q.category
-        binding.tvQuestionText.text = q.question
 
         val optionContainers = listOf(binding.btnOption0, binding.btnOption1, binding.btnOption2, binding.btnOption3)
         val optionBadges = listOf(binding.tvOptionBadge0, binding.tvOptionBadge1, binding.tvOptionBadge2, binding.tvOptionBadge3)
-        val optionTexts = listOf(binding.tvOptionText0, binding.tvOptionText1, binding.tvOptionText2, binding.tvOptionText3)
         val optionIcons = listOf(binding.ivFeedback0, binding.ivFeedback1, binding.ivFeedback2, binding.ivFeedback3)
 
         val badges = listOf("A", "B", "C", "D")
         for (i in 0 until 4) {
-            val optionText = if (i < q.options.size) q.options[i] else ""
-            optionTexts[i].text = optionText
             optionBadges[i].text = badges[i]
-
             // Reset visual style
             optionContainers[i].background = ContextCompat.getDrawable(context, R.drawable.bg_option_default)
             optionContainers[i].isEnabled = true
             optionIcons[i].visibility = View.GONE
+        }
+
+        applyLanguage(context, binding, q)
+    }
+
+    private fun applyLanguage(context: Context, binding: ActivityQuizLockBinding, question: Question) {
+        val optionTexts = listOf(binding.tvOptionText0, binding.tvOptionText1, binding.tvOptionText2, binding.tvOptionText3)
+        if (!isHindiMode) {
+            binding.tvQuestionText.text = question.question
+            for (i in 0 until 4) {
+                val optionText = if (i < question.options.size) question.options[i] else ""
+                optionTexts[i].text = optionText
+            }
+            binding.btnTranslate.text = "अ / A Hindi"
+            binding.btnTranslate.setIconResource(R.drawable.ic_translate)
+            binding.btnTranslate.iconTint = ContextCompat.getColorStateList(context, R.color.primary_light)
+            binding.btnTranslate.setTextColor(ContextCompat.getColor(context, R.color.primary_light))
+            binding.btnTranslate.strokeColor = ContextCompat.getColorStateList(context, R.color.border_dark)
+        } else {
+            binding.btnTranslate.text = "Translating..."
+            binding.btnTranslate.isEnabled = false
+            CoroutineScope(Dispatchers.Main).launch {
+                val translated = TranslationHelper.getInstance(context).translateQuestion(question)
+                if (currentQuestionIndex in questions.indices && questions[currentQuestionIndex].id == question.id && isHindiMode) {
+                    binding.tvQuestionText.text = translated.question
+                    for (i in 0 until 4) {
+                        val optionText = if (i < translated.options.size) translated.options[i] else ""
+                        optionTexts[i].text = optionText
+                    }
+                }
+                binding.btnTranslate.isEnabled = true
+                binding.btnTranslate.text = "A / अ English"
+                binding.btnTranslate.setIconResource(R.drawable.ic_translate)
+                binding.btnTranslate.iconTint = ContextCompat.getColorStateList(context, R.color.warning_amber)
+                binding.btnTranslate.setTextColor(ContextCompat.getColor(context, R.color.warning_amber))
+                binding.btnTranslate.strokeColor = ContextCompat.getColorStateList(context, R.color.warning_amber)
+            }
         }
     }
 

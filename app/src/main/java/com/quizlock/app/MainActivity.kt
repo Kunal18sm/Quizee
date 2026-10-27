@@ -206,6 +206,47 @@ class MainActivity : AppCompatActivity() {
                 .show()
         }
 
+        binding.btnStartDailyDrill.setOnClickListener {
+            val targetQuestions = dailyStudyManager.getTodayQuestions()
+            if (targetQuestions.isNotEmpty()) {
+                val qIds = targetQuestions.map { it.id }.toLongArray()
+                PracticeTestActivity.startWithQuestions(
+                    context = this,
+                    questionIds = qIds,
+                    title = "🎯 Day ${dailyStudyManager.getDailyProgress().dayNumber} Target Drill",
+                    subtitle = "30-Question Daily Syllabus Test"
+                )
+            } else {
+                PracticeTestActivity.start(this, dailyStudyManager.getTargetSize())
+            }
+        }
+
+        binding.btnReviewMistakesPractice.setOnClickListener {
+            val mistakes = dailyStudyManager.getReviewMistakesQuestions()
+            if (mistakes.isNotEmpty()) {
+                val qIds = mistakes.map { it.id }.toLongArray()
+                PracticeTestActivity.startWithQuestions(
+                    context = this,
+                    questionIds = qIds,
+                    title = "❌ Mistakes Practice Drill",
+                    subtitle = "${mistakes.size} Questions needing revision"
+                )
+            } else {
+                Toast.makeText(this, "Great job! You have 0 pending mistakes right now 🎉", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        val openCustomHub: (View) -> Unit = {
+            com.quizlock.app.ui.CustomPracticeActivity.start(this)
+        }
+        binding.btnSubjectEnglish.setOnClickListener(openCustomHub)
+        binding.btnSubjectStaticGk.setOnClickListener(openCustomHub)
+        binding.btnSubjectHistory.setOnClickListener(openCustomHub)
+        binding.btnSubjectGeography.setOnClickListener(openCustomHub)
+        binding.btnSubjectBiology.setOnClickListener(openCustomHub)
+        binding.btnSubjectPolity.setOnClickListener(openCustomHub)
+        binding.btnSubjectEconomics.setOnClickListener(openCustomHub)
+
         binding.btnManageQuestionsPage.setOnClickListener {
             startActivity(Intent(this, QuestionManageActivity::class.java))
         }

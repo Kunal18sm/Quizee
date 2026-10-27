@@ -15,12 +15,15 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.quizlock.app.R
 import com.quizlock.app.data.DailyStudyManager
 import com.quizlock.app.data.PracticeRepository
 import com.quizlock.app.data.Question
 import com.quizlock.app.data.QuestionRepository
+import com.quizlock.app.data.TranslationHelper
 import com.quizlock.app.databinding.ActivityPracticeTestBinding
 
 class PracticeTestActivity : AppCompatActivity() {
@@ -29,6 +32,8 @@ class PracticeTestActivity : AppCompatActivity() {
     private lateinit var questionRepo: QuestionRepository
     private lateinit var dailyStudyManager: DailyStudyManager
     private lateinit var practiceRepo: PracticeRepository
+    private lateinit var translationHelper: TranslationHelper
+    private var isHindiMode: Boolean = false
 
     private var targetCount: Int = 30
     private var customQuestionIds: LongArray? = null
@@ -86,6 +91,7 @@ class PracticeTestActivity : AppCompatActivity() {
         questionRepo = QuestionRepository.getInstance(this)
         dailyStudyManager = DailyStudyManager.getInstance(this)
         practiceRepo = PracticeRepository.getInstance(this)
+        translationHelper = TranslationHelper.getInstance(this)
 
         targetCount = intent.getIntExtra(EXTRA_QUESTION_COUNT, 30).coerceIn(5, 500)
         customQuestionIds = intent.getLongArrayExtra(EXTRA_QUESTION_IDS)
@@ -134,6 +140,13 @@ class PracticeTestActivity : AppCompatActivity() {
 
         binding.btnExitTest.setOnClickListener {
             confirmExit()
+        }
+
+        binding.btnTranslate.setOnClickListener {
+            if (currentIndex in questions.indices) {
+                isHindiMode = !isHindiMode
+                applyLanguage(questions[currentIndex])
+            }
         }
 
         binding.btnSkipQuestion.setOnClickListener {
@@ -214,9 +227,8 @@ class PracticeTestActivity : AppCompatActivity() {
         binding.pbTestProgress.progress = index + 1
         binding.tvScoreBadge.text = "Score: $score"
 
-        // Update question card
+        // Update question card category
         binding.tvSubjectTag.text = question.category
-        binding.tvQuestionText.text = question.question
 
         // Reset option styling
         for (i in optionContainers.indices) {
@@ -234,16 +246,54 @@ class PracticeTestActivity : AppCompatActivity() {
 
             if (i < question.options.size) {
                 container.visibility = View.VISIBLE
-                text.text = question.options[i]
             } else {
                 container.visibility = View.GONE
             }
         }
 
+        // Apply English or Hindi text
+        applyLanguage(question)
+
         // Reset next & skip buttons
         binding.btnSkipQuestion.visibility = View.VISIBLE
         binding.btnNextQuestion.isEnabled = false
         binding.btnNextQuestion.text = if (index == questions.size - 1) "View Results" else "Next Question ➔"
+    }
+
+    private fun applyLanguage(question: Question) {
+        if (!isHindiMode) {
+            binding.tvQuestionText.text = question.question
+            for (i in optionContainers.indices) {
+                if (i < question.options.size) {
+                    optionTexts[i].text = question.options[i]
+                }
+            }
+            binding.btnTranslate.text = "अ / A Hindi"
+            binding.btnTranslate.setIconResource(R.drawable.ic_translate)
+            binding.btnTranslate.iconTint = ContextCompat.getColorStateList(this, R.color.primary_light)
+            binding.btnTranslate.setTextColor(ContextCompat.getColor(this, R.color.primary_light))
+            binding.btnTranslate.strokeColor = ContextCompat.getColorStateList(this, R.color.border_dark)
+        } else {
+            binding.btnTranslate.text = "Translating..."
+            binding.btnTranslate.isEnabled = false
+            lifecycleScope.launch {
+                val translated = translationHelper.translateQuestion(question)
+                if (currentIndex in questions.indices && questions[currentIndex].id == question.id && isHindiMode) {
+                    binding.tvQuestionText.text = translated.question
+                    for (i in optionContainers.indices) {
+                        if (i < translated.options.size) {
+                            optionTexts[i].text = translated.options[i]
+                        }
+                    }
+                }
+                binding.btnTranslate.isEnabled = true
+                binding.btnTranslate.text = "A / अ English"
+                binding.btnTranslate.setIconResource(R.drawable.ic_translate)
+                binding.btnTranslate.iconTint = ContextCompat.getColorStateList(this@PracticeTestActivity, R.color.warning_amber)
+                binding.btnTranslate.setTextColor(ContextCompat.getColor(this@PracticeTestActivity, R.color.warning_amber))
+                binding.btnTranslate.strokeColor = ContextCompat.getColorStateList(this@PracticeTestActivity, R.color.warning_amber)
+            }
+        }
     }
 
     private fun onOptionClicked(optionIndex: Int) {
