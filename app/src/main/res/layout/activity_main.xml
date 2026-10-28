@@ -48,42 +48,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnQuestions"
-                    style="@style/Widget.Material3.Button.TextButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="6dp"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="0dp"
-                    android:text="Manage"
-                    android:textColor="@color/accent"
-                    android:textSize="12sp"
-                    app:icon="@drawable/ic_quiz"
-                    app:iconSize="14dp"
-                    app:iconTint="@color/accent" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnTestQuiz"
-                    style="@style/Widget.Material3.Button.TonalButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:paddingHorizontal="12dp"
-                    android:paddingVertical="0dp"
-                    android:text="Test Lock"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@color/primary"
-                    app:cornerRadius="18dp" />
-            </LinearLayout>
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -151,9 +116,13 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="🎯 Day 1 • Target Bank"
+                                android:drawableStart="@drawable/ic_target"
+                                android:drawablePadding="8dp"
+                                android:drawableTint="@color/primary_light"
+                                android:gravity="center_vertical"
+                                android:text="Day 1 • Target Bank"
                                 android:textColor="@color/text_primary"
-                                android:textSize="17sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -161,9 +130,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/bg_option_default"
+                                android:drawableStart="@drawable/ic_flame"
+                                android:drawablePadding="4dp"
+                                android:gravity="center_vertical"
                                 android:paddingHorizontal="10dp"
                                 android:paddingVertical="4dp"
-                                android:text="🔥 1 Day Streak"
+                                android:text="1 Day Streak"
                                 android:textColor="@color/warning_amber"
                                 android:textSize="12sp"
                                 android:textStyle="bold" />
@@ -191,15 +163,6 @@
                                     android:textColor="@color/primary_light"
                                     android:textSize="20sp"
                                     android:textStyle="bold" />
-
-                                <TextView
-                                    android:id="@+id/tvDailyStatusSubtitle"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="2dp"
-                                    android:text="Active in your lock screen quizzes"
-                                    android:textColor="@color/text_secondary"
-                                    android:textSize="12sp" />
                             </LinearLayout>
 
                             <com.google.android.material.button.MaterialButton
@@ -256,24 +219,23 @@
                             android:orientation="horizontal">
 
                             <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnReviewDailyBank"
-                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:id="@+id/btnStartDailyDrill"
+                                style="@style/Widget.Material3.Button"
                                 android:layout_width="0dp"
                                 android:layout_height="42dp"
                                 android:layout_marginEnd="8dp"
                                 android:layout_weight="1"
                                 android:paddingHorizontal="12dp"
                                 android:paddingVertical="0dp"
-                                android:text="Review 30 Qs"
-                                android:textColor="@color/text_primary"
+                                android:text="Start Target Test"
+                                android:textColor="@color/white"
                                 android:textSize="12sp"
-                                app:backgroundTint="@color/card_dark_elevated"
+                                android:textStyle="bold"
+                                app:backgroundTint="@color/primary"
                                 app:cornerRadius="12dp"
-                                app:icon="@drawable/ic_visibility"
+                                app:icon="@drawable/ic_play_arrow"
                                 app:iconSize="14dp"
-                                app:iconTint="@color/accent"
-                                app:strokeColor="@color/border_dark"
-                                app:strokeWidth="1dp" />
+                                app:iconTint="@color/white" />
 
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btnAdvanceNextDay"
@@ -298,75 +260,7 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- 2. Today's Quick Focus Drill Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardDailyDrill"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="14dp"
-                    app:cardBackgroundColor="@color/card_dark"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="@color/border_dark"
-                    app:strokeWidth="1dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="⚡ Daily Target Drill"
-                                android:textColor="@color/text_primary"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/bg_option_default"
-                                android:paddingHorizontal="8dp"
-                                android:paddingVertical="3dp"
-                                android:text="30 Questions"
-                                android:textColor="@color/correct_green"
-                                android:textSize="11sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
-                            android:text="Practice today's syllabus questions in a clean mock test session with instant solutions."
-                            android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnStartDailyDrill"
-                            style="@style/Widget.Material3.Button"
-                            android:layout_width="match_parent"
-                            android:layout_height="44dp"
-                            android:layout_marginTop="12dp"
-                            android:paddingVertical="0dp"
-                            android:text="Start Today's Target Test ➔"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            app:backgroundTint="@color/primary"
-                            app:cornerRadius="12dp" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
 
                 <!-- 3. Key Learning Pillars Overview Grid -->
                 <LinearLayout
@@ -484,41 +378,7 @@
                     </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
 
-                <!-- 4. Daily Target Study Tips Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/card_dark"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="@color/border_dark"
-                    app:strokeWidth="1dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="💡 How Daily Targets Work"
-                            android:textColor="@color/warning_amber"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:lineSpacingExtra="3dp"
-                            android:text="• Quizee serves questions from today's bank whenever you unlock target apps.\n• Missed questions repeat automatically until answered correctly twice.\n• On Sundays, all 6 daily banks combine into a comprehensive Weekly Revision Mock!"
-                            android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
@@ -570,9 +430,13 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="📝 Self Practice Test"
+                                android:drawableStart="@drawable/ic_practice"
+                                android:drawablePadding="8dp"
+                                android:drawableTint="@color/primary_light"
+                                android:gravity="center_vertical"
+                                android:text="Self Practice Test"
                                 android:textColor="@color/text_primary"
-                                android:textSize="17sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -586,14 +450,6 @@
                                 android:textSize="11sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Choose how many questions to test in this practice session:"
-                            android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
 
                         <!-- Quick count chips row -->
                         <LinearLayout
@@ -681,546 +537,173 @@
                             android:layout_height="46dp"
                             android:layout_marginTop="14dp"
                             android:paddingVertical="0dp"
-                            android:text="⚡ Start Practice Test (30 Questions)"
+                            android:text="Start Practice Test (30 Questions)"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
                             android:textStyle="bold"
                             app:backgroundTint="@color/primary"
-                            app:cornerRadius="12dp" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- 2. Ultimate Custom Practice Hub Banner Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="14dp"
-                    app:cardBackgroundColor="@color/card_dark"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="@color/border_dark"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="🎯 Ultimate Custom Practice Hub"
-                                android:textColor="@color/primary_light"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/bg_option_default"
-                                android:paddingHorizontal="8dp"
-                                android:paddingVertical="3dp"
-                                android:text="7 Subjects"
-                                android:textColor="@color/warning_amber"
-                                android:textSize="11sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
-                            android:lineSpacingExtra="2dp"
-                            android:text="Practice topic-wise 50 &amp; 100-question drill sets across English, History, Static GK, Polity, Biology, Geography and Economics."
-                            android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnOpenCustomPractice"
-                            style="@style/Widget.Material3.Button.TonalButton"
-                            android:layout_width="match_parent"
-                            android:layout_height="44dp"
-                            android:layout_marginTop="12dp"
-                            android:paddingVertical="0dp"
-                            android:text="Open Custom Practice Hub ➔"
-                            android:textColor="@color/primary_light"
-                            android:textSize="13sp"
-                            android:textStyle="bold"
-                            app:backgroundTint="@color/card_dark_elevated"
                             app:cornerRadius="12dp"
-                            app:icon="@drawable/ic_quiz"
+                            app:icon="@drawable/ic_play_arrow"
                             app:iconGravity="textStart"
                             app:iconSize="14dp"
-                            app:iconTint="@color/primary_light"
-                            app:strokeColor="@color/primary"
-                            app:strokeWidth="1.2dp" />
+                            app:iconTint="@color/white" />
 
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- 3. Dedicated Mistakes & Weak Points Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardMistakesReview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="14dp"
-                    app:cardBackgroundColor="@color/card_dark"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="@color/border_dark"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="🎯 Review Mistakes &amp; Missed Qs"
-                                android:textColor="@color/text_primary"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/bg_option_default"
-                                android:paddingHorizontal="8dp"
-                                android:paddingVertical="3dp"
-                                android:text="Target Fix"
-                                android:textColor="@color/wrong_red"
-                                android:textSize="11sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
-                            android:text="Re-attempt questions you missed in lock quizzes or practice tests until they are 100% mastered."
-                            android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnReviewMistakesPractice"
-                            style="@style/Widget.Material3.Button.TonalButton"
-                            android:layout_width="match_parent"
-                            android:layout_height="44dp"
-                            android:layout_marginTop="12dp"
-                            android:paddingVertical="0dp"
-                            android:text="Review &amp; Fix Mistakes ➔"
-                            android:textColor="@color/text_primary"
-                            android:textSize="13sp"
-                            app:backgroundTint="@color/card_dark_elevated"
-                            app:cornerRadius="12dp"
-                            app:icon="@drawable/ic_visibility"
-                            app:iconSize="14dp"
-                            app:iconTint="@color/warning_amber"
-                            app:strokeColor="@color/border_dark"
-                            app:strokeWidth="1dp" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- 4. Syllabus Bank Summary Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/card_dark"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="@color/border_dark"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="📊 6,517 High-Yield Questions"
-                            android:textColor="@color/primary_light"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
-                            android:lineSpacingExtra="3dp"
-                            android:text="• English Vocab: 2,620 MCQs (9 Topics)\n• Static GK: 1,554 MCQs (33 Topics)\n• History: 984 MCQs (18 Chapters)\n• Geography: 503 MCQs\n• Biology: 317 MCQs\n• Polity: 271 MCQs\n• Economics: 268 MCQs"
-                            android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
-
-        <!-- ============================================== -->
-        <!-- PAGE 3: 🔒 APP LOCKER (Apps & Permissions)     -->
-        <!-- ============================================== -->
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/layoutPageLocker"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:fillViewport="true"
-            android:paddingHorizontal="16dp"
-            android:paddingTop="14dp"
-            android:paddingBottom="84dp"
-            android:visibility="gone">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <!-- 1. Permissions Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardPermissions"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="14dp"
-                    app:cardBackgroundColor="@color/card_dark"
-                    app:cardCornerRadius="16dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="@color/border_dark"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Required Permissions (UPI &amp; Bank Safe)"
-                            android:textColor="@color/text_primary"
-                            android:textSize="15sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Enable permissions so Quizee can show quiz popups over locked apps (No Accessibility needed!)."
-                            android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
-
-                        <!-- Overlay Row -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="1. Display Over Other Apps"
-                                    android:textColor="@color/text_primary"
-                                    android:textSize="13sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Shows compact quiz over locked app"
-                                    android:textColor="@color/text_secondary"
-                                    android:textSize="11sp" />
-                            </LinearLayout>
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnPermOverlay"
-                                style="@style/Widget.Material3.Button.TonalButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="36dp"
-                                android:paddingHorizontal="14dp"
-                                android:paddingVertical="0dp"
-                                android:text="Enable"
-                                android:textSize="12sp"
-                                app:backgroundTint="@color/card_dark_elevated"
-                                app:cornerRadius="18dp"
-                                app:strokeColor="@color/border_dark"
-                                app:strokeWidth="1dp" />
-                        </LinearLayout>
-
-                        <!-- Usage Stats Row -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="2. Usage Access (App Detector)"
-                                    android:textColor="@color/text_primary"
-                                    android:textSize="13sp"
-                                    android:textStyle="bold" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Reliably detects locked app launch (UPI safe)"
-                                    android:textColor="@color/text_secondary"
-                                    android:textSize="11sp" />
-                            </LinearLayout>
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnPermUsage"
-                                style="@style/Widget.Material3.Button.TonalButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="36dp"
-                                android:paddingHorizontal="14dp"
-                                android:paddingVertical="0dp"
-                                android:text="Enable"
-                                android:textSize="12sp"
-                                app:backgroundTint="@color/card_dark_elevated"
-                                app:cornerRadius="18dp"
-                                app:strokeColor="@color/border_dark"
-                                app:strokeWidth="1dp" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- 2. Search Box Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    app:cardBackgroundColor="@color/card_dark"
-                    app:cardCornerRadius="14dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="@color/border_dark"
-                    app:strokeWidth="1dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingHorizontal="14dp"
-                        android:paddingVertical="4dp">
-
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:src="@drawable/ic_search"
-                            app:tint="@color/text_muted" />
-
-                        <EditText
-                            android:id="@+id/etSearchApp"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:hint="Search installed apps to lock..."
-                            android:padding="10dp"
-                            android:textColor="@color/text_primary"
-                            android:textColorHint="@color/text_muted"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- 3. Locked Count Header -->
+                <!-- Action Cards Row (Custom Hub & Mistakes Fix) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tvLockedCount"
+                    <!-- Action 1: Custom Hub -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnOpenCustomPractice"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
                         android:layout_weight="1"
-                        android:text="Select apps to lock with Quizee"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/card_dark"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/border_dark"
+                        app:strokeWidth="1dp">
 
-                    <ProgressBar
-                        android:id="@+id/progressBarLoading"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:visibility="gone" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="14dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@drawable/ic_quiz"
+                                    app:tint="@color/primary_light" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+
+                                <ImageView
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:src="@drawable/ic_forward"
+                                    app:tint="@color/text_muted" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Custom Sets Hub"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="7 Subjects • 137 Sets"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Action 2: Mistakes -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/btnReviewMistakesPractice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/card_dark"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/border_dark"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="14dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="22dp"
+                                    android:layout_height="22dp"
+                                    android:src="@drawable/ic_cross"
+                                    app:tint="@color/warning_amber" />
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1" />
+
+                                <ImageView
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:src="@drawable/ic_forward"
+                                    app:tint="@color/text_muted" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Mistakes"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Target Fix • Re-test"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
 
-                <!-- 4. Installed Apps Recycler -->
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvApps"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:nestedScrollingEnabled="false" />
-
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
-
-        <!-- ============================================== -->
-        <!-- PAGE 4: ❓ QUESTION BANK (Curriculum Explorer) -->
-        <!-- ============================================== -->
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/layoutPageQuestions"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:fillViewport="true"
-            android:paddingHorizontal="16dp"
-            android:paddingTop="14dp"
-            android:paddingBottom="84dp"
-            android:visibility="gone">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <!-- 1. Question Bank Master Header Card -->
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="14dp"
-                    app:cardBackgroundColor="@color/card_dark"
-                    app:cardCornerRadius="18dp"
-                    app:cardElevation="0dp"
-                    app:strokeColor="@color/primary"
-                    app:strokeWidth="1.5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="📚 Master Question Bank"
-                                android:textColor="@color/text_primary"
-                                android:textSize="17sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/bg_option_default"
-                                android:paddingHorizontal="8dp"
-                                android:paddingVertical="3dp"
-                                android:text="100% Offline"
-                                android:textColor="@color/correct_green"
-                                android:textSize="11sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
-                            android:text="6,517 high-yield questions stored locally on your device. Live 1-click Hindi translation available in all quizzes!"
-                            android:textColor="@color/text_secondary"
-                            android:textSize="12sp" />
-
-                        <!-- Action Buttons Row -->
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="14dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnManageQuestionsPage"
-                                style="@style/Widget.Material3.Button"
-                                android:layout_width="0dp"
-                                android:layout_height="42dp"
-                                android:layout_marginEnd="8dp"
-                                android:layout_weight="1"
-                                android:padding="0dp"
-                                android:text="Manage / Custom"
-                                android:textColor="@color/white"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                app:backgroundTint="@color/primary"
-                                app:cornerRadius="12dp" />
-
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btnTestQuizPage"
-                                style="@style/Widget.Material3.Button.TonalButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="42dp"
-                                android:paddingHorizontal="14dp"
-                                android:paddingVertical="0dp"
-                                android:text="Test Overlay"
-                                android:textColor="@color/primary_light"
-                                android:textSize="12sp"
-                                android:textStyle="bold"
-                                app:backgroundTint="@color/card_dark_elevated"
-                                app:cornerRadius="12dp"
-                                app:strokeColor="@color/border_dark"
-                                app:strokeWidth="1dp" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-                </com.google.android.material.card.MaterialCardView>
-
-                <!-- Section Title: Subject Repositories -->
+                <!-- Section: Practice Sets by Subject (50 & 100 Qs) -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Practice Sets by Subject (50 &amp; 100 Qs):"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:text="Explore Curriculum by Subject:"
+                    android:text=""
                     android:textColor="@color/text_secondary"
                     android:textSize="13sp"
                     android:textStyle="bold" />
@@ -1665,6 +1148,343 @@
                             android:textStyle="bold" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- ============================================== -->
+        <!-- PAGE 3: 🔒 APP LOCKER (Apps & Permissions)     -->
+        <!-- ============================================== -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/layoutPageLocker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="84dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 1. Permissions Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPermissions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/border_dark"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Required Permissions (UPI &amp; Bank Safe)"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Enable permissions so Quizee can show quiz popups over locked apps (No Accessibility needed!)."
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                        <!-- Overlay Row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1. Display Over Other Apps"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Shows compact quiz over locked app"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnPermOverlay"
+                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="0dp"
+                                android:text="Enable"
+                                android:textSize="12sp"
+                                app:backgroundTint="@color/card_dark_elevated"
+                                app:cornerRadius="18dp"
+                                app:strokeColor="@color/border_dark"
+                                app:strokeWidth="1dp" />
+                        </LinearLayout>
+
+                        <!-- Usage Stats Row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2. Usage Access (App Detector)"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Reliably detects locked app launch (UPI safe)"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnPermUsage"
+                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="0dp"
+                                android:text="Enable"
+                                android:textSize="12sp"
+                                app:backgroundTint="@color/card_dark_elevated"
+                                app:cornerRadius="18dp"
+                                app:strokeColor="@color/border_dark"
+                                app:strokeWidth="1dp" />
+                        </LinearLayout>
+
+                        <!-- Test Floating Lock Button -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnTestQuiz"
+                            style="@style/Widget.Material3.Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="14dp"
+                            android:paddingVertical="0dp"
+                            android:text="Test Floating Lock Overlay"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            app:backgroundTint="@color/primary"
+                            app:cornerRadius="12dp"
+                            app:icon="@drawable/ic_play_arrow"
+                            app:iconGravity="textStart"
+                            app:iconSize="14dp"
+                            app:iconTint="@color/white" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 2. Search Box Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/border_dark"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="4dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_search"
+                            app:tint="@color/text_muted" />
+
+                        <EditText
+                            android:id="@+id/etSearchApp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:hint="Search installed apps to lock..."
+                            android:padding="10dp"
+                            android:textColor="@color/text_primary"
+                            android:textColorHint="@color/text_muted"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 3. Locked Count Header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLockedCount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Select apps to lock with Quizee"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarLoading"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <!-- 4. Installed Apps Recycler -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvApps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- ============================================== -->
+        <!-- PAGE 4: ❓ QUESTION BANK (Curriculum Explorer) -->
+        <!-- ============================================== -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/layoutPageQuestions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="84dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- 1. Question Bank Master Header Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    app:cardBackgroundColor="@color/card_dark"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/primary"
+                    app:strokeWidth="1.5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="📚 Master Question Bank"
+                                android:textColor="@color/text_primary"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_option_default"
+                                android:paddingHorizontal="8dp"
+                                android:paddingVertical="3dp"
+                                android:text="100% Offline"
+                                android:textColor="@color/correct_green"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="6,517 high-yield questions stored locally on your device. Live 1-click Hindi translation available in all quizzes!"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                        <!-- Dedicated Single Action: Manage & Add Custom Questions -->
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnManageQuestionsPage"
+                            style="@style/Widget.Material3.Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="14dp"
+                            android:paddingVertical="0dp"
+                            android:text="Manage &amp; Add Custom Questions"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            app:backgroundTint="@color/primary"
+                            app:cornerRadius="12dp"
+                            app:icon="@drawable/ic_add"
+                            app:iconGravity="textStart"
+                            app:iconSize="16dp"
+                            app:iconTint="@color/white" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

@@ -79,18 +79,18 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2.5.0
-          name: "Quizee v2.5.0 - Live 1-Click English to Hindi Translation & Complete UI Polish"
+          tag_name: v2.5.1
+          name: "Quizee v2.5.1 - Custom Practice Sets, Full Responsive UI & Enhanced Curriculum"
           body: |
-            ## 📱 Quizee App v2.5.0 Released!
+            ## 📱 Quizee App v2.5.1 Released!
+            - **📚 Full Custom Practice Sets & Multi-Topic Mix**:
+              - Individual 50-Q and 100-Q sequential drills for all subjects.
+              - Multi-topic mixed test generator with customizable question counts (25 / 50 / 100 Qs).
+            - **✨ Refined UI & Full Mobile Responsiveness**:
+              - Modern spaced layout with zero clutter.
+              - Live in-browser Android App Simulator on the website.
             - **🌐 Live 1-Click English ⇄ Hindi Translation**:
               - Instant on-device toggle for questions and options (`[अ / A Hindi]`).
-              - High-speed dual caching (Memory + Local Disk) ensures 0ms latency and 100% offline access after translation.
-            - **✨ Complete UI Overhaul & Balanced Layouts**:
-              - Perfectly spaced cards, no awkward empty voids or cramped sections.
-              - **Daily Target Drill**: 1-click test launcher directly from the daily target dashboard.
-              - **Syllabus Explorer**: Dedicated cards for all 7 subjects (English, Static GK, History, Geography, Biology, Polity, Economics).
-              - **Dedicated Mistakes Drill**: Retest questions you missed during quizzes until mastered.
             - **📚 6,517 High-Yield SSC CGL Questions**:
               - 100% offline curriculum across English Vocab, Static GK, History, Geography, Biology, Polity, and Economics.
             - Download `quizee.apk` below directly on your Android phone!

@@ -117,7 +117,7 @@ class MainActivity : AppCompatActivity() {
                     btn.setTextColor(ContextCompat.getColor(this, R.color.text_primary))
                 }
             }
-            binding.btnStartPracticeTest.text = "⚡ Start Practice Test ($selected Questions)"
+            binding.btnStartPracticeTest.text = "Start Practice Test ($selected Questions)"
         }
 
         countButtons.forEach { (btn, count) ->
@@ -177,9 +177,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.btnQuestions.setOnClickListener {
-            startActivity(Intent(this, QuestionManageActivity::class.java))
-        }
 
         binding.btnToggleDailyTarget.setOnClickListener {
             val currentTarget = dailyStudyManager.getTargetSize()
@@ -189,9 +186,6 @@ class MainActivity : AppCompatActivity() {
             updateDailyTargetUI()
         }
 
-        binding.btnReviewDailyBank.setOnClickListener {
-            showReviewDailyBankDialog()
-        }
 
         binding.btnAdvanceNextDay.setOnClickListener {
             MaterialAlertDialogBuilder(this)
@@ -213,7 +207,7 @@ class MainActivity : AppCompatActivity() {
                 PracticeTestActivity.startWithQuestions(
                     context = this,
                     questionIds = qIds,
-                    title = "🎯 Day ${dailyStudyManager.getDailyProgress().dayNumber} Target Drill",
+                    title = "Day ${dailyStudyManager.getDailyProgress().dayNumber} Target Drill",
                     subtitle = "30-Question Daily Syllabus Test"
                 )
             } else {
@@ -240,24 +234,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val openCustomHub: (View) -> Unit = {
-            com.quizlock.app.ui.CustomPracticeActivity.start(this)
-        }
-        binding.btnSubjectEnglish.setOnClickListener(openCustomHub)
-        binding.btnSubjectStaticGk.setOnClickListener(openCustomHub)
-        binding.btnSubjectHistory.setOnClickListener(openCustomHub)
-        binding.btnSubjectGeography.setOnClickListener(openCustomHub)
-        binding.btnSubjectBiology.setOnClickListener(openCustomHub)
-        binding.btnSubjectPolity.setOnClickListener(openCustomHub)
-        binding.btnSubjectEconomics.setOnClickListener(openCustomHub)
+        binding.btnSubjectEnglish.setOnClickListener { com.quizlock.app.ui.CustomPracticeActivity.start(this, "English") }
+        binding.btnSubjectStaticGk.setOnClickListener { com.quizlock.app.ui.CustomPracticeActivity.start(this, "Static GK") }
+        binding.btnSubjectHistory.setOnClickListener { com.quizlock.app.ui.CustomPracticeActivity.start(this, "History") }
+        binding.btnSubjectGeography.setOnClickListener { com.quizlock.app.ui.CustomPracticeActivity.start(this, "Geography") }
+        binding.btnSubjectBiology.setOnClickListener { com.quizlock.app.ui.CustomPracticeActivity.start(this, "Biology") }
+        binding.btnSubjectPolity.setOnClickListener { com.quizlock.app.ui.CustomPracticeActivity.start(this, "Polity") }
+        binding.btnSubjectEconomics.setOnClickListener { com.quizlock.app.ui.CustomPracticeActivity.start(this, "Economics") }
 
         binding.btnManageQuestionsPage.setOnClickListener {
             startActivity(Intent(this, QuestionManageActivity::class.java))
         }
 
-        binding.btnTestQuizPage.setOnClickListener {
-            binding.btnTestQuiz.performClick()
-        }
 
         binding.etSearchApp.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -427,28 +415,20 @@ class MainActivity : AppCompatActivity() {
         binding.btnToggleDailyTarget.text = "$configuredTarget Qs / Day"
         binding.btnToggleDailyTarget.isEnabled = true
 
-        binding.tvDailyStreak.text = "🔥 ${progress.streak} Day Streak"
+        binding.tvDailyStreak.text = "${progress.streak} Day Streak"
         binding.tvDailyMasteryCount.text = "${progress.masteredCount} / ${progress.targetSize} Mastered"
 
         binding.pbDailyMastery.max = progress.targetSize
         binding.pbDailyMastery.progress = progress.masteredCount
 
         if (progress.isSundayRevision) {
-            binding.tvDailyDayTitle.text = "📅 Sunday Mega Revision"
-            binding.tvDailyStatusSubtitle.text = "Weekly Revision Test • ${progress.targetSize} Week Questions"
-            binding.btnReviewDailyBank.text = "Review Week's ${progress.targetSize} Qs"
+            binding.tvDailyDayTitle.text = "Sunday Mega Revision"
+            binding.btnStartDailyDrill.text = "Start Mega Test (${progress.targetSize} Qs)"
             binding.tvDailySubjectBreakdown.text =
-                "🎯 Sunday Mega Test: Comprehensive review of all subjects practiced Monday to Saturday!"
+                "Sunday Mega Test: Comprehensive review of all subjects practiced Monday to Saturday!"
         } else {
-            binding.tvDailyDayTitle.text = "🎯 Day ${progress.dayNumber} • Target Bank"
-
-            val subtitle = when {
-                progress.isFullyMastered -> "🎉 All ${progress.targetSize} questions mastered for today!"
-                progress.mistakeCount > 0 -> "⚡ Active in lock quizzes • ${progress.mistakeCount} to revise"
-                else -> "Active in your lock screen quizzes (${progress.seenCount}/${progress.targetSize} seen)"
-            }
-            binding.tvDailyStatusSubtitle.text = subtitle
-            binding.btnReviewDailyBank.text = "Review Today's ${progress.targetSize} Qs"
+            binding.tvDailyDayTitle.text = "Day ${progress.dayNumber} • Target Bank"
+            binding.btnStartDailyDrill.text = "Start Target Test"
 
             val quota = dailyStudyManager.getQuotaForTarget(configuredTarget)
             binding.tvDailySubjectBreakdown.text =

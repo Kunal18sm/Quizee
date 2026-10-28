@@ -5,7 +5,7 @@
     android:id="@+id/cardTopicRoot"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp"
+    android:layout_marginBottom="14dp"
     app:cardBackgroundColor="@color/card_dark"
     app:cardCornerRadius="16dp"
     app:cardElevation="0dp"
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="14dp">
+        android:padding="16dp">
 
         <!-- Header Row with Checkbox, Title & Count -->
         <LinearLayout
@@ -32,7 +32,7 @@
                 android:buttonTint="@color/primary"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
-                android:paddingEnd="6dp" />
+                android:paddingEnd="10dp" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -46,17 +46,17 @@
                     android:layout_height="wrap_content"
                     android:text="Antonyms"
                     android:textColor="@color/text_primary"
-                    android:textSize="15sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tvTopicMeta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="3dp"
                     android:text="English • 568 Questions • 6 Sets"
                     android:textColor="@color/text_secondary"
-                    android:textSize="12sp" />
+                    android:textSize="11sp" />
             </LinearLayout>
 
             <TextView
@@ -68,7 +68,7 @@
                 android:paddingVertical="3dp"
                 android:text="0/6 Mastered"
                 android:textColor="@color/text_muted"
-                android:textSize="11sp"
+                android:textSize="10.5sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -77,8 +77,8 @@
             android:id="@+id/pbTopicProgress"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="6dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="12dp"
             android:max="100"
             android:progress="0"
             android:progressTint="@color/correct_green"
@@ -88,7 +88,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -96,13 +96,15 @@
                 android:id="@+id/btnTestAllTopic"
                 style="@style/Widget.Material3.Button.TonalButton"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="38dp"
                 android:layout_marginEnd="6dp"
                 android:layout_weight="1"
+                android:paddingVertical="0dp"
                 android:text="Test All (50 Qs)"
                 android:textColor="@color/text_primary"
-                android:textSize="12sp"
+                android:textSize="11.5sp"
                 app:backgroundTint="@color/card_dark_elevated"
+                app:cornerRadius="8dp"
                 app:strokeColor="@color/border_dark"
                 app:strokeWidth="1dp" />
 
@@ -110,12 +112,15 @@
                 android:id="@+id/btnToggleSets"
                 style="@style/Widget.Material3.Button.TonalButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="38dp"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="0dp"
                 android:text="View Sets ▼"
                 android:textColor="@color/primary_light"
-                android:textSize="12sp"
+                android:textSize="11.5sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/card_dark_elevated"
+                app:cornerRadius="8dp"
                 app:strokeColor="@color/primary"
                 app:strokeWidth="1dp" />
         </LinearLayout>
@@ -125,32 +130,34 @@
             android:id="@+id/layoutSetsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="12dp"
             android:orientation="vertical"
             android:visibility="gone">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="10dp"
                 android:background="@color/border_dark_subtle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="6dp"
+                android:layout_marginBottom="8dp"
                 android:text="Choose 100-Question Set:"
                 android:textColor="@color/text_muted"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvTopicSets"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false" />
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_practice_set" />
+
         </LinearLayout>
 
     </LinearLayout>
-
 </com.google.android.material.card.MaterialCardView>

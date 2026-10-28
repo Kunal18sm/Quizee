@@ -804,6 +804,1161 @@
         footer a:hover {
             text-decoration: underline;
         }
+/* ========================================================= */
+/* QUIZEE APP SIMULATOR STYLES                               */
+/* ========================================================= */
+
+.nav-btn-test {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.28) 0%, rgba(129, 140, 248, 0.28) 100%);
+    border: 1.5px solid rgba(129, 140, 248, 0.6);
+    color: #c7d2fe;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.25);
+}
+.nav-btn-test:hover {
+    background: rgba(99, 102, 241, 0.5);
+    color: #fff;
+    border-color: #818cf8;
+    box-shadow: 0 0 18px rgba(99, 102, 241, 0.5);
+    transform: translateY(-1px);
+}
+
+.btn-test-app {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    padding: 14px 24px;
+    border-radius: 12px;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px -4px rgba(16, 185, 129, 0.45);
+    transition: all 0.25s ease;
+    font-family: inherit;
+    text-decoration: none;
+}
+.btn-test-app:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px -4px rgba(16, 185, 129, 0.6);
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+}
+
+.floating-sim-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: #fff;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    padding: 11px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.55);
+    transition: all 0.25s ease;
+    font-family: inherit;
+}
+.floating-sim-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 16px 36px rgba(99, 102, 241, 0.7);
+}
+.sim-pulse-dot {
+    width: 9px;
+    height: 9px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #10b981;
+    animation: simPulse 1.8s infinite;
+}
+@keyframes simPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+/* Mockup Mode Header */
+.mockup-mode-tabs {
+    display: flex;
+    background: #151d2c;
+    border: 1px solid #2b384e;
+    border-radius: 12px;
+    padding: 3px;
+    margin-bottom: 10px;
+    gap: 4px;
+}
+.mockup-tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.mockup-tab-btn.active, .mockup-tab-btn:hover {
+    background: #6366f1;
+    color: #ffffff;
+}
+
+/* Modal Overlay */
+.app-sim-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 10, 18, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    overflow-y: auto;
+}
+.app-sim-modal-overlay.active {
+    display: flex;
+}
+.app-sim-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 100%;
+    animation: simModalIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes simModalIn {
+    from { opacity: 0; transform: scale(0.95) translateY(12px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Top Simulator Control Bar */
+.sim-top-bar {
+    background: #151d2c;
+    border: 1px solid #2b384e;
+    border-radius: 16px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    flex-wrap: wrap;
+}
+.sim-title-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+.sim-badge-live {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 6px;
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    text-transform: uppercase;
+}
+.sim-quick-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.sim-quick-btn {
+    background: #1c2638;
+    border: 1px solid #2b384e;
+    color: #94a3b8;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 10.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+.sim-quick-btn:hover, .sim-quick-btn.active {
+    background: #6366f1;
+    color: #fff;
+    border-color: #818cf8;
+}
+.sim-top-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.sim-btn-icon {
+    background: #1c2638;
+    border: 1px solid #2b384e;
+    color: #cbd5e1;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 13px;
+    font-family: inherit;
+}
+.sim-btn-icon:hover {
+    background: #233047;
+    color: #fff;
+    border-color: #818cf8;
+}
+
+/* Simulator Phone Container */
+.sim-phone {
+    width: 375px;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 750px;
+    max-height: 84vh;
+    background: #0b0f19;
+    border: 8px solid #1e293b;
+    border-radius: 44px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(99, 102, 241, 0.25);
+    overflow: hidden;
+    user-select: none;
+}
+
+/* Status Bar */
+.sim-status-bar {
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #cbd5e1;
+    z-index: 40;
+    background: #0b0f19;
+    flex-shrink: 0;
+    position: relative;
+}
+.sim-camera-cutout {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #000;
+    border: 2px solid #1e293b;
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.sim-status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* App Header */
+.sim-app-toolbar {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-bottom: 1px solid #1f2b3e;
+    background: #0b0f19;
+    flex-shrink: 0;
+    z-index: 30;
+}
+.sim-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.sim-brand-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #f8fafc;
+    letter-spacing: -0.3px;
+}
+.sim-brand-badge {
+    background: #1c2638;
+    border: 1px solid #2b384e;
+    color: #818cf8;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 6px;
+}
+.sim-toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.sim-btn-manage {
+    background: none;
+    border: none;
+    color: #818cf8;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-family: inherit;
+    transition: background 0.15s;
+}
+.sim-btn-manage:hover {
+    background: rgba(99, 102, 241, 0.15);
+}
+.sim-btn-test-lock {
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+}
+.sim-btn-test-lock:hover {
+    background: #4f46e5;
+}
+
+/* App Content Area */
+.sim-pages-container {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    background: #0b0f19;
+    scrollbar-width: thin;
+    scrollbar-color: #2b384e #0b0f19;
+}
+.sim-pages-container::-webkit-scrollbar {
+    width: 3px;
+}
+.sim-pages-container::-webkit-scrollbar-thumb {
+    background: #2b384e;
+    border-radius: 3px;
+}
+
+.sim-page {
+    display: none;
+    padding: 14px 14px 20px;
+    animation: fadeInPage 0.2s ease;
+}
+.sim-page.active {
+    display: block;
+}
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Full Mobile & Tablet Responsiveness for App Simulator */
+.sim-app-item {
+    background: #141c2c;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 11px 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+.sim-app-item:hover {
+    border-color: #6366f1;
+    background: #18233a;
+    transform: translateY(-1px);
+}
+.sim-page, .sim-pages-container, .sim-card, .sim-topic-card {
+    box-sizing: border-box;
+}
+
+@media (max-width: 520px) {
+    .app-sim-modal-overlay {
+        padding: 0 !important;
+        align-items: stretch !important;
+        justify-content: stretch !important;
+    }
+    .app-sim-wrapper {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        gap: 0 !important;
+        border-radius: 0 !important;
+    }
+    .sim-top-bar {
+        border-radius: 0 !important;
+        max-width: 100% !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-top: none !important;
+        padding: 8px 12px !important;
+    }
+    .sim-phone {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: calc(100vh - 54px) !important;
+        max-height: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        flex: 1;
+    }
+    .sim-phone-header {
+        border-radius: 0 !important;
+    }
+    .sim-page {
+        padding: 14px 14px 80px !important;
+        box-sizing: border-box !important;
+    }
+    .sim-bottom-nav {
+        border-radius: 0 !important;
+    }
+}
+
+/* Custom Practice Hub (Spacious, refined, and clean) */
+.sim-topic-card {
+    background: #141d2e;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    transition: all 0.2s ease;
+}
+.sim-topic-card.selected {
+    border-color: #6366f1;
+    background: #18233a;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.15);
+}
+.sim-topic-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.sim-topic-cb {
+    width: 17px;
+    height: 17px;
+    accent-color: #6366f1;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 0;
+}
+.sim-topic-info {
+    flex: 1;
+    min-width: 0;
+}
+.sim-topic-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #f8fafc;
+    line-height: 1.3;
+}
+.sim-topic-meta {
+    font-size: 10.5px;
+    color: #94a3b8;
+    margin-top: 3px;
+}
+.sim-topic-progress-bar {
+    height: 3.5px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.sim-topic-progress-fill {
+    height: 100%;
+    background: #10b981;
+    border-radius: 2px;
+    width: 0%;
+}
+.sim-topic-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+.sim-topic-sets-container {
+    margin-top: 12px;
+    padding: 12px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+.sim-mini-set-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 9px;
+    padding: 8px 10px;
+    margin-bottom: 7px;
+}
+.sim-mini-set-card:last-child {
+    margin-bottom: 0;
+}
+.sim-mini-set-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+.sim-mini-set-title {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #f1f5f9;
+}
+.sim-mini-set-actions {
+    display: flex;
+    gap: 6px;
+}
+.sim-multi-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #151d2c;
+    border-top: 2px solid #6366f1;
+    padding: 12px 14px;
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.6);
+    z-index: 100;
+    animation: slideUpBar 0.2s ease;
+}
+@keyframes slideUpBar {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+/* Cards inside App */
+.sim-card {
+    background: #151d2c;
+    border: 1px solid #2b384e;
+    border-radius: 16px;
+    padding: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.sim-card-highlight {
+    border-color: #6366f1;
+    box-shadow: 0 0 14px rgba(99, 102, 241, 0.2);
+}
+
+.sim-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.sim-card-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+.sim-badge-amber {
+    background: #1c2638;
+    border: 1px solid #543a0c;
+    color: #f59e0b;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+.sim-badge-green {
+    background: #1c2638;
+    border: 1px solid #064e3b;
+    color: #10b981;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+.sim-badge-red {
+    background: #1c2638;
+    border: 1px solid #7f1d1d;
+    color: #ef4444;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+/* Button & Chips Row */
+.sim-btn-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+.sim-btn-secondary {
+    background: #1c2638;
+    border: 1px solid #2b384e;
+    color: #f8fafc;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.2s;
+    flex: 1;
+}
+.sim-btn-secondary:hover {
+    background: #233047;
+    border-color: #818cf8;
+}
+.sim-btn-primary {
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    transition: all 0.2s;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+}
+.sim-btn-primary:hover {
+    background: #4f46e5;
+}
+
+/* Quick Count Chips */
+.sim-count-chips {
+    display: flex;
+    gap: 6px;
+    margin: 10px 0;
+}
+.sim-count-chip {
+    flex: 1;
+    background: #1c2638;
+    border: 1px solid #2b384e;
+    color: #cbd5e1;
+    padding: 6px 0;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+.sim-count-chip.active {
+    background: #6366f1;
+    color: #fff;
+    border-color: #818cf8;
+}
+
+/* Practice Set Cards */
+.sim-set-card {
+    background: #151d2c;
+    border: 1px solid #2b384e;
+    border-radius: 14px;
+    padding: 12px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+}
+.sim-set-card:hover {
+    border-color: #818cf8;
+}
+.sim-set-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+.sim-set-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+.sim-set-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* 2x2 Practice Hub Grid */
+.sim-practice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.sim-grid-card {
+    background: #151d2c;
+    border: 1px solid #2b384e;
+    border-radius: 16px;
+    padding: 14px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+.sim-grid-card:hover {
+    border-color: #818cf8;
+    background: #192336;
+    transform: translateY(-1px);
+}
+.sim-grid-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.sim-grid-icon-wrap {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sim-grid-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+.sim-grid-sub {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+/* Grid of 3 stats */
+.sim-stat-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 12px;
+}
+.sim-stat-pill {
+    background: #151d2c;
+    border: 1px solid #2b384e;
+    border-radius: 12px;
+    padding: 8px 6px;
+    text-align: center;
+}
+.sim-stat-pill-val {
+    font-size: 13px;
+    font-weight: 800;
+    color: #818cf8;
+}
+.sim-stat-pill-lbl {
+    font-size: 10px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+/* App Locker List */
+.sim-app-item {
+    background: #151d2c;
+    border: 1px solid #2b384e;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: border-color 0.2s;
+}
+.sim-app-item:hover {
+    border-color: #818cf8;
+}
+.sim-app-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+}
+.sim-app-info {
+    flex: 1;
+    min-width: 0;
+}
+.sim-app-name {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #f8fafc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sim-app-pkg {
+    font-size: 9.5px;
+    color: #64748b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.sim-app-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.sim-btn-play-lock {
+    background: #1c2638;
+    border: 1px solid #2b384e;
+    color: #818cf8;
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+.sim-btn-play-lock:hover {
+    background: #6366f1;
+    color: #fff;
+    border-color: #818cf8;
+}
+
+/* Toggle Switch */
+.sim-toggle-switch {
+    position: relative;
+    width: 36px;
+    height: 20px;
+    cursor: pointer;
+    display: inline-block;
+}
+.sim-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.sim-toggle-slider {
+    position: absolute;
+    inset: 0;
+    background-color: #2b384e;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+.sim-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+.sim-toggle-switch input:checked + .sim-toggle-slider {
+    background-color: #6366f1;
+}
+.sim-toggle-switch input:checked + .sim-toggle-slider:before {
+    transform: translateX(16px);
+}
+
+/* Search input */
+.sim-search-bar {
+    background: #151d2c;
+    border: 1px solid #2b384e;
+    border-radius: 12px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.sim-search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #f8fafc;
+    font-size: 12px;
+    font-family: inherit;
+    width: 100%;
+}
+.sim-search-bar input::placeholder {
+    color: #64748b;
+}
+
+/* Subject list cards */
+.sim-subject-item {
+    background: #151d2c;
+    border: 1px solid #2b384e;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.sim-subject-item:hover {
+    border-color: #6366f1;
+    transform: translateX(2px);
+}
+.sim-subject-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+.sim-subject-info {
+    flex: 1;
+}
+.sim-subject-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #f8fafc;
+}
+.sim-subject-sub {
+    font-size: 10px;
+    color: #64748b;
+}
+
+/* Bottom Navigation Bar */
+.sim-bottom-nav {
+    height: 56px;
+    background: #151d2c;
+    border-top: 1px solid #1f2b3e;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    flex-shrink: 0;
+    z-index: 30;
+}
+.sim-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: #64748b;
+    font-size: 9.5px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: color 0.18s;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+.sim-nav-item svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2.2;
+}
+.sim-nav-item.active {
+    color: #818cf8;
+}
+
+/* Gesture Bar */
+.sim-gesture-bar {
+    height: 12px;
+    background: #151d2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.sim-gesture-pill {
+    width: 64px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+/* ========================================================= */
+/* SUB-VIEWS & OVERLAYS INSIDE PHONE                         */
+/* ========================================================= */
+
+/* 1. Lock Screen Floating Dialog Scrim */
+.sim-lock-scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 8, 17, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    animation: fadeInLock 0.2s ease;
+}
+.sim-lock-scrim.active {
+    display: flex;
+}
+@keyframes fadeInLock {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.sim-lock-card {
+    background: #151d2c;
+    border: 1px solid #2b384e;
+    border-radius: 20px;
+    padding: 16px;
+    width: 100%;
+    max-width: 330px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+    animation: scaleLockCard 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes scaleLockCard {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* 2. Practice Test Full Screen View */
+.sim-fullscreen-view {
+    position: absolute;
+    inset: 0;
+    background: #0b0f19;
+    z-index: 90;
+    display: none;
+    flex-direction: column;
+}
+.sim-fullscreen-view.active {
+    display: flex;
+}
+
+.sim-fs-header {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    border-bottom: 1px solid #1f2b3e;
+    flex-shrink: 0;
+}
+.sim-fs-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px;
+}
+.sim-fs-footer {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 14px;
+    background: #151d2c;
+    border-top: 1px solid #1f2b3e;
+    flex-shrink: 0;
+}
+
+/* Question Option in Test & Lock */
+.sim-opt-item {
+    background: #1a2436;
+    border: 1.5px solid #2e3d56;
+    border-radius: 10px;
+    padding: 9px 11px;
+    margin-bottom: 7px;
+    font-size: 11.5px;
+    color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.16s ease;
+}
+.sim-opt-item:hover {
+    border-color: #818cf8;
+}
+.sim-opt-badge {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2b384e;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9.5px;
+    font-weight: 700;
+    margin-right: 8px;
+    color: #fff;
+    flex-shrink: 0;
+}
+.sim-opt-item.correct {
+    background: #064e3b !important;
+    border-color: #10b981 !important;
+    color: #fff !important;
+}
+.sim-opt-item.correct .sim-opt-badge {
+    background: #10b981 !important;
+}
+.sim-opt-item.wrong {
+    background: #7f1d1d !important;
+    border-color: #ef4444 !important;
+    color: #fff !important;
+}
+.sim-opt-item.wrong .sim-opt-badge {
+    background: #ef4444 !important;
+}
+
+/* Toast inside phone */
+.sim-toast {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #1c2638;
+    color: #f8fafc;
+    border: 1px solid #2b384e;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+}
+.sim-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
     </style>
 </head>
 <body>
@@ -822,6 +1977,10 @@
                 <span class="logo-text">Quizee</span>
             </a>
             <div class="nav-actions">
+                <button class="nav-btn nav-btn-test" onclick="openAppSimulator()" title="Live App Simulator">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    <span>📱 Test App</span>
+                </button>
                 <a href="https://github.com/Kunal18sm/Quizee/releases" target="_blank" class="nav-btn nav-btn-gh">GitHub</a>
                 <a href="quizee.apk" download="quizee.apk" class="nav-btn nav-btn-primary">Download APK</a>
             </div>
@@ -839,9 +1998,13 @@
                     Quizee overlays a quick 5-question quiz whenever you open distracting apps. Pass the quiz to unlock, turning mindless scrolling into effortless daily study.
                 </p>
                 <div class="hero-actions">
+                    <button type="button" class="btn-test-app" onclick="openAppSimulator()" title="Launch in-browser interactive Android app">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <span>📱 Test App (Live Simulator)</span>
+                    </button>
                     <a href="https://github.com/Kunal18sm/Quizee/releases/latest/download/quizee.apk" class="btn-download" download="quizee.apk">
                         <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                        Download APK (v2.5.0)
+                        Download APK (v2.5.1)
                     </a>
                     <a href="quizee.apk" download="quizee.apk" class="btn-secondary">
                         Mirror Download
@@ -866,6 +2029,10 @@
             <!-- Interactive App Demo Mockup -->
             <div class="mockup-wrap">
                 <div class="phone-mockup">
+                    <div class="mockup-mode-tabs">
+                        <button class="mockup-tab-btn active" id="tabQuickLockDemo">⚡ Quick Lock Demo</button>
+                        <button class="mockup-tab-btn" onclick="openAppSimulator()">📱 Full App Simulator ↗</button>
+                    </div>
                     <div class="phone-notch"></div>
 
                     <!-- Floating Card -->
@@ -1214,5 +2381,1525 @@
         // Initialize demo on load
         loadQuestion(0);
     </script>
+
+        <!-- Floating Action Button for Simulator -->
+    <button class="floating-sim-btn" onclick="openAppSimulator()" title="Test Quizee App UI">
+        <span class="sim-pulse-dot"></span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        <span>Test App Live</span>
+    </button>
+
+    <!-- ============================================== -->
+    <!-- QUIZEE ANDROID APP SIMULATOR MODAL             -->
+    <!-- ============================================== -->
+    <div class="app-sim-modal-overlay" id="appSimModal" onclick="handleSimOverlayClick(event)">
+        <div class="app-sim-wrapper">
+
+            <!-- Simulator Outer Controls Bar -->
+            <div class="sim-top-bar">
+                <div class="sim-title-group">
+                    <span class="sim-badge-live">LIVE SIMULATOR</span>
+                    <span>Quizee Android App</span>
+                </div>
+                <div class="sim-quick-nav">
+                    <button class="sim-quick-btn active" onclick="switchSimPage(0)" id="qNav0">Daily</button>
+                    <button class="sim-quick-btn" onclick="switchSimPage(1)" id="qNav1">Practice</button>
+                    <button class="sim-quick-btn" onclick="switchSimPage(2)" id="qNav2">Locker</button>
+                    <button class="sim-quick-btn" onclick="switchSimPage(3)" id="qNav3">Questions</button>
+                </div>
+                <div class="sim-top-actions">
+                    <button class="sim-btn-icon" onclick="resetSimState()" title="Reset Simulator State">🔄</button>
+                    <button class="sim-btn-icon" onclick="closeAppSimulator()" title="Close Simulator">✕</button>
+                </div>
+            </div>
+
+            <!-- Phone Frame -->
+            <div class="sim-phone">
+                <!-- Status Bar -->
+                <div class="sim-status-bar">
+                    <span id="simClockTime">12:00</span>
+                    <div class="sim-camera-cutout"></div>
+                    <div class="sim-status-icons">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 18.25A10.93 10.93 0 0 1 2 12C2 6.48 6.48 2 12 2s10 4.48 10 10c0 2.33-.8 4.47-2.14 6.18l-.62-.62C20.37 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z"/><path d="M12 6c-3.31 0-6 2.69-6 6 0 1.43.5 2.74 1.34 3.78l.71-.71C7.38 14.28 7 13.19 7 12c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.19-.38 2.28-1.05 3.07l.71.71C17.5 14.74 18 13.43 18 12c0-3.31-2.69-6-6-6z"/><circle cx="12" cy="12" r="2"/></svg>
+                        <span>5G</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="7" width="18" height="10" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="22" y1="11" x2="22" y2="13" stroke="currentColor" stroke-width="2"/><rect x="4" y="9" width="12" height="6" fill="currentColor"/></svg>
+                    </div>
+                </div>
+
+                <!-- Top App Bar -->
+                <div class="sim-app-toolbar">
+                    <div class="sim-brand">
+                        <span class="sim-brand-title">Quizee</span>
+                        <span class="sim-brand-badge">SSC CGL</span>
+                    </div>
+                </div>
+
+                <!-- Scrollable Screen Pages -->
+                <div class="sim-pages-container" id="simPagesContainer">
+
+                    <!-- PAGE 0: DAILY TARGET -->
+                    <div class="sim-page active" id="simPage0">
+                        <!-- Primary Daily Target Card -->
+                        <div class="sim-card sim-card-highlight">
+                            <div class="sim-card-header">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                                    <span class="sim-card-title" id="simDailyDayTitle">Day 1 • Target Bank</span>
+                                </div>
+                                <div class="sim-badge-amber" style="display:flex; align-items:center; gap:4px;">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="#f59e0b"><path d="M12 2c-.5 2.5-2.5 4.5-4 6-2 2-3 4.5-3 7a7 7 0 0 0 14 0c0-3.5-2.5-6.5-4.5-8.5-1-1-2-2.5-2.5-4.5z"/></svg>
+                                    <span id="simDailyStreak">1 Day Streak</span>
+                                </div>
+                            </div>
+                            <div style="display:flex; align-items:center; justify-content:space-between; margin-top:12px;">
+                                <div>
+                                    <div style="font-size:20px; font-weight:800; color:#818cf8;" id="simDailyMasteryCount">0 / 30 Mastered</div>
+                                </div>
+                                <button class="sim-btn-secondary" style="flex:none; padding:4px 10px; border-radius:14px; border-color:#6366f1; color:#818cf8;" id="simBtnTargetSize" onclick="toggleSimTargetSize()">30 Qs / Day</button>
+                            </div>
+                            <!-- Progress Bar -->
+                            <div style="height:7px; background:#1e293b; border-radius:4px; overflow:hidden; margin-top:10px;">
+                                <div id="simDailyMasteryBar" style="width:0%; height:100%; background:#10b981; border-radius:4px; transition:width 0.3s;"></div>
+                            </div>
+                            <div style="font-size:10px; color:#64748b; margin-top:8px;" id="simSubjectQuotaSummary">Eng 8 • GK 6 • Hist 5 • Pol 3 • Bio 3 • Geo 3 • Eco 2</div>
+                            <div style="height:1px; background:#1f2b3e; margin:12px 0;"></div>
+                            <div class="sim-btn-row">
+                                <button class="sim-btn-primary" style="flex:1;" onclick="startDailyDrill()">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    <span>Start Target Test</span>
+                                </button>
+                                <button class="sim-btn-secondary" onclick="advanceNextDay()" style="color:#818cf8; flex:none; padding:0 14px;">
+                                    <span>Next Day</span>
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 3 Stat Pillars -->
+                        <div class="sim-stat-pillars">
+                            <div class="sim-stat-pill">
+                                <div class="sim-stat-pill-val">6,517 Qs</div>
+                                <div class="sim-stat-pill-lbl">Offline Pool</div>
+                            </div>
+                            <div class="sim-stat-pill">
+                                <div class="sim-stat-pill-val" style="color:#f59e0b;">Spaced</div>
+                                <div class="sim-stat-pill-lbl">Repetition</div>
+                            </div>
+                            <div class="sim-stat-pill">
+                                <div class="sim-stat-pill-val" style="color:#10b981;">Sunday</div>
+                                <div class="sim-stat-pill-lbl">Mega Revise</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PAGE 1: PRACTICE HUB -->
+                    <div class="sim-page" id="simPage1">
+                        <!-- Self Practice Test Card -->
+                        <div class="sim-card sim-card-highlight">
+                            <div class="sim-card-header">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                                    <span class="sim-card-title">Self Practice Test</span>
+                                </div>
+                                <span class="sim-badge-green">Active Syllabus</span>
+                            </div>
+                            <div class="sim-count-chips">
+                                <button class="sim-count-chip" onclick="selectPracticeCount(10)">10</button>
+                                <button class="sim-count-chip" onclick="selectPracticeCount(20)">20</button>
+                                <button class="sim-count-chip active" onclick="selectPracticeCount(30)">30</button>
+                                <button class="sim-count-chip" onclick="selectPracticeCount(40)">40</button>
+                                <button class="sim-count-chip" onclick="selectPracticeCount(50)">50</button>
+                            </div>
+                            <button class="sim-btn-primary" id="simBtnStartPractice" onclick="startPracticeTestSession()">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                <span>Start Practice Test (30 Questions)</span>
+                            </button>
+                        </div>
+
+                        <!-- 2 Action Cards: Mistakes & Weekly Revise -->
+                        <div class="sim-practice-grid" style="grid-template-columns: 1fr 1fr; gap:10px; margin-bottom:14px;">
+                            <!-- Card 1: Mistakes -->
+                            <div class="sim-grid-card" onclick="startMistakesDrill()">
+                                <div class="sim-grid-card-top">
+                                    <div class="sim-grid-icon-wrap" style="color:#f59e0b; background:rgba(245,158,11,0.15);">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                    </div>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+                                </div>
+                                <div class="sim-grid-title">Mistakes Fix</div>
+                                <div class="sim-grid-sub"><span id="simMistakesCountText">0</span> to Revise</div>
+                            </div>
+
+                            <!-- Card 2: Weekly Revise -->
+                            <div class="sim-grid-card" onclick="startDailyDrill()">
+                                <div class="sim-grid-card-top">
+                                    <div class="sim-grid-icon-wrap" style="color:#10b981; background:rgba(16,185,129,0.15);">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                                    </div>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2"><polyline points="9 18 15 12 9 6"/></svg>
+                                </div>
+                                <div class="sim-grid-title">Weekly Revise</div>
+                                <div class="sim-grid-sub">Sunday Mock Test</div>
+                            </div>
+                        </div>
+
+                        <!-- Section: Explore Sets by Subject -->
+                        <div style="font-size:12.5px; font-weight:700; color:#f8fafc; margin:6px 0 10px;">Explore Sets by Subject:</div>
+                        <div id="simPracticeSubjectShortcuts" style="display:flex; flex-direction:column; gap:8px;">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- PAGE 2: APP LOCKER -->
+                    <div class="sim-page" id="simPage2">
+                        <!-- Permissions Card -->
+                        <div class="sim-card">
+                            <div style="font-size:13px; font-weight:700; color:#f8fafc; margin-bottom:4px;">Required Permissions</div>
+                            <div style="font-size:10.5px; color:#94a3b8; margin-bottom:10px;">Enable permissions for floating quizzes over locked apps (UPI &amp; Bank Safe).</div>
+                            
+                            <!-- Overlay row -->
+                            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+                                <div>
+                                    <div style="font-size:12px; font-weight:700; color:#f8fafc;">1. Display Over Other Apps</div>
+                                    <div style="font-size:10px; color:#94a3b8;">Shows compact quiz over locked app</div>
+                                </div>
+                                <button class="sim-btn-secondary" style="flex:none; padding:4px 10px; color:#10b981; border-color:#064e3b;" disabled>Enabled ✓</button>
+                            </div>
+
+                            <!-- Usage Access row -->
+                            <div style="display:flex; align-items:center; justify-content:space-between;">
+                                <div>
+                                    <div style="font-size:12px; font-weight:700; color:#f8fafc;">2. Usage Access</div>
+                                    <div style="font-size:10px; color:#94a3b8;">Detects when selected apps are launched</div>
+                                </div>
+                                <button class="sim-btn-secondary" style="flex:none; padding:4px 10px; color:#10b981; border-color:#064e3b;" disabled>Enabled ✓</button>
+                            </div>
+
+                            <!-- Dedicated Test Floating Lock Button -->
+                            <button class="sim-btn-primary" style="margin-top:14px;" onclick="startLockScreenQuiz('Instagram', 'com.instagram.android')">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                <span>Test Floating Lock Overlay</span>
+                            </button>
+                        </div>
+
+                        <!-- Search Apps -->
+                        <div style="display:flex; align-items:center; background:#151d2c; border:1px solid #2b384e; border-radius:12px; padding:6px 12px; margin-bottom:10px;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <input type="text" id="simAppSearchInput" placeholder="Search installed apps to lock..." oninput="filterSimApps(this.value)" style="background:none; border:none; outline:none; color:#f8fafc; font-size:11.5px; padding-left:8px; width:100%; font-family:inherit;">
+                        </div>
+
+                        <div style="font-size:11px; color:#818cf8; font-weight:700; margin-bottom:8px;" id="simLockedCountText">3 Apps Protected with Quizee</div>
+
+                        <!-- Installed Apps List -->
+                        <div id="simAppList">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- PAGE 3: QUESTION BANK -->
+                    <div class="sim-page" id="simPage3">
+                        <div class="sim-card sim-card-highlight">
+                            <div class="sim-card-header">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                                    <span class="sim-card-title">Master Question Bank</span>
+                                </div>
+                                <span class="sim-badge-green">6,517 Offline</span>
+                            </div>
+                            <p style="font-size:11px; color:#94a3b8; line-height:1.4;">Complete SSC CGL curriculum loaded and ready offline. Tap below to manage and add custom questions.</p>
+                            <!-- The single, dedicated place for managing / adding questions -->
+                            <button class="sim-btn-primary" style="margin-top:10px;" onclick="openSimManageModal()">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                <span>Manage &amp; Add Custom Questions</span>
+                            </button>
+                        </div>
+
+                        <!-- 7 Subject Breakdown List -->
+                        <div id="simSubjectList">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Navigation Bar -->
+                <div class="sim-bottom-nav">
+                    <button class="sim-nav-item active" onclick="switchSimPage(0)" id="simTab0">
+                        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                        <span>Daily Target</span>
+                    </button>
+                    <button class="sim-nav-item" onclick="switchSimPage(1)" id="simTab1">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                        <span>Practice Hub</span>
+                    </button>
+                    <button class="sim-nav-item" onclick="switchSimPage(2)" id="simTab2">
+                        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        <span>App Locker</span>
+                    </button>
+                    <button class="sim-nav-item" onclick="switchSimPage(3)" id="simTab3">
+                        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        <span>Question Bank</span>
+                    </button>
+                </div>
+
+                <!-- Android Gesture Bar -->
+                <div class="sim-gesture-bar">
+                    <div class="sim-gesture-pill"></div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- SUB-VIEWS & OVERLAYS                       -->
+                <!-- ========================================== -->
+
+                <!-- 1. Lock Screen Floating Quiz Overlay -->
+                <div class="sim-lock-scrim" id="simLockOverlay">
+                    <div class="sim-lock-card">
+                        <!-- Header with locked app info -->
+                        <div style="display:flex; align-items:center; justify-content:space-between; padding-bottom:8px; border-bottom:1px solid #2b384e; margin-bottom:10px;">
+                            <div style="display:flex; align-items:center; gap:8px;">
+                                <div id="simLockAppIcon" style="width:30px; height:30px; border-radius:6px; background:#e1306c; display:flex; align-items:center; justify-content:center; font-size:16px;">📷</div>
+                                <div>
+                                    <div style="font-size:12px; font-weight:800; color:#f8fafc;" id="simLockAppName">Instagram is Locked</div>
+                                    <div style="font-size:10px; color:#94a3b8;">Answer 5 MCQs to unlock</div>
+                                </div>
+                            </div>
+                            <button onclick="closeSimLockOverlay()" style="background:none; border:none; color:#64748b; font-size:15px; cursor:pointer;">✕</button>
+                        </div>
+
+                        <!-- Active Lock Quiz Content -->
+                        <div id="simLockActiveContent">
+                            <div style="display:flex; justify-content:space-between; font-size:10.5px; font-weight:700; color:#818cf8; margin-bottom:4px;">
+                                <span id="simLockProgressText">Question 1 of 5</span>
+                                <span id="simLockScoreText">Score: 0</span>
+                            </div>
+                            <div style="height:4px; background:#1e293b; border-radius:4px; overflow:hidden; margin-bottom:10px;">
+                                <div id="simLockProgressBar" style="width:20%; height:100%; background:#818cf8; transition:width 0.25s;"></div>
+                            </div>
+                            <div style="background:#1c2638; border:1px solid #2b384e; border-radius:8px; padding:8px 10px; margin-bottom:8px;">
+                                <div style="font-size:9.5px; font-weight:700; color:#818cf8; text-transform:uppercase;" id="simLockCategory">History</div>
+                                <div style="font-size:11.5px; font-weight:700; color:#f8fafc; margin-top:2px; line-height:1.35;" id="simLockQuestionText">Question text here...</div>
+                            </div>
+                            <div id="simLockOptionsContainer">
+                                <!-- Options rendered dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Completed Lock Screen View -->
+                        <div id="simLockCompletedContent" style="display:none; text-align:center; padding:10px 0;">
+                            <div style="width:42px; height:42px; border-radius:50%; background:rgba(16, 185, 129, 0.15); border:1px solid #10b981; margin:0 auto 8px; display:flex; align-items:center; justify-content:center; color:#10b981; font-size:20px;">✓</div>
+                            <div style="font-size:14px; font-weight:800; color:#f8fafc;">Quiz Completed!</div>
+                            <div style="font-size:10.5px; color:#94a3b8; margin:4px 0 10px;" id="simLockUnlockedMsg">You answered all 5 MCQs.<br>App is now unlocked.</div>
+                            <div id="simLockFinalScoreBadge" style="display:inline-block; background:#1c2638; border:1px solid #2b384e; padding:3px 10px; border-radius:6px; font-size:11px; font-weight:700; color:#10b981; margin-bottom:12px;">Score: 5 / 5 Correct</div>
+                            <button class="sim-btn-primary" id="simBtnLaunchUnlockedApp" onclick="handleSimOpenApp()" style="background:#10b981;">OPEN APP</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Fullscreen Practice Test View -->
+                <div class="sim-fullscreen-view" id="simPracticeTestView">
+                    <!-- Header -->
+                    <div class="sim-fs-header">
+                        <button onclick="exitSimPracticeTest()" style="background:none; border:none; color:#94a3b8; cursor:pointer; padding:6px; font-size:16px;">✕</button>
+                        <div style="text-align:center;">
+                            <div style="font-size:13px; font-weight:700; color:#f8fafc;" id="simTestHeaderTitle">Practice Test</div>
+                            <div style="font-size:10px; color:#64748b;" id="simTestQuestionProgress">Question 1 of 30</div>
+                        </div>
+                        <span class="sim-badge-green" id="simTestScoreBadge">Score: 0</span>
+                    </div>
+                    <!-- Horizontal Progress -->
+                    <div style="height:3px; background:#1e293b; width:100%;">
+                        <div id="simTestProgressBar" style="height:100%; width:3.3%; background:#6366f1; transition:width 0.25s;"></div>
+                    </div>
+                    <!-- Test Body -->
+                    <div class="sim-fs-body" id="simTestActiveBody">
+                        <div class="sim-card" style="margin-bottom:12px;">
+                            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+                                <span class="sim-badge-amber" id="simTestCategoryBadge">English</span>
+                                <button onclick="toggleTestLanguage()" style="background:#1c2638; border:1px solid #2b384e; color:#818cf8; font-size:9.5px; font-weight:700; padding:2px 7px; border-radius:10px; cursor:pointer;" id="simBtnLangToggle">अ / A Hindi</button>
+                            </div>
+                            <div style="font-size:13px; font-weight:700; color:#f8fafc; line-height:1.4;" id="simTestQuestionText">Loading Question...</div>
+                        </div>
+                        <div id="simTestOptionsContainer">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Test Completed View -->
+                    <div class="sim-fs-body" id="simTestCompletedBody" style="display:none; text-align:center; padding:24px 14px;">
+                        <div style="font-size:38px; margin-bottom:8px;">🎉</div>
+                        <div style="font-size:18px; font-weight:800; color:#f8fafc;">Test Completed!</div>
+                        <div style="font-size:12px; color:#94a3b8; margin-top:2px;">Your session performance summary</div>
+                        
+                        <div class="sim-card" style="margin:16px 0; text-align:center;">
+                            <div style="font-size:24px; font-weight:800; color:#10b981;" id="simTestResultScore">28 / 30</div>
+                            <div style="font-size:12px; font-weight:700; color:#818cf8; margin-top:2px;" id="simTestResultAccuracy">93% Accuracy</div>
+                            <div style="display:flex; justify-content:space-around; margin-top:14px; padding-top:12px; border-top:1px solid #1f2b3e;">
+                                <div><div style="color:#10b981; font-weight:800;" id="simTestCountCorrect">28</div><div style="font-size:10px; color:#64748b;">Correct</div></div>
+                                <div><div style="color:#ef4444; font-weight:800;" id="simTestCountWrong">2</div><div style="font-size:10px; color:#64748b;">Wrong</div></div>
+                                <div><div style="color:#f59e0b; font-weight:800;" id="simTestCountSkipped">0</div><div style="font-size:10px; color:#64748b;">Skipped</div></div>
+                            </div>
+                        </div>
+
+                        <button class="sim-btn-primary" onclick="exitSimPracticeTest()">Done &amp; Return to Home</button>
+                    </div>
+
+                    <!-- Test Footer -->
+                    <div class="sim-fs-footer" id="simTestFooter">
+                        <button onclick="skipSimTestQuestion()" style="background:none; border:none; color:#94a3b8; font-size:12px; font-weight:600; cursor:pointer;">Skip</button>
+                        <button class="sim-btn-primary" style="width:auto; padding:6px 16px; font-size:11.5px;" id="simBtnNextQuestion" onclick="nextSimTestQuestion()" disabled>Next Question ➔</button>
+                    </div>
+                </div>
+
+                <!-- 3. Custom Practice Hub Modal (1:1 Match with Android CustomPracticeActivity) -->
+                <div class="sim-fullscreen-view" id="simCustomPracticeModal">
+                    <div class="sim-fs-header">
+                        <button onclick="closeCustomPracticeHub()" style="background:none; border:none; color:#94a3b8; cursor:pointer; padding:6px; font-size:16px;">←</button>
+                        <div>
+                            <div style="font-size:13px; font-weight:700; color:#f8fafc;">Custom Practice Hub</div>
+                            <div style="font-size:9.5px; color:#818cf8;">Topic Sets &amp; Multi-Select Mix</div>
+                        </div>
+                        <div style="width:20px;"></div>
+                    </div>
+                    <div class="sim-fs-body" style="padding-bottom:110px;">
+                        <!-- Subject Filter Chips Row -->
+                        <div style="font-size:11px; font-weight:700; color:#94a3b8; margin-bottom:6px;">Select Subject Filter:</div>
+                        <div style="display:flex; gap:6px; overflow-x:auto; padding-bottom:8px; margin-bottom:10px; scrollbar-width:none;" id="simCustomSubjChips">
+                            <!-- Rendered dynamically -->
+                        </div>
+                        <!-- Topics List -->
+                        <div id="simCustomSetsContainer">
+                            <!-- Topics rendered dynamically with Checkboxes, Test All (50 Qs), and View Sets -->
+                        </div>
+                    </div>
+
+                    <!-- Floating Multi-Select Bottom Bar -->
+                    <div class="sim-multi-bar" id="simMultiSelectBar" style="display:none;">
+                        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+                            <span style="font-size:12px; font-weight:700; color:#f8fafc;" id="simMultiSelectTitle">Selected: 2 Topics (Pool: 800 Qs)</span>
+                            <button onclick="clearCustomMultiSelection()" style="background:none; border:none; color:#ef4444; font-size:11px; font-weight:700; cursor:pointer;">Clear</button>
+                        </div>
+                        <!-- Count Chips -->
+                        <div class="sim-count-chips" style="margin:4px 0 8px;">
+                            <button class="sim-count-chip" id="chipMulti25" onclick="selectCustomMultiCount(25)">25 Qs</button>
+                            <button class="sim-count-chip active" id="chipMulti50" onclick="selectCustomMultiCount(50)">50 Qs</button>
+                            <button class="sim-count-chip" id="chipMulti100" onclick="selectCustomMultiCount(100)">100 Qs</button>
+                        </div>
+                        <button class="sim-btn-primary" id="btnStartCustomMultiTest" onclick="startCustomMultiTest()">
+                            Start Custom Mixed Test (50 Qs)
+                        </button>
+                    </div>
+                </div>
+                <!-- 4. Review 30 Qs Daily Bank Dialog -->
+                <div class="sim-fullscreen-view" id="simDailyReviewDialog">
+                    <div class="sim-fs-header">
+                        <button onclick="closeDailyBankReview()" style="background:none; border:none; color:#94a3b8; cursor:pointer; padding:6px; font-size:16px;">✕</button>
+                        <div style="font-size:13px; font-weight:700; color:#f8fafc;">🎯 Today's 30 Questions</div>
+                        <div style="width:20px;"></div>
+                    </div>
+                    <div class="sim-fs-body" id="simDailyReviewList">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- 5. Manage Questions Modal -->
+                <div class="sim-fullscreen-view" id="simManageModal">
+                    <div class="sim-fs-header">
+                        <button onclick="closeSimManageModal()" style="background:none; border:none; color:#94a3b8; cursor:pointer; padding:6px; font-size:16px;">✕</button>
+                        <div style="font-size:13px; font-weight:700; color:#f8fafc;">Question Bank Manager</div>
+                        <div style="width:20px;"></div>
+                    </div>
+                    <div class="sim-fs-body">
+                        <div class="sim-card sim-card-highlight">
+                            <div style="font-size:14px; font-weight:800; color:#f8fafc;">6,517 Built-In SSC Questions</div>
+                            <div style="font-size:11px; color:#94a3b8; margin-top:3px;">All subjects loaded in local offline memory.</div>
+                        </div>
+                        <!-- Add Custom Question Form Simulation -->
+                        <div class="sim-card">
+                            <div style="font-size:12px; font-weight:700; color:#818cf8; margin-bottom:8px;">Add Custom Question</div>
+                            <input type="text" id="simNewQuestionText" placeholder="Enter Question text..." style="width:100%; background:#1c2638; border:1px solid #2b384e; padding:8px; border-radius:8px; color:#fff; font-size:11px; margin-bottom:6px; box-sizing:border-box;">
+                            <input type="text" id="simNewOpt1" placeholder="Option A (Correct)" style="width:100%; background:#1c2638; border:1px solid #2b384e; padding:6px; border-radius:8px; color:#fff; font-size:11px; margin-bottom:4px; box-sizing:border-box;">
+                            <input type="text" id="simNewOpt2" placeholder="Option B" style="width:100%; background:#1c2638; border:1px solid #2b384e; padding:6px; border-radius:8px; color:#fff; font-size:11px; margin-bottom:4px; box-sizing:border-box;">
+                            <input type="text" id="simNewOpt3" placeholder="Option C" style="width:100%; background:#1c2638; border:1px solid #2b384e; padding:6px; border-radius:8px; color:#fff; font-size:11px; margin-bottom:4px; box-sizing:border-box;">
+                            <input type="text" id="simNewOpt4" placeholder="Option D" style="width:100%; background:#1c2638; border:1px solid #2b384e; padding:6px; border-radius:8px; color:#fff; font-size:11px; margin-bottom:8px; box-sizing:border-box;">
+                            <button class="sim-btn-primary" onclick="handleSimAddQuestion()">+ Add to Question Pool</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Toast Notification inside Phone -->
+                <div class="sim-toast" id="simToast">Notification</div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Simulator Engine & Data -->
+    <script>
+const APP_SIM_QUESTIONS = [{"question": "Bos mutus is the scientific name for: \u092c\u094b\u0938 \u0942\u091f\u0938 \u093f\u0915\u0938\u0915\u093e \u0935\u0948\u093e\u093f\u0928\u0915 \u0928\u093e\u092e \u0939\u0948 ?", "options": ["Wild Yak/ \u091c\u0902\u0917\u0932\u0940 \u092f\u093e\u0915", "Horse/ \u0918\u094b\u095c\u093e", "Ox/ \u092c\u0948\u0932", "Buffalo/ \u092d\u0938"], "correctIndex": 0, "category": "Biology", "id": 5662, "subject": "biology"}, {"question": "Which is the smallest bone in the human body? \u092e\u093e\u0928\u0935 \u0936\u0930\u0940\u0930 \u0915\u0940 \u0938\u092c\u0938\u0947 \u091b\u094b\u091f\u0940 \u0939\u0940 \u0915\u094c\u0928 \u0938\u0940 \u0939\u0948 ?", "options": ["Incus/ \u0925\u0942\u0923\u0915", "Stapes/ \u0947\u092a\u0940\u091c", "Malleus/ \u092e\u0948\u0932\u0947\u0909\u0938", "Metatarsal/ \u092a\u093f\u0926\u0915\u0940\u092f"], "correctIndex": 1, "category": "Biology", "id": 5663, "subject": "biology"}, {"question": "\u2019Canis lupus\u2019 is commonly known as___. \u2018", "options": ["Cow", "Goat", "Gray wolf", "Hen"], "correctIndex": 2, "category": "Biology", "id": 5664, "subject": "biology"}, {"question": "\u2019Capra aegagrus hircus\u2019 is commonly known as_____. \u2018", "options": ["Cow", "Goat", "Hen", "Dog"], "correctIndex": 1, "category": "Biology", "id": 5665, "subject": "biology"}, {"question": "\u2018Megaptera novaeangliae\u2019 is commonly known as_____. \u2018", "options": ["African wild cat", "Bumblebee", "Tree frog", "Humpback whale"], "correctIndex": 3, "category": "Biology", "id": 5666, "subject": "biology"}, {"question": "Malus pumila is the botanical name of the _____tree", "options": ["Banana", "Apple", "Orange", "Watermelon"], "correctIndex": 1, "category": "Biology", "id": 5667, "subject": "biology"}, {"question": "Citrullus lanatus is the botanical name for______", "options": ["Apple", "Watermelon", "Orange", "Banana"], "correctIndex": 1, "category": "Biology", "id": 5668, "subject": "biology"}, {"question": "Bos mutus is the scientific name for:", "options": ["Wild Yak", "Horse", "Ox", "Buffalo"], "correctIndex": 0, "category": "Biology", "id": 5669, "subject": "biology"}, {"question": "What is the scientific name of peacock ?", "options": ["Psittacula Eupartia", "Pavo Cristatus", "Eudynamys scolopaceus", "Molpastes Cafer"], "correctIndex": 1, "category": "Biology", "id": 5670, "subject": "biology"}, {"question": "The Lion Tailed Macaque is also called _______", "options": ["Silver Baboon", "Beard Baboon", "Black Baboon", "Houler Baboon"], "correctIndex": 1, "category": "Biology", "id": 5671, "subject": "biology"}, {"question": "Which among the following indirect taxes is charged by the Central Government? \u093f\u0928 \u092e \u0938\u0947 \u0915\u094c\u0928 \u0938\u093e \u0905 \u0915\u0930 \u0915 \u0938\u0930\u0915\u093e\u0930 \u0915\u0947 \u093e\u0930\u093e \u0935\u0938\u0942\u0932\u093e \u091c\u093e\u0924\u093e \u0939\u0948 ?", "options": ["Service Tax/ \u0938\u0947\u0935\u093e \u0915\u0930", "Luxury tax/ \u093f\u0935\u0932\u093e\u093f\u0938\u0924\u093e \u0915\u0930", "Purchase tax/ \u092f \u0915\u0930", "Taxes on Lottery/ \u0932\u093e\u091f\u0930\u0940 \u092a\u0930 \u0915\u0930"], "correctIndex": 0, "category": "Economics", "id": 6250, "subject": "economics"}, {"question": "Which of the following best defines Net National Income? / \u0936\u0941 \u0930\u093e \u0940\u092f \u0906\u092f \u0915\u0940 \u0938\u091f\u0940\u0915 \u092a\u0930\u092d\u093e\u0937\u093e \u0915\u094c\u0928 \u0938\u0940 \u0939\u0948 ? CHSL 14/10/2020 (Morning)", "options": ["NDP \u2013 Depreciation/ \u093e\u0938", "GNP + Depreciation/ \u093e\u0938", "GDP \u2013 Depreciation/ \u093e\u0938", "GNP \u2013 Depreciation/ \u093e\u0938"], "correctIndex": 3, "category": "Economics", "id": 6251, "subject": "economics"}, {"question": "Which of the following is not considered as a valid currency ? \u093f\u0928\u093f\u0932\u0916\u0924 \u092e \u0938\u0947 \u093f\u0915\u0938\u0947 \u0935\u0948\u0927 \u092e\u0941\u093e \u0928\u0939\u0940\u0902 \u092e\u093e\u0928\u093e \u091c\u093e\u0924\u093e \u0939\u0948 ?", "options": ["Gold/ \u0938\u094b\u0928\u093e", "Demand Draft/ \u092e\u093e\u0902\u0917 \u091c\u092e\u093e", "Currency/ \u092e\u0941\u093e", "Coin/ \u093f\u0938\u093e www.ssccglpinnacle.com support@ssccglpinnacle.com Ph. 09729327755, 09817390373 363 http://t.me/yoursmahboob_classes ECONOMICS"], "correctIndex": 0, "category": "Economics", "id": 6252, "subject": "economics"}, {"question": "Under Banking Regulation Act, 1934, The Reserve Bank was established in 1935 with the capital of Rs. ______ \u092c\u093f\u0915\u0902 \u0917 \u093f\u0935\u093f\u0928\u092f\u092e\u0928 \u0905\u093f\u0927\u093f\u0928\u092f\u092e, 1934 \u0915\u0947 \u0924\u0939\u0924 1935 \u092e \u0930\u095b\u0935 \u092c\u0915 \u0915\u0940 \u0925\u093e\u092a\u0928\u093e ______ \u092a\u092f\u0947 \u0915\u0940 \u092a\u0942\u0901\u091c\u0940 \u0915\u0947 \u0938\u093e\u0925 \u0915\u0940 \u0917\u0908 \u0925\u0940 |", "options": ["5 crore", "4 crore", "3 crore", "2 crore"], "correctIndex": 0, "category": "Economics", "id": 6253, "subject": "economics"}, {"question": "For how many mandated crops, Minimum Support Price (MSP) is announced by the government? \u0938\u0930\u0915\u093e\u0930 \u093e\u0930\u093e \u093f\u0915\u0924\u0928\u0940 \u0905\u093f\u0927\u093f\u0926 \u092b\u0938\u0932\u094b\u0902 \u0915\u0947 \u093f\u0932\u090f \u0942\u0928\u0924\u092e \u0938\u092e\u0925\u0928 \u092e\u0942 \u0915\u0940 \u0918\u094b\u0937\u0923\u093e \u0915\u0940 \u091c\u093e\u0924\u0940 \u0939\u0948 ?", "options": ["22", "42", "32", "12"], "correctIndex": 0, "category": "Economics", "id": 6254, "subject": "economics"}, {"question": "Which of the following best describes the nature of Indian economy?", "options": ["Mixed Economy", "Socialist Economy", "Communist Economy", "Capitalistic Economy"], "correctIndex": 0, "category": "Economics", "id": 6255, "subject": "economics"}, {"question": "Which of the following economic activities employs the maximum number of people in india?", "options": ["Tourism", "Manufacturing", "Agriculture", "Mining"], "correctIndex": 2, "category": "Economics", "id": 6256, "subject": "economics"}, {"question": "Which of the following come under the Quaternary sector?", "options": ["Information Technology", "Mining", "Manufacturing", "Fisheries"], "correctIndex": 0, "category": "Economics", "id": 6257, "subject": "economics"}, {"question": "The National Board for Micro, Small and Medium Enterprises meets once every _________ months in a year", "options": ["2", "6", "3", "9"], "correctIndex": 1, "category": "Economics", "id": 6258, "subject": "economics"}, {"question": "The Micro, Small and Medium Enterprises Development Act was passed in the year_____", "options": ["2006", "2004", "2008", "2002"], "correctIndex": 0, "category": "Economics", "id": 6259, "subject": "economics"}, {"id": 1, "question": "Select the option that can be used as a one-word substitute for: 'Become less intense or widespread'", "options": ["Accord", "Agoraphobia", "Almanac", "Abate"], "correctIndex": 3, "category": "English: One Word Substitution", "subject": "english"}, {"id": 2, "question": "Select the option that can be used as a one-word substitute for: 'A place where animals are slaughtered for consumption as food'", "options": ["Abattoir", "Edible", "Abbreviation", "Homogeneous"], "correctIndex": 0, "category": "English: One Word Substitution", "subject": "english"}, {"id": 3, "question": "Select the option that can be used as a one-word substitute for: 'The superior of a monastery'", "options": ["Abbot", "Wriggle", "Encyclopedia", "Aggressive"], "correctIndex": 0, "category": "English: One Word Substitution", "subject": "english"}, {"id": 4, "question": "Select the option that can be used as a one-word substitute for: 'To reduce to a shorter form intended to stand for the whole'", "options": ["Acoustics", "Windfall", "Alcove", "Abbreviation"], "correctIndex": 3, "category": "English: One Word Substitution", "subject": "english"}, {"id": 5, "question": "Select the option that can be used as a one-word substitute for: 'To give up one's authority or throne'", "options": ["Abdicate", "Inevitable", "Irrevocable", "Accolade"], "correctIndex": 0, "category": "English: One Word Substitution", "subject": "english"}, {"id": 6, "question": "Select the option that can be used as a one-word substitute for: 'Deviation from the right course'", "options": ["Omnipresent", "Aberration", "Insomnia", "Affidavit"], "correctIndex": 1, "category": "English: One Word Substitution", "subject": "english"}, {"id": 7, "question": "Select the option that can be used as a one-word substitute for: 'The act of washing oneself'", "options": ["Ablution", "Zodiac", "Homogeneous", "Winnow"], "correctIndex": 0, "category": "English: One Word Substitution", "subject": "english"}, {"id": 8, "question": "Select the option that can be used as a one-word substitute for: 'To refuse or deny oneself'", "options": ["Fastidious", "Xerophobia", "Abnegate", "Aesthete"], "correctIndex": 2, "category": "English: One Word Substitution", "subject": "english"}, {"id": 9, "question": "Select the option that can be used as a one-word substitute for: 'Formally put an end to a system, practice, or institution'", "options": ["Misogynist", "Accomplice", "Anarchy", "Abolish"], "correctIndex": 3, "category": "English: One Word Substitution", "subject": "english"}, {"id": 10, "question": "Select the option that can be used as a one-word substitute for: '11 Existing in a land from the earliest times or from before the arrival of colonists'", "options": ["Arsenal", "Aboriginal", "Connoisseur", "Whisk"], "correctIndex": 1, "category": "English: One Word Substitution", "subject": "english"}, {"question": "The theory that dinosaurs were driven to extinction by the aftermath of a large asteroid impact on Earth was given by _______", "options": ["Wilhelm Rontgen", "Luis Alvarez", "Henry Moseley", "William Crookes"], "correctIndex": 1, "category": "Geography", "id": 5159, "subject": "geography"}, {"question": "About 70% of the Sun is made up of ____", "options": ["Hydrogen", "Oxygen", "Carbon", "Helium"], "correctIndex": 0, "category": "Geography", "id": 5160, "subject": "geography"}, {"question": "Which one of the following is the brightest star in the Orion Constellation?", "options": ["Betelgeuse", "Alnilam", "Rigel", "Eta Orionis"], "correctIndex": 2, "category": "Geography", "id": 5161, "subject": "geography"}, {"question": "The headquarters of the Indian Institute of Astrophysics is located in ______", "options": ["Shillong", "Indore", "Nainital", "Banglore"], "correctIndex": 3, "category": "Geography", "id": 5162, "subject": "geography"}, {"question": "About 70% of the Sun is made up of ____", "options": ["Hydrogen", "Oxygen", "Carbon", "Helium"], "correctIndex": 0, "category": "Geography", "id": 5163, "subject": "geography"}, {"question": "The term \u2018Blood Moon\u2019 is used to refer to _____. \u2018", "options": ["Solar Eclipse", "Crescent Moon", "Lunar Eclipse", "Full Moon"], "correctIndex": 2, "category": "Geography", "id": 5164, "subject": "geography"}, {"question": "Which one of the following is the largest recognised constellation?", "options": ["Hydra", "Dorado", "Antilla", "Crux"], "correctIndex": 0, "category": "Geography", "id": 5165, "subject": "geography"}, {"question": "The approximate diameter of the sun is_____ times the diameter of Earth", "options": ["92", "109", "146", "123"], "correctIndex": 1, "category": "Geography", "id": 5166, "subject": "geography"}, {"question": "______ is the hottest planet in the solar system. _______", "options": ["Mercury", "Mars", "Venus", "Earth"], "correctIndex": 2, "category": "Geography", "id": 5167, "subject": "geography"}, {"question": "In the solar system, among the planets listed below, which planet is farthest from the sun?", "options": ["Mars", "Jupitor", "Neptune", "Venus"], "correctIndex": 2, "category": "Geography", "id": 5168, "subject": "geography"}, {"id": 4175, "question": "Who among the following is known to have regulated the course of Vitasta in Kashmir by his engineering operations?", "options": ["Vajraditya", "Damodargupta", "Sura", "Suyya"], "correctIndex": 3, "category": "Ancient History: Sources of Ancient India", "subject": "history"}, {"id": 4176, "question": "The Sangam text Tolkappiyam is a work on", "options": ["Astronomy", "Grammar", "Music", "Medicine"], "correctIndex": 1, "category": "Ancient History: Sources of Ancient India", "subject": "history"}, {"id": 4177, "question": "The earliest evidence of Silk in India comes from the archaeological site of", "options": ["Bhagwanpura", "Nevasa", "Rangpur", "Ropar"], "correctIndex": 1, "category": "Ancient History: Sources of Ancient India", "subject": "history"}, {"id": 4178, "question": "An upper Palaeolithic Mother Goddess made of bone has been obtained from", "options": ["Godavari valley", "Narmada valley", "Son valley", "Belan valley"], "correctIndex": 3, "category": "Ancient History: Sources of Ancient India", "subject": "history"}, {"id": 4179, "question": "The Third Tamil Sangam was held at", "options": ["Tanjore", "Madurai", "Kanjeevaram", "Mahabalipuram"], "correctIndex": 1, "category": "Ancient History: Sources of Ancient India", "subject": "history"}, {"id": 4180, "question": "The earliest inscriptions were written in which language?", "options": ["Pali", "Prakrit", "Sanskrit", "Tamil"], "correctIndex": 1, "category": "Ancient History: Sources of Ancient India", "subject": "history"}, {"id": 4181, "question": "The ancient Indian play Mudrarakshasa of Visakhadutt has its subject on:", "options": ["a conflict between Gods and Demons of ancient Hindu lore", "a romantic story of an Aryan prince and a tribal woman", "the story of the power struggle between two Aryan", "the court intrigues at the time of Chandragupta"], "correctIndex": 3, "category": "Ancient History: Sources of Ancient India", "subject": "history"}, {"id": 4182, "question": "From among the following, which pair is not matched?", "options": ["Patanjali \u2013 Mahabhashya", "Hala \u2013 Gatha Saptshati", "Bhadrabahu \u2013 Brihat Katha Manjari", "Ashvaghosa \u2013 Harsh Charit"], "correctIndex": 2, "category": "Ancient History: Sources of Ancient India", "subject": "history"}, {"id": 4183, "question": "The objects like pottery, tools and ornaments that humans made in the past are called", "options": ["Monuments", "Coins", "Inscriptions", "Artifacls"], "correctIndex": 3, "category": "Ancient History: Sources of Ancient India", "subject": "history"}, {"id": 4184, "question": "Which one of the following is not a part of early Jains literature?", "options": ["Therigatha", "Acaranga sutra", "Sutrakritanga", "Brihat kalpasutra"], "correctIndex": 0, "category": "Ancient History: Sources of Ancient India", "subject": "history"}, {"question": "In 1967, which of the following languages was included in the list of state languages of the Indian Constitution ? 1967 \u092e \u092d\u093e\u0930\u0924 \u0915\u0947 \u0938\u0902\u093f\u0935\u0927\u093e\u0928 \u092e \u0930\u093e\u091c\u092d\u093e\u0937\u093e\u0913\u0902 \u0915\u0940 \u0938\u0942\u091a\u0940 \u092e \u093f\u0928\u093f\u0932\u0916\u0924 \u092e \u0938\u0947 \u0915\u094c\u0928 \u0938\u0940 \u092d\u093e\u0937\u093e \u0915\u094b \u0936\u093e\u093f\u092e\u0932 \u093f\u0915\u092f\u093e \u0917\u092f\u093e \u0925\u093e ?", "options": ["Bengali", "Sindhi", "Telugu", "Tamil"], "correctIndex": 1, "category": "Polity", "id": 5979, "subject": "polity"}, {"question": "Which of the following Articles of the Constitution of India gurantees the Right to Freedom of Religion? \u092d\u093e\u0930\u0924 \u0915\u0947 \u0938\u0902\u093f\u0935\u0927\u093e\u0928 \u0915\u0947 \u093f\u0928\u093f\u0932\u0916\u0924 \u092e \u0938\u0947 \u0915\u094c\u0928 \u0938\u093e \u0905\u0928\u0941\u091b\u0947 \u0926 \u0927\u092e \u0915\u093e \u0924\u0902\u0924\u093e \u0915\u093e \u0905\u093f\u0927\u0915\u093e\u0930 \u0926\u093e\u0928 \u0915\u0930\u0924\u093e \u0939\u0948 ?", "options": ["Articles 14-18", "Articles 19-22", "Articles 23-24", "Articles 25-28"], "correctIndex": 3, "category": "Polity", "id": 5980, "subject": "polity"}, {"question": "The Right against exploitation is a _____. \u0936\u094b\u0937\u0923 \u0915\u0947 \u093f\u0935 \u0905\u093f\u0927\u0915\u093e\u0930 \u090f\u0915 _____ \u0939\u0948 |", "options": ["Constitutional Right", "Method", "Fundamental Right", "Legal Right"], "correctIndex": 2, "category": "Polity", "id": 5981, "subject": "polity"}, {"question": "Inter-State Council was set up by the recommendations of which committee? \u0905\u0902\u0924\u0930\u093e\u0940\u092f \u092a\u0930\u0937\u0926 \u0915\u0940 \u0925\u093e\u092a\u0928\u093e \u093f\u0915\u0938 \u0938\u093f\u092e\u093f\u0924 \u0915\u0940 \u093f\u0938\u092b\u093e\u0930\u0936 \u092a\u0930 \u0915\u0940 \u0917\u092f\u0940 \u0925\u0940 ?", "options": ["Sarkaria committee/ \u0938\u0930\u0915\u093e\u0930\u092f\u093e \u0906\u092f\u094b\u0917", "Y V Reddy Committee/ \u0935\u093e\u0908 \u0935\u0940 \u0930\u0947 \u0940 \u0938\u093f\u092e\u093f\u0924", "TSR Subramanian committee/ \u091f\u0940\u090f\u0938\u0906\u0930 \u0938\u0941\u092e\u092e \u0938\u093f\u092e\u093f\u0924", "Chandrababu Naidu committee/ \u091a\u0902\u092c\u093e\u092c\u0942 \u0928\u093e\u092f\u0921\u0942 \u0938\u093f\u092e\u093f\u0924"], "correctIndex": 0, "category": "Polity", "id": 5982, "subject": "polity"}, {"question": "______ are the guidelines laid down by the Supreme Court for specific requirements and procedures, which the police have to follow to arrest, detain and interrogate any person. ______ \u093f\u0935\u093f\u0936 \u0906\u0935\u0915\u0924\u093e\u0913\u0902 \u0914\u0930 \u093f\u092f\u093e\u0913\u0902 \u0915\u0947 \u093f\u0932\u090f \u0938\u0941\u0940\u092e \u0915\u094b\u091f \u093e\u0930\u093e \u093f\u0928\u0927\u093e\u0930\u0924 \u093f\u0926\u0936\u093e-\u093f\u0928\u0926\u0936 \u0939, \u093f\u091c\u0928\u0915\u093e \u092a\u093e\u0932\u0928 \u092a\u0941\u093f\u0932\u0938 \u0915\u094b \u093f\u0915\u0938\u0940 \u092d\u0940 \u0915\u094b \u093f\u0917\u0930\u093e\u0930 \u0915\u0930\u0928\u0947, \u093f\u0939\u0930\u093e\u0938\u0924 \u092e \u0932\u0947\u0928\u0947 \u0914\u0930 \u092a\u0942\u091b\u0924\u093e\u091b \u0915\u0930\u0928\u0947 \u0915\u0947 \u093f\u0932\u090f \u0915\u0930\u0928\u093e \u092a\u095c\u0924\u093e \u0939\u0948 |", "options": ["K.C Roberto Guidelines", "D. K Basu Guidelines", "Menka Guidelines", "Vishakha Guidelines"], "correctIndex": 1, "category": "Polity", "id": 5983, "subject": "polity"}, {"question": "Upper House of the Indian Parliament is also known as _____. \u092d\u093e\u0930\u0924\u0940\u092f \u0938\u0902\u0938\u0926 \u0915\u0947 \u090a\u092a\u0930\u0940 \u0938\u0926\u0928 \u0915\u094b _____ \u0928\u093e\u092e \u0938\u0947 \u092d\u0940 \u091c\u093e\u0928\u093e \u091c\u093e\u0924\u093e \u0939\u0948 |", "options": ["Lok Sabha/ \u0932\u094b\u0915\u0938\u092d\u093e", "Rajya Sabha", "Vidhan Parishad/ \u093f\u0935\u0927\u093e\u0928 \u092a\u0930\u0937\u0926\u094d", "Vidhan Sabha/ \u093f\u0935\u0927\u093e\u0928 \u0938\u092d\u093e"], "correctIndex": 1, "category": "Polity", "id": 5984, "subject": "polity"}, {"question": "Any act passed by the parliament becomes a law only after the approval of _______. _______ \u0915\u0940 \u0940\u0915\u0943 \u093f\u0924 \u093e \u0939\u094b\u0928\u0947 \u0915\u0947 \u092c\u093e\u0926 \u0939\u0940 \u0938\u0902\u0938\u0926 \u093e\u0930\u093e \u092a\u093e\u0930\u0924 \u0915\u094b\u0908 \u0905\u093f\u0927\u093f\u0928\u092f\u092e \u0915\u093e\u0928\u0942\u0928 \u092c\u0928\u0924\u093e \u0939\u0948 |", "options": ["Law Minister", "President", "Supreme Court", "Prime Minister"], "correctIndex": 1, "category": "Polity", "id": 5985, "subject": "polity"}, {"question": "Who is the Supreme Commander of the defence forces of India ? \u092d\u093e\u0930\u0924 \u0915\u0947 \u0938\u0941\u0930\u093e \u092c\u0932\u094b\u0902 \u0915\u0947 \u0938\u0935 \u0938\u0947\u0928\u093e\u092a\u093f\u0924 \u0915\u094c\u0928 \u0939\u094b\u0924\u0947 \u0939 ?", "options": ["President/ \u0930\u093e \u092a\u093f\u0924", "Chief of Defence/ \u0930\u093e \u092e\u0941\u0916", "Prime Minister/ \u0927\u093e\u0928\u092e\u0902\u0940", "Defence Minister/ \u0930\u093e \u092e\u0902\u0940"], "correctIndex": 0, "category": "Polity", "id": 5986, "subject": "polity"}, {"question": "As per the Constitution of India, Panchayats at the intermediate level may NOT be constituted in a State having a population not exceeding:", "options": ["Thiry Lakhs", "Forty Lakhs", "Ten Lakhs", "Twenty Lakhs"], "correctIndex": 3, "category": "Polity", "id": 5987, "subject": "polity"}, {"question": "The First Health Minister of Independent India was?", "options": ["Maulana Abdul Kalam Azad", "Sardar Vallabhbhai Patel", "Vijayalakshmi Pandit", "Rajkumari Amrit Kaur"], "correctIndex": 3, "category": "Polity", "id": 5988, "subject": "polity"}, {"id": 2621, "question": "Who was the first woman Air Vice Marshal in the Indian Air Force?", "options": ["Madhuri Kanitkar", "Punita Arora", "Harita Kaur Deol", "Padma Bandopadhyay"], "correctIndex": 3, "category": "First in World & India (Female)", "subject": "static_gk"}, {"id": 2622, "question": "Who was the first woman commercial airline pilot in India?", "options": ["Durba Banerjee", "Sarla Thakral", "Prem Mathur", "Harita Kaur Deol"], "correctIndex": 0, "category": "First in World & India (Female)", "subject": "static_gk"}, {"id": 2623, "question": "Who was India's first woman diplomat/ambassador?", "options": ["Vijayalakshmi Pandit", "Arundhati Ghose", "Ruchira Kamboj", "C.B. Muthamma"], "correctIndex": 3, "category": "First in World & India (Female)", "subject": "static_gk"}, {"id": 2624, "question": "Who was the first Indian woman to win an Asian Games Gold Medal?", "options": ["Kamaljeet Sandhu", "Shiny Abraham", "Karnam Malleswari", "P.T. Usha"], "correctIndex": 0, "category": "First in World & India (Female)", "subject": "static_gk"}, {"id": 2625, "question": "Who was the first woman chairperson of the UPSC?", "options": ["Margaret Alva", "Alka Sirohi", "Rose Millian Bethew", "Preeti Sudan"], "correctIndex": 2, "category": "First in World & India (Female)", "subject": "static_gk"}, {"id": 2626, "question": "Who was the first woman chairperson of Indian Airlines?", "options": ["Kiran Mazumdar-Shaw", "Naina Lal Kidwai", "Usha Thorat", "Sushma Chawla"], "correctIndex": 3, "category": "First in World & India (Female)", "subject": "static_gk"}, {"id": 2627, "question": "Who was the first woman Chief Minister of an Indian State (UP)?", "options": ["Nandini Satpathy", "Sucheta Kripalani", "Sarojini Naidu", "Mayawati"], "correctIndex": 1, "category": "First in World & India (Female)", "subject": "static_gk"}, {"id": 2628, "question": "Who was the first woman in space in the world (1963)?", "options": ["Valentina Tereshkova (USSR)", "Judith Resnik", "Svetlana Savitskaya", "Sally Ride"], "correctIndex": 0, "category": "First in World & India (Female)", "subject": "static_gk"}, {"id": 2629, "question": "Who was the first woman Director General of Police (DGP) in India?", "options": ["Kiran Bedi", "Meera Borwankar", "Archana Ramasundaram", "Kanchan Chaudhary Bhattacharya"], "correctIndex": 3, "category": "First in World & India (Female)", "subject": "static_gk"}, {"id": 2630, "question": "Who was the first woman Governor of a state in independent India?", "options": ["Sarojini Naidu", "Sharda Mukherjee", "Vijayalakshmi Pandit", "Padmaja Naidu"], "correctIndex": 0, "category": "First in World & India (Female)", "subject": "static_gk"}];
+
+// =========================================================
+// QUIZEE APP SIMULATOR ENGINE (Native JS)
+// =========================================================
+
+const SIM_APPS = [
+    { name: "Instagram", pkg: "com.instagram.android", icon: "📷", color: "#e1306c", locked: true },
+    { name: "WhatsApp", pkg: "com.whatsapp", icon: "💬", color: "#25d366", locked: true },
+    { name: "YouTube", pkg: "com.google.android.youtube", icon: "▶️", color: "#ff0000", locked: true },
+    { name: "Google Chrome", pkg: "com.android.chrome", icon: "🌐", color: "#4285f4", locked: false },
+    { name: "X (Twitter)", pkg: "com.twitter.android", icon: "𝕏", color: "#1d9bf0", locked: false },
+    { name: "Telegram", pkg: "org.telegram.messenger", icon: "✈️", color: "#229ed9", locked: false },
+    { name: "Reddit", pkg: "com.reddit.frontpage", icon: "🤖", color: "#ff4500", locked: false },
+    { name: "Facebook", pkg: "com.facebook.katana", icon: "📘", color: "#1877f2", locked: false },
+    { name: "Netflix", pkg: "com.netflix.mediaclient", icon: "🎬", color: "#e50914", locked: false }
+];
+
+const SIM_SUBJECTS = [
+    { name: "English Vocabulary & Grammar", subject: "english", count: "2,620 Qs", icon: "🔤", desc: "Synonyms, Antonyms, Idioms, One Word Sub" },
+    { name: "Static General Knowledge", subject: "static_gk", count: "1,554 Qs", icon: "🏛️", desc: "First in India, Folk Dances, Temples, Books" },
+    { name: "Indian History", subject: "history", count: "984 Qs", icon: "📜", desc: "Ancient, Medieval & Modern Indian History" },
+    { name: "Indian & World Geography", subject: "geography", count: "503 Qs", icon: "🌍", desc: "Rivers, Mountains, National Parks, Climate" },
+    { name: "General Science: Biology", subject: "biology", count: "317 Qs", icon: "🧬", desc: "Human Anatomy, Diseases, Vitamins, Genetics" },
+    { name: "Indian Polity & Constitution", subject: "polity", count: "271 Qs", icon: "⚖️", desc: "Articles, Amendments, President, Parliament" },
+    { name: "Indian & Global Economics", subject: "economics", count: "268 Qs", icon: "📈", desc: "Five Year Plans, Banking, Inflation, GDP" }
+];
+
+let simState = {
+    currentPage: 0,
+    day: 1,
+    streak: 1,
+    targetSize: 30,
+    masteredIds: new Set(),
+    mistakeIds: new Set(),
+    practiceCount: 30,
+    permOverlay: true,
+    permUsage: true,
+    lockedPackages: new Set(["com.instagram.android", "com.whatsapp", "com.google.android.youtube"]),
+    searchFilter: ""
+};
+
+// Load saved state if any
+try {
+    const saved = localStorage.getItem("quizee_sim_state");
+    if (saved) {
+        const parsed = JSON.parse(saved);
+        simState.day = parsed.day || 1;
+        simState.streak = parsed.streak || 1;
+        simState.targetSize = parsed.targetSize || 30;
+        simState.masteredIds = new Set(parsed.masteredIds || []);
+        simState.mistakeIds = new Set(parsed.mistakeIds || []);
+        if (parsed.lockedPackages) {
+            simState.lockedPackages = new Set(parsed.lockedPackages);
+        }
+    }
+} catch(e) {}
+
+function saveSimState() {
+    try {
+        localStorage.setItem("quizee_sim_state", JSON.stringify({
+            day: simState.day,
+            streak: simState.streak,
+            targetSize: simState.targetSize,
+            masteredIds: Array.from(simState.masteredIds),
+            mistakeIds: Array.from(simState.mistakeIds),
+            lockedPackages: Array.from(simState.lockedPackages)
+        }));
+    } catch(e) {}
+}
+
+// Live Clock
+function updateSimClock() {
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    const timeStr = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    const el = document.getElementById('simClockTime');
+    if (el) el.textContent = timeStr;
+}
+setInterval(updateSimClock, 10000);
+updateSimClock();
+
+// Modal Open / Close
+function openAppSimulator(initialTab = 0) {
+    const modal = document.getElementById('appSimModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        switchSimPage(initialTab);
+        renderAllSimPages();
+        updateSimClock();
+    }
+}
+
+function closeAppSimulator() {
+    const modal = document.getElementById('appSimModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+function handleSimOverlayClick(e) {
+    if (e.target.id === 'appSimModal') {
+        closeAppSimulator();
+    }
+}
+
+function showSimToast(msg) {
+    const t = document.getElementById('simToast');
+    if (!t) return;
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => {
+        t.classList.remove('show');
+    }, 2200);
+}
+
+function resetSimState() {
+    simState.day = 1;
+    simState.streak = 1;
+    simState.targetSize = 30;
+    simState.masteredIds.clear();
+    simState.mistakeIds.clear();
+    simState.lockedPackages = new Set(["com.instagram.android", "com.whatsapp", "com.google.android.youtube"]);
+    saveSimState();
+    renderAllSimPages();
+    showSimToast("Simulator reset to Day 1!");
+}
+
+// Page Navigation
+function switchSimPage(pageIndex) {
+    simState.currentPage = pageIndex;
+    for (let i = 0; i < 4; i++) {
+        const pageEl = document.getElementById(`simPage${i}`);
+        const tabEl = document.getElementById(`simTab${i}`);
+        const qNavEl = document.getElementById(`qNav${i}`);
+        if (pageEl) {
+            if (i === pageIndex) pageEl.classList.add('active');
+            else pageEl.classList.remove('active');
+        }
+        if (tabEl) {
+            if (i === pageIndex) tabEl.classList.add('active');
+            else tabEl.classList.remove('active');
+        }
+        if (qNavEl) {
+            if (i === pageIndex) qNavEl.classList.add('active');
+            else qNavEl.classList.remove('active');
+        }
+    }
+    const container = document.getElementById('simPagesContainer');
+    if (container) container.scrollTop = 0;
+}
+
+// Render All Dynamic Simulator Views
+function renderAllSimPages() {
+    renderDailyPage();
+    renderPracticePage();
+    renderLockerPage();
+    renderQuestionsPage();
+}
+
+// Get questions for Day's bank
+function getTodayBankQuestions() {
+    const bySubj = {};
+    APP_SIM_QUESTIONS.forEach(q => {
+        if (!bySubj[q.subject]) bySubj[q.subject] = [];
+        bySubj[q.subject].push(q);
+    });
+    const size = simState.targetSize;
+    let list = [];
+    if (size === 20) {
+        list = list.concat((bySubj['english'] || []).slice(0, 5));
+        list = list.concat((bySubj['static_gk'] || []).slice(0, 4));
+        list = list.concat((bySubj['history'] || []).slice(0, 3));
+        list = list.concat((bySubj['geography'] || []).slice(0, 2));
+        list = list.concat((bySubj['biology'] || []).slice(0, 2));
+        list = list.concat((bySubj['polity'] || []).slice(0, 2));
+        list = list.concat((bySubj['economics'] || []).slice(0, 2));
+    } else {
+        list = list.concat((bySubj['english'] || []).slice(0, 8));
+        list = list.concat((bySubj['static_gk'] || []).slice(0, 6));
+        list = list.concat((bySubj['history'] || []).slice(0, 5));
+        list = list.concat((bySubj['geography'] || []).slice(0, 3));
+        list = list.concat((bySubj['biology'] || []).slice(0, 3));
+        list = list.concat((bySubj['polity'] || []).slice(0, 3));
+        list = list.concat((bySubj['economics'] || []).slice(0, 2));
+    }
+    return list;
+}
+
+function renderDailyPage() {
+    const todayQs = getTodayBankQuestions();
+    const masteredCount = todayQs.filter(q => simState.masteredIds.has(q.id)).length;
+    const target = simState.targetSize;
+    const pct = Math.min(100, Math.round((masteredCount / target) * 100));
+
+    const dayTitle = document.getElementById('simDailyDayTitle');
+    if (dayTitle) dayTitle.textContent = `Day ${simState.day} • Target Bank`;
+    const streakEl = document.getElementById('simDailyStreak');
+    if (streakEl) streakEl.textContent = `${simState.streak} Day Streak`;
+    const countEl = document.getElementById('simDailyMasteryCount');
+    if (countEl) countEl.textContent = `${masteredCount} / ${target} Mastered`;
+    const btnSize = document.getElementById('simBtnTargetSize');
+    if (btnSize) btnSize.textContent = `${target} Qs / Day`;
+    const barEl = document.getElementById('simDailyMasteryBar');
+    if (barEl) barEl.style.width = `${pct}%`;
+
+    const summaryEl = document.getElementById('simSubjectQuotaSummary');
+    if (summaryEl) {
+        if (target === 20) {
+            summaryEl.textContent = "Eng 5 • GK 4 • Hist 3 • Pol 2 • Bio 2 • Geo 2 • Eco 2";
+        } else {
+            summaryEl.textContent = "Eng 8 • GK 6 • Hist 5 • Pol 3 • Bio 3 • Geo 3 • Eco 2";
+        }
+    }
+}
+
+function toggleSimTargetSize() {
+    simState.targetSize = simState.targetSize === 30 ? 20 : 30;
+    saveSimState();
+    renderDailyPage();
+    showSimToast(`Daily Target updated to ${simState.targetSize} Qs/Day`);
+}
+
+function advanceNextDay() {
+    simState.day++;
+    simState.streak++;
+    simState.masteredIds.clear();
+    saveSimState();
+    renderDailyPage();
+    showSimToast(`Unlocked Day ${simState.day} Question Bank!`);
+}
+
+// Practice Page
+function selectPracticeCount(count) {
+    simState.practiceCount = count;
+    document.querySelectorAll('.sim-count-chip').forEach(btn => {
+        btn.classList.toggle('active', parseInt(btn.textContent) === count);
+    });
+    const startBtn = document.getElementById('simBtnStartPractice');
+    if (startBtn) startBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg><span>Start Practice Test (${count} Questions)</span>`;
+}
+
+// =========================================================
+// CUSTOM PRACTICE HUB & TOPICS (1:1 with Android App)
+// =========================================================
+const CURRICULUM_DATA = [
+    // 1. ENGLISH (2,620 MCQs • 9 Topics)
+    {
+        id: 'eng_ows',
+        subject: 'English',
+        title: 'One Word Substitution',
+        meta: 'English • 307 Questions • 4 Sets',
+        totalQs: 307,
+        setsCount: 4,
+        topicKey: 'english',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 200', total: 100 },
+            { num: 3, range: 'Q 201 – 300', total: 100 },
+            { num: 4, range: 'Q 301 – 307', total: 7 }
+        ]
+    },
+    {
+        id: 'eng_idioms',
+        subject: 'English',
+        title: 'Idioms & Phrases',
+        meta: 'English • 251 Questions • 3 Sets',
+        totalQs: 251,
+        setsCount: 3,
+        topicKey: 'english',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 200', total: 100 },
+            { num: 3, range: 'Q 201 – 251', total: 51 }
+        ]
+    },
+    {
+        id: 'eng_syn',
+        subject: 'English',
+        title: 'Synonyms',
+        meta: 'English • 504 Questions • 6 Sets',
+        totalQs: 504,
+        setsCount: 6,
+        topicKey: 'english',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 200', total: 100 },
+            { num: 3, range: 'Q 201 – 300', total: 100 },
+            { num: 4, range: 'Q 301 – 400', total: 100 },
+            { num: 5, range: 'Q 401 – 500', total: 100 },
+            { num: 6, range: 'Q 501 – 504', total: 4 }
+        ]
+    },
+    {
+        id: 'eng_ant',
+        subject: 'English',
+        title: 'Antonyms',
+        meta: 'English • 568 Questions • 6 Sets',
+        totalQs: 568,
+        setsCount: 6,
+        topicKey: 'english',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 200', total: 100 },
+            { num: 3, range: 'Q 201 – 300', total: 100 },
+            { num: 4, range: 'Q 301 – 400', total: 100 },
+            { num: 5, range: 'Q 401 – 500', total: 100 },
+            { num: 6, range: 'Q 501 – 568', total: 68 }
+        ]
+    },
+    {
+        id: 'eng_spell',
+        subject: 'English',
+        title: 'Spelling Test',
+        meta: 'English • 485 Questions • 5 Sets',
+        totalQs: 485,
+        setsCount: 5,
+        topicKey: 'english',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 200', total: 100 },
+            { num: 3, range: 'Q 201 – 300', total: 100 },
+            { num: 4, range: 'Q 301 – 400', total: 100 },
+            { num: 5, range: 'Q 401 – 485', total: 85 }
+        ]
+    },
+    {
+        id: 'eng_phrasal',
+        subject: 'English',
+        title: 'Phrasal Verbs',
+        meta: 'English • 123 Questions • 2 Sets',
+        totalQs: 123,
+        setsCount: 2,
+        topicKey: 'english',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 123', total: 23 }
+        ]
+    },
+    {
+        id: 'eng_fixed_prep',
+        subject: 'English',
+        title: 'Fixed Prepositions',
+        meta: 'English • 97 Questions • 1 Set',
+        totalQs: 97,
+        setsCount: 1,
+        topicKey: 'english',
+        sets: [
+            { num: 1, range: 'Q 1 – 97', total: 97 }
+        ]
+    },
+    {
+        id: 'eng_vocab_hindu',
+        subject: 'English',
+        title: 'The Hindu Editorial Vocab',
+        meta: 'English • 124 Questions • 2 Sets',
+        totalQs: 124,
+        setsCount: 2,
+        topicKey: 'english',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 124', total: 24 }
+        ]
+    },
+    {
+        id: 'eng_confusing',
+        subject: 'English',
+        title: 'Homonyms & Confusing Words',
+        meta: 'English • 161 Questions • 2 Sets',
+        totalQs: 161,
+        setsCount: 2,
+        topicKey: 'english',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 161', total: 61 }
+        ]
+    },
+
+    // 2. STATIC GK (1,554 MCQs • 33 Topics)
+    {
+        id: 'gk_dances',
+        subject: 'Static GK',
+        title: 'Classical & Folk Dances of India',
+        meta: 'Static GK • 209 Questions • 3 Sets',
+        totalQs: 209,
+        setsCount: 3,
+        topicKey: 'static_gk',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 200', total: 100 },
+            { num: 3, range: 'Q 201 – 209', total: 9 }
+        ]
+    },
+    {
+        id: 'gk_parks',
+        subject: 'Static GK',
+        title: 'National Parks & Wildlife Sanctuaries',
+        meta: 'Static GK • 192 Questions • 2 Sets',
+        totalQs: 192,
+        setsCount: 2,
+        topicKey: 'static_gk',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 192', total: 92 }
+        ]
+    },
+    {
+        id: 'gk_books',
+        subject: 'Static GK',
+        title: 'Books and Authors',
+        meta: 'Static GK • 231 Questions • 3 Sets',
+        totalQs: 231,
+        setsCount: 3,
+        topicKey: 'static_gk',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 200', total: 100 },
+            { num: 3, range: 'Q 201 – 231', total: 31 }
+        ]
+    },
+    {
+        id: 'gk_forts',
+        subject: 'Static GK',
+        title: 'Historic Forts & Palaces of India',
+        meta: 'Static GK • 65 Questions • 1 Set',
+        totalQs: 65,
+        setsCount: 1,
+        topicKey: 'static_gk',
+        sets: [
+            { num: 1, range: 'Q 1 – 65', total: 65 }
+        ]
+    },
+    {
+        id: 'gk_military',
+        subject: 'Static GK',
+        title: 'Joint Military Exercises & Defense',
+        meta: 'Static GK • 74 Questions • 1 Set',
+        totalQs: 74,
+        setsCount: 1,
+        topicKey: 'static_gk',
+        sets: [
+            { num: 1, range: 'Q 1 – 74', total: 74 }
+        ]
+    },
+    {
+        id: 'gk_firsts',
+        subject: 'Static GK',
+        title: 'First in World & India',
+        meta: 'Static GK • 118 Questions • 2 Sets',
+        totalQs: 118,
+        setsCount: 2,
+        topicKey: 'static_gk',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 118', total: 18 }
+        ]
+    },
+    {
+        id: 'gk_capitals',
+        subject: 'Static GK',
+        title: 'Countries, Capitals & Currencies',
+        meta: 'Static GK • 50 Questions • 1 Set',
+        totalQs: 50,
+        setsCount: 1,
+        topicKey: 'static_gk',
+        sets: [
+            { num: 1, range: 'Q 1 – 50', total: 50 }
+        ]
+    },
+
+    // 3. HISTORY (984 MCQs • 18 Topics)
+    {
+        id: 'hist_ancient_ivc',
+        subject: 'History',
+        title: 'Indus Valley & Pre-historic Era',
+        meta: 'History • 80 Questions • 1 Set',
+        totalQs: 80,
+        setsCount: 1,
+        topicKey: 'history',
+        sets: [
+            { num: 1, range: 'Q 1 – 80', total: 80 }
+        ]
+    },
+    {
+        id: 'hist_vedic',
+        subject: 'History',
+        title: 'The Vedic Age & Mahajanapadas',
+        meta: 'History • 56 Questions • 1 Set',
+        totalQs: 56,
+        setsCount: 1,
+        topicKey: 'history',
+        sets: [
+            { num: 1, range: 'Q 1 – 56', total: 56 }
+        ]
+    },
+    {
+        id: 'hist_buddhism',
+        subject: 'History',
+        title: 'Buddhism & Jainism Religious Revolution',
+        meta: 'History • 66 Questions • 1 Set',
+        totalQs: 66,
+        setsCount: 1,
+        topicKey: 'history',
+        sets: [
+            { num: 1, range: 'Q 1 – 66', total: 66 }
+        ]
+    },
+    {
+        id: 'hist_maurya',
+        subject: 'History',
+        title: 'The Mauryan Empire & Sangam Age',
+        meta: 'History • 164 Questions • 2 Sets',
+        totalQs: 164,
+        setsCount: 2,
+        topicKey: 'history',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 164', total: 64 }
+        ]
+    },
+    {
+        id: 'hist_gupta',
+        subject: 'History',
+        title: 'The Gupta Empire & Golden Age',
+        meta: 'History • 118 Questions • 2 Sets',
+        totalQs: 118,
+        setsCount: 2,
+        topicKey: 'history',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 118', total: 18 }
+        ]
+    },
+    {
+        id: 'hist_sultanate',
+        subject: 'History',
+        title: 'The Delhi Sultanate & Dynasties',
+        meta: 'History • 86 Questions • 1 Set',
+        totalQs: 86,
+        setsCount: 1,
+        topicKey: 'history',
+        sets: [
+            { num: 1, range: 'Q 1 – 86', total: 86 }
+        ]
+    },
+    {
+        id: 'hist_mughal',
+        subject: 'History',
+        title: 'The Mughal Empire & Marathas',
+        meta: 'History • 81 Questions • 1 Set',
+        totalQs: 81,
+        setsCount: 1,
+        topicKey: 'history',
+        sets: [
+            { num: 1, range: 'Q 1 – 81', total: 81 }
+        ]
+    },
+    {
+        id: 'hist_freedom',
+        subject: 'History',
+        title: '1857 Revolt & Freedom Struggle',
+        meta: 'History • 143 Questions • 2 Sets',
+        totalQs: 143,
+        setsCount: 2,
+        topicKey: 'history',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 143', total: 43 }
+        ]
+    },
+
+    // 4. GEOGRAPHY (503 MCQs)
+    {
+        id: 'geo_rivers',
+        subject: 'Geography',
+        title: 'Indian River Systems & Drainage',
+        meta: 'Geography • 180 Questions • 2 Sets',
+        totalQs: 180,
+        setsCount: 2,
+        topicKey: 'geography',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 180', total: 80 }
+        ]
+    },
+    {
+        id: 'geo_physio',
+        subject: 'Geography',
+        title: 'Himalayas, Plains, Plateaus & Islands',
+        meta: 'Geography • 160 Questions • 2 Sets',
+        totalQs: 160,
+        setsCount: 2,
+        topicKey: 'geography',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 160', total: 60 }
+        ]
+    },
+    {
+        id: 'geo_climate',
+        subject: 'Geography',
+        title: 'Climate, Monsoons, Soils & Minerals',
+        meta: 'Geography • 163 Questions • 2 Sets',
+        totalQs: 163,
+        setsCount: 2,
+        topicKey: 'geography',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 163', total: 63 }
+        ]
+    },
+
+    // 5. BIOLOGY (317 MCQs)
+    {
+        id: 'bio_diseases',
+        subject: 'Biology',
+        title: 'Human Diseases, Pathogens & Immunity',
+        meta: 'Biology • 160 Questions • 2 Sets',
+        totalQs: 160,
+        setsCount: 2,
+        topicKey: 'biology',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 160', total: 60 }
+        ]
+    },
+    {
+        id: 'bio_nutrition',
+        subject: 'Biology',
+        title: 'Vitamins, Nutrition, Blood & Physiology',
+        meta: 'Biology • 157 Questions • 2 Sets',
+        totalQs: 157,
+        setsCount: 2,
+        topicKey: 'biology',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 157', total: 57 }
+        ]
+    },
+
+    // 6. POLITY (271 MCQs)
+    {
+        id: 'pol_rights',
+        subject: 'Polity',
+        title: 'Preamble, Fundamental Rights & DPSP',
+        meta: 'Polity • 150 Questions • 2 Sets',
+        totalQs: 150,
+        setsCount: 2,
+        topicKey: 'polity',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 150', total: 50 }
+        ]
+    },
+    {
+        id: 'pol_parliament',
+        subject: 'Polity',
+        title: 'Parliament, President, Courts & Amendments',
+        meta: 'Polity • 121 Questions • 2 Sets',
+        totalQs: 121,
+        setsCount: 2,
+        topicKey: 'polity',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 121', total: 21 }
+        ]
+    },
+
+    // 7. ECONOMICS (268 MCQs)
+    {
+        id: 'eco_plans',
+        subject: 'Economics',
+        title: 'Five Year Plans, NITI Aayog & GDP',
+        meta: 'Economics • 140 Questions • 2 Sets',
+        totalQs: 140,
+        setsCount: 2,
+        topicKey: 'economics',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 140', total: 40 }
+        ]
+    },
+    {
+        id: 'eco_banking',
+        subject: 'Economics',
+        title: 'RBI, Monetary Policy, Inflation & Budget',
+        meta: 'Economics • 128 Questions • 2 Sets',
+        totalQs: 128,
+        setsCount: 2,
+        topicKey: 'economics',
+        sets: [
+            { num: 1, range: 'Q 1 – 100', total: 100 },
+            { num: 2, range: 'Q 101 – 128', total: 28 }
+        ]
+    }
+];
+
+let activeCustomSubj = "All";
+let selectedCustomTopics = new Set();
+let expandedTopicIds = new Set();
+let selectedMultiCount = 50;
+
+function openCustomPracticeHub(subject = 'All') {
+    activeCustomSubj = subject;
+    renderCustomHub();
+    const modal = document.getElementById('simCustomPracticeModal');
+    if (modal) modal.classList.add('active');
+}
+
+function closeCustomPracticeHub() {
+    const modal = document.getElementById('simCustomPracticeModal');
+    if (modal) modal.classList.remove('active');
+}
+
+function selectCustomSubjectFilter(sub) {
+    activeCustomSubj = sub;
+    renderCustomHub();
+}
+
+function toggleTopicSelection(topicId) {
+    if (selectedCustomTopics.has(topicId)) {
+        selectedCustomTopics.delete(topicId);
+    } else {
+        selectedCustomTopics.add(topicId);
+    }
+    updateTopicCardSelectionUI(topicId);
+    updateMultiSelectBarUI();
+}
+
+function updateTopicCardSelectionUI(topicId) {
+    const card = document.getElementById(`topic_card_${topicId}`);
+    const cb = document.getElementById(`topic_cb_${topicId}`);
+    const isSelected = selectedCustomTopics.has(topicId);
+    if (card) card.classList.toggle('selected', isSelected);
+    if (cb) cb.checked = isSelected;
+}
+
+function toggleExpandTopicSets(topicId) {
+    if (expandedTopicIds.has(topicId)) {
+        expandedTopicIds.delete(topicId);
+    } else {
+        expandedTopicIds.add(topicId);
+    }
+    const container = document.getElementById(`topic_sets_${topicId}`);
+    const btn = document.getElementById(`btn_toggle_sets_${topicId}`);
+    const topic = CURRICULUM_DATA.find(t => t.id === topicId);
+    const setsCount = topic ? topic.setsCount : 0;
+    
+    if (container && btn) {
+        const isExp = expandedTopicIds.has(topicId);
+        container.style.display = isExp ? 'block' : 'none';
+        btn.textContent = isExp ? `Hide Sets ▲` : `View Sets (${setsCount}) ▼`;
+    }
+}
+
+function clearCustomMultiSelection() {
+    selectedCustomTopics.clear();
+    document.querySelectorAll('.sim-topic-cb').forEach(cb => cb.checked = false);
+    document.querySelectorAll('.sim-topic-card').forEach(c => c.classList.remove('selected'));
+    updateMultiSelectBarUI();
+}
+
+function selectCustomMultiCount(count) {
+    selectedMultiCount = count;
+    [25, 50, 100].forEach(c => {
+        const chip = document.getElementById(`chipMulti${c}`);
+        if (chip) chip.classList.toggle('active', c === count);
+    });
+    const btn = document.getElementById('btnStartCustomMultiTest');
+    if (btn) btn.textContent = `Start Custom Mixed Test (${count} Qs)`;
+}
+
+function updateMultiSelectBarUI() {
+    const bar = document.getElementById('simMultiSelectBar');
+    if (!bar) return;
+    
+    if (selectedCustomTopics.size > 0) {
+        bar.style.display = 'block';
+        let pool = 0;
+        selectedCustomTopics.forEach(id => {
+            const t = CURRICULUM_DATA.find(x => x.id === id);
+            if (t) pool += t.totalQs;
+        });
+        const titleEl = document.getElementById('simMultiSelectTitle');
+        if (titleEl) {
+            titleEl.textContent = `Selected: ${selectedCustomTopics.size} Topics (Pool: ${pool} Qs)`;
+        }
+        const btn = document.getElementById('btnStartCustomMultiTest');
+        if (btn) btn.textContent = `Start Custom Mixed Test (${selectedMultiCount} Qs)`;
+    } else {
+        bar.style.display = 'none';
+    }
+}
+
+function startSingleTopicTest(topicId) {
+    const t = CURRICULUM_DATA.find(x => x.id === topicId);
+    if (!t) return;
+    closeCustomPracticeHub();
+    const subQs = APP_SIM_QUESTIONS.filter(q => q.subject.toLowerCase() === t.topicKey.toLowerCase());
+    const pool = subQs.length > 0 ? subQs : APP_SIM_QUESTIONS;
+    const shuffled = [...pool].sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, Math.min(50, shuffled.length));
+    startPracticeTest(selected, `${t.title} (50 Qs Topic Drill)`);
+}
+
+function startTopicSetDrill(topicId, setNum, count) {
+    const t = CURRICULUM_DATA.find(x => x.id === topicId);
+    if (!t) return;
+    closeCustomPracticeHub();
+    const subQs = APP_SIM_QUESTIONS.filter(q => q.subject.toLowerCase() === t.topicKey.toLowerCase());
+    const pool = subQs.length > 0 ? subQs : APP_SIM_QUESTIONS;
+    const shuffled = [...pool].sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, Math.min(count, shuffled.length));
+    startPracticeTest(selected, `${t.title} • Set ${setNum} (${count} Qs)`);
+}
+
+function startCustomMultiTest() {
+    if (selectedCustomTopics.size === 0) return;
+    closeCustomPracticeHub();
+    
+    const matchedKeys = new Set();
+    selectedCustomTopics.forEach(id => {
+        const t = CURRICULUM_DATA.find(x => x.id === id);
+        if (t) matchedKeys.add(t.topicKey.toLowerCase());
+    });
+    
+    let matchedQs = APP_SIM_QUESTIONS.filter(q => matchedKeys.has(q.subject.toLowerCase()));
+    if (matchedQs.length === 0) matchedQs = APP_SIM_QUESTIONS;
+    
+    const shuffled = [...matchedQs].sort(() => 0.5 - Math.random());
+    const count = Math.min(selectedMultiCount, shuffled.length);
+    const selected = shuffled.slice(0, count);
+    
+    startPracticeTest(selected, `Custom Mixed Mock (${count} Qs • ${selectedCustomTopics.size} Topics)`);
+}
+
+function renderCustomHub() {
+    const chipsContainer = document.getElementById('simCustomSubjChips');
+    if (chipsContainer) {
+        chipsContainer.innerHTML = '';
+        const subjects = [
+            { name: "All", count: "6,517" },
+            { name: "English", count: "2,620" },
+            { name: "Static GK", count: "1,554" },
+            { name: "History", count: "984" },
+            { name: "Geography", count: "503" },
+            { name: "Biology", count: "317" },
+            { name: "Polity", count: "271" },
+            { name: "Economics", count: "268" }
+        ];
+        subjects.forEach(s => {
+            const btn = document.createElement('button');
+            btn.className = `sim-count-chip ${s.name === activeCustomSubj ? 'active' : ''}`;
+            btn.style.flex = 'none';
+            btn.style.padding = '4px 10px';
+            btn.style.fontSize = '10.5px';
+            btn.textContent = `${s.name} (${s.count})`;
+            btn.onclick = () => selectCustomSubjectFilter(s.name);
+            chipsContainer.appendChild(btn);
+        });
+    }
+
+    const container = document.getElementById('simCustomSetsContainer');
+    if (!container) return;
+    container.innerHTML = '';
+
+    const filtered = activeCustomSubj === "All"
+        ? CURRICULUM_DATA
+        : CURRICULUM_DATA.filter(t => t.subject === activeCustomSubj);
+
+    filtered.forEach(t => {
+        const isChecked = selectedCustomTopics.has(t.id);
+        const isExp = expandedTopicIds.has(t.id);
+        
+        let setsHtml = '';
+        t.sets.forEach(s => {
+            setsHtml += `
+                <div class="sim-mini-set-card">
+                    <div class="sim-mini-set-header">
+                        <span class="sim-mini-set-title">Set ${s.num} (${s.range})</span>
+                        <span class="sim-badge-green" style="font-size:9.5px; padding:1.5px 6px;">${s.total} Qs</span>
+                    </div>
+                    <div class="sim-mini-set-actions">
+                        <button class="sim-btn-secondary" style="font-size:10px; padding:4px 8px; flex:1; height:28px;" onclick="startTopicSetDrill('${t.id}', ${s.num}, 50)">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            <span>50 Qs Drill</span>
+                        </button>
+                        <button class="sim-btn-primary" style="font-size:10px; padding:4px 8px; flex:1; height:28px;" onclick="startTopicSetDrill('${t.id}', ${s.num}, ${s.total})">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                            <span>Full Set (${s.total} Qs)</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+        });
+
+        const card = document.createElement('div');
+        card.className = `sim-topic-card ${isChecked ? 'selected' : ''}`;
+        card.id = `topic_card_${t.id}`;
+        card.innerHTML = `
+            <div class="sim-topic-header">
+                <input type="checkbox" class="sim-topic-cb" id="topic_cb_${t.id}" ${isChecked ? 'checked' : ''} onchange="toggleTopicSelection('${t.id}')">
+                <div class="sim-topic-info">
+                    <div class="sim-topic-title">${t.title}</div>
+                    <div class="sim-topic-meta">${t.meta}</div>
+                </div>
+                <span class="sim-badge-green" style="font-size:9.5px; padding:2px 7px;">0/${t.setsCount} Done</span>
+            </div>
+            
+            <div class="sim-topic-progress-bar">
+                <div class="sim-topic-progress-fill" style="width:0%;"></div>
+            </div>
+
+            <div class="sim-topic-actions">
+                <button class="sim-btn-secondary" style="flex:1; font-size:11px; padding:6px 10px; height:32px;" onclick="startSingleTopicTest('${t.id}')">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                    <span>Test All (50 Qs)</span>
+                </button>
+                <button class="sim-btn-secondary" id="btn_toggle_sets_${t.id}" style="color:#818cf8; border-color:#6366f1; font-size:11px; padding:6px 10px; height:32px;" onclick="toggleExpandTopicSets('${t.id}')">
+                    ${isExp ? 'Hide Sets ▲' : `View Sets (${t.setsCount}) ▼`}
+                </button>
+            </div>
+
+            <div class="sim-topic-sets-container" id="topic_sets_${t.id}" style="display:${isExp ? 'block' : 'none'};">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <span style="font-size:10px; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:0.5px;">Choose 100-Question Set:</span>
+                    <span style="font-size:9.5px; color:#64748b;">${t.sets.length} Sets Total</span>
+                </div>
+                ${setsHtml}
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    updateMultiSelectBarUI();
+}
+
+function renderPracticeSubjectShortcuts() {
+    const container = document.getElementById('simPracticeSubjectShortcuts');
+    if (!container) return;
+    container.innerHTML = '';
+
+    const list = [
+        { name: "English Vocab & Grammar", subject: "English", count: "53 Sets • 2,620 MCQs", badge: "9 Topics", icon: "📖" },
+        { name: "Static GK & Art Culture", subject: "Static GK", count: "32 Sets • 1,554 MCQs", badge: "33 Topics", icon: "🏛️" },
+        { name: "Indian History (Ancient, Medieval, Modern)", subject: "History", count: "20 Sets • 984 MCQs", badge: "18 Topics", icon: "🏺" },
+        { name: "Geography & Ecology", subject: "Geography", count: "10 Sets • 503 MCQs", badge: "6 Sets", icon: "🌍" },
+        { name: "Biology & Human Health", subject: "Biology", count: "6 Sets • 317 MCQs", badge: "4 Sets", icon: "🧬" },
+        { name: "Indian Polity & Constitution", subject: "Polity", count: "5 Sets • 271 MCQs", badge: "3 Sets", icon: "⚖️" },
+        { name: "Economics & Banking", subject: "Economics", count: "5 Sets • 268 MCQs", badge: "3 Sets", icon: "📈" }
+    ];
+
+    list.forEach(s => {
+        const item = document.createElement('div');
+        item.className = 'sim-app-item';
+        item.style.cursor = 'pointer';
+        item.onclick = () => openCustomPracticeHub(s.subject);
+        item.innerHTML = `
+            <div class="sim-app-icon" style="background:#1c2638; border:1px solid #2b384e; font-size:16px;">${s.icon}</div>
+            <div class="sim-app-info">
+                <div class="sim-app-name" style="font-size:12px; font-weight:700; color:#f8fafc;">${s.name}</div>
+                <div class="sim-app-pkg" style="font-size:10px; color:#94a3b8;">${s.count}</div>
+            </div>
+            <span class="sim-brand-badge" style="background:#1c2638; color:#818cf8; border:1px solid #2b384e; font-size:10px;">${s.badge} ➔</span>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function renderPracticePage() {
+    const mistakesCount = simState.mistakeIds.size;
+    const countText = document.getElementById('simMistakesCountText');
+    if (countText) countText.textContent = mistakesCount;
+    renderPracticeSubjectShortcuts();
+}
+
+function startPracticeTestSession() {
+    const count = simState.practiceCount;
+    const shuffled = [...APP_SIM_QUESTIONS].sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, Math.min(count, shuffled.length));
+    startPracticeTest(selected, `Practice Test (${count} Qs)`);
+}
+
+function openDailyBankReview() {
+    const list = document.getElementById('simDailyReviewList');
+    if (!list) return;
+    list.innerHTML = '';
+    const todayQs = getTodayBankQuestions();
+
+    todayQs.forEach((q, idx) => {
+        const card = document.createElement('div');
+        card.className = 'sim-card';
+        card.style.marginBottom = '8px';
+        card.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                <span class="sim-badge-amber">Q${idx + 1} • ${q.category || q.subject}</span>
+                <span class="sim-badge-green">${simState.masteredIds.has(q.id) ? '✓ Mastered' : 'Pending'}</span>
+            </div>
+            <div style="font-size:12px; font-weight:700; color:#f8fafc; line-height:1.35; margin-bottom:6px;">${q.question}</div>
+            <div style="font-size:10.5px; color:#10b981; background:#064e3b33; border:1px solid #064e3b; padding:4px 8px; border-radius:6px;">
+                <b>Correct:</b> ${q.options[q.correctIndex]}
+            </div>
+        `;
+        list.appendChild(card);
+    });
+
+    const dialog = document.getElementById('simDailyReviewDialog');
+    if (dialog) dialog.classList.add('active');
+}
+
+function closeDailyBankReview() {
+    const dialog = document.getElementById('simDailyReviewDialog');
+    if (dialog) dialog.classList.remove('active');
+}
+
+// =========================================================
+// 5. MANAGE QUESTIONS MODAL
+// =========================================================
+function openSimManageModal() {
+    const modal = document.getElementById('simManageModal');
+    if (modal) modal.classList.add('active');
+}
+
+function closeSimManageModal() {
+    const modal = document.getElementById('simManageModal');
+    if (modal) modal.classList.remove('active');
+}
+
+function handleSimAddQuestion() {
+    const qText = document.getElementById('simNewQuestionText').value.trim();
+    const o1 = document.getElementById('simNewOpt1').value.trim();
+    const o2 = document.getElementById('simNewOpt2').value.trim();
+    const o3 = document.getElementById('simNewOpt3').value.trim();
+    const o4 = document.getElementById('simNewOpt4').value.trim();
+
+    if (!qText || !o1 || !o2) {
+        showSimToast("Please enter question and at least 2 options!");
+        return;
+    }
+
+    const newQ = {
+        id: Date.now(),
+        question: qText,
+        options: [o1, o2, o3 || "N/A", o4 || "N/A"],
+        correctIndex: 0,
+        category: "Custom",
+        subject: "custom"
+    };
+
+    APP_SIM_QUESTIONS.unshift(newQ);
+    document.getElementById('simNewQuestionText').value = '';
+    document.getElementById('simNewOpt1').value = '';
+    document.getElementById('simNewOpt2').value = '';
+    document.getElementById('simNewOpt3').value = '';
+    document.getElementById('simNewOpt4').value = '';
+
+    showSimToast("Custom question added to pool!");
+    closeSimManageModal();
+    renderAllSimPages();
+}
+
+    </script>
+
 </body>
 </html>

@@ -32,8 +32,10 @@ class CustomPracticeActivity : AppCompatActivity() {
     private val countButtonMap = mutableMapOf<MaterialButton, Int>()
 
     companion object {
-        fun start(context: Context) {
-            val intent = Intent(context, CustomPracticeActivity::class.java)
+        fun start(context: Context, initialSubject: String? = null) {
+            val intent = Intent(context, CustomPracticeActivity::class.java).apply {
+                if (initialSubject != null) putExtra("initial_subject", initialSubject)
+            }
             context.startActivity(intent)
         }
     }
@@ -50,6 +52,11 @@ class CustomPracticeActivity : AppCompatActivity() {
         setupMultiSelectControls()
         setupRecyclerView()
         loadData()
+
+        val initialSubject = intent.getStringExtra("initial_subject")
+        if (!initialSubject.isNullOrBlank()) {
+            selectSubjectFilter(initialSubject)
+        }
     }
 
     override fun onResume() {
