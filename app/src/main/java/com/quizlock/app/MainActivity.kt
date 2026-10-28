@@ -69,6 +69,11 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         updatePermissionStatus()
         updateDailyTargetUI()
+        try {
+            com.quizlock.app.widget.QuizWidgetProvider.updateAllWidgets(this)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     private fun setupUI() {

@@ -97,6 +97,22 @@
             </intent-filter>
         </receiver>
 
+        <!-- Home Screen Interactive Quiz Widget Receiver -->
+        <receiver
+            android:name=".widget.QuizWidgetProvider"
+            android:label="@string/widget_name"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.quizlock.app.widget.ACTION_SELECT_OPTION" />
+                <action android:name="com.quizlock.app.widget.ACTION_NEXT_QUESTION" />
+                <action android:name="com.quizlock.app.widget.ACTION_REFRESH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/quiz_widget_info" />
+        </receiver>
+
     </application>
 
 </manifest>

@@ -25,4 +25,10 @@
     <!-- Practice Test -->
     <string name="practice_test_title">Self Practice Test</string>
     <string name="practice_test_subtitle">Practice starting &amp; active questions</string>
+
+    <!-- Home Screen Quiz Widget -->
+    <string name="widget_name">Quizee Widget</string>
+    <string name="widget_description">Interactive Daily SSC Quiz directly on your home screen</string>
+    <string name="widget_next">Next Question ➔</string>
+    <string name="widget_tap_hint">Tap an option to test yourself</string>
 </resources>
