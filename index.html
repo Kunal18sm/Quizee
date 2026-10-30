@@ -1960,6 +1960,7 @@
 }
 
     </style>
+    <link rel="stylesheet" href="assets/web_tests.css">
 </head>
 <body>
 
@@ -1977,6 +1978,10 @@
                 <span class="logo-text">Quizee</span>
             </a>
             <div class="nav-actions">
+                <a href="#online-tests" class="nav-btn nav-btn-tests">
+                    <span class="pulse-indicator"></span>
+                    <span>🎯 Online Tests (Set-Wise)</span>
+                </a>
                 <button class="nav-btn nav-btn-test" onclick="openAppSimulator()" title="Live App Simulator">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                     <span>📱 Test App</span>
@@ -1998,6 +2003,10 @@
                     Quizee overlays a quick 5-question quiz whenever you open distracting apps. Pass the quiz to unlock, turning mindless scrolling into effortless daily study.
                 </p>
                 <div class="hero-actions">
+                    <a href="#online-tests" class="btn-online-test">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                        <span>🎯 Practice Online Tests (Set-Wise)</span>
+                    </a>
                     <button type="button" class="btn-test-app" onclick="openAppSimulator()" title="Launch in-browser interactive Android app">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
                         <span>📱 Test App (Live Simulator)</span>
@@ -2123,6 +2132,84 @@
                 <div class="stat-label">Free &amp; Offline</div>
             </div>
         </section>
+
+        <!-- ============================================== -->
+        <!-- SET-WISE ONLINE TESTS PORTAL SECTION           -->
+        <!-- ============================================== -->
+        <section id="online-tests" class="tests-portal-section">
+            <div class="portal-header-box">
+                <div class="portal-badge">
+                    <span class="pulse-indicator"></span>
+                    Interactive Online Test Series
+                </div>
+                <h2 class="portal-title">SSC CGL <span>Set-Wise Practice Tests</span></h2>
+                <p class="portal-desc">
+                    Practice all 6,517 high-yield questions categorized into 64 exam topics and structured 100-question sets. Choose 50-question rapid drills or full 100-question sets with instant answer feedback, bilingual support, and in-depth performance reviews.
+                </p>
+                <div class="portal-stats-ticker">
+                    <div class="portal-stat-pill"><b>7</b> Subjects</div>
+                    <div class="portal-stat-pill"><b>64</b> Topics</div>
+                    <div class="portal-stat-pill"><b>106</b> Sets</div>
+                    <div class="portal-stat-pill"><b>6,517</b> MCQs</div>
+                    <div class="portal-stat-pill" style="color:#10b981;"><b>100% Free</b> &amp; Live</div>
+                </div>
+            </div>
+
+            <!-- Last Practiced Quick Resume Banner -->
+            <div class="portal-resume-banner" id="portalResumeBanner"></div>
+
+            <!-- Subject Filter Tabs -->
+            <div class="portal-tabs-wrap">
+                <div class="portal-tabs-scroll" id="portalSubjectTabs">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Search Bar & Controls -->
+            <div class="portal-controls-bar">
+                <div class="portal-search-box">
+                    <svg class="portal-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" class="portal-search-input" id="portalSearchInput" placeholder="Search topics, sets, or subjects... (e.g. Synonyms, Indus Valley, DPSP, Dances)">
+                    <button class="portal-search-clear" id="portalSearchClear">✕</button>
+                </div>
+                <div class="portal-filters-right">
+                    <select class="portal-select-filter" id="portalStatusSelect">
+                        <option value="all">All Sets Status</option>
+                        <option value="unattempted">Unattempted Sets</option>
+                        <option value="mastered">🏆 Mastered (≥80%)</option>
+                        <option value="needs_work">⚠️ Needs Revision (&lt;80%)</option>
+                    </select>
+                    <button class="btn-toggle-all-sets" id="btnToggleAllSets" onclick="window.toggleAllTopicsExpand()">
+                        Expand All Sets ▼
+                    </button>
+                </div>
+            </div>
+
+            <!-- Topics Grid Container -->
+            <div class="topics-grid" id="portalTopicsGrid">
+                <!-- 64 Topic Cards rendered dynamically with live set cards -->
+            </div>
+        </section>
+
+        <!-- Sticky Floating Multi-Select Dock -->
+        <div class="web-multi-dock" id="portalMultiDock">
+            <div class="dock-header-row">
+                <div class="dock-title">
+                    <span id="dockSelectedCountText">Selected: 2 Topics (Pool: 800 Qs)</span>
+                </div>
+                <button class="btn-clear-selection" onclick="window.clearTopicSelections()">Clear Selection ✕</button>
+            </div>
+            <div class="dock-actions-row">
+                <div class="dock-count-chips">
+                    <button class="dock-chip" onclick="window.selectMultiCount(25)">25 Qs</button>
+                    <button class="dock-chip active" onclick="window.selectMultiCount(50)">50 Qs</button>
+                    <button class="dock-chip" onclick="window.selectMultiCount(100)">100 Qs</button>
+                </div>
+                <button class="btn-start-multi-mixed" id="btnStartMultiMixed" onclick="window.startCustomMixedTest()">
+                    🚀 Start Custom Mixed Test (50 Qs)
+                </button>
+            </div>
+        </div>
 
         <!-- Features Section -->
         <section>
@@ -3912,5 +3999,110 @@ function handleSimAddQuestion() {
 
     </script>
 
+    <!-- ============================================== -->
+    <!-- FULLSCREEN WEB TEST PLAYER MODAL               -->
+    <!-- ============================================== -->
+    <div class="web-test-modal-overlay" id="webTestModal">
+        <div class="web-test-window">
+            <!-- Header -->
+            <div class="web-test-header">
+                <button class="btn-test-exit" onclick="window.confirmExitTest()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    <span>Exit Test</span>
+                </button>
+                <div class="test-header-center">
+                    <div class="test-header-title" id="webTestHeaderTitle">Practice Test</div>
+                    <div class="test-header-progress" id="webTestHeaderProgress">Question 1 of 50</div>
+                </div>
+                <div class="test-header-right">
+                    <span class="test-score-pill" id="webTestScorePill">Score: 0</span>
+                    <button class="btn-test-translate" id="btnTestTranslate" onclick="window.toggleTestLanguage()">अ / A Hindi</button>
+                </div>
+            </div>
+
+            <!-- Horizontal Progress Bar -->
+            <div class="web-test-progress-bar">
+                <div class="web-test-progress-fill" id="webTestProgressFill"></div>
+            </div>
+
+            <!-- Active Test Body -->
+            <div class="web-test-body" id="webTestActiveBody">
+                <div class="web-question-card">
+                    <span class="question-category-tag" id="webQuestionCategory">General</span>
+                    <div class="question-text-content" id="webQuestionText">Loading question...</div>
+                </div>
+                <div class="web-options-grid" id="webOptionsContainer">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Active Test Footer Action Bar -->
+            <div class="web-test-footer" id="webTestFooter">
+                <button class="btn-test-skip" id="btnTestSkip" onclick="window.handleSkipQuestion()">Skip Question</button>
+                <button class="btn-test-next" id="btnTestNext" onclick="window.handleNextQuestion()" disabled>Next Question ➔</button>
+            </div>
+
+            <!-- Test Results View -->
+            <div class="web-test-results-view" id="webTestResultsView">
+                <div class="results-emoji-burst">🎉</div>
+                <h3 class="results-main-title" id="resultsMainTitle">Test Completed!</h3>
+                <div class="results-subtitle" id="resultsSubtitle">Practice Session Summary</div>
+
+                <div class="results-score-card">
+                    <div class="results-score-digits" id="resultsScoreDigits">48 / 50</div>
+                    <div class="results-accuracy-pill" id="resultsAccuracyPill">96% Accuracy</div>
+                    <div class="results-badge-callout" id="resultsBadgeCallout">🏆 Outstanding! Master Level</div>
+
+                    <div class="results-metrics-grid">
+                        <div>
+                            <div class="results-metric-val" style="color:#10b981;" id="resultsMetricCorrect">48</div>
+                            <div class="results-metric-lbl">Correct</div>
+                        </div>
+                        <div>
+                            <div class="results-metric-val" style="color:#ef4444;" id="resultsMetricWrong">2</div>
+                            <div class="results-metric-lbl">Wrong</div>
+                        </div>
+                        <div>
+                            <div class="results-metric-val" style="color:#f59e0b;" id="resultsMetricSkipped">0</div>
+                            <div class="results-metric-lbl">Skipped</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-action-buttons">
+                    <button class="btn-results-retest" onclick="window.retestCurrentSet()">
+                        <span>🔁 Retest This Set</span>
+                    </button>
+                    <button class="btn-results-review" id="btnToggleReview" onclick="window.toggleResultsReview()">
+                        <span>📋 View Detailed Question Review</span>
+                    </button>
+                    <button class="btn-results-close" onclick="window.closeWebTest()">
+                        <span>← Return to Curriculum</span>
+                    </button>
+                </div>
+
+                <!-- Review Accordion List -->
+                <div class="results-review-accordion" id="resultsReviewList">
+                    <!-- Populated dynamically with full question text, your answer, correct answer -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Dialog for Exiting Test -->
+    <div class="web-confirm-modal" id="webExitConfirmModal">
+        <div class="confirm-box">
+            <div class="confirm-title">Exit Practice Test?</div>
+            <div class="confirm-desc">Are you sure you want to exit? Your current in-progress test session will not be saved.</div>
+            <div class="confirm-actions">
+                <button class="btn-confirm-stay" id="btnConfirmStay">Continue Test</button>
+                <button class="btn-confirm-exit" id="btnConfirmExit">Exit Test</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question Banks & Engine Scripts -->
+    <script src="data/all_questions.js"></script>
+    <script src="assets/web_tests.js"></script>
 </body>
 </html>
