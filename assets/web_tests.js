@@ -1,7 +1,6 @@
 /**
  * QUIZEE WEB TESTS PORTAL & TEST PLAYER ENGINE
- * Complete Set-Wise Test Series directly on the Web
- * 1:1 Behavior with Quizee Android App
+ * Clean, Minimal & High-Performance
  */
 
 (function () {
@@ -9,25 +8,23 @@
 
     const CHUNK_SIZE = 100;
     const SUBJECT_CONFIG = [
-        { key: 'english', name: 'English', icon: '📖', badge: 'English Vocab & Grammar' },
-        { key: 'static_gk', name: 'Static GK', icon: '🏛️', badge: 'Static GK & Art Culture' },
-        { key: 'history', name: 'History', icon: '🏺', badge: 'Ancient, Medieval & Modern History' },
-        { key: 'geography', name: 'Geography', icon: '🌍', badge: 'Indian & World Geography' },
-        { key: 'biology', name: 'Biology', icon: '🧬', badge: 'General Science: Biology' },
-        { key: 'polity', name: 'Polity', icon: '⚖️', badge: 'Indian Polity & Constitution' },
-        { key: 'economics', name: 'Economics', icon: '📈', badge: 'Indian & Global Economics' }
+        { key: 'english', name: 'English', icon: '📖' },
+        { key: 'static_gk', name: 'Static GK', icon: '🏛️' },
+        { key: 'history', name: 'History', icon: '🏺' },
+        { key: 'geography', name: 'Geography', icon: '🌍' },
+        { key: 'biology', name: 'Biology', icon: '🧬' },
+        { key: 'polity', name: 'Polity', icon: '⚖️' },
+        { key: 'economics', name: 'Economics', icon: '📈' }
     ];
 
-    // Global State
+    // Global State - Default to English for a clean, uncluttered start!
     let QUIZEE_CURRICULUM = [];
     let portalState = {
-        activeSubject: 'All',
+        activeSubject: 'English',
         searchQuery: '',
-        statusFilter: 'all', // all, unattempted, mastered, needs_work
         selectedTopics: new Set(),
         expandedTopics: new Set(),
-        selectedMultiCount: 50,
-        allExpanded: false
+        selectedMultiCount: 50
     };
 
     let activeTest = {
@@ -40,7 +37,7 @@
         score: 0,
         isAnswerLocked: false,
         isHindiMode: false,
-        reviewItems: [], // { qNum, question, selectedIndex, isCorrect }
+        reviewItems: [],
         timerSeconds: 0,
         timerInterval: null
     };
@@ -53,7 +50,7 @@
         if (catName.startsWith('Modern History:')) return catName.replace('Modern History:', '').trim() + ' (Modern)';
         if (catName.startsWith('Medieval History:')) return catName.replace('Medieval History:', '').trim() + ' (Medieval)';
         if (catName.startsWith('Ancient History:')) return catName.replace('Ancient History:', '').trim() + ' (Ancient)';
-        if (catName === subjectName) return `${subjectName} (Complete Bank)`;
+        if (catName === subjectName) return `${subjectName} (All Topics)`;
         return catName.trim();
     }
 
@@ -61,7 +58,6 @@
         if (window.QUIZEE_ALL_QUESTIONS && Object.keys(window.QUIZEE_ALL_QUESTIONS).length > 0) {
             return window.QUIZEE_ALL_QUESTIONS;
         }
-        // Fallback fetch
         const loaded = {};
         const fetchPromises = SUBJECT_CONFIG.map(async sub => {
             try {
@@ -72,7 +68,6 @@
                     loaded[sub.key] = [];
                 }
             } catch (e) {
-                console.warn(`Could not fetch data/${sub.key}_questions.json:`, e);
                 loaded[sub.key] = [];
             }
         });
@@ -88,13 +83,10 @@
             const qs = data[sub.key] || [];
             if (qs.length === 0) return;
 
-            // Group by category preserving insertion order
             const categoryMap = new Map();
             qs.forEach(q => {
                 const cat = (q.category && q.category.trim()) ? q.category.trim() : sub.name;
-                if (!categoryMap.has(cat)) {
-                    categoryMap.set(cat, []);
-                }
+                if (!categoryMap.has(cat)) categoryMap.set(cat, []);
                 categoryMap.get(cat).push(q);
             });
 
@@ -117,22 +109,13 @@
                     const isCompleted = localStorage.getItem(`${setKey}_completed`) === 'true';
                     const score = parseInt(localStorage.getItem(`${setKey}_score`) || '0', 10);
                     const totalAttempted = parseInt(localStorage.getItem(`${setKey}_total`) || `${chunkQuestions.length}`, 10);
-                    const timestamp = parseInt(localStorage.getItem(`${setKey}_timestamp`) || '0', 10);
                     const accuracy = (isCompleted && totalAttempted > 0) ? Math.min(100, Math.round((score / totalAttempted) * 100)) : 0;
 
-                    let statusBadge = 'Unattempted';
-                    let statusClass = 'badge-unattempted';
+                    let statusBadge = '';
                     if (isCompleted) {
-                        if (accuracy >= 80) {
-                            statusBadge = `🏆 Mastered (${accuracy}%)`;
-                            statusClass = 'badge-mastered';
-                        } else if (accuracy >= 50) {
-                            statusBadge = `🎯 Good (${accuracy}%)`;
-                            statusClass = 'badge-good';
-                        } else {
-                            statusBadge = `⚠️ Needs Work (${accuracy}%)`;
-                            statusClass = 'badge-needs-work';
-                        }
+                        if (accuracy >= 80) statusBadge = `🏆 ${accuracy}%`;
+                        else if (accuracy >= 50) statusBadge = `🎯 ${accuracy}%`;
+                        else statusBadge = `⚠️ ${accuracy}%`;
                     }
 
                     sets.push({
@@ -149,9 +132,7 @@
                         score,
                         totalAttempted,
                         accuracy,
-                        statusBadge,
-                        statusClass,
-                        timestamp
+                        statusBadge
                     });
                 }
 
@@ -178,7 +159,6 @@
                 subjectKey: sub.key,
                 name: sub.name,
                 icon: sub.icon,
-                badge: sub.badge,
                 totalQuestions: qs.length,
                 totalSets: topics.reduce((acc, t) => acc + t.sets.length, 0),
                 topics
@@ -197,19 +177,16 @@
         if (!container) return;
 
         let totalSetsAll = 0;
-        let totalQsAll = 0;
-        QUIZEE_CURRICULUM.forEach(s => {
-            totalSetsAll += s.totalSets;
-            totalQsAll += s.totalQuestions;
-        });
+        QUIZEE_CURRICULUM.forEach(s => { totalSetsAll += s.totalSets; });
 
+        // English first, then others, and All at the end
         const tabs = [
-            { name: 'All', icon: '⚡', count: `${totalSetsAll} Sets` },
             ...QUIZEE_CURRICULUM.map(s => ({
                 name: s.name,
                 icon: s.icon,
                 count: `${s.totalSets} Sets`
-            }))
+            })),
+            { name: 'All', icon: '✨', count: `${totalSetsAll} Sets` }
         ];
 
         container.innerHTML = tabs.map(tab => `
@@ -241,19 +218,18 @@
 
         try {
             const data = JSON.parse(raw);
-            const timeAgo = formatTimeAgo(data.timestamp || Date.now());
             const acc = data.total > 0 ? Math.round((data.score / data.total) * 100) : 0;
 
             banner.innerHTML = `
                 <div class="resume-info">
                     <div class="resume-icon-circle">🎯</div>
                     <div>
-                        <div class="resume-title">Last Practiced: ${data.title}</div>
-                        <div class="resume-meta">Score: <b>${data.score} / ${data.total}</b> (${acc}% Accuracy) • <span>Attempted ${timeAgo}</span></div>
+                        <div class="resume-title">Resume: ${data.title}</div>
+                        <div class="resume-meta">Last Score: <b>${data.score}/${data.total}</b> (${acc}%)</div>
                     </div>
                 </div>
                 <button class="btn-resume" id="btnResumeLast">
-                    <span>🔁 Retest This Set</span>
+                    <span>Retest Set 🔁</span>
                 </button>
             `;
             banner.style.display = 'flex';
@@ -269,17 +245,6 @@
         }
     }
 
-    function formatTimeAgo(timestamp) {
-        const diff = Math.max(0, Date.now() - timestamp);
-        const mins = Math.floor(diff / 60000);
-        if (mins < 1) return 'just now';
-        if (mins < 60) return `${mins}m ago`;
-        const hours = Math.floor(mins / 60);
-        if (hours < 24) return `${hours}h ago`;
-        const days = Math.floor(hours / 24);
-        return `${days}d ago`;
-    }
-
     function renderTopicsGrid() {
         const grid = document.getElementById('portalTopicsGrid');
         if (!grid) return;
@@ -288,11 +253,10 @@
 
         if (filtered.length === 0) {
             grid.innerHTML = `
-                <div style="grid-column: 1 / -1; text-align:center; padding: 48px 20px; background:#151d2c; border:1px dashed #2b384e; border-radius:16px;">
-                    <div style="font-size:36px; margin-bottom:8px;">🔍</div>
-                    <div style="font-size:16px; font-weight:700; color:#f8fafc;">No matching topics or sets found</div>
-                    <div style="font-size:13px; color:#94a3b8; margin-top:4px;">Try clearing your search keyword or changing status filter.</div>
-                    <button class="btn-topic-drill" style="margin-top:14px; max-width:180px; display:inline-flex;" onclick="window.clearPortalFilters()">Reset Filters</button>
+                <div style="grid-column: 1 / -1; text-align:center; padding: 40px 20px; background:#141c2b; border:1px dashed rgba(255,255,255,0.1); border-radius:16px;">
+                    <div style="font-size:32px; margin-bottom:8px;">🔍</div>
+                    <div style="font-size:15px; font-weight:700; color:#f8fafc;">No matching topics found</div>
+                    <div style="font-size:13px; color:#94a3b8; margin-top:4px;">Try typing a different search keyword.</div>
                 </div>
             `;
             return;
@@ -305,35 +269,30 @@
             let completionPillClass = 'completion-unattempted';
             let completionPillText = `${t.completedSets}/${t.sets.length} Done`;
             if (t.completedSets === t.sets.length && t.sets.length > 0) {
-                if (t.masteredSets === t.sets.length) {
-                    completionPillClass = 'completion-mastered';
-                    completionPillText = `🏆 Mastered (${t.progressPct}%)`;
-                } else {
-                    completionPillClass = 'completion-good';
-                    completionPillText = `✓ Completed (${t.progressPct}%)`;
-                }
+                completionPillClass = t.masteredSets === t.sets.length ? 'completion-mastered' : 'completion-good';
+                completionPillText = `${t.progressPct}% Done`;
             } else if (t.completedSets > 0) {
                 completionPillClass = 'completion-progress';
-                completionPillText = `${t.completedSets}/${t.sets.length} (${t.progressPct}%)`;
+                completionPillText = `${t.completedSets}/${t.sets.length} Sets`;
             }
 
             const setsHtml = t.sets.map(s => {
                 const isUnder50 = s.totalQuestions <= 50;
                 return `
                     <div class="web-set-card" id="set_card_${s.setKey}">
-                        <div class="set-card-header">
-                            <span class="set-card-title">Set ${s.setNumber} (Q ${s.startRange} – ${s.endRange})</span>
-                            <span class="set-status-badge ${s.statusClass}">${s.statusBadge}</span>
+                        <div class="set-card-left">
+                            <span class="set-card-title">Set ${s.setNumber}</span>
+                            <span class="set-range-tag">(${s.startRange}–${s.endRange})</span>
+                            ${s.statusBadge ? `<span class="set-badge-done">${s.statusBadge}</span>` : ''}
                         </div>
-                        <div class="set-card-sub">${s.totalQuestions} Questions • Sequential Bank</div>
                         <div class="set-card-actions">
                             ${!isUnder50 ? `
                                 <button class="btn-set-50" data-action="set50" data-setkey="${s.setKey}">
-                                    ⚡ 50 Qs Drill
+                                    ⚡ 50 Qs
                                 </button>
                             ` : ''}
                             <button class="btn-set-full" data-action="setFull" data-setkey="${s.setKey}">
-                                ${isUnder50 ? `Start Test (${s.totalQuestions} Qs) ⚡` : `Full Set (${s.totalQuestions} Qs) 📖`}
+                                ${isUnder50 ? `Start (${s.totalQuestions})` : `Full (${s.totalQuestions})`}
                             </button>
                         </div>
                     </div>
@@ -343,11 +302,10 @@
             return `
                 <div class="web-topic-card ${isChecked ? 'selected' : ''}" id="topic_card_${t.topicId}">
                     <div class="topic-card-top">
-                        <input type="checkbox" class="topic-select-checkbox" data-topicid="${t.topicId}" ${isChecked ? 'checked' : ''} title="Select topic for custom mixed test">
+                        <input type="checkbox" class="topic-select-checkbox" data-topicid="${t.topicId}" ${isChecked ? 'checked' : ''} title="Select for mixed test">
                         <div class="topic-main-info">
-                            <span class="topic-subject-badge">${t.subjectName}</span>
                             <div class="topic-card-title">${t.displayName}</div>
-                            <div class="topic-card-meta">${t.totalQuestions} Questions • ${t.sets.length} Sets (100 Qs/Set)</div>
+                            <div class="topic-card-meta">${t.totalQuestions} Questions • ${t.sets.length} Sets</div>
                         </div>
                         <span class="topic-completion-pill ${completionPillClass}">${completionPillText}</span>
                     </div>
@@ -357,19 +315,15 @@
                     </div>
 
                     <div class="topic-card-actions">
-                        <button class="btn-topic-drill" data-action="topicDrill" data-topicid="${t.topicId}">
-                            ⚡ 50 Qs Topic Drill
-                        </button>
                         <button class="btn-toggle-sets" data-action="toggleSets" data-topicid="${t.topicId}">
                             <span>${isExp ? 'Hide Sets ▲' : `View Sets (${t.sets.length}) ▼`}</span>
                         </button>
+                        <button class="btn-topic-drill" data-action="topicDrill" data-topicid="${t.topicId}">
+                            ⚡ 50 Qs Drill
+                        </button>
                     </div>
 
-                    <div class="topic-sets-container" id="sets_box_${t.topicId}" style="display:${isExp ? 'block' : 'none'};">
-                        <div class="sets-container-header">
-                            <span>100-Question Exam Sets:</span>
-                            <span>${t.sets.length} Sets Total</span>
-                        </div>
+                    <div class="topic-sets-container" id="sets_box_${t.topicId}" style="display:${isExp ? 'flex' : 'none'};">
                         ${setsHtml}
                     </div>
                 </div>
@@ -388,7 +342,6 @@
             }
         });
 
-        // Search Filter
         if (portalState.searchQuery.trim()) {
             const q = portalState.searchQuery.toLowerCase().trim();
             list = list.filter(t => {
@@ -398,22 +351,12 @@
             });
         }
 
-        // Status Filter
-        if (portalState.statusFilter === 'unattempted') {
-            list = list.filter(t => t.completedSets === 0);
-        } else if (portalState.statusFilter === 'mastered') {
-            list = list.filter(t => t.masteredSets > 0);
-        } else if (portalState.statusFilter === 'needs_work') {
-            list = list.filter(t => t.completedSets > 0 && t.masteredSets < t.completedSets);
-        }
-
         return list;
     }
 
     function attachGridEventListeners(container) {
-        // Checkboxes
         container.querySelectorAll('.topic-select-checkbox').forEach(cb => {
-            cb.addEventListener('change', (e) => {
+            cb.addEventListener('change', () => {
                 const topicId = cb.getAttribute('data-topicid');
                 if (cb.checked) {
                     portalState.selectedTopics.add(topicId);
@@ -426,7 +369,6 @@
             });
         });
 
-        // Toggle Sets
         container.querySelectorAll('[data-action="toggleSets"]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const topicId = btn.getAttribute('data-topicid');
@@ -434,19 +376,20 @@
                 if (!box) return;
 
                 const isExp = portalState.expandedTopics.has(topicId);
+                const topic = findTopicById(topicId);
+                const count = topic ? topic.sets.length : 0;
                 if (isExp) {
                     portalState.expandedTopics.delete(topicId);
                     box.style.display = 'none';
-                    btn.innerHTML = `<span>View Sets ▼</span>`;
+                    btn.innerHTML = `<span>View Sets (${count}) ▼</span>`;
                 } else {
                     portalState.expandedTopics.add(topicId);
-                    box.style.display = 'block';
+                    box.style.display = 'flex';
                     btn.innerHTML = `<span>Hide Sets ▲</span>`;
                 }
             });
         });
 
-        // Topic 50 Qs Drill
         container.querySelectorAll('[data-action="topicDrill"]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const topicId = btn.getAttribute('data-topicid');
@@ -454,7 +397,6 @@
             });
         });
 
-        // Set 50 Qs Drill
         container.querySelectorAll('[data-action="set50"]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const setKey = btn.getAttribute('data-setkey');
@@ -462,7 +404,6 @@
             });
         });
 
-        // Set Full
         container.querySelectorAll('[data-action="setFull"]').forEach(btn => {
             btn.addEventListener('click', () => {
                 const setKey = btn.getAttribute('data-setkey');
@@ -483,9 +424,9 @@
             });
 
             document.getElementById('dockSelectedCountText').textContent =
-                `Selected: ${portalState.selectedTopics.size} Topics (Pool: ${totalPool.toLocaleString()} Qs)`;
+                `Selected: ${portalState.selectedTopics.size} Topics (${totalPool.toLocaleString()} Qs)`;
             document.getElementById('btnStartMultiMixed').textContent =
-                `🚀 Start Custom Mixed Test (${portalState.selectedMultiCount} Qs)`;
+                `Start Mixed Test (${portalState.selectedMultiCount} Qs) 🚀`;
             dock.style.display = 'block';
         } else {
             dock.style.display = 'none';
@@ -509,14 +450,13 @@
                         const count = is50Count ? Math.min(50, s.questions.length) : s.questions.length;
                         const qs = is50Count ? s.questions.slice(0, 50) : s.questions;
                         const title = `${t.displayName} • Set ${s.setNumber}`;
-                        const subtitle = is50Count ? `50 Qs Drill (${s.startRange}–${s.startRange + count - 1})` : `Full Set (${s.totalQuestions} Questions)`;
+                        const subtitle = is50Count ? `50 Questions Drill` : `${s.totalQuestions} Questions Set`;
                         launchWebTest(qs, title, subtitle, s.setKey);
                         return;
                     }
                 }
             }
         }
-        alert("Set could not be found.");
     }
 
     function startTopicTest(topicId) {
@@ -525,7 +465,7 @@
         const shuffled = [...t.questions].sort(() => 0.5 - Math.random());
         const count = Math.min(50, shuffled.length);
         const selected = shuffled.slice(0, count);
-        launchWebTest(selected, `${t.displayName} • Rapid Topic Drill`, `50 Questions sampled from topic bank`, null);
+        launchWebTest(selected, `${t.displayName} • Rapid Drill`, `50 Questions Drill`, null);
     }
 
     function startCustomMixedTest() {
@@ -544,21 +484,18 @@
 
         launchWebTest(
             selected,
-            `Custom Mixed Mock Test`,
-            `${count} Questions from ${portalState.selectedTopics.size} Selected Topics`,
+            `Mixed Mock Test`,
+            `${count} Questions from ${portalState.selectedTopics.size} Topics`,
             null
         );
     }
 
     // =========================================================
-    // WEB TEST PLAYER IMPLEMENTATION
+    // WEB TEST PLAYER
     // =========================================================
 
     function launchWebTest(questions, title, subtitle, setKey) {
-        if (!questions || questions.length === 0) {
-            alert("No questions available for this test.");
-            return;
-        }
+        if (!questions || questions.length === 0) return;
 
         activeTest.isOpen = true;
         activeTest.title = title;
@@ -601,9 +538,8 @@
         activeTest.isAnswerLocked = false;
         const q = activeTest.questions[index];
 
-        // Progress text & fill
         const progressEl = document.getElementById('webTestHeaderProgress');
-        if (progressEl) progressEl.textContent = `Question ${index + 1} of ${activeTest.questions.length}`;
+        if (progressEl) progressEl.textContent = `Q ${index + 1} of ${activeTest.questions.length}`;
 
         const scorePill = document.getElementById('webTestScorePill');
         if (scorePill) scorePill.textContent = `Score: ${activeTest.score}`;
@@ -614,21 +550,18 @@
             fillEl.style.width = `${pct}%`;
         }
 
-        // Category Tag
         const catTag = document.getElementById('webQuestionCategory');
         if (catTag) catTag.textContent = q.category || 'SSC Exam';
 
-        // Display question and options text
         renderQuestionTextAndOptions(q);
 
-        // Buttons state
         const skipBtn = document.getElementById('btnTestSkip');
         if (skipBtn) skipBtn.style.display = 'inline-block';
 
         const nextBtn = document.getElementById('btnTestNext');
         if (nextBtn) {
             nextBtn.disabled = true;
-            nextBtn.textContent = (index === activeTest.questions.length - 1) ? 'View Results 🏆' : 'Next Question ➔';
+            nextBtn.textContent = (index === activeTest.questions.length - 1) ? 'View Results 🏆' : 'Next ➔';
         }
 
         const scrollBody = document.getElementById('webTestActiveBody');
@@ -677,23 +610,19 @@
     function extractEmbeddedHindiQuestion(q) {
         const qParts = q.question.split('/');
         let hindiQ = q.question;
-        if (qParts.length > 1 && containsDevanagari(qParts[1])) {
+        if (qParts.length > 1 && /[ऀ-ॿ]/.test(qParts[1])) {
             hindiQ = qParts[1].trim();
         }
 
         const hindiOpts = q.options.map(opt => {
             const parts = opt.split('/');
-            if (parts.length > 1 && containsDevanagari(parts[1])) {
+            if (parts.length > 1 && /[ऀ-ॿ]/.test(parts[1])) {
                 return parts[1].trim();
             }
             return opt;
         });
 
         return { question: hindiQ, options: hindiOpts };
-    }
-
-    function containsDevanagari(text) {
-        return /[\u0900-\u097F]/.test(text);
     }
 
     function handleOptionSelected(selectedIndex) {
@@ -721,7 +650,6 @@
                 const icon = chosenBtn.querySelector('.web-option-feedback-icon');
                 if (icon) icon.textContent = '✕';
             }
-            // Highlight correct option
             if (currentQ.correctIndex < allButtons.length) {
                 const correctBtn = allButtons[currentQ.correctIndex];
                 correctBtn.classList.add('opt-correct');
@@ -737,7 +665,6 @@
             isCorrect
         });
 
-        // Hide skip, enable next
         const skipBtn = document.getElementById('btnTestSkip');
         if (skipBtn) skipBtn.style.display = 'none';
 
@@ -753,7 +680,6 @@
         const allButtons = document.querySelectorAll('.web-option-btn');
         allButtons.forEach(b => b.disabled = true);
 
-        // Highlight correct option green
         if (currentQ.correctIndex < allButtons.length) {
             const correctBtn = allButtons[currentQ.correctIndex];
             correctBtn.classList.add('opt-correct');
@@ -806,23 +732,17 @@
         document.getElementById('resultsMetricSkipped').textContent = skipped;
 
         let badgeCallout = '';
-        if (percentage >= 80) {
-            badgeCallout = `🏆 Outstanding! Master Level (${percentage}%)`;
-        } else if (percentage >= 50) {
-            badgeCallout = `🎯 Good Performance! Well done (${percentage}%)`;
-        } else {
-            badgeCallout = `⚠️ Needs Revision (${percentage}%) • Focus on weak questions`;
-        }
+        if (percentage >= 80) badgeCallout = `🏆 Mastered (${percentage}%)`;
+        else if (percentage >= 50) badgeCallout = `🎯 Good Job (${percentage}%)`;
+        else badgeCallout = `⚠️ Needs Practice (${percentage}%)`;
         document.getElementById('resultsBadgeCallout').textContent = badgeCallout;
 
-        // Save progress if this test belongs to a specific set
         if (activeTest.setKey) {
             localStorage.setItem(`${activeTest.setKey}_completed`, 'true');
             localStorage.setItem(`${activeTest.setKey}_score`, correct.toString());
             localStorage.setItem(`${activeTest.setKey}_total`, total.toString());
             localStorage.setItem(`${activeTest.setKey}_timestamp`, Date.now().toString());
 
-            // Save last practiced
             localStorage.setItem('quizee_last_practiced', JSON.stringify({
                 setKey: activeTest.setKey,
                 title: activeTest.title,
@@ -831,13 +751,11 @@
                 timestamp: Date.now()
             }));
 
-            // Refresh live curriculum state & UI
             QUIZEE_CURRICULUM = buildCurriculum(window.QUIZEE_ALL_QUESTIONS);
             renderLastPracticedBanner();
             renderTopicsGrid();
         }
 
-        // Render Review Accordion items
         renderReviewList();
     }
 
@@ -849,7 +767,7 @@
         accordion.innerHTML = activeTest.reviewItems.map(item => {
             const q = item.question;
             let statusClass = item.isCorrect ? 'is-correct' : (item.selectedIndex === -1 ? 'is-skipped' : 'is-wrong');
-            let statusText = item.isCorrect ? '✓ Correct' : (item.selectedIndex === -1 ? '⚠️ Skipped' : '✕ Wrong');
+            let statusText = item.isCorrect ? '✓ Correct' : (item.selectedIndex === -1 ? 'Skipped' : '✕ Wrong');
             let statusColor = item.isCorrect ? '#10b981' : (item.selectedIndex === -1 ? '#f59e0b' : '#ef4444');
 
             let yourChoiceHtml = '';
@@ -861,7 +779,7 @@
                 `;
             } else {
                 yourChoiceHtml = `
-                    <div class="review-item-choice choice-your-wrong" style="color:#f59e0b; border-color:rgba(245,158,11,0.3); background:rgba(245,158,11,0.1);">
+                    <div class="review-item-choice choice-your-wrong" style="color:#f59e0b;">
                         <b>Your Answer:</b> Skipped
                     </div>
                 `;
@@ -876,8 +794,8 @@
             return `
                 <div class="review-item-card ${statusClass}">
                     <div class="review-item-header">
-                        <span style="color:#94a3b8;">Question ${item.qNum} • ${q.category || 'General'}</span>
-                        <span style="color:${statusColor}; font-weight:800;">${statusText}</span>
+                        <span style="color:#94a3b8;">Question ${item.qNum}</span>
+                        <span style="color:${statusColor}; font-weight:700;">${statusText}</span>
                     </div>
                     <div class="review-item-qtext">${q.question}</div>
                     ${yourChoiceHtml}
@@ -900,7 +818,7 @@
 
         if (activeTest.isHindiMode && !translationCache[currentQ.id]) {
             const embedded = extractEmbeddedHindiQuestion(currentQ);
-            if (embedded && containsDevanagari(embedded.question)) {
+            if (embedded && /[ऀ-ॿ]/.test(embedded.question)) {
                 translationCache[currentQ.id] = embedded;
             } else {
                 try {
@@ -950,37 +868,7 @@
         document.body.style.overflow = '';
     }
 
-    // =========================================================
-    // GLOBAL EXPORTS & INITIALIZATION
-    // =========================================================
-
-    window.clearPortalFilters = function () {
-        portalState.activeSubject = 'All';
-        portalState.searchQuery = '';
-        portalState.statusFilter = 'all';
-        const searchInput = document.getElementById('portalSearchInput');
-        if (searchInput) searchInput.value = '';
-        const selectFilter = document.getElementById('portalStatusSelect');
-        if (selectFilter) selectFilter.value = 'all';
-        renderSubjectTabs();
-        renderTopicsGrid();
-    };
-
-    window.toggleAllTopicsExpand = function () {
-        portalState.allExpanded = !portalState.allExpanded;
-        const btn = document.getElementById('btnToggleAllSets');
-        if (portalState.allExpanded) {
-            QUIZEE_CURRICULUM.forEach(sub => {
-                sub.topics.forEach(t => portalState.expandedTopics.add(t.topicId));
-            });
-            if (btn) btn.textContent = 'Collapse All Sets ▲';
-        } else {
-            portalState.expandedTopics.clear();
-            if (btn) btn.textContent = 'Expand All Sets ▼';
-        }
-        renderTopicsGrid();
-    };
-
+    // Window Exports
     window.clearTopicSelections = function () {
         portalState.selectedTopics.clear();
         renderTopicsGrid();
@@ -992,7 +880,7 @@
             c.classList.toggle('active', parseInt(c.textContent) === count);
         });
         const btn = document.getElementById('btnStartMultiMixed');
-        if (btn) btn.textContent = `🚀 Start Custom Mixed Test (${count} Qs)`;
+        if (btn) btn.textContent = `Start Mixed Test (${count} Qs) 🚀`;
     };
 
     window.startCustomMixedTest = startCustomMixedTest;
@@ -1008,20 +896,15 @@
         if (!accordion || !btn) return;
         const isShown = accordion.style.display === 'block';
         accordion.style.display = isShown ? 'none' : 'block';
-        btn.textContent = isShown ? '📋 View Detailed Question Review' : '✕ Hide Question Review';
+        btn.textContent = isShown ? 'View Question Review 📋' : 'Hide Review ✕';
     };
 
     window.retestCurrentSet = function () {
         if (!activeTest.questions || activeTest.questions.length === 0) return;
-        launchWebTest(
-            activeTest.questions,
-            activeTest.title,
-            activeTest.subtitle,
-            activeTest.setKey
-        );
+        launchWebTest(activeTest.questions, activeTest.title, activeTest.subtitle, activeTest.setKey);
     };
 
-    // Keyboard shortcuts for test player
+    // Keyboard Shortcuts
     document.addEventListener('keydown', (e) => {
         if (!activeTest.isOpen) return;
         if (document.getElementById('webTestResultsView').style.display === 'block') return;
@@ -1045,7 +928,6 @@
         }
     });
 
-    // Boot Initialization
     async function initPortal() {
         const questionsData = await loadAllQuestions();
         QUIZEE_CURRICULUM = buildCurriculum(questionsData);
@@ -1054,7 +936,6 @@
         renderLastPracticedBanner();
         renderTopicsGrid();
 
-        // Search Input Listener
         const searchInput = document.getElementById('portalSearchInput');
         const clearBtn = document.getElementById('portalSearchClear');
         if (searchInput) {
@@ -1073,16 +954,6 @@
             });
         }
 
-        // Status filter select
-        const statusSelect = document.getElementById('portalStatusSelect');
-        if (statusSelect) {
-            statusSelect.addEventListener('change', (e) => {
-                portalState.statusFilter = e.target.value;
-                renderTopicsGrid();
-            });
-        }
-
-        // Exit confirm modal handlers
         const btnConfirmExit = document.getElementById('btnConfirmExit');
         const btnConfirmStay = document.getElementById('btnConfirmStay');
         if (btnConfirmExit) {
