@@ -187,27 +187,36 @@
 }
 
 /* =========================================================
-   SUBJECT TABS (CLEAN & CENTERED)
+   SUBJECT TABS (100% RESPONSIVE - NEVER CLIPPED)
    ========================================================= */
 .portal-tabs-wrap {
     margin-bottom: 28px;
+    width: 100%;
 }
 .portal-tabs-scroll {
     display: flex;
-    gap: 9px;
-    overflow-x: auto;
-    padding-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
-    scrollbar-width: none;
-}
-.portal-tabs-scroll::-webkit-scrollbar {
-    display: none;
+    align-items: center;
+    padding: 4px 0 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 @media (max-width: 768px) {
     .portal-tabs-scroll {
-        justify-content: flex-start;
-        padding-left: 4px;
-        padding-right: 4px;
+        gap: 8px;
+        padding: 0 4px;
+    }
+    .subject-tab-btn {
+        padding: 7px 13px !important;
+        font-size: 12px !important;
+        border-radius: 20px !important;
+        gap: 5px !important;
+    }
+    .tab-count-badge {
+        font-size: 10px !important;
+        padding: 1px 6px !important;
     }
 }
 .subject-tab-btn {
