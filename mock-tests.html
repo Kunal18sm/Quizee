@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC CGL Full-Length Mock Tests (100 Qs) | Quizee Portal</title>
+    <meta name="description" content="Take 60 full-length 100-question SSC CGL mock tests across 4 difficulty levels with real 60-min timer, 100-question palette, and sectional scorecard.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/web_tests.css?v=4.2">
+
+    <style>
+        body {
+            background-color: #0b0f19;
+            color: #f8fafc;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .mock-page-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .mock-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mock-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .mock-logo-icon {
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(135deg, #6366f1, #3b82f6);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .mock-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .mock-nav-link {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .mock-nav-link:hover {
+            color: #fff;
+        }
+
+        .btn-nav-download {
+            background: #2563eb;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-nav-download:hover {
+            background: #1d4ed8;
+        }
+
+        /* Hero */
+        .mock-hero-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 20px 20px 20px;
+        }
+
+        .mock-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #818cf8;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .mock-hero-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .mock-hero-title span {
+            background: linear-gradient(135deg, #818cf8, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .mock-hero-sub {
+            color: #94a3b8;
+            font-size: 14px;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .mock-quota-pill-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 10px 14px;
+            background: #131b2e;
+            border: 1px solid #1e293b;
+            border-radius: 10px;
+            font-size: 12px;
+            color: #94a3b8;
+            align-items: center;
+        }
+
+        .mock-quota-pill {
+            background: #1e293b;
+            color: #cbd5e1;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        /* Level Tabs */
+        .mock-level-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin: 24px 0 20px 0;
+        }
+
+        .mock-lvl-btn {
+            background: #131b2e;
+            border: 1.5px solid #1e293b;
+            border-radius: 12px;
+            padding: 14px 16px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #f8fafc;
+        }
+
+        .mock-lvl-btn:hover {
+            border-color: #3b82f6;
+            background: #17223b;
+        }
+
+        .mock-lvl-btn.active {
+            border-color: #6366f1;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(59, 130, 246, 0.1));
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+        }
+
+        .mock-lvl-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .badge-easy { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-mod { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-hard { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge-pro { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+
+        .mock-lvl-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .mock-lvl-count {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* Mock Grid (15 Mocks) */
+        .mock-grid-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+        }
+
+        .mock-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+        }
+
+        .mock-card {
+            background: #131b2e;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .mock-card:hover {
+            transform: translateY(-2px);
+            border-color: #3b82f6;
+        }
+
+        .mock-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .mock-card-num {
+            font-size: 16px;
+            font-weight: 800;
+            color: #f8fafc;
+        }
+
+        .mock-card-status {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background: #1e293b;
+            color: #94a3b8;
+        }
+
+        .mock-card-status.completed {
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .mock-card-meta {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-bottom: 14px;
+        }
+
+        .mock-card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 8px;
+        }
+
+        .btn-card-practice {
+            background: #1e293b;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .btn-card-practice:hover {
+            background: #334155;
+            color: #fff;
+        }
+
+        .btn-card-exam {
+            background: #2563eb;
+            border: none;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.2s;
+        }
+
+        .btn-card-exam:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="mock-page-header">
+        <div class="mock-nav-inner">
+            <a href="index.html" class="mock-logo">
+                <div class="mock-logo-icon">🎯</div>
+                <span>Quizee Mock Portal</span>
+            </a>
+            <div class="mock-nav-links">
+                <a href="index.html" class="mock-nav-link">← Home</a>
+                <a href="index.html#online-tests" class="mock-nav-link">📚 Topic Sets</a>
+                <a href="https://github.com/Kunal18sm/Quizee/releases/latest" class="btn-nav-download">Download App</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="mock-hero-section">
+        <div class="mock-hero-badge">⚡ SSC CGL Tier-1 Real Exam Simulator</div>
+        <h1 class="mock-hero-title">60 Full-Length <span>Mock Tests</span></h1>
+        <p class="mock-hero-sub">
+            100 Questions • 60 Minutes • 200 Marks (+2.0 / -0.50 Marking) • All 7 SSC Subjects Balanced
+        </p>
+
+        <!-- Quota Pill Bar -->
+        <div class="mock-quota-pill-bar">
+            <span style="font-weight:700; color:#fff;">⚖️ 100-Q Quota:</span>
+            <span class="mock-quota-pill">📖 English: 30 Qs</span>
+            <span class="mock-quota-pill">🏛️ Static GK: 18 Qs</span>
+            <span class="mock-quota-pill">🏺 History: 14 Qs</span>
+            <span class="mock-quota-pill">⚖️ Polity: 12 Qs</span>
+            <span class="mock-quota-pill">🌍 Geography: 10 Qs</span>
+            <span class="mock-quota-pill">🧬 Science: 10 Qs</span>
+            <span class="mock-quota-pill">📈 Economy: 6 Qs</span>
+        </div>
+
+        <!-- Level Selector Tabs -->
+        <div class="mock-level-selector" id="mockLevelSelector">
+            <button class="mock-lvl-btn" onclick="selectPageLevel(1)">
+                <span class="mock-lvl-badge badge-easy">Easy</span>
+                <div class="mock-lvl-title">Level 1: Foundation</div>
+                <div class="mock-lvl-count">Mocks 01 - 15 • Direct Concepts</div>
+            </button>
+            <button class="mock-lvl-btn active" onclick="selectPageLevel(2)">
+                <span class="mock-lvl-badge badge-mod">Moderate</span>
+                <div class="mock-lvl-title">Level 2: Standard CGL</div>
+                <div class="mock-lvl-count">Mocks 01 - 15 • Tier-1 Exam Shift</div>
+            </button>
+            <button class="mock-lvl-btn" onclick="selectPageLevel(3)">
+                <span class="mock-lvl-badge badge-hard">Hard</span>
+                <div class="mock-lvl-title">Level 3: Advanced</div>
+                <div class="mock-lvl-count">Mocks 01 - 15 • In-depth & Tricky</div>
+            </button>
+            <button class="mock-lvl-btn" onclick="selectPageLevel(4)">
+                <span class="mock-lvl-badge badge-pro">Pro Ranker</span>
+                <div class="mock-lvl-title">Level 4: Master Pro</div>
+                <div class="mock-lvl-count">Mocks 01 - 15 • Top Percentile</div>
+            </button>
+        </div>
+    </section>
+
+    <!-- Mock Grid Section (15 Cards) -->
+    <main class="mock-grid-wrap">
+        <div class="mock-cards-grid" id="mockCardsGrid">
+            <!-- Populated dynamically: Mock 01 to 15 -->
+        </div>
+    </main>
+
+    <!-- ============================================== -->
+    <!-- INTERACTIVE TEST MODAL CONTAINER               -->
+    <!-- ============================================== -->
+    <div class="web-test-modal" id="webTestModal">
+        <div class="web-test-inner">
+            <div class="test-topbar">
+                <div class="test-header-left">
+                    <button class="btn-test-exit" id="btnTestExit" title="Exit Test">✕</button>
+                    <div>
+                        <div class="test-title" id="testTitle">SSC CGL Mock Test</div>
+                        <div class="test-subtitle" id="testSubtitle">100 Questions • 60 Mins</div>
+                    </div>
+                </div>
+
+                <div class="test-header-center">
+                    <div class="test-timer-badge" id="testTimerBadge">⏱️ 60:00</div>
+                    <button class="btn-palette-toggle" id="btnPaletteToggle">📋 100 Qs Palette</button>
+                </div>
+
+                <div class="test-header-right">
+                    <button class="btn-lang-toggle" id="btnLangToggle">अ / A Hindi</button>
+                    <div class="test-score-badge" id="testScoreBadge">Score: 0.0</div>
+                </div>
+            </div>
+
+            <div class="mock-section-jump-bar" id="mockSectionJumpBar"></div>
+            <div class="test-progress-bar-wrap">
+                <div class="test-progress-bar-fill" id="testProgressFill"></div>
+            </div>
+
+            <div class="test-question-area" id="testQuestionArea">
+                <div class="test-question-card">
+                    <div class="test-q-meta-row">
+                        <span class="test-q-index" id="testQIndex">Q. 1 / 100</span>
+                        <span class="test-q-category" id="testQCategory">English</span>
+                        <span class="test-q-review-badge" id="testQReviewBadge" style="display:none;">Marked 🏷️</span>
+                    </div>
+                    <div class="test-question-text" id="testQuestionText">Loading question...</div>
+                </div>
+
+                <div class="test-options-list" id="testOptionsList"></div>
+            </div>
+
+            <div class="test-bottom-bar">
+                <button class="btn-control-secondary" id="btnClearSelection">Clear</button>
+                <button class="btn-control-secondary" id="btnMarkForReview">Mark 🏷️</button>
+                <div style="flex:1;"></div>
+                <button class="btn-nav-prev" id="btnPrevQuestion">◀ Prev</button>
+                <button class="btn-nav-next" id="btnNextQuestion">Next ▶</button>
+                <button class="btn-submit-exam" id="btnSubmitExam">Submit Test 🏁</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 100 Questions Palette Modal -->
+    <div class="palette-modal-overlay" id="paletteModalOverlay">
+        <div class="palette-modal-card">
+            <div class="palette-modal-header">
+                <div>
+                    <h3 style="margin:0; font-size:16px;">Question Palette (100 Questions)</h3>
+                    <div style="font-size:11px; color:#94a3b8; margin-top:2px;">Click any number to jump directly</div>
+                </div>
+                <button class="btn-palette-close" id="btnPaletteClose">✕</button>
+            </div>
+            <div class="palette-legend-bar">
+                <div class="palette-legend-item"><span class="legend-dot answered"></span> Ans (<span id="palAnsCount">0</span>)</div>
+                <div class="palette-legend-item"><span class="legend-dot marked"></span> Marked (<span id="palMarkCount">0</span>)</div>
+                <div class="palette-legend-item"><span class="legend-dot unanswered"></span> Left (<span id="palLeftCount">100</span>)</div>
+            </div>
+            <div class="palette-grid-scroll">
+                <div class="palette-chips-grid" id="paletteChipsGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exit Confirmation Modal -->
+    <div class="web-modal-overlay" id="webExitConfirmModal">
+        <div class="web-modal-card">
+            <h3 style="margin:0 0 8px 0; font-size:18px;">Exit Mock Test?</h3>
+            <p style="color:#94a3b8; font-size:13px; margin:0 0 16px 0;">Are you sure you want to quit? Your current test attempt will be lost.</p>
+            <div style="display:flex; justify-content:flex-end; gap:8px;">
+                <button class="btn-confirm-stay" id="btnConfirmStay">Continue Test</button>
+                <button class="btn-confirm-exit" id="btnConfirmExit">Exit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/all_questions.js"></script>
+    <script src="assets/web_tests.js?v=4.2"></script>
+    <script>
+        let currentSelectedLevel = 2;
+
+        function selectPageLevel(lvl) {
+            currentSelectedLevel = lvl;
+            const buttons = document.querySelectorAll('.mock-lvl-btn');
+            buttons.forEach((btn, idx) => {
+                if (idx + 1 === lvl) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+            renderMockCards();
+        }
+
+        function renderMockCards() {
+            const container = document.getElementById('mockCardsGrid');
+            if (!container) return;
+
+            const lvlObj = {
+                1: { badge: 'Easy', badgeClass: 'badge-easy', name: 'Level 1: Foundation' },
+                2: { badge: 'Moderate', badgeClass: 'badge-mod', name: 'Level 2: Standard CGL' },
+                3: { badge: 'Hard', badgeClass: 'badge-hard', name: 'Level 3: Advanced' },
+                4: { badge: 'Pro Ranker', badgeClass: 'badge-pro', name: 'Level 4: Master Pro' }
+            }[currentSelectedLevel];
+
+            let html = '';
+            for (let i = 1; i <= 15; i++) {
+                const setKey = `mock_level_${currentSelectedLevel}_test_${i}`;
+                const completed = localStorage.getItem(`${setKey}_completed`) === 'true';
+                const score = localStorage.getItem(`${setKey}_score`);
+
+                let statusText = 'Unattempted';
+                let statusClass = '';
+                if (completed && score !== null) {
+                    statusText = `Score: ${parseFloat(score).toFixed(1)} / 200`;
+                    statusClass = 'completed';
+                }
+
+                html += `
+                    <div class="mock-card">
+                        <div>
+                            <div class="mock-card-top">
+                                <span class="mock-card-num">Mock Test #${i < 10 ? '0' + i : i}</span>
+                                <span class="mock-lvl-badge ${lvlObj.badgeClass}">${lvlObj.badge}</span>
+                            </div>
+                            <div class="mock-card-meta">
+                                100 Qs • 60 Mins • 200 Marks<br>
+                                <span style="font-size:11px; color:#6366f1;">All 7 Subjects Balanced</span>
+                            </div>
+                            <div style="margin-bottom:14px;">
+                                <span class="mock-card-status ${statusClass}">${statusText}</span>
+                            </div>
+                        </div>
+                        <div class="mock-card-actions">
+                            <button class="btn-card-practice" onclick="launchMock(${currentSelectedLevel}, ${i}, false)">Practice 📖</button>
+                            <button class="btn-card-exam" onclick="launchMock(${currentSelectedLevel}, ${i}, true)">Exam Mode ⏱️</button>
+                        </div>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+        }
+
+        function launchMock(lvl, mockNum, isExam) {
+            if (typeof window.startMockDirectly === 'function') {
+                window.startMockDirectly(lvl, mockNum, isExam);
+            } else {
+                alert('Mock engine is loading, please wait 2 seconds...');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMockCards();
+        });
+    </script>
+</body>
+</html>

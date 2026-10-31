@@ -136,10 +136,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnOpenMockHub.setOnClickListener {
-            com.quizlock.app.ui.CustomPracticeActivity.start(this, openMocks = true)
+            com.quizlock.app.ui.MockHubActivity.start(this)
         }
         binding.cardHeroMockTest.setOnClickListener {
-            com.quizlock.app.ui.CustomPracticeActivity.start(this, openMocks = true)
+            com.quizlock.app.ui.MockHubActivity.start(this)
         }
 
         binding.btnOpenCustomPractice.setOnClickListener {

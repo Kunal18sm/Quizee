@@ -30,7 +30,8 @@ class MockTestAdapter(
         val item = mockList[position]
         val context = holder.itemView.context
 
-        holder.binding.tvCardMockTitle.text = "${item.levelName} • ${item.title}"
+        val mockNumStr = if (item.mockNumber < 10) "0${item.mockNumber}" else "${item.mockNumber}"
+        holder.binding.tvCardMockTitle.text = "Mock Test #$mockNumStr"
         holder.binding.tvCardMockBadge.text = item.levelBadge
 
         when (item.levelBadge.lowercase()) {

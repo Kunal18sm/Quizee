@@ -23,28 +23,32 @@
             name: "Level 1: Foundation",
             badge: "Easy",
             pillClass: "easy",
-            desc: "Direct, high-yield foundational MCQs from all 7 subjects. Recommended for building speed and basic accuracy."
+            desc: "Direct foundational MCQs • 15 Mocks",
+            mockCount: 15
         },
         {
             level: 2,
             name: "Level 2: Standard CGL",
             badge: "Moderate",
             pillClass: "moderate",
-            desc: "Standard Tier-1 exam shift level. Balanced across grammar, articles, rivers, five-year plans & static GK."
+            desc: "Tier-1 standard shift level • 15 Mocks",
+            mockCount: 15
         },
         {
             level: 3,
             name: "Level 3: Advanced",
             badge: "Hard",
             pillClass: "hard",
-            desc: "In-depth questions, exceptions, tricky vocabulary, advanced polity amendments and microeconomics."
+            desc: "In-depth & tricky questions • 15 Mocks",
+            mockCount: 15
         },
         {
             level: 4,
-            name: "Level 4: Master Challenge",
+            name: "Level 4: Master Pro",
             badge: "Pro Ranker",
             pillClass: "pro",
-            desc: "Toughest repeated questions, high-difficulty shifts, and full All-India rank challenge simulator."
+            desc: "Top percentile challenge • 15 Mocks",
+            mockCount: 15
         }
     ];
 
@@ -61,7 +65,7 @@
     // Global State
     let QUIZEE_CURRICULUM = [];
     let portalState = {
-        activeTab: 'mock', // 'mock' or 'topics'
+        activeTab: 'topics', // 'mock' or 'topics'
         activeSubject: 'English',
         searchQuery: '',
         selectedTopics: new Set(),
@@ -241,24 +245,25 @@
 
             // Level Slice
             if (levelNumber === 1) {
-                // Foundation (First 25% of pool)
                 subPool = pool.slice(0, Math.max(spec.count, Math.floor(n * 0.25)));
             } else if (levelNumber === 2) {
-                // Standard CGL (25% to 55%)
                 subPool = pool.slice(Math.floor(n * 0.25), Math.max(Math.floor(n * 0.25) + spec.count, Math.floor(n * 0.55)));
             } else if (levelNumber === 3) {
-                // Advanced Hard (55% to 80%)
                 subPool = pool.slice(Math.floor(n * 0.55), Math.max(Math.floor(n * 0.55) + spec.count, Math.floor(n * 0.80)));
             } else {
-                // Master Challenge (80% to 100%)
                 subPool = pool.slice(Math.floor(n * 0.80));
                 if (subPool.length < spec.count) subPool = pool.slice(-spec.count);
             }
 
-            // Offset per mock test
-            const maxOffset = Math.max(1, subPool.length - spec.count);
-            const startIdx = ((mockNumber - 1) * spec.count) % maxOffset;
-            const selected = subPool.slice(startIdx, startIdx + spec.count);
+            if (subPool.length < spec.count) subPool = pool;
+
+            // Circular wrapping across 15+ mocks
+            const nSub = subPool.length;
+            const offset = ((mockNumber - 1) * spec.count) % nSub;
+            const selected = [];
+            for (let i = 0; i < spec.count; i++) {
+                selected.push(subPool[(offset + i) % nSub]);
+            }
 
             selected.forEach(q => {
                 mockQuestions.push({
@@ -582,6 +587,25 @@
     window.setMockMode = function (isExam) {
         mockPortalState.isExamMode = isExam;
         renderMockHub();
+    };
+
+    window.startMockDirectly = async function (level, mockNum, isExam) {
+        if (!window.QUIZEE_ALL_QUESTIONS) {
+            await loadAllQuestions();
+        }
+        const levelObj = MOCK_LEVEL_CONFIG.find(l => l.level === level) || MOCK_LEVEL_CONFIG[1];
+        const questions = generateLevelMockTest(level, mockNum);
+
+        if (!questions || questions.length === 0) {
+            alert('Unable to load mock test questions. Please check connection.');
+            return;
+        }
+
+        const title = `Mock Test #${mockNum < 10 ? '0' + mockNum : mockNum} (${levelObj.name})`;
+        const subtitle = `100 Questions • 60 Mins • 200 Marks (+2.0 / -0.50)`;
+        const setKey = `mock_level_${level}_test_${mockNum}`;
+
+        launchWebTest(questions, title, subtitle, setKey, true, isExam, level, mockNum);
     };
 
     window.startSelectedMockTest = function () {
@@ -1284,6 +1308,11 @@
     async function initPortal() {
         const questionsData = await loadAllQuestions();
         QUIZEE_CURRICULUM = buildCurriculum(questionsData);
+
+        // If on mock-tests.html standalone page
+        if (typeof renderMockCards === 'function') {
+            renderMockCards();
+        }
 
         renderPortalModeNav();
         renderMockHub();

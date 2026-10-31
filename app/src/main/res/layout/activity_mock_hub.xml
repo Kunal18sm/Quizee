@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:orientation="vertical">
+
+    <!-- Top App Bar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bg_dark"
+        app:navigationIcon="@drawable/ic_back"
+        app:navigationIconTint="@color/text_primary"
+        app:title="SSC CGL Mock Portal"
+        app:titleTextColor="@color/text_primary"
+        app:subtitle="60 Full Tests • 100 Qs • 60 Mins • 200M"
+        app:subtitleTextColor="@color/text_muted" />
+
+    <!-- Quota info chip -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_option_default"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚖️ 100-Q Quota:"
+            android:textColor="@color/primary_light"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Eng 30 • GK 18 • Hist 14 • Pol 12 • Geo 10 • Sci 10 • Eco 6"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+    <!-- Level Selector Horizontal Scroll -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:overScrollMode="never"
+        android:paddingHorizontal="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipLevel1"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginEnd="6dp"
+                android:paddingHorizontal="12dp"
+                android:text="Level 1: Foundation (Easy)"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                app:backgroundTint="@color/card_dark_elevated" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipLevel2"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginEnd="6dp"
+                android:paddingHorizontal="12dp"
+                android:text="Level 2: Standard (Moderate)"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipLevel3"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginEnd="6dp"
+                android:paddingHorizontal="12dp"
+                android:text="Level 3: Advanced (Hard)"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                app:backgroundTint="@color/card_dark_elevated" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipLevel4"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:paddingHorizontal="12dp"
+                android:text="Level 4: Master (Pro)"
+                android:textColor="@color/text_primary"
+                android:textSize="12sp"
+                app:backgroundTint="@color/card_dark_elevated" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Header line for active tests -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/tvLevelSummary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Level 2 Tests (Mocks 01 to 15)"
+            android:textColor="@color/text_primary"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTotalQuestionsBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_option_default"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:text="15 Mocks Available"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+    <!-- 15 Mock Cards RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMockTests"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="24dp"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

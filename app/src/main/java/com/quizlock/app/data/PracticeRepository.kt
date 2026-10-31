@@ -235,7 +235,7 @@ class PracticeRepository private constructor(private val context: Context) {
      */
     fun generateLevelMockTest(level: Int, mockNumber: Int): List<Question> {
         val clampedLevel = level.coerceIn(1, 4)
-        val clampedMockNum = mockNumber.coerceIn(1, 5)
+        val clampedMockNum = mockNumber.coerceIn(1, 15)
 
         val (startPct, endPct) = when (clampedLevel) {
             1 -> Pair(0.00, 0.25) // Foundation / Direct
@@ -264,21 +264,18 @@ class PracticeRepository private constructor(private val context: Context) {
             val poolSize = fullSubjectPool.size
             val startIdx = (poolSize * startPct).toInt().coerceIn(0, poolSize - 1)
             val endIdx = (poolSize * endPct).toInt().coerceIn(startIdx + 1, poolSize)
-            val slice = fullSubjectPool.subList(startIdx, endIdx)
+            val slice = if (endIdx > startIdx) fullSubjectPool.subList(startIdx, endIdx) else fullSubjectPool
+            val targetPool = if (slice.size >= rule.count) slice else fullSubjectPool
 
             val quota = rule.count
-            if (slice.size >= quota) {
-                val maxOffset = (slice.size - quota).coerceAtLeast(1)
-                val offset = ((clampedMockNum - 1) * quota) % maxOffset
-                val selected = slice.subList(offset, offset + quota)
-                result100.addAll(selected)
-            } else {
-                // Fallback to taking from fullSubjectPool if slice is smaller than quota
-                val maxOffset = (fullSubjectPool.size - quota).coerceAtLeast(1)
-                val offset = ((clampedMockNum - 1) * quota) % maxOffset
-                val selected = fullSubjectPool.subList(offset, (offset + quota).coerceAtMost(fullSubjectPool.size))
-                result100.addAll(selected)
+            val nSub = targetPool.size
+            val offset = ((clampedMockNum - 1) * quota) % nSub
+
+            val selected = mutableListOf<Question>()
+            for (i in 0 until quota) {
+                selected.add(targetPool[(offset + i) % nSub])
             }
+            result100.addAll(selected)
         }
 
         return result100
@@ -309,7 +306,7 @@ class PracticeRepository private constructor(private val context: Context) {
 
     fun getMockTestMeta(level: Int, mockNumber: Int): LevelMockTestMeta {
         val clampedLevel = level.coerceIn(1, 4)
-        val clampedMockNum = mockNumber.coerceIn(1, 5)
+        val clampedMockNum = mockNumber.coerceIn(1, 15)
 
         val (badge, name) = when (clampedLevel) {
             1 -> Pair("Easy", "Level 1: Foundation")
@@ -349,6 +346,6 @@ class PracticeRepository private constructor(private val context: Context) {
     }
 
     fun getAllMockTestsForLevel(level: Int): List<LevelMockTestMeta> {
-        return (1..5).map { getMockTestMeta(level, it) }
+        return (1..15).map { getMockTestMeta(level, it) }
     }
 }

@@ -76,6 +76,14 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
 
+        <!-- Dedicated 100-Question Level-Wise Mock Portal Activity -->
+        <activity
+            android:name=".ui.MockHubActivity"
+            android:exported="false"
+            android:label="SSC CGL Mock Portal"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+
         <!-- Full 100-Question Level-Wise Mock Test Activity (SSC CGL Simulator) -->
         <activity
             android:name=".ui.MockTestActivity"

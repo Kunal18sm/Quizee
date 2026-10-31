@@ -10,7 +10,6 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.button.MaterialButton
 import com.quizlock.app.R
-import com.quizlock.app.data.LevelMockTestMeta
 import com.quizlock.app.data.PracticeRepository
 import com.quizlock.app.data.PracticeSet
 import com.quizlock.app.data.PracticeSubject
@@ -22,10 +21,6 @@ class CustomPracticeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCustomPracticeBinding
     private lateinit var practiceRepo: PracticeRepository
     private lateinit var topicAdapter: PracticeTopicAdapter
-    private lateinit var mockAdapter: MockTestAdapter
-
-    private var isMockHubActive: Boolean = true
-    private var activeMockLevel: Int = 2
 
     private var allSubjects: List<PracticeSubject> = emptyList()
     private var allTopics: List<PracticeTopic> = emptyList()
@@ -35,29 +30,13 @@ class CustomPracticeActivity : AppCompatActivity() {
 
     private val subjectChipMap = mutableMapOf<MaterialButton, String>()
     private val countButtonMap = mutableMapOf<MaterialButton, Int>()
-    private val levelChipMap = mutableMapOf<MaterialButton, Int>()
-
-    data class LevelDescription(
-        val name: String,
-        val badge: String,
-        val desc: String
-    )
-
-    private val levelInfo = mapOf(
-        1 to LevelDescription("Level 1: Foundation", "Easy", "Direct, high-yield foundational MCQs from all 7 subjects. Recommended for building speed and basic accuracy."),
-        2 to LevelDescription("Level 2: Standard CGL", "Moderate", "Standard Tier-1 exam shift level. Balanced across grammar, articles, rivers, five-year plans & static GK."),
-        3 to LevelDescription("Level 3: Advanced", "Hard", "In-depth questions, exceptions, tricky vocabulary, advanced polity amendments and microeconomics."),
-        4 to LevelDescription("Level 4: Master Pro", "Pro Ranker", "Toughest repeated questions, high-difficulty shifts, and full All-India rank challenge simulator.")
-    )
 
     companion object {
         const val EXTRA_INITIAL_SUBJECT = "initial_subject"
-        const val EXTRA_OPEN_MOCKS = "open_mocks"
 
-        fun start(context: Context, initialSubject: String? = null, openMocks: Boolean = false) {
+        fun start(context: Context, initialSubject: String? = null) {
             val intent = Intent(context, CustomPracticeActivity::class.java).apply {
                 if (initialSubject != null) putExtra(EXTRA_INITIAL_SUBJECT, initialSubject)
-                putExtra(EXTRA_OPEN_MOCKS, openMocks)
             }
             context.startActivity(intent)
         }
@@ -71,23 +50,15 @@ class CustomPracticeActivity : AppCompatActivity() {
         practiceRepo = PracticeRepository.getInstance(this)
 
         setupToolbar()
-        setupModeSwitcher()
-        setupMockHub()
+        setupMockPromoBanner()
         setupSubjectChips()
         setupMultiSelectControls()
         setupRecyclerView()
         loadData()
 
         val initialSubject = intent.getStringExtra(EXTRA_INITIAL_SUBJECT)
-        val shouldOpenMocks = intent.getBooleanExtra(EXTRA_OPEN_MOCKS, false)
-
         if (!initialSubject.isNullOrBlank()) {
-            switchMode(isMock = false)
             selectSubjectFilter(initialSubject)
-        } else if (shouldOpenMocks) {
-            switchMode(isMock = true)
-        } else {
-            switchMode(isMock = true)
         }
     }
 
@@ -102,101 +73,13 @@ class CustomPracticeActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupModeSwitcher() {
-        binding.btnTabFullMocks.setOnClickListener {
-            switchMode(isMock = true)
+    private fun setupMockPromoBanner() {
+        binding.cardPromoMockPortal.setOnClickListener {
+            MockHubActivity.start(this)
         }
-        binding.btnTabTopicSets.setOnClickListener {
-            switchMode(isMock = false)
+        binding.btnOpenMockPortalFromCustom.setOnClickListener {
+            MockHubActivity.start(this)
         }
-    }
-
-    private fun switchMode(isMock: Boolean) {
-        isMockHubActive = isMock
-        if (isMock) {
-            binding.btnTabFullMocks.backgroundTintList = ContextCompat.getColorStateList(this, R.color.primary)
-            binding.btnTabFullMocks.setTextColor(ContextCompat.getColor(this, R.color.white))
-
-            binding.btnTabTopicSets.backgroundTintList = ContextCompat.getColorStateList(this, R.color.card_dark)
-            binding.btnTabTopicSets.setTextColor(ContextCompat.getColor(this, R.color.text_secondary))
-
-            binding.layoutMockHub.visibility = View.VISIBLE
-            binding.layoutTopicSets.visibility = View.GONE
-            binding.cardMultiSelectDock.visibility = View.GONE
-        } else {
-            binding.btnTabTopicSets.backgroundTintList = ContextCompat.getColorStateList(this, R.color.primary)
-            binding.btnTabTopicSets.setTextColor(ContextCompat.getColor(this, R.color.white))
-
-            binding.btnTabFullMocks.backgroundTintList = ContextCompat.getColorStateList(this, R.color.card_dark)
-            binding.btnTabFullMocks.setTextColor(ContextCompat.getColor(this, R.color.text_secondary))
-
-            binding.layoutMockHub.visibility = View.GONE
-            binding.layoutTopicSets.visibility = View.VISIBLE
-            updateMultiSelectDock(topicAdapter.selectedCategories)
-        }
-    }
-
-    private fun setupMockHub() {
-        mockAdapter = MockTestAdapter(
-            mockList = emptyList(),
-            onStartExam = { mockMeta ->
-                MockTestActivity.start(
-                    context = this,
-                    level = mockMeta.level,
-                    mockNumber = mockMeta.mockNumber,
-                    isExamMode = true
-                )
-            },
-            onStartPractice = { mockMeta ->
-                MockTestActivity.start(
-                    context = this,
-                    level = mockMeta.level,
-                    mockNumber = mockMeta.mockNumber,
-                    isExamMode = false
-                )
-            }
-        )
-
-        binding.rvMockTests.layoutManager = LinearLayoutManager(this)
-        binding.rvMockTests.adapter = mockAdapter
-
-        levelChipMap[binding.chipLevel1] = 1
-        levelChipMap[binding.chipLevel2] = 2
-        levelChipMap[binding.chipLevel3] = 3
-        levelChipMap[binding.chipLevel4] = 4
-
-        levelChipMap.forEach { (btn, lvl) ->
-            btn.setOnClickListener {
-                selectMockLevel(lvl)
-            }
-        }
-
-        selectMockLevel(2)
-    }
-
-    private fun selectMockLevel(level: Int) {
-        activeMockLevel = level
-
-        levelChipMap.forEach { (btn, lvl) ->
-            if (lvl == level) {
-                btn.backgroundTintList = ContextCompat.getColorStateList(this, R.color.primary)
-                btn.setTextColor(ContextCompat.getColor(this, R.color.white))
-                btn.strokeWidth = 0
-            } else {
-                btn.backgroundTintList = ContextCompat.getColorStateList(this, R.color.card_dark_elevated)
-                btn.setTextColor(ContextCompat.getColor(this, R.color.text_primary))
-                btn.strokeColor = ContextCompat.getColorStateList(this, R.color.border_dark)
-                btn.strokeWidth = 2
-            }
-        }
-
-        val info = levelInfo[level] ?: levelInfo[2]!!
-        binding.tvActiveLevelName.text = info.name
-        binding.tvActiveLevelBadge.text = info.badge
-        binding.tvActiveLevelDesc.text = info.desc
-
-        val mockList = practiceRepo.getAllMockTestsForLevel(level)
-        mockAdapter.updateList(mockList)
     }
 
     private fun setupSubjectChips() {
@@ -296,10 +179,6 @@ class CustomPracticeActivity : AppCompatActivity() {
     }
 
     private fun loadData() {
-        // Refresh Mock tests
-        selectMockLevel(activeMockLevel)
-
-        // Refresh Curriculum
         allSubjects = practiceRepo.getCurriculum()
         allTopics = allSubjects.flatMap { it.topics }
 
@@ -344,7 +223,7 @@ class CustomPracticeActivity : AppCompatActivity() {
     }
 
     private fun updateMultiSelectDock(selectedCategories: Set<String>) {
-        if (!isMockHubActive && selectedCategories.isNotEmpty()) {
+        if (selectedCategories.isNotEmpty()) {
             binding.cardMultiSelectDock.visibility = View.VISIBLE
             val selectedTopics = allTopics.filter { it.categoryName in selectedCategories }
             val poolSize = selectedTopics.sumOf { it.totalQuestions }
