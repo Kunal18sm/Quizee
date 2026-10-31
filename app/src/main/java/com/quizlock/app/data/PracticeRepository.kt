@@ -27,11 +27,23 @@ class PracticeRepository private constructor(private val context: Context) {
         }
     }
 
+    @Volatile
+    private var cachedCurriculum: List<PracticeSubject>? = null
+
     /**
      * Builds and returns the comprehensive curriculum structure:
      * 7 Subjects -> Topics -> 100-Question Sets with live saved progress.
      */
     fun getCurriculum(): List<PracticeSubject> {
+        val cached = cachedCurriculum
+        if (cached != null) return cached
+
+        return synchronized(this) {
+            cachedCurriculum ?: buildCurriculum().also { cachedCurriculum = it }
+        }
+    }
+
+    private fun buildCurriculum(): List<PracticeSubject> {
         val subjects = mutableListOf<PracticeSubject>()
 
         // 1. English
@@ -159,6 +171,7 @@ class PracticeRepository private constructor(private val context: Context) {
         subtitle: String,
         questionIds: List<Long>
     ) {
+        cachedCurriculum = null
         val now = System.currentTimeMillis()
         prefs.edit()
             .putBoolean("${setKey}_completed", true)
@@ -189,9 +202,7 @@ class PracticeRepository private constructor(private val context: Context) {
     }
 
     fun getQuestionsByIds(ids: List<Long>): List<Question> {
-        val all = questionRepo.getAllQuestions()
-        val idMap = all.associateBy { it.id }
-        return ids.mapNotNull { idMap[it] }
+        return questionRepo.getQuestionsByIds(ids)
     }
 
     /**

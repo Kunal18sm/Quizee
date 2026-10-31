@@ -202,12 +202,31 @@ class QuestionRepository private constructor(private val context: Context) {
         return if (shuffled.size >= count) shuffled.subList(0, count) else shuffled
     }
 
+    @Volatile
+    private var questionMapCache: Map<Long, Question>? = null
+
+    fun getQuestionById(id: Long): Question? {
+        val map = questionMapCache ?: synchronized(this) {
+            questionMapCache ?: questionsList.associateBy { it.id }.also { questionMapCache = it }
+        }
+        return map[id]
+    }
+
+    fun getQuestionsByIds(ids: List<Long>): List<Question> {
+        val map = questionMapCache ?: synchronized(this) {
+            questionMapCache ?: questionsList.associateBy { it.id }.also { questionMapCache = it }
+        }
+        return ids.mapNotNull { map[it] }
+    }
+
     fun addQuestion(question: Question) {
+        questionMapCache = null
         questionsList.add(0, question)
         saveQuestions()
     }
 
     fun deleteQuestion(id: Long) {
+        questionMapCache = null
         questionsList.removeAll { it.id == id }
         englishQuestions.removeAll { it.id == id }
         staticGkQuestions.removeAll { it.id == id }

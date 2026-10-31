@@ -1030,15 +1030,20 @@
 
         const searchInput = document.getElementById('portalSearchInput');
         const clearBtn = document.getElementById('portalSearchClear');
+        let searchDebounceTimer = null;
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
                 portalState.searchQuery = e.target.value;
                 if (clearBtn) clearBtn.style.display = e.target.value ? 'block' : 'none';
-                renderTopicsGrid();
+                clearTimeout(searchDebounceTimer);
+                searchDebounceTimer = setTimeout(() => {
+                    renderTopicsGrid();
+                }, 120);
             });
         }
         if (clearBtn) {
             clearBtn.addEventListener('click', () => {
+                clearTimeout(searchDebounceTimer);
                 searchInput.value = '';
                 portalState.searchQuery = '';
                 clearBtn.style.display = 'none';

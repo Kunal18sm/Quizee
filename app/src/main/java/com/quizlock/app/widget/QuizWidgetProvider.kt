@@ -7,6 +7,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.view.View
 import android.widget.RemoteViews
 import com.google.gson.Gson
@@ -79,9 +80,10 @@ class QuizWidgetProvider : AppWidgetProvider() {
             views.setOnClickPendingIntent(R.id.widget_img_logo, launchPendingIntent)
             views.setOnClickPendingIntent(R.id.widget_tv_title, launchPendingIntent)
 
-            // Setup Refresh intent
+            // Setup Refresh intent with unique data URI
             val refreshIntent = Intent(context, QuizWidgetProvider::class.java).apply {
                 action = ACTION_REFRESH
+                data = Uri.parse("quizee://widget/$appWidgetId/refresh")
                 putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
             }
             val refreshPendingIntent = PendingIntent.getBroadcast(
@@ -92,9 +94,10 @@ class QuizWidgetProvider : AppWidgetProvider() {
             )
             views.setOnClickPendingIntent(R.id.widget_btn_refresh, refreshPendingIntent)
 
-            // Setup Next Question intent
+            // Setup Next Question intent with unique data URI
             val nextIntent = Intent(context, QuizWidgetProvider::class.java).apply {
                 action = ACTION_NEXT_QUESTION
+                data = Uri.parse("quizee://widget/$appWidgetId/next")
                 putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
             }
             val nextPendingIntent = PendingIntent.getBroadcast(
@@ -116,7 +119,6 @@ class QuizWidgetProvider : AppWidgetProvider() {
             // Retrieve or initialize current question
             var questionText = prefs.getString(KEY_PREFIX_Q_TEXT + appWidgetId, null)
             if (questionText.isNullOrEmpty()) {
-                // Initialize with fresh question
                 val newQ = fetchNextQuestion(context, appWidgetId)
                 if (newQ != null) {
                     saveQuestionState(prefs, appWidgetId, newQ)
@@ -146,9 +148,14 @@ class QuizWidgetProvider : AppWidgetProvider() {
             // Populate option buttons and set their state
             for (i in OPTION_BUTTON_IDS.indices) {
                 val btnId = OPTION_BUTTON_IDS[i]
-                val optionText = if (i < options.size) options[i] else ""
-                val label = OPTION_LABELS.getOrElse(i) { "" }
+                if (i >= options.size) {
+                    views.setViewVisibility(btnId, View.GONE)
+                    continue
+                }
+                views.setViewVisibility(btnId, View.VISIBLE)
 
+                val optionText = options[i]
+                val label = OPTION_LABELS.getOrElse(i) { "" }
                 views.setTextViewText(btnId, "$label. $optionText")
 
                 if (isAnswered) {
@@ -161,12 +168,15 @@ class QuizWidgetProvider : AppWidgetProvider() {
                     } else {
                         views.setInt(btnId, "setBackgroundResource", R.drawable.bg_widget_option_default)
                     }
+                    // Disable clicks after question is answered
+                    views.setOnClickPendingIntent(btnId, null)
                 } else {
                     views.setInt(btnId, "setBackgroundResource", R.drawable.bg_widget_option_default)
 
-                    // Set click pending intent for each option
+                    // Set click pending intent for each option with unique data URI
                     val optIntent = Intent(context, QuizWidgetProvider::class.java).apply {
                         action = ACTION_SELECT_OPTION
+                        data = Uri.parse("quizee://widget/$appWidgetId/option/$i")
                         putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
                         putExtra(EXTRA_OPTION_INDEX, i)
                     }
