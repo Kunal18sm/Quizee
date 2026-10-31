@@ -76,6 +76,43 @@
             color: #fff;
         }
 
+        @media (max-width: 640px) {
+            .mock-nav-inner {
+                padding: 10px 14px;
+            }
+            .mock-logo {
+                font-size: 15px;
+                gap: 8px;
+            }
+            .mock-logo-badge {
+                width: 28px;
+                height: 28px;
+                font-size: 14px;
+            }
+            .hide-on-mobile {
+                display: none;
+            }
+            .mock-nav-links {
+                gap: 8px;
+            }
+            .mock-nav-link {
+                font-size: 12px;
+                padding: 5px 9px;
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.05);
+            }
+            .mock-nav-topic-link {
+                display: none;
+            }
+            .mock-nav-download-btn {
+                background: linear-gradient(135deg, #6366f1, #4f46e5) !important;
+                color: #fff !important;
+                padding: 5px 11px !important;
+                border-radius: 14px !important;
+                font-weight: 700 !important;
+            }
+        }
+
         /* Hero */
         .mock-hero {
             max-width: 1200px;
@@ -282,12 +319,12 @@
         <div class="mock-nav-inner">
             <a href="index.html" class="mock-logo">
                 <div class="mock-logo-badge">🎯</div>
-                <span>Quizee Mock Portal</span>
+                <span>Quizee <span class="hide-on-mobile">Mock Portal</span></span>
             </a>
             <div class="mock-nav-links">
                 <a href="index.html" class="mock-nav-link">← Home</a>
-                <a href="index.html#online-tests" class="mock-nav-link">📚 Topic Sets</a>
-                <a href="https://github.com/Kunal18sm/Quizee/releases/latest" class="mock-nav-link" style="color:#60a5fa; font-weight:700;">Download App</a>
+                <a href="index.html#online-tests" class="mock-nav-link mock-nav-topic-link">📚 Topic Sets</a>
+                <a href="quizee.apk" download="quizee.apk" class="mock-nav-link mock-nav-download-btn" style="color:#60a5fa; font-weight:700;">Download APK</a>
             </div>
         </div>
     </header>

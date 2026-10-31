@@ -84,14 +84,49 @@
             }
         }
 
-        /* Navigation */
-        nav {
+        /* Sticky Glassmorphic Header & Modern Responsive Navigation */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .site-header.scrolled {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+            border-bottom-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 14px;
+            }
+        }
+
+        nav.navbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            gap: 12px;
+            height: 68px;
+            gap: 16px;
         }
 
         .logo-wrap {
@@ -101,17 +136,19 @@
             text-decoration: none;
             color: var(--text-main);
             flex-shrink: 0;
+            user-select: none;
         }
 
         .logo-wrap img {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            display: block;
         }
 
         .logo-text {
-            font-size: 22px;
+            font-size: 21px;
             font-weight: 800;
             letter-spacing: -0.5px;
             background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%);
@@ -119,46 +156,331 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .nav-actions {
+        .version-badge {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #818cf8;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 2px 7px;
+            border-radius: 12px;
+            letter-spacing: 0.2px;
+        }
+
+        /* Desktop Nav Actions */
+        .nav-links-desktop {
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
         .nav-btn {
-            background: rgba(255, 255, 255, 0.08);
-            color: #fff;
-            padding: 8px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #e2e8f0;
+            padding: 7px 15px;
             border-radius: 20px;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             white-space: nowrap;
         }
 
         .nav-btn:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.18);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .nav-btn-mocks {
+            background: rgba(99, 102, 241, 0.12);
+            border-color: rgba(99, 102, 241, 0.35);
+            color: #c7d2fe;
+        }
+
+        .nav-btn-mocks:hover {
+            background: rgba(99, 102, 241, 0.25);
+            border-color: rgba(99, 102, 241, 0.5);
+            color: #fff;
+        }
+
+        .pulse-indicator {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+            display: inline-block;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
         }
 
         .nav-btn-primary {
-            background: var(--primary);
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            border-color: rgba(129, 140, 248, 0.4);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
         }
 
         .nav-btn-primary:hover {
-            background: var(--secondary);
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.45);
+            color: #fff;
+        }
+
+        /* Mobile Nav Actions (Direct APK + Hamburger) */
+        .nav-mobile-actions {
+            display: none;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-btn-mobile-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: #fff;
+            padding: 6px 13px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.35);
+            white-space: nowrap;
+        }
+
+        .hamburger-btn {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.25s ease;
+        }
+
+        .hamburger-btn:hover, .hamburger-btn:focus-visible {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(99, 102, 241, 0.4);
+            outline: none;
+        }
+
+        .hamburger-btn .bar {
+            width: 18px;
+            height: 2px;
+            background-color: #f1f5f9;
+            border-radius: 2px;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Hamburger Active (Morphs to ✕) */
+        .hamburger-btn.active {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.5);
+        }
+
+        .hamburger-btn.active .bar-1 {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger-btn.active .bar-2 {
+            opacity: 0;
+            transform: translateX(-6px);
+        }
+
+        .hamburger-btn.active .bar-3 {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile Drawer Dropdown */
+        .mobile-menu-drawer {
+            max-height: 0;
+            overflow: hidden;
+            background: #0d1322;
+            border-bottom: 1px solid transparent;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s;
+        }
+
+        .mobile-menu-drawer.open {
+            max-height: 480px;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.25);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .mobile-menu-inner {
+            padding: 12px 16px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .mobile-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            text-decoration: none;
+            color: #f8fafc;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-nav-item:active, .mobile-nav-item:hover {
+            background: rgba(99, 102, 241, 0.12);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(3px);
+        }
+
+        .mobile-item-highlight {
+            background: rgba(99, 102, 241, 0.08);
+            border-color: rgba(99, 102, 241, 0.25);
+        }
+
+        .mobile-item-icon {
+            font-size: 20px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .mobile-item-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .mobile-item-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-mini {
+            font-size: 10px;
+            font-weight: 700;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 1px 6px;
+            border-radius: 8px;
+        }
+
+        .mobile-item-desc {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-top: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mobile-arrow {
+            font-size: 14px;
+            color: #64748b;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .mobile-nav-item:hover .mobile-arrow {
+            color: #818cf8;
+            transform: translateX(2px);
+        }
+
+        .mobile-menu-cta-wrap {
+            margin-top: 6px;
+            padding-top: 6px;
+        }
+
+        .mobile-btn-download {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+            color: #fff;
+            padding: 12px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+            border: 1px solid rgba(129, 140, 248, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .mobile-btn-download:active {
+            transform: scale(0.98);
+        }
+
+        .mobile-btn-download span:first-child {
+            font-size: 13.5px;
+            font-weight: 700;
+        }
+
+        .mobile-btn-sub {
+            font-size: 10.5px;
+            color: #c7d2fe;
+            margin-top: 2px;
+            font-weight: 500;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 860px) {
+            .nav-links-desktop {
+                display: none;
+            }
+            .nav-mobile-actions {
+                display: flex;
+            }
         }
 
         @media (max-width: 480px) {
-            .nav-btn-gh {
-                display: none;
+            nav.navbar {
+                height: 60px;
+            }
+            .logo-wrap img {
+                width: 32px;
+                height: 32px;
             }
             .logo-text {
-                font-size: 19px;
+                font-size: 18px;
             }
-            .nav-btn {
-                padding: 7px 13px;
-                font-size: 12px;
+            .version-badge {
+                display: none;
+            }
+            .nav-btn-mobile-download {
+                padding: 5px 10px;
+                font-size: 11px;
+            }
+            .hamburger-btn {
+                width: 36px;
+                height: 36px;
             }
         }
 
@@ -2049,25 +2371,84 @@
         <div class="glow-circle glow-2"></div>
     </div>
 
-    <div class="container">
-        <!-- Navigation -->
-        <nav>
-            <a href="#" class="logo-wrap">
-                <img src="assets/icon.png" alt="Quizee Icon">
-                <span class="logo-text">Quizee</span>
-            </a>
-            <div class="nav-actions">
-                <a href="mock-tests.html" class="nav-btn nav-btn-tests" style="background:rgba(99,102,241,0.15); border-color:rgba(99,102,241,0.4);">
-                    <span class="pulse-indicator"></span>
-                    <span>🎯 Full Mocks (60 Tests)</span>
+    <!-- Sticky Glassmorphic Header Navigation -->
+    <header class="site-header">
+        <div class="nav-container">
+            <nav class="navbar">
+                <a href="#" class="logo-wrap">
+                    <img src="assets/icon.png" alt="Quizee Icon">
+                    <span class="logo-text">Quizee</span>
+                    <span class="version-badge">v3.0</span>
                 </a>
-                <a href="#online-tests" class="nav-btn nav-btn-tests">
-                    <span>📚 Topic Sets</span>
+
+                <!-- Desktop Navigation Links -->
+                <div class="nav-links-desktop">
+                    <a href="mock-tests.html" class="nav-btn nav-btn-mocks">
+                        <span class="pulse-indicator"></span>
+                        <span>🎯 60 Full Mocks</span>
+                    </a>
+                    <a href="#online-tests" class="nav-btn">
+                        <span>📚 Topic Sets</span>
+                    </a>
+                    <a href="https://github.com/Kunal18sm/Quizee" target="_blank" rel="noopener" class="nav-btn">GitHub</a>
+                    <a href="quizee.apk" download="quizee.apk" class="nav-btn nav-btn-primary">Download APK</a>
+                </div>
+
+                <!-- Mobile Actions (Direct APK + Hamburger) -->
+                <div class="nav-mobile-actions">
+                    <a href="quizee.apk" download="quizee.apk" class="nav-btn-mobile-download">
+                        <span>📥 APK</span>
+                    </a>
+                    <button id="mobileMenuBtn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <span class="bar bar-1"></span>
+                        <span class="bar bar-2"></span>
+                        <span class="bar bar-3"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile Drawer Dropdown -->
+        <div id="mobileMenuDrawer" class="mobile-menu-drawer">
+            <div class="mobile-menu-inner">
+                <a href="mock-tests.html" class="mobile-nav-item mobile-item-highlight">
+                    <div class="mobile-item-icon">🎯</div>
+                    <div class="mobile-item-content">
+                        <div class="mobile-item-title">60 Full Mock Tests <span class="badge-mini">Level 1-4</span></div>
+                        <div class="mobile-item-desc">100-Question SSC CGL exam simulators</div>
+                    </div>
+                    <span class="mobile-arrow">→</span>
                 </a>
-                <a href="https://github.com/Kunal18sm/Quizee" target="_blank" class="nav-btn nav-btn-gh">GitHub</a>
-                <a href="quizee.apk" download="quizee.apk" class="nav-btn nav-btn-primary">Download APK</a>
+
+                <a href="#online-tests" class="mobile-nav-item">
+                    <div class="mobile-item-icon">📚</div>
+                    <div class="mobile-item-content">
+                        <div class="mobile-item-title">Topic Practice Sets</div>
+                        <div class="mobile-item-desc">7 Subjects • 137 Sets • 7,480+ MCQs</div>
+                    </div>
+                    <span class="mobile-arrow">→</span>
+                </a>
+
+                <a href="https://github.com/Kunal18sm/Quizee" target="_blank" rel="noopener" class="mobile-nav-item">
+                    <div class="mobile-item-icon">⭐</div>
+                    <div class="mobile-item-content">
+                        <div class="mobile-item-title">Star on GitHub</div>
+                        <div class="mobile-item-desc">Open source repository & release notes</div>
+                    </div>
+                    <span class="mobile-arrow">↗</span>
+                </a>
+
+                <div class="mobile-menu-cta-wrap">
+                    <a href="quizee.apk" download="quizee.apk" class="mobile-btn-download">
+                        <span>📥 Download Quizee APK (v3.0.0)</span>
+                        <span class="mobile-btn-sub">100% Free & Offline • 6.97 MB</span>
+                    </a>
+                </div>
             </div>
-        </nav>
+        </div>
+    </header>
+
+    <div class="container">
 
         <!-- Hero Section -->
         <section class="hero">
@@ -4158,5 +4539,56 @@ function handleSimAddQuestion() {
     <!-- Question Banks & Engine Scripts -->
     <script src="data/all_questions.js"></script>
     <script src="assets/web_tests.js?v=4.3"></script>
+    <!-- Mobile Navigation Drawer Toggle Script -->
+    <script>
+        (function() {
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const drawer = document.getElementById('mobileMenuDrawer');
+            const header = document.querySelector('.site-header');
+            if (!menuBtn || !drawer) return;
+
+            function toggleMenu(e) {
+                if (e) e.stopPropagation();
+                const isOpen = drawer.classList.contains('open');
+                drawer.classList.toggle('open', !isOpen);
+                menuBtn.classList.toggle('active', !isOpen);
+                menuBtn.setAttribute('aria-expanded', !isOpen);
+            }
+
+            function closeMenu() {
+                drawer.classList.remove('open');
+                menuBtn.classList.remove('active');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
+
+            drawer.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMenu();
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.site-header')) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeMenu();
+            });
+
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 20) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }, { passive: true });
+            }
+        })();
+    </script>
 </body>
 </html>
