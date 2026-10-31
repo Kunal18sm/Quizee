@@ -1960,7 +1960,86 @@
 }
 
     </style>
-    <link rel="stylesheet" href="assets/web_tests.css">
+    <style>
+/* Subject Filter Tabs - 100% Responsive & Zero Left-Clipping Guarantee */
+.portal-tabs-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 28px !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+.portal-tabs-scroll {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 6px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    margin: 0 auto !important;
+}
+.subject-tab-btn {
+    flex: 0 0 auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    background: #141c2b !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #94a3b8 !important;
+    padding: 9px 18px !important;
+    border-radius: 24px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+}
+.subject-tab-btn:hover {
+    border-color: #818cf8 !important;
+    color: #f8fafc !important;
+    background: #192336 !important;
+}
+.subject-tab-btn.active {
+    background: #6366f1 !important;
+    border-color: #818cf8 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35) !important;
+}
+.tab-count-badge {
+    background: rgba(255, 255, 255, 0.15) !important;
+    padding: 2px 7px !important;
+    border-radius: 10px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+}
+.subject-tab-btn.active .tab-count-badge {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+}
+@media (max-width: 768px) {
+    .portal-tabs-scroll {
+        gap: 8px !important;
+    }
+    .subject-tab-btn {
+        padding: 7px 12px !important;
+        font-size: 12px !important;
+        border-radius: 20px !important;
+        gap: 5px !important;
+    }
+    .tab-count-badge {
+        font-size: 10px !important;
+        padding: 1px 5px !important;
+    }
+}
+</style>
+    <link rel="stylesheet" href="assets/web_tests.css?v=3.5">
 </head>
 <body>
 
@@ -4063,6 +4142,6 @@ function handleSimAddQuestion() {
 
     <!-- Question Banks & Engine Scripts -->
     <script src="data/all_questions.js"></script>
-    <script src="assets/web_tests.js"></script>
+    <script src="assets/web_tests.js?v=3.5"></script>
 </body>
 </html>
