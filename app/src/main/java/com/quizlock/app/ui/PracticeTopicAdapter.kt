@@ -12,7 +12,7 @@ import com.quizlock.app.data.PracticeTopic
 import com.quizlock.app.databinding.ItemPracticeTopicBinding
 
 class PracticeTopicAdapter(
-    private var topics: List<PracticeTopic>,
+    private var topics: List<PracticeTopic> = emptyList(),
     private val onSetClick: (set: PracticeSet, is50Count: Boolean) -> Unit,
     private val onTestAllTopicClick: (PracticeTopic) -> Unit,
     private val onSelectionChanged: (Set<String>) -> Unit

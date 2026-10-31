@@ -160,13 +160,11 @@ class CustomPracticeActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         topicAdapter = PracticeTopicAdapter(
-            onSetClicked = { set ->
-                startSingleSetTest(set, is50Count = false)
+            topics = emptyList(),
+            onSetClick = { set, is50Count ->
+                startSingleSetTest(set, is50Count = is50Count)
             },
-            onSet50Clicked = { set ->
-                startSingleSetTest(set, is50Count = true)
-            },
-            onTopicClicked = { topic ->
+            onTestAllTopicClick = { topic ->
                 startFullTopicTest(topic)
             },
             onSelectionChanged = { selectedCategories ->

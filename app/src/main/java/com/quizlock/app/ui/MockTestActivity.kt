@@ -243,11 +243,12 @@ class MockTestActivity : AppCompatActivity() {
                 null,
                 com.google.android.material.R.attr.materialButtonOutlinedStyle
             ).apply {
+                val density = resources.displayMetrics.density
                 layoutParams = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
-                    resources.getDimensionPixelSize(com.google.android.material.R.dimen.m3_btn_stroke_small) + 90
+                    (38 * density).toInt()
                 ).apply {
-                    marginEnd = 16
+                    marginEnd = (8 * density).toInt()
                 }
                 text = "${sec.icon} ${sec.name} (${sec.count})"
                 textSize = 11f
