@@ -1368,6 +1368,51 @@
                                 app:strokeWidth="1dp" />
                         </LinearLayout>
 
+                        <!-- Unrestricted Battery Optimization Row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="3. Unrestricted Battery (24/7 Run)"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Prevents phone from killing app lock after 24 hrs"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btnPermBattery"
+                                style="@style/Widget.Material3.Button.TonalButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:paddingHorizontal="14dp"
+                                android:paddingVertical="0dp"
+                                android:text="Enable"
+                                android:textSize="12sp"
+                                app:backgroundTint="@color/card_dark_elevated"
+                                app:cornerRadius="18dp"
+                                app:strokeColor="@color/border_dark"
+                                app:strokeWidth="1dp" />
+                        </LinearLayout>
+
                         <!-- Test Floating Lock Button -->
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnTestQuiz"

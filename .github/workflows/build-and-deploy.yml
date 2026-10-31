@@ -79,23 +79,19 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v2.6.0
-          name: "Quizee v2.6.0 - Interactive Home Screen Quiz Widget & Enhanced Performance"
+          tag_name: v3.0.0
+          name: "Quizee v3.0.0 - 7,480+ Questions, 60 Full Mock Tests & 24/7 Persistent App Lock"
           body: |
-            ## 📱 Quizee App v2.6.0 Released!
-            - **🧩 Interactive Home Screen Quiz Widget**:
-              - Direct on-homescreen quiz widget with instant feedback (Green/Red answers).
-              - Next question advancement & daily streak synchronization without opening the app!
-            - **📚 Full Custom Practice Sets & Multi-Topic Mix**:
-              - Individual 50-Q and 100-Q sequential drills for all subjects.
-              - Multi-topic mixed test generator with customizable question counts (25 / 50 / 100 Qs).
-            - **✨ Refined UI & Full Mobile Responsiveness**:
-              - Modern spaced layout with zero clutter.
-              - Live in-browser Android App Simulator on the website.
-            - **🌐 Live 1-Click English ⇄ Hindi Translation**:
-              - Instant on-device toggle for questions and options (`[अ / A Hindi]`).
-            - **📚 6,517 High-Yield SSC CGL Questions**:
+            ## 📱 Quizee App v3.0.0 Released!
+            - **📚 7,480+ High-Yield SSC CGL Questions**:
               - 100% offline curriculum across English Vocab, Static GK, History, Geography, Biology, Polity, and Economics.
+            - **🎯 60 Full SSC CGL Mock Tests (100 Qs each)**:
+              - 4 Progressive Tiers: Level 1 (Foundational), Level 2 (Moderate), Level 3 (Standard CGL Tier 1), Level 4 (Toughest Mastery).
+              - Dedicated Mock Test Portal with real exam timers, question navigation palette, instant scorecards, and bilingual explanations.
+            - **🛡️ 24/7 Persistent Background App Lock**:
+              - One-click Unrestricted Battery optimization mode to prevent Android/OEM task-killer kills after 24 hours.
+              - Multi-tier foreground watchdog alarm engine, screen state synchronization, and auto-restart on task removal.
+              - Configurable session lock timeouts.
             - Download `quizee.apk` below directly on your Android phone!
           files: docs/quizee.apk
         env:

@@ -2,6 +2,7 @@ package com.quizlock.app.data
 
 import android.content.Context
 import android.content.SharedPreferences
+import java.util.concurrent.ConcurrentHashMap
 
 class PreferencesManager(context: Context) {
 
@@ -14,10 +15,9 @@ class PreferencesManager(context: Context) {
         private const val KEY_QUESTIONS_COUNT = "questions_count"
         private const val KEY_UNLOCK_TIMEOUT_MINUTES = "unlock_timeout_minutes"
         
-        // In-memory unlocked session cache: set of currently unlocked package names.
-        // Once an app is unlocked by passing the quiz, it remains unlocked during phone usage
-        // until the phone screen is turned off / locked (Intent.ACTION_SCREEN_OFF).
-        private val unlockedSessions = java.util.Collections.synchronizedSet(mutableSetOf<String>())
+        // In-memory map of unlocked package names to expiration timestamp in milliseconds.
+        // Sessions expire either when the timeout passes or immediately when screen turns off.
+        private val unlockedSessionTimestamps = ConcurrentHashMap<String, Long>()
 
         @Volatile
         private var instance: PreferencesManager? = null
@@ -44,7 +44,7 @@ class PreferencesManager(context: Context) {
             current.add(packageName)
         } else {
             current.remove(packageName)
-            unlockedSessions.remove(packageName)
+            unlockedSessionTimestamps.remove(packageName)
         }
         prefs.edit().putStringSet(KEY_LOCKED_APPS, current).apply()
     }
@@ -61,19 +61,34 @@ class PreferencesManager(context: Context) {
         return prefs.getInt(KEY_UNLOCK_TIMEOUT_MINUTES, 5)
     }
 
+    fun setUnlockTimeoutMinutes(minutes: Int) {
+        prefs.edit().putInt(KEY_UNLOCK_TIMEOUT_MINUTES, minutes).apply()
+    }
+
     fun markAppUnlocked(packageName: String) {
-        unlockedSessions.add(packageName)
+        val timeoutMinutes = getUnlockTimeoutMinutes()
+        val expiryTime = if (timeoutMinutes <= 0) {
+            Long.MAX_VALUE // Stays unlocked only until screen turns off
+        } else {
+            System.currentTimeMillis() + (timeoutMinutes * 60 * 1000L)
+        }
+        unlockedSessionTimestamps[packageName] = expiryTime
     }
 
     fun isAppInUnlockedSession(packageName: String): Boolean {
-        return unlockedSessions.contains(packageName)
+        val expiryTime = unlockedSessionTimestamps[packageName] ?: return false
+        if (System.currentTimeMillis() > expiryTime) {
+            unlockedSessionTimestamps.remove(packageName)
+            return false
+        }
+        return true
     }
 
     fun lockSession(packageName: String) {
-        unlockedSessions.remove(packageName)
+        unlockedSessionTimestamps.remove(packageName)
     }
 
     fun lockAllSessions() {
-        unlockedSessions.clear()
+        unlockedSessionTimestamps.clear()
     }
 }

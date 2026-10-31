@@ -174,6 +174,26 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        binding.btnPermBattery.setOnClickListener {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                try {
+                    val intent = Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS).apply {
+                        data = Uri.parse("package:$packageName")
+                    }
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    try {
+                        val intent = Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS)
+                        startActivity(intent)
+                    } catch (e2: Exception) {
+                        Toast.makeText(this, "Open Settings -> Battery -> Set Quizee to Unrestricted", Toast.LENGTH_LONG).show()
+                    }
+                }
+            } else {
+                Toast.makeText(this, "Battery optimization not applicable on this Android version", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         binding.btnTestQuiz.setOnClickListener {
             val canOverlay = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 Settings.canDrawOverlays(this)
@@ -343,10 +363,29 @@ class MainActivity : AppCompatActivity() {
             binding.btnPermUsage.isEnabled = true
         }
 
+        val hasBatteryExemption = isBatteryOptimizationIgnored()
+        if (hasBatteryExemption) {
+            binding.btnPermBattery.text = "Enabled ✓"
+            binding.btnPermBattery.setTextColor(ContextCompat.getColor(this, R.color.correct_green))
+            binding.btnPermBattery.isEnabled = false
+        } else {
+            binding.btnPermBattery.text = "Enable"
+            binding.btnPermBattery.setTextColor(ContextCompat.getColor(this, R.color.white))
+            binding.btnPermBattery.isEnabled = true
+        }
+
         // Keep foreground service active if usage permission is granted and apps are locked
         if (hasUsage && prefsManager.getLockedPackages().isNotEmpty()) {
             AppLockForegroundService.startService(this)
         }
+    }
+
+    private fun isBatteryOptimizationIgnored(): Boolean {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val powerManager = getSystemService(Context.POWER_SERVICE) as? android.os.PowerManager
+            return powerManager?.isIgnoringBatteryOptimizations(packageName) ?: false
+        }
+        return true
     }
 
     private fun hasUsageStatsPermission(): Boolean {

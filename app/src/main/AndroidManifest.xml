@@ -12,6 +12,8 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <!-- Safe queries element to comply with Google Play Protect -->
@@ -102,7 +104,7 @@
                 android:value="App Lock Monitoring" />
         </service>
 
-        <!-- Boot Receiver to start service on phone restart -->
+        <!-- Boot Receiver to start service on phone restart & keep alive 24/7 -->
         <receiver
             android:name=".receiver.BootReceiver"
             android:enabled="true"
@@ -110,6 +112,9 @@
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.quizlock.app.ACTION_WATCHDOG_CHECK" />
             </intent-filter>
         </receiver>
 
