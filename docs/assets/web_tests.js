@@ -1,6 +1,6 @@
 /**
- * QUIZEE WEB TESTS PORTAL & TEST PLAYER ENGINE
- * Clean, Minimal & High-Performance
+ * QUIZEE WEB TESTS PORTAL & LEVEL-WISE 100-QUESTION MOCK ENGINE
+ * Clean, High-Performance, Real Exam Simulator
  */
 
 (function () {
@@ -17,9 +17,51 @@
         { key: 'economics', name: 'Economics', icon: '📈' }
     ];
 
-    // Global State - Default to English for a clean, uncluttered start!
+    const MOCK_LEVEL_CONFIG = [
+        {
+            level: 1,
+            name: "Level 1: Foundation",
+            badge: "Easy",
+            pillClass: "easy",
+            desc: "Direct, high-yield foundational MCQs from all 7 subjects. Recommended for building speed and basic accuracy."
+        },
+        {
+            level: 2,
+            name: "Level 2: Standard CGL",
+            badge: "Moderate",
+            pillClass: "moderate",
+            desc: "Standard Tier-1 exam shift level. Balanced across grammar, articles, rivers, five-year plans & static GK."
+        },
+        {
+            level: 3,
+            name: "Level 3: Advanced",
+            badge: "Hard",
+            pillClass: "hard",
+            desc: "In-depth questions, exceptions, tricky vocabulary, advanced polity amendments and microeconomics."
+        },
+        {
+            level: 4,
+            name: "Level 4: Master Challenge",
+            badge: "Pro Ranker",
+            pillClass: "pro",
+            desc: "Toughest repeated questions, high-difficulty shifts, and full All-India rank challenge simulator."
+        }
+    ];
+
+    const MOCK_SECTIONS_SPEC = [
+        { key: 'english', name: 'English Language', icon: '📖', count: 30 },
+        { key: 'static_gk', name: 'Static GK', icon: '🏛️', count: 18 },
+        { key: 'history', name: 'Indian History', icon: '🏺', count: 14 },
+        { key: 'polity', name: 'Indian Polity', icon: '⚖️', count: 12 },
+        { key: 'geography', name: 'Geography', icon: '🌍', count: 10 },
+        { key: 'biology', name: 'Science & Biology', icon: '🧬', count: 10 },
+        { key: 'economics', name: 'Indian Economy', icon: '📈', count: 6 }
+    ];
+
+    // Global State
     let QUIZEE_CURRICULUM = [];
     let portalState = {
+        activeTab: 'mock', // 'mock' or 'topics'
         activeSubject: 'English',
         searchQuery: '',
         selectedTopics: new Set(),
@@ -27,18 +69,31 @@
         selectedMultiCount: 50
     };
 
+    let mockPortalState = {
+        activeLevel: 2, // Default to Standard CGL
+        selectedMockNum: 1,
+        isExamMode: true // 60 Min Timer, +2 / -0.50 marks
+    };
+
     let activeTest = {
         isOpen: false,
         title: '',
         subtitle: '',
         setKey: null,
+        is100QMock: false,
+        isExamMode: false,
+        mockLevel: 2,
+        mockNum: 1,
         questions: [],
         currentIndex: 0,
         score: 0,
         isAnswerLocked: false,
         isHindiMode: false,
         reviewItems: [],
+        userAnswers: {}, // index -> chosenOptionIndex
+        markedForReview: new Set(),
         timerSeconds: 0,
+        remainingSeconds: 3600,
         timerInterval: null
     };
 
@@ -50,6 +105,8 @@
         if (catName.startsWith('Modern History:')) return catName.replace('Modern History:', '').trim() + ' (Modern)';
         if (catName.startsWith('Medieval History:')) return catName.replace('Medieval History:', '').trim() + ' (Medieval)';
         if (catName.startsWith('Ancient History:')) return catName.replace('Ancient History:', '').trim() + ' (Ancient)';
+        if (catName.startsWith('Polity:')) return catName.replace('Polity:', '').trim();
+        if (catName.startsWith('General Science:')) return catName.replace('General Science:', '').trim();
         if (catName === subjectName) return `${subjectName} (All Topics)`;
         return catName.trim();
     }
@@ -160,7 +217,6 @@
                 name: sub.name,
                 icon: sub.icon,
                 totalQuestions: qs.length,
-                totalSets: topics.reduce((acc, t) => acc + t.sets.length, 0),
                 topics
             });
         });
@@ -169,40 +225,205 @@
     }
 
     // =========================================================
-    // PORTAL RENDERING
+    // LEVEL-WISE 100-QUESTION MOCK TEST GENERATOR
     // =========================================================
 
-    function renderSubjectTabs() {
-        const container = document.getElementById('portalSubjectTabs');
+    function generateLevelMockTest(levelNumber, mockNumber) {
+        const questionsData = window.QUIZEE_ALL_QUESTIONS || {};
+        const mockQuestions = [];
+
+        MOCK_SECTIONS_SPEC.forEach(spec => {
+            const pool = questionsData[spec.key] || [];
+            if (pool.length === 0) return;
+
+            const n = pool.length;
+            let subPool = [];
+
+            // Level Slice
+            if (levelNumber === 1) {
+                // Foundation (First 25% of pool)
+                subPool = pool.slice(0, Math.max(spec.count, Math.floor(n * 0.25)));
+            } else if (levelNumber === 2) {
+                // Standard CGL (25% to 55%)
+                subPool = pool.slice(Math.floor(n * 0.25), Math.max(Math.floor(n * 0.25) + spec.count, Math.floor(n * 0.55)));
+            } else if (levelNumber === 3) {
+                // Advanced Hard (55% to 80%)
+                subPool = pool.slice(Math.floor(n * 0.55), Math.max(Math.floor(n * 0.55) + spec.count, Math.floor(n * 0.80)));
+            } else {
+                // Master Challenge (80% to 100%)
+                subPool = pool.slice(Math.floor(n * 0.80));
+                if (subPool.length < spec.count) subPool = pool.slice(-spec.count);
+            }
+
+            // Offset per mock test
+            const maxOffset = Math.max(1, subPool.length - spec.count);
+            const startIdx = ((mockNumber - 1) * spec.count) % maxOffset;
+            const selected = subPool.slice(startIdx, startIdx + spec.count);
+
+            selected.forEach(q => {
+                mockQuestions.push({
+                    ...q,
+                    mockSection: spec.name,
+                    mockSectionIcon: spec.icon,
+                    mockSectionKey: spec.key
+                });
+            });
+        });
+
+        return mockQuestions;
+    }
+
+    // =========================================================
+    // RENDER FUNCTIONS
+    // =========================================================
+
+    function renderPortalModeNav() {
+        let container = document.getElementById('portalModeNav');
+        if (!container) {
+            const portalHeader = document.querySelector('.portal-header-box');
+            if (portalHeader) {
+                container = document.createElement('div');
+                container.id = 'portalModeNav';
+                container.className = 'portal-mode-nav';
+                portalHeader.parentNode.insertBefore(container, portalHeader.nextSibling);
+            }
+        }
         if (!container) return;
 
-        let totalSetsAll = 0;
-        QUIZEE_CURRICULUM.forEach(s => { totalSetsAll += s.totalSets; });
-
-        // English first, then others, and All at the end
-        const tabs = [
-            ...QUIZEE_CURRICULUM.map(s => ({
-                name: s.name,
-                icon: s.icon,
-                count: `${s.totalSets} Sets`
-            })),
-            { name: 'All', icon: '✨', count: `${totalSetsAll} Sets` }
-        ];
-
-        container.innerHTML = tabs.map(tab => `
-            <button class="subject-tab-btn ${portalState.activeSubject === tab.name ? 'active' : ''}" data-subject="${tab.name}">
-                <span>${tab.icon}</span>
-                <span>${tab.name}</span>
-                <span class="tab-count-badge">${tab.count}</span>
+        container.innerHTML = `
+            <button class="portal-mode-btn ${portalState.activeTab === 'mock' ? 'active' : ''}" onclick="window.switchPortalTab('mock')">
+                <span>🎯 Full Mock Tests (100 Qs)</span>
+                <span class="mode-badge">Level 1 - 4</span>
             </button>
+            <button class="portal-mode-btn ${portalState.activeTab === 'topics' ? 'active' : ''}" onclick="window.switchPortalTab('topics')">
+                <span>📚 Topic-Wise Practice Sets</span>
+                <span style="font-size:11px; color:#94a3b8;">7 Subjects</span>
+            </button>
+        `;
+    }
+
+    function renderMockHub() {
+        let container = document.getElementById('mockHubContainer');
+        if (!container) {
+            const modeNav = document.getElementById('portalModeNav');
+            if (modeNav) {
+                container = document.createElement('div');
+                container.id = 'mockHubContainer';
+                container.className = 'mock-hub-container';
+                modeNav.parentNode.insertBefore(container, modeNav.nextSibling);
+            }
+        }
+        if (!container) return;
+
+        if (portalState.activeTab !== 'mock') {
+            container.style.display = 'none';
+            return;
+        }
+        container.style.display = 'block';
+
+        const activeLevelObj = MOCK_LEVEL_CONFIG.find(l => l.level === mockPortalState.activeLevel) || MOCK_LEVEL_CONFIG[1];
+
+        // Level cards HTML
+        const levelCardsHtml = MOCK_LEVEL_CONFIG.map(l => `
+            <div class="mock-level-card ${l.level === mockPortalState.activeLevel ? 'active' : ''}" onclick="window.selectMockLevel(${l.level})">
+                <div class="level-badge-row">
+                    <span class="level-pill ${l.pillClass}">${l.badge}</span>
+                    <span style="font-size:11px; color:#94a3b8; font-weight:700;">100 Qs</span>
+                </div>
+                <div class="mock-level-name">${l.name}</div>
+                <div class="mock-level-desc">${l.desc}</div>
+            </div>
         `).join('');
 
-        container.querySelectorAll('.subject-tab-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                portalState.activeSubject = btn.getAttribute('data-subject');
+        // Mock test items HTML (Mock 1 to 5)
+        const mockItemsHtml = [1, 2, 3, 4, 5].map(mNum => {
+            const setKey = `mock_level_${mockPortalState.activeLevel}_test_${mNum}`;
+            const completed = localStorage.getItem(`${setKey}_completed`) === 'true';
+            const score = localStorage.getItem(`${setKey}_score`);
+
+            let scoreBadge = 'Unattempted';
+            if (completed && score !== null) {
+                const marks = parseFloat(score);
+                scoreBadge = `Score: ${marks.toFixed(1)} / 200`;
+            }
+
+            const isSelected = mNum === mockPortalState.selectedMockNum;
+
+            return `
+                <div class="mock-test-item ${isSelected ? 'selected' : ''}" onclick="window.selectMockNumber(${mNum})">
+                    <div class="mock-item-top">
+                        <span class="mock-item-number">Mock Test #${mNum}</span>
+                        <span class="mock-item-score-badge">${scoreBadge}</span>
+                    </div>
+                    <div class="mock-item-meta">
+                        100 Questions • 60 Mins • 200 Marks<br>
+                        <span style="color:#6366f1;">All 7 Subjects Balanced</span>
+                    </div>
+                    <button class="btn-select-mock">
+                        ${isSelected ? 'Selected ✓' : 'Select Test'}
+                    </button>
+                </div>
+            `;
+        }).join('');
+
+        container.innerHTML = `
+            <div class="mock-hub-header">
+                <div class="mock-hub-title-box">
+                    <h3>🎯 SSC CGL Full-Length 100-Question Mock Tests</h3>
+                    <p>
+                        Simulate real Tier-1 examination conditions with exact multi-subject syllabus coverage: 
+                        <b>30 English</b>, <b>18 Static GK</b>, <b>14 History</b>, <b>12 Polity</b>, <b>10 Geography</b>, <b>10 Science</b>, and <b>6 Economics</b>.
+                    </p>
+                </div>
+                <div style="font-size:12px; font-weight:700; color:#10b981; background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.3); padding:6px 14px; border-radius:20px;">
+                    ⚡ 7,480 Verified Questions Pool
+                </div>
+            </div>
+
+            <!-- Level Selector -->
+            <div class="mock-level-tabs">
+                ${levelCardsHtml}
+            </div>
+
+            <!-- Mock Tests Grid -->
+            <div class="mock-tests-grid">
+                ${mockItemsHtml}
+            </div>
+
+            <!-- Controls and Start -->
+            <div class="mock-controls-bar">
+                <div class="mock-mode-options">
+                    <span class="mock-mode-label">Mode:</span>
+                    <button class="mock-toggle-btn ${mockPortalState.isExamMode ? 'active' : ''}" onclick="window.setMockMode(true)">
+                        ⏱️ Real Exam Mode (60 Mins, +2 / -0.50)
+                    </button>
+                    <button class="mock-toggle-btn ${!mockPortalState.isExamMode ? 'active' : ''}" onclick="window.setMockMode(false)">
+                        ⚡ Practice Mode (Untimed, Instant Feedback)
+                    </button>
+                </div>
+
+                <button class="btn-launch-mock-test" onclick="window.startSelectedMockTest()">
+                    <span>🚀 Launch Mock Test #${mockPortalState.selectedMockNum} (100 Qs)</span>
+                </button>
+            </div>
+        `;
+    }
+
+    function renderSubjectTabs() {
+        const tabsWrap = document.getElementById('portalSubjectTabs');
+        if (!tabsWrap) return;
+
+        tabsWrap.innerHTML = '';
+        QUIZEE_CURRICULUM.forEach(sub => {
+            const btn = document.createElement('button');
+            btn.className = `portal-tab-pill ${sub.name === portalState.activeSubject ? 'active' : ''}`;
+            btn.innerHTML = `<span>${sub.icon}</span> <span>${sub.name}</span> <span style="font-size:11px; opacity:0.8;">(${sub.totalQuestions})</span>`;
+            btn.onclick = () => {
+                portalState.activeSubject = sub.name;
                 renderSubjectTabs();
                 renderTopicsGrid();
-            });
+            };
+            tabsWrap.appendChild(btn);
         });
     }
 
@@ -210,308 +431,282 @@
         const banner = document.getElementById('portalResumeBanner');
         if (!banner) return;
 
-        const raw = localStorage.getItem('quizee_last_practiced');
-        if (!raw) {
+        const lastKey = localStorage.getItem('last_practiced_set_key');
+        if (!lastKey) {
             banner.style.display = 'none';
             return;
         }
 
-        try {
-            const data = JSON.parse(raw);
-            const acc = data.total > 0 ? Math.round((data.score / data.total) * 100) : 0;
+        const title = localStorage.getItem('last_practiced_title') || 'Recent Test';
+        const subtitle = localStorage.getItem('last_practiced_subtitle') || '';
+        const score = localStorage.getItem('last_practiced_score') || '0';
+        const total = localStorage.getItem('last_practiced_total') || '100';
 
-            banner.innerHTML = `
-                <div class="resume-info">
-                    <div class="resume-icon-circle">🎯</div>
-                    <div>
-                        <div class="resume-title">Resume: ${data.title}</div>
-                        <div class="resume-meta">Last Score: <b>${data.score}/${data.total}</b> (${acc}%)</div>
-                    </div>
-                </div>
-                <button class="btn-resume" id="btnResumeLast">
-                    <span>Retest Set 🔁</span>
-                </button>
-            `;
-            banner.style.display = 'flex';
-
-            const resumeBtn = document.getElementById('btnResumeLast');
-            if (resumeBtn) {
-                resumeBtn.addEventListener('click', () => {
-                    findAndStartSet(data.setKey);
-                });
-            }
-        } catch (e) {
-            banner.style.display = 'none';
-        }
+        banner.style.display = 'flex';
+        banner.innerHTML = `
+            <div class="resume-info">
+                <span class="resume-tag">⚡ Jump Back In</span>
+                <span class="resume-title">${title} (${score}/${total})</span>
+                <span class="resume-sub">${subtitle}</span>
+            </div>
+            <button class="btn-resume-set" onclick="window.resumeLastSet('${lastKey}')">Resume Practice ➔</button>
+        `;
     }
 
     function renderTopicsGrid() {
         const grid = document.getElementById('portalTopicsGrid');
-        if (!grid) return;
+        const tabsWrap = document.querySelector('.portal-tabs-wrap');
+        const controlsBar = document.querySelector('.portal-controls-bar');
+        const resumeBanner = document.getElementById('portalResumeBanner');
 
-        const filtered = getFilteredTopics();
-
-        if (filtered.length === 0) {
-            grid.innerHTML = `
-                <div style="grid-column: 1 / -1; text-align:center; padding: 40px 20px; background:#141c2b; border:1px dashed rgba(255,255,255,0.1); border-radius:16px;">
-                    <div style="font-size:32px; margin-bottom:8px;">🔍</div>
-                    <div style="font-size:15px; font-weight:700; color:#f8fafc;">No matching topics found</div>
-                    <div style="font-size:13px; color:#94a3b8; margin-top:4px;">Try typing a different search keyword.</div>
-                </div>
-            `;
+        if (portalState.activeTab === 'mock') {
+            if (grid) grid.style.display = 'none';
+            if (tabsWrap) tabsWrap.style.display = 'none';
+            if (controlsBar) controlsBar.style.display = 'none';
+            if (resumeBanner) resumeBanner.style.display = 'none';
             return;
         }
 
-        grid.innerHTML = filtered.map(t => {
-            const isChecked = portalState.selectedTopics.has(t.topicId);
-            const isExp = portalState.expandedTopics.has(t.topicId);
+        if (grid) grid.style.display = 'grid';
+        if (tabsWrap) tabsWrap.style.display = 'block';
+        if (controlsBar) controlsBar.style.display = 'flex';
+        if (resumeBanner && localStorage.getItem('last_practiced_set_key')) resumeBanner.style.display = 'flex';
 
-            let completionPillClass = 'completion-unattempted';
-            let completionPillText = `${t.completedSets}/${t.sets.length} Done`;
-            if (t.completedSets === t.sets.length && t.sets.length > 0) {
-                completionPillClass = t.masteredSets === t.sets.length ? 'completion-mastered' : 'completion-good';
-                completionPillText = `${t.progressPct}% Done`;
-            } else if (t.completedSets > 0) {
-                completionPillClass = 'completion-progress';
-                completionPillText = `${t.completedSets}/${t.sets.length} Sets`;
-            }
+        if (!grid) return;
+        const currentSub = QUIZEE_CURRICULUM.find(s => s.name === portalState.activeSubject);
+        if (!currentSub) return;
 
-            const setsHtml = t.sets.map(s => {
-                const isUnder50 = s.totalQuestions <= 50;
-                return `
-                    <div class="web-set-card" id="set_card_${s.setKey}">
-                        <div class="set-card-left">
-                            <span class="set-card-title">Set ${s.setNumber}</span>
-                            <span class="set-range-tag">(${s.startRange}–${s.endRange})</span>
-                            ${s.statusBadge ? `<span class="set-badge-done">${s.statusBadge}</span>` : ''}
-                        </div>
-                        <div class="set-card-actions">
-                            ${!isUnder50 ? `
-                                <button class="btn-set-50" data-action="set50" data-setkey="${s.setKey}">
-                                    ⚡ 50 Qs
-                                </button>
-                            ` : ''}
-                            <button class="btn-set-full" data-action="setFull" data-setkey="${s.setKey}">
-                                ${isUnder50 ? `Start (${s.totalQuestions})` : `Full (${s.totalQuestions})`}
-                            </button>
-                        </div>
+        let topics = currentSub.topics;
+        if (portalState.searchQuery.trim()) {
+            const q = portalState.searchQuery.toLowerCase();
+            topics = topics.filter(t => t.displayName.toLowerCase().includes(q) || t.categoryName.toLowerCase().includes(q));
+        }
+
+        if (topics.length === 0) {
+            grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 40px; color:#94a3b8;">No topics found matching "${portalState.searchQuery}".</div>`;
+            return;
+        }
+
+        grid.innerHTML = topics.map(t => {
+            const isSelected = portalState.selectedTopics.has(t.topicId);
+            const isExpanded = portalState.expandedTopics.has(t.topicId);
+
+            const setsHtml = t.sets.map(s => `
+                <div class="topic-set-card ${s.isCompleted ? 'completed' : ''}" onclick="window.startSpecificSet('${s.setKey}')">
+                    <div class="set-card-header">
+                        <span class="set-number-tag">Set ${s.setNumber}</span>
+                        <span class="set-status-badge">${s.statusBadge || '100 Qs'}</span>
                     </div>
-                `;
-            }).join('');
+                    <div class="set-range-label">Questions ${s.startRange} - ${s.endRange}</div>
+                    <button class="btn-play-set">${s.isCompleted ? 'Re-test ↺' : 'Start Set ➔'}</button>
+                </div>
+            `).join('');
 
             return `
-                <div class="web-topic-card ${isChecked ? 'selected' : ''}" id="topic_card_${t.topicId}">
-                    <div class="topic-card-top">
-                        <input type="checkbox" class="topic-select-checkbox" data-topicid="${t.topicId}" ${isChecked ? 'checked' : ''} title="Select for mixed test">
-                        <div class="topic-main-info">
-                            <div class="topic-card-title">${t.displayName}</div>
-                            <div class="topic-card-meta">${t.totalQuestions} Questions • ${t.sets.length} Sets</div>
+                <div class="topic-item-card ${isSelected ? 'selected' : ''}" id="${t.topicId}">
+                    <div class="topic-card-header" onclick="window.toggleTopicSets('${t.topicId}')">
+                        <div class="topic-header-left">
+                            <input type="checkbox" class="topic-checkbox" ${isSelected ? 'checked' : ''} onclick="event.stopPropagation(); window.toggleSelectTopic('${t.topicId}')">
+                            <div>
+                                <div class="topic-title-text">${t.displayName}</div>
+                                <div class="topic-meta-text">${t.totalQuestions} Questions • ${t.sets.length} Sets</div>
+                            </div>
                         </div>
-                        <span class="topic-completion-pill ${completionPillClass}">${completionPillText}</span>
+                        <div class="topic-header-right">
+                            <span class="topic-progress-badge">${t.completedSets}/${t.sets.length} Sets</span>
+                            <span class="topic-expand-arrow ${isExpanded ? 'open' : ''}">▼</span>
+                        </div>
                     </div>
-
-                    <div class="topic-progress-track">
-                        <div class="topic-progress-fill" style="width: ${t.progressPct}%;"></div>
-                    </div>
-
-                    <div class="topic-card-actions">
-                        <button class="btn-toggle-sets" data-action="toggleSets" data-topicid="${t.topicId}">
-                            <span>${isExp ? 'Hide Sets ▲' : `View Sets (${t.sets.length}) ▼`}</span>
-                        </button>
-                        <button class="btn-topic-drill" data-action="topicDrill" data-topicid="${t.topicId}">
-                            ⚡ 50 Qs Drill
-                        </button>
-                    </div>
-
-                    <div class="topic-sets-container" id="sets_box_${t.topicId}" style="display:${isExp ? 'flex' : 'none'};">
-                        ${setsHtml}
+                    <div class="topic-sets-tray ${isExpanded ? 'open' : ''}">
+                        <div class="sets-grid-wrap">
+                            ${setsHtml}
+                        </div>
                     </div>
                 </div>
             `;
         }).join('');
 
-        attachGridEventListeners(grid);
         updateMultiDockUI();
-    }
-
-    function getFilteredTopics() {
-        let list = [];
-        QUIZEE_CURRICULUM.forEach(sub => {
-            if (portalState.activeSubject === 'All' || portalState.activeSubject === sub.name) {
-                list = list.concat(sub.topics);
-            }
-        });
-
-        if (portalState.searchQuery.trim()) {
-            const q = portalState.searchQuery.toLowerCase().trim();
-            list = list.filter(t => {
-                return t.displayName.toLowerCase().includes(q) ||
-                       t.categoryName.toLowerCase().includes(q) ||
-                       t.subjectName.toLowerCase().includes(q);
-            });
-        }
-
-        return list;
-    }
-
-    function attachGridEventListeners(container) {
-        container.querySelectorAll('.topic-select-checkbox').forEach(cb => {
-            cb.addEventListener('change', () => {
-                const topicId = cb.getAttribute('data-topicid');
-                if (cb.checked) {
-                    portalState.selectedTopics.add(topicId);
-                } else {
-                    portalState.selectedTopics.delete(topicId);
-                }
-                const card = document.getElementById(`topic_card_${topicId}`);
-                if (card) card.classList.toggle('selected', cb.checked);
-                updateMultiDockUI();
-            });
-        });
-
-        container.querySelectorAll('[data-action="toggleSets"]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const topicId = btn.getAttribute('data-topicid');
-                const box = document.getElementById(`sets_box_${topicId}`);
-                if (!box) return;
-
-                const isExp = portalState.expandedTopics.has(topicId);
-                const topic = findTopicById(topicId);
-                const count = topic ? topic.sets.length : 0;
-                if (isExp) {
-                    portalState.expandedTopics.delete(topicId);
-                    box.style.display = 'none';
-                    btn.innerHTML = `<span>View Sets (${count}) ▼</span>`;
-                } else {
-                    portalState.expandedTopics.add(topicId);
-                    box.style.display = 'flex';
-                    btn.innerHTML = `<span>Hide Sets ▲</span>`;
-                }
-            });
-        });
-
-        container.querySelectorAll('[data-action="topicDrill"]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const topicId = btn.getAttribute('data-topicid');
-                startTopicTest(topicId);
-            });
-        });
-
-        container.querySelectorAll('[data-action="set50"]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const setKey = btn.getAttribute('data-setkey');
-                findAndStartSet(setKey, true);
-            });
-        });
-
-        container.querySelectorAll('[data-action="setFull"]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const setKey = btn.getAttribute('data-setkey');
-                findAndStartSet(setKey, false);
-            });
-        });
     }
 
     function updateMultiDockUI() {
         const dock = document.getElementById('portalMultiDock');
         if (!dock) return;
 
-        if (portalState.selectedTopics.size > 0) {
-            let totalPool = 0;
-            portalState.selectedTopics.forEach(id => {
-                const t = findTopicById(id);
-                if (t) totalPool += t.totalQuestions;
+        if (portalState.selectedTopics.size > 0 && portalState.activeTab === 'topics') {
+            dock.classList.add('active');
+            let totalQs = 0;
+            portalState.selectedTopics.forEach(tId => {
+                const topic = findTopicById(tId);
+                if (topic) totalQs += topic.totalQuestions;
             });
-
-            document.getElementById('dockSelectedCountText').textContent =
-                `Selected: ${portalState.selectedTopics.size} Topics (${totalPool.toLocaleString()} Qs)`;
-            document.getElementById('btnStartMultiMixed').textContent =
-                `Start Mixed Test (${portalState.selectedMultiCount} Qs) 🚀`;
-            dock.style.display = 'block';
+            const countText = document.getElementById('dockSelectedCountText');
+            if (countText) countText.textContent = `Selected: ${portalState.selectedTopics.size} Topics (Pool: ${totalQs} Qs)`;
+            const btn = document.getElementById('btnStartMultiMixed');
+            if (btn) btn.textContent = `🚀 Start Custom Mixed Test (${portalState.selectedMultiCount} Qs)`;
         } else {
-            dock.style.display = 'none';
+            dock.classList.remove('active');
         }
     }
 
     function findTopicById(topicId) {
         for (const sub of QUIZEE_CURRICULUM) {
-            for (const t of sub.topics) {
-                if (t.topicId === topicId) return t;
+            for (const top of sub.topics) {
+                if (top.topicId === topicId) return top;
             }
         }
         return null;
     }
 
-    function findAndStartSet(setKey, is50Count = false) {
+    // =========================================================
+    // WINDOW GLOBAL EVENT HANDLERS
+    // =========================================================
+
+    window.switchPortalTab = function (tabName) {
+        portalState.activeTab = tabName;
+        renderPortalModeNav();
+        renderMockHub();
+        renderTopicsGrid();
+    };
+
+    window.selectMockLevel = function (level) {
+        mockPortalState.activeLevel = level;
+        renderMockHub();
+    };
+
+    window.selectMockNumber = function (mockNum) {
+        mockPortalState.selectedMockNum = mockNum;
+        renderMockHub();
+    };
+
+    window.setMockMode = function (isExam) {
+        mockPortalState.isExamMode = isExam;
+        renderMockHub();
+    };
+
+    window.startSelectedMockTest = function () {
+        const level = mockPortalState.activeLevel;
+        const mockNum = mockPortalState.selectedMockNum;
+        const isExam = mockPortalState.isExamMode;
+
+        const levelObj = MOCK_LEVEL_CONFIG.find(l => l.level === level) || MOCK_LEVEL_CONFIG[1];
+        const questions = generateLevelMockTest(level, mockNum);
+
+        if (!questions || questions.length === 0) {
+            alert('Unable to load mock test questions. Please check connection.');
+            return;
+        }
+
+        const title = `SSC CGL Mock Test #${mockNum} (${levelObj.name})`;
+        const subtitle = `${levelObj.desc} • 100 Questions • 200 Marks • 60 Mins`;
+        const setKey = `mock_level_${level}_test_${mockNum}`;
+
+        launchWebTest(questions, title, subtitle, setKey, true, isExam, level, mockNum);
+    };
+
+    window.toggleTopicSets = function (topicId) {
+        if (portalState.expandedTopics.has(topicId)) {
+            portalState.expandedTopics.delete(topicId);
+        } else {
+            portalState.expandedTopics.add(topicId);
+        }
+        renderTopicsGrid();
+    };
+
+    window.toggleSelectTopic = function (topicId) {
+        if (portalState.selectedTopics.has(topicId)) {
+            portalState.selectedTopics.delete(topicId);
+        } else {
+            portalState.selectedTopics.add(topicId);
+        }
+        renderTopicsGrid();
+    };
+
+    window.clearTopicSelections = function () {
+        portalState.selectedTopics.clear();
+        renderTopicsGrid();
+    };
+
+    window.selectMultiCount = function (count) {
+        portalState.selectedMultiCount = count;
+        document.querySelectorAll('.dock-chip').forEach(c => {
+            c.classList.toggle('active', c.textContent.includes(`${count}`));
+        });
+        updateMultiDockUI();
+    };
+
+    window.startSpecificSet = function (setKey) {
         for (const sub of QUIZEE_CURRICULUM) {
-            for (const t of sub.topics) {
-                for (const s of t.sets) {
-                    if (s.setKey === setKey) {
-                        const count = is50Count ? Math.min(50, s.questions.length) : s.questions.length;
-                        const qs = is50Count ? s.questions.slice(0, 50) : s.questions;
-                        const title = `${t.displayName} • Set ${s.setNumber}`;
-                        const subtitle = is50Count ? `50 Questions Drill` : `${s.totalQuestions} Questions Set`;
-                        launchWebTest(qs, title, subtitle, s.setKey);
+            for (const top of sub.topics) {
+                for (const set of top.sets) {
+                    if (set.setKey === setKey) {
+                        launchWebTest(set.questions, `${top.displayName} - Set ${set.setNumber}`, `${sub.name} Practice`, setKey, false, false);
                         return;
                     }
                 }
             }
         }
-    }
+    };
 
-    function startTopicTest(topicId) {
-        const t = findTopicById(topicId);
-        if (!t) return;
-        const shuffled = [...t.questions].sort(() => 0.5 - Math.random());
-        const count = Math.min(50, shuffled.length);
-        const selected = shuffled.slice(0, count);
-        launchWebTest(selected, `${t.displayName} • Rapid Drill`, `50 Questions Drill`, null);
-    }
+    window.resumeLastSet = function (setKey) {
+        window.startSpecificSet(setKey);
+    };
 
-    function startCustomMixedTest() {
+    window.startCustomMixedTest = function () {
         if (portalState.selectedTopics.size === 0) return;
-
-        let combined = [];
-        portalState.selectedTopics.forEach(id => {
-            const t = findTopicById(id);
-            if (t) combined = combined.concat(t.questions);
+        const allPool = [];
+        portalState.selectedTopics.forEach(tId => {
+            const topic = findTopicById(tId);
+            if (topic) allPool.push(...topic.questions);
         });
+        if (allPool.length === 0) return;
+        const shuffled = allPool.sort(() => 0.5 - Math.random());
+        const targetCount = Math.min(portalState.selectedMultiCount, shuffled.length);
+        const selected = shuffled.slice(0, targetCount);
 
-        if (combined.length === 0) return;
-        const shuffled = [...combined].sort(() => 0.5 - Math.random());
-        const count = Math.min(portalState.selectedMultiCount, shuffled.length);
-        const selected = shuffled.slice(0, count);
-
-        launchWebTest(
-            selected,
-            `Mixed Mock Test`,
-            `${count} Questions from ${portalState.selectedTopics.size} Topics`,
-            null
-        );
-    }
+        launchWebTest(selected, `Custom Multi-Topic Test (${targetCount} Qs)`, `Mixed Practice from ${portalState.selectedTopics.size} Topics`, 'custom_multi', false, false);
+    };
 
     // =========================================================
     // WEB TEST PLAYER
     // =========================================================
 
-    function launchWebTest(questions, title, subtitle, setKey) {
+    function launchWebTest(questions, title, subtitle, setKey, is100QMock = false, isExamMode = false, mockLevel = 2, mockNum = 1) {
         if (!questions || questions.length === 0) return;
 
         activeTest.isOpen = true;
         activeTest.title = title;
         activeTest.subtitle = subtitle;
         activeTest.setKey = setKey;
+        activeTest.is100QMock = is100QMock;
+        activeTest.isExamMode = isExamMode;
+        activeTest.mockLevel = mockLevel;
+        activeTest.mockNum = mockNum;
         activeTest.questions = questions;
         activeTest.currentIndex = 0;
         activeTest.score = 0;
         activeTest.isAnswerLocked = false;
         activeTest.isHindiMode = false;
         activeTest.reviewItems = [];
+        activeTest.userAnswers = {};
+        activeTest.markedForReview = new Set();
         activeTest.timerSeconds = 0;
+        activeTest.remainingSeconds = 3600; // 60 mins for mock exam
 
         clearInterval(activeTest.timerInterval);
         activeTest.timerInterval = setInterval(() => {
             activeTest.timerSeconds++;
+            if (activeTest.isExamMode) {
+                activeTest.remainingSeconds--;
+                updateTimerDisplay();
+                if (activeTest.remainingSeconds <= 0) {
+                    clearInterval(activeTest.timerInterval);
+                    alert("⏰ Time's up! Submitting your 60-minute Mock Exam now.");
+                    showWebTestResults();
+                }
+            } else {
+                updateTimerDisplay();
+            }
         }, 1000);
 
         const modal = document.getElementById('webTestModal');
@@ -528,7 +723,98 @@
         document.getElementById('btnTestTranslate').classList.remove('active-hindi');
         document.getElementById('btnTestTranslate').textContent = 'अ / A Hindi';
 
+        // Add 100-Q Palette Button & Timer Pill if not present
+        ensureHeaderTools();
+
+        // Render Section Jump Bar if 100-Q Mock Test
+        renderSectionJumpBar();
+
         displayActiveQuestion(0);
+    }
+
+    function ensureHeaderTools() {
+        const headerRight = document.querySelector('.test-header-right');
+        if (!headerRight) return;
+
+        let timerPill = document.getElementById('webTestTimerPill');
+        if (!timerPill) {
+            timerPill = document.createElement('span');
+            timerPill.id = 'webTestTimerPill';
+            timerPill.style.cssText = 'font-size:12px; font-weight:800; color:#94a3b8; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); padding:4px 10px; border-radius:12px; display:inline-flex; align-items:center;';
+            timerPill.textContent = '⏱️ 00:00';
+            headerRight.insertBefore(timerPill, headerRight.firstChild);
+        }
+
+        let paletteBtn = document.getElementById('btnOpenPalette');
+        if (!paletteBtn) {
+            paletteBtn = document.createElement('button');
+            paletteBtn.id = 'btnOpenPalette';
+            paletteBtn.style.cssText = 'font-size:12px; font-weight:700; color:#818cf8; background:rgba(99,102,241,0.15); border:1px solid rgba(99,102,241,0.3); padding:4px 10px; border-radius:8px; cursor:pointer;';
+            paletteBtn.textContent = '📊 Palette';
+            paletteBtn.onclick = () => window.openPaletteModal();
+            headerRight.insertBefore(paletteBtn, headerRight.firstChild);
+        }
+    }
+
+    function updateTimerDisplay() {
+        const timerPill = document.getElementById('webTestTimerPill');
+        if (!timerPill) return;
+
+        if (activeTest.isExamMode) {
+            const rem = Math.max(0, activeTest.remainingSeconds);
+            const m = Math.floor(rem / 60);
+            const s = rem % 60;
+            const timeStr = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+            timerPill.textContent = `⏱️ ${timeStr}`;
+            if (rem <= 300) {
+                timerPill.style.color = '#ef4444';
+                timerPill.style.borderColor = '#ef4444';
+            } else {
+                timerPill.style.color = '#10b981';
+                timerPill.style.borderColor = 'rgba(16,185,129,0.3)';
+            }
+        } else {
+            const m = Math.floor(activeTest.timerSeconds / 60);
+            const s = activeTest.timerSeconds % 60;
+            timerPill.textContent = `⏱️ ${m}:${s.toString().padStart(2, '0')}`;
+            timerPill.style.color = '#94a3b8';
+        }
+    }
+
+    function renderSectionJumpBar() {
+        let jumpBar = document.getElementById('mockSectionJumpBar');
+        if (!jumpBar) {
+            const header = document.querySelector('.web-test-header');
+            if (header) {
+                jumpBar = document.createElement('div');
+                jumpBar.id = 'mockSectionJumpBar';
+                jumpBar.className = 'mock-section-jump-bar';
+                header.parentNode.insertBefore(jumpBar, header.nextSibling);
+            }
+        }
+        if (!jumpBar) return;
+
+        if (!activeTest.is100QMock) {
+            jumpBar.style.display = 'none';
+            return;
+        }
+
+        jumpBar.style.display = 'flex';
+        jumpBar.innerHTML = '';
+
+        let offset = 0;
+        MOCK_SECTIONS_SPEC.forEach((spec) => {
+            const startIdx = offset;
+            const endIdx = offset + spec.count - 1;
+            const btn = document.createElement('button');
+            btn.className = `section-jump-pill ${activeTest.currentIndex >= startIdx && activeTest.currentIndex <= endIdx ? 'active' : ''}`;
+            btn.innerHTML = `<span>${spec.icon}</span> <span>${spec.name}</span> <span style="opacity:0.75; font-size:10.5px;">(${spec.count})</span>`;
+            btn.onclick = () => {
+                displayActiveQuestion(startIdx);
+            };
+            jumpBar.appendChild(btn);
+            offset += spec.count;
+        });
     }
 
     function displayActiveQuestion(index) {
@@ -551,9 +837,18 @@
         }
 
         const catTag = document.getElementById('webQuestionCategory');
-        if (catTag) catTag.textContent = q.category || 'SSC Exam';
+        if (catTag) {
+            if (q.mockSection) {
+                catTag.innerHTML = `<b>${q.mockSectionIcon || '📌'} ${q.mockSection}</b> • ${q.category || 'SSC CGL'}`;
+            } else {
+                catTag.textContent = q.category || 'SSC Exam';
+            }
+        }
 
         renderQuestionTextAndOptions(q);
+
+        // Update Section jump pills active state
+        renderSectionJumpBar();
 
         const skipBtn = document.getElementById('btnTestSkip');
         if (skipBtn) skipBtn.style.display = 'inline-block';
@@ -569,296 +864,388 @@
     }
 
     function renderQuestionTextAndOptions(q) {
-        const qTextEl = document.getElementById('webQuestionText');
-        const optionsBox = document.getElementById('webOptionsContainer');
-        if (!qTextEl || !optionsBox) return;
+        const textEl = document.getElementById('webQuestionText');
+        const optionsContainer = document.getElementById('webOptionsContainer');
+        if (!textEl || !optionsContainer) return;
 
         let displayQ = q.question;
         let displayOpts = [...q.options];
 
         if (activeTest.isHindiMode) {
-            if (translationCache[q.id]) {
-                displayQ = translationCache[q.id].question;
-                displayOpts = translationCache[q.id].options;
-            } else {
-                const embedded = extractEmbeddedHindiQuestion(q);
-                if (embedded) {
-                    displayQ = embedded.question;
-                    displayOpts = embedded.options;
-                }
+            const embedded = extractEmbeddedHindiQuestion(q);
+            if (embedded) {
+                displayQ = embedded.question;
+                displayOpts = embedded.options;
             }
         }
 
-        qTextEl.textContent = displayQ;
-        optionsBox.innerHTML = '';
+        textEl.textContent = displayQ;
+        optionsContainer.innerHTML = '';
 
-        const badges = ['A', 'B', 'C', 'D'];
-        displayOpts.forEach((optText, i) => {
+        displayOpts.forEach((optText, optIdx) => {
             const btn = document.createElement('button');
             btn.className = 'web-option-btn';
-            btn.setAttribute('data-index', i);
             btn.innerHTML = `
-                <span class="web-option-badge">${badges[i]}</span>
-                <span class="web-option-text">${optText}</span>
-                <span class="web-option-feedback-icon" id="feedback_icon_${i}"></span>
+                <span class="option-badge">${String.fromCharCode(65 + optIdx)}</span>
+                <span class="option-label">${optText}</span>
             `;
-            btn.addEventListener('click', () => handleOptionSelected(i));
-            optionsBox.appendChild(btn);
+            btn.onclick = () => handleOptionSelected(optIdx);
+            optionsContainer.appendChild(btn);
         });
     }
 
     function extractEmbeddedHindiQuestion(q) {
         const qParts = q.question.split('/');
-        let hindiQ = q.question;
-        if (qParts.length > 1 && /[ऀ-ॿ]/.test(qParts[1])) {
-            hindiQ = qParts[1].trim();
+        if (qParts.length > 1) {
+            const hQ = qParts[qParts.length - 1].trim();
+            const hOpts = q.options.map(opt => {
+                const oParts = opt.split('/');
+                return (oParts.length > 1) ? oParts[oParts.length - 1].trim() : opt;
+            });
+            return { question: hQ, options: hOpts };
         }
-
-        const hindiOpts = q.options.map(opt => {
-            const parts = opt.split('/');
-            if (parts.length > 1 && /[ऀ-ॿ]/.test(parts[1])) {
-                return parts[1].trim();
-            }
-            return opt;
-        });
-
-        return { question: hindiQ, options: hindiOpts };
+        return null;
     }
 
     function handleOptionSelected(selectedIndex) {
         if (activeTest.isAnswerLocked) return;
         activeTest.isAnswerLocked = true;
 
-        const currentQ = activeTest.questions[activeTest.currentIndex];
-        const isCorrect = (selectedIndex === currentQ.correctIndex);
+        const q = activeTest.questions[activeTest.currentIndex];
+        const isCorrect = (selectedIndex === q.correctIndex);
+        activeTest.userAnswers[activeTest.currentIndex] = selectedIndex;
 
-        const allButtons = document.querySelectorAll('.web-option-btn');
-        allButtons.forEach(b => b.disabled = true);
+        if (isCorrect) activeTest.score++;
 
-        const chosenBtn = allButtons[selectedIndex];
-        if (isCorrect) {
-            activeTest.score++;
-            document.getElementById('webTestScorePill').textContent = `Score: ${activeTest.score}`;
-            if (chosenBtn) {
-                chosenBtn.classList.add('opt-correct');
-                const icon = chosenBtn.querySelector('.web-option-feedback-icon');
-                if (icon) icon.textContent = '✓';
+        const optButtons = document.querySelectorAll('.web-option-btn');
+        optButtons.forEach((btn, idx) => {
+            btn.disabled = true;
+            if (idx === q.correctIndex) {
+                btn.classList.add('correct');
+            } else if (idx === selectedIndex) {
+                btn.classList.add('wrong');
             }
-        } else {
-            if (chosenBtn) {
-                chosenBtn.classList.add('opt-wrong');
-                const icon = chosenBtn.querySelector('.web-option-feedback-icon');
-                if (icon) icon.textContent = '✕';
-            }
-            if (currentQ.correctIndex < allButtons.length) {
-                const correctBtn = allButtons[currentQ.correctIndex];
-                correctBtn.classList.add('opt-correct');
-                const icon = correctBtn.querySelector('.web-option-feedback-icon');
-                if (icon) icon.textContent = '✓';
-            }
-        }
+        });
 
         activeTest.reviewItems.push({
-            qNum: activeTest.currentIndex + 1,
-            question: currentQ,
-            selectedIndex,
-            isCorrect
+            questionNumber: activeTest.currentIndex + 1,
+            questionText: q.question,
+            section: q.mockSection || q.category,
+            category: q.category,
+            options: q.options,
+            selectedIndex: selectedIndex,
+            correctIndex: q.correctIndex,
+            isCorrect: isCorrect,
+            isSkipped: false
         });
+
+        const scorePill = document.getElementById('webTestScorePill');
+        if (scorePill) scorePill.textContent = `Score: ${activeTest.score}`;
 
         const skipBtn = document.getElementById('btnTestSkip');
         if (skipBtn) skipBtn.style.display = 'none';
 
         const nextBtn = document.getElementById('btnTestNext');
-        if (nextBtn) nextBtn.disabled = false;
+        if (nextBtn) {
+            nextBtn.disabled = false;
+            nextBtn.focus();
+        }
+
+        // In Exam Mode with 100 questions, automatically advance after short delay
+        if (activeTest.is100QMock && activeTest.isExamMode) {
+            setTimeout(() => {
+                handleNextQuestion();
+            }, 600);
+        }
     }
 
     function handleSkipQuestion() {
         if (activeTest.isAnswerLocked) return;
-        activeTest.isAnswerLocked = true;
-
-        const currentQ = activeTest.questions[activeTest.currentIndex];
-        const allButtons = document.querySelectorAll('.web-option-btn');
-        allButtons.forEach(b => b.disabled = true);
-
-        if (currentQ.correctIndex < allButtons.length) {
-            const correctBtn = allButtons[currentQ.correctIndex];
-            correctBtn.classList.add('opt-correct');
-            const icon = correctBtn.querySelector('.web-option-feedback-icon');
-            if (icon) icon.textContent = '✓';
-        }
+        const q = activeTest.questions[activeTest.currentIndex];
 
         activeTest.reviewItems.push({
-            qNum: activeTest.currentIndex + 1,
-            question: currentQ,
+            questionNumber: activeTest.currentIndex + 1,
+            questionText: q.question,
+            section: q.mockSection || q.category,
+            category: q.category,
+            options: q.options,
             selectedIndex: -1,
-            isCorrect: false
+            correctIndex: q.correctIndex,
+            isCorrect: false,
+            isSkipped: true
         });
 
-        const skipBtn = document.getElementById('btnTestSkip');
-        if (skipBtn) skipBtn.style.display = 'none';
-
-        const nextBtn = document.getElementById('btnTestNext');
-        if (nextBtn) nextBtn.disabled = false;
+        handleNextQuestion();
     }
 
     function handleNextQuestion() {
-        if (activeTest.currentIndex + 1 < activeTest.questions.length) {
+        if (activeTest.currentIndex < activeTest.questions.length - 1) {
             displayActiveQuestion(activeTest.currentIndex + 1);
         } else {
             showWebTestResults();
         }
     }
 
+    // =========================================================
+    // RESULTS & COMPREHENSIVE SCORECARD
+    // =========================================================
+
     function showWebTestResults() {
         clearInterval(activeTest.timerInterval);
 
         document.getElementById('webTestActiveBody').style.display = 'none';
         document.getElementById('webTestFooter').style.display = 'none';
-        const resultsView = document.getElementById('webTestResultsView');
-        resultsView.style.display = 'block';
+        document.getElementById('webTestResultsView').style.display = 'block';
+
+        const jumpBar = document.getElementById('mockSectionJumpBar');
+        if (jumpBar) jumpBar.style.display = 'none';
 
         const total = activeTest.questions.length;
         const correct = activeTest.score;
-        const wrong = activeTest.reviewItems.filter(r => !r.isCorrect && r.selectedIndex !== -1).length;
-        const skipped = activeTest.reviewItems.filter(r => r.selectedIndex === -1).length;
-        const percentage = total > 0 ? Math.round((correct / total) * 100) : 0;
+        const wrong = activeTest.reviewItems.filter(r => !r.isCorrect && !r.isSkipped).length;
+        const skipped = total - (correct + wrong);
+        const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
 
-        document.getElementById('resultsMainTitle').textContent = `Test Completed! 🎉`;
-        document.getElementById('resultsSubtitle').textContent = activeTest.title;
-        document.getElementById('resultsScoreDigits').textContent = `${correct} / ${total}`;
-        document.getElementById('resultsAccuracyPill').textContent = `${percentage}% Accuracy`;
-        document.getElementById('resultsMetricCorrect').textContent = correct;
-        document.getElementById('resultsMetricWrong').textContent = wrong;
-        document.getElementById('resultsMetricSkipped').textContent = skipped;
-
-        let badgeCallout = '';
-        if (percentage >= 80) badgeCallout = `🏆 Mastered (${percentage}%)`;
-        else if (percentage >= 50) badgeCallout = `🎯 Good Job (${percentage}%)`;
-        else badgeCallout = `⚠️ Needs Practice (${percentage}%)`;
-        document.getElementById('resultsBadgeCallout').textContent = badgeCallout;
-
-        if (activeTest.setKey) {
-            localStorage.setItem(`${activeTest.setKey}_completed`, 'true');
-            localStorage.setItem(`${activeTest.setKey}_score`, correct.toString());
-            localStorage.setItem(`${activeTest.setKey}_total`, total.toString());
-            localStorage.setItem(`${activeTest.setKey}_timestamp`, Date.now().toString());
-
-            localStorage.setItem('quizee_last_practiced', JSON.stringify({
-                setKey: activeTest.setKey,
-                title: activeTest.title,
-                score: correct,
-                total: total,
-                timestamp: Date.now()
-            }));
-
-            QUIZEE_CURRICULUM = buildCurriculum(window.QUIZEE_ALL_QUESTIONS);
-            renderLastPracticedBanner();
-            renderTopicsGrid();
+        // Save progress to local storage
+        if (activeTest.setKey && activeTest.setKey !== 'custom_multi') {
+            const prevScore = parseInt(localStorage.getItem(`${activeTest.setKey}_score`) || '0', 10);
+            if (correct > prevScore || !localStorage.getItem(`${activeTest.setKey}_completed`)) {
+                localStorage.setItem(`${activeTest.setKey}_completed`, 'true');
+                localStorage.setItem(`${activeTest.setKey}_score`, `${correct}`);
+                localStorage.setItem(`${activeTest.setKey}_total`, `${total}`);
+            }
+            localStorage.setItem('last_practiced_set_key', activeTest.setKey);
+            localStorage.setItem('last_practiced_title', activeTest.title);
+            localStorage.setItem('last_practiced_subtitle', activeTest.subtitle);
+            localStorage.setItem('last_practiced_score', `${correct}`);
+            localStorage.setItem('last_practiced_total', `${total}`);
         }
+
+        // If 100-Q Mock Test: Real SSC CGL Marking (+2 / -0.50 out of 200)
+        if (activeTest.is100QMock) {
+            const positiveMarks = correct * 2.0;
+            const negativeMarks = wrong * 0.50;
+            const netMarks = Math.max(0, positiveMarks - negativeMarks);
+
+            document.getElementById('resultsMainTitle').textContent = `Score: ${netMarks.toFixed(1)} / 200.0 Marks`;
+            document.getElementById('resultsSubtitle').textContent = `${activeTest.title} Completed • ${total} Questions`;
+
+            let badgeCallout = '';
+            if (netMarks >= 150) badgeCallout = '🏆 Outstanding! Expected All-India Rank < 500';
+            else if (netMarks >= 135) badgeCallout = '🎯 Tier-1 Qualified! Excellent Performance';
+            else if (netMarks >= 110) badgeCallout = '⚡ Good Score! Clear weak sections to boost ranking';
+            else badgeCallout = '📚 Needs Revision. Practice weak topics and review solutions';
+
+            document.getElementById('resultsBadgeCallout').textContent = badgeCallout;
+            document.getElementById('resultsScoreDigits').textContent = `${correct} / ${total}`;
+            document.getElementById('resultsAccuracyPill').textContent = `${accuracy}% Net Accuracy • Net Marks: ${netMarks.toFixed(1)}`;
+
+            // Render Section Breakdown Table
+            renderMockSectionalTable();
+        } else {
+            document.getElementById('resultsMainTitle').textContent = 'Set Completed!';
+            document.getElementById('resultsSubtitle').textContent = activeTest.title;
+            document.getElementById('resultsScoreDigits').textContent = `${correct} / ${total}`;
+            document.getElementById('resultsAccuracyPill').textContent = `${accuracy}% Accuracy`;
+            document.getElementById('resultsBadgeCallout').textContent = (accuracy >= 80) ? '🏆 Master Level' : (accuracy >= 50 ? '🎯 Good Job' : '⚠️ Keep Practicing');
+        }
+
+        document.getElementById('resultsMetricCorrect').textContent = `${correct}`;
+        document.getElementById('resultsMetricWrong').textContent = `${wrong}`;
+        document.getElementById('resultsMetricSkipped').textContent = `${skipped}`;
 
         renderReviewList();
     }
 
+    function renderMockSectionalTable() {
+        let tableContainer = document.getElementById('mockSectionalTableContainer');
+        if (!tableContainer) {
+            const scoreCard = document.querySelector('.results-score-card');
+            if (scoreCard) {
+                tableContainer = document.createElement('div');
+                tableContainer.id = 'mockSectionalTableContainer';
+                scoreCard.appendChild(tableContainer);
+            }
+        }
+        if (!tableContainer) return;
+
+        // Group by mock section
+        const sectionStats = {};
+        MOCK_SECTIONS_SPEC.forEach(s => {
+            sectionStats[s.name] = { total: s.count, correct: 0, wrong: 0, skipped: 0, icon: s.icon };
+        });
+
+        activeTest.reviewItems.forEach(r => {
+            const sec = r.section || 'General';
+            if (!sectionStats[sec]) sectionStats[sec] = { total: 0, correct: 0, wrong: 0, skipped: 0, icon: '📌' };
+            if (r.isCorrect) sectionStats[sec].correct++;
+            else if (r.isSkipped) sectionStats[sec].skipped++;
+            else sectionStats[sec].wrong++;
+        });
+
+        const rowsHtml = Object.entries(sectionStats).map(([secName, s]) => {
+            const marks = (s.correct * 2.0) - (s.wrong * 0.50);
+            const maxMarks = s.total * 2;
+            return `
+                <tr>
+                    <td><b>${s.icon} ${secName}</b></td>
+                    <td>${s.total}</td>
+                    <td style="color:#10b981; font-weight:700;">${s.correct}</td>
+                    <td style="color:#ef4444; font-weight:700;">${s.wrong}</td>
+                    <td style="font-weight:800; color:#818cf8;">${Math.max(0, marks).toFixed(1)} / ${maxMarks}</td>
+                </tr>
+            `;
+        }).join('');
+
+        tableContainer.innerHTML = `
+            <div style="font-size:14px; font-weight:800; color:#f8fafc; margin-top:20px; text-align:left;">📊 Section-Wise Scorecard (SSC Marking Scheme):</div>
+            <table class="mock-scorecard-table">
+                <thead>
+                    <tr>
+                        <th>Subject Section</th>
+                        <th>Questions</th>
+                        <th>Correct (+2)</th>
+                        <th>Wrong (-0.5)</th>
+                        <th>Net Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${rowsHtml}
+                </tbody>
+            </table>
+        `;
+    }
+
     function renderReviewList() {
-        const accordion = document.getElementById('resultsReviewList');
-        if (!accordion) return;
+        const container = document.getElementById('resultsReviewList');
+        if (!container) return;
 
-        const badges = ['A', 'B', 'C', 'D'];
-        accordion.innerHTML = activeTest.reviewItems.map(item => {
-            const q = item.question;
-            let statusClass = item.isCorrect ? 'is-correct' : (item.selectedIndex === -1 ? 'is-skipped' : 'is-wrong');
-            let statusText = item.isCorrect ? '✓ Correct' : (item.selectedIndex === -1 ? 'Skipped' : '✕ Wrong');
-            let statusColor = item.isCorrect ? '#10b981' : (item.selectedIndex === -1 ? '#f59e0b' : '#ef4444');
-
-            let yourChoiceHtml = '';
-            if (item.selectedIndex !== -1) {
-                yourChoiceHtml = `
-                    <div class="review-item-choice ${item.isCorrect ? 'choice-correct' : 'choice-your-wrong'}">
-                        <b>Your Answer (${badges[item.selectedIndex]}):</b> ${q.options[item.selectedIndex]}
-                    </div>
-                `;
-            } else {
-                yourChoiceHtml = `
-                    <div class="review-item-choice choice-your-wrong" style="color:#f59e0b;">
-                        <b>Your Answer:</b> Skipped
-                    </div>
-                `;
+        container.innerHTML = activeTest.reviewItems.map(item => {
+            let statusClass = 'is-skipped';
+            let statusBadge = '<span style="color:#f59e0b;">SKIPPED</span>';
+            if (item.isCorrect) {
+                statusClass = 'is-correct';
+                statusBadge = '<span style="color:#10b981;">CORRECT ✓</span>';
+            } else if (!item.isSkipped) {
+                statusClass = 'is-wrong';
+                statusBadge = '<span style="color:#ef4444;">INCORRECT ✕</span>';
             }
 
-            const correctChoiceHtml = `
-                <div class="review-item-choice choice-correct">
-                    <b>Correct Answer (${badges[q.correctIndex]}):</b> ${q.options[q.correctIndex]}
-                </div>
-            `;
+            const chosenText = item.selectedIndex >= 0 ? item.options[item.selectedIndex] : 'No Option Selected';
+            const correctText = item.options[item.correctIndex];
 
             return `
                 <div class="review-item-card ${statusClass}">
                     <div class="review-item-header">
-                        <span style="color:#94a3b8;">Question ${item.qNum}</span>
-                        <span style="color:${statusColor}; font-weight:700;">${statusText}</span>
+                        <span>Q${item.questionNumber} • ${item.section || item.category}</span>
+                        ${statusBadge}
                     </div>
-                    <div class="review-item-qtext">${q.question}</div>
-                    ${yourChoiceHtml}
-                    ${!item.isCorrect ? correctChoiceHtml : ''}
+                    <div class="review-item-qtext">${item.questionText}</div>
+                    ${!item.isCorrect && item.selectedIndex >= 0 ? `
+                        <div class="review-item-choice choice-your-wrong">
+                            <b>Your Answer:</b> ${chosenText}
+                        </div>
+                    ` : ''}
+                    <div class="review-item-choice choice-correct">
+                        <b>Correct Answer:</b> ${correctText}
+                    </div>
                 </div>
             `;
         }).join('');
     }
 
-    async function toggleTestLanguage() {
+    window.toggleResultsReview = function () {
+        const reviewBox = document.getElementById('resultsReviewContainer');
+        const btn = document.getElementById('btnToggleReview');
+        if (!reviewBox || !btn) return;
+
+        if (reviewBox.style.display === 'none') {
+            reviewBox.style.display = 'block';
+            btn.textContent = 'Hide Solutions ▲';
+        } else {
+            reviewBox.style.display = 'none';
+            btn.textContent = 'Review All Questions & Answers ▼';
+        }
+    };
+
+    window.retestCurrentSet = function () {
+        if (!activeTest.questions || activeTest.questions.length === 0) return;
+        launchWebTest(activeTest.questions, activeTest.title, activeTest.subtitle, activeTest.setKey, activeTest.is100QMock, activeTest.isExamMode, activeTest.mockLevel, activeTest.mockNum);
+    };
+
+    // 100-Question Palette Modal Controls
+    window.openPaletteModal = function () {
+        let modal = document.getElementById('paletteModal');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'paletteModal';
+            modal.className = 'palette-modal-overlay';
+            modal.innerHTML = `
+                <div class="palette-dialog-box">
+                    <div class="palette-dialog-header">
+                        <span class="palette-dialog-title">📊 100-Question Question Palette</span>
+                        <button style="background:none; border:none; color:#94a3b8; font-size:18px; cursor:pointer;" onclick="window.closePaletteModal()">✕</button>
+                    </div>
+                    <div class="palette-legend-row">
+                        <span class="legend-pill"><span class="legend-dot answered"></span> Answered</span>
+                        <span class="legend-pill"><span class="legend-dot skipped"></span> Skipped</span>
+                        <span class="legend-pill"><span class="legend-dot unvisited"></span> Unvisited</span>
+                    </div>
+                    <div class="palette-grid-scroll" id="paletteGridContainer">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        const grid = document.getElementById('paletteGridContainer');
+        if (grid) {
+            grid.innerHTML = activeTest.questions.map((q, idx) => {
+                let cellClass = '';
+                if (idx === activeTest.currentIndex) cellClass += ' is-active';
+                if (activeTest.userAnswers[idx] !== undefined) cellClass += ' is-answered';
+                else if (activeTest.reviewItems.some(r => r.questionNumber === idx + 1 && r.isSkipped)) cellClass += ' is-skipped';
+
+                return `
+                    <button class="palette-num-btn ${cellClass}" onclick="window.jumpToQuestionFromPalette(${idx})">
+                        ${idx + 1}
+                    </button>
+                `;
+            }).join('');
+        }
+
+        modal.classList.add('active');
+    };
+
+    window.closePaletteModal = function () {
+        const modal = document.getElementById('paletteModal');
+        if (modal) modal.classList.remove('active');
+    };
+
+    window.jumpToQuestionFromPalette = function (index) {
+        window.closePaletteModal();
+        displayActiveQuestion(index);
+    };
+
+    window.toggleTestLanguage = async function () {
         activeTest.isHindiMode = !activeTest.isHindiMode;
         const btn = document.getElementById('btnTestTranslate');
         if (btn) {
             btn.classList.toggle('active-hindi', activeTest.isHindiMode);
-            btn.textContent = activeTest.isHindiMode ? 'A / अ English' : 'अ / A Hindi';
+            btn.textContent = activeTest.isHindiMode ? 'English / अ' : 'अ / A Hindi';
         }
+        const q = activeTest.questions[activeTest.currentIndex];
+        renderQuestionTextAndOptions(q);
+    };
 
-        const currentQ = activeTest.questions[activeTest.currentIndex];
-        if (!currentQ) return;
-
-        if (activeTest.isHindiMode && !translationCache[currentQ.id]) {
-            const embedded = extractEmbeddedHindiQuestion(currentQ);
-            if (embedded && /[ऀ-ॿ]/.test(embedded.question)) {
-                translationCache[currentQ.id] = embedded;
-            } else {
-                try {
-                    btn.textContent = 'Translating...';
-                    const trQ = await fetchGoogleTranslate(currentQ.question);
-                    const trOpts = await Promise.all(currentQ.options.map(o => fetchGoogleTranslate(o)));
-                    translationCache[currentQ.id] = { question: trQ, options: trOpts };
-                    btn.textContent = 'A / अ English';
-                } catch (e) {
-                    btn.textContent = 'A / अ English';
-                }
-            }
-        }
-
-        renderQuestionTextAndOptions(currentQ);
-    }
-
-    async function fetchGoogleTranslate(text) {
-        try {
-            const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=hi&dt=t&q=${encodeURIComponent(text)}`;
-            const res = await fetch(url);
-            if (res.ok) {
-                const data = await res.json();
-                if (data && data[0]) {
-                    return data[0].map(s => s[0]).join('');
-                }
-            }
-        } catch (e) {}
-        return text;
-    }
-
-    function confirmExitTest() {
-        if (!activeTest.isOpen) return;
-        if (document.getElementById('webTestResultsView').style.display === 'block') {
+    window.confirmExitTest = function () {
+        const modal = document.getElementById('webExitConfirmModal');
+        if (modal) modal.classList.add('active');
+        else if (confirm('Are you sure you want to exit? Your progress in this test will be lost.')) {
             closeWebTest();
-            return;
         }
-        const confirmModal = document.getElementById('webExitConfirmModal');
-        if (confirmModal) confirmModal.classList.add('active');
-    }
+    };
 
     function closeWebTest() {
         clearInterval(activeTest.timerInterval);
@@ -866,43 +1253,9 @@
         const modal = document.getElementById('webTestModal');
         if (modal) modal.classList.remove('active');
         document.body.style.overflow = '';
-    }
-
-    // Window Exports
-    window.clearTopicSelections = function () {
-        portalState.selectedTopics.clear();
+        renderLastPracticedBanner();
         renderTopicsGrid();
-    };
-
-    window.selectMultiCount = function (count) {
-        portalState.selectedMultiCount = count;
-        document.querySelectorAll('.dock-chip').forEach(c => {
-            c.classList.toggle('active', parseInt(c.textContent) === count);
-        });
-        const btn = document.getElementById('btnStartMultiMixed');
-        if (btn) btn.textContent = `Start Mixed Test (${count} Qs) 🚀`;
-    };
-
-    window.startCustomMixedTest = startCustomMixedTest;
-    window.confirmExitTest = confirmExitTest;
-    window.closeWebTest = closeWebTest;
-    window.toggleTestLanguage = toggleTestLanguage;
-    window.handleSkipQuestion = handleSkipQuestion;
-    window.handleNextQuestion = handleNextQuestion;
-
-    window.toggleResultsReview = function () {
-        const accordion = document.getElementById('resultsReviewList');
-        const btn = document.getElementById('btnToggleReview');
-        if (!accordion || !btn) return;
-        const isShown = accordion.style.display === 'block';
-        accordion.style.display = isShown ? 'none' : 'block';
-        btn.textContent = isShown ? 'View Question Review 📋' : 'Hide Review ✕';
-    };
-
-    window.retestCurrentSet = function () {
-        if (!activeTest.questions || activeTest.questions.length === 0) return;
-        launchWebTest(activeTest.questions, activeTest.title, activeTest.subtitle, activeTest.setKey);
-    };
+    }
 
     // Keyboard Shortcuts
     document.addEventListener('keydown', (e) => {
@@ -932,6 +1285,8 @@
         const questionsData = await loadAllQuestions();
         QUIZEE_CURRICULUM = buildCurriculum(questionsData);
 
+        renderPortalModeNav();
+        renderMockHub();
         renderSubjectTabs();
         renderLastPracticedBanner();
         renderTopicsGrid();

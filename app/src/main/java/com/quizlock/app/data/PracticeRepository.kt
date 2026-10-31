@@ -205,4 +205,150 @@ class PracticeRepository private constructor(private val context: Context) {
         val shuffled = pool.shuffled()
         return if (shuffled.size > count) shuffled.take(count) else shuffled
     }
+
+    // ========================================================
+    // 100-QUESTION LEVEL-WISE MOCK TEST GENERATOR & REPOSITORY
+    // ========================================================
+
+    data class MockSectionRule(
+        val key: String,
+        val name: String,
+        val icon: String,
+        val count: Int
+    )
+
+    private val mockSectionRules = listOf(
+        MockSectionRule("english", "English Language", "📖", 30),
+        MockSectionRule("static_gk", "Static GK", "🏛️", 18),
+        MockSectionRule("history", "Indian History", "🏺", 14),
+        MockSectionRule("polity", "Indian Polity", "⚖️", 12),
+        MockSectionRule("geography", "Geography", "🌍", 10),
+        MockSectionRule("biology", "Science & Biology", "🧬", 10),
+        MockSectionRule("economics", "Indian Economy", "📈", 6)
+    )
+
+    fun getMockSectionRules(): List<MockSectionRule> = mockSectionRules
+
+    /**
+     * Generates a balanced 100-question Mock Test tailored to the requested Level (1..4)
+     * and Mock Set Number (1..5).
+     */
+    fun generateLevelMockTest(level: Int, mockNumber: Int): List<Question> {
+        val clampedLevel = level.coerceIn(1, 4)
+        val clampedMockNum = mockNumber.coerceIn(1, 5)
+
+        val (startPct, endPct) = when (clampedLevel) {
+            1 -> Pair(0.00, 0.25) // Foundation / Direct
+            2 -> Pair(0.25, 0.55) // Standard CGL Tier-1
+            3 -> Pair(0.55, 0.80) // Advanced
+            4 -> Pair(0.80, 1.00) // Master Challenge
+            else -> Pair(0.25, 0.55)
+        }
+
+        val result100 = mutableListOf<Question>()
+
+        for (rule in mockSectionRules) {
+            val fullSubjectPool = when (rule.key) {
+                "english" -> questionRepo.englishQuestions
+                "static_gk" -> questionRepo.staticGkQuestions
+                "history" -> questionRepo.historyQuestions
+                "polity" -> questionRepo.polityQuestions
+                "geography" -> questionRepo.geographyQuestions
+                "biology" -> questionRepo.biologyQuestions
+                "economics" -> questionRepo.economicsQuestions
+                else -> emptyList()
+            }
+
+            if (fullSubjectPool.isEmpty()) continue
+
+            val poolSize = fullSubjectPool.size
+            val startIdx = (poolSize * startPct).toInt().coerceIn(0, poolSize - 1)
+            val endIdx = (poolSize * endPct).toInt().coerceIn(startIdx + 1, poolSize)
+            val slice = fullSubjectPool.subList(startIdx, endIdx)
+
+            val quota = rule.count
+            if (slice.size >= quota) {
+                val maxOffset = (slice.size - quota).coerceAtLeast(1)
+                val offset = ((clampedMockNum - 1) * quota) % maxOffset
+                val selected = slice.subList(offset, offset + quota)
+                result100.addAll(selected)
+            } else {
+                // Fallback to taking from fullSubjectPool if slice is smaller than quota
+                val maxOffset = (fullSubjectPool.size - quota).coerceAtLeast(1)
+                val offset = ((clampedMockNum - 1) * quota) % maxOffset
+                val selected = fullSubjectPool.subList(offset, (offset + quota).coerceAtMost(fullSubjectPool.size))
+                result100.addAll(selected)
+            }
+        }
+
+        return result100
+    }
+
+    fun saveMockTestResult(
+        level: Int,
+        mockNumber: Int,
+        score: Double,
+        correct: Int,
+        wrong: Int,
+        unattempted: Int,
+        timeTakenSeconds: Int
+    ) {
+        val keyPrefix = "mock_lvl_${level}_num_${mockNumber}"
+        val now = System.currentTimeMillis()
+
+        prefs.edit()
+            .putBoolean("${keyPrefix}_completed", true)
+            .putString("${keyPrefix}_score", String.format("%.2f", score))
+            .putInt("${keyPrefix}_correct", correct)
+            .putInt("${keyPrefix}_wrong", wrong)
+            .putInt("${keyPrefix}_unattempted", unattempted)
+            .putInt("${keyPrefix}_time", timeTakenSeconds)
+            .putLong("${keyPrefix}_timestamp", now)
+            .apply()
+    }
+
+    fun getMockTestMeta(level: Int, mockNumber: Int): LevelMockTestMeta {
+        val clampedLevel = level.coerceIn(1, 4)
+        val clampedMockNum = mockNumber.coerceIn(1, 5)
+
+        val (badge, name) = when (clampedLevel) {
+            1 -> Pair("Easy", "Level 1: Foundation")
+            2 -> Pair("Moderate", "Level 2: Standard CGL")
+            3 -> Pair("Hard", "Level 3: Advanced")
+            4 -> Pair("Pro Ranker", "Level 4: Master Challenge")
+            else -> Pair("Moderate", "Level 2: Standard CGL")
+        }
+
+        val keyPrefix = "mock_lvl_${clampedLevel}_num_${clampedMockNum}"
+        val isCompleted = prefs.getBoolean("${keyPrefix}_completed", false)
+        val scoreStr = prefs.getString("${keyPrefix}_score", "0.0") ?: "0.0"
+        val score = scoreStr.toDoubleOrNull() ?: 0.0
+        val correct = prefs.getInt("${keyPrefix}_correct", 0)
+        val wrong = prefs.getInt("${keyPrefix}_wrong", 0)
+        val unattempted = prefs.getInt("${keyPrefix}_unattempted", 0)
+        val timeTaken = prefs.getInt("${keyPrefix}_time", 0)
+        val timestamp = prefs.getLong("${keyPrefix}_timestamp", 0L)
+
+        return LevelMockTestMeta(
+            level = clampedLevel,
+            mockNumber = clampedMockNum,
+            title = "Full Mock $clampedMockNum",
+            levelBadge = badge,
+            levelName = name,
+            questionCount = 100,
+            durationMinutes = 60,
+            maxMarks = 200.0,
+            isCompleted = isCompleted,
+            score = score,
+            correctCount = correct,
+            wrongCount = wrong,
+            unattemptedCount = unattempted,
+            timeTakenSeconds = timeTaken,
+            lastAttemptTimestamp = timestamp
+        )
+    }
+
+    fun getAllMockTestsForLevel(level: Int): List<LevelMockTestMeta> {
+        return (1..5).map { getMockTestMeta(level, it) }
+    }
 }

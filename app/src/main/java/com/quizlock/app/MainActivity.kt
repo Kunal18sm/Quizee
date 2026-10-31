@@ -135,6 +135,13 @@ class MainActivity : AppCompatActivity() {
             PracticeTestActivity.start(this, selectedPracticeCount)
         }
 
+        binding.btnOpenMockHub.setOnClickListener {
+            com.quizlock.app.ui.CustomPracticeActivity.start(this, openMocks = true)
+        }
+        binding.cardHeroMockTest.setOnClickListener {
+            com.quizlock.app.ui.CustomPracticeActivity.start(this, openMocks = true)
+        }
+
         binding.btnOpenCustomPractice.setOnClickListener {
             com.quizlock.app.ui.CustomPracticeActivity.start(this)
         }

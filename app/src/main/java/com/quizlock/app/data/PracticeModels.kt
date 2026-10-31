@@ -64,3 +64,45 @@ data class LastPracticedInfo(
     val accuracyPercent: Int
         get() = if (total > 0) ((score.toFloat() / total) * 100).toInt().coerceIn(0, 100) else 0
 }
+
+
+data class LevelMockTestMeta(
+    val level: Int,
+    val mockNumber: Int,
+    val title: String,
+    val levelBadge: String,
+    val levelName: String,
+    val questionCount: Int = 100,
+    val durationMinutes: Int = 60,
+    val maxMarks: Double = 200.0,
+    val isCompleted: Boolean = false,
+    val score: Double = 0.0,
+    val correctCount: Int = 0,
+    val wrongCount: Int = 0,
+    val unattemptedCount: Int = 0,
+    val timeTakenSeconds: Int = 0,
+    val lastAttemptTimestamp: Long = 0L
+) {
+    val accuracyPercent: Int
+        get() {
+            val attempted = correctCount + wrongCount
+            return if (attempted > 0) ((correctCount.toFloat() / attempted) * 100).toInt().coerceIn(0, 100) else 0
+        }
+
+    val formattedScore: String
+        get() = String.format("%.2f", score)
+}
+
+data class SectionalScore(
+    val sectionKey: String,
+    val sectionName: String,
+    val iconEmoji: String,
+    val totalQuestions: Int,
+    val correctCount: Int,
+    val wrongCount: Int,
+    val unattemptedCount: Int,
+    val netScore: Double
+) {
+    val formattedScore: String
+        get() = String.format("%.2f", netScore)
+}

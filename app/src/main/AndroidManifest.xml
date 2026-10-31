@@ -76,6 +76,14 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
 
+        <!-- Full 100-Question Level-Wise Mock Test Activity (SSC CGL Simulator) -->
+        <activity
+            android:name=".ui.MockTestActivity"
+            android:exported="false"
+            android:label="SSC CGL Mock Test"
+            android:parentActivityName=".ui.CustomPracticeActivity"
+            android:screenOrientation="portrait" />
+
         <!-- Reliable Foreground Service to monitor locked applications (Safe for UPI/Banking apps) -->
         <service
             android:name=".service.AppLockForegroundService"
