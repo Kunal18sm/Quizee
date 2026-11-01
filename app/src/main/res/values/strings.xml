@@ -31,4 +31,8 @@
     <string name="widget_description">Interactive Daily SSC Quiz directly on your home screen</string>
     <string name="widget_next">Next Question ➔</string>
     <string name="widget_tap_hint">Tap an option to test yourself</string>
+
+    <!-- Custom Topic & Set Widget -->
+    <string name="custom_topic_widget_name">Quizee: Custom Topic Widget</string>
+    <string name="custom_topic_widget_description">Practice any chosen Subject, Topic &amp; Set directly on your home screen</string>
 </resources>

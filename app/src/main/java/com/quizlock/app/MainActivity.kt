@@ -1,6 +1,8 @@
 package com.quizlock.app
 
 import android.app.AppOpsManager
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ApplicationInfo
@@ -23,9 +25,12 @@ import com.quizlock.app.data.PreferencesManager
 import com.quizlock.app.databinding.ActivityMainBinding
 import com.quizlock.app.service.AppLockForegroundService
 import com.quizlock.app.ui.AppListAdapter
+import com.quizlock.app.ui.CustomWidgetConfigureActivity
 import com.quizlock.app.ui.PracticeTestActivity
 import com.quizlock.app.ui.QuestionManageActivity
 import com.quizlock.app.ui.QuizLockActivity
+import com.quizlock.app.widget.CustomTopicWidgetProvider
+import com.quizlock.app.widget.QuizWidgetProvider
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -70,7 +75,8 @@ class MainActivity : AppCompatActivity() {
         updatePermissionStatus()
         updateDailyTargetUI()
         try {
-            com.quizlock.app.widget.QuizWidgetProvider.updateAllWidgets(this)
+            QuizWidgetProvider.updateAllWidgets(this)
+            CustomTopicWidgetProvider.updateAllWidgets(this)
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -278,6 +284,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, QuestionManageActivity::class.java))
         }
 
+        // Home Screen Widgets Actions
+        binding.btnToolbarWidgets.setOnClickListener {
+            showWidgetsDialog()
+        }
+
+        binding.btnAddDailyWidgetHome.setOnClickListener {
+            pinDailyWidgetToHome()
+        }
+
+        binding.btnAddCustomWidgetHome.setOnClickListener {
+            CustomWidgetConfigureActivity.startForPinning(this)
+        }
 
         binding.etSearchApp.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -521,5 +539,42 @@ class MainActivity : AppCompatActivity() {
         }
 
         dialog.show()
+    }
+
+    private fun pinDailyWidgetToHome() {
+        val appWidgetManager = AppWidgetManager.getInstance(this)
+        if (appWidgetManager.isRequestPinAppWidgetSupported) {
+            val myProvider = ComponentName(this, QuizWidgetProvider::class.java)
+            appWidgetManager.requestPinAppWidget(myProvider, null, null)
+            Toast.makeText(
+                this,
+                "Daily Quiz Widget requested! Tap 'Add to home screen' on prompt.",
+                Toast.LENGTH_LONG
+            ).show()
+        } else {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Add Daily Widget to Home")
+                .setMessage("Your launcher doesn't support 1-tap pinning.\n\nTo add manually:\n1. Long-press an empty spot on your Home Screen\n2. Tap 'Widgets'\n3. Find 'Quizee' and drag 'Quizee Widget' to your screen.")
+                .setPositiveButton("OK", null)
+                .show()
+        }
+    }
+
+    private fun showWidgetsDialog() {
+        val items = arrayOf(
+            "🔥 Daily Target Quiz Widget (+ Add to Home)",
+            "🎯 Custom Topic & Set Widget (Pick Topic & Add)"
+        )
+        MaterialAlertDialogBuilder(this)
+            .setTitle("📱 Home Screen Widgets")
+            .setItems(items) { _, which ->
+                if (which == 0) {
+                    pinDailyWidgetToHome()
+                } else {
+                    CustomWidgetConfigureActivity.startForPinning(this)
+                }
+            }
+            .setNegativeButton("Close", null)
+            .show()
     }
 }

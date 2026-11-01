@@ -80,6 +80,13 @@ class CustomPracticeActivity : AppCompatActivity() {
         binding.btnOpenMockPortalFromCustom.setOnClickListener {
             MockHubActivity.start(this)
         }
+
+        binding.cardWidgetShortcut.setOnClickListener {
+            CustomWidgetConfigureActivity.startForPinning(this)
+        }
+        binding.btnOpenWidgetConfigFromCustom.setOnClickListener {
+            CustomWidgetConfigureActivity.startForPinning(this)
+        }
     }
 
     private fun setupSubjectChips() {

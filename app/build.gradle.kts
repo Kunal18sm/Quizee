@@ -11,8 +11,8 @@ android {
         applicationId = "com.quizlock.app"
         minSdk = 26
         targetSdk = 34
-        versionCode = 15
-        versionName = "3.0.0"
+        versionCode = 16
+        versionName = "3.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

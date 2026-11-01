@@ -82,19 +82,16 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v3.0.0
-          name: "Quizee v3.0.0 - 7,480+ Questions, 60 Full Mock Tests & 24/7 Persistent App Lock"
+          tag_name: v3.1.0
+          name: "Quizee v3.1.0 - Custom Topic Widgets, 1-Tap Widget Pinning & 7,480+ Questions"
           body: |
-            ## 📱 Quizee App v3.0.0 Released!
-            - **📚 7,480+ High-Yield SSC CGL Questions**:
-              - 100% offline curriculum across English Vocab, Static GK, History, Geography, Biology, Polity, and Economics.
-            - **🎯 60 Full SSC CGL Mock Tests (100 Qs each)**:
-              - 4 Progressive Tiers: Level 1 (Foundational), Level 2 (Moderate), Level 3 (Standard CGL Tier 1), Level 4 (Toughest Mastery).
-              - Dedicated Mock Test Portal with real exam timers, question navigation palette, instant scorecards, and bilingual explanations.
-            - **🛡️ 24/7 Persistent Background App Lock**:
-              - One-click Unrestricted Battery optimization mode to prevent Android/OEM task-killer kills after 24 hours.
-              - Multi-tier foreground watchdog alarm engine, screen state synchronization, and auto-restart on task removal.
-              - Configurable session lock timeouts.
+            ## 📱 Quizee App v3.1.0 Released!
+            - **🧩 2 Interactive Home Screen Widget Types**:
+              - **1. Daily Target Quiz Widget**: Daily 30-question syllabus bank, live streak counter, instant answer feedback & next question button.
+              - **2. Custom Topic & Set Widget**: Select any Subject (English, Static GK, History, Geography, Biology, Polity, Economics), Topic, and 100-Question Set to quiz directly from your home screen.
+              - **⚙️ Reconfigure Anytime**: Tap the ⚙️ icon on the widget to switch topics or sets anytime.
+              - **📌 1-Tap Home Screen Pinning**: Add widgets to your home screen directly from within the app with 1 tap.
+            - **📚 7,480+ High-Yield SSC CGL Questions & 60 Full-Length Mock Tests**.
             - Download `quizee.apk` below directly on your Android phone!
           files: docs/quizee.apk
         env:
