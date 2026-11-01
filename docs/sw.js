@@ -1,5 +1,5 @@
 // Quizee PWA Offline Service Worker
-const CACHE_NAME = 'quizee-offline-v2';
+const CACHE_NAME = 'quizee-offline-v3';
 
 const PRECACHE_ASSETS = [
     './',

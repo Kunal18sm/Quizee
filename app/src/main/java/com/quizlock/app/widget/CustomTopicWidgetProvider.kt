@@ -170,7 +170,7 @@ class CustomTopicWidgetProvider : AppWidgetProvider() {
             // Tap Logo or Title to open CustomPracticeActivity in app
             val launchIntent = Intent(context, CustomPracticeActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
-                putExtra(CustomPracticeActivity.EXTRA_FILTER_SUBJECT, subject)
+                putExtra(CustomPracticeActivity.EXTRA_INITIAL_SUBJECT, subject)
             }
             val launchPendingIntent = PendingIntent.getActivity(
                 context,
