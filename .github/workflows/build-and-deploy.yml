@@ -68,6 +68,9 @@ jobs:
           cp app/build/outputs/apk/debug/app-debug.apk docs/quizee.apk
           cp app/build/outputs/apk/debug/app-debug.apk quizee.apk
           cp index.html docs/index.html || true
+          cp mock-tests.html docs/mock-tests.html || true
+          cp sw.js docs/sw.js || true
+          cp manifest.json docs/manifest.json || true
           ls -lh docs/quizee.apk
 
       - name: Upload APK Artifact

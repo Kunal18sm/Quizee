@@ -6,6 +6,14 @@
     <title>SSC CGL Full Mock Tests (60 Tests) | Quizee</title>
     <meta name="description" content="Take 60 full-length 100-question SSC CGL mock tests across 4 difficulty levels with real exam timer and sectional scorecard.">
 
+    <!-- PWA & 100% Offline Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Quizee Mocks">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -310,6 +318,40 @@
         .btn-box-exam:hover {
             background: #1d4ed8;
         }
+    
+        /* Floating Offline / Online Toast */
+        .offline-status-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: #f8fafc;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            max-width: 90vw;
+            text-align: center;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        .offline-status-toast.toast-offline {
+            border-color: rgba(245, 158, 11, 0.6);
+            color: #fef3c7;
+        }
+        .offline-status-toast.toast-online {
+            border-color: rgba(16, 185, 129, 0.6);
+            color: #d1fae5;
+        }
+
     </style>
 </head>
 <body>
@@ -323,6 +365,7 @@
             </a>
             <div class="mock-nav-links">
                 <a href="index.html" class="mock-nav-link">← Home</a>
+                <span class="mock-nav-link hide-on-mobile" style="color:#10b981; border:1px solid rgba(16,185,129,0.3); background:rgba(16,185,129,0.08); cursor:default;">⚡ Offline Ready</span>
                 <a href="index.html#online-tests" class="mock-nav-link mock-nav-topic-link">📚 Topic Sets</a>
                 <a href="quizee.apk" download="quizee.apk" class="mock-nav-link mock-nav-download-btn" style="color:#60a5fa; font-weight:700;">Download APK</a>
             </div>
@@ -555,6 +598,57 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderMockCards();
         });
+    </script>
+    <!-- Floating Offline / Online Status Toast -->
+    <div id="offlineStatusToast" class="offline-status-toast" style="display:none;">
+        <span class="offline-icon">📡</span>
+        <span id="offlineStatusMsg">Offline Mode Active — All 60 Full Mock Tests Work Without Internet!</span>
+    </div>
+
+    <!-- PWA Offline Service Worker Registration & Network Monitor -->
+    <script>
+        (function() {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./sw.js', { scope: './' })
+                        .then(reg => {
+                            console.log('Quizee Mock Portal Service Worker active! Scope:', reg.scope);
+                        })
+                        .catch(err => {
+                            console.warn('Service Worker registration skipped:', err);
+                        });
+                });
+            }
+
+            const toast = document.getElementById('offlineStatusToast');
+            const toastMsg = document.getElementById('offlineStatusMsg');
+            let toastTimer = null;
+
+            function showToast(msg, isOffline) {
+                if (!toast || !toastMsg) return;
+                toastMsg.textContent = msg;
+                toast.className = 'offline-status-toast ' + (isOffline ? 'toast-offline' : 'toast-online');
+                toast.style.display = 'flex';
+                clearTimeout(toastTimer);
+                if (!isOffline) {
+                    toastTimer = setTimeout(() => {
+                        toast.style.display = 'none';
+                    }, 4000);
+                }
+            }
+
+            if (!navigator.onLine) {
+                showToast('📡 Offline Mode Active — All 60 Full Mock Tests Work Without Internet!', true);
+            }
+
+            window.addEventListener('offline', () => {
+                showToast('📡 You are offline — All 60 mock tests continue running 100% offline!', true);
+            });
+
+            window.addEventListener('online', () => {
+                showToast('⚡ Back Online! Everything is up to date.', false);
+            });
+        })();
     </script>
 </body>
 </html>

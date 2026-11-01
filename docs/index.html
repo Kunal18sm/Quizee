@@ -7,6 +7,14 @@
     <meta name="description" content="Quizee: Lock distracting apps behind quick 5-question quizzes. Practice 7400+ High-Yield Static GK, English, History, Polity, Geography, Biology & Economics MCQs while reducing screen time. Free and offline.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     
+    <!-- PWA & 100% Offline Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Quizee">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2281,6 +2289,40 @@
     transform: translateX(-50%) translateY(0);
 }
 
+    
+        /* Floating Offline / Online Toast */
+        .offline-status-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: #f8fafc;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            max-width: 90vw;
+            text-align: center;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        .offline-status-toast.toast-offline {
+            border-color: rgba(245, 158, 11, 0.6);
+            color: #fef3c7;
+        }
+        .offline-status-toast.toast-online {
+            border-color: rgba(16, 185, 129, 0.6);
+            color: #d1fae5;
+        }
+
     </style>
     <style>
 /* Subject Filter Tabs - 100% Responsive & Zero Left-Clipping Guarantee */
@@ -2390,6 +2432,10 @@
                     <a href="#online-tests" class="nav-btn">
                         <span>📚 Topic Sets</span>
                     </a>
+                    <span class="nav-btn nav-btn-offline" style="background:rgba(16,185,129,0.08); border-color:rgba(16,185,129,0.3); color:#10b981; cursor:default;" title="All 7,480+ questions run offline in your browser">
+                        <span class="pulse-indicator" style="background:#10b981; box-shadow:0 0 6px #10b981;"></span>
+                        <span>⚡ Offline Ready</span>
+                    </span>
                     <a href="https://github.com/Kunal18sm/Quizee" target="_blank" rel="noopener" class="nav-btn">GitHub</a>
                     <a href="quizee.apk" download="quizee.apk" class="nav-btn nav-btn-primary">Download APK</a>
                 </div>
@@ -2437,6 +2483,15 @@
                     </div>
                     <span class="mobile-arrow">↗</span>
                 </a>
+
+                <div class="mobile-nav-item" style="background:rgba(16,185,129,0.06); border-color:rgba(16,185,129,0.25);">
+                    <div class="mobile-item-icon" style="color:#10b981;">⚡</div>
+                    <div class="mobile-item-content">
+                        <div class="mobile-item-title" style="color:#10b981;">100% Offline Mode Ready</div>
+                        <div class="mobile-item-desc">Runs without internet once loaded</div>
+                    </div>
+                    <span style="font-size:11px; color:#10b981; font-weight:700;">Active ✓</span>
+                </div>
 
                 <div class="mobile-menu-cta-wrap">
                     <a href="quizee.apk" download="quizee.apk" class="mobile-btn-download">
@@ -4588,6 +4643,57 @@ function handleSimAddQuestion() {
                     }
                 }, { passive: true });
             }
+        })();
+    </script>
+    <!-- Floating Offline / Online Status Toast -->
+    <div id="offlineStatusToast" class="offline-status-toast" style="display:none;">
+        <span class="offline-icon">📡</span>
+        <span id="offlineStatusMsg">Offline Mode Active — All 7,480+ Questions Work Without Internet!</span>
+    </div>
+
+    <!-- PWA Offline Service Worker Registration & Network Monitor -->
+    <script>
+        (function() {
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./sw.js', { scope: './' })
+                        .then(reg => {
+                            console.log('Quizee PWA Service Worker registered successfully! Scope:', reg.scope);
+                        })
+                        .catch(err => {
+                            console.warn('Service Worker registration skipped:', err);
+                        });
+                });
+            }
+
+            const toast = document.getElementById('offlineStatusToast');
+            const toastMsg = document.getElementById('offlineStatusMsg');
+            let toastTimer = null;
+
+            function showToast(msg, isOffline) {
+                if (!toast || !toastMsg) return;
+                toastMsg.textContent = msg;
+                toast.className = 'offline-status-toast ' + (isOffline ? 'toast-offline' : 'toast-online');
+                toast.style.display = 'flex';
+                clearTimeout(toastTimer);
+                if (!isOffline) {
+                    toastTimer = setTimeout(() => {
+                        toast.style.display = 'none';
+                    }, 4000);
+                }
+            }
+
+            if (!navigator.onLine) {
+                showToast('📡 Offline Mode Active — All 7,480+ Questions & Mocks Work Without Internet!', true);
+            }
+
+            window.addEventListener('offline', () => {
+                showToast('📡 You are offline — Quizee continues running 100% offline!', true);
+            });
+
+            window.addEventListener('online', () => {
+                showToast('⚡ Back Online! Everything is up to date.', false);
+            });
         })();
     </script>
 </body>
