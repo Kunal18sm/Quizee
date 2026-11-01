@@ -82,13 +82,17 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v3.1.0
-          name: "Quizee v3.1.0 - Custom Topic Widgets, 1-Tap Widget Pinning & 7,480+ Questions"
+          tag_name: v3.1.1
+          name: "Quizee v3.1.1 - Fully Responsive Widgets for Full-Screen & Compact Sizes + Custom Topic Widgets"
           body: |
-            ## 📱 Quizee App v3.1.0 Released!
+            ## 📱 Quizee App v3.1.1 Released!
+            - **✨ Fully Responsive Home Screen Widgets**:
+              - Fixed vertical option button stretching on tall/full-screen widget sizes.
+              - Added dedicated expanded layouts with cards, increased line count, bilingual question support, and proportioned option buttons.
+              - Live on-resize updates when stretching or resizing widgets.
             - **🧩 2 Interactive Home Screen Widget Types**:
               - **1. Daily Target Quiz Widget**: Daily 30-question syllabus bank, live streak counter, instant answer feedback & next question button.
-              - **2. Custom Topic & Set Widget**: Select any Subject (English, Static GK, History, Geography, Biology, Polity, Economics), Topic, and 100-Question Set to quiz directly from your home screen.
+              - **2. Custom Topic & Set Widget**: Select any Subject (English, Static GK, History, Geography, Biology, Polity, Economics), Topic, and 100-Question Set.
               - **⚙️ Reconfigure Anytime**: Tap the ⚙️ icon on the widget to switch topics or sets anytime.
               - **📌 1-Tap Home Screen Pinning**: Add widgets to your home screen directly from within the app with 1 tap.
             - **📚 7,480+ High-Yield SSC CGL Questions & 60 Full-Length Mock Tests**.

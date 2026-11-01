@@ -11,7 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp">
+        android:layout_marginBottom="6dp">
 
         <LinearLayout
             android:id="@+id/widget_header_left"
@@ -82,93 +82,101 @@
         </LinearLayout>
     </RelativeLayout>
 
-    <!-- Question Text -->
-    <TextView
-        android:id="@+id/widget_tv_question"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:ellipsize="end"
-        android:lineSpacingExtra="2dp"
-        android:maxLines="3"
-        android:text="Loading Question..."
-        android:textColor="#F8FAFC"
-        android:textSize="13sp"
-        android:textStyle="bold" />
-
-    <!-- 4 Option Buttons -->
+    <!-- Question Container (Adaptive height, vertically centered, no truncation) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingVertical="2dp"
+        android:layout_marginBottom="6dp">
+
+        <TextView
+            android:id="@+id/widget_tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lineSpacingExtra="2dp"
+            android:maxLines="6"
+            android:text="Loading Question..."
+            android:textColor="#F8FAFC"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 4 Option Buttons (Controlled height, clean gap & perfectly proportioned) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/widget_btn_opt1"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="38dp"
             android:layout_marginBottom="4dp"
-            android:layout_weight="1"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="10dp"
-            android:paddingVertical="2dp"
+            android:paddingVertical="4dp"
             android:text="A. Option 1"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
-            android:textSize="11sp" />
+            android:textSize="11.5sp" />
 
         <Button
             android:id="@+id/widget_btn_opt2"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="38dp"
             android:layout_marginBottom="4dp"
-            android:layout_weight="1"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="10dp"
-            android:paddingVertical="2dp"
+            android:paddingVertical="4dp"
             android:text="B. Option 2"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
-            android:textSize="11sp" />
+            android:textSize="11.5sp" />
 
         <Button
             android:id="@+id/widget_btn_opt3"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="38dp"
             android:layout_marginBottom="4dp"
-            android:layout_weight="1"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="10dp"
-            android:paddingVertical="2dp"
+            android:paddingVertical="4dp"
             android:text="C. Option 3"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
-            android:textSize="11sp" />
+            android:textSize="11.5sp" />
 
         <Button
             android:id="@+id/widget_btn_opt4"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minHeight="38dp"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="10dp"
-            android:paddingVertical="2dp"
+            android:paddingVertical="4dp"
             android:text="D. Option 4"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
-            android:textSize="11sp" />
+            android:textSize="11.5sp" />
     </LinearLayout>
 
     <!-- Bottom Footer (Feedback & Next Button) -->

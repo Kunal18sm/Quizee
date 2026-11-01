@@ -65,7 +65,12 @@ class QuizWidgetProvider : AppWidgetProvider() {
             appWidgetId: Int
         ) {
             val prefs = getPrefs(context)
-            val views = RemoteViews(context.packageName, R.layout.widget_quiz_layout)
+            val optionsBundle = appWidgetManager.getAppWidgetOptions(appWidgetId)
+            val minHeight = optionsBundle.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT, 0)
+            val maxHeight = optionsBundle.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT, 0)
+            val isExpanded = minHeight >= 260 || maxHeight >= 320
+            val layoutId = if (isExpanded) R.layout.widget_quiz_layout_expanded else R.layout.widget_quiz_layout
+            val views = RemoteViews(context.packageName, layoutId)
 
             // Setup Launch App intent when tapping Logo or Title
             val launchIntent = Intent(context, MainActivity::class.java).apply {
@@ -245,6 +250,16 @@ class QuizWidgetProvider : AppWidgetProvider() {
         for (appWidgetId in appWidgetIds) {
             updateWidgetView(context, appWidgetManager, appWidgetId)
         }
+    }
+
+    override fun onAppWidgetOptionsChanged(
+        context: Context,
+        appWidgetManager: AppWidgetManager,
+        appWidgetId: Int,
+        newOptions: android.os.Bundle
+    ) {
+        super.onAppWidgetOptionsChanged(context, appWidgetManager, appWidgetId, newOptions)
+        updateWidgetView(context, appWidgetManager, appWidgetId)
     }
 
     override fun onReceive(context: Context, intent: Intent) {
