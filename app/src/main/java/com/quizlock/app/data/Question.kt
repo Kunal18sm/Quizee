@@ -17,5 +17,11 @@ data class Question(
     val correctIndex: Int,
     
     @SerializedName("category")
-    val category: String = "General"
+    val category: String = "General",
+
+    @SerializedName("question_hi")
+    val questionHi: String? = null,
+
+    @SerializedName("options_hi")
+    val optionsHi: List<String>? = null
 ) : Serializable

@@ -671,7 +671,10 @@
         let displayOpts = [...q.options];
 
         if (activeTest.isHindiMode) {
-            if (translationCache[q.id]) {
+            if (q.question_hi && q.options_hi && q.options_hi.length === q.options.length) {
+                displayQ = q.question_hi;
+                displayOpts = q.options_hi;
+            } else if (translationCache[q.id]) {
                 displayQ = translationCache[q.id].question;
                 displayOpts = translationCache[q.id].options;
             } else {
@@ -911,18 +914,22 @@
         if (!currentQ) return;
 
         if (activeTest.isHindiMode && !translationCache[currentQ.id]) {
-            const embedded = extractEmbeddedHindiQuestion(currentQ);
-            if (embedded && /[ऀ-ॿ]/.test(embedded.question)) {
-                translationCache[currentQ.id] = embedded;
+            if (currentQ.question_hi && currentQ.options_hi && currentQ.options_hi.length === currentQ.options.length) {
+                translationCache[currentQ.id] = { question: currentQ.question_hi, options: currentQ.options_hi };
             } else {
-                try {
-                    btn.textContent = 'Translating...';
-                    const trQ = await fetchGoogleTranslate(currentQ.question);
-                    const trOpts = await Promise.all(currentQ.options.map(o => fetchGoogleTranslate(o)));
-                    translationCache[currentQ.id] = { question: trQ, options: trOpts };
-                    btn.textContent = 'A / अ English';
-                } catch (e) {
-                    btn.textContent = 'A / अ English';
+                const embedded = extractEmbeddedHindiQuestion(currentQ);
+                if (embedded && /[ऀ-ॿ]/.test(embedded.question)) {
+                    translationCache[currentQ.id] = embedded;
+                } else {
+                    try {
+                        btn.textContent = 'Translating...';
+                        const trQ = await fetchGoogleTranslate(currentQ.question);
+                        const trOpts = await Promise.all(currentQ.options.map(o => fetchGoogleTranslate(o)));
+                        translationCache[currentQ.id] = { question: trQ, options: trOpts };
+                        btn.textContent = 'A / अ English';
+                    } catch (e) {
+                        btn.textContent = 'A / अ English';
+                    }
                 }
             }
         }

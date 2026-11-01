@@ -124,6 +124,15 @@ class TranslationHelper private constructor(context: Context) {
      * Translates an entire Question (question text + all options) concurrently.
      */
     suspend fun translateQuestion(question: Question): TranslatedQuestion = coroutineScope {
+        // Fast path: if pre-computed Hindi question and options exist (e.g. English Synonyms/Antonyms)
+        if (!question.questionHi.isNullOrBlank() && !question.optionsHi.isNullOrEmpty() && question.optionsHi.size == question.options.size) {
+            return@coroutineScope TranslatedQuestion(
+                id = question.id,
+                question = question.questionHi,
+                options = question.optionsHi
+            )
+        }
+
         val qDeferred = async(Dispatchers.IO) { translateText(question.question) }
         val optDeferred = question.options.map { opt ->
             async(Dispatchers.IO) { translateText(opt) }
