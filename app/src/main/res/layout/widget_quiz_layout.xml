@@ -5,28 +5,60 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_widget_card"
     android:orientation="vertical"
-    android:padding="12dp">
+    android:padding="10dp">
 
-    <!-- Top Header Bar -->
+    <!-- Top Header Bar (No collision between left and right) -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp">
+        android:layout_marginBottom="4dp">
+
+        <LinearLayout
+            android:id="@+id/widget_header_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/widget_tv_streak"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:text="🔥 1 Streak"
+                android:textColor="#F59E0B"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/widget_btn_refresh"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="Refresh Question"
+                android:padding="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_widget_refresh" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/widget_header_left"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/widget_header_right"
+            android:layout_marginEnd="6dp"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/widget_img_logo"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_marginEnd="6dp"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="4dp"
                 android:src="@drawable/ic_quiz" />
 
             <TextView
@@ -44,146 +76,111 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:background="@drawable/bg_widget_badge"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:paddingHorizontal="6dp"
-                android:paddingVertical="2dp"
+                android:paddingVertical="1dp"
                 android:text="English"
                 android:textColor="#94A3B8"
-                android:textSize="10sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/widget_header_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/widget_tv_streak"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="🔥 1 Streak"
-                android:textColor="#F59E0B"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <ImageButton
-                android:id="@+id/widget_btn_refresh"
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:contentDescription="Refresh Question"
-                android:padding="3dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_widget_refresh" />
+                android:textSize="9.5sp" />
         </LinearLayout>
     </RelativeLayout>
 
-    <!-- Question Container (Adaptive height, vertically centered, no truncation) -->
+    <!-- Question Text (Always wrap_content: NEVER squeezed into 1 line!) -->
+    <TextView
+        android:id="@+id/widget_tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="1.5dp"
+        android:maxLines="4"
+        android:text="Loading Question..."
+        android:textColor="#F8FAFC"
+        android:textSize="12.5sp"
+        android:textStyle="bold" />
+
+    <!-- 4 Option Buttons (Fill remaining height smoothly) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:paddingVertical="2dp"
-        android:layout_marginBottom="6dp">
-
-        <TextView
-            android:id="@+id/widget_tv_question"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:lineSpacingExtra="2dp"
-            android:maxLines="6"
-            android:text="Loading Question..."
-            android:textColor="#F8FAFC"
-            android:textSize="13sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <!-- 4 Option Buttons (Controlled height, clean gap & perfectly proportioned) -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/widget_btn_opt1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="38dp"
-            android:layout_marginBottom="4dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="3dp"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="10dp"
-            android:paddingVertical="4dp"
+            android:paddingVertical="0dp"
             android:text="A. Option 1"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
-            android:textSize="11.5sp" />
+            android:textSize="11sp" />
 
         <Button
             android:id="@+id/widget_btn_opt2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="38dp"
-            android:layout_marginBottom="4dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="3dp"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="10dp"
-            android:paddingVertical="4dp"
+            android:paddingVertical="0dp"
             android:text="B. Option 2"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
-            android:textSize="11.5sp" />
+            android:textSize="11sp" />
 
         <Button
             android:id="@+id/widget_btn_opt3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="38dp"
-            android:layout_marginBottom="4dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="3dp"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="10dp"
-            android:paddingVertical="4dp"
+            android:paddingVertical="0dp"
             android:text="C. Option 3"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
-            android:textSize="11.5sp" />
+            android:textSize="11sp" />
 
         <Button
             android:id="@+id/widget_btn_opt4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="38dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="10dp"
-            android:paddingVertical="4dp"
+            android:paddingVertical="0dp"
             android:text="D. Option 4"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
-            android:textSize="11.5sp" />
+            android:textSize="11sp" />
     </LinearLayout>
 
     <!-- Bottom Footer (Feedback & Next Button) -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp">
+        android:layout_marginTop="4dp">
 
         <TextView
             android:id="@+id/widget_tv_feedback"
@@ -196,21 +193,21 @@
             android:maxLines="1"
             android:text="Tap an option to answer"
             android:textColor="#94A3B8"
-            android:textSize="11sp" />
+            android:textSize="10.5sp" />
 
         <Button
             android:id="@+id/widget_btn_next"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="26dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="@drawable/bg_widget_btn_next"
-            android:minWidth="70dp"
-            android:paddingHorizontal="10dp"
+            android:minWidth="65dp"
+            android:paddingHorizontal="8dp"
             android:text="Next ➔"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textSize="11sp"
+            android:textSize="10.5sp"
             android:textStyle="bold"
             android:visibility="gone" />
     </RelativeLayout>

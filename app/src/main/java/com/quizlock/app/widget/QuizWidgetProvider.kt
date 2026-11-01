@@ -67,8 +67,7 @@ class QuizWidgetProvider : AppWidgetProvider() {
             val prefs = getPrefs(context)
             val optionsBundle = appWidgetManager.getAppWidgetOptions(appWidgetId)
             val minHeight = optionsBundle.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT, 0)
-            val maxHeight = optionsBundle.getInt(AppWidgetManager.OPTION_APPWIDGET_MAX_HEIGHT, 0)
-            val isExpanded = minHeight >= 260 || maxHeight >= 320
+            val isExpanded = minHeight >= 360
             val layoutId = if (isExpanded) R.layout.widget_quiz_layout_expanded else R.layout.widget_quiz_layout
             val views = RemoteViews(context.packageName, layoutId)
 

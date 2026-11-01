@@ -14,18 +14,61 @@
         android:layout_marginBottom="6dp">
 
         <LinearLayout
-            android:id="@+id/widget_header_left"
+            android:id="@+id/widget_header_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/widget_tv_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:text="Q 1/100"
+                android:textColor="#F59E0B"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/widget_btn_config"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginEnd="4dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="Change Topic or Set"
+                android:padding="3dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_widget_settings" />
+
+            <ImageButton
+                android:id="@+id/widget_btn_refresh"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="Next or Refresh Question"
+                android:padding="3dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_widget_refresh" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/widget_header_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/widget_header_right"
+            android:layout_marginEnd="8dp"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/widget_img_logo"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_marginEnd="6dp"
                 android:src="@drawable/ic_quiz" />
 
@@ -42,57 +85,16 @@
                 android:id="@+id/widget_tv_badge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="6dp"
                 android:background="@drawable/bg_widget_badge"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:paddingHorizontal="8dp"
-                android:paddingVertical="3dp"
+                android:paddingVertical="2dp"
                 android:text="History • Set 1"
                 android:textColor="#38BDF8"
-                android:textSize="11sp"
+                android:textSize="10.5sp"
                 android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/widget_header_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/widget_tv_counter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="Q 1/100"
-                android:textColor="#F59E0B"
-                android:textSize="11sp"
-                android:textStyle="bold" />
-
-            <ImageButton
-                android:id="@+id/widget_btn_config"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_marginEnd="6dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:contentDescription="Change Topic or Set"
-                android:padding="3dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_widget_settings" />
-
-            <ImageButton
-                android:id="@+id/widget_btn_refresh"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:background="?android:attr/selectableItemBackground"
-                android:contentDescription="Next or Refresh Question"
-                android:padding="3dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_widget_refresh" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -101,38 +103,34 @@
         android:id="@+id/widget_tv_topic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="6dp"
         android:ellipsize="end"
         android:maxLines="1"
         android:text="Topic: Indus Valley Civilisation"
         android:textColor="#94A3B8"
-        android:textSize="11.5sp" />
+        android:textSize="11sp" />
 
-    <!-- Question Container (Card surface, takes flexible space, centers text nicely) -->
-    <LinearLayout
+    <!-- Top Flexible Spacer for balanced vertical centering -->
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/bg_card"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        android:padding="12dp"
-        android:layout_marginBottom="12dp">
+        android:layout_weight="0.4" />
 
-        <TextView
-            android:id="@+id/widget_tv_question"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:lineSpacingExtra="3dp"
-            android:maxLines="8"
-            android:text="Loading Question..."
-            android:textColor="#F8FAFC"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+    <!-- Question Text (Always wrap_content: full question completely visible) -->
+    <TextView
+        android:id="@+id/widget_tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="3dp"
+        android:maxLines="6"
+        android:text="Loading Question..."
+        android:textColor="#F8FAFC"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
-    <!-- 4 Option Buttons (Clean proportions, 46dp min height, no giant empty gaps) -->
+    <!-- 4 Option Buttons (Fixed comfortable height: NO 120dp empty rectangles!) -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -141,15 +139,14 @@
         <Button
             android:id="@+id/widget_btn_opt1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="46dp"
+            android:layout_height="44dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="14dp"
-            android:paddingVertical="8dp"
+            android:paddingVertical="4dp"
             android:text="A. Option 1"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
@@ -158,15 +155,14 @@
         <Button
             android:id="@+id/widget_btn_opt2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="46dp"
+            android:layout_height="44dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="14dp"
-            android:paddingVertical="8dp"
+            android:paddingVertical="4dp"
             android:text="B. Option 2"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
@@ -175,15 +171,14 @@
         <Button
             android:id="@+id/widget_btn_opt3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="46dp"
+            android:layout_height="44dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="14dp"
-            android:paddingVertical="8dp"
+            android:paddingVertical="4dp"
             android:text="C. Option 3"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
@@ -192,25 +187,30 @@
         <Button
             android:id="@+id/widget_btn_opt4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="46dp"
+            android:layout_height="44dp"
             android:background="@drawable/bg_widget_option_default"
             android:ellipsize="end"
             android:gravity="start|center_vertical"
             android:maxLines="2"
             android:paddingHorizontal="14dp"
-            android:paddingVertical="8dp"
+            android:paddingVertical="4dp"
             android:text="D. Option 4"
             android:textAllCaps="false"
             android:textColor="#E2E8F0"
             android:textSize="12.5sp" />
     </LinearLayout>
 
+    <!-- Bottom Flexible Spacer -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
     <!-- Bottom Footer (Feedback & Next Button) -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="8dp">
 
         <TextView
             android:id="@+id/widget_tv_feedback"
@@ -223,21 +223,21 @@
             android:maxLines="1"
             android:text="Tap an option to answer"
             android:textColor="#94A3B8"
-            android:textSize="12sp" />
+            android:textSize="11.5sp" />
 
         <Button
             android:id="@+id/widget_btn_next"
             android:layout_width="wrap_content"
-            android:layout_height="34dp"
+            android:layout_height="32dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="@drawable/bg_widget_btn_next"
-            android:minWidth="80dp"
-            android:paddingHorizontal="12dp"
+            android:minWidth="75dp"
+            android:paddingHorizontal="10dp"
             android:text="Next ➔"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textSize="12sp"
+            android:textSize="11.5sp"
             android:textStyle="bold"
             android:visibility="gone" />
     </RelativeLayout>

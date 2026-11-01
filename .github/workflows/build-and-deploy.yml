@@ -82,14 +82,14 @@ jobs:
       - name: Create or Update GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v3.1.1
-          name: "Quizee v3.1.1 - Fully Responsive Widgets for Full-Screen & Compact Sizes + Custom Topic Widgets"
+          tag_name: v3.1.2
+          name: "Quizee v3.1.2 - Fixed Compact Widget Question Truncation & Proportional Options"
           body: |
-            ## 📱 Quizee App v3.1.1 Released!
-            - **✨ Fully Responsive Home Screen Widgets**:
-              - Fixed vertical option button stretching on tall/full-screen widget sizes.
-              - Added dedicated expanded layouts with cards, increased line count, bilingual question support, and proportioned option buttons.
-              - Live on-resize updates when stretching or resizing widgets.
+            ## 📱 Quizee App v3.1.2 Released!
+            - **✨ Perfect Widget Sizing for ALL Home Screen Sizes**:
+              - Fixed compact widget question truncation: Question now always displays full 2-4 lines of text without being cut off!
+              - Fixed header text overlapping between category badge and streak counter.
+              - Standard proportioned option buttons in both compact and full-screen modes.
             - **🧩 2 Interactive Home Screen Widget Types**:
               - **1. Daily Target Quiz Widget**: Daily 30-question syllabus bank, live streak counter, instant answer feedback & next question button.
               - **2. Custom Topic & Set Widget**: Select any Subject (English, Static GK, History, Geography, Biology, Polity, Economics), Topic, and 100-Question Set.
@@ -106,7 +106,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add quizee.apk docs/quizee.apk
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update quizee.apk binary to v3.1.1 [skip ci]"
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update quizee.apk binary to v3.1.2 [skip ci]"
           git push origin main || true
 
       - name: Setup GitHub Pages
