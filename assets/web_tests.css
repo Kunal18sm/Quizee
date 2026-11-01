@@ -503,9 +503,18 @@
 }
 .set-card-left {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3px;
     min-width: 0;
+    flex: 1;
+}
+.set-card-header-line {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
 }
 .set-card-title {
     font-size: 13px;
@@ -519,12 +528,35 @@
     white-space: nowrap;
 }
 .set-badge-done {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     font-size: 10px;
     font-weight: 700;
     padding: 2px 6px;
     border-radius: 4px;
+    white-space: nowrap;
+    width: fit-content;
+    line-height: 1.2;
+}
+.set-badge-done.badge-mastered {
     background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.35);
     color: #10b981;
+}
+.set-badge-done.badge-passed {
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    color: #818cf8;
+}
+.set-badge-done.badge-retry {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: #f59e0b;
+}
+
+.web-set-card.set-completed {
+    border-left: 3px solid #10b981;
 }
 
 .set-card-actions {

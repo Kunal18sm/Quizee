@@ -279,11 +279,13 @@
             const setsHtml = t.sets.map(s => {
                 const isUnder50 = s.totalQuestions <= 50;
                 return `
-                    <div class="web-set-card" id="set_card_${s.setKey}">
+                    <div class="web-set-card ${s.isCompleted ? 'set-completed' : ''}" id="set_card_${s.setKey}">
                         <div class="set-card-left">
-                            <span class="set-card-title">Set ${s.setNumber}</span>
-                            <span class="set-range-tag">(${s.startRange}–${s.endRange})</span>
-                            ${s.statusBadge ? `<span class="set-badge-done">${s.statusBadge}</span>` : ''}
+                            <div class="set-card-header-line">
+                                <span class="set-card-title">Set ${s.setNumber}</span>
+                                <span class="set-range-tag">(${s.startRange}–${s.endRange})</span>
+                            </div>
+                            ${s.statusBadge ? `<span class="set-badge-done badge-${s.accuracy >= 80 ? 'mastered' : (s.accuracy >= 50 ? 'passed' : 'retry')}">${s.statusBadge}</span>` : ''}
                         </div>
                         <div class="set-card-actions">
                             ${!isUnder50 ? `
