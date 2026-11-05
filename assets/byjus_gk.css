@@ -1,0 +1,1276 @@
+/* =========================================================
+   BYJU'S STATIC GK SPECIAL QUIZ PORTAL STYLES
+   High-performance, modern dark glassmorphic styling
+   ========================================================= */
+
+.byjus-page-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 20px 80px;
+}
+
+/* Hero Section */
+.byjus-hero {
+    text-align: center;
+    padding: 26px 20px 22px;
+    background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, rgba(15, 23, 42, 0.4) 70%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.byjus-badge-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(99, 102, 241, 0.16);
+    border: 1px solid rgba(129, 140, 248, 0.35);
+    color: #c7d2fe;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.byjus-hero-title {
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.byjus-hero-title span {
+    background: linear-gradient(135deg, #818cf8 0%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.byjus-hero-sub {
+    font-size: 14px;
+    color: #94a3b8;
+    max-width: 780px;
+    margin: 0 auto 16px;
+    line-height: 1.5;
+}
+
+/* Hero Metrics Grid */
+.byjus-metrics-banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.byjus-metric-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #e2e8f0;
+}
+
+.byjus-metric-chip strong {
+    color: #818cf8;
+}
+
+.byjus-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.btn-byjus-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-byjus-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+}
+
+.btn-byjus-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-byjus-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+}
+
+/* Search & Filter Controls */
+.byjus-controls-wrap {
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 28px;
+}
+
+.byjus-search-box {
+    position: relative;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.byjus-search-box svg {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    pointer-events: none;
+}
+
+.byjus-search-input {
+    width: 100%;
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f8fafc;
+    padding: 13px 18px 13px 46px;
+    border-radius: 12px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.byjus-search-input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    background: #1f2d42;
+}
+
+.byjus-search-input::placeholder {
+    color: #64748b;
+}
+
+/* Category Filter Pills */
+.byjus-cat-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.byjus-cat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.byjus-cat-pill:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f8fafc;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.byjus-cat-pill.active {
+    background: rgba(99, 102, 241, 0.18);
+    border-color: rgba(99, 102, 241, 0.5);
+    color: #c7d2fe;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+}
+
+.byjus-pill-count {
+    font-size: 11px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.1);
+    color: inherit;
+    padding: 1px 7px;
+    border-radius: 10px;
+}
+
+.byjus-cat-pill.active .byjus-pill-count {
+    background: rgba(99, 102, 241, 0.35);
+    color: #ffffff;
+}
+
+/* Section Header Bar */
+.byjus-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 0 4px;
+}
+
+.byjus-list-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e2e8f0;
+}
+
+.byjus-visible-count {
+    font-size: 13px;
+    color: #818cf8;
+    font-weight: 600;
+}
+
+/* Topic Cards Grid */
+.byjus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+}
+
+@media (max-width: 480px) {
+    .byjus-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.byjus-topic-card {
+    background: #141d2c;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    gap: 12px;
+}
+
+.byjus-topic-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(129, 140, 248, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    background: #182335;
+}
+
+.byjus-topic-card.card-completed {
+    border-left: 3px solid #10b981;
+}
+
+.byjus-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 2px;
+}
+
+.byjus-card-icon-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.byjus-card-icon {
+    font-size: 20px;
+}
+
+.byjus-category-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #818cf8;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    padding: 2px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.byjus-status-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.byjus-status-badge.unattempted {
+    background: rgba(255, 255, 255, 0.05);
+    color: #64748b;
+}
+
+.byjus-status-badge.passed {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.byjus-status-badge.mastered {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.byjus-card-title {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #f8fafc;
+    margin: 0;
+    line-height: 1.35;
+    flex: 1;
+}
+
+.byjus-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.byjus-card-meta-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.byjus-table-preview-btn {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    color: #38bdf8;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.byjus-table-preview-btn:hover {
+    background: #38bdf8;
+    color: #0b0f19;
+}
+
+.byjus-meta-item {
+    color: #cbd5e1;
+    font-weight: 600;
+}
+
+.byjus-meta-link {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.15s;
+}
+
+.byjus-meta-link:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+.byjus-btn-play {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #c7d2fe;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.byjus-btn-play:hover {
+    background: #6366f1;
+    color: #ffffff;
+    border-color: #6366f1;
+}
+
+/* Empty State */
+.byjus-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 48px 20px;
+    background: #111827;
+    border-radius: 16px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.byjus-btn-reset-filter {
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* =========================================================
+   TEST PLAYER MODAL
+   ========================================================= */
+.byjus-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 7, 18, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.byjus-modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.byjus-modal-window {
+    width: 100%;
+    max-width: 780px;
+    max-height: 92vh;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Modal Header */
+.byjus-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: #1e293b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 12px;
+}
+
+.btn-modal-exit {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn-modal-exit:hover {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.byjus-header-center {
+    text-align: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.byjus-quiz-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f8fafc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.byjus-quiz-progress-text {
+    font-size: 11.5px;
+    color: #818cf8;
+    font-weight: 600;
+}
+
+.byjus-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.byjus-timer-pill {
+    font-size: 11.5px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.byjus-score-pill {
+    font-size: 11.5px;
+    font-weight: 700;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #10b981;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.btn-byjus-lang {
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(129, 140, 248, 0.3);
+    color: #c7d2fe;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+
+.btn-byjus-lang:hover {
+    background: rgba(99, 102, 241, 0.3);
+    color: #fff;
+}
+
+/* Progress Line */
+.byjus-progress-bar {
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.byjus-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #38bdf8);
+    width: 0%;
+    transition: width 0.25s ease;
+}
+
+/* Modal Body */
+.byjus-modal-body {
+    padding: 22px 24px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.byjus-q-card {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+}
+
+.byjus-q-cat-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #818cf8;
+    background: rgba(99, 102, 241, 0.12);
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.byjus-q-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f8fafc;
+    line-height: 1.5;
+}
+
+/* Options Grid */
+.byjus-options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.byjus-option-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #182234;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 13px 18px;
+    border-radius: 12px;
+    color: #e2e8f0;
+    font-size: 14.5px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+}
+
+.byjus-option-btn:hover:not(:disabled) {
+    background: #202d44;
+    border-color: rgba(129, 140, 248, 0.4);
+    transform: translateX(4px);
+}
+
+.byjus-opt-letter {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #94a3b8;
+    flex-shrink: 0;
+}
+
+.byjus-opt-text {
+    flex: 1;
+}
+
+/* Correct & Wrong States */
+.byjus-option-btn.correct {
+    background: rgba(16, 185, 129, 0.16) !important;
+    border-color: #10b981 !important;
+    color: #10b981 !important;
+}
+
+.byjus-option-btn.correct .byjus-opt-letter {
+    background: #10b981;
+    color: #fff;
+    border-color: #10b981;
+}
+
+.byjus-option-btn.wrong {
+    background: rgba(239, 68, 68, 0.16) !important;
+    border-color: #ef4444 !important;
+    color: #ef4444 !important;
+}
+
+.byjus-option-btn.wrong .byjus-opt-letter {
+    background: #ef4444;
+    color: #fff;
+    border-color: #ef4444;
+}
+
+/* Explanation Box */
+.byjus-exp-box {
+    background: #131c2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    display: none;
+    animation: fadeInExp 0.25s ease;
+}
+
+@keyframes fadeInExp {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.byjus-exp-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+.byjus-exp-header.exp-correct {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border-bottom: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.byjus-exp-header.exp-wrong {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.byjus-exp-body {
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* Modal Footer */
+.byjus-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: #1e293b;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-byjus-skip {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    padding: 9px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn-byjus-skip:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.btn-byjus-skip:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-byjus-next {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    border: none;
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+    transition: all 0.2s;
+}
+
+.btn-byjus-next:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.5);
+}
+
+.btn-byjus-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* =========================================================
+   RESULTS VIEW
+   ========================================================= */
+.byjus-results-container {
+    padding: 24px;
+    text-align: center;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.byjus-res-emoji {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+.byjus-res-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.byjus-res-sub {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+.byjus-score-box {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 480px;
+    margin: 0 auto 24px;
+}
+
+.byjus-score-digits {
+    font-size: 44px;
+    font-weight: 800;
+    color: #f8fafc;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+.byjus-accuracy-chip {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    background: rgba(99, 102, 241, 0.16);
+    border: 1px solid rgba(129, 140, 248, 0.35);
+    color: #c7d2fe;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.byjus-results-badge {
+    font-size: 13.5px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.byjus-results-badge.badge-master {
+    color: #10b981;
+}
+
+.byjus-results-badge.badge-good {
+    color: #38bdf8;
+}
+
+.byjus-results-badge.badge-needs-work {
+    color: #f59e0b;
+}
+
+.byjus-metrics-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.byjus-metric-num {
+    font-size: 18px;
+    font-weight: 800;
+    color: #f8fafc;
+}
+
+.byjus-metric-lbl {
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Results Actions */
+.byjus-res-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+/* Review Items */
+.byjus-review-section {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.byjus-review-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 12px;
+}
+
+.byjus-review-item {
+    background: #182233;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.byjus-review-item.review-correct {
+    border-left: 3px solid #10b981;
+}
+
+.byjus-review-item.review-wrong {
+    border-left: 3px solid #ef4444;
+}
+
+.byjus-review-item.review-skipped {
+    border-left: 3px solid #f59e0b;
+}
+
+.byjus-review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.byjus-review-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: #818cf8;
+}
+
+.byjus-review-status {
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+.byjus-review-question {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f8fafc;
+    margin-bottom: 10px;
+    line-height: 1.45;
+}
+
+.byjus-review-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 12.5px;
+    margin-bottom: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+.byjus-ans-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.byjus-ans-lbl {
+    color: #94a3b8;
+    font-weight: 600;
+    min-width: 90px;
+}
+
+.text-correct {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.text-wrong {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.byjus-review-exp {
+    font-size: 12px;
+    color: #94a3b8;
+    line-height: 1.5;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.byjus-review-exp strong {
+    color: #cbd5e1;
+}
+
+/* Confirmation Modal */
+.byjus-confirm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10001;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.byjus-confirm-overlay.active {
+    display: flex;
+}
+
+.byjus-confirm-box {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.byjus-confirm-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.byjus-confirm-desc {
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.byjus-confirm-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-confirm-stay {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-confirm-exit {
+    background: #ef4444;
+    border: none;
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Study Table Modal Styles */
+.byjus-table-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.byjus-table-modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.byjus-table-modal-box {
+    width: 100%;
+    max-width: 960px;
+    max-height: 90vh;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.byjus-table-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background: #1e293b;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 12px;
+}
+
+.byjus-table-modal-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 3px;
+}
+
+.byjus-table-modal-sub {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.byjus-table-source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    color: #818cf8;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.byjus-table-source-link:hover {
+    background: #6366f1;
+    color: #fff;
+}
+
+.byjus-table-close-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #cbd5e1;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.byjus-table-close-btn:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: #fff;
+}
+
+.byjus-table-modal-body {
+    padding: 20px 24px;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.byjus-table-wrap {
+    background: #151d2c;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.byjus-table-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.byjus-scrollable-table {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.byjus-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: left;
+}
+
+.byjus-data-table thead {
+    background: #1e293b;
+    position: sticky;
+    top: 0;
+}
+
+.byjus-data-table th {
+    padding: 10px 14px;
+    color: #e2e8f0;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(99, 102, 241, 0.4);
+    white-space: nowrap;
+}
+
+.byjus-data-table td {
+    padding: 10px 14px;
+    color: #cbd5e1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    line-height: 1.45;
+}
+
+.byjus-data-table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.byjus-data-table tbody tr:hover {
+    background: rgba(99, 102, 241, 0.08);
+}
+
+.byjus-table-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    background: #1e293b;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 12px;
+}
+
+.byjus-table-footer-info {
+    font-size: 12px;
+    color: #94a3b8;
+}
