@@ -2653,6 +2653,35 @@
             border-radius: 8px;
         }
 
+        .btn-daily-lang {
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #c7d2fe;
+            padding: 3px 10px;
+            border-radius: 8px;
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .btn-daily-lang:hover {
+            background: rgba(99, 102, 241, 0.24);
+            border-color: #6366f1;
+            color: #ffffff;
+        }
+
+        .btn-daily-lang.active-hindi {
+            background: rgba(16, 185, 129, 0.18);
+            border-color: #10b981;
+            color: #34d399;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+        }
+
         .daily-loop-notice {
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(99, 102, 241, 0.2));
             border: 1px solid rgba(16, 185, 129, 0.4);
@@ -3188,6 +3217,9 @@
                     <div class="daily-card-topbar">
                         <div class="daily-active-topic-badge" id="dailyTopicTag">🌟 All Mixed • 5 Daily MCQs</div>
                         <div class="daily-card-meta">
+                            <button id="btnDailyTranslate" class="btn-daily-lang" type="button" title="Translate to Hindi">
+                                <span>अ / A Hindi</span>
+                            </button>
                             <span class="daily-q-count" id="dailyQIndicator">Question 1 of 5</span>
                             <span class="daily-score-badge" id="dailyScorePill">Score: 0</span>
                         </div>
@@ -5415,6 +5447,94 @@ function handleSimAddQuestion() {
         let userAnswers = [];
         let autoAdvanceTimer = null;
 
+        let dailyIsHindiMode = false;
+        const dailyTranslationCache = {};
+
+        async function fetchGoogleTranslate(text) {
+            try {
+                const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=hi&dt=t&q=${encodeURIComponent(text)}`;
+                const res = await fetch(url);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data[0]) {
+                        return data[0].map(s => s[0]).join('');
+                    }
+                }
+            } catch (e) {}
+            return text;
+        }
+
+        function extractEmbeddedHindi(q) {
+            const qParts = (q.question || '').split('/');
+            let hindiQ = q.question;
+            if (qParts.length > 1 && /[ऀ-ॿ]/.test(qParts[1])) {
+                hindiQ = qParts[1].trim();
+            }
+            const hindiOpts = (q.options || []).map(opt => {
+                const parts = opt.split('/');
+                if (parts.length > 1 && /[ऀ-ॿ]/.test(parts[1])) {
+                    return parts[1].trim();
+                }
+                return opt;
+            });
+            return { question: hindiQ, options: hindiOpts };
+        }
+
+        async function getTranslatedQuestionData(q) {
+            if (!q) return { question: '', options: [] };
+            if (dailyTranslationCache[q.id]) {
+                return dailyTranslationCache[q.id];
+            }
+            if (q.question_hi && q.options_hi && q.options_hi.length === q.options.length) {
+                dailyTranslationCache[q.id] = { question: q.question_hi, options: q.options_hi };
+                return dailyTranslationCache[q.id];
+            }
+            const embedded = extractEmbeddedHindi(q);
+            if (embedded && /[ऀ-ॿ]/.test(embedded.question)) {
+                dailyTranslationCache[q.id] = embedded;
+                return embedded;
+            }
+            try {
+                const trQ = await fetchGoogleTranslate(q.question);
+                const trOpts = await Promise.all(q.options.map(o => fetchGoogleTranslate(o)));
+                dailyTranslationCache[q.id] = { question: trQ, options: trOpts };
+                return dailyTranslationCache[q.id];
+            } catch (e) {
+                return { question: q.question, options: q.options };
+            }
+        }
+
+        async function toggleDailyLanguage() {
+            dailyIsHindiMode = !dailyIsHindiMode;
+            const btn = document.getElementById('btnDailyTranslate');
+            if (btn) {
+                btn.classList.toggle('active-hindi', dailyIsHindiMode);
+                btn.textContent = dailyIsHindiMode ? 'A / अ English' : 'अ / A Hindi';
+            }
+            if (!dailyQuestions.length || currentIndex >= dailyQuestions.length) return;
+            const q = dailyQuestions[currentIndex];
+            if (!q) return;
+
+            if (dailyIsHindiMode) {
+                if (btn && !dailyTranslationCache[q.id]) {
+                    btn.textContent = 'Translating...';
+                }
+                const trData = await getTranslatedQuestionData(q);
+                if (btn) btn.textContent = 'A / अ English';
+                document.getElementById('dailyQText').textContent = trData.question;
+                const optSpans = document.querySelectorAll('.daily-option-btn .opt-text-span');
+                optSpans.forEach((sp, i) => {
+                    if (trData.options[i]) sp.textContent = trData.options[i];
+                });
+            } else {
+                document.getElementById('dailyQText').textContent = q.question;
+                const optSpans = document.querySelectorAll('.daily-option-btn .opt-text-span');
+                optSpans.forEach((sp, i) => {
+                    if (q.options[i]) sp.textContent = q.options[i];
+                });
+            }
+        }
+
         function showLoopNotice(msg) {
             const noticeEl = document.getElementById('dailyLoopNotice');
             if (!noticeEl) return;
@@ -5663,7 +5783,7 @@ function handleSimAddQuestion() {
             renderCurrentQuestion();
         }
 
-        function renderCurrentQuestion() {
+        async function renderCurrentQuestion() {
             if (!dailyQuestions.length || currentIndex >= dailyQuestions.length) return;
             isAnswerLocked = false;
             if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
@@ -5676,7 +5796,22 @@ function handleSimAddQuestion() {
 
             const cat = q.category || 'General Knowledge';
             document.getElementById('dailySubcat').textContent = cat;
-            document.getElementById('dailyQText').textContent = q.question;
+
+            let displayQ = q.question;
+            let displayOpts = [...q.options];
+
+            if (dailyIsHindiMode) {
+                const btn = document.getElementById('btnDailyTranslate');
+                if (btn && !dailyTranslationCache[q.id]) {
+                    btn.textContent = 'Translating...';
+                }
+                const trData = await getTranslatedQuestionData(q);
+                displayQ = trData.question;
+                displayOpts = trData.options;
+                if (btn) btn.textContent = 'A / अ English';
+            }
+
+            document.getElementById('dailyQText').textContent = displayQ;
 
             const fbEl = document.getElementById('dailyFeedback');
             fbEl.className = 'daily-feedback-msg';
@@ -5690,11 +5825,11 @@ function handleSimAddQuestion() {
             optsContainer.innerHTML = '';
             const letters = ['A', 'B', 'C', 'D'];
 
-            q.options.forEach((optText, optIdx) => {
+            displayOpts.forEach((optText, optIdx) => {
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 btn.className = 'daily-option-btn';
-                btn.innerHTML = `<span class="daily-opt-badge">${letters[optIdx]}</span><span>${optText}</span>`;
+                btn.innerHTML = `<span class="daily-opt-badge">${letters[optIdx]}</span><span class="opt-text-span">${optText}</span>`;
                 btn.onclick = () => handleAnswerSelect(optIdx, btn);
                 optsContainer.appendChild(btn);
             });
@@ -5806,6 +5941,9 @@ function handleSimAddQuestion() {
         window.addEventListener('DOMContentLoaded', () => {
             const nextBtn = document.getElementById('dailyNextBtn');
             if (nextBtn) nextBtn.onclick = () => goToNext();
+
+            const transBtn = document.getElementById('btnDailyTranslate');
+            if (transBtn) transBtn.onclick = () => toggleDailyLanguage();
 
             const retakeBtn = document.getElementById('btnDailyRetake');
             if (retakeBtn) retakeBtn.onclick = () => loadQuiz();
