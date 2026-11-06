@@ -2323,7 +2323,634 @@
             color: #d1fae5;
         }
 
-    </style>
+    
+        /* ============================================== */
+        /* CLEAN NAVBAR & AUDIO BUTTON STYLES             */
+        /* ============================================== */
+        .nav-btn-audio {
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #c7d2fe;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 13px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn-audio:hover {
+            background: rgba(99, 102, 241, 0.24);
+            border-color: #6366f1;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .nav-btn-audio.is-playing {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.22), rgba(99, 102, 241, 0.25));
+            border-color: #10b981;
+            color: #34d399;
+            box-shadow: 0 0 14px rgba(16, 185, 129, 0.4);
+            animation: audioPulse 1.8s infinite;
+        }
+
+        @keyframes audioPulse {
+            0%, 100% { box-shadow: 0 0 8px rgba(16, 185, 129, 0.3); }
+            50% { box-shadow: 0 0 16px rgba(99, 102, 241, 0.6); }
+        }
+
+        .nav-btn-mobile-audio {
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #c7d2fe;
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn-mobile-audio.is-playing {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: #10b981;
+            color: #34d399;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+        }
+
+        /* ============================================== */
+        /* HOME SCREEN: DAILY 5 QUIZ & SUBTOPIC SELECTOR  */
+        /* ============================================== */
+        .daily-quiz-section {
+            padding: 36px 0 24px;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .daily-quiz-intro {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .daily-badge-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .daily-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #a5b4fc;
+        }
+
+        .daily-badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+        }
+
+        .btn-play-daily-audio {
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #c7d2fe;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-play-daily-audio:hover {
+            background: rgba(99, 102, 241, 0.24);
+            border-color: #6366f1;
+            color: #ffffff;
+        }
+
+        .btn-play-daily-audio.is-playing {
+            background: rgba(16, 185, 129, 0.18);
+            border-color: #10b981;
+            color: #34d399;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
+        }
+
+        .daily-title {
+            font-size: clamp(26px, 4.5vw, 38px);
+            font-weight: 800;
+            letter-spacing: -0.8px;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        .daily-title span {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .daily-subtitle {
+            font-size: 14px;
+            color: #94a3b8;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* Subject Level Selector */
+        .daily-topic-wrap {
+            margin-bottom: 14px;
+        }
+
+        .daily-selector-heading {
+            font-size: 11.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .daily-topic-scroll {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 3px 2px 8px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .daily-topic-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .daily-topic-chip {
+            flex-shrink: 0;
+            background: #141c2b;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .daily-topic-chip:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            background: #1a2438;
+            color: #ffffff;
+        }
+
+        .daily-topic-chip.active {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.28), rgba(79, 70, 229, 0.18));
+            border-color: #6366f1;
+            color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.22);
+        }
+
+        /* Subtopic Level Selector */
+        .daily-subtopic-wrap {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 14px;
+            padding: 10px 14px;
+        }
+
+        .daily-subtopic-scroll {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            overflow-x: auto;
+            padding: 2px 2px 6px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .daily-subtopic-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .daily-subtopic-chip {
+            flex-shrink: 0;
+            background: #141c2b;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #94a3b8;
+            padding: 5px 12px;
+            border-radius: 14px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        .daily-subtopic-chip:hover {
+            border-color: rgba(129, 140, 248, 0.5);
+            background: rgba(99, 102, 241, 0.14);
+            color: #ffffff;
+        }
+
+        .daily-subtopic-chip.active {
+            background: rgba(99, 102, 241, 0.28);
+            border-color: #818cf8;
+            color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+        }
+
+        /* Daily Quiz Card */
+        .daily-quiz-card {
+            background: #121826;
+            border: 1px solid #233149;
+            border-radius: 20px;
+            padding: 24px 26px;
+            box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.65), 0 0 25px rgba(99, 102, 241, 0.07);
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 600px) {
+            .daily-quiz-card {
+                padding: 18px 16px;
+                border-radius: 16px;
+            }
+        }
+
+        .daily-card-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .daily-active-topic-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #818cf8;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 3px 10px;
+            border-radius: 8px;
+        }
+
+        .daily-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .daily-q-count {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #cbd5e1;
+        }
+
+        .daily-score-badge {
+            font-size: 12px;
+            font-weight: 700;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 3px 10px;
+            border-radius: 8px;
+        }
+
+        /* Progress Bar */
+        .daily-progress-bg {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .daily-progress-fill {
+            height: 100%;
+            width: 20%;
+            background: linear-gradient(90deg, #6366f1, #818cf8);
+            border-radius: 10px;
+            transition: width 0.35s ease;
+        }
+
+        /* Question Box */
+        .daily-q-content {
+            margin-bottom: 18px;
+        }
+
+        .daily-category-tag {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .daily-q-title {
+            font-size: clamp(16px, 2.4vw, 18.5px);
+            font-weight: 700;
+            color: #f8fafc;
+            line-height: 1.45;
+        }
+
+        /* Options Stack */
+        .daily-options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            margin-bottom: 20px;
+        }
+
+        .daily-option-btn {
+            width: 100%;
+            background: #172133;
+            border: 1.5px solid #28374f;
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #e2e8f0;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+        }
+
+        .daily-option-btn:hover:not(.locked) {
+            border-color: #6366f1;
+            background: #1d2a42;
+            transform: translateY(-1px);
+        }
+
+        .daily-opt-badge {
+            width: 26px;
+            height: 26px;
+            border-radius: 7px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11.5px;
+            font-weight: 800;
+            color: #94a3b8;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .daily-option-btn.correct {
+            background: rgba(16, 185, 129, 0.15) !important;
+            border-color: #10b981 !important;
+            color: #ffffff !important;
+        }
+
+        .daily-option-btn.correct .daily-opt-badge {
+            background: #10b981;
+            border-color: #10b981;
+            color: #ffffff;
+        }
+
+        .daily-option-btn.wrong {
+            background: rgba(239, 68, 68, 0.15) !important;
+            border-color: #ef4444 !important;
+            color: #ffffff !important;
+        }
+
+        .daily-option-btn.wrong .daily-opt-badge {
+            background: #ef4444;
+            border-color: #ef4444;
+            color: #ffffff;
+        }
+
+        .daily-option-btn.locked {
+            cursor: default;
+        }
+
+        /* Action & Feedback Footer */
+        .daily-bottom-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .daily-feedback-msg {
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 600;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .daily-feedback-msg.correct-text {
+            color: #10b981;
+        }
+
+        .daily-feedback-msg.wrong-text {
+            color: #ef4444;
+        }
+
+        .daily-btn-next {
+            background: #6366f1;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            padding: 9px 20px;
+            font-size: 13.5px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .daily-btn-next:disabled {
+            background: rgba(255, 255, 255, 0.08);
+            color: #64748b;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .daily-btn-next:hover:not(:disabled) {
+            background: #4f46e5;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+            transform: translateY(-1px);
+        }
+
+        /* Daily Quiz Completed View */
+        .daily-result-box {
+            text-align: center;
+            padding: 20px 8px 10px;
+        }
+
+        .daily-trophy {
+            font-size: 42px;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .daily-result-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .daily-result-desc {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+
+        .daily-score-pill-large {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1.5px solid rgba(16, 185, 129, 0.35);
+            padding: 6px 20px;
+            border-radius: 18px;
+            color: #10b981;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .daily-score-pill-large small {
+            font-size: 13px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .daily-reset-notice {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 10px;
+            padding: 8px 14px;
+            font-size: 12px;
+            color: #cbd5e1;
+            margin-bottom: 18px;
+            display: inline-block;
+        }
+
+        .daily-result-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .daily-btn-action {
+            background: #6366f1;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            padding: 9px 18px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .daily-btn-action:hover {
+            background: #4f46e5;
+            transform: translateY(-1px);
+        }
+
+        .daily-btn-outline {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #e2e8f0;
+        }
+
+        .daily-btn-outline:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .daily-review-wrap {
+            margin-top: 20px;
+            text-align: left;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 16px;
+        }
+
+        .daily-review-item {
+            background: #172133;
+            border: 1px solid #28374f;
+            border-radius: 11px;
+            padding: 12px 14px;
+            margin-bottom: 8px;
+        }
+
+        .daily-review-q {
+            font-size: 13px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .daily-review-ans {
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        .daily-review-ans b {
+            color: #10b981;
+        }
+</style>
     <style>
 /* Subject Filter Tabs - 100% Responsive & Zero Left-Clipping Guarantee */
 .portal-tabs-wrap {
@@ -2414,38 +3041,39 @@
     </div>
 
     <!-- Sticky Glassmorphic Header Navigation -->
+        <!-- Hidden Native Audio Player -->
+    <audio id="quizeAudioPlayer" preload="auto">
+        <source src="assets/quzeaudio.mp3" type="audio/mpeg">
+        <source src="assets/quzeaudio.mpeg" type="audio/mpeg">
+    </audio>
+
+    <!-- Clean Sticky Header Navigation -->
     <header class="site-header">
         <div class="nav-container">
             <nav class="navbar">
                 <a href="#" class="logo-wrap">
                     <img src="assets/icon.png" alt="Quizee Icon">
                     <span class="logo-text">Quizee</span>
-                    <span class="version-badge">v3.0</span>
                 </a>
 
-                <!-- Desktop Navigation Links -->
+                <!-- Desktop Navigation Links (Clean & Minimal) -->
                 <div class="nav-links-desktop">
-                    <a href="mock-tests.html" class="nav-btn nav-btn-mocks">
-                        <span class="pulse-indicator"></span>
-                        <span>🎯 60 Full Mocks</span>
-                    </a>
-                    <a href="byjus-gk.html" class="nav-btn" style="background:rgba(99, 102, 241, 0.18); border-color:rgba(129, 140, 248, 0.4); color:#c7d2fe;">
-                        <span class="pulse-indicator"></span>
-                        <span>🏛️ BYJU'S GK (58 Topics)</span>
-                    </a>
-                    <a href="#online-tests" class="nav-btn">
-                        <span>📚 Topic Sets</span>
-                    </a>
-                    <span class="nav-btn nav-btn-offline" style="background:rgba(16,185,129,0.08); border-color:rgba(16,185,129,0.3); color:#10b981; cursor:default;" title="All 7,480+ questions run offline in your browser">
-                        <span class="pulse-indicator" style="background:#10b981; box-shadow:0 0 6px #10b981;"></span>
-                        <span>⚡ Offline Ready</span>
-                    </span>
-                    <a href="https://github.com/Kunal18sm/Quizee" target="_blank" rel="noopener" class="nav-btn">GitHub</a>
+                    <a href="#daily-quiz" class="nav-btn active">Daily 5</a>
+                    <a href="#online-tests" class="nav-btn">Topic Sets</a>
+                    <a href="mock-tests.html" class="nav-btn">Full Mocks</a>
+                    <a href="byjus-gk.html" class="nav-btn">BYJU'S GK</a>
+                    <button class="nav-btn-audio quize-audio-btn" type="button" title="Play Quizee Music">
+                        <span class="audio-btn-icon">🎵</span>
+                        <span class="audio-btn-text">Music</span>
+                    </button>
                     <a href="quizee.apk" download="quizee.apk" class="nav-btn nav-btn-primary">Download APK</a>
                 </div>
 
-                <!-- Mobile Actions (Direct APK + Hamburger) -->
+                <!-- Mobile Actions -->
                 <div class="nav-mobile-actions">
+                    <button class="nav-btn-mobile-audio quize-audio-btn" type="button" aria-label="Play Music" title="Play Quizee Music">
+                        <span class="audio-btn-icon">🎵</span>
+                    </button>
                     <a href="quizee.apk" download="quizee.apk" class="nav-btn-mobile-download">
                         <span>📥 APK</span>
                     </a>
@@ -2458,60 +3086,32 @@
             </nav>
         </div>
 
-        <!-- Mobile Drawer Dropdown -->
+        <!-- Mobile Drawer Dropdown (Clean, Simple, Minimal Text) -->
         <div id="mobileMenuDrawer" class="mobile-menu-drawer">
             <div class="mobile-menu-inner">
-                <a href="byjus-gk.html" class="mobile-nav-item mobile-item-highlight" style="border-color:rgba(99,102,241,0.4);">
-                    <div class="mobile-item-icon">🏛️</div>
-                    <div class="mobile-item-content">
-                        <div class="mobile-item-title">BYJU'S Static GK Quiz <span class="badge-mini" style="background:#10b981; color:#fff;">58 Topics</span></div>
-                        <div class="mobile-item-desc">464 MCQs • Section-Wise Interactive Quizzes</div>
-                    </div>
-                    <span class="mobile-arrow">→</span>
+                <a href="#daily-quiz" class="mobile-nav-item">
+                    <span class="mobile-item-icon">✨</span>
+                    <span>Daily 5 Quiz</span>
                 </a>
-
-                <a href="mock-tests.html" class="mobile-nav-item mobile-item-highlight">
-                    <div class="mobile-item-icon">🎯</div>
-                    <div class="mobile-item-content">
-                        <div class="mobile-item-title">60 Full Mock Tests <span class="badge-mini">Level 1-4</span></div>
-                        <div class="mobile-item-desc">100-Question SSC CGL exam simulators</div>
-                    </div>
-                    <span class="mobile-arrow">→</span>
-                </a>
-
                 <a href="#online-tests" class="mobile-nav-item">
-                    <div class="mobile-item-icon">📚</div>
-                    <div class="mobile-item-content">
-                        <div class="mobile-item-title">Topic Practice Sets</div>
-                        <div class="mobile-item-desc">7 Subjects • 137 Sets • 7,480+ MCQs</div>
-                    </div>
-                    <span class="mobile-arrow">→</span>
+                    <span class="mobile-item-icon">📚</span>
+                    <span>Topic Practice Sets</span>
                 </a>
-
-                <a href="https://github.com/Kunal18sm/Quizee" target="_blank" rel="noopener" class="mobile-nav-item">
-                    <div class="mobile-item-icon">⭐</div>
-                    <div class="mobile-item-content">
-                        <div class="mobile-item-title">Star on GitHub</div>
-                        <div class="mobile-item-desc">Open source repository & release notes</div>
-                    </div>
-                    <span class="mobile-arrow">↗</span>
+                <a href="mock-tests.html" class="mobile-nav-item">
+                    <span class="mobile-item-icon">🎯</span>
+                    <span>60 Full Mock Tests</span>
                 </a>
-
-                <div class="mobile-nav-item" style="background:rgba(16,185,129,0.06); border-color:rgba(16,185,129,0.25);">
-                    <div class="mobile-item-icon" style="color:#10b981;">⚡</div>
-                    <div class="mobile-item-content">
-                        <div class="mobile-item-title" style="color:#10b981;">100% Offline Mode Ready</div>
-                        <div class="mobile-item-desc">Runs without internet once loaded</div>
-                    </div>
-                    <span style="font-size:11px; color:#10b981; font-weight:700;">Active ✓</span>
-                </div>
-
-                <div class="mobile-menu-cta-wrap">
-                    <a href="quizee.apk" download="quizee.apk" class="mobile-btn-download">
-                        <span>📥 Download Quizee APK (v3.1.2)</span>
-                        <span class="mobile-btn-sub">100% Free & Offline • 7.38 MB</span>
-                    </a>
-                </div>
+                <a href="byjus-gk.html" class="mobile-nav-item">
+                    <span class="mobile-item-icon">🏛️</span>
+                    <span>BYJU'S Static GK</span>
+                </a>
+                <button class="mobile-nav-item quize-audio-btn" type="button" style="background:transparent; border:none; width:100%; text-align:left; cursor:pointer; color:#cbd5e1; font-weight:600; font-size:14px; padding:10px 14px; display:flex; align-items:center; gap:12px;">
+                    <span class="mobile-item-icon audio-btn-icon">🎵</span>
+                    <span class="audio-btn-text">Play Music</span>
+                </button>
+                <a href="quizee.apk" download="quizee.apk" class="mobile-btn-download">
+                    Download Quizee APK (Free)
+                </a>
             </div>
         </div>
     </header>
@@ -2519,121 +3119,118 @@
     <div class="container">
 
         <!-- Hero Section -->
-        <section class="hero">
-            <div>
-                <div class="badge">
-                    <span class="badge-dot"></span>
-                    Smart Quiz App Locker for Android
+                <!-- ============================================== -->
+        <!-- HOME SCREEN: CUSTOMIZABLE DAILY 5 QUIZ         -->
+        <!-- ============================================== -->
+        <section id="daily-quiz" class="daily-quiz-section">
+            <div class="daily-quiz-intro">
+                <div class="daily-badge-row">
+                    <div class="daily-badge">
+                        <span class="daily-badge-dot"></span>
+                        <span id="dailyDateBadge">Today's Daily 5</span>
+                    </div>
+                    <button class="btn-play-daily-audio quize-audio-btn" type="button" title="Play Quizee Music">
+                        <span class="audio-btn-icon">🎵</span>
+                        <span class="audio-btn-text">Play Music</span>
+                    </button>
                 </div>
-                <h1>Lock Distractions.<br><span>Answer Quizzes</span> to Unlock.</h1>
-                <p class="hero-desc">
-                    Quizee overlays a quick 5-question quiz whenever you open distracting apps. Pass the quiz to unlock, turning mindless scrolling into effortless daily study.
-                </p>
-                <div class="hero-actions">
-                    <a href="mock-tests.html" class="btn-hero-primary" style="background:linear-gradient(135deg, #6366f1, #2563eb);">
-                        <span>🎯 60 Full Mock Tests (100 Qs)</span>
-                    </a>
-                    <a href="#online-tests" class="btn-hero-secondary">
-                        <span>📚 Topic Sets</span>
-                    </a>
-                    <a href="quizee.apk" class="btn-hero-secondary" download="quizee.apk">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        <span>Download APK</span>
-                    </a>
+                <h1 class="daily-title">Daily <span>5 Quiz</span></h1>
+                <p class="daily-subtitle">Customize subject & subtopic below. Solve today's 5 questions. New questions unlock tomorrow.</p>
+            </div>
+
+            <!-- 1. Subject Level Selector -->
+            <div class="daily-topic-wrap" id="dailyTopicWrap">
+                <div class="daily-selector-heading">
+                    <span>1. Choose Subject:</span>
                 </div>
-                <div class="apk-meta">
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
-                        Android 8.0 – 15
-                    </span>
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                        7,480+ SSC CGL Questions
-                    </span>
-                    <span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                        100% Free &amp; Offline
-                    </span>
+                <div class="daily-topic-scroll" id="dailyTopicScroll">
+                    <!-- Subject chips populated dynamically -->
                 </div>
             </div>
 
-            <!-- Interactive App Demo Mockup -->
-            <div class="mockup-wrap">
-                <div class="phone-mockup">
+            <!-- 2. Subtopic Level Selector (Deep Customization) -->
+            <div class="daily-subtopic-wrap" id="dailySubtopicWrap">
+                <div class="daily-selector-heading">
+                    <span id="dailySubtopicLabel">2. Choose Subtopic:</span>
+                    <span id="dailySubtopicCount" style="color:#818cf8; font-weight:600; text-transform:none;"></span>
+                </div>
+                <div class="daily-subtopic-scroll" id="dailySubtopicScroll">
+                    <!-- Subtopic chips populated dynamically for active subject! -->
+                </div>
+            </div>
 
-                    <div class="phone-notch"></div>
-
-                    <!-- Floating Card -->
-                    <div class="floating-dialog" id="demoDialogCard">
-                        <div class="phone-header">
-                            <img src="assets/icon.png" alt="Quizee Icon">
-                            <div>
-                                <h4>
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                                    Instagram is Locked
-                                </h4>
-                                <p>Answer 5 MCQs to unlock</p>
-                            </div>
-                        </div>
-
-                        <!-- Active Quiz Content -->
-                        <div id="demoActiveQuiz">
-                            <div class="progress-box">
-                                <span id="demoProgressText">Question 1 of 5</span>
-                                <span id="demoScoreText">Score: 0</span>
-                            </div>
-                            <div class="progress-bar-bg">
-                                <div class="progress-bar-fill" id="demoProgressBar"></div>
-                            </div>
-
-                            <div class="mockup-card">
-                                <div class="mockup-category" id="demoCategory">Geography &amp; Superlatives</div>
-                                <div class="mockup-question" id="demoQuestion">Which is the longest river in India?</div>
-                            </div>
-
-                            <div class="mockup-options" id="demoOptionsBox">
-                                <!-- Rendered dynamically -->
-                            </div>
-
-                            <div class="demo-tip">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                                Tap an option to test instant answer feedback
-                            </div>
-                        </div>
-
-                        <!-- Quiz Completed View -->
-                        <div id="demoCompletedQuiz" style="display:none; text-align:center; padding: 10px 4px;">
-                            <div style="width:44px; height:44px; border-radius:50%; background:rgba(16, 185, 129, 0.15); border:1px solid rgba(16, 185, 129, 0.4); margin:0 auto 10px; display:flex; align-items:center; justify-content:center; color:#10b981;">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 9.9-1"></path></svg>
-                            </div>
-                            <h4 style="font-size:15px; font-weight:800; color:#f8fafc; margin-bottom:2px; display:flex; align-items:center; justify-content:center; gap:6px;">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                                Quiz Completed!
-                            </h4>
-                            <p style="font-size:11px; color:#94a3b8; margin-bottom:10px;">You answered all 5 MCQs.<br>Instagram is now unlocked.</p>
-                            <div id="demoFinalScoreBadge" style="display:inline-block; background:#1c2638; border:1px solid #2b384e; padding:3px 12px; border-radius:8px; font-size:11px; font-weight:700; color:#10b981; margin-bottom:12px;">
-                                Score: 5 / 5 Correct
-                            </div>
-                            
-                            <!-- Open App Button -->
-                            <button id="btnDemoOpenApp" onclick="handleDemoOpenApp()" style="width:100%; background:#10b981; color:#fff; border:none; border-radius:10px; padding:10px; font-size:13px; font-weight:800; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:7px;">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                                <span>OPEN INSTAGRAM</span>
-                            </button>
-
-                            <button onclick="restartDemo()" style="margin-top:10px; background:none; border:none; color:#64748b; font-size:11px; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
-                                Restart Demo
-                            </button>
+            <!-- Daily Quiz Card -->
+            <div class="daily-quiz-card">
+                <!-- Active Quiz View -->
+                <div id="dailyQuizActiveView">
+                    <div class="daily-card-topbar">
+                        <div class="daily-active-topic-badge" id="dailyTopicTag">🌟 All Mixed • 5 Daily MCQs</div>
+                        <div class="daily-card-meta">
+                            <span class="daily-q-count" id="dailyQIndicator">Question 1 of 5</span>
+                            <span class="daily-score-badge" id="dailyScorePill">Score: 0</span>
                         </div>
                     </div>
 
+                    <!-- Progress Bar -->
+                    <div class="daily-progress-bg">
+                        <div class="daily-progress-fill" id="dailyProgressBar"></div>
+                    </div>
+
+                    <!-- Question Content -->
+                    <div class="daily-q-content">
+                        <div class="daily-category-tag" id="dailySubcat">General Knowledge</div>
+                        <h3 class="daily-q-title" id="dailyQText">Loading today's quiz...</h3>
+                    </div>
+
+                    <!-- 4 Options -->
+                    <div class="daily-options-list" id="dailyOptionsList">
+                        <!-- Options injected dynamically -->
+                    </div>
+
+                    <!-- Action & Feedback Footer -->
+                    <div class="daily-bottom-bar">
+                        <div class="daily-feedback-msg" id="dailyFeedback">Tap an option to check your answer</div>
+                        <button class="daily-btn-next" id="dailyNextBtn" disabled>Next Question →</button>
+                    </div>
+                </div>
+
+                <!-- Quiz Completed View -->
+                <div id="dailyQuizCompletedView" style="display:none;" class="daily-result-box">
+                    <div class="daily-trophy">🏆</div>
+                    <h2 class="daily-result-title">Quiz Completed!</h2>
+                    <p class="daily-result-desc" id="dailyScoreStatus">Great Job! You finished today's 5 questions.</p>
+
+                    <div class="daily-score-pill-large">
+                        <span id="dailyFinalScoreNum">0</span>
+                        <small>/ 5 Correct</small>
+                    </div>
+
+                    <div>
+                        <div class="daily-reset-notice">
+                            📅 Same questions stay today • 5 new questions tomorrow!
+                        </div>
+                    </div>
+
+                    <div class="daily-result-actions">
+                        <button class="daily-btn-action" id="btnDailyRetake">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                            <span>Retake Today's 5</span>
+                        </button>
+                        <button class="daily-btn-action daily-btn-outline" id="btnDailySwitchTopic">
+                            <span>Change Topic</span>
+                        </button>
+                        <button class="daily-btn-action daily-btn-outline" id="btnDailyToggleReview">
+                            <span>Review Answers</span>
+                        </button>
+                    </div>
+
+                    <!-- Review List Accordion -->
+                    <div id="dailyReviewList" class="daily-review-wrap" style="display:none;"></div>
                 </div>
             </div>
         </section>
 
-        <!-- Stats Grid -->
-        <section class="stats-grid">
+<section class="stats-grid">
             <div class="stat-card">
                 <div class="stat-number">7,480</div>
                 <div class="stat-label">Built-In MCQs</div>
@@ -4708,6 +5305,508 @@ function handleSimAddQuestion() {
                 showToast('⚡ Back Online! Everything is up to date.', false);
             });
         })();
+    </script>
+
+    <!-- Quizee Audio Player Controller -->
+    <script>
+    (function() {
+        const audio = document.getElementById('quizeAudioPlayer');
+        const audioBtns = document.querySelectorAll('.quize-audio-btn');
+        if (!audio || !audioBtns.length) return;
+
+        function setAudioState(isPlaying) {
+            audioBtns.forEach(btn => {
+                const icon = btn.querySelector('.audio-btn-icon');
+                const text = btn.querySelector('.audio-btn-text');
+
+                if (isPlaying) {
+                    btn.classList.add('is-playing');
+                    if (icon) icon.textContent = '🔊';
+                    if (text) text.textContent = 'Playing...';
+                    btn.title = 'Click to Pause Music';
+                } else {
+                    btn.classList.remove('is-playing');
+                    if (icon) icon.textContent = '🎵';
+                    if (text) text.textContent = btn.classList.contains('btn-play-daily-audio') ? 'Play Music' : 'Music';
+                    btn.title = 'Click to Play Music';
+                }
+            });
+        }
+
+        function toggleAudio(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            if (audio.paused) {
+                audio.currentTime = 0;
+                const playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        setAudioState(true);
+                    }).catch(err => {
+                        console.warn('Audio playback error:', err);
+                        setAudioState(false);
+                    });
+                }
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+                setAudioState(false);
+            }
+        }
+
+        audio.addEventListener('ended', () => { setAudioState(false); });
+        audio.addEventListener('pause', () => { setAudioState(false); });
+        audio.addEventListener('play', () => { setAudioState(true); });
+
+        audioBtns.forEach(btn => {
+            btn.addEventListener('click', toggleAudio);
+        });
+    })();
+    </script>
+
+    <!-- Daily 5 Quiz Engine Script with Subtopic Customization -->
+    <script>
+    (function() {
+        'use strict';
+
+        const SUBJECTS = [
+            { key: 'all', name: 'All Mixed', icon: '🌟' },
+            { key: 'english', name: 'English', icon: '📖' },
+            { key: 'static_gk', name: 'Static GK', icon: '🏛️' },
+            { key: 'history', name: 'History', icon: '🏺' },
+            { key: 'polity', name: 'Polity', icon: '⚖️' },
+            { key: 'geography', name: 'Geography', icon: '🌍' },
+            { key: 'biology', name: 'Biology', icon: '🧬' },
+            { key: 'economics', name: 'Economics', icon: '📈' }
+        ];
+
+        let currentSubject = localStorage.getItem('quizee_daily_subject') || 'all';
+        let currentSubtopic = localStorage.getItem('quizee_daily_subtopic') || 'all';
+
+        let dailyQuestions = [];
+        let currentIndex = 0;
+        let score = 0;
+        let isAnswerLocked = false;
+        let userAnswers = [];
+        let autoAdvanceTimer = null;
+
+        function getLocalDateString() {
+            const d = new Date();
+            const y = d.getFullYear();
+            const m = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            return `${y}-${m}-${day}`;
+        }
+
+        function getFormattedDate() {
+            const d = new Date();
+            const options = { weekday: 'short', month: 'short', day: 'numeric' };
+            return d.toLocaleDateString('en-US', options);
+        }
+
+        function hashString(str) {
+            let hash = 5381;
+            for (let i = 0; i < str.length; i++) {
+                hash = ((hash << 5) + hash) + str.charCodeAt(i);
+                hash = hash & hash;
+            }
+            return Math.abs(hash);
+        }
+
+        function mulberry32(seed) {
+            let s = (seed >>> 0) || 1;
+            return function() {
+                s = (s + 0x6D2B79F5) >>> 0;
+                let t = Math.imul(s ^ (s >>> 15), 1 | s);
+                t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+                return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+            };
+        }
+
+        function cleanSubtopicLabel(rawCat, subKey) {
+            if (!rawCat) return 'General';
+            let s = rawCat.trim();
+            const prefixes = [
+                'English:', 'Modern History:', 'Ancient History:', 'Medieval History:',
+                'Geography:', 'Biology:', 'General Science:', 'Polity:', 'Economics:'
+            ];
+            for (const p of prefixes) {
+                if (s.startsWith(p)) {
+                    s = s.substring(p.length).trim();
+                    break;
+                }
+            }
+            return s || rawCat;
+        }
+
+        function getSubtopicsForSubject(subKey) {
+            const allData = window.QUIZEE_ALL_QUESTIONS;
+            if (!allData) return [];
+
+            if (subKey === 'all') {
+                return [];
+            }
+
+            const qs = allData[subKey] || [];
+            const catMap = new Map();
+            qs.forEach(q => {
+                const c = (q.category && q.category.trim()) ? q.category.trim() : subKey;
+                catMap.set(c, (catMap.get(c) || 0) + 1);
+            });
+
+            // Sort by question count descending
+            const sorted = Array.from(catMap.entries()).sort((a, b) => b[1] - a[1]);
+            return sorted.map(([cat, count]) => ({
+                key: cat,
+                label: cleanSubtopicLabel(cat, subKey),
+                count: count
+            }));
+        }
+
+        function getQuestionsForCurrentSelection() {
+            const todayStr = getLocalDateString();
+            const seed = hashString(`${todayStr}::${currentSubject}::${currentSubtopic}`);
+            const rng = mulberry32(seed);
+
+            const allData = window.QUIZEE_ALL_QUESTIONS;
+            let pool = [];
+
+            if (allData) {
+                if (currentSubject === 'all') {
+                    Object.keys(allData).forEach(k => {
+                        if (Array.isArray(allData[k])) pool.push(...allData[k]);
+                    });
+                } else {
+                    const subPool = allData[currentSubject] || [];
+                    if (!currentSubtopic || currentSubtopic === 'all') {
+                        pool = subPool;
+                    } else {
+                        pool = subPool.filter(q => (q.category && q.category.trim()) === currentSubtopic.trim());
+                        if (!pool.length) pool = subPool; // Fallback
+                    }
+                }
+            }
+
+            if (!pool || pool.length === 0) {
+                return [
+                    { id: 101, question: "Which one of the following sites of the Indus Valley Civilization had an ancient dockyard?", options: ["Kalibangan", "Lothal", "Rangpur", "Harappa"], correctIndex: 1, category: "Ancient History" },
+                    { id: 102, question: "Select the option that can be used as a one-word substitute for: 'A person who loves all mankind and helps those in need'", options: ["Misanthrope", "Philanthropist", "Somnambulist", "Choreographer"], correctIndex: 1, category: "English" },
+                    { id: 103, question: "Who among the following Delhi Sultans introduced the market control mechanism?", options: ["Iltutmish", "Balban", "Alauddin Khilji", "Firoz Tughlaq"], correctIndex: 2, category: "Medieval History" },
+                    { id: 104, question: "Which is the longest river in India?", options: ["Godavari (1,465 km)", "The Ganges (2,525 km)", "Narmada (1,315 km)", "Yamuna (1,376 km)"], correctIndex: 1, category: "Geography" },
+                    { id: 105, question: "Who among the following gave the slogan 'Swaraj is my birthright and I shall have it'?", options: ["Lala Lajpat Rai", "Bal Gangadhar Tilak", "Bipin Chandra Pal", "Aurobindo Ghosh"], correctIndex: 1, category: "Modern History" }
+                ];
+            }
+
+            const picked = [];
+            const used = new Set();
+            const poolLen = pool.length;
+            let guard = 0;
+
+            while (picked.length < 5 && picked.length < poolLen && guard < 600) {
+                guard++;
+                const idx = Math.floor(rng() * poolLen);
+                if (!used.has(idx)) {
+                    used.add(idx);
+                    picked.push(pool[idx]);
+                }
+            }
+
+            return picked;
+        }
+
+        function initDailyQuiz() {
+            const badgeEl = document.getElementById('dailyDateBadge');
+            if (badgeEl) {
+                badgeEl.textContent = `Today: ${getFormattedDate()}`;
+            }
+
+            renderSubjectChips();
+            renderSubtopicChips();
+            loadQuiz();
+        }
+
+        function renderSubjectChips() {
+            const wrap = document.getElementById('dailyTopicScroll');
+            if (!wrap) return;
+
+            wrap.innerHTML = '';
+            SUBJECTS.forEach(s => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `daily-topic-chip ${s.key === currentSubject ? 'active' : ''}`;
+                btn.innerHTML = `<span>${s.icon}</span> <span>${s.name}</span>`;
+                btn.onclick = () => selectSubject(s.key);
+                wrap.appendChild(btn);
+            });
+        }
+
+        function selectSubject(subKey) {
+            if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
+            currentSubject = subKey;
+            currentSubtopic = 'all'; // Reset subtopic on subject change
+            localStorage.setItem('quizee_daily_subject', subKey);
+            localStorage.setItem('quizee_daily_subtopic', 'all');
+
+            renderSubjectChips();
+            renderSubtopicChips();
+            loadQuiz();
+        }
+
+        function renderSubtopicChips() {
+            const subWrap = document.getElementById('dailySubtopicWrap');
+            const subScroll = document.getElementById('dailySubtopicScroll');
+            const subLabel = document.getElementById('dailySubtopicLabel');
+            const subCount = document.getElementById('dailySubtopicCount');
+            if (!subWrap || !subScroll) return;
+
+            if (currentSubject === 'all') {
+                subWrap.style.display = 'none';
+                return;
+            }
+
+            subWrap.style.display = 'block';
+            const currSubjObj = SUBJECTS.find(s => s.key === currentSubject) || { name: 'Subject' };
+            if (subLabel) subLabel.textContent = `2. Choose ${currSubjObj.name} Subtopic:`;
+
+            const subtopics = getSubtopicsForSubject(currentSubject);
+            if (subCount) subCount.textContent = `(${subtopics.length} Subtopics Available)`;
+
+            subScroll.innerHTML = '';
+
+            // Default 'All' subtopic chip
+            const allBtn = document.createElement('button');
+            allBtn.type = 'button';
+            allBtn.className = `daily-subtopic-chip ${currentSubtopic === 'all' ? 'active' : ''}`;
+            allBtn.innerHTML = `🌟 All ${currSubjObj.name} (Mixed)`;
+            allBtn.onclick = () => selectSubtopic('all');
+            subScroll.appendChild(allBtn);
+
+            // Subtopic chips
+            subtopics.forEach(st => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `daily-subtopic-chip ${currentSubtopic === st.key ? 'active' : ''}`;
+                btn.innerHTML = `${st.label} <span style="opacity:0.65; font-size:10.5px;">(${st.count})</span>`;
+                btn.onclick = () => selectSubtopic(st.key);
+                subScroll.appendChild(btn);
+            });
+        }
+
+        function selectSubtopic(subtopicKey) {
+            if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
+            currentSubtopic = subtopicKey;
+            localStorage.setItem('quizee_daily_subtopic', subtopicKey);
+            renderSubtopicChips();
+            loadQuiz();
+        }
+
+        function loadQuiz() {
+            dailyQuestions = getQuestionsForCurrentSelection();
+            currentIndex = 0;
+            score = 0;
+            isAnswerLocked = false;
+            userAnswers = [];
+
+            const activeView = document.getElementById('dailyQuizActiveView');
+            const compView = document.getElementById('dailyQuizCompletedView');
+            if (activeView) activeView.style.display = 'block';
+            if (compView) compView.style.display = 'none';
+
+            // Update topic tag display
+            const sObj = SUBJECTS.find(s => s.key === currentSubject) || SUBJECTS[0];
+            const tagEl = document.getElementById('dailyTopicTag');
+            if (tagEl) {
+                if (currentSubtopic === 'all') {
+                    tagEl.innerHTML = `${sObj.icon} ${sObj.name} • 5 Daily MCQs`;
+                } else {
+                    const cleanLabel = cleanSubtopicLabel(currentSubtopic, currentSubject);
+                    tagEl.innerHTML = `${sObj.icon} ${sObj.name} ➔ ${cleanLabel} • 5 Daily MCQs`;
+                }
+            }
+
+            renderCurrentQuestion();
+        }
+
+        function renderCurrentQuestion() {
+            if (!dailyQuestions.length || currentIndex >= dailyQuestions.length) return;
+            isAnswerLocked = false;
+            if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
+
+            const q = dailyQuestions[currentIndex];
+
+            document.getElementById('dailyQIndicator').textContent = `Question ${currentIndex + 1} of 5`;
+            document.getElementById('dailyScorePill').textContent = `Score: ${score}`;
+            document.getElementById('dailyProgressBar').style.width = `${((currentIndex + 1) / 5) * 100}%`;
+
+            const cat = q.category || 'General Knowledge';
+            document.getElementById('dailySubcat').textContent = cat;
+            document.getElementById('dailyQText').textContent = q.question;
+
+            const fbEl = document.getElementById('dailyFeedback');
+            fbEl.className = 'daily-feedback-msg';
+            fbEl.textContent = 'Tap an option to check your answer';
+
+            const nextBtn = document.getElementById('dailyNextBtn');
+            nextBtn.disabled = true;
+            nextBtn.innerHTML = currentIndex === 4 ? 'Finish Quiz ✓' : 'Next Question →';
+
+            const optsContainer = document.getElementById('dailyOptionsList');
+            optsContainer.innerHTML = '';
+            const letters = ['A', 'B', 'C', 'D'];
+
+            q.options.forEach((optText, optIdx) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'daily-option-btn';
+                btn.innerHTML = `<span class="daily-opt-badge">${letters[optIdx]}</span><span>${optText}</span>`;
+                btn.onclick = () => handleAnswerSelect(optIdx, btn);
+                optsContainer.appendChild(btn);
+            });
+        }
+
+        function handleAnswerSelect(selectedIdx, btnEl) {
+            if (isAnswerLocked) return;
+            isAnswerLocked = true;
+
+            const q = dailyQuestions[currentIndex];
+            const isCorrect = (selectedIdx === q.correctIndex);
+
+            userAnswers.push({
+                question: q.question,
+                category: q.category,
+                options: q.options,
+                selected: selectedIdx,
+                correct: q.correctIndex,
+                isCorrect: isCorrect
+            });
+
+            const allBtns = document.querySelectorAll('.daily-option-btn');
+            allBtns.forEach((b, idx) => {
+                b.classList.add('locked');
+                if (idx === q.correctIndex) {
+                    b.classList.add('correct');
+                }
+            });
+
+            const fbEl = document.getElementById('dailyFeedback');
+            if (isCorrect) {
+                btnEl.classList.add('correct');
+                score++;
+                document.getElementById('dailyScorePill').textContent = `Score: ${score}`;
+                fbEl.className = 'daily-feedback-msg correct-text';
+                fbEl.textContent = '✓ Correct Answer!';
+            } else {
+                btnEl.classList.add('wrong');
+                fbEl.className = 'daily-feedback-msg wrong-text';
+                const correctText = q.options[q.correctIndex] || '';
+                fbEl.textContent = `✕ Incorrect! Correct: ${correctText}`;
+            }
+
+            const nextBtn = document.getElementById('dailyNextBtn');
+            nextBtn.disabled = false;
+
+            autoAdvanceTimer = setTimeout(() => {
+                goToNext();
+            }, 2000);
+        }
+
+        function goToNext() {
+            if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
+            if (currentIndex < 4) {
+                currentIndex++;
+                renderCurrentQuestion();
+            } else {
+                showCompletedView();
+            }
+        }
+
+        function showCompletedView() {
+            document.getElementById('dailyQuizActiveView').style.display = 'none';
+            const compView = document.getElementById('dailyQuizCompletedView');
+            compView.style.display = 'block';
+
+            const finalScoreEl = document.getElementById('dailyFinalScoreNum');
+            if (finalScoreEl) finalScoreEl.textContent = score;
+
+            const statusEl = document.getElementById('dailyScoreStatus');
+            if (statusEl) {
+                if (score === 5) statusEl.textContent = '🌟 Perfect Score! Outstanding!';
+                else if (score >= 3) statusEl.textContent = '👍 Good Effort! Well Done!';
+                else statusEl.textContent = 'Keep Practicing Daily!';
+            }
+
+            buildReviewList();
+        }
+
+        function buildReviewList() {
+            const reviewBox = document.getElementById('dailyReviewList');
+            if (!reviewBox) return;
+
+            reviewBox.innerHTML = '';
+            userAnswers.forEach((ans, i) => {
+                const item = document.createElement('div');
+                item.className = 'daily-review-item';
+                const letter = ['A', 'B', 'C', 'D'];
+                const userPick = ans.options[ans.selected];
+                const correctPick = ans.options[ans.correct];
+
+                item.innerHTML = `
+                    <div class="daily-review-q"><b>Q${i+1}:</b> ${ans.question}</div>
+                    <div class="daily-review-ans">
+                        <div>Your answer: <span style="color: ${ans.isCorrect ? '#10b981' : '#ef4444'}; font-weight:700;">${letter[ans.selected]}. ${userPick}</span></div>
+                        ${!ans.isCorrect ? `<div>Correct answer: <b>${letter[ans.correct]}. ${correctPick}</b></div>` : ''}
+                    </div>
+                `;
+                reviewBox.appendChild(item);
+            });
+        }
+
+        // Setup event listeners
+        window.addEventListener('DOMContentLoaded', () => {
+            const nextBtn = document.getElementById('dailyNextBtn');
+            if (nextBtn) nextBtn.onclick = () => goToNext();
+
+            const retakeBtn = document.getElementById('btnDailyRetake');
+            if (retakeBtn) retakeBtn.onclick = () => loadQuiz();
+
+            const switchBtn = document.getElementById('btnDailySwitchTopic');
+            if (switchBtn) {
+                switchBtn.onclick = () => {
+                    document.getElementById('dailyQuizActiveView').style.display = 'block';
+                    document.getElementById('dailyQuizCompletedView').style.display = 'none';
+                    const wrap = document.getElementById('dailyTopicWrap');
+                    if (wrap) wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                };
+            }
+
+            const revBtn = document.getElementById('btnDailyToggleReview');
+            if (revBtn) {
+                revBtn.onclick = () => {
+                    const rList = document.getElementById('dailyReviewList');
+                    if (!rList) return;
+                    const isHidden = (rList.style.display === 'none' || !rList.style.display);
+                    rList.style.display = isHidden ? 'block' : 'none';
+                    revBtn.querySelector('span') ? revBtn.querySelector('span').textContent = isHidden ? 'Hide Review' : 'Review Answers' : revBtn.textContent = isHidden ? 'Hide Review' : 'Review Answers';
+                };
+            }
+
+            if (window.QUIZEE_ALL_QUESTIONS) {
+                initDailyQuiz();
+            } else {
+                let attempts = 0;
+                const timer = setInterval(() => {
+                    attempts++;
+                    if (window.QUIZEE_ALL_QUESTIONS || attempts > 30) {
+                        clearInterval(timer);
+                        initDailyQuiz();
+                    }
+                }, 30);
+            }
+        });
+
+    })();
     </script>
 </body>
 </html>
