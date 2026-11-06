@@ -2385,226 +2385,166 @@
         }
 
         /* ============================================== */
-        /* HOME SCREEN: DAILY 5 QUIZ & SUBTOPIC SELECTOR  */
+        /* CLEAN, ULTRA-MINIMAL HERO & DAILY 5 QUIZ UI     */
         /* ============================================== */
         .daily-quiz-section {
-            padding: 36px 0 24px;
-            max-width: 820px;
+            padding: 16px 0 20px;
+            max-width: 780px;
             margin: 0 auto;
         }
 
-        .daily-quiz-intro {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .daily-badge-row {
+        .daily-quiz-header-row {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
+            justify-content: space-between;
             margin-bottom: 10px;
-            flex-wrap: wrap;
+            padding: 0 4px;
         }
 
-        .daily-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            background: rgba(99, 102, 241, 0.12);
-            border: 1px solid rgba(99, 102, 241, 0.35);
-            padding: 4px 12px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 700;
-            color: #a5b4fc;
-        }
-
-        .daily-badge-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #10b981;
-            box-shadow: 0 0 8px #10b981;
-        }
-
-        .btn-play-daily-audio {
-            background: rgba(99, 102, 241, 0.12);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            color: #c7d2fe;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            display: inline-flex;
+        .daily-title-compact {
+            font-size: 21px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            display: flex;
             align-items: center;
             gap: 6px;
-            transition: all 0.2s ease;
+            margin: 0;
         }
 
-        .btn-play-daily-audio:hover {
-            background: rgba(99, 102, 241, 0.24);
-            border-color: #6366f1;
-            color: #ffffff;
-        }
-
-        .btn-play-daily-audio.is-playing {
-            background: rgba(16, 185, 129, 0.18);
-            border-color: #10b981;
-            color: #34d399;
-            box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
-        }
-
-        .daily-title {
-            font-size: clamp(26px, 4.5vw, 38px);
-            font-weight: 800;
-            letter-spacing: -0.8px;
-            margin-bottom: 6px;
-            color: #ffffff;
-        }
-
-        .daily-title span {
+        .daily-title-compact span {
             background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .daily-subtitle {
-            font-size: 14px;
-            color: #94a3b8;
-            max-width: 520px;
-            margin: 0 auto;
-        }
-
-        /* Subject Level Selector */
-        .daily-topic-wrap {
-            margin-bottom: 14px;
-        }
-
-        .daily-selector-heading {
+        .daily-date-pill {
             font-size: 11.5px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            color: #94a3b8;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .daily-topic-scroll {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            overflow-x: auto;
-            padding: 3px 2px 8px;
-            scrollbar-width: none;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .daily-topic-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        .daily-topic-chip {
-            flex-shrink: 0;
-            background: #141c2b;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: #cbd5e1;
-            padding: 7px 14px;
+            color: #818cf8;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            padding: 3px 10px;
             border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            user-select: none;
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
 
-        .daily-topic-chip:hover {
-            border-color: rgba(99, 102, 241, 0.4);
-            background: #1a2438;
-            color: #ffffff;
+        .daily-date-pill::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 6px #10b981;
         }
 
-        .daily-topic-chip.active {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.28), rgba(79, 70, 229, 0.18));
-            border-color: #6366f1;
-            color: #ffffff;
-            font-weight: 700;
-            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.22);
-        }
-
-        /* Subtopic Level Selector */
-        .daily-subtopic-wrap {
-            margin-bottom: 20px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 14px;
-            padding: 10px 14px;
-        }
-
-        .daily-subtopic-scroll {
+        /* Subject Pills Bar */
+        .daily-subject-bar {
             display: flex;
             align-items: center;
-            gap: 7px;
+            gap: 6px;
             overflow-x: auto;
-            padding: 2px 2px 6px;
+            padding: 2px 2px 8px;
             scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
+            margin-bottom: 6px;
         }
 
-        .daily-subtopic-scroll::-webkit-scrollbar {
+        .daily-subject-bar::-webkit-scrollbar {
             display: none;
         }
 
-        .daily-subtopic-chip {
+        .daily-subject-chip {
             flex-shrink: 0;
             background: #141c2b;
             border: 1px solid rgba(255, 255, 255, 0.08);
             color: #94a3b8;
             padding: 5px 12px;
-            border-radius: 14px;
+            border-radius: 16px;
             font-size: 12px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s ease;
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        .daily-subject-chip:hover {
+            color: #ffffff;
+            border-color: rgba(99, 102, 241, 0.4);
+            background: #1a2438;
+        }
+
+        .daily-subject-chip.active {
+            background: rgba(99, 102, 241, 0.25);
+            border-color: #818cf8;
+            color: #ffffff;
+            font-weight: 700;
+            box-shadow: 0 2px 10px rgba(99, 102, 241, 0.25);
+        }
+
+        /* Subtopics Pills Bar */
+        .daily-subtopic-bar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            overflow-x: auto;
+            padding: 2px 2px 8px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 12px;
+        }
+
+        .daily-subtopic-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .daily-subtopic-chip {
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            color: #94a3b8;
+            padding: 4px 10px;
+            border-radius: 14px;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
             user-select: none;
             white-space: nowrap;
         }
 
         .daily-subtopic-chip:hover {
-            border-color: rgba(129, 140, 248, 0.5);
-            background: rgba(99, 102, 241, 0.14);
             color: #ffffff;
+            border-color: rgba(129, 140, 248, 0.4);
+            background: rgba(99, 102, 241, 0.12);
         }
 
         .daily-subtopic-chip.active {
-            background: rgba(99, 102, 241, 0.28);
+            background: rgba(99, 102, 241, 0.22);
             border-color: #818cf8;
             color: #ffffff;
             font-weight: 700;
-            box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
         }
 
-        /* Daily Quiz Card */
+        /* Compact Quiz Card */
         .daily-quiz-card {
             background: #121826;
             border: 1px solid #233149;
-            border-radius: 20px;
-            padding: 24px 26px;
-            box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.65), 0 0 25px rgba(99, 102, 241, 0.07);
+            border-radius: 18px;
+            padding: 16px 18px;
+            box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.65);
             position: relative;
-            overflow: hidden;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 480px) {
             .daily-quiz-card {
-                padding: 18px 16px;
+                padding: 14px 14px;
                 border-radius: 16px;
             }
         }
@@ -2613,64 +2553,44 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 14px;
+            gap: 8px;
+            margin-bottom: 10px;
         }
 
-        .daily-active-topic-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
+        .daily-compact-tag {
+            font-size: 11.5px;
             font-weight: 700;
-            color: #818cf8;
+            color: #a5b4fc;
             background: rgba(99, 102, 241, 0.12);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            padding: 3px 10px;
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            padding: 3px 9px;
             border-radius: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 180px;
         }
 
         .daily-card-meta {
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .daily-q-count {
-            font-size: 12.5px;
-            font-weight: 700;
-            color: #cbd5e1;
-        }
-
-        .daily-score-badge {
-            font-size: 12px;
-            font-weight: 700;
-            color: #10b981;
-            background: rgba(16, 185, 129, 0.12);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            padding: 3px 10px;
-            border-radius: 8px;
+            gap: 7px;
+            flex-shrink: 0;
         }
 
         .btn-daily-lang {
-            background: rgba(99, 102, 241, 0.12);
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            color: #c7d2fe;
-            padding: 3px 10px;
-            border-radius: 8px;
-            font-size: 11.5px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #cbd5e1;
+            padding: 3px 8px;
+            border-radius: 7px;
+            font-size: 11px;
             font-weight: 700;
             cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
             transition: all 0.2s ease;
-            user-select: none;
         }
 
         .btn-daily-lang:hover {
-            background: rgba(99, 102, 241, 0.24);
             border-color: #6366f1;
             color: #ffffff;
         }
@@ -2679,117 +2599,105 @@
             background: rgba(16, 185, 129, 0.18);
             border-color: #10b981;
             color: #34d399;
-            box-shadow: 0 0 10px rgba(16, 185, 129, 0.35);
         }
 
-        .daily-loop-notice {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(99, 102, 241, 0.2));
-            border: 1px solid rgba(16, 185, 129, 0.4);
-            color: #34d399;
-            padding: 8px 14px;
-            border-radius: 10px;
-            font-size: 12.5px;
+        .daily-compact-q {
+            font-size: 11.5px;
             font-weight: 700;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            animation: fadeInDown 0.3s ease;
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-6px); }
-            to { opacity: 1; transform: translateY(0); }
+            color: #cbd5e1;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3px 8px;
+            border-radius: 7px;
         }
 
-        /* Progress Bar */
+        .daily-compact-score {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #10b981;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 3px 8px;
+            border-radius: 7px;
+        }
+
+        /* Thin Progress Bar */
         .daily-progress-bg {
             width: 100%;
-            height: 6px;
+            height: 3.5px;
             background: rgba(255, 255, 255, 0.06);
-            border-radius: 10px;
+            border-radius: 6px;
             overflow: hidden;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
         .daily-progress-fill {
             height: 100%;
             width: 20%;
             background: linear-gradient(90deg, #6366f1, #818cf8);
-            border-radius: 10px;
-            transition: width 0.35s ease;
+            transition: width 0.3s ease;
         }
 
-        /* Question Box */
+        /* Question Text */
         .daily-q-content {
-            margin-bottom: 18px;
-        }
-
-        .daily-category-tag {
-            font-size: 11.5px;
-            font-weight: 700;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
+            margin-bottom: 12px;
         }
 
         .daily-q-title {
-            font-size: clamp(16px, 2.4vw, 18.5px);
+            font-size: clamp(15px, 2.3vw, 17px);
             font-weight: 700;
             color: #f8fafc;
-            line-height: 1.45;
+            line-height: 1.4;
+            margin: 0;
         }
 
         /* Options Stack */
         .daily-options-list {
             display: flex;
             flex-direction: column;
-            gap: 9px;
-            margin-bottom: 20px;
+            gap: 7px;
+            margin-bottom: 10px;
         }
 
         .daily-option-btn {
             width: 100%;
             background: #172133;
-            border: 1.5px solid #28374f;
-            border-radius: 12px;
-            padding: 12px 16px;
+            border: 1px solid #253347;
+            border-radius: 10px;
+            padding: 9px 12px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 9px;
             color: #e2e8f0;
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 500;
             cursor: pointer;
             text-align: left;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.18s ease;
             user-select: none;
         }
 
         .daily-option-btn:hover:not(.locked) {
             border-color: #6366f1;
-            background: #1d2a42;
-            transform: translateY(-1px);
+            background: #1c283d;
         }
 
         .daily-opt-badge {
-            width: 26px;
-            height: 26px;
-            border-radius: 7px;
+            width: 23px;
+            height: 23px;
+            border-radius: 6px;
             background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 800;
             color: #94a3b8;
             flex-shrink: 0;
-            transition: all 0.2s ease;
         }
 
         .daily-option-btn.correct {
-            background: rgba(16, 185, 129, 0.15) !important;
+            background: rgba(16, 185, 129, 0.16) !important;
             border-color: #10b981 !important;
             color: #ffffff !important;
         }
@@ -2801,7 +2709,7 @@
         }
 
         .daily-option-btn.wrong {
-            background: rgba(239, 68, 68, 0.15) !important;
+            background: rgba(239, 68, 68, 0.16) !important;
             border-color: #ef4444 !important;
             color: #ffffff !important;
         }
@@ -2816,23 +2724,17 @@
             cursor: default;
         }
 
-        /* Action & Feedback Footer */
+        /* Feedback Status */
         .daily-bottom-bar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             text-align: center;
-            padding-top: 14px;
-            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .daily-feedback-msg {
-            font-size: 13.5px;
+            font-size: 12px;
             color: #94a3b8;
             font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
         }
 
         .daily-feedback-msg.correct-text {
@@ -2843,160 +2745,18 @@
             color: #ef4444;
         }
 
-        .daily-btn-next {
-            background: #6366f1;
-            color: #ffffff;
-            border: none;
-            border-radius: 10px;
-            padding: 9px 20px;
-            font-size: 13.5px;
+        .daily-loop-notice {
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            color: #34d399;
+            padding: 5px 10px;
+            border-radius: 7px;
+            font-size: 11.5px;
             font-weight: 700;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .daily-btn-next:disabled {
-            background: rgba(255, 255, 255, 0.08);
-            color: #64748b;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        .daily-btn-next:hover:not(:disabled) {
-            background: #4f46e5;
-            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
-            transform: translateY(-1px);
-        }
-
-        /* Daily Quiz Completed View */
-        .daily-result-box {
-            text-align: center;
-            padding: 20px 8px 10px;
-        }
-
-        .daily-trophy {
-            font-size: 42px;
-            line-height: 1;
-            margin-bottom: 10px;
-        }
-
-        .daily-result-title {
-            font-size: 22px;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 4px;
-        }
-
-        .daily-result-desc {
-            font-size: 13px;
-            color: #94a3b8;
-            margin-bottom: 16px;
-        }
-
-        .daily-score-pill-large {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 6px;
-            background: rgba(16, 185, 129, 0.12);
-            border: 1.5px solid rgba(16, 185, 129, 0.35);
-            padding: 6px 20px;
-            border-radius: 18px;
-            color: #10b981;
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .daily-score-pill-large small {
-            font-size: 13px;
-            color: #94a3b8;
-            font-weight: 600;
-        }
-
-        .daily-reset-notice {
-            background: rgba(99, 102, 241, 0.08);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            border-radius: 10px;
-            padding: 8px 14px;
-            font-size: 12px;
-            color: #cbd5e1;
-            margin-bottom: 18px;
-            display: inline-block;
-        }
-
-        .daily-result-actions {
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .daily-btn-action {
-            background: #6366f1;
-            color: #ffffff;
-            border: none;
-            border-radius: 10px;
-            padding: 9px 18px;
-            font-size: 13px;
-            font-weight: 700;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .daily-btn-action:hover {
-            background: #4f46e5;
-            transform: translateY(-1px);
-        }
-
-        .daily-btn-outline {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #e2e8f0;
-        }
-
-        .daily-btn-outline:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
-
-        .daily-review-wrap {
-            margin-top: 20px;
-            text-align: left;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 16px;
-        }
-
-        .daily-review-item {
-            background: #172133;
-            border: 1px solid #28374f;
-            border-radius: 11px;
-            padding: 12px 14px;
-            margin-bottom: 8px;
-        }
-
-        .daily-review-q {
-            font-size: 13px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 6px;
-        }
-
-        .daily-review-ans {
-            font-size: 12px;
-            color: #94a3b8;
-            line-height: 1.5;
-        }
-
-        .daily-review-ans b {
-            color: #10b981;
+            justify-content: space-between;
         }
 </style>
     <style>
@@ -3117,7 +2877,7 @@
                     <a href="quizee.apk" download="quizee.apk" class="nav-btn nav-btn-primary">Download APK</a>
                 </div>
 
-                <!-- Mobile Actions -->
+                <!-- Mobile Actions (Spaced & Clean) -->
                 <div class="nav-mobile-actions">
                     <button class="nav-btn-mobile-audio quize-audio-btn" type="button" aria-label="Play Music" title="Play Quizee Music">
                         <span class="audio-btn-icon">🎵</span>
@@ -3134,7 +2894,7 @@
             </nav>
         </div>
 
-        <!-- Mobile Drawer Dropdown (Clean, Simple, Minimal Text) -->
+        <!-- Mobile Drawer Dropdown -->
         <div id="mobileMenuDrawer" class="mobile-menu-drawer">
             <div class="mobile-menu-inner">
                 <a href="#daily-quiz" class="mobile-nav-item">
@@ -3168,117 +2928,49 @@
 
         <!-- Hero Section -->
                 <!-- ============================================== -->
-        <!-- HOME SCREEN: CUSTOMIZABLE DAILY 5 QUIZ         -->
+        <!-- HOME SCREEN: CLEAN & COMPACT DAILY 5 QUIZ      -->
         <!-- ============================================== -->
         <section id="daily-quiz" class="daily-quiz-section">
-            <div class="daily-quiz-intro">
-                <div class="daily-badge-row">
-                    <div class="daily-badge">
-                        <span class="daily-badge-dot"></span>
-                        <span id="dailyDateBadge">Today's Daily 5</span>
-                    </div>
-                    <button class="btn-play-daily-audio quize-audio-btn" type="button" title="Play Quizee Music">
-                        <span class="audio-btn-icon">🎵</span>
-                        <span class="audio-btn-text">Play Music</span>
-                    </button>
-                </div>
-                <h1 class="daily-title">Daily <span>5 Quiz</span></h1>
-                <p class="daily-subtitle">Customize subject & subtopic below. Solve today's 5 questions. New questions unlock tomorrow.</p>
+            <div class="daily-quiz-header-row">
+                <h2 class="daily-title-compact">Daily <span>5</span></h2>
+                <span class="daily-date-pill" id="dailyDateBadge">Fri, Nov 6</span>
             </div>
 
-            <!-- 1. Subject Level Selector -->
-            <div class="daily-topic-wrap" id="dailyTopicWrap">
-                <div class="daily-selector-heading">
-                    <span>1. Choose Subject:</span>
-                </div>
-                <div class="daily-topic-scroll" id="dailyTopicScroll">
-                    <!-- Subject chips populated dynamically -->
-                </div>
-            </div>
+            <!-- Subject Chips Bar -->
+            <div class="daily-subject-bar" id="dailyTopicScroll"></div>
 
-            <!-- 2. Subtopic Level Selector (Deep Customization) -->
-            <div class="daily-subtopic-wrap" id="dailySubtopicWrap">
-                <div class="daily-selector-heading">
-                    <span id="dailySubtopicLabel">2. Choose Subtopic:</span>
-                    <span id="dailySubtopicCount" style="color:#818cf8; font-weight:600; text-transform:none;"></span>
-                </div>
-                <div class="daily-subtopic-scroll" id="dailySubtopicScroll">
-                    <!-- Subtopic chips populated dynamically for active subject! -->
-                </div>
-            </div>
+            <!-- Subtopic Chips Bar (Compact) -->
+            <div class="daily-subtopic-bar" id="dailySubtopicScroll" style="display:none;"></div>
 
-            <!-- Daily Quiz Card -->
+            <!-- Compact Quiz Card -->
             <div class="daily-quiz-card">
-                <!-- Active Quiz View (Continuous Unlimited Loop) -->
                 <div id="dailyQuizActiveView">
-                    <!-- Loop Celebration Notice -->
                     <div id="dailyLoopNotice" class="daily-loop-notice" style="display:none;"></div>
 
                     <div class="daily-card-topbar">
-                        <div class="daily-active-topic-badge" id="dailyTopicTag">🌟 All Mixed • 5 Daily MCQs</div>
+                        <span class="daily-compact-tag" id="dailyTopicTag">All Mixed</span>
                         <div class="daily-card-meta">
                             <button id="btnDailyTranslate" class="btn-daily-lang" type="button" title="Translate to Hindi">
-                                <span>अ / A Hindi</span>
+                                <span>अ / A</span>
                             </button>
-                            <span class="daily-q-count" id="dailyQIndicator">Question 1 of 5</span>
-                            <span class="daily-score-badge" id="dailyScorePill">Score: 0</span>
+                            <span class="daily-compact-q" id="dailyQIndicator">1/5</span>
+                            <span class="daily-compact-score" id="dailyScorePill">0 / 5</span>
                         </div>
                     </div>
 
-                    <!-- Progress Bar -->
                     <div class="daily-progress-bg">
                         <div class="daily-progress-fill" id="dailyProgressBar"></div>
                     </div>
 
-                    <!-- Question Content -->
                     <div class="daily-q-content">
-                        <div class="daily-category-tag" id="dailySubcat">General Knowledge</div>
-                        <h3 class="daily-q-title" id="dailyQText">Loading today's quiz...</h3>
+                        <h3 class="daily-q-title" id="dailyQText">Loading question...</h3>
                     </div>
 
-                    <!-- 4 Options -->
-                    <div class="daily-options-list" id="dailyOptionsList">
-                        <!-- Options injected dynamically -->
-                    </div>
+                    <div class="daily-options-list" id="dailyOptionsList"></div>
 
-                    <!-- Automatic Feedback Footer (Next is automatic) -->
                     <div class="daily-bottom-bar">
-                        <div class="daily-feedback-msg" id="dailyFeedback">Tap an option to check your answer</div>
+                        <div class="daily-feedback-msg" id="dailyFeedback">Choose an option to answer</div>
                     </div>
-                </div>
-
-                <!-- Quiz Completed View -->
-                <div id="dailyQuizCompletedView" style="display:none;" class="daily-result-box">
-                    <div class="daily-trophy">🏆</div>
-                    <h2 class="daily-result-title">Quiz Completed!</h2>
-                    <p class="daily-result-desc" id="dailyScoreStatus">Great Job! You finished today's 5 questions.</p>
-
-                    <div class="daily-score-pill-large">
-                        <span id="dailyFinalScoreNum">0</span>
-                        <small>/ 5 Correct</small>
-                    </div>
-
-                    <div>
-                        <div class="daily-reset-notice">
-                            📅 Same questions stay today • 5 new questions tomorrow!
-                        </div>
-                    </div>
-
-                    <div class="daily-result-actions">
-                        <button class="daily-btn-action" id="btnDailyRetake">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
-                            <span>Retake Today's 5</span>
-                        </button>
-                        <button class="daily-btn-action daily-btn-outline" id="btnDailySwitchTopic">
-                            <span>Change Topic</span>
-                        </button>
-                        <button class="daily-btn-action daily-btn-outline" id="btnDailyToggleReview">
-                            <span>Review Answers</span>
-                        </button>
-                    </div>
-
-                    <!-- Review List Accordion -->
-                    <div id="dailyReviewList" class="daily-review-wrap" style="display:none;"></div>
                 </div>
             </div>
         </section>
@@ -5380,7 +5072,7 @@ function handleSimAddQuestion() {
                 } else {
                     btn.classList.remove('is-playing');
                     if (icon) icon.textContent = '🎵';
-                    if (text) text.textContent = btn.classList.contains('btn-play-daily-audio') ? 'Play Music' : 'Music';
+                    if (text) text.textContent = 'Music';
                     btn.title = 'Click to Play Music';
                 }
             });
@@ -5419,15 +5111,15 @@ function handleSimAddQuestion() {
     })();
     </script>
 
-    <!-- Daily 5 Quiz Engine Script with Subtopic Customization -->
+    <!-- Daily 5 Quiz Engine Script (Compact, Subtopic Aware & Continuous Loop) -->
     <script>
     (function() {
         'use strict';
 
         const SUBJECTS = [
-            { key: 'all', name: 'All Mixed', icon: '🌟' },
+            { key: 'all', name: 'All', icon: '🌟' },
             { key: 'english', name: 'English', icon: '📖' },
-            { key: 'static_gk', name: 'Static GK', icon: '🏛️' },
+            { key: 'static_gk', name: 'GK', icon: '🏛️' },
             { key: 'history', name: 'History', icon: '🏺' },
             { key: 'polity', name: 'Polity', icon: '⚖️' },
             { key: 'geography', name: 'Geography', icon: '🌍' },
@@ -5448,6 +5140,125 @@ function handleSimAddQuestion() {
 
         let dailyIsHindiMode = false;
         const dailyTranslationCache = {};
+
+        function getLocalDateString() {
+            const d = new Date();
+            const y = d.getFullYear();
+            const m = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            return `${y}-${m}-${day}`;
+        }
+
+        function getFormattedDate() {
+            const d = new Date();
+            const options = { weekday: 'short', month: 'short', day: 'numeric' };
+            return d.toLocaleDateString('en-US', options);
+        }
+
+        function hashString(str) {
+            let hash = 5381;
+            for (let i = 0; i < str.length; i++) {
+                hash = ((hash << 5) + hash) + str.charCodeAt(i);
+                hash = hash & hash;
+            }
+            return Math.abs(hash);
+        }
+
+        function mulberry32(seed) {
+            let s = (seed >>> 0) || 1;
+            return function() {
+                s = (s + 0x6D2B79F5) >>> 0;
+                let t = Math.imul(s ^ (s >>> 15), 1 | s);
+                t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+                return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+            };
+        }
+
+        function cleanSubtopicLabel(rawCat, subKey) {
+            if (!rawCat) return 'General';
+            let s = rawCat.trim();
+            const prefixes = [
+                'English:', 'Modern History:', 'Ancient History:', 'Medieval History:',
+                'Geography:', 'Biology:', 'General Science:', 'Polity:', 'Economics:'
+            ];
+            for (const p of prefixes) {
+                if (s.startsWith(p)) {
+                    s = s.substring(p.length).trim();
+                    break;
+                }
+            }
+            return s || rawCat;
+        }
+
+        function getSubtopicsForSubject(subKey) {
+            const allData = window.QUIZEE_ALL_QUESTIONS;
+            if (!allData || subKey === 'all') return [];
+
+            const qs = allData[subKey] || [];
+            const catMap = new Map();
+            qs.forEach(q => {
+                const c = (q.category && q.category.trim()) ? q.category.trim() : subKey;
+                catMap.set(c, (catMap.get(c) || 0) + 1);
+            });
+
+            const sorted = Array.from(catMap.entries()).sort((a, b) => b[1] - a[1]);
+            return sorted.map(([cat, count]) => ({
+                key: cat,
+                label: cleanSubtopicLabel(cat, subKey),
+                count: count
+            }));
+        }
+
+        function getQuestionsForCurrentSelection() {
+            const todayStr = getLocalDateString();
+            const seed = hashString(`${todayStr}::${currentSubject}::${currentSubtopic}`);
+            const rng = mulberry32(seed);
+
+            const allData = window.QUIZEE_ALL_QUESTIONS;
+            let pool = [];
+
+            if (allData) {
+                if (currentSubject === 'all') {
+                    Object.keys(allData).forEach(k => {
+                        if (Array.isArray(allData[k])) pool.push(...allData[k]);
+                    });
+                } else {
+                    const subPool = allData[currentSubject] || [];
+                    if (!currentSubtopic || currentSubtopic === 'all') {
+                        pool = subPool;
+                    } else {
+                        pool = subPool.filter(q => (q.category && q.category.trim()) === currentSubtopic.trim());
+                        if (!pool.length) pool = subPool;
+                    }
+                }
+            }
+
+            if (!pool || pool.length === 0) {
+                return [
+                    { id: 101, question: "Which one of the following sites of the Indus Valley Civilization had an ancient dockyard?", options: ["Kalibangan", "Lothal", "Rangpur", "Harappa"], correctIndex: 1, category: "Ancient History" },
+                    { id: 102, question: "Select the option that can be used as a one-word substitute for: 'A person who loves all mankind and helps those in need'", options: ["Misanthrope", "Philanthropist", "Somnambulist", "Choreographer"], correctIndex: 1, category: "English" },
+                    { id: 103, question: "Who among the following Delhi Sultans introduced the market control mechanism?", options: ["Iltutmish", "Balban", "Alauddin Khilji", "Firoz Tughlaq"], correctIndex: 2, category: "Medieval History" },
+                    { id: 104, question: "Which is the longest river in India?", options: ["Godavari (1,465 km)", "The Ganges (2,525 km)", "Narmada (1,315 km)", "Yamuna (1,376 km)"], correctIndex: 1, category: "Geography" },
+                    { id: 105, question: "Who among the following gave the slogan 'Swaraj is my birthright and I shall have it'?", options: ["Lala Lajpat Rai", "Bal Gangadhar Tilak", "Bipin Chandra Pal", "Aurobindo Ghosh"], correctIndex: 1, category: "Modern History" }
+                ];
+            }
+
+            const picked = [];
+            const used = new Set();
+            const poolLen = pool.length;
+            let guard = 0;
+
+            while (picked.length < 5 && picked.length < poolLen && guard < 600) {
+                guard++;
+                const idx = Math.floor(rng() * poolLen);
+                if (!used.has(idx)) {
+                    used.add(idx);
+                    picked.push(pool[idx]);
+                }
+            }
+
+            return picked;
+        }
 
         async function fetchGoogleTranslate(text) {
             try {
@@ -5508,7 +5319,7 @@ function handleSimAddQuestion() {
             const btn = document.getElementById('btnDailyTranslate');
             if (btn) {
                 btn.classList.toggle('active-hindi', dailyIsHindiMode);
-                btn.textContent = dailyIsHindiMode ? 'A / अ English' : 'अ / A Hindi';
+                btn.textContent = dailyIsHindiMode ? 'A / अ' : 'अ / A';
             }
             if (!dailyQuestions.length || currentIndex >= dailyQuestions.length) return;
             const q = dailyQuestions[currentIndex];
@@ -5516,10 +5327,10 @@ function handleSimAddQuestion() {
 
             if (dailyIsHindiMode) {
                 if (btn && !dailyTranslationCache[q.id]) {
-                    btn.textContent = 'Translating...';
+                    btn.textContent = '...';
                 }
                 const trData = await getTranslatedQuestionData(q);
-                if (btn) btn.textContent = 'A / अ English';
+                if (btn) btn.textContent = 'A / अ';
                 document.getElementById('dailyQText').textContent = trData.question;
                 const optSpans = document.querySelectorAll('.daily-option-btn .opt-text-span');
                 optSpans.forEach((sp, i) => {
@@ -5537,141 +5348,17 @@ function handleSimAddQuestion() {
         function showLoopNotice(msg) {
             const noticeEl = document.getElementById('dailyLoopNotice');
             if (!noticeEl) return;
-            noticeEl.innerHTML = `<span>${msg}</span><span style="font-size:11px; opacity:0.85;">Same 5 Qs Repeating ↻</span>`;
+            noticeEl.innerHTML = `<span>${msg}</span><span style="font-size:10.5px; opacity:0.85;">Looping ↻</span>`;
             noticeEl.style.display = 'flex';
             setTimeout(() => {
                 if (noticeEl) noticeEl.style.display = 'none';
-            }, 3200);
-        }
-
-        function getLocalDateString() {
-            const d = new Date();
-            const y = d.getFullYear();
-            const m = String(d.getMonth() + 1).padStart(2, '0');
-            const day = String(d.getDate()).padStart(2, '0');
-            return `${y}-${m}-${day}`;
-        }
-
-        function getFormattedDate() {
-            const d = new Date();
-            const options = { weekday: 'short', month: 'short', day: 'numeric' };
-            return d.toLocaleDateString('en-US', options);
-        }
-
-        function hashString(str) {
-            let hash = 5381;
-            for (let i = 0; i < str.length; i++) {
-                hash = ((hash << 5) + hash) + str.charCodeAt(i);
-                hash = hash & hash;
-            }
-            return Math.abs(hash);
-        }
-
-        function mulberry32(seed) {
-            let s = (seed >>> 0) || 1;
-            return function() {
-                s = (s + 0x6D2B79F5) >>> 0;
-                let t = Math.imul(s ^ (s >>> 15), 1 | s);
-                t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-                return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-            };
-        }
-
-        function cleanSubtopicLabel(rawCat, subKey) {
-            if (!rawCat) return 'General';
-            let s = rawCat.trim();
-            const prefixes = [
-                'English:', 'Modern History:', 'Ancient History:', 'Medieval History:',
-                'Geography:', 'Biology:', 'General Science:', 'Polity:', 'Economics:'
-            ];
-            for (const p of prefixes) {
-                if (s.startsWith(p)) {
-                    s = s.substring(p.length).trim();
-                    break;
-                }
-            }
-            return s || rawCat;
-        }
-
-        function getSubtopicsForSubject(subKey) {
-            const allData = window.QUIZEE_ALL_QUESTIONS;
-            if (!allData) return [];
-
-            if (subKey === 'all') {
-                return [];
-            }
-
-            const qs = allData[subKey] || [];
-            const catMap = new Map();
-            qs.forEach(q => {
-                const c = (q.category && q.category.trim()) ? q.category.trim() : subKey;
-                catMap.set(c, (catMap.get(c) || 0) + 1);
-            });
-
-            // Sort by question count descending
-            const sorted = Array.from(catMap.entries()).sort((a, b) => b[1] - a[1]);
-            return sorted.map(([cat, count]) => ({
-                key: cat,
-                label: cleanSubtopicLabel(cat, subKey),
-                count: count
-            }));
-        }
-
-        function getQuestionsForCurrentSelection() {
-            const todayStr = getLocalDateString();
-            const seed = hashString(`${todayStr}::${currentSubject}::${currentSubtopic}`);
-            const rng = mulberry32(seed);
-
-            const allData = window.QUIZEE_ALL_QUESTIONS;
-            let pool = [];
-
-            if (allData) {
-                if (currentSubject === 'all') {
-                    Object.keys(allData).forEach(k => {
-                        if (Array.isArray(allData[k])) pool.push(...allData[k]);
-                    });
-                } else {
-                    const subPool = allData[currentSubject] || [];
-                    if (!currentSubtopic || currentSubtopic === 'all') {
-                        pool = subPool;
-                    } else {
-                        pool = subPool.filter(q => (q.category && q.category.trim()) === currentSubtopic.trim());
-                        if (!pool.length) pool = subPool; // Fallback
-                    }
-                }
-            }
-
-            if (!pool || pool.length === 0) {
-                return [
-                    { id: 101, question: "Which one of the following sites of the Indus Valley Civilization had an ancient dockyard?", options: ["Kalibangan", "Lothal", "Rangpur", "Harappa"], correctIndex: 1, category: "Ancient History" },
-                    { id: 102, question: "Select the option that can be used as a one-word substitute for: 'A person who loves all mankind and helps those in need'", options: ["Misanthrope", "Philanthropist", "Somnambulist", "Choreographer"], correctIndex: 1, category: "English" },
-                    { id: 103, question: "Who among the following Delhi Sultans introduced the market control mechanism?", options: ["Iltutmish", "Balban", "Alauddin Khilji", "Firoz Tughlaq"], correctIndex: 2, category: "Medieval History" },
-                    { id: 104, question: "Which is the longest river in India?", options: ["Godavari (1,465 km)", "The Ganges (2,525 km)", "Narmada (1,315 km)", "Yamuna (1,376 km)"], correctIndex: 1, category: "Geography" },
-                    { id: 105, question: "Who among the following gave the slogan 'Swaraj is my birthright and I shall have it'?", options: ["Lala Lajpat Rai", "Bal Gangadhar Tilak", "Bipin Chandra Pal", "Aurobindo Ghosh"], correctIndex: 1, category: "Modern History" }
-                ];
-            }
-
-            const picked = [];
-            const used = new Set();
-            const poolLen = pool.length;
-            let guard = 0;
-
-            while (picked.length < 5 && picked.length < poolLen && guard < 600) {
-                guard++;
-                const idx = Math.floor(rng() * poolLen);
-                if (!used.has(idx)) {
-                    used.add(idx);
-                    picked.push(pool[idx]);
-                }
-            }
-
-            return picked;
+            }, 3000);
         }
 
         function initDailyQuiz() {
             const badgeEl = document.getElementById('dailyDateBadge');
             if (badgeEl) {
-                badgeEl.textContent = `Today: ${getFormattedDate()}`;
+                badgeEl.textContent = getFormattedDate();
             }
 
             renderSubjectChips();
@@ -5687,7 +5374,7 @@ function handleSimAddQuestion() {
             SUBJECTS.forEach(s => {
                 const btn = document.createElement('button');
                 btn.type = 'button';
-                btn.className = `daily-topic-chip ${s.key === currentSubject ? 'active' : ''}`;
+                btn.className = `daily-subject-chip ${s.key === currentSubject ? 'active' : ''}`;
                 btn.innerHTML = `<span>${s.icon}</span> <span>${s.name}</span>`;
                 btn.onclick = () => selectSubject(s.key);
                 wrap.appendChild(btn);
@@ -5697,7 +5384,7 @@ function handleSimAddQuestion() {
         function selectSubject(subKey) {
             if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
             currentSubject = subKey;
-            currentSubtopic = 'all'; // Reset subtopic on subject change
+            currentSubtopic = 'all';
             localStorage.setItem('quizee_daily_subject', subKey);
             localStorage.setItem('quizee_daily_subtopic', 'all');
 
@@ -5707,40 +5394,32 @@ function handleSimAddQuestion() {
         }
 
         function renderSubtopicChips() {
-            const subWrap = document.getElementById('dailySubtopicWrap');
             const subScroll = document.getElementById('dailySubtopicScroll');
-            const subLabel = document.getElementById('dailySubtopicLabel');
-            const subCount = document.getElementById('dailySubtopicCount');
-            if (!subWrap || !subScroll) return;
+            if (!subScroll) return;
 
             if (currentSubject === 'all') {
-                subWrap.style.display = 'none';
+                subScroll.style.display = 'none';
                 return;
             }
 
-            subWrap.style.display = 'block';
+            subScroll.style.display = 'flex';
             const currSubjObj = SUBJECTS.find(s => s.key === currentSubject) || { name: 'Subject' };
-            if (subLabel) subLabel.textContent = `2. Choose ${currSubjObj.name} Subtopic:`;
-
             const subtopics = getSubtopicsForSubject(currentSubject);
-            if (subCount) subCount.textContent = `(${subtopics.length} Subtopics Available)`;
 
             subScroll.innerHTML = '';
 
-            // Default 'All' subtopic chip
             const allBtn = document.createElement('button');
             allBtn.type = 'button';
             allBtn.className = `daily-subtopic-chip ${currentSubtopic === 'all' ? 'active' : ''}`;
-            allBtn.innerHTML = `🌟 All ${currSubjObj.name} (Mixed)`;
+            allBtn.innerHTML = `🌟 All ${currSubjObj.name}`;
             allBtn.onclick = () => selectSubtopic('all');
             subScroll.appendChild(allBtn);
 
-            // Subtopic chips
             subtopics.forEach(st => {
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 btn.className = `daily-subtopic-chip ${currentSubtopic === st.key ? 'active' : ''}`;
-                btn.innerHTML = `${st.label} <span style="opacity:0.65; font-size:10.5px;">(${st.count})</span>`;
+                btn.innerHTML = `${st.label}`;
                 btn.onclick = () => selectSubtopic(st.key);
                 subScroll.appendChild(btn);
             });
@@ -5762,20 +5441,13 @@ function handleSimAddQuestion() {
             isAnswerLocked = false;
             userAnswers = [];
 
-            const activeView = document.getElementById('dailyQuizActiveView');
-            const compView = document.getElementById('dailyQuizCompletedView');
-            if (activeView) activeView.style.display = 'block';
-            if (compView) compView.style.display = 'none';
-
-            // Update topic tag display
-            const sObj = SUBJECTS.find(s => s.key === currentSubject) || SUBJECTS[0];
             const tagEl = document.getElementById('dailyTopicTag');
             if (tagEl) {
+                const sObj = SUBJECTS.find(s => s.key === currentSubject) || SUBJECTS[0];
                 if (currentSubtopic === 'all') {
-                    tagEl.innerHTML = `${sObj.icon} ${sObj.name} • 5 Daily MCQs`;
+                    tagEl.textContent = `${sObj.name}`;
                 } else {
-                    const cleanLabel = cleanSubtopicLabel(currentSubtopic, currentSubject);
-                    tagEl.innerHTML = `${sObj.icon} ${sObj.name} ➔ ${cleanLabel} • 5 Daily MCQs`;
+                    tagEl.textContent = cleanSubtopicLabel(currentSubtopic, currentSubject);
                 }
             }
 
@@ -5789,12 +5461,9 @@ function handleSimAddQuestion() {
 
             const q = dailyQuestions[currentIndex];
 
-            document.getElementById('dailyQIndicator').textContent = `Question ${currentIndex + 1} of 5 • Loop ${loopCount}`;
-            document.getElementById('dailyScorePill').textContent = `Score: ${score} / 5`;
+            document.getElementById('dailyQIndicator').textContent = `${currentIndex + 1}/5 (L${loopCount})`;
+            document.getElementById('dailyScorePill').textContent = `${score}/5`;
             document.getElementById('dailyProgressBar').style.width = `${((currentIndex + 1) / 5) * 100}%`;
-
-            const cat = q.category || 'General Knowledge';
-            document.getElementById('dailySubcat').textContent = cat;
 
             let displayQ = q.question;
             let displayOpts = [...q.options];
@@ -5802,21 +5471,19 @@ function handleSimAddQuestion() {
             if (dailyIsHindiMode) {
                 const btn = document.getElementById('btnDailyTranslate');
                 if (btn && !dailyTranslationCache[q.id]) {
-                    btn.textContent = 'Translating...';
+                    btn.textContent = '...';
                 }
                 const trData = await getTranslatedQuestionData(q);
                 displayQ = trData.question;
                 displayOpts = trData.options;
-                if (btn) btn.textContent = 'A / अ English';
+                if (btn) btn.textContent = 'A / अ';
             }
 
             document.getElementById('dailyQText').textContent = displayQ;
 
             const fbEl = document.getElementById('dailyFeedback');
             fbEl.className = 'daily-feedback-msg';
-            fbEl.textContent = 'Tap an option to check your answer';
-
-
+            fbEl.textContent = 'Choose an option to answer';
 
             const optsContainer = document.getElementById('dailyOptionsList');
             optsContainer.innerHTML = '';
@@ -5839,15 +5506,6 @@ function handleSimAddQuestion() {
             const q = dailyQuestions[currentIndex];
             const isCorrect = (selectedIdx === q.correctIndex);
 
-            userAnswers.push({
-                question: q.question,
-                category: q.category,
-                options: q.options,
-                selected: selectedIdx,
-                correct: q.correctIndex,
-                isCorrect: isCorrect
-            });
-
             const allBtns = document.querySelectorAll('.daily-option-btn');
             allBtns.forEach((b, idx) => {
                 b.classList.add('locked');
@@ -5860,7 +5518,7 @@ function handleSimAddQuestion() {
             if (isCorrect) {
                 btnEl.classList.add('correct');
                 score++;
-                document.getElementById('dailyScorePill').textContent = `Score: ${score}`;
+                document.getElementById('dailyScorePill').textContent = `${score}/5`;
                 fbEl.className = 'daily-feedback-msg correct-text';
                 fbEl.textContent = '✓ Correct Answer!';
             } else {
@@ -5870,7 +5528,7 @@ function handleSimAddQuestion() {
                 fbEl.textContent = `✕ Incorrect! Correct: ${correctText}`;
             }
 
-            // Automatically advance to next question after 1.3 seconds
+            // Auto advance smoothly in 1.3 seconds
             autoAdvanceTimer = setTimeout(() => {
                 goToNext();
             }, 1300);
@@ -5881,87 +5539,18 @@ function handleSimAddQuestion() {
             if (currentIndex < 4) {
                 currentIndex++;
             } else {
-                // Completed all 5 questions! Seamlessly loop back to Q1 of the same 5 questions:
                 const roundScore = score;
                 currentIndex = 0;
                 loopCount++;
                 score = 0;
-                showLoopNotice(`🎉 5 Questions Completed (${roundScore}/5)! Starting Loop ${loopCount}...`);
+                showLoopNotice(`🎉 5 Done (${roundScore}/5)! Loop ${loopCount}...`);
             }
             renderCurrentQuestion();
         }
 
-        function showCompletedView() {
-            document.getElementById('dailyQuizActiveView').style.display = 'none';
-            const compView = document.getElementById('dailyQuizCompletedView');
-            compView.style.display = 'block';
-
-            const finalScoreEl = document.getElementById('dailyFinalScoreNum');
-            if (finalScoreEl) finalScoreEl.textContent = score;
-
-            const statusEl = document.getElementById('dailyScoreStatus');
-            if (statusEl) {
-                if (score === 5) statusEl.textContent = '🌟 Perfect Score! Outstanding!';
-                else if (score >= 3) statusEl.textContent = '👍 Good Effort! Well Done!';
-                else statusEl.textContent = 'Keep Practicing Daily!';
-            }
-
-            buildReviewList();
-        }
-
-        function buildReviewList() {
-            const reviewBox = document.getElementById('dailyReviewList');
-            if (!reviewBox) return;
-
-            reviewBox.innerHTML = '';
-            userAnswers.forEach((ans, i) => {
-                const item = document.createElement('div');
-                item.className = 'daily-review-item';
-                const letter = ['A', 'B', 'C', 'D'];
-                const userPick = ans.options[ans.selected];
-                const correctPick = ans.options[ans.correct];
-
-                item.innerHTML = `
-                    <div class="daily-review-q"><b>Q${i+1}:</b> ${ans.question}</div>
-                    <div class="daily-review-ans">
-                        <div>Your answer: <span style="color: ${ans.isCorrect ? '#10b981' : '#ef4444'}; font-weight:700;">${letter[ans.selected]}. ${userPick}</span></div>
-                        ${!ans.isCorrect ? `<div>Correct answer: <b>${letter[ans.correct]}. ${correctPick}</b></div>` : ''}
-                    </div>
-                `;
-                reviewBox.appendChild(item);
-            });
-        }
-
-        // Setup event listeners
         window.addEventListener('DOMContentLoaded', () => {
-
-
             const transBtn = document.getElementById('btnDailyTranslate');
             if (transBtn) transBtn.onclick = () => toggleDailyLanguage();
-
-            const retakeBtn = document.getElementById('btnDailyRetake');
-            if (retakeBtn) retakeBtn.onclick = () => loadQuiz();
-
-            const switchBtn = document.getElementById('btnDailySwitchTopic');
-            if (switchBtn) {
-                switchBtn.onclick = () => {
-                    document.getElementById('dailyQuizActiveView').style.display = 'block';
-                    document.getElementById('dailyQuizCompletedView').style.display = 'none';
-                    const wrap = document.getElementById('dailyTopicWrap');
-                    if (wrap) wrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                };
-            }
-
-            const revBtn = document.getElementById('btnDailyToggleReview');
-            if (revBtn) {
-                revBtn.onclick = () => {
-                    const rList = document.getElementById('dailyReviewList');
-                    if (!rList) return;
-                    const isHidden = (rList.style.display === 'none' || !rList.style.display);
-                    rList.style.display = isHidden ? 'block' : 'none';
-                    revBtn.querySelector('span') ? revBtn.querySelector('span').textContent = isHidden ? 'Hide Review' : 'Review Answers' : revBtn.textContent = isHidden ? 'Hide Review' : 'Review Answers';
-                };
-            }
 
             if (window.QUIZEE_ALL_QUESTIONS) {
                 initDailyQuiz();
