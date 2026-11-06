@@ -2653,6 +2653,25 @@
             border-radius: 8px;
         }
 
+        .daily-loop-notice {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(99, 102, 241, 0.2));
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: #34d399;
+            padding: 8px 14px;
+            border-radius: 10px;
+            font-size: 12.5px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            animation: fadeInDown 0.3s ease;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         /* Progress Bar */
         .daily-progress-bg {
             width: 100%;
@@ -3161,8 +3180,11 @@
 
             <!-- Daily Quiz Card -->
             <div class="daily-quiz-card">
-                <!-- Active Quiz View -->
+                <!-- Active Quiz View (Continuous Unlimited Loop) -->
                 <div id="dailyQuizActiveView">
+                    <!-- Loop Celebration Notice -->
+                    <div id="dailyLoopNotice" class="daily-loop-notice" style="display:none;"></div>
+
                     <div class="daily-card-topbar">
                         <div class="daily-active-topic-badge" id="dailyTopicTag">🌟 All Mixed • 5 Daily MCQs</div>
                         <div class="daily-card-meta">
@@ -5388,9 +5410,20 @@ function handleSimAddQuestion() {
         let dailyQuestions = [];
         let currentIndex = 0;
         let score = 0;
+        let loopCount = 1;
         let isAnswerLocked = false;
         let userAnswers = [];
         let autoAdvanceTimer = null;
+
+        function showLoopNotice(msg) {
+            const noticeEl = document.getElementById('dailyLoopNotice');
+            if (!noticeEl) return;
+            noticeEl.innerHTML = `<span>${msg}</span><span style="font-size:11px; opacity:0.85;">Same 5 Qs Repeating ↻</span>`;
+            noticeEl.style.display = 'flex';
+            setTimeout(() => {
+                if (noticeEl) noticeEl.style.display = 'none';
+            }, 3200);
+        }
 
         function getLocalDateString() {
             const d = new Date();
@@ -5606,6 +5639,7 @@ function handleSimAddQuestion() {
             dailyQuestions = getQuestionsForCurrentSelection();
             currentIndex = 0;
             score = 0;
+            loopCount = 1;
             isAnswerLocked = false;
             userAnswers = [];
 
@@ -5636,8 +5670,8 @@ function handleSimAddQuestion() {
 
             const q = dailyQuestions[currentIndex];
 
-            document.getElementById('dailyQIndicator').textContent = `Question ${currentIndex + 1} of 5`;
-            document.getElementById('dailyScorePill').textContent = `Score: ${score}`;
+            document.getElementById('dailyQIndicator').textContent = `Question ${currentIndex + 1} of 5 • Loop ${loopCount}`;
+            document.getElementById('dailyScorePill').textContent = `Score: ${score} / 5`;
             document.getElementById('dailyProgressBar').style.width = `${((currentIndex + 1) / 5) * 100}%`;
 
             const cat = q.category || 'General Knowledge';
@@ -5650,7 +5684,7 @@ function handleSimAddQuestion() {
 
             const nextBtn = document.getElementById('dailyNextBtn');
             nextBtn.disabled = true;
-            nextBtn.innerHTML = currentIndex === 4 ? 'Finish Quiz ✓' : 'Next Question →';
+            nextBtn.innerHTML = (currentIndex === 4) ? `Repeat 5 Qs ↻ (Loop ${loopCount + 1})` : 'Next Question →';
 
             const optsContainer = document.getElementById('dailyOptionsList');
             optsContainer.innerHTML = '';
@@ -5716,10 +5750,15 @@ function handleSimAddQuestion() {
             if (autoAdvanceTimer) clearTimeout(autoAdvanceTimer);
             if (currentIndex < 4) {
                 currentIndex++;
-                renderCurrentQuestion();
             } else {
-                showCompletedView();
+                // Completed all 5 questions! Seamlessly loop back to Q1 of the same 5 questions:
+                const roundScore = score;
+                currentIndex = 0;
+                loopCount++;
+                score = 0;
+                showLoopNotice(`🎉 5 Questions Completed (${roundScore}/5)! Starting Loop ${loopCount}...`);
             }
+            renderCurrentQuestion();
         }
 
         function showCompletedView() {
