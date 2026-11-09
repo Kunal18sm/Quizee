@@ -46,7 +46,10 @@ class PracticeRepository private constructor(private val context: Context) {
     private fun buildCurriculum(): List<PracticeSubject> {
         val subjects = mutableListOf<PracticeSubject>()
 
-        // 1. English
+        // 1. Mathematics (Quantitative Aptitude)
+        subjects.add(buildSubject("Mathematics", "📐", questionRepo.mathQuestions))
+
+        // 2. English
         subjects.add(buildSubject("English", "📖", questionRepo.englishQuestions))
 
         // 2. Static GK
@@ -107,6 +110,7 @@ class PracticeRepository private constructor(private val context: Context) {
 
     private fun cleanCategoryName(catName: String, subjectName: String): String {
         return when {
+            catName.startsWith("Math:") -> catName.removePrefix("Math:").trim()
             catName.startsWith("English:") -> catName.removePrefix("English:").trim()
             catName.startsWith("Modern History:") -> catName.removePrefix("Modern History:").trim() + " (Modern)"
             catName.startsWith("Medieval History:") -> catName.removePrefix("Medieval History:").trim() + " (Medieval)"

@@ -15,6 +15,7 @@ class QuestionRepository private constructor(private val context: Context) {
     private val questionsList = mutableListOf<Question>()
 
     // Subject-wise cached lists for daily curriculum slicing
+    val mathQuestions = mutableListOf<Question>()
     val englishQuestions = mutableListOf<Question>()
     val staticGkQuestions = mutableListOf<Question>()
     val historyQuestions = mutableListOf<Question>()
@@ -42,6 +43,7 @@ class QuestionRepository private constructor(private val context: Context) {
 
     private fun loadQuestions() {
         questionsList.clear()
+        mathQuestions.clear()
         englishQuestions.clear()
         staticGkQuestions.clear()
         historyQuestions.clear()
@@ -84,6 +86,7 @@ class QuestionRepository private constructor(private val context: Context) {
     }
 
     private fun loadFromAssets() {
+        loadSubjectAsset("math_questions.json", mathQuestions)
         loadSubjectAsset("english_questions.json", englishQuestions)
         loadSubjectAsset("static_gk_questions.json", staticGkQuestions)
         loadSubjectAsset("history_questions.json", historyQuestions)

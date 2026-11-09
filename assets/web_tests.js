@@ -8,6 +8,7 @@
 
     const CHUNK_SIZE = 100;
     const SUBJECT_CONFIG = [
+        { key: 'math', name: 'Mathematics', icon: '📐' },
         { key: 'english', name: 'English', icon: '📖' },
         { key: 'static_gk', name: 'Static GK', icon: '🏛️' },
         { key: 'history', name: 'History', icon: '🏺' },
@@ -46,6 +47,7 @@
 
     function cleanCategoryName(catName, subjectName) {
         if (!catName) return subjectName;
+        if (catName.startsWith('Math:')) return catName.replace('Math:', '').trim();
         if (catName.startsWith('English:')) return catName.replace('English:', '').trim();
         if (catName.startsWith('Modern History:')) return catName.replace('Modern History:', '').trim() + ' (Modern)';
         if (catName.startsWith('Medieval History:')) return catName.replace('Medieval History:', '').trim() + ' (Medieval)';
@@ -508,13 +510,14 @@
     ];
 
     const MOCK_SECTIONS_SPEC = [
-        { key: 'english', name: 'English Language', icon: '📖', count: 30 },
-        { key: 'static_gk', name: 'Static GK', icon: '🏛️', count: 18 },
-        { key: 'history', name: 'Indian History', icon: '🏺', count: 14 },
-        { key: 'polity', name: 'Indian Polity', icon: '⚖️', count: 12 },
-        { key: 'geography', name: 'Geography', icon: '🌍', count: 10 },
-        { key: 'biology', name: 'Science & Biology', icon: '🧬', count: 10 },
-        { key: 'economics', name: 'Indian Economy', icon: '📈', count: 6 }
+        { key: 'math', name: 'Quantitative Aptitude (Math)', icon: '📐', count: 25 },
+        { key: 'english', name: 'English Language', icon: '📖', count: 25 },
+        { key: 'static_gk', name: 'Static GK', icon: '🏛️', count: 14 },
+        { key: 'history', name: 'Indian History', icon: '🏺', count: 10 },
+        { key: 'polity', name: 'Indian Polity', icon: '⚖️', count: 8 },
+        { key: 'geography', name: 'Geography', icon: '🌍', count: 8 },
+        { key: 'biology', name: 'Science & Biology', icon: '🧬', count: 6 },
+        { key: 'economics', name: 'Indian Economy', icon: '📈', count: 4 }
     ];
 
     function generateLevelMockTest(levelNumber, mockNumber) {
@@ -647,6 +650,25 @@
         const catTag = document.getElementById('webQuestionCategory');
         if (catTag) catTag.textContent = q.category || 'SSC Exam';
 
+        // Diagram support for Geometry & Shapes
+        const diagBox = document.getElementById('webQuestionDiagram');
+        if (diagBox) {
+            if (q.diagram) {
+                diagBox.innerHTML = q.diagram;
+                diagBox.style.display = 'flex';
+            } else {
+                diagBox.innerHTML = '';
+                diagBox.style.display = 'none';
+            }
+        }
+
+        // Reset explanation container
+        const expBox = document.getElementById('webQuestionExplanation');
+        if (expBox) {
+            expBox.innerHTML = '';
+            expBox.style.display = 'none';
+        }
+
         renderQuestionTextAndOptions(q);
 
         const skipBtn = document.getElementById('btnTestSkip');
@@ -762,6 +784,9 @@
             isCorrect
         });
 
+        // Show Formula & Trick explanation card
+        showQuestionExplanation(currentQ);
+
         const skipBtn = document.getElementById('btnTestSkip');
         if (skipBtn) skipBtn.style.display = 'none';
 
@@ -791,11 +816,66 @@
             isCorrect: false
         });
 
+        // Show Formula & Trick explanation card
+        showQuestionExplanation(currentQ);
+
         const skipBtn = document.getElementById('btnTestSkip');
         if (skipBtn) skipBtn.style.display = 'none';
 
         const nextBtn = document.getElementById('btnTestNext');
         if (nextBtn) nextBtn.disabled = false;
+    }
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+    function formatExplanationText(text) {
+        if (!text) return '';
+        const lines = text.split('\n');
+        return lines.map(line => {
+            const tr = line.trim();
+            if (!tr) return '';
+            if (tr.startsWith('💡')) {
+                return `<div class="exp-bullet-row exp-formula"><span class="exp-icon">💡</span><div class="exp-text"><b>Core Formula:</b> ${escapeHtml(tr.replace(/^💡\s*(Core Formula:?|Core Rule:?|Core Definition:?|Core Conversion:?|Universal Work Rule:?|Fundamental Identity:?|Karl Pearson\'s Empirical Formula:?)?/i, '').trim())}</div></div>`;
+            } else if (tr.startsWith('⚡')) {
+                return `<div class="exp-bullet-row exp-trick"><span class="exp-icon">⚡</span><div class="exp-text"><b>Shortcut Trick:</b> ${escapeHtml(tr.replace(/^⚡\s*(Short Trick:?|Pro Trick.*?:?|Shortcut Formula:?|LCM Method:?|Alligation Cross Method:?|Alligation:?)?/i, '').trim())}</div></div>`;
+            } else if (tr.startsWith('📝')) {
+                return `<div class="exp-bullet-row exp-step"><span class="exp-icon">📝</span><div class="exp-text"><b>Step-by-Step / Example:</b> ${escapeHtml(tr.replace(/^📝\s*(Step-by-Step:?|Example:?|Verification:?)?/i, '').trim())}</div></div>`;
+            }
+            return `<div class="exp-bullet-row"><div class="exp-text">${escapeHtml(tr)}</div></div>`;
+        }).join('');
+    }
+
+    function showQuestionExplanation(q) {
+        const expBox = document.getElementById('webQuestionExplanation');
+        if (!expBox) return;
+        if (!q.explanation) {
+            expBox.style.display = 'none';
+            return;
+        }
+
+        const isMath = q.category && q.category.toLowerCase().includes('math');
+        const badgeLabel = isMath ? 'SSC CGL Math Formula & Trick' : 'Solution & Explanation';
+
+        expBox.innerHTML = `
+            <div class="active-explanation-card">
+                <div class="active-exp-header">
+                    <span class="active-exp-title">💡 ${badgeLabel}</span>
+                    <span class="active-exp-pill">Formula Breakdown</span>
+                </div>
+                <div class="active-exp-content">
+                    ${formatExplanationText(q.explanation)}
+                </div>
+            </div>
+        `;
+        expBox.style.display = 'block';
     }
 
     function handleNextQuestion() {
@@ -888,15 +968,32 @@
                 </div>
             `;
 
+            let explanationHtml = '';
+            if (q.explanation) {
+                explanationHtml = `
+                    <div class="review-explanation-card">
+                        <div class="review-exp-header">💡 Formula & Trick Explanation:</div>
+                        <div class="review-exp-content">${formatExplanationText(q.explanation)}</div>
+                    </div>
+                `;
+            }
+
+            let diagramHtml = '';
+            if (q.diagram) {
+                diagramHtml = `<div class="review-diagram-wrap">${q.diagram}</div>`;
+            }
+
             return `
                 <div class="review-item-card ${statusClass}">
                     <div class="review-item-header">
-                        <span style="color:#94a3b8;">Question ${item.qNum}</span>
+                        <span style="color:#94a3b8;">Question ${item.qNum} • <span style="color:#818cf8;">${cleanCategoryName(q.category, '')}</span></span>
                         <span style="color:${statusColor}; font-weight:700;">${statusText}</span>
                     </div>
+                    ${diagramHtml}
                     <div class="review-item-qtext">${q.question}</div>
                     ${yourChoiceHtml}
                     ${!item.isCorrect ? correctChoiceHtml : ''}
+                    ${explanationHtml}
                 </div>
             `;
         }).join('');

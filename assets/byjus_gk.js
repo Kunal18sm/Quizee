@@ -224,6 +224,14 @@
                 const headers = tbl.headers || [];
                 const rows = tbl.rows || [];
 
+                const cleanCell = (v) => {
+                    let s = String(v || '').trim();
+                    if (/'[a-zA-Z0-9]'/.test(s) || s.includes("''")) {
+                        s = s.replace(/'/g, '');
+                    }
+                    return s.replace(/\ufffd/g, "'");
+                };
+
                 html += `
                     <div class="byjus-table-wrap">
                         <div class="byjus-table-label">Section Table #${tIdx + 1} (${rows.length} Items Listed)</div>
@@ -231,13 +239,13 @@
                             <table class="byjus-data-table">
                                 <thead>
                                     <tr>
-                                        ${headers.map(h => `<th>${h}</th>`).join('')}
+                                        ${headers.map(h => `<th>${cleanCell(h)}</th>`).join('')}
                                     </tr>
                                 </thead>
                                 <tbody>
                                     ${rows.map(row => `
                                         <tr>
-                                            ${row.map(cell => `<td>${cell}</td>`).join('')}
+                                            ${row.map(cell => `<td>${cleanCell(cell)}</td>`).join('')}
                                         </tr>
                                     `).join('')}
                                 </tbody>

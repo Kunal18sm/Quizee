@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizee — Smart Quiz App Locker for Android | Download APK</title>
-    <meta name="description" content="Quizee: Lock distracting apps behind quick 5-question quizzes. Practice 7400+ High-Yield Static GK, English, History, Polity, Geography, Biology & Economics MCQs while reducing screen time. Free and offline.">
+    <meta name="description" content="Quizee: Lock distracting apps behind quick 5-question quizzes. Practice 8000+ High-Yield SSC CGL Maths (Formulas & Tricks), Static GK, English, History, Polity, Geography, Biology & Economics MCQs while reducing screen time. Free and offline.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     
     <!-- PWA & 100% Offline Support -->
@@ -4874,11 +4874,13 @@ function handleSimAddQuestion() {
             <div class="web-test-body" id="webTestActiveBody">
                 <div class="web-question-card">
                     <span class="question-category-tag" id="webQuestionCategory">General</span>
+                    <div class="question-diagram-container" id="webQuestionDiagram" style="display:none;"></div>
                     <div class="question-text-content" id="webQuestionText">Loading question...</div>
                 </div>
                 <div class="web-options-grid" id="webOptionsContainer">
                     <!-- Populated dynamically -->
                 </div>
+                <div class="web-explanation-box" id="webQuestionExplanation" style="display:none;"></div>
             </div>
 
             <!-- Active Test Footer Action Bar -->
@@ -5118,6 +5120,7 @@ function handleSimAddQuestion() {
 
         const SUBJECTS = [
             { key: 'all', name: 'All', icon: '🌟' },
+            { key: 'math', name: 'Maths', icon: '📐' },
             { key: 'english', name: 'English', icon: '📖' },
             { key: 'static_gk', name: 'GK', icon: '🏛️' },
             { key: 'history', name: 'History', icon: '🏺' },
@@ -5178,7 +5181,7 @@ function handleSimAddQuestion() {
             if (!rawCat) return 'General';
             let s = rawCat.trim();
             const prefixes = [
-                'English:', 'Modern History:', 'Ancient History:', 'Medieval History:',
+                'Math:', 'English:', 'Modern History:', 'Ancient History:', 'Medieval History:',
                 'Geography:', 'Biology:', 'General Science:', 'Polity:', 'Economics:'
             ];
             for (const p of prefixes) {

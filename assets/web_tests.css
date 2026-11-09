@@ -1576,3 +1576,178 @@
     color: #ffffff;
     border-top: 2px solid rgba(255, 255, 255, 0.15);
 }
+
+
+/* =========================================================
+   DIAGRAM & SHAPE VIEWER (GEOMETRY & MENSURATION)
+   ========================================================= */
+.question-diagram-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px auto 16px auto;
+    padding: 14px;
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.08) 0%, rgba(15, 23, 42, 0.6) 100%);
+    border: 1px solid rgba(129, 140, 248, 0.25);
+    border-radius: 12px;
+    max-width: 320px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.question-diagram-container svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 2px 8px rgba(99, 102, 241, 0.25));
+}
+
+.review-diagram-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 14px 0;
+    padding: 10px;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    max-width: 240px;
+}
+
+.review-diagram-wrap svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================================
+   SPECIAL FORMULA & SHORT TRICK EXPLANATION CARD
+   ========================================================= */
+.web-explanation-box {
+    margin-top: 14px;
+    margin-bottom: 16px;
+    animation: fadeInSlideUp 0.25s ease-out;
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.active-explanation-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    border-left: 4px solid #6366f1;
+    border-radius: 14px;
+    padding: 16px 18px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 15px rgba(99, 102, 241, 0.15);
+}
+
+.active-exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.active-exp-title {
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.active-exp-pill {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    background: rgba(99, 102, 241, 0.2);
+    color: #818cf8;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.active-exp-content {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.exp-bullet-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.exp-formula {
+    background: rgba(99, 102, 241, 0.08);
+    border-left: 3px solid #818cf8;
+}
+
+.exp-trick {
+    background: rgba(245, 158, 11, 0.08);
+    border-left: 3px solid #f59e0b;
+}
+
+.exp-step {
+    background: rgba(16, 185, 129, 0.08);
+    border-left: 3px solid #10b981;
+}
+
+.exp-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.exp-text {
+    flex: 1;
+    color: #f1f5f9;
+}
+
+.exp-text b {
+    color: #93c5fd;
+    margin-right: 4px;
+}
+
+.review-explanation-card {
+    margin-top: 12px;
+    padding: 12px 14px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-left: 3px solid #818cf8;
+    border-radius: 10px;
+}
+
+.review-exp-header {
+    font-size: 12px;
+    font-weight: 700;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+}
+
+.review-exp-content {
+    font-size: 12px;
+    line-height: 1.55;
+    color: #94a3b8;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
