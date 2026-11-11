@@ -1,5 +1,5 @@
 // Quizee PWA Offline Service Worker
-const CACHE_NAME = 'quizee-offline-v9';
+const CACHE_NAME = 'quizee-offline-v10';
 
 const PRECACHE_ASSETS = [
     './',
@@ -53,7 +53,7 @@ self.addEventListener('activate', (event) => {
     );
 });
 
-// Fetch: Stale-While-Revalidate with full offline fallback
+// Fetch: Network-First for HTML & App Shell (so deployments appear immediately), Cache Fallback Offline
 self.addEventListener('fetch', (event) => {
     const request = event.request;
 
@@ -62,6 +62,35 @@ self.addEventListener('fetch', (event) => {
 
     // Do not cache non-http schemes
     if (!request.url.startsWith('http')) return;
+
+    const url = new URL(request.url);
+    const isHtmlOrShell = request.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname.endsWith('.css') || url.pathname.endsWith('.js');
+
+    if (isHtmlOrShell) {
+        event.respondWith(
+            fetch(request)
+                .then((networkResponse) => {
+                    if (networkResponse && networkResponse.status === 200) {
+                        const clone = networkResponse.clone();
+                        caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+                    }
+                    return networkResponse;
+                })
+                .catch(() => {
+                    return caches.match(request).then((cached) => {
+                        if (cached) return cached;
+                        if (request.mode === 'navigate') {
+                            if (request.url.includes('tables')) return caches.match('./tables.html');
+                            if (request.url.includes('byjus-gk')) return caches.match('./byjus-gk.html');
+                            if (request.url.includes('mock-tests')) return caches.match('./mock-tests.html');
+                            return caches.match('./index.html') || caches.match('./');
+                        }
+                        return null;
+                    });
+                })
+        );
+        return;
+    }
 
     event.respondWith(
         caches.match(request).then((cachedResponse) => {
@@ -75,22 +104,8 @@ self.addEventListener('fetch', (event) => {
                     }
                     return networkResponse;
                 })
-                .catch((err) => {
-                    // Network failed (device is offline)
-                    if (cachedResponse) {
-                        return cachedResponse;
-                    }
-                    // For HTML navigations, fallback to cached index or mock-tests
-                    if (request.mode === 'navigate') {
-                        if (request.url.includes('mock-tests')) {
-                            return caches.match('./mock-tests.html');
-                        }
-                        return caches.match('./index.html') || caches.match('./');
-                    }
-                    return null;
-                });
+                .catch(() => cachedResponse || null);
 
-            // Return cached response instantly if available, otherwise wait for network
             return cachedResponse || fetchPromise;
         })
     );

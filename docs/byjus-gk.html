@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYJU'S Static GK Special Quiz Hub (58 Topics & 1,260+ MCQs) | Quizee</title>
+    <meta name="description" content="Practice section-wise Static GK quizzes across 58 high-yield topics curated from BYJU'S Govt Exam archives. Covers all data tables with 1,260+ MCQs for Capitals, Rivers, Mountains, Schemes, Polity, Banking, Sports, and Awards.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- PWA & 100% Offline Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="BYJU'S GK Quiz">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/byjus_gk.css">
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-glow: #818cf8;
+            --bg-dark: #0b0f19;
+            --card-bg: #151d2c;
+            --card-border: #2b384e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Sticky Glassmorphic Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav.navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+            gap: 16px;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+            flex-shrink: 0;
+        }
+
+        .logo-wrap img {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            display: block;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .version-badge {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #818cf8;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 2px 7px;
+            border-radius: 12px;
+        }
+
+        .nav-links-desktop {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #e2e8f0;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 12.5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .nav-btn-active {
+            background: rgba(99, 102, 241, 0.22);
+            border-color: rgba(99, 102, 241, 0.55);
+            color: #c7d2fe;
+            box-shadow: 0 2px 10px rgba(99, 102, 241, 0.25);
+        }
+
+        .pulse-indicator {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+            display: inline-block;
+        }
+
+        .nav-btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            border-color: rgba(129, 140, 248, 0.4);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .nav-btn-primary:hover {
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            color: #fff;
+        }
+
+        /* Mobile Nav */
+        .hamburger-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background-color: #cbd5e1;
+            border-radius: 2px;
+            transition: all 0.2s;
+        }
+
+        @media (max-width: 820px) {
+            .nav-links-desktop {
+                display: none;
+            }
+            .hamburger-btn {
+                display: flex;
+            }
+        }
+
+        /* Mobile Drawer */
+        .mobile-drawer {
+            display: none;
+            background: #0f172a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 20px;
+        }
+
+        .mobile-drawer.active {
+            display: block;
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 14px;
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 10px;
+            margin-bottom: 6px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .mobile-nav-link:hover, .mobile-nav-link.active {
+            background: rgba(99, 102, 241, 0.18);
+            color: #c7d2fe;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="nav-container">
+            <nav class="navbar">
+                <a href="index.html" class="logo-wrap">
+                    <img src="assets/icon.png" alt="Quizee Logo" width="34" height="34">
+                    <span class="logo-text">Quizee</span>
+                </a>
+
+                <div class="nav-links-desktop">
+                    <a href="index.html" class="nav-btn">Home</a>
+                    <a href="index.html#daily-quiz" class="nav-btn">Daily 5</a>
+                    <a href="index.html#online-tests" class="nav-btn">Topic Sets</a>
+                    <a href="mock-tests.html" class="nav-btn">Full Mocks</a>
+                    <a href="byjus-gk.html" class="nav-btn nav-btn-active">BYJU'S GK</a>
+                    <a href="tables.html" class="nav-btn">Study Tables</a>
+                    <a href="quizee.apk" download="quizee.apk" class="nav-btn nav-btn-primary">Download APK</a>
+                </div>
+
+                <button class="hamburger-btn" id="byjusMobileToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+
+        <div class="mobile-drawer" id="byjusMobileDrawer">
+            <a href="index.html" class="mobile-nav-link">
+                <span>🏠 Home</span>
+            </a>
+            <a href="index.html#daily-quiz" class="mobile-nav-link">
+                <span>✨ Daily 5 Quiz</span>
+            </a>
+            <a href="index.html#online-tests" class="mobile-nav-link">
+                <span>📚 Topic Practice Sets</span>
+            </a>
+            <a href="mock-tests.html" class="mobile-nav-link">
+                <span>🎯 60 Full Mock Tests</span>
+            </a>
+            <a href="byjus-gk.html" class="mobile-nav-link active">
+                <span>🏛️ BYJU'S Static GK</span>
+            </a>
+            <a href="tables.html" class="mobile-nav-link">
+                <span>📊 Master Study Tables</span>
+            </a>
+            <a href="quizee.apk" download="quizee.apk" class="mobile-nav-link" style="background:rgba(99,102,241,0.25); color:#fff; font-weight:700;">
+                <span>📥 Download Quizee APK</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="byjus-page-wrapper">
+
+        <!-- Hero Section -->
+        <section class="byjus-hero">
+            <h1 class="byjus-hero-title">BYJU'S Static GK <span>Quiz Hub</span></h1>
+            <p class="byjus-hero-sub">
+                58 High-Yield Topics &bull; 1,260+ MCQs &bull; Bilingual &bull; Complete Study Tables
+            </p>
+
+            <!-- Metrics -->
+            <div class="byjus-metrics-banner">
+                <div class="byjus-metric-chip">
+                    <span>📚 <strong>58</strong> Topics</span>
+                </div>
+                <div class="byjus-metric-chip">
+                    <span id="byjusTotalQuestionsBadge">📝 <strong>1,260+</strong> MCQs</span>
+                </div>
+                <div class="byjus-metric-chip">
+                    <span>🌐 <strong>Bilingual</strong></span>
+                </div>
+                <div class="byjus-metric-chip">
+                    <span>⚡ <strong>Offline Ready</strong></span>
+                </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="byjus-hero-actions">
+                <button class="btn-byjus-primary" onclick="window.startMegaMixedQuiz(30)">
+                    <span>🎲 Start Mixed Quiz (30 Qs)</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Search & Category Filters -->
+        <section class="byjus-controls-wrap" id="topicSection">
+            <div class="byjus-search-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="byjusSearchInput" class="byjus-search-input" placeholder="Search by topic name (e.g., Countries & Capitals, Prasad Scheme, IPL, Rivers, Coal Mines)...">
+            </div>
+
+            <!-- Categories Tabs -->
+            <div class="byjus-cat-tabs" id="byjusCategoryTabs">
+                <!-- Injected dynamically via JS -->
+            </div>
+        </section>
+
+        <!-- Topic List Header -->
+        <div class="byjus-list-header">
+            <h2 class="byjus-list-title">Static General Knowledge Curriculum</h2>
+            <span class="byjus-visible-count" id="byjusVisibleCount">Showing 58 Topics</span>
+        </div>
+
+        <!-- Topics Cards Grid -->
+        <main class="byjus-grid" id="byjusTopicGrid">
+            <!-- 58 Topic Cards populated dynamically by byjus_gk.js -->
+        </main>
+
+    </div>
+
+    <!-- Interactive Test Player Modal Overlay -->
+    <div class="byjus-modal-overlay" id="byjusQuizModal">
+        <div class="byjus-modal-window">
+            
+            <!-- Header Bar -->
+            <div class="byjus-modal-header">
+                <button class="btn-modal-exit" onclick="window.byjusConfirmExit()">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    <span>Exit</span>
+                </button>
+
+                <div class="byjus-header-center">
+                    <div class="byjus-quiz-title" id="byjusQuizTitle">Topic Quiz</div>
+                    <div class="byjus-quiz-progress-text" id="byjusQuizProgressText">Question 1 of 8</div>
+                </div>
+
+                <div class="byjus-header-right">
+                    <span class="byjus-timer-pill" id="byjusQuizTimer">⏱️ 00:00</span>
+                    <span class="byjus-score-pill" id="byjusQuizScorePill">Score: 0</span>
+                    <button class="btn-byjus-lang" id="byjusBtnLanguage" onclick="window.byjusToggleLanguage()">अ Hindi View</button>
+                </div>
+            </div>
+
+            <!-- Linear Progress Indicator -->
+            <div class="byjus-progress-bar">
+                <div class="byjus-progress-fill" id="byjusQuizProgressFill"></div>
+            </div>
+
+            <!-- Active Test View -->
+            <div id="byjusActiveView" style="display:flex; flex-direction:column; flex:1; min-height:0;">
+                <div class="byjus-modal-body">
+                    <!-- Question Card -->
+                    <div class="byjus-q-card">
+                        <span class="byjus-q-cat-tag" id="byjusQuestionCategoryTag">Static GK</span>
+                        <div class="byjus-q-text" id="byjusQuestionText">Loading question...</div>
+                    </div>
+
+                    <!-- Options Grid -->
+                    <div class="byjus-options-grid" id="byjusOptionsContainer">
+                        <!-- Populated by JS -->
+                    </div>
+
+                    <!-- Detailed Fact / Explanation Box -->
+                    <div class="byjus-exp-box" id="byjusExplanationBox">
+                        <!-- Populated by JS on answer -->
+                    </div>
+                </div>
+
+                <!-- Footer Bar -->
+                <div class="byjus-modal-footer">
+                    <button class="btn-byjus-skip" id="byjusBtnSkip" onclick="window.byjusSkipQuestion()">Skip Question</button>
+                    <button class="btn-byjus-next" id="byjusBtnNext" onclick="window.byjusNextQuestion()" disabled>Next Question ➔</button>
+                </div>
+            </div>
+
+            <!-- Test Results View -->
+            <div id="byjusResultsView" class="byjus-results-container" style="display:none;">
+                <div class="byjus-res-emoji">🎉</div>
+                <h3 class="byjus-res-title">Quiz Completed!</h3>
+                <div class="byjus-res-sub">Static GK Session Performance Summary</div>
+
+                <div class="byjus-score-box">
+                    <div class="byjus-score-digits" id="byjusResScoreDigits">8 / 8</div>
+                    <div class="byjus-accuracy-chip" id="byjusResAccuracy">100% Accuracy</div>
+                    <div class="byjus-results-badge" id="byjusResBadge">🏆 Outstanding! Master Level</div>
+
+                    <div class="byjus-metrics-summary">
+                        <div>
+                            <div class="byjus-metric-num" style="color:#10b981;" id="byjusResCorrect">8</div>
+                            <div class="byjus-metric-lbl">Correct</div>
+                        </div>
+                        <div>
+                            <div class="byjus-metric-num" style="color:#ef4444;" id="byjusResWrong">0</div>
+                            <div class="byjus-metric-lbl">Wrong</div>
+                        </div>
+                        <div>
+                            <div class="byjus-metric-num" style="color:#f59e0b;" id="byjusResSkipped">0</div>
+                            <div class="byjus-metric-lbl">Skipped</div>
+                        </div>
+                        <div>
+                            <div class="byjus-metric-num" style="color:#38bdf8;" id="byjusResTime">01:45</div>
+                            <div class="byjus-metric-lbl">Time</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="byjus-res-actions">
+                    <button class="btn-byjus-primary" onclick="window.byjusRetestCurrentTopic()">
+                        <span>🔁 Retest This Topic</span>
+                    </button>
+                    <button class="btn-byjus-secondary" onclick="window.byjusCloseModal()">
+                        <span>← Back to Topics</span>
+                    </button>
+                </div>
+
+                <!-- Review Section -->
+                <div class="byjus-review-section">
+                    <h4 class="byjus-review-title">📋 Question-by-Question Review & Explanations</h4>
+                    <div id="byjusReviewList">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Study Table Modal Viewer (Full source data & reference facts) -->
+    <div class="byjus-table-modal-overlay" id="byjusTableModal">
+        <div class="byjus-table-modal-box">
+            <div class="byjus-table-modal-header">
+                <div>
+                    <h3 class="byjus-table-modal-title" id="byjusTableModalTitle">Reference Data Table</h3>
+                    <p class="byjus-table-modal-sub">Official BYJU'S Govt Exam static GK complete reference archive</p>
+                </div>
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <a id="byjusTableModalSourceLink" href="#" target="_blank" rel="noopener" class="byjus-table-source-link">
+                        Source Notes ↗
+                    </a>
+                    <button class="byjus-table-close-btn" onclick="window.closeTopicStudyTable()" aria-label="Close Study Table">✕</button>
+                </div>
+            </div>
+            <div class="byjus-table-modal-body" id="byjusTableModalBody">
+                <!-- Dynamically populated tables -->
+            </div>
+            <div class="byjus-table-modal-footer">
+                <span class="byjus-table-footer-info">💡 Tip: Use the 'Play All Questions' button on the topic card to practice all these items!</span>
+                <button class="btn-byjus-primary" onclick="window.closeTopicStudyTable()">Close Reference</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exit Confirmation Dialog Modal -->
+    <div class="byjus-confirm-overlay" id="byjusExitConfirmModal">
+        <div class="byjus-confirm-box">
+            <h4 class="byjus-confirm-title">Exit In-Progress Quiz?</h4>
+            <p class="byjus-confirm-desc">Are you sure you want to exit? Your current test score will not be saved for this session.</p>
+            <div class="byjus-confirm-actions">
+                <button class="btn-confirm-stay" onclick="window.byjusStayInTest()">Continue Quiz</button>
+                <button class="btn-confirm-exit" onclick="window.byjusExecuteExit()">Exit Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/byjus_gk_data.js"></script>
+    <script src="assets/byjus_gk.js"></script>
+    <script>
+        // Mobile menu toggle
+        const toggleBtn = document.getElementById('byjusMobileToggle');
+        const drawer = document.getElementById('byjusMobileDrawer');
+        if (toggleBtn && drawer) {
+            toggleBtn.addEventListener('click', () => {
+                drawer.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -64,13 +64,18 @@ jobs:
 
       - name: Copy Generated APK to Website docs and root
         run: |
-          mkdir -p docs
+          mkdir -p docs/assets docs/data
           cp app/build/outputs/apk/debug/app-debug.apk docs/quizee.apk
           cp app/build/outputs/apk/debug/app-debug.apk quizee.apk
+          cp .nojekyll docs/.nojekyll || true
           cp index.html docs/index.html || true
           cp mock-tests.html docs/mock-tests.html || true
+          cp byjus-gk.html docs/byjus-gk.html || true
+          cp tables.html docs/tables.html || true
           cp sw.js docs/sw.js || true
           cp manifest.json docs/manifest.json || true
+          cp -r assets/* docs/assets/ || true
+          cp -r data/* docs/data/ || true
           ls -lh docs/quizee.apk
 
       - name: Upload APK Artifact

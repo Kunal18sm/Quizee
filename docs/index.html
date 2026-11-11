@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizee — Smart Quiz App Locker for Android | Download APK</title>
-    <meta name="description" content="Quizee: Lock distracting apps behind quick 5-question quizzes. Practice 7400+ High-Yield Static GK, English, History, Polity, Geography, Biology & Economics MCQs while reducing screen time. Free and offline.">
+    <meta name="description" content="Quizee: Lock distracting apps behind quick 5-question quizzes. Practice 8000+ High-Yield SSC CGL Maths (Formulas & Tricks), Static GK, English, History, Polity, Geography, Biology & Economics MCQs while reducing screen time. Free and offline.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     
     <!-- PWA & 100% Offline Support -->
@@ -2870,6 +2870,7 @@
                     <a href="#online-tests" class="nav-btn">Topic Sets</a>
                     <a href="mock-tests.html" class="nav-btn">Full Mocks</a>
                     <a href="byjus-gk.html" class="nav-btn">BYJU'S GK</a>
+                    <a href="tables.html" class="nav-btn">Study Tables</a>
                     <button class="nav-btn-audio quize-audio-btn" type="button" title="Play Quizee Music">
                         <span class="audio-btn-icon">🎵</span>
                         <span class="audio-btn-text">Music</span>
@@ -2912,6 +2913,10 @@
                 <a href="byjus-gk.html" class="mobile-nav-item">
                     <span class="mobile-item-icon">🏛️</span>
                     <span>BYJU'S Static GK</span>
+                </a>
+                <a href="tables.html" class="mobile-nav-item">
+                    <span class="mobile-item-icon">📊</span>
+                    <span>Master Study Tables</span>
                 </a>
                 <button class="mobile-nav-item quize-audio-btn" type="button" style="background:transparent; border:none; width:100%; text-align:left; cursor:pointer; color:#cbd5e1; font-weight:600; font-size:14px; padding:10px 14px; display:flex; align-items:center; gap:12px;">
                     <span class="mobile-item-icon audio-btn-icon">🎵</span>
@@ -4874,11 +4879,13 @@ function handleSimAddQuestion() {
             <div class="web-test-body" id="webTestActiveBody">
                 <div class="web-question-card">
                     <span class="question-category-tag" id="webQuestionCategory">General</span>
+                    <div class="question-diagram-container" id="webQuestionDiagram" style="display:none;"></div>
                     <div class="question-text-content" id="webQuestionText">Loading question...</div>
                 </div>
                 <div class="web-options-grid" id="webOptionsContainer">
                     <!-- Populated dynamically -->
                 </div>
+                <div class="web-explanation-box" id="webQuestionExplanation" style="display:none;"></div>
             </div>
 
             <!-- Active Test Footer Action Bar -->
@@ -5118,6 +5125,7 @@ function handleSimAddQuestion() {
 
         const SUBJECTS = [
             { key: 'all', name: 'All', icon: '🌟' },
+            { key: 'math', name: 'Maths', icon: '📐' },
             { key: 'english', name: 'English', icon: '📖' },
             { key: 'static_gk', name: 'GK', icon: '🏛️' },
             { key: 'history', name: 'History', icon: '🏺' },
@@ -5178,7 +5186,7 @@ function handleSimAddQuestion() {
             if (!rawCat) return 'General';
             let s = rawCat.trim();
             const prefixes = [
-                'English:', 'Modern History:', 'Ancient History:', 'Medieval History:',
+                'Math:', 'English:', 'Modern History:', 'Ancient History:', 'Medieval History:',
                 'Geography:', 'Biology:', 'General Science:', 'Polity:', 'Economics:'
             ];
             for (const p of prefixes) {
