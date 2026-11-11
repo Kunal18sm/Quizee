@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tables — Subject & Topic-Wise Revision | Quizee</title>
+    <meta name="description" content="Clean subject & topic-wise revision tables: Folk Dances, Vitamins, Constitution Articles & Parts, Schedules, Dams & Rivers, IVC Sites, Math Formulas & English Grammar.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- PWA & Offline Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Quizee Tables">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/tables.css?v=2">
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --bg-dark: #0b0f19;
+            --card-bg: #121826;
+            --card-border: #232d42;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 15, 25, 0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav.navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 62px;
+            gap: 16px;
+        }
+
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+            flex-shrink: 0;
+        }
+
+        .logo-wrap img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .logo-text {
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            color: #fff;
+        }
+
+        .nav-links-desktop {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #cbd5e1;
+            font-size: 13.5px;
+            font-weight: 600;
+            padding: 7px 12px;
+            border-radius: 8px;
+            transition: background 0.15s, color 0.15s;
+            white-space: nowrap;
+        }
+
+        .nav-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .nav-btn-active {
+            background: rgba(99, 102, 241, 0.2);
+            color: #c7d2fe;
+        }
+
+        .nav-btn-primary {
+            background: #6366f1;
+            color: #fff;
+        }
+
+        .nav-btn-primary:hover {
+            background: #4f46e5;
+        }
+
+        .hamburger-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 7px 9px;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: #e2e8f0;
+            border-radius: 2px;
+        }
+
+        .mobile-drawer {
+            display: none;
+            flex-direction: column;
+            background: #0f1626;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px 16px 16px;
+        }
+
+        .mobile-drawer.open {
+            display: flex;
+        }
+
+        .mobile-nav-link {
+            text-decoration: none;
+            color: #cbd5e1;
+            padding: 9px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            margin-bottom: 4px;
+        }
+
+        .mobile-nav-link.active {
+            background: rgba(99, 102, 241, 0.18);
+            color: #c7d2fe;
+        }
+
+        @media (max-width: 900px) {
+            .nav-links-desktop { display: none; }
+            .hamburger-btn { display: flex; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="nav-container">
+            <nav class="navbar">
+                <a href="index.html" class="logo-wrap">
+                    <img src="assets/icon.png" alt="Quizee" width="32" height="32">
+                    <span class="logo-text">Quizee</span>
+                </a>
+
+                <div class="nav-links-desktop">
+                    <a href="index.html" class="nav-btn">Home</a>
+                    <a href="index.html#daily-quiz" class="nav-btn">Daily 5</a>
+                    <a href="index.html#online-tests" class="nav-btn">Topic Sets</a>
+                    <a href="mock-tests.html" class="nav-btn">Full Mocks</a>
+                    <a href="byjus-gk.html" class="nav-btn">BYJU'S GK</a>
+                    <a href="tables.html" class="nav-btn nav-btn-active">Study Tables</a>
+                    <a href="quizee.apk" download="quizee.apk" class="nav-btn nav-btn-primary">Download APK</a>
+                </div>
+
+                <button class="hamburger-btn" id="tablesMobileToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+
+        <div class="mobile-drawer" id="tablesMobileDrawer">
+            <a href="index.html" class="mobile-nav-link">🏠 Home</a>
+            <a href="index.html#daily-quiz" class="mobile-nav-link">✨ Daily 5 Quiz</a>
+            <a href="index.html#online-tests" class="mobile-nav-link">📚 Topic Practice Sets</a>
+            <a href="mock-tests.html" class="mobile-nav-link">🎯 Full Mock Tests</a>
+            <a href="byjus-gk.html" class="mobile-nav-link">🏛️ BYJU'S GK</a>
+            <a href="tables.html" class="mobile-nav-link active">📊 Study Tables</a>
+        </div>
+    </header>
+
+    <main class="tables-shell">
+        <!-- Simple Compact Top Bar -->
+        <div class="tables-topbar">
+            <div class="topbar-title-group">
+                <h1>📊 Study Tables</h1>
+                <span class="topbar-sub">Select a subject &amp; topic to read cleanly</span>
+            </div>
+
+            <div class="topbar-controls">
+                <div class="search-wrap">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="tablesSearchInput" placeholder="Search topic or fact (e.g. Vitamin, Bihu, Art 32, Dam)..." autocomplete="off">
+                    <button type="button" id="btnClearSearch" class="btn-clear" title="Clear">✕</button>
+                </div>
+
+                <button type="button" id="btnRecallToggle" class="btn-recall" title="Hide answer columns so you can test yourself">
+                    🧠 Hide Answers
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Subject & Topic Selectors (Visible on small screens) -->
+        <div class="mobile-selectors">
+            <div class="mobile-select-group">
+                <label for="mobileSubjectSelect">Subject</label>
+                <select id="mobileSubjectSelect"></select>
+            </div>
+            <div class="mobile-select-group">
+                <label for="mobileTopicSelect">Topic</label>
+                <select id="mobileTopicSelect"></select>
+            </div>
+        </div>
+
+        <!-- Clean 2-Column Workspace -->
+        <div class="tables-workspace">
+            <!-- Left Sidebar: Subjects & Topics -->
+            <aside class="tables-sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-heading">Subjects</div>
+                    <div class="sidebar-subjects" id="sidebarSubjects"></div>
+                </div>
+
+                <div class="sidebar-section sidebar-topics-wrap">
+                    <div class="sidebar-heading" id="sidebarTopicHeading">Topics</div>
+                    <div class="sidebar-topics" id="sidebarTopics"></div>
+                </div>
+            </aside>
+
+            <!-- Right Main Reader: Shows Selected Clean Table (or Search Results) -->
+            <section class="tables-reader" id="tablesReader">
+                <!-- Populated cleanly via JS -->
+            </section>
+        </div>
+    </main>
+
+    <button type="button" id="btnBackToTop" class="btn-back-top" aria-label="Back to Top">↑</button>
+
+    <script src="data/study_tables_data.js"></script>
+    <script src="data/byjus_gk_data.js"></script>
+    <script src="assets/tables.js?v=2"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => {});
+            });
+        }
+    </script>
+</body>
+</html>
