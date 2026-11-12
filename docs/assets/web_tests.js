@@ -451,10 +451,15 @@
             for (const t of sub.topics) {
                 for (const s of t.sets) {
                     if (s.setKey === setKey) {
-                        const count = is50Count ? Math.min(50, s.questions.length) : s.questions.length;
-                        const qs = is50Count ? s.questions.slice(0, 50) : s.questions;
+                        let qs;
+                        if (is50Count) {
+                            const shuffled = [...s.questions].sort(() => 0.5 - Math.random());
+                            qs = shuffled.slice(0, Math.min(50, shuffled.length));
+                        } else {
+                            qs = s.questions;
+                        }
                         const title = `${t.displayName} • Set ${s.setNumber}`;
-                        const subtitle = is50Count ? `50 Questions Drill` : `${s.totalQuestions} Questions Set`;
+                        const subtitle = is50Count ? `50 Questions Drill (Randomized)` : `${s.totalQuestions} Questions Set`;
                         launchWebTest(qs, title, subtitle, s.setKey);
                         return;
                     }
