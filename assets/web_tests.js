@@ -8,14 +8,14 @@
 
     const CHUNK_SIZE = 100;
     const SUBJECT_CONFIG = [
-        { key: 'math', name: 'Mathematics', icon: '📐' },
-        { key: 'english', name: 'English', icon: '📖' },
-        { key: 'static_gk', name: 'Static GK', icon: '🏛️' },
-        { key: 'history', name: 'History', icon: '🏺' },
-        { key: 'geography', name: 'Geography', icon: '🌍' },
-        { key: 'biology', name: 'Biology', icon: '🧬' },
-        { key: 'polity', name: 'Polity', icon: '⚖️' },
-        { key: 'economics', name: 'Economics', icon: '📈' }
+        { key: 'math', name: 'Mathematics', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>' },
+        { key: 'english', name: 'English', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>' },
+        { key: 'static_gk', name: 'Static GK', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>' },
+        { key: 'history', name: 'History', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><polygon points="12 2 20 7 4 7"/></svg>' },
+        { key: 'geography', name: 'Geography', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>' },
+        { key: 'biology', name: 'Biology', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/></svg>' },
+        { key: 'polity', name: 'Polity', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-2 6h4l-2-6z"/><path d="M19 7l-2 6h4l-2-6z"/></svg>' },
+        { key: 'economics', name: 'Economics', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>' }
     ];
 
     // Global State - Default to English for a clean, uncluttered start!
@@ -188,12 +188,12 @@
                 icon: s.icon,
                 count: `${s.totalSets} Sets`
             })),
-            { name: 'All', icon: '✨', count: `${totalSetsAll} Sets` }
+            { name: 'All', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>', count: `${totalSetsAll} Sets` }
         ];
 
         container.innerHTML = tabs.map(tab => `
             <button class="subject-tab-btn ${portalState.activeSubject === tab.name ? 'active' : ''}" data-subject="${tab.name}">
-                <span>${tab.icon}</span>
+                ${tab.icon}
                 <span>${tab.name}</span>
                 <span class="tab-count-badge">${tab.count}</span>
             </button>
@@ -224,14 +224,14 @@
 
             banner.innerHTML = `
                 <div class="resume-info">
-                    <div class="resume-icon-circle">🎯</div>
+                    <div class="resume-icon-circle"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
                     <div>
                         <div class="resume-title">Resume: ${data.title}</div>
                         <div class="resume-meta">Last Score: <b>${data.score}/${data.total}</b> (${acc}%)</div>
                     </div>
                 </div>
                 <button class="btn-resume" id="btnResumeLast">
-                    <span>Retest Set 🔁</span>
+                    <span>Retest set</span>
                 </button>
             `;
             banner.style.display = 'flex';
@@ -323,7 +323,7 @@
                             <span>${isExp ? 'Hide Sets ▲' : `View Sets (${t.sets.length}) ▼`}</span>
                         </button>
                         <button class="btn-topic-drill" data-action="topicDrill" data-topicid="${t.topicId}">
-                            ⚡ 50 Qs Drill
+                            50 Qs Drill
                         </button>
                     </div>
 

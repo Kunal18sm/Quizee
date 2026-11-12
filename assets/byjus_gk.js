@@ -9,7 +9,7 @@
     // State
     let allTopics = [];
     let allQuestionsMap = {};
-    let activeCategory = 'All';
+    let activeCategory = 'Polity & Schemes';
     let searchQuery = '';
 
     let activeQuiz = {
@@ -27,16 +27,16 @@
         timerInterval: null
     };
 
-    // Category mapping & icons
+    // Category mapping with crisp inline SVG icons
     const CATEGORIES = [
-        { key: 'All', name: 'All Topics', icon: '✨' },
-        { key: 'Polity & Schemes', name: 'Polity & Schemes', icon: '🏛️' },
-        { key: 'World Geography', name: 'World Geography', icon: '🌍' },
-        { key: 'India Geography', name: 'India Geography & Sites', icon: '🇮🇳' },
-        { key: 'Banking & Economy', name: 'Banking & Economy', icon: '💰' },
-        { key: 'Sports & Tournaments', name: 'Sports & Tournaments', icon: '🏆' },
-        { key: 'Awards & Defense', name: 'Awards & Defense', icon: '🎖️' },
-        { key: 'Science & Awareness', name: 'Science & Awareness', icon: '🔬' }
+        { key: 'Polity & Schemes', name: 'Polity & Schemes', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-2 6h4l-2-6z"/><path d="M19 7l-2 6h4l-2-6z"/></svg>' },
+        { key: 'World Geography', name: 'World Geography', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>' },
+        { key: 'India Geography', name: 'India Geography', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>' },
+        { key: 'Banking & Economy', name: 'Banking & Economy', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>' },
+        { key: 'Sports & Tournaments', name: 'Sports', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>' },
+        { key: 'Awards & Defense', name: 'Awards & Defense', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>' },
+        { key: 'Science & Awareness', name: 'Science', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/></svg>' },
+        { key: 'All', name: 'All Topics', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>' }
     ];
 
     function init() {
@@ -58,18 +58,19 @@
         const container = document.getElementById('byjusCategoryTabs');
         if (!container) return;
 
+        container.style.display = 'flex';
         let html = '';
         CATEGORIES.forEach(cat => {
-            const count = cat.key === 'All' 
-                ? allTopics.length 
+            const count = cat.key === 'All'
+                ? allTopics.length
                 : allTopics.filter(t => t.category === cat.key).length;
-            
+
             const isActive = activeCategory === cat.key;
             html += `
-                <button class="byjus-cat-pill ${isActive ? 'active' : ''}" onclick="window.byjusSelectCategory('${cat.key}')">
-                    <span>${cat.icon}</span>
+                <button type="button" class="subject-tab-btn ${isActive ? 'active' : ''}" onclick="window.byjusSelectCategory('${cat.key}')">
+                    ${cat.icon}
                     <span>${cat.name}</span>
-                    <span class="byjus-pill-count">${count}</span>
+                    <span class="tab-count-badge">${count}</span>
                 </button>
             `;
         });
@@ -80,26 +81,31 @@
         const grid = document.getElementById('byjusTopicGrid');
         if (!grid) return;
 
+        const countHeader = document.getElementById('byjusVisibleCount');
+        const listTitle = document.querySelector('.byjus-list-title');
+
         const filtered = allTopics.filter(topic => {
-            const matchesCat = activeCategory === 'All' || topic.category === activeCategory;
+            const matchesCat = searchQuery
+                ? true
+                : (!activeCategory || activeCategory === 'All' || topic.category === activeCategory);
             const matchesQuery = !searchQuery || 
                 topic.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                 topic.category.toLowerCase().includes(searchQuery.toLowerCase());
             return matchesCat && matchesQuery;
         });
 
-        const countHeader = document.getElementById('byjusVisibleCount');
+        const catObj = CATEGORIES.find(c => c.key === activeCategory);
+        if (listTitle) listTitle.textContent = searchQuery ? 'Matching Topics' : (catObj ? catObj.name : 'All Topics');
         if (countHeader) {
-            countHeader.textContent = `Showing ${filtered.length} of ${allTopics.length} Topics`;
+            countHeader.textContent = `${filtered.length} Topics`;
         }
 
         if (filtered.length === 0) {
             grid.innerHTML = `
                 <div class="byjus-empty-state">
-                    <div style="font-size:36px; margin-bottom:12px;">🔍</div>
-                    <h3 style="font-size:18px; color:#f8fafc; margin-bottom:6px;">No Topics Match "${searchQuery}"</h3>
-                    <p style="color:#94a3b8; font-size:13px; margin-bottom:14px;">Try searching for "river", "capital", "temple", "bank", or select another category.</p>
-                    <button class="byjus-btn-reset-filter" onclick="window.byjusResetFilters()">View All Topics</button>
+                    <h3 style="font-size:16px; color:var(--text-main); margin-bottom:6px;">No topics match "${searchQuery}"</h3>
+                    <p style="color:var(--text-muted); font-size:13px; margin-bottom:14px;">Try another keyword or reset filter.</p>
+                    <button class="byjus-btn-reset-filter" onclick="window.byjusResetFilters()">Reset filter</button>
                 </div>
             `;
             return;
@@ -109,28 +115,29 @@
         filtered.forEach(topic => {
             const qList = allQuestionsMap[topic.id] || [];
             const count = qList.length;
+            const topicCat = CATEGORIES.find(c => c.key === topic.category) || CATEGORIES[0];
 
             // Check localStorage progress
             const storageKey = `byjus_gk_${topic.id}`;
             const isCompleted = localStorage.getItem(`${storageKey}_completed`) === 'true';
             const bestScore = localStorage.getItem(`${storageKey}_score`);
 
-            let statusBadge = `<span class="byjus-status-badge unattempted">Not Attempted</span>`;
+            let statusBadge = '';
             if (isCompleted && bestScore !== null) {
                 const s = parseFloat(bestScore);
                 const pct = Math.round((s / count) * 100);
                 if (pct >= 80) {
-                    statusBadge = `<span class="byjus-status-badge mastered">✓ Mastered (${s}/${count})</span>`;
+                    statusBadge = `<span class="byjus-status-badge mastered">${s}/${count}</span>`;
                 } else {
-                    statusBadge = `<span class="byjus-status-badge passed">✓ Completed (${s}/${count})</span>`;
+                    statusBadge = `<span class="byjus-status-badge passed">${s}/${count}</span>`;
                 }
             }
 
             html += `
                 <div class="byjus-topic-card ${isCompleted ? 'card-completed' : ''}">
                     <div class="byjus-card-top">
-                        <div class="byjus-card-icon-wrap">
-                            <span class="byjus-card-icon">${topic.icon || '📌'}</span>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <span class="card-icon-badge">${topicCat.icon}</span>
                             <span class="byjus-category-tag">${topic.category}</span>
                         </div>
                         ${statusBadge}
@@ -138,23 +145,12 @@
 
                     <h3 class="byjus-card-title">${topic.title}</h3>
 
-                    <div class="byjus-card-meta">
-                        <span class="byjus-meta-item">📝 <strong>${count}</strong> MCQs</span>
-                        <div class="byjus-card-meta-links">
-                            <button class="byjus-table-preview-btn" onclick="window.viewTopicStudyTable('${topic.id}')" title="View study table">
-                                📖 Table
-                            </button>
-                            <a href="${topic.url}" target="_blank" rel="noopener" class="byjus-meta-link" title="BYJU'S Source Notes">
-                                Notes ↗
-                            </a>
+                    <div class="byjus-card-footer">
+                        <span class="byjus-meta-item">${count} Qs</span>
+                        <div class="byjus-card-actions">
+                            <button class="byjus-table-preview-btn" onclick="window.viewTopicStudyTable('${topic.id}')" title="View study table">Table</button>
+                            <button class="byjus-btn-play" onclick="window.startByjusQuiz('${topic.id}', 'all')">Start</button>
                         </div>
-                    </div>
-
-                    <div class="byjus-card-actions">
-                        <button class="byjus-btn-play" onclick="window.startByjusQuiz('${topic.id}', 'all')">
-                            <span>Play Quiz (${count} Qs)</span>
-                            <span>➔</span>
-                        </button>
                     </div>
                 </div>
             `;
@@ -195,6 +191,7 @@
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
                 searchQuery = e.target.value.trim();
+                renderCategoryPills();
                 renderTopicCards();
             });
         }
@@ -212,12 +209,12 @@
 
         if (!modal || !bodyEl) return;
 
-        titleEl.textContent = `${topic.icon || '📌'} ${topic.title} — Reference Table & Complete Facts`;
+        titleEl.textContent = `${topic.title} — Reference Table`;
         if (linkEl) linkEl.href = topic.url;
 
         const tables = topic.studyTables || [];
         if (tables.length === 0) {
-            bodyEl.innerHTML = `<div style="text-align:center; padding:30px; color:#94a3b8;">No table rows extracted. Please refer to <a href="${topic.url}" target="_blank" style="color:#6366f1;">BYJU'S Source Notes ↗</a>.</div>`;
+            bodyEl.innerHTML = `<div style="text-align:center; padding:30px; color:var(--text-secondary);">No table rows extracted. Please refer to <a href="${topic.url}" target="_blank" style="color:var(--accent);">BYJU'S Source Notes</a>.</div>`;
         } else {
             let html = '';
             tables.forEach((tbl, tIdx) => {
@@ -275,7 +272,7 @@
     };
 
     window.byjusResetFilters = function () {
-        activeCategory = 'All';
+        activeCategory = 'Polity & Schemes';
         searchQuery = '';
         const searchInput = document.getElementById('byjusSearchInput');
         if (searchInput) searchInput.value = '';
