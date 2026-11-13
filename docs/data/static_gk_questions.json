@@ -20206,5 +20206,2358 @@
     "correctIndex": 0,
     "category": "Sports Terminology & Cups",
     "id": 4415
+  },
+  {
+    "question": "Pravasi Bharatiya Divas (Non-Resident Indian Day) is celebrated every year on which date? / 'प्रवासी भारतीय दिवस' प्रत्येक वर्ष किस तिथि को मनाया जाता है?",
+    "options": [
+      "9 January / 9 जनवरी",
+      "12 January / 12 जनवरी",
+      "15 January / 15 जनवरी",
+      "25 January / 25 जनवरी"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8801
+  },
+  {
+    "question": "World Hindi Day (Vishwa Hindi Divas) is observed globally on: / 'विश्व हिंदी दिवस' वैश्विक स्तर पर किस दिन मनाया जाता है?",
+    "options": [
+      "10 January / 10 जनवरी",
+      "14 September / 14 सितंबर",
+      "21 February / 21 फरवरी",
+      "15 August / 15 अगस्त"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8802
+  },
+  {
+    "question": "National Youth Day is celebrated on 12 January in honour of the birth anniversary of: / 12 जनवरी को 'राष्ट्रीय युवा दिवस' किसकी जयंती के उपलक्ष्य में मनाया जाता है?",
+    "options": [
+      "Swami Vivekananda / स्वामी विवेकानंद",
+      "Bhagat Singh / भगत सिंह",
+      "Subhas Chandra Bose / सुभाष चंद्र बोस",
+      "Chandrashekhar Azad / चंद्रशेखर आजाद"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8803
+  },
+  {
+    "question": "Indian Army Day is celebrated annually on 15 January to commemorate: / प्रतिवर्ष 15 जनवरी को 'भारतीय सेना दिवस' किसकी स्मृति में मनाया जाता है?",
+    "options": [
+      "Field Marshal K.M. Cariappa taking over as Commander-in-Chief in 1949 / 1949 में फील्ड मार्शल के.एम. करियप्पा के पदभार संभालने की स्मृति में",
+      "Victory in Kargil War / कारगिल युद्ध में विजय",
+      "Establishment of the Army / सेना की स्थापना",
+      "Creation of the Defense Ministry / रक्षा मंत्रालय का गठन"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8804
+  },
+  {
+    "question": "Parakram Diwas is celebrated on 23 January to mark the birth anniversary of which freedom fighter? / 23 जनवरी को 'पराक्रम दिवस' किस स्वतंत्रता सेनानी की जयंती पर मनाया जाता है?",
+    "options": [
+      "Netaji Subhas Chandra Bose / नेताजी सुभाष चंद्र बोस",
+      "Lala Lajpat Rai / लाला लाजपत राय",
+      "Bal Gangadhar Tilak / बाल गंगाधर तिलक",
+      "Bipin Chandra Pal / बिपिन चंद्र पाल"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8805
+  },
+  {
+    "question": "National Girl Child Day is celebrated annually in India on: / भारत में प्रतिवर्ष 'राष्ट्रीय बालिका दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "24 January / 24 जनवरी",
+      "8 March / 8 मार्च",
+      "11 October / 11 अक्टूबर",
+      "14 November / 14 नवंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8806
+  },
+  {
+    "question": "National Voters' Day and National Tourism Day are both celebrated on which date? / 'राष्ट्रीय मतदाता दिवस' और 'राष्ट्रीय पर्यटन दिवस' दोनों किस तिथि को मनाए जाते हैं?",
+    "options": [
+      "25 January / 25 जनवरी",
+      "26 January / 26 जनवरी",
+      "30 January / 30 जनवरी",
+      "15 January / 15 जनवरी"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8807
+  },
+  {
+    "question": "Martyrs' Day (Shaheed Diwas) in memory of Mahatma Gandhi's death anniversary is observed on: / महात्मा गांधी की पुण्यतिथि की स्मृति में 'शहीद दिवस' कब मनाया जाता है?",
+    "options": [
+      "30 January / 30 जनवरी",
+      "23 March / 23 मार्च",
+      "2 October / 2 अक्टूबर",
+      "14 November / 14 नवंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8808
+  },
+  {
+    "question": "World Wetlands Day is celebrated globally every year on: / विश्व स्तर पर प्रतिवर्ष 'विश्व आर्द्रभूमि दिवस' (World Wetlands Day) कब मनाया जाता है?",
+    "options": [
+      "2 February / 2 फरवरी",
+      "4 February / 4 फरवरी",
+      "28 February / 28 फरवरी",
+      "22 March / 22 मार्च"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8809
+  },
+  {
+    "question": "World Cancer Day is observed on: / 'विश्व कैंसर दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "4 February / 4 फरवरी",
+      "14 February / 14 फरवरी",
+      "7 April / 7 अप्रैल",
+      "1 December / 1 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8810
+  },
+  {
+    "question": "International Day of Women and Girls in Science is observed on: / विज्ञान में महिलाओं और बालिकाओं का अंतर्राष्ट्रीय दिवस कब मनाया जाता है?",
+    "options": [
+      "11 February / 11 फरवरी",
+      "8 March / 8 मार्च",
+      "28 February / 28 फरवरी",
+      "13 February / 13 फरवरी"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8811
+  },
+  {
+    "question": "World Radio Day is celebrated every year on: / प्रतिवर्ष 'विश्व रेडियो दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "13 February / 13 फरवरी",
+      "20 February / 20 फरवरी",
+      "15 March / 15 मार्च",
+      "17 May / 17 मई"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8812
+  },
+  {
+    "question": "World Day of Social Justice is observed on: / 'विश्व सामाजिक न्याय दिवस' कब मनाया जाता है?",
+    "options": [
+      "20 February / 20 फरवरी",
+      "21 February / 21 फरवरी",
+      "10 December / 10 दिसंबर",
+      "1 May / 1 मई"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8813
+  },
+  {
+    "question": "International Mother Language Day is celebrated globally on: / 'अंतर्राष्ट्रीय मातृभाषा दिवस' विश्व भर में किस तारीख को मनाया जाता है?",
+    "options": [
+      "21 February / 21 फरवरी",
+      "14 September / 14 सितंबर",
+      "10 January / 10 जनवरी",
+      "8 September / 8 सितंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8814
+  },
+  {
+    "question": "National Science Day is celebrated on 28 February in India to commemorate: / भारत में 28 फरवरी को 'राष्ट्रीय विज्ञान दिवस' किसकी स्मृति में मनाया जाता है?",
+    "options": [
+      "Discovery of the Raman Effect by Sir C.V. Raman in 1928 / 1928 में सर सी.वी. रमन द्वारा 'रमन प्रभाव' की खोज",
+      "Birth anniversary of Dr. Homi Bhabha / डॉ. होमी भाभा की जयंती",
+      "Birth anniversary of Dr. A.P.J. Abdul Kalam / डॉ. कलाम की जयंती",
+      "Launch of Aryabhata satellite / आर्यभट्ट उपग्रह का प्रक्षेपण"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8815
+  },
+  {
+    "question": "World Wildlife Day is observed annually across the world on: / दुनिया भर में प्रतिवर्ष 'विश्व वन्यजीव दिवस' कब मनाया जाता है?",
+    "options": [
+      "3 March / 3 मार्च",
+      "21 March / 21 मार्च",
+      "22 May / 22 मई",
+      "5 June / 5 जून"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8816
+  },
+  {
+    "question": "International Women's Day is celebrated across the globe on: / विश्व भर में 'अंतर्राष्ट्रीय महिला दिवस' किस तिथि को मनाया जाता है?",
+    "options": [
+      "8 March / 8 मार्च",
+      "15 March / 15 मार्च",
+      "24 January / 24 जनवरी",
+      "11 October / 11 अक्टूबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8817
+  },
+  {
+    "question": "World Consumer Rights Day is celebrated on: / 'विश्व उपभोक्ता अधिकार दिवस' कब मनाया जाता है?",
+    "options": [
+      "15 March / 15 मार्च",
+      "24 December / 24 दिसंबर",
+      "20 March / 20 मार्च",
+      "7 April / 7 अप्रैल"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8818
+  },
+  {
+    "question": "National Vaccination Day (National Immunization Day) is observed in India on: / भारत में 'राष्ट्रीय टीकाकरण दिवस' कब मनाया जाता है?",
+    "options": [
+      "16 March / 16 मार्च",
+      "7 April / 7 अप्रैल",
+      "1 December / 1 दिसंबर",
+      "24 October / 24 अक्टूबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8819
+  },
+  {
+    "question": "International Day of Happiness and World Sparrow Day are both celebrated on: / 'अंतर्राष्ट्रीय प्रसन्नता दिवस' और 'विश्व गौरैया दिवस' दोनों किस तारीख को मनाए जाते हैं?",
+    "options": [
+      "20 March / 20 मार्च",
+      "21 March / 21 मार्च",
+      "22 March / 22 मार्च",
+      "23 March / 23 मार्च"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8820
+  },
+  {
+    "question": "International Day of Forests is observed annually on: / प्रतिवर्ष 'अंतर्राष्ट्रीय वन दिवस' किस तिथि को मनाया जाता है?",
+    "options": [
+      "21 March / 21 मार्च",
+      "22 March / 22 मार्च",
+      "5 June / 5 जून",
+      "22 April / 22 अप्रैल"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8821
+  },
+  {
+    "question": "World Water Day is celebrated globally on which date? / विश्व भर में 'विश्व जल दिवस' किस तिथि को मनाया जाता है?",
+    "options": [
+      "22 March / 22 मार्च",
+      "22 April / 22 अप्रैल",
+      "22 May / 22 मई",
+      "5 June / 5 जून"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8822
+  },
+  {
+    "question": "Shaheed Diwas is observed on 23 March to pay homage to the martyrdom of: / 23 मार्च को 'शहीद दिवस' किनके बलिदान को श्रद्धांजलि देने हेतु मनाया जाता है?",
+    "options": [
+      "Bhagat Singh, Sukhdev and Rajguru (1931) / भगत सिंह, सुखदेव और राजगुरु",
+      "Mahatma Gandhi / महात्मा गांधी",
+      "Chandra Shekhar Azad / चंद्रशेखर आजाद",
+      "Lala Lajpat Rai / लाला लाजपत राय"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8823
+  },
+  {
+    "question": "World Meteorological Day is celebrated on: / 'विश्व मौसम विज्ञान दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "23 March / 23 मार्च",
+      "22 March / 22 मार्च",
+      "24 March / 24 मार्च",
+      "16 September / 16 सितंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8824
+  },
+  {
+    "question": "World Tuberculosis Day (World TB Day) is observed globally on: / विश्व भर में 'विश्व तपेदिक/क्षयरोग दिवस' (World TB Day) कब मनाया जाता है?",
+    "options": [
+      "24 March / 24 मार्च",
+      "7 April / 7 अप्रैल",
+      "1 December / 1 दिसंबर",
+      "28 July / 28 जुलाई"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (January to March)",
+    "subject": "static_gk",
+    "id": 8825
+  },
+  {
+    "question": "National Maritime Day is celebrated in India every year on: / भारत में प्रतिवर्ष 'राष्ट्रीय समुद्री दिवस' कब मनाया जाता है?",
+    "options": [
+      "5 April / 5 अप्रैल",
+      "7 April / 7 अप्रैल",
+      "14 April / 14 अप्रैल",
+      "22 April / 22 अप्रैल"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8826
+  },
+  {
+    "question": "World Health Day is celebrated annually on 7 April to commemorate the founding of: / 7 अप्रैल को 'विश्व स्वास्थ्य दिवस' किसकी स्थापना की स्मृति में मनाया जाता है?",
+    "options": [
+      "World Health Organization (WHO) in 1948 / 1948 में विश्व स्वास्थ्य संगठन की स्थापना",
+      "Red Cross Society / रेड क्रॉस सोसाइटी",
+      "UNICEF / यूनिसेफ",
+      "Amnesty International / एमनेस्टी इंटरनेशनल"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8827
+  },
+  {
+    "question": "Ambedkar Jayanti (Equality Day) is celebrated in India on: / भारत में 'आंबेडकर जयंती' (समानता दिवस) किस दिन मनाई जाती है?",
+    "options": [
+      "14 April / 14 अप्रैल",
+      "24 April / 24 अप्रैल",
+      "26 November / 26 नवंबर",
+      "6 December / 6 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8828
+  },
+  {
+    "question": "World Heritage Day (International Day for Monuments and Sites) is celebrated on: / 'विश्व धरोहर दिवस' (World Heritage Day) कब मनाया जाता है?",
+    "options": [
+      "18 April / 18 अप्रैल",
+      "22 April / 22 अप्रैल",
+      "5 June / 5 जून",
+      "27 September / 27 सितंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8829
+  },
+  {
+    "question": "National Civil Services Day is celebrated in India on 21 April to mark: / 21 अप्रैल को भारत में 'राष्ट्रीय लोक सेवा दिवस' किसकी स्मृति में मनाया जाता है?",
+    "options": [
+      "Sardar Patel's address to civil servants referring to them as 'Steel Frame of India' in 1947 / 1947 में सरदार पटेल द्वारा सिविल सेवकों को 'स्टील फ्रेम' कहे जाने की स्मृति में",
+      "Passing of the Civil Services Act / सिविल सेवा अधिनियम पारित होना",
+      "First UPSC examination / पहली यूपीएससी परीक्षा",
+      "Appointment of first IAS officer / प्रथम आईएएस अधिकारी की नियुक्ति"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8830
+  },
+  {
+    "question": "Earth Day (International Mother Earth Day) is celebrated globally on: / 'पृथ्वी दिवस' (Earth Day) दुनिया भर में किस तिथि को मनाया जाता है?",
+    "options": [
+      "22 April / 22 अप्रैल",
+      "22 March / 22 मार्च",
+      "22 May / 22 मई",
+      "5 June / 5 जून"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8831
+  },
+  {
+    "question": "National Panchayati Raj Day is observed annually on: / प्रतिवर्ष 'राष्ट्रीय पंचायती राज दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "24 April / 24 अप्रैल",
+      "2 October / 2 अक्टूबर",
+      "26 January / 26 जनवरी",
+      "15 August / 15 अगस्त"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8832
+  },
+  {
+    "question": "World Malaria Day is observed globally on: / विश्व भर में 'विश्व मलेरिया दिवस' कब मनाया जाता है?",
+    "options": [
+      "25 April / 25 अप्रैल",
+      "7 April / 7 अप्रैल",
+      "24 March / 24 मार्च",
+      "1 December / 1 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8833
+  },
+  {
+    "question": "International Labour Day (May Day / Workers' Day) is celebrated on: / 'अंतर्राष्ट्रीय मजदूर दिवस' (मई दिवस) किस दिन मनाया जाता है?",
+    "options": [
+      "1 May / 1 मई",
+      "3 May / 3 मई",
+      "8 May / 8 मई",
+      "31 May / 31 मई"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8834
+  },
+  {
+    "question": "World Press Freedom Day is observed annually on: / 'विश्व प्रेस स्वतंत्रता दिवस' प्रतिवर्ष किस तारीख को मनाया जाता है?",
+    "options": [
+      "3 May / 3 मई",
+      "8 May / 8 मई",
+      "15 September / 15 सितंबर",
+      "10 December / 10 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8835
+  },
+  {
+    "question": "World Red Cross Day is celebrated on 8 May to mark the birth anniversary of: / 8 मई को 'विश्व रेड क्रॉस दिवस' किसकी जयंती पर मनाया जाता है?",
+    "options": [
+      "Henry Dunant (Founder of Red Cross) / हेनरी ड्यूनेंट",
+      "Florence Nightingale / फ्लोरेंस नाइटिंगेल",
+      "Louis Pasteur / लुई पाश्चर",
+      "Mother Teresa / मदर टेरेसा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8836
+  },
+  {
+    "question": "National Technology Day is celebrated on 11 May in India to commemorate: / भारत में 11 मई को 'राष्ट्रीय प्रौद्योगिकी दिवस' किसकी स्मृति में मनाया जाता है?",
+    "options": [
+      "Pokhran-II Nuclear Tests (Operation Shakti) in 1998 / 1998 में पोखरण-II परमाणु परीक्षण (ऑपरेशन शक्ति)",
+      "First satellite launch / प्रथम उपग्रह प्रक्षेपण",
+      "Establishment of DRDO / डीआरडीओ की स्थापना",
+      "Establishment of ISRO / इसरो की स्थापना"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8837
+  },
+  {
+    "question": "International Nurses Day is observed globally on 12 May on the birth anniversary of: / 12 मई को 'अंतर्राष्ट्रीय नर्स दिवस' किसकी जयंती के उपलक्ष्य में मनाया जाता है?",
+    "options": [
+      "Florence Nightingale ('The Lady with the Lamp') / फ्लोरेंस नाइटिंगेल",
+      "Clara Barton / क्लारा बार्टन",
+      "Mother Teresa / मदर टेरेसा",
+      "Sarojini Naidu / सरोजिनी नायडू"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8838
+  },
+  {
+    "question": "International Day of Families is observed on: / 'अंतर्राष्ट्रीय परिवार दिवस' कब मनाया जाता है?",
+    "options": [
+      "15 May / 15 मई",
+      "18 May / 18 मई",
+      "21 May / 21 मई",
+      "1 June / 1 जून"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8839
+  },
+  {
+    "question": "World Telecommunication and Information Society Day is observed on: / विश्व दूरसंचार दिवस कब मनाया जाता है?",
+    "options": [
+      "17 May / 17 मई",
+      "21 May / 21 मई",
+      "31 May / 31 मई",
+      "24 October / 24 अक्टूबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8840
+  },
+  {
+    "question": "International Museum Day is celebrated annually on: / प्रतिवर्ष 'अंतर्राष्ट्रीय संग्रहालय दिवस' कब मनाया जाता है?",
+    "options": [
+      "18 May / 18 मई",
+      "15 May / 15 मई",
+      "21 May / 21 मई",
+      "22 May / 22 मई"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8841
+  },
+  {
+    "question": "Anti-Terrorism Day is observed in India on 21 May on the death anniversary of: / भारत में 21 मई को 'आतंकवाद विरोधी दिवस' किसकी पुण्यतिथि पर मनाया जाता है?",
+    "options": [
+      "Former PM Rajiv Gandhi / पूर्व प्रधानमंत्री राजीव गांधी",
+      "Indira Gandhi / इंदिरा गांधी",
+      "Lal Bahadur Shastri / लाल बहादुर शास्त्री",
+      "Mahatma Gandhi / महात्मा गांधी"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8842
+  },
+  {
+    "question": "International Day for Biological Diversity is observed globally on: / विश्व भर में 'अंतर्राष्ट्रीय जैव विविधता दिवस' कब मनाया जाता है?",
+    "options": [
+      "22 May / 22 मई",
+      "22 April / 22 अप्रैल",
+      "22 March / 22 मार्च",
+      "5 June / 5 जून"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8843
+  },
+  {
+    "question": "World No Tobacco Day is observed annually across the world on: / दुनिया भर में प्रतिवर्ष 'विश्व तंबाकू निषेध दिवस' कब मनाया जाता है?",
+    "options": [
+      "31 May / 31 मई",
+      "26 June / 26 जून",
+      "7 April / 7 अप्रैल",
+      "1 December / 1 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8844
+  },
+  {
+    "question": "World Environment Day is observed across the globe every year on: / दुनिया भर में प्रतिवर्ष 'विश्व पर्यावरण दिवस' किस तारीख को मनाया जाता है?",
+    "options": [
+      "5 June / 5 जून",
+      "22 April / 22 अप्रैल",
+      "21 March / 21 मार्च",
+      "16 September / 16 सितंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8845
+  },
+  {
+    "question": "World Oceans Day is celebrated on: / 'विश्व महासागर दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "8 June / 8 जून",
+      "5 June / 5 जून",
+      "22 March / 22 मार्च",
+      "14 June / 14 जून"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8846
+  },
+  {
+    "question": "World Day Against Child Labour is observed globally on: / 'विश्व बाल श्रम निषेध दिवस' वैश्विक स्तर पर कब मनाया जाता है?",
+    "options": [
+      "12 June / 12 जून",
+      "14 November / 14 नवंबर",
+      "20 November / 20 नवंबर",
+      "24 January / 24 जनवरी"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8847
+  },
+  {
+    "question": "World Blood Donor Day is celebrated on 14 June on the birthday of: / 14 जून को 'विश्व रक्तदाता दिवस' किसके जन्मदिन पर मनाया जाता है?",
+    "options": [
+      "Karl Landsteiner (Discoverer of ABO blood groups) / कार्ल लैंडस्टीनर",
+      "Louis Pasteur / लुई पाश्चर",
+      "Edward Jenner / एडवर्ड जेनर",
+      "Alexander Fleming / अलेक्जेंडर फ्लेमिंग"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8848
+  },
+  {
+    "question": "World Day to Combat Desertification and Drought is observed on: / 'विश्व मरुस्थलीकरण और सूखा रोकथाम दिवस' कब मनाया जाता है?",
+    "options": [
+      "17 June / 17 जून",
+      "5 June / 5 जून",
+      "22 April / 22 अप्रैल",
+      "21 March / 21 मार्च"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8849
+  },
+  {
+    "question": "World Refugee Day is observed globally by the United Nations on: / संयुक्त राष्ट्र द्वारा 'विश्व शरणार्थी दिवस' कब मनाया जाता है?",
+    "options": [
+      "20 June / 20 जून",
+      "21 June / 21 जून",
+      "10 December / 10 दिसंबर",
+      "24 October / 24 अक्टूबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8850
+  },
+  {
+    "question": "International Day of Yoga and World Music Day are celebrated on: / 'अंतर्राष्ट्रीय योग दिवस' और 'विश्व संगीत दिवस' दोनों किस तारीख को मनाए जाते हैं?",
+    "options": [
+      "21 June / 21 जून",
+      "23 June / 23 जून",
+      "29 June / 29 जून",
+      "5 June / 5 जून"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8851
+  },
+  {
+    "question": "International Olympic Day is celebrated every year on: / प्रतिवर्ष 'अंतर्राष्ट्रीय ओलंपिक दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "23 June / 23 जून",
+      "29 August / 29 अगस्त",
+      "21 June / 21 जून",
+      "6 April / 6 अप्रैल"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8852
+  },
+  {
+    "question": "International Day Against Drug Abuse and Illicit Trafficking is observed on: / नशीली दवाओं के दुरुपयोग और अवैध तस्करी के खिलाफ अंतर्राष्ट्रीय दिवस कब मनाया जाता है?",
+    "options": [
+      "26 June / 26 जून",
+      "31 May / 31 मई",
+      "1 December / 1 दिसंबर",
+      "7 April / 7 अप्रैल"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8853
+  },
+  {
+    "question": "National Statistics Day is celebrated on 29 June in India on the birth anniversary of: / भारत में 29 जून को 'राष्ट्रीय सांख्यिकी दिवस' किसकी जयंती पर मनाया जाता है?",
+    "options": [
+      "Prof. P.C. Mahalanobis / प्रो. पी.सी. महालनोबिस",
+      "Srinivasa Ramanujan / श्रीनिवास रामानुजन",
+      "Dr. C.R. Rao / डॉ. सी.आर. राव",
+      "Dadabhai Naoroji / दादाभाई नौरोजी"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (April to June)",
+    "subject": "static_gk",
+    "id": 8854
+  },
+  {
+    "question": "National Doctors' Day and GST Day are celebrated in India on: / भारत में 'राष्ट्रीय चिकित्सक दिवस' और 'जीएसटी दिवस' किस तारीख को मनाए जाते हैं?",
+    "options": [
+      "1 July / 1 जुलाई",
+      "11 July / 11 जुलाई",
+      "26 July / 26 जुलाई",
+      "28 July / 28 जुलाई"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8855
+  },
+  {
+    "question": "World Population Day is observed globally every year on: / दुनिया भर में प्रतिवर्ष 'विश्व जनसंख्या दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "11 July / 11 जुलाई",
+      "1 July / 1 जुलाई",
+      "15 July / 15 जुलाई",
+      "29 July / 29 जुलाई"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8856
+  },
+  {
+    "question": "World Youth Skills Day is observed annually on: / 'विश्व युवा कौशल दिवस' प्रतिवर्ष कब मनाया जाता है?",
+    "options": [
+      "15 July / 15 जुलाई",
+      "12 August / 12 अगस्त",
+      "12 January / 12 जनवरी",
+      "11 July / 11 जुलाई"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8857
+  },
+  {
+    "question": "Kargil Vijay Diwas is celebrated in India on 26 July to mark: / 26 जुलाई को भारत में 'कारगिल विजय दिवस' किस उपलक्ष्य में मनाया जाता है?",
+    "options": [
+      "Successful conclusion of Operation Vijay against infiltrators in 1999 / 1999 में ऑपरेशन विजय की ऐतिहासिक सफलता",
+      "Indo-Pak War 1971 / 1971 का भारत-पाक युद्ध",
+      "Siachen Operation Meghdoot / सियाचिन ऑपरेशन मेघदूत",
+      "Liberation of Goa / गोवा की मुक्ति"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8858
+  },
+  {
+    "question": "World Hepatitis Day is celebrated on: / 'विश्व हेपेटाइटिस दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "28 July / 28 जुलाई",
+      "29 July / 29 जुलाई",
+      "1 December / 1 दिसंबर",
+      "24 March / 24 मार्च"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8859
+  },
+  {
+    "question": "International Tiger Day (Global Tiger Day) is observed annually on: / 'अंतर्राष्ट्रीय बाघ दिवस' (Global Tiger Day) प्रतिवर्ष कब मनाया जाता है?",
+    "options": [
+      "29 July / 29 जुलाई",
+      "3 March / 3 मार्च",
+      "12 August / 12 अगस्त",
+      "4 October / 4 अक्टूबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8860
+  },
+  {
+    "question": "National Handloom Day is celebrated in India on 7 August to commemorate the: / भारत में 7 अगस्त को 'राष्ट्रीय हथकरघा दिवस' किसकी स्मृति में मनाया जाता है?",
+    "options": [
+      "Launch of the Swadeshi Movement in 1905 / 1905 में स्वदेशी आंदोलन की शुरुआत",
+      "Quit India Movement / भारत छोड़ो आंदोलन",
+      "Dandi March / दांडी मार्च",
+      "Non-Cooperation Movement / असहयोग आंदोलन"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8861
+  },
+  {
+    "question": "Quit India Movement Day (August Kranti Diwas) is observed on: / 'भारत छोड़ो आंदोलन दिवस' (अगस्त क्रांति दिवस) कब मनाया जाता है?",
+    "options": [
+      "9 August / 9 अगस्त",
+      "15 August / 15 अगस्त",
+      "7 August / 7 अगस्त",
+      "12 August / 12 अगस्त"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8862
+  },
+  {
+    "question": "International Youth Day is celebrated globally on which date? / विश्व भर में 'अंतर्राष्ट्रीय युवा दिवस' किस तारीख को मनाया जाता है?",
+    "options": [
+      "12 August / 12 अगस्त",
+      "12 January / 12 जनवरी",
+      "15 July / 15 जुलाई",
+      "29 August / 29 अगस्त"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8863
+  },
+  {
+    "question": "Sadbhavana Diwas (Harmony Day) is observed in India on 20 August on the birth anniversary of: / भारत में 20 अगस्त को 'सद्भावना दिवस' किसकी जयंती पर मनाया जाता है?",
+    "options": [
+      "Rajiv Gandhi / राजीव गांधी",
+      "Jawaharlal Nehru / जवाहरलाल नेहरू",
+      "Indira Gandhi / इंदिरा गांधी",
+      "Sardar Patel / सरदार पटेल"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8864
+  },
+  {
+    "question": "National Space Day is celebrated in India on 23 August to mark: / भारत में 23 अगस्त को 'राष्ट्रीय अंतरिक्ष दिवस' किस ऐतिहासिक घटना की स्मृति में मनाया जाता है?",
+    "options": [
+      "Successful landing of Chandrayaan-3 on the Moon's South Pole in 2023 / 2023 में चंद्रमा के दक्षिणी ध्रुव पर चंद्रयान-3 की सफल लैंडिंग",
+      "Launch of Mangalyaan / मंगलयान का प्रक्षेपण",
+      "Launch of Aryabhata in 1975 / 1975 में आर्यभट्ट का प्रक्षेपण",
+      "First spacewalk by Rakesh Sharma / राकेश शर्मा की अंतरिक्ष यात्रा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8865
+  },
+  {
+    "question": "National Sports Day (Rashtriya Khel Divas) is celebrated on 29 August in honour of: / 29 अगस्त को 'राष्ट्रीय खेल दिवस' किसके सम्मान में मनाया जाता है?",
+    "options": [
+      "Major Dhyan Chand (Hockey Wizard) / मेजर ध्यानचंद",
+      "Milkha Singh / मिल्खा सिंह",
+      "K.D. Jadhav / के.डी. जाधव",
+      "Kapil Dev / कपिल देव"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8866
+  },
+  {
+    "question": "Teachers' Day is celebrated in India on 5 September on the birth anniversary of: / भारत में 5 सितंबर को 'शिक्षक दिवस' किसकी जयंती पर मनाया जाता है?",
+    "options": [
+      "Dr. Sarvepalli Radhakrishnan / डॉ. सर्वपल्ली राधाकृष्णन",
+      "Dr. A.P.J. Abdul Kalam / डॉ. कलाम",
+      "Rabindranath Tagore / रवींद्रनाथ टैगोर",
+      "Swami Vivekananda / स्वामी विवेकानंद"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8867
+  },
+  {
+    "question": "International Literacy Day is celebrated globally on: / 'अंतर्राष्ट्रीय साक्षरता दिवस' विश्व भर में किस तारीख को मनाया जाता है?",
+    "options": [
+      "8 September / 8 सितंबर",
+      "5 September / 5 सितंबर",
+      "14 September / 14 सितंबर",
+      "11 November / 11 नवंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8868
+  },
+  {
+    "question": "National Hindi Diwas is celebrated in India every year on 14 September to mark: / भारत में प्रतिवर्ष 14 सितंबर को 'हिंदी दिवस' किस उपलक्ष्य में मनाया जाता है?",
+    "options": [
+      "Adoption of Hindi as the Official Language by Constituent Assembly in 1949 / 1949 में संविधान सभा द्वारा हिंदी को राजभाषा के रूप में स्वीकार करना",
+      "Birth anniversary of Munshi Premchand / मुंशी प्रेमचंद की जयंती",
+      "First Hindi Sahitya Sammelan / प्रथम हिंदी साहित्य सम्मेलन",
+      "Republic Day / गणतंत्र दिवस"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8869
+  },
+  {
+    "question": "Engineers' Day is celebrated in India on 15 September on the birth anniversary of: / भारत में 15 सितंबर को 'अभियंता दिवस' (Engineers' Day) किसकी जयंती पर मनाया जाता है?",
+    "options": [
+      "Sir M. Visvesvaraya / सर एम. विश्वेश्वरैया",
+      "Dr. E. Sreedharan / डॉ. ई. श्रीधरन",
+      "Satish Dhawan / सतीश धवन",
+      "Vikram Sarabhai / विक्रम साराभाई"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8870
+  },
+  {
+    "question": "International Day of Democracy is observed globally on: / 'अंतर्राष्ट्रीय लोकतंत्र दिवस' कब मनाया जाता है?",
+    "options": [
+      "15 September / 15 सितंबर",
+      "21 September / 21 सितंबर",
+      "24 October / 24 अक्टूबर",
+      "10 December / 10 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8871
+  },
+  {
+    "question": "International Day of Peace is celebrated globally on: / 'अंतर्राष्ट्रीय शांति दिवस' विश्व स्तर पर कब मनाया जाता है?",
+    "options": [
+      "21 September / 21 सितंबर",
+      "2 October / 2 अक्टूबर",
+      "24 October / 24 अक्टूबर",
+      "10 December / 10 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8872
+  },
+  {
+    "question": "World Tourism Day is observed annually on: / प्रतिवर्ष 'विश्व पर्यटन दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "27 September / 27 सितंबर",
+      "25 January / 25 जनवरी",
+      "29 September / 29 सितंबर",
+      "8 September / 8 सितंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8873
+  },
+  {
+    "question": "World Heart Day is celebrated on: / 'विश्व हृदय दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "29 September / 29 सितंबर",
+      "7 April / 7 अप्रैल",
+      "1 December / 1 दिसंबर",
+      "28 July / 28 जुलाई"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (July to September)",
+    "subject": "static_gk",
+    "id": 8874
+  },
+  {
+    "question": "International Day of Non-Violence and Gandhi Jayanti are celebrated on: / 'अंतर्राष्ट्रीय अहिंसा दिवस' और 'गांधी जयंती' किस तारीख को मनाए जाते हैं?",
+    "options": [
+      "2 October / 2 अक्टूबर",
+      "30 January / 30 जनवरी",
+      "24 October / 24 अक्टूबर",
+      "14 November / 14 नवंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8875
+  },
+  {
+    "question": "World Teachers' Day is celebrated globally on which date? / 'विश्व शिक्षक दिवस' विश्व भर में किस तारीख को मनाया जाता है?",
+    "options": [
+      "5 October / 5 अक्टूबर",
+      "5 September / 5 सितंबर",
+      "11 November / 11 नवंबर",
+      "8 September / 8 सितंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8876
+  },
+  {
+    "question": "Indian Air Force (IAF) Day is celebrated annually on: / 'भारतीय वायु सेना दिवस' प्रतिवर्ष कब मनाया जाता है?",
+    "options": [
+      "8 October / 8 अक्टूबर",
+      "15 January / 15 जनवरी",
+      "4 December / 4 दिसंबर",
+      "26 July / 26 जुलाई"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8877
+  },
+  {
+    "question": "World Post Day is observed across the world on: / दुनिया भर में 'विश्व डाक दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "9 October / 9 अक्टूबर",
+      "10 October / 10 अक्टूबर",
+      "16 October / 16 अक्टूबर",
+      "24 October / 24 अक्टूबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8878
+  },
+  {
+    "question": "World Mental Health Day is observed on: / 'विश्व मानसिक स्वास्थ्य दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "10 October / 10 अक्टूबर",
+      "7 April / 7 अप्रैल",
+      "1 December / 1 दिसंबर",
+      "14 November / 14 नवंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8879
+  },
+  {
+    "question": "International Day of the Girl Child is celebrated globally on: / वैश्विक स्तर पर 'अंतर्राष्ट्रीय बालिका दिवस' कब मनाया जाता है?",
+    "options": [
+      "11 October / 11 अक्टूबर",
+      "24 January / 24 जनवरी",
+      "8 March / 8 मार्च",
+      "14 November / 14 नवंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8880
+  },
+  {
+    "question": "World Food Day is celebrated on 16 October to mark the founding of which UN agency? / 16 अक्टूबर को 'विश्व खाद्य दिवस' किस संयुक्त राष्ट्र एजेंसी की स्थापना की स्मृति में मनाया जाता है?",
+    "options": [
+      "Food and Agriculture Organization (FAO) in 1945 / खाद्य एवं कृषि संगठन (FAO)",
+      "World Health Organization (WHO) / विश्व स्वास्थ्य संगठन",
+      "World Food Programme (WFP) / विश्व खाद्य कार्यक्रम",
+      "UNICEF / यूनिसेफ"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8881
+  },
+  {
+    "question": "United Nations Day (UN Day) is observed on 24 October to commemorate the: / 24 अक्टूबर को 'संयुक्त राष्ट्र दिवस' किस उपलक्ष्य में मनाया जाता है?",
+    "options": [
+      "Enforcement of the UN Charter in 1945 / 1945 में संयुक्त राष्ट्र चार्टर का प्रभावी होना",
+      "Universal Declaration of Human Rights / मानवाधिकारों की सार्वभौमिक घोषणा",
+      "End of World War I / प्रथम विश्व युद्ध का अंत",
+      "First General Assembly meeting / पहली महासभा बैठक"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8882
+  },
+  {
+    "question": "National Unity Day (Rashtriya Ekta Diwas) is celebrated on 31 October in honour of: / 31 अक्टूबर को 'राष्ट्रीय एकता दिवस' किसकी जयंती के अवसर पर मनाया जाता है?",
+    "options": [
+      "Sardar Vallabhbhai Patel / सरदार वल्लभभाई पटेल",
+      "Indira Gandhi / इंदिरा गांधी",
+      "Subhas Chandra Bose / सुभाष चंद्र बोस",
+      "Dr. B.R. Ambedkar / डॉ. बी.आर. आंबेडकर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8883
+  },
+  {
+    "question": "National Cancer Awareness Day is observed in India on: / भारत में 'राष्ट्रीय कैंसर जागरूकता दिवस' कब मनाया जाता है?",
+    "options": [
+      "7 November / 7 नवंबर",
+      "4 February / 4 फरवरी",
+      "14 November / 14 नवंबर",
+      "1 December / 1 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8884
+  },
+  {
+    "question": "National Legal Services Day is observed in India on: / भारत में 'राष्ट्रीय विधिक सेवा दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "9 November / 9 नवंबर",
+      "26 November / 26 नवंबर",
+      "10 December / 10 दिसंबर",
+      "15 March / 15 मार्च"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8885
+  },
+  {
+    "question": "World Science Day for Peace and Development is celebrated on: / 'शांति और विकास के लिए विश्व विज्ञान दिवस' कब मनाया जाता है?",
+    "options": [
+      "10 November / 10 नवंबर",
+      "28 February / 28 फरवरी",
+      "11 May / 11 मई",
+      "24 October / 24 अक्टूबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8886
+  },
+  {
+    "question": "National Education Day is celebrated in India on 11 November on the birth anniversary of: / भारत में 11 नवंबर को 'राष्ट्रीय शिक्षा दिवस' किसकी जयंती पर मनाया जाता है?",
+    "options": [
+      "Maulana Abul Kalam Azad (India's First Education Minister) / मौलाना अबुल कलाम आज़ाद",
+      "Dr. Sarvepalli Radhakrishnan / डॉ. सर्वपल्ली राधाकृष्णन",
+      "Dr. Zakir Husain / डॉ. ज़ाकिर हुसैन",
+      "Dr. A.P.J. Abdul Kalam / डॉ. कलाम"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8887
+  },
+  {
+    "question": "Children's Day and World Diabetes Day are both celebrated on: / 'बाल दिवस' और 'विश्व मधुमेह दिवस' दोनों किस तिथि को मनाए जाते हैं?",
+    "options": [
+      "14 November / 14 नवंबर",
+      "20 November / 20 नवंबर",
+      "24 January / 24 जनवरी",
+      "26 December / 26 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8888
+  },
+  {
+    "question": "World Toilet Day and International Men's Day are both observed on: / 'विश्व शौचालय दिवस' और 'अंतर्राष्ट्रीय पुरुष दिवस' दोनों किस तारीख को मनाए जाते हैं?",
+    "options": [
+      "19 November / 19 नवंबर",
+      "14 November / 14 नवंबर",
+      "20 November / 20 नवंबर",
+      "26 November / 26 नवंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8889
+  },
+  {
+    "question": "World Children's Day (Universal Children's Day) is celebrated by the UN on: / संयुक्त राष्ट्र द्वारा 'विश्व बाल दिवस' कब मनाया जाता है?",
+    "options": [
+      "20 November / 20 नवंबर",
+      "14 November / 14 नवंबर",
+      "24 January / 24 जनवरी",
+      "11 October / 11 अक्टूबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8890
+  },
+  {
+    "question": "Constitution Day (Samvidhan Divas) and National Milk Day are both celebrated in India on: / भारत में 'संविधान दिवस' और 'राष्ट्रीय दुग्ध दिवस' दोनों किस दिन मनाए जाते हैं?",
+    "options": [
+      "26 November / 26 नवंबर",
+      "26 January / 26 जनवरी",
+      "15 August / 15 अगस्त",
+      "2 October / 2 अक्टूबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8891
+  },
+  {
+    "question": "World AIDS Day is observed globally on: / विश्व भर में 'विश्व एड्स दिवस' किस तारीख को मनाया जाता है?",
+    "options": [
+      "1 December / 1 दिसंबर",
+      "4 December / 4 दिसंबर",
+      "10 December / 10 दिसंबर",
+      "25 December / 25 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8892
+  },
+  {
+    "question": "National Pollution Control Day is observed in India on 2 December in memory of the: / भारत में 2 दिसंबर को 'राष्ट्रीय प्रदूषण नियंत्रण दिवस' किसकी स्मृति में मनाया जाता है?",
+    "options": [
+      "Bhopal Gas Tragedy (1984) victims / भोपाल गैस त्रासदी (1984) के मृतकों की स्मृति में",
+      "Chipko Movement / चिपको आंदोलन",
+      "Swachh Bharat Abhiyan / स्वच्छ भारत अभियान",
+      "Ganga Action Plan / गंगा एक्शन प्लान"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8893
+  },
+  {
+    "question": "International Day of Persons with Disabilities is observed on: / 'अंतर्राष्ट्रीय दिव्यांगजन दिवस' कब मनाया जाता है?",
+    "options": [
+      "3 December / 3 दिसंबर",
+      "10 December / 10 दिसंबर",
+      "1 December / 1 दिसंबर",
+      "7 December / 7 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8894
+  },
+  {
+    "question": "Indian Navy Day is celebrated on 4 December to commemorate: / 4 दिसंबर को 'भारतीय नौसेना दिवस' किस उपलक्ष्य में मनाया जाता है?",
+    "options": [
+      "Operation Trident against Karachi port in 1971 / 1971 के युद्ध में 'ऑपरेशन ट्राइडेंट'",
+      "Liberation of Goa / गोवा मुक्ति संग्राम",
+      "Establishment of Navy / नौसेना की स्थापना",
+      "Commissioning of INS Vikrant / आईएनएस विक्रांत का जलावतरण"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8895
+  },
+  {
+    "question": "World Soil Day is celebrated annually on: / प्रतिवर्ष 'विश्व मृदा दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "5 December / 5 दिसंबर",
+      "22 April / 22 अप्रैल",
+      "5 June / 5 जून",
+      "23 December / 23 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8896
+  },
+  {
+    "question": "Armed Forces Flag Day is observed in India on: / भारत में 'सशस्त्र सेना झंडा दिवस' कब मनाया जाता है?",
+    "options": [
+      "7 December / 7 दिसंबर",
+      "15 January / 15 जनवरी",
+      "8 October / 8 अक्टूबर",
+      "4 December / 4 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8897
+  },
+  {
+    "question": "International Anti-Corruption Day is observed globally on: / विश्व भर में 'अंतर्राष्ट्रीय भ्रष्टाचार विरोधी दिवस' कब मनाया जाता है?",
+    "options": [
+      "9 December / 9 दिसंबर",
+      "10 December / 10 दिसंबर",
+      "1 December / 1 दिसंबर",
+      "24 October / 24 अक्टूबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8898
+  },
+  {
+    "question": "Human Rights Day is celebrated across the world on 10 December to mark: / 10 दिसंबर को दुनिया भर में 'मानवाधिकार दिवस' किस उपलक्ष्य में मनाया जाता है?",
+    "options": [
+      "Adoption of the Universal Declaration of Human Rights (UDHR) in 1948 / 1948 में मानवाधिकारों की सार्वभौमिक घोषणा",
+      "End of Apartheid in South Africa / रंगभेद की समाप्ति",
+      "Geneva Convention / जिनेवा कन्वेंशन",
+      "Establishment of the UN / संयुक्त राष्ट्र की स्थापना"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8899
+  },
+  {
+    "question": "National Energy Conservation Day is celebrated in India on: / भारत में 'राष्ट्रीय ऊर्जा संरक्षण दिवस' कब मनाया जाता है?",
+    "options": [
+      "14 December / 14 दिसंबर",
+      "16 December / 16 दिसंबर",
+      "22 December / 22 दिसंबर",
+      "5 June / 5 जून"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8900
+  },
+  {
+    "question": "Vijay Diwas is celebrated on 16 December to commemorate India's victory over Pakistan in: / 16 दिसंबर को 'विजय दिवस' भारत की किस युद्ध में विजय की स्मृति में मनाया जाता है?",
+    "options": [
+      "1971 Indo-Pak War leading to liberation of Bangladesh / 1971 का भारत-पाक युद्ध (बांग्लादेश की मुक्ति)",
+      "1999 Kargil War / 1999 कारगिल युद्ध",
+      "1965 War / 1965 का युद्ध",
+      "1962 War / 1962 का युद्ध"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8901
+  },
+  {
+    "question": "National Mathematics Day is celebrated in India on 22 December on the birth anniversary of: / भारत में 22 दिसंबर को 'राष्ट्रीय गणित दिवस' किसकी जयंती पर मनाया जाता है?",
+    "options": [
+      "Srinivasa Ramanujan / श्रीनिवास रामानुजन",
+      "Aryabhata / आर्यभट्ट",
+      "Brahmagupta / ब्रह्मगुप्त",
+      "Shakuntala Devi / शकुंतला देवी"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8902
+  },
+  {
+    "question": "National Farmers' Day (Kisan Diwas) is observed on 23 December in honour of the birth anniversary of: / 23 दिसंबर को 'राष्ट्रीय किसान दिवस' किसकी जयंती के अवसर पर मनाया जाता है?",
+    "options": [
+      "Chaudhary Charan Singh (5th Prime Minister of India) / चौधरी चरण सिंह",
+      "Lal Bahadur Shastri / लाल बहादुर शास्त्री",
+      "M.S. Swaminathan / एम.एस. स्वामीनाथन",
+      "Chaudhary Devi Lal / चौधरी देवी लाल"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8903
+  },
+  {
+    "question": "National Consumer Day is celebrated in India on: / भारत में 'राष्ट्रीय उपभोक्ता दिवस' किस दिन मनाया जाता है?",
+    "options": [
+      "24 December / 24 दिसंबर",
+      "15 March / 15 मार्च",
+      "25 December / 25 दिसंबर",
+      "26 December / 26 दिसंबर"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8904
+  },
+  {
+    "question": "Good Governance Day is celebrated on 25 December to mark the birth anniversary of: / 25 दिसंबर को 'सुशासन दिवस' (Good Governance Day) किसकी जयंती पर मनाया जाता है?",
+    "options": [
+      "Atal Bihari Vajpayee / अटल बिहारी वाजपेयी",
+      "P.V. Narasimha Rao / पी.वी. नरसिम्हा राव",
+      "Morarji Desai / मोरारजी देसाई",
+      "Dr. A.P.J. Abdul Kalam / डॉ. कलाम"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8905
+  },
+  {
+    "question": "Veer Baal Diwas is celebrated in India on 26 December to commemorate the martyrdom of: / 26 दिसंबर को 'वीर बाल दिवस' किनके बलिदान की स्मृति में मनाया जाता है?",
+    "options": [
+      "Sahibzadas Zorawar Singh and Fateh Singh (sons of Guru Gobind Singh Ji) / साहिबजादा जोरावर सिंह और फतेह सिंह",
+      "Bhagat Singh / भगत सिंह",
+      "Baji Rout / बाजी राउत",
+      "Khudiram Bose / खुदीराम बोस"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Important Days & Dates (October to December)",
+    "subject": "static_gk",
+    "id": 8906
+  },
+  {
+    "question": "Which state celebrates the harvest festival 'Baisakhi' to mark the ripening of the rabi crop? / रबी की फसल पकने के उपलक्ष्य में 'बैसाखी' फसल उत्सव किस राज्य में मनाया जाता है?",
+    "options": [
+      "Punjab / पंजाब",
+      "Assam / असम",
+      "Kerala / केरल",
+      "Odisha / ओडिशा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Baisakhi is the major harvest festival of Punjab and Haryana, celebrated in April to mark the rabi harvest and the founding of the Khalsa Panth in 1699. / बैसाखी पंजाब और हरियाणा का प्रमुख फसल उत्सव है, जो रबी फसल की कटाई और 1699 में खालसा पंथ की स्थापना का प्रतीक है।",
+    "id": 9001
+  },
+  {
+    "question": "Which festival is celebrated as the harvest festival of Assam in the month of January? / जनवरी के महीने में असम के फसल उत्सव के रूप में कौन-सा त्यौहार मनाया जाता है?",
+    "options": [
+      "Bhogali Bihu (Magh Bihu) / भोगाली बिहू (माघ बिहू)",
+      "Bohag Bihu / बोहाग बिहू",
+      "Kati Bihu / काटी बिहू",
+      "Wangala / वांगला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Bhogali Bihu (also known as Magh Bihu) is celebrated in mid-January to celebrate the harvest of crops with feasts, bonfires (Meji), and traditional rice cakes. / भोगाली बिहू (माघ बिहू) मध्य जनवरी में फसल की कटाई की खुशी में मेजी (अलाव) और दावतों के साथ मनाया जाता है।",
+    "id": 9002
+  },
+  {
+    "question": "'Pongal' is a four-day harvest festival celebrated in which Indian state? / 'पोंगल' चार दिवसीय फसल उत्सव किस भारतीय राज्य में मनाया जाता है?",
+    "options": [
+      "Tamil Nadu / तमिलनाडु",
+      "Kerala / केरल",
+      "Karnataka / कर्नाटक",
+      "Andhra Pradesh / आंध्र प्रदेश"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Pongal is dedicated to the Sun God (Surya) and marks the auspicious harvest in Tamil Nadu. Its four days are Bhogi, Surya Pongal, Mattu Pongal, and Kaanum Pongal. / पोंगल तमिलनाडु में सूर्य देव को समर्पित 4 दिवसीय फसल उत्सव है (भोगी, सूर्य पोंगल, मट्टू पोंगल और कानुम पोंगल)।",
+    "id": 9003
+  },
+  {
+    "question": "'Onam', celebrated with grand feasts (Onasadya) and flower rangolis (Pookkalam), is the harvest festival of which state? / ओणम, जो भव्य भोज (ओणसद्या) और फूलों की रंगोली (पूकलम) के साथ मनाया जाता है, किस राज्य का फसल उत्सव है?",
+    "options": [
+      "Kerala / केरल",
+      "Tamil Nadu / तमिलनाडु",
+      "Karnataka / कर्नाटक",
+      "Goa / गोवा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Onam is the official state harvest festival of Kerala celebrating the homecoming of mythical King Mahabali. / ओणम केरल का प्रमुख फसल उत्सव है, जो राजा महाबली की घर वापसी के स्वागत में मनाया जाता है।",
+    "id": 9004
+  },
+  {
+    "question": "Which harvest festival is celebrated across India under different names like Uttarayan, Pongal, and Maghi in mid-January? / मध्य जनवरी में पूरे भारत में उत्तरायण, पोंगल और माघी जैसे विभिन्न नामों से कौन-सा फसल उत्सव मनाया जाता है?",
+    "options": [
+      "Makar Sankranti / मकर संक्रांति",
+      "Baisakhi / बैसाखी",
+      "Lohri / लोहड़ी",
+      "Gudi Padwa / गुड़ी पड़वा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Makar Sankranti marks the transition of the Sun into the zodiac sign of Capricorn (Makara) and the onset of longer days across India. / मकर संक्रांति सूर्य के मकर राशि में प्रवेश और फसल कटाई के उपलक्ष्य में पूरे देश में मनाई जाती है।",
+    "id": 9005
+  },
+  {
+    "question": "'Nuakhai' is an agrarian harvest festival celebrated predominantly in which Indian state? / 'नुआखाई' कृषि फसल उत्सव मुख्य रूप से किस भारतीय राज्य में मनाया जाता है?",
+    "options": [
+      "Odisha / ओडिशा",
+      "Jharkhand / झारखंड",
+      "West Bengal / पश्चिम बंगाल",
+      "Chhattisgarh / छत्तीसगढ़"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Nuakhai is celebrated in Western Odisha to welcome the newly harvested rice crop ('Nua' means new and 'Khai' means food). / नुआखाई पश्चिमी ओडिशा में नई कटी धान की फसल के स्वागत में मनाया जाने वाला प्रमुख कृषि पर्व है।",
+    "id": 9006
+  },
+  {
+    "question": "Which bonfire festival is celebrated in Punjab on the night before Makar Sankranti to mark the end of peak winter and rabi harvest? / पंजाब में मकर संक्रांति की पूर्व संध्या पर भीषण सर्दी के समापन और रबी फसल के उपलक्ष्य में कौन-सा अलाव उत्सव मनाया जाता है?",
+    "options": [
+      "Lohri / लोहड़ी",
+      "Baisakhi / बैसाखी",
+      "Teeyan / तीयां",
+      "Hola Mohalla / होला मोहल्ला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Lohri is celebrated on 13 January in Punjab with bonfires, popcorn, jaggery, and folk songs. / लोहड़ी 13 जनवरी को पंजाब में अलाव जलाकर, तिल-गुड़ खाकर और लोकगीतों के साथ मनाई जाती है।",
+    "id": 9007
+  },
+  {
+    "question": "'Nabanna' is a traditional autumn harvest festival celebrated with new rice preparations in which state? / नए चावल के व्यंजनों के साथ मनाया जाने वाला पारंपरिक शरद कालीन फसल उत्सव 'नबन्ना' किस राज्य में मनाया जाता है?",
+    "options": [
+      "West Bengal / पश्चिम बंगाल",
+      "Assam / असम",
+      "Odisha / ओडिशा",
+      "Tripura / त्रिपुरा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Nabanna (meaning 'new food') is celebrated in West Bengal and Bangladesh to celebrate the Aman paddy harvest. / नबन्ना पश्चिम बंगाल में अमन धान की नई फसल आने पर 'नवान्न' भोज के साथ मनाया जाता है।",
+    "id": 9008
+  },
+  {
+    "question": "'Vishu', celebrated with 'Vishukkani' (auspicious viewing) and fireworks, marks the astronomical new year and harvest in which state? / 'विशु' किस राज्य का खगोलीय नववर्ष और फसल पर्व है, जिसमें 'विशुकणि' दर्शन किए जाते हैं?",
+    "options": [
+      "Kerala / केरल",
+      "Andhra Pradesh / आंध्र प्रदेश",
+      "Tamil Nadu / तमिलनाडु",
+      "Karnataka / कर्नाटक"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Vishu is the traditional spring and astrological new year festival celebrated in Kerala and Mahe. / विशु केरल का पारंपरिक वसंत नववर्ष पर्व है जिसमें भगवान कृष्ण के सामने विशुकणि सजाई जाती है।",
+    "id": 9009
+  },
+  {
+    "question": "'Wangala' is the post-harvest Thanksgiving festival celebrated by which tribal community in Meghalaya? / मेघालय के किस जनजातीय समुदाय द्वारा फसल कटाई के बाद धन्यवाद पर्व 'वांगला' मनाया जाता है?",
+    "options": [
+      "Garo tribe / गारो जनजाति",
+      "Khasi tribe / खासी जनजाति",
+      "Jaintia tribe / जयंतिया जनजाति",
+      "Mizo tribe / मिजो जनजाति"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Wangala is the post-harvest festival of the Garo tribe in Meghalaya, dedicated to Misi Saljong (the Sun God of fertility). / वांगला मेघालय की गारो जनजाति का फसल कटाई के बाद का पर्व है जो सूर्य देव 'मिसी सालजोंग' को समर्पित है।",
+    "id": 9010
+  },
+  {
+    "question": "'Ka Pomblang Nongkrem' (Nongkrem Dance Festival) is a 5-day harvest Thanksgiving festival of which tribe in Meghalaya? / 'का पोमब्लांग नोंगक्रेम' मेघालय की किस जनजाति का 5 दिवसीय फसल धन्यवाद उत्सव है?",
+    "options": [
+      "Khasi tribe / खासी जनजाति",
+      "Garo tribe / गारो जनजाति",
+      "Lepcha tribe / लेप्चा जनजाति",
+      "Chakma tribe / चकमा जनजाति"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Ka Pomblang Nongkrem is celebrated by the Khasi people at Smit, Meghalaya, for harvest prosperity and peace. / का पोमब्लांग नोंगक्रेम मेघालय की खासी जनजाति द्वारा स्मिट में अच्छी फसल और शांति के लिए मनाया जाता है।",
+    "id": 9011
+  },
+  {
+    "question": "'Gudi Padwa' is celebrated as the traditional New Year and harvest day in which state? / 'गुड़ी पड़वा' को किस राज्य में पारंपरिक नववर्ष और फसल दिवस के रूप में मनाया जाता है?",
+    "options": [
+      "Maharashtra / महाराष्ट्र",
+      "Gujarat / गुजरात",
+      "Rajasthan / राजस्थान",
+      "Madhya Pradesh / मध्य प्रदेश"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Gudi Padwa marks the beginning of the Chaitra Navratri and the Marathi New Year, where victory flags (Gudi) are hoisted outside homes. / गुड़ी पड़वा महाराष्ट्र का पारंपरिक मराठी नववर्ष है, जिसमें घरों के बाहर विजय पताका (गुड़ी) लगाई जाती है।",
+    "id": 9012
+  },
+  {
+    "question": "Which festival is celebrated in Jharkhand where the Sal tree is worshipped by the Munda, Oraon, and Ho tribes? / झारखंड में कौन-सा त्यौहार मनाया जाता है जिसमें मुंडा, उरांव और हो जनजातियों द्वारा साल वृक्ष की पूजा की जाती है?",
+    "options": [
+      "Sarhul / सरहुल",
+      "Karma / करमा",
+      "Sohrai / सोहराय",
+      "Bhagoria / भगोरिया"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Sarhul is the most important tribal spring and nature festival in Jharkhand where Sal tree flowers (Sarai) are worshipped. / सरहुल झारखंड का प्रमुख प्रकृति पर्व है जिसमें साल (सखुआ) के फूलों की पूजा की जाती है।",
+    "id": 9013
+  },
+  {
+    "question": "'Chhath Puja', dedicated to the Sun God and Chhathi Maiya, is the most revered folk festival of which state? / सूर्य देव और छठी मइया को समर्पित 'छठ पूजा' किस राज्य का सबसे पावन लोकपर्व है?",
+    "options": [
+      "Bihar / बिहार",
+      "Assam / असम",
+      "Odisha / ओडिशा",
+      "Haryana / हरियाणा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Chhath Puja is a four-day ancient festival of Bihar, eastern UP, and Jharkhand featuring rigorous fasting and offering Arghya to the rising and setting Sun. / छठ पूजा बिहार और पूर्वांचल का चार दिवसीय महापर्व है जिसमें अस्ताचलगामी और उदीयमान सूर्य को अर्घ्य दिया जाता है।",
+    "id": 9014
+  },
+  {
+    "question": "'Gangaur' and 'Teej' are two of the most colorful traditional festivals celebrated with great devotion in which state? / 'गणगौर' और 'तीज' किस राज्य में अत्यधिक भक्ति और उल्लास के साथ मनाए जाने वाले पारंपरिक त्यौहार हैं?",
+    "options": [
+      "Rajasthan / राजस्थान",
+      "Gujarat / गुजरात",
+      "Punjab / पंजाब",
+      "Haryana / हरियाणा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Gangaur (dedicated to Gauri/Parvati and Shiva) and Teej are major traditional women's festivals of Rajasthan. / गणगौर (माता पार्वती और भगवान शिव को समर्पित) और तीज राजस्थान के प्रमुख सांस्कृतिक पर्व हैं।",
+    "id": 9015
+  },
+  {
+    "question": "The world-famous 'Rath Yatra' (Chariot Festival) of Lord Jagannath, Balabhadra, and Subhadra takes place at which historic city? / भगवान जगन्नाथ, बलभद्र और सुभद्रा की विश्वप्रसिद्ध 'रथयात्रा' किस ऐतिहासिक शहर में आयोजित की जाती है?",
+    "options": [
+      "Puri, Odisha / पुरी, ओडिशा",
+      "Konark, Odisha / कोणार्क, ओडिशा",
+      "Varanasi, UP / वाराणसी, उप्र",
+      "Tirupati, AP / तिरुपति, आंध्रा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Puri Rath Yatra is held annually in Odisha where millions pull the massive wooden chariots Nandighosa, Taladhwaja, and Darpadalana to Gundicha Temple. / पुरी रथयात्रा ओडिशा के पुरी में आयोजित की जाती है जहाँ भगवान जगन्नाथ गुंडिचा मंदिर जाते हैं।",
+    "id": 9016
+  },
+  {
+    "question": "'Kullu Dussehra', famous for its week-long international congregation of village deities, is celebrated in which state? / 'कुल्लू दशहरा', जो ग्राम देवताओं के सप्ताह भर चलने वाले भव्य समागम के लिए प्रसिद्ध है, किस राज्य में मनाया जाता है?",
+    "options": [
+      "Himachal Pradesh / हिमाचल प्रदेश",
+      "Uttarakhand / उत्तराखंड",
+      "Jammu & Kashmir / जम्मू व कश्मीर",
+      "Punjab / पंजाब"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Kullu Dussehra in Himachal Pradesh begins on Vijayadashami day at Dhalpur Maidan with the procession of Lord Raghunath and hundreds of local devtas. / कुल्लू दशहरा हिमाचल प्रदेश के ढालपुर मैदान में विजयदशमी से शुरू होकर 7 दिनों तक चलता है।",
+    "id": 9017
+  },
+  {
+    "question": "'Losar' is celebrated as the traditional New Year festival in which Indian region? / 'लोसार' किस भारतीय क्षेत्र में पारंपरिक नववर्ष उत्सव के रूप में मनाया जाता है?",
+    "options": [
+      "Ladakh & Tibetan Buddhist regions / लद्दाख व तिब्बती बौद्ध क्षेत्र",
+      "Kerala / केरल",
+      "Gujarat / गुजरात",
+      "Tamil Nadu / तमिलनाडु"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Losar marks the Tibetan Buddhist New Year and is celebrated with illuminations (Metho), prayer flags, and dances in Ladakh, Sikkim, and Arunachal Pradesh. / लोसार लद्दाख, सिक्किम और अरुणाचल प्रदेश में तिब्बती बौद्ध नववर्ष के रूप में मनाया जाता है।",
+    "id": 9018
+  },
+  {
+    "question": "'Ugadi' marks the first day of the Chaitra month and New Year in which states? / 'उगादि' किन राज्यों में चैत्र मास के पहले दिन नववर्ष के रूप में मनाया जाता है?",
+    "options": [
+      "Karnataka, Andhra Pradesh & Telangana / कर्नाटक, आंध्र प्रदेश व तेलंगाना",
+      "Kerala & Tamil Nadu / केरल व तमिलनाडु",
+      "Maharashtra & Goa / महाराष्ट्र व गोवा",
+      "Punjab & Haryana / पंजाब व हरियाणा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Ugadi (Yugadi, meaning start of an era) is the New Year festival celebrated with 'Bevu-Bella' (bitter neem and sweet jaggery mixture). / उगादि कर्नाटक, आंध्र प्रदेश और तेलंगाना में 'बेवु-बेल्ला' (नीम-गुड़ का प्रसाद) बांटकर मनाया जाता है।",
+    "id": 9019
+  },
+  {
+    "question": "'Bonalu' is a traditional Hindu festival dedicated to Goddess Mahakali celebrated in the twin cities of Hyderabad and Secunderabad in which state? / 'बोनालु' देवी महाकाली को समर्पित एक पारंपरिक हिंदू त्यौहार है जो हैदराबाद-सिकंदराबाद (तेलंगाना) में मनाया जाता है?",
+    "options": [
+      "Telangana / तेलंगाना",
+      "Andhra Pradesh / आंध्र प्रदेश",
+      "Tamil Nadu / तमिलनाडु",
+      "Karnataka / कर्नाटक"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Bonalu is celebrated in Ashada month in Telangana where women carry brass pots decorated with neem and turmeric (Bonam) as offerings to Goddess Mahakali. / बोनालु तेलंगाना का राज्य उत्सव है जिसमें महिलाएं सिर पर सजे कलश (बोनम) लेकर महाकाली के मंदिरों में जाती हैं।",
+    "id": 9020
+  },
+  {
+    "question": "'Chapchar Kut' is the grandest spring festival celebrated after clearing jhum bamboo forests by which tribal state? / झूम बांस के जंगलों को साफ करने के बाद मनाया जाने वाला सबसे भव्य वसंत उत्सव 'चापचार कुट' किस राज्य का है?",
+    "options": [
+      "Mizoram / मिजोरम",
+      "Nagaland / नागालैंड",
+      "Meghalaya / मेघालय",
+      "Arunachal Pradesh / अरुणाचल प्रदेश"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Chapchar Kut is the biggest festival of the Mizo people, celebrated in March with the famous Cheraw (bamboo dance). / चापचार कुट मिजोरम का सबसे बड़ा वसंत उत्सव है जिसमें चेराव (बांस नृत्य) किया जाता है।",
+    "id": 9021
+  },
+  {
+    "question": "'Sangai Festival' is an annual state tourism and cultural extravaganza celebrated in which northeastern state? / 'शंघाई महोत्सव' किस पूर्वोत्तर राज्य में आयोजित होने वाला एक वार्षिक राजकीय पर्यटन एवं सांस्कृतिक उत्सव है?",
+    "options": [
+      "Manipur / मणिपुर",
+      "Mizoram / मिजोरम",
+      "Nagaland / नागालैंड",
+      "Tripura / त्रिपुरा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Named after the state animal brow-antlered deer (Sangai), the Sangai Festival is celebrated every November in Manipur. / शंघाई महोत्सव मणिपुर के राज्य पशु शंघाई हिरण के नाम पर हर साल नवंबर में मणिपुर में मनाया जाता है।",
+    "id": 9022
+  },
+  {
+    "question": "'Kharchi Puja' is an ancient festival honoring 14 ancestral deities celebrated in which northeastern state? / 14 कुलदेवताओं की पूजा करने वाला प्राचीन उत्सव 'खारची पूजा' किस पूर्वोत्तर राज्य में मनाया जाता है?",
+    "options": [
+      "Tripura / त्रिपुरा",
+      "Assam / असम",
+      "Manipur / मणिपुर",
+      "Nagaland / नागालैंड"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Kharchi Puja is held at Old Agartala, Tripura, in July to worship the Fourteen Gods (Chaturdasha Devata). / खारची पूजा त्रिपुरा के पुराने अगरतला में 14 देवताओं (चतुर्दश देवता) की स्मृति में आयोजित की जाती है।",
+    "id": 9023
+  },
+  {
+    "question": "'Rann Utsav' is a world-renowned festival of music, arts, and white desert tent camping organized in which state? / संगीत, कला और सफेद रेगिस्तान में तंबू लगाने का विश्वप्रसिद्ध 'रण उत्सव' किस राज्य में आयोजित किया जाता है?",
+    "options": [
+      "Gujarat (Kutch) / गुजरात (कच्छ)",
+      "Rajasthan (Jaisalmer) / राजस्थान (जैसलमेर)",
+      "Ladakh / लद्दाख",
+      "Haryana / हरियाणा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Rann Utsav is held annually during winter in the Great Rann of Kutch salt desert in Gujarat under full moon skies. / रण उत्सव गुजरात के कच्छ के सफेद नमक के रण में सर्दियों में आयोजित किया जाता है।",
+    "id": 9024
+  },
+  {
+    "question": "The 10-day grand festival of 'Durga Puja' inscribed on the UNESCO Representative List of Intangible Cultural Heritage is celebrated with the highest fervor in: / यूनेस्को की अमूर्त सांस्कृतिक विरासत सूची में शामिल 10 दिवसीय भव्य 'दुर्गा पूजा' सबसे अधिक उल्लास के साथ कहां मनाई जाती है?",
+    "options": [
+      "West Bengal (Kolkata) / पश्चिम बंगाल (कोलकाता)",
+      "Maharashtra / महाराष्ट्र",
+      "Punjab / पंजाब",
+      "Gujarat / गुजरात"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Harvest Festivals & Major State Celebrations",
+    "explanation": "Kolkata's Durga Puja was inscribed on UNESCO's Intangible Cultural Heritage list in December 2021. / कोलकाता की दुर्गा पूजा को दिसंबर 2021 में यूनेस्को की अमूर्त सांस्कृतिक विरासत सूची में शामिल किया गया था।",
+    "id": 9025
+  },
+  {
+    "question": "Which world-famous livestock fair, renowned as the largest camel fair on earth, is held in Rajasthan? / राजस्थान में आयोजित होने वाला कौन-सा विश्वप्रसिद्ध पशु मेला दुनिया का सबसे बड़ा ऊंट मेला कहलाता है?",
+    "options": [
+      "Pushkar Fair / पुष्कर मेला",
+      "Sonepur Mela / सोनपुर मेला",
+      "Surajkund Mela / सूरजकुंड मेला",
+      "Nagaur Fair / नागौर मेला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "The Pushkar Camel Fair is held annually in Ajmer district, Rajasthan, on Kartik Purnima beside the holy Pushkar Lake and Brahma Temple. / पुष्कर मेला राजस्थान के अजमेर जिले में पवित्र पुष्कर झील के किनारे कार्तिक पूर्णिमा को आयोजित होता है।",
+    "id": 9026
+  },
+  {
+    "question": "Which historic fair held in Bihar at the confluence of the Ganga and Gandak rivers is regarded as Asia's largest cattle fair? / बिहार में गंगा और गंडक नदी के संगम पर लगने वाला कौन-सा ऐतिहासिक मेला एशिया का सबसे बड़ा पशु मेला माना जाता है?",
+    "options": [
+      "Sonepur Mela / सोनपुर मेला",
+      "Pushkar Fair / पुष्कर मेला",
+      "Bateshwar Fair / बटेश्वर मेला",
+      "Gangasagar Mela / गंगासागर मेला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Sonepur Mela (also called Harihar Kshetra Mela) is held on Kartik Purnima in Saran district, Bihar, famous for the sale of cattle, horses, and elephants. / सोनपुर मेला (हरिहर क्षेत्र मेला) बिहार के सारण जिले में कार्तिक पूर्णिमा को लगता है।",
+    "id": 9027
+  },
+  {
+    "question": "The Maha Kumbh Mela, recognized by UNESCO, is held cyclically every 12 years across which four sacred locations? / यूनेस्को द्वारा मान्यता प्राप्त महाकुंभ मेला प्रत्येक 12 वर्ष में किन चार पवित्र स्थानों पर चक्रीय रूप से आयोजित होता है?",
+    "options": [
+      "Prayagraj, Haridwar, Ujjain, Nashik / प्रयागराज, हरिद्वार, उज्जैन, नासिक",
+      "Varanasi, Ayodhya, Mathura, Puri / वाराणसी, अयोध्या, मथुरा, पुरी",
+      "Rishikesh, Dwarka, Rameswaram, Badrinath / ऋषिकेश, द्वारका, रामेश्वरम, बद्रीनाथ",
+      "Kedarnath, Badrinath, Gangotri, Yamunotri / केदारनाथ, बद्रीनाथ, गंगोत्री, यमुनोत्री"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Kumbh Mela is held at Prayagraj (Triveni Sangam), Haridwar (Ganga), Ujjain (Shipra), and Nashik (Godavari). / कुंभ मेला प्रयागराज (त्रिवेणी), हरिद्वार (गंगा), उज्जैन (शिप्रा) और नासिक (गोदावरी) में आयोजित होता है।",
+    "id": 9028
+  },
+  {
+    "question": "'Gangasagar Mela', the second largest gathering of pilgrims after Kumbh, takes place on Makar Sankranti at which island in West Bengal? / कुंभ के बाद दूसरा सबसे बड़ा तीर्थ मेला 'गंगासागर मेला' मकर संक्रांति पर पश्चिम बंगाल के किस द्वीप पर लगता है?",
+    "options": [
+      "Sagar Island / सागर द्वीप",
+      "Majuli Island / माजुली द्वीप",
+      "Wheeler Island / व्हीलर द्वीप",
+      "Munroe Island / मुनरो द्वीप"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Gangasagar Mela is held where the river Hooghly/Ganga merges into the Bay of Bengal at Sagar Island, visiting the temple of Kapil Muni. / गंगासागर मेला पश्चिम बंगाल के सागर द्वीप पर लगता है जहाँ गंगा बंगाल की खाड़ी में विलीन होती है (कपिल मुनि आश्रम)।",
+    "id": 9029
+  },
+  {
+    "question": "The world's largest crafts fair, 'Surajkund International Crafts Mela', is organized annually in which district of Haryana? / दुनिया का सबसे बड़ा शिल्प मेला 'सूरजकुंड अंतर्राष्ट्रीय शिल्प मेला' हरियाणा के किस जिले में प्रतिवर्ष आयोजित किया जाता है?",
+    "options": [
+      "Faridabad / फरीदाबाद",
+      "Gurugram / गुरुग्राम",
+      "Kurukshetra / कुरुक्षेत्र",
+      "Ambala / अंबाला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Surajkund International Crafts Mela is held in Faridabad, Haryana, during February showcasing handicrafts, folk arts, and a partner state and nation. / सूरजकुंड मेला हरियाणा के फरीदाबाद में हर साल फरवरी में भारतीय और अंतर्राष्ट्रीय हस्तशिल्प को बढ़ावा देने के लिए लगता है।",
+    "id": 9030
+  },
+  {
+    "question": "'Ambubachi Mela', commemorating the annual fertility cycle of Mother Earth, is held at which sacred temple in Assam? / पृथ्वी माता के वार्षिक उर्वरता चक्र की स्मृति में लगने वाला 'अंबुवाची मेला' असम के किस पवित्र मंदिर में आयोजित होता है?",
+    "options": [
+      "Kamakhya Temple, Guwahati / कामाख्या मंदिर, गुवाहाटी",
+      "Umananda Temple / उमानंद मंदिर",
+      "Navagraha Temple / नवग्रह मंदिर",
+      "Da-Parbatia / दा-पर्बतिया"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Ambubachi Mela is an annual Tantric mela held during monsoon (June) at Kamakhya Temple atop Nilachal Hill in Guwahati, Assam. / अंबुवाची मेला गुवाहाटी के नीलाचल पर्वत पर स्थित कामाख्या देवी मंदिर में प्रतिवर्ष जून (आषाढ़) में लगता है।",
+    "id": 9031
+  },
+  {
+    "question": "'Tarnetar Fair', celebrated near the Trinetreshwar Mahadev temple and famous for folk romance and embroidered umbrellas, is held in: / त्रिनेत्रेश्वर महादेव मंदिर के निकट लोक संस्कृति और कढ़ाई वाली छतरियों के लिए प्रसिद्ध 'तरणेतर मेला' कहाँ लगता है?",
+    "options": [
+      "Gujarat (Surendranagar) / गुजरात (सुरेंद्रनगर)",
+      "Rajasthan (Barmer) / राजस्थान (बाड़मेर)",
+      "Madhya Pradesh (Ujjain) / मध्य प्रदेश (उज्जैन)",
+      "Maharashtra (Nashik) / महाराष्ट्र (नासिक)"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Tarnetar Fair is a vibrant celebration of Gujarati folk dance (Garba, Raas) and tribal matchmaking in Surendranagar district, Gujarat. / तरणेतर मेला गुजरात के सुरेंद्रनगर में त्रिनेत्रेश्वर महादेव मंदिर परिसर में आयोजित होता है।",
+    "id": 9032
+  },
+  {
+    "question": "Which fair held at the confluence of the Som, Mahi, and Jakham rivers in Rajasthan is hailed as the 'Kumbh of the Tribals' (Bhil Kumbh)? / राजस्थान में सोम, माही और जाखम नदियों के संगम पर लगने वाले किस मेले को 'आदिवासियों का कुंभ' कहा जाता है?",
+    "options": [
+      "Baneshwar Fair / बेणेश्वर मेला",
+      "Pushkar Fair / पुष्कर मेला",
+      "Ramdevra Fair / रामदेवरा मेला",
+      "Karni Mata Fair / करणी माता मेला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Baneshwar Fair is held on Magh Purnima in Dungarpur district, Rajasthan, where Bhil tribals immerse ashes and offer prayers to Lord Shiva. / बेणेश्वर मेला राजस्थान के डूंगरपुर जिले में त्रिवेणी संगम पर माघ पूर्णिमा को लगता है।",
+    "id": 9033
+  },
+  {
+    "question": "The historic 'Nauchandi Mela', famous as a symbol of Hindu-Muslim communal harmony, is held annually in which city of Uttar Pradesh? / हिंदू-मुस्लिम सांप्रदायिक सौहार्द के प्रतीक के रूप में प्रसिद्ध ऐतिहासिक 'नौचंडी मेला' उत्तर प्रदेश के किस शहर में आयोजित होता है?",
+    "options": [
+      "Meerut / मेरठ",
+      "Agra / आगरा",
+      "Bareilly / बरेली",
+      "Aligarh / अलीगढ़"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Nauchandi Mela in Meerut, UP, is held around Nauchandi temple and the shrine of Sufi saint Bale Miyan a month after Holi. / नौचंडी मेला मेरठ (उत्तर प्रदेश) में नवचंडी देवी मंदिर और बाले मियां की मजार के पास आयोजित किया जाता है।",
+    "id": 9034
+  },
+  {
+    "question": "'Bateshwar Fair', famous for its historic livestock trade of camels and horses along with 108 Shiva temples on the Yamuna, is held in: / यमुना किनारे 108 शिव मंदिरों और ऊंटों-घोड़ों के ऐतिहासिक पशु व्यापार के लिए प्रसिद्ध 'बटेश्वर मेला' कहाँ लगता है?",
+    "options": [
+      "Agra, Uttar Pradesh / आगरा, उत्तर प्रदेश",
+      "Mathura, UP / मथुरा, उप्र",
+      "Kanpur, UP / कानपुर, उप्र",
+      "Gwalior, MP / ग्वालियर, मप्र"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Bateshwar Fair takes place in Bateshwar near Agra, UP, on the banks of the Yamuna River during Kartik Purnima. / बटेश्वर मेला उत्तर प्रदेश के आगरा जिले में यमुना किनारे कार्तिक मास में लगता है।",
+    "id": 9035
+  },
+  {
+    "question": "The annual month-long pilgrimage fair held at the Triveni Sangam in Prayagraj every year (except Kumbh years) during January-February is: / जनवरी-फरवरी में प्रयागराज में त्रिवेणी संगम पर हर साल (कुंभ वर्षों को छोड़कर) लगने वाला एक महीने का पवित्र मेला कौन-सा है?",
+    "options": [
+      "Magh Mela / माघ मेला",
+      "Kumbh Mela / कुंभ मेला",
+      "Ardh Kumbh / अर्ध कुंभ",
+      "Nauchandi Mela / नौचंडी मेला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Magh Mela is an annual fair held every year during the Hindu month of Magha at the Sangam in Prayagraj for Kalpavasis. / माघ मेला प्रयागराज के संगम पर हर साल माघ महीने में कल्पवासियों के लिए लगता है।",
+    "id": 9036
+  },
+  {
+    "question": "'Bali Jatra' (Voyage to Bali), Asia's largest open-air trade fair commemorating ancient maritime trade voyages, is celebrated on the banks of the Mahanadi in: / प्राचीन समुद्री व्यापार यात्राओं की स्मृति में महानदी के तट पर लगने वाला एशिया का सबसे बड़ा खुला व्यापार मेला 'बाली जात्रा' कहाँ मनाया जाता है?",
+    "options": [
+      "Cuttack, Odisha / कटक, ओडिशा",
+      "Bhubaneswar, Odisha / भुवनेश्वर, ओडिशा",
+      "Kolkata, WB / कोलकाता, प. बंगाल",
+      "Visakhapatnam, AP / विशाखापट्टनम, आंध्रा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Bali Jatra begins on Kartik Purnima at Cuttack, Odisha, commemorating Sadhabas (ancient Odia mariners) sailing to Bali, Java, and Sumatra in Boitas (boats). / बाली जात्रा कटक (ओडिशा) में महानदी किनारे प्राचीन कलिंग नाविकों की जावा-सुमात्रा व्यापार यात्रा की याद में लगती है।",
+    "id": 9037
+  },
+  {
+    "question": "'Medaram Jatara' (Sammakka Sarakka Jatara), the largest tribal congregation in Asia, is celebrated biennially in which state? / एशिया का सबसे बड़ा जनजातीय मेला 'मेदराम जतारा' (सम्मक्का-सारलम्मा जतारा) द्विवार्षिक रूप से किस राज्य में मनाया जाता है?",
+    "options": [
+      "Telangana (Mulugu district) / तेलंगाना (मुलुगु जिला)",
+      "Andhra Pradesh / आंध्र प्रदेश",
+      "Odisha / ओडिशा",
+      "Chhattisgarh / छत्तीसगढ़"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Medaram Jatara is celebrated by the Koya tribe in Medaram, Telangana, honoring mother and daughter goddesses Sammakka and Sarakka fighting Kakatiya injustice. / मेदराम जतारा तेलंगाना में कोया जनजाति द्वारा मनाया जाने वाला एशिया का दूसरा सबसे बड़ा जनसमूह है।",
+    "id": 9038
+  },
+  {
+    "question": "The second largest animal/cattle fair in Rajasthan, famous for Marwari horses and Nagauri bullocks, is held at: / मारवाड़ी घोड़ों और नागौरी बैलों के लिए प्रसिद्ध राजस्थान का दूसरा सबसे बड़ा पशु मेला कहाँ लगता है?",
+    "options": [
+      "Nagaur (Ramdev Cattle Fair) / नागौर (रामदेव पशु मेला)",
+      "Pushkar / पुष्कर",
+      "Baneshwar / बेणेश्वर",
+      "Karni Mata / करणी माता"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Nagaur Fair (Shri Ramdeoji Cattle Fair) in Nagaur, Rajasthan, takes place in Magha month for trading bullocks, camels, and horses. / नागौर पशु मेला राजस्थान में नागौरी नस्ल के बैलों और ऊंटों के व्यापार के लिए प्रसिद्ध है।",
+    "id": 9039
+  },
+  {
+    "question": "The historic 7-day international 'Mandi Shivratri Fair' where more than 200 village devtas assemble at Paddal Ground is celebrated in: / 200 से अधिक ग्राम देवताओं के पड्डल मैदान में जुटने वाला ऐतिहासिक 7 दिवसीय 'मंडी शिवरात्रि मेला' कहाँ मनाया जाता है?",
+    "options": [
+      "Himachal Pradesh / हिमाचल प्रदेश",
+      "Uttarakhand / उत्तराखंड",
+      "Jammu & Kashmir / जम्मू व कश्मीर",
+      "Punjab / पंजाब"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Mandi Shivratri Fair in Himachal Pradesh was started in 1527 by Raja Ajbar Sen and is dedicated to Madho Rai (Lord Krishna). / मंडी शिवरात्रि मेला हिमाचल प्रदेश के मंडी में पड्डल मैदान में बड़ी धूमधाम से मनाया जाता है।",
+    "id": 9040
+  },
+  {
+    "question": "At which fair in Rajasthan is the folk saint Baba Ramdev honored by thousands of devotees, famous for the 'Terah Taali' dance performed by Kamada women? / राजस्थान के किस मेले में लोकसंत बाबा रामदेव की आराधना की जाती है, जहाँ कामड़ महिलाओं द्वारा 'तेरहताली' नृत्य किया जाता है?",
+    "options": [
+      "Ramdevra Fair, Jaisalmer / रामदेवरा मेला, जैसलमेर",
+      "Pushkar Fair / पुष्कर मेला",
+      "Karni Mata Fair / करणी माता मेला",
+      "Baneshwar Fair / बेणेश्वर मेला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Ramdevra Fair is held in Pokhran, Jaisalmer (Rajasthan), honoring Baba Ramdevji who worked for communal equality. / रामदेवरा मेला जैसलमेर के पोकरण में लोक देवता बाबा रामदेव की समाधि पर लगता है।",
+    "id": 9041
+  },
+  {
+    "question": "Which historic fair of Uttar Pradesh is held on the banks of the Saryu in Ayodhya on Kartik Purnima? / कार्तिक पूर्णिमा पर अयोध्या में सरयू नदी के तट पर लगने वाला प्रसिद्ध ऐतिहासिक मेला कौन-सा है?",
+    "options": [
+      "Kartik Mela (Ayodhya) / कार्तिक मेला (अयोध्या)",
+      "Nauchandi Mela / नौचंडी मेला",
+      "Magh Mela / माघ मेला",
+      "Bateshwar Fair / बटेश्वर मेला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "The Kartik Mela and Parikrama in Ayodhya attract thousands of devotees for ritual bathing in the holy Saryu River. / अयोध्या में कार्तिक पूर्णिमा पर सरयू स्नान और 14 कोसी/पंचकोसी परिक्रमा का विशाल मेला लगता है।",
+    "id": 9042
+  },
+  {
+    "question": "'Chitra Vichitra Fair', a prominent tribal matchmaking fair of the Garasia and Bhil communities, is organized in which state? / गरासिया और भील समुदायों का प्रसिद्ध जनजातीय मेला 'चित्रा विचित्र मेला' किस राज्य में आयोजित होता है?",
+    "options": [
+      "Gujarat (Sabarkantha) / गुजरात (साबरकांठा)",
+      "Rajasthan / राजस्थान",
+      "Madhya Pradesh / मध्य प्रदेश",
+      "Odisha / ओडिशा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Chitra Vichitra Fair is held at Gunbhakhari in Sabarkantha district, Gujarat, shortly after Holi. / चित्रा विचित्र मेला गुजरात के साबरकांठा जिले में होली के बाद लगने वाला प्रमुख जनजातीय मेला है।",
+    "id": 9043
+  },
+  {
+    "question": "Which fair held at Deshnoke near Bikaner, Rajasthan, is famous worldwide for the revered rats (Kabas) wandering freely? / बीकानेर (राजस्थान) के पास देशनोक में लगने वाला कौन-सा मेला पूज्य चूहों (काबा) के लिए विश्वभर में प्रसिद्ध है?",
+    "options": [
+      "Karni Mata Fair / करणी माता मेला",
+      "Pushkar Fair / पुष्कर मेला",
+      "Nagaur Fair / नागौर मेला",
+      "Gogaji Fair / गोगाजी मेला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "The Karni Mata Fair at Deshnoke Temple is held twice a year during Navratri, famous as the Temple of White Rats. / करणी माता मेला देशनोक (बीकानेर) में वर्ष में दो बार नवरात्रों में लगता है, जिसे चूहों वाली देवी भी कहा जाता है।",
+    "id": 9044
+  },
+  {
+    "question": "'Kapil Muni Fair' is held during Kartik Purnima at which famous lake in Bikaner district, Rajasthan? / राजस्थान के बीकानेर जिले की किस प्रसिद्ध झील पर कार्तिक पूर्णिमा को 'कपिल मुनि का मेला' लगता है?",
+    "options": [
+      "Kolayat Lake / कोलायत झील",
+      "Pushkar Lake / पुष्कर झील",
+      "Pichola Lake / पिछोला झील",
+      "Nakki Lake / नक्की झील"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Kolayat Fair (Kapil Muni Mela) is held in Kolayat, Bikaner, on Kartik Purnima featuring holy dips and lamp-floating (Deepdaan). / कोलायत मेला बीकानेर के कोलायत में सांख्य दर्शन के प्रणेता महर्षि कपिल की तपोस्थली पर लगता है।",
+    "id": 9045
+  },
+  {
+    "question": "'Madhavpur Mela', celebrating the sacred union of Lord Krishna and Princess Rukmini, is organized annually in which state? / भगवान श्रीकृष्ण और राजकुमारी रुक्मिणी के विवाह के उपलक्ष्य में आयोजित होने वाला 'माधवपुर मेला' किस राज्य में लगता है?",
+    "options": [
+      "Gujarat (Porbandar) / गुजरात (पोरबंदर)",
+      "Rajasthan / राजस्थान",
+      "Uttar Pradesh / उत्तर प्रदेश",
+      "Maharashtra / महाराष्ट्र"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Madhavpur Ghed Fair in Porbandar, Gujarat, connects the cultural ethos of Western Gujarat with the Northeast (Arunachal Pradesh). / माधवपुर मेला पोरबंदर (गुजरात) में आयोजित होता है, जो गुजरात और पूर्वोत्तर की सांस्कृतिक एकता का प्रतीक है।",
+    "id": 9046
+  },
+  {
+    "question": "'Poush Mela', featuring live Baul singers, Santiniketan crafts, and rural folk music, is held annually in: / बाउल गायकों, शांतिनिकेतन शिल्प और लोक संगीत के लिए प्रसिद्ध 'पौष मेला' प्रतिवर्ष कहाँ आयोजित होता है?",
+    "options": [
+      "Santiniketan, West Bengal / शांतिनिकेतन, प. बंगाल",
+      "Kolkata, WB / कोलकाता",
+      "Guwahati, Assam / गुवाहाटी",
+      "Ranchi, Jharkhand / रांची"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Poush Mela was founded by Debendranath Tagore in 1894 and is celebrated in late December in Santiniketan, Birbhum district, West Bengal. / पौष मेला पश्चिम बंगाल के शांतिनिकेतन में महर्षि देवेन्द्रनाथ टैगोर द्वारा शुरू किया गया ऐतिहासिक सांस्कृतिक मेला है।",
+    "id": 9047
+  },
+  {
+    "question": "'Ganga Mahotsav' and 'Dev Deepawali' fair, where all ghats are illuminated with millions of earthen lamps on Kartik Purnima, are celebrated in: / कार्तिक पूर्णिमा पर लाखों दीयों से सभी घाटों को जगमगा देने वाला 'देव दीपावली' मेला और 'गंगा महोत्सव' कहाँ मनाया जाता है?",
+    "options": [
+      "Varanasi, Uttar Pradesh / वाराणसी, उत्तर प्रदेश",
+      "Prayagraj, UP / प्रयागराज",
+      "Haridwar, UK / हरिद्वार",
+      "Rishikesh, UK / ऋषिकेश"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Dev Deepawali is celebrated fifteen days after Diwali in Varanasi (Kashi) with millions of diyas lighting up all 84 ghats. / देव दीपावली वाराणसी में कार्तिक पूर्णिमा को मनाई जाती है जिसमें गंगा के सभी 84 घाटों पर दीपदान किया जाता है।",
+    "id": 9048
+  },
+  {
+    "question": "'Alwar Fair' (Matsya Utsav) and 'Brahmotsavam' are celebrated in which respective states? / 'मत्स्य उत्सव' (अलवर मेला) और 'ब्रह्मोत्सवम' क्रमशः किन राज्यों में आयोजित किए जाते हैं?",
+    "options": [
+      "Rajasthan & Andhra Pradesh / राजस्थान व आंध्र प्रदेश",
+      "Gujarat & Tamil Nadu / गुजरात व तमिलनाडु",
+      "Punjab & Kerala / पंजाब व केरल",
+      "Madhya Pradesh & Karnataka / मप्र व कर्नाटक"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Matsya Festival is held in Alwar (Rajasthan) celebrating heritage; Sri Venkateswara Brahmotsavam is held at Tirumala (Andhra Pradesh). / मत्स्य उत्सव अलवर (राजस्थान) में तथा ब्रह्मोत्सवम तिरुमाला तिरुपति (आंध्र प्रदेश) में लगता है।",
+    "id": 9049
+  },
+  {
+    "question": "Which fair in Himachal Pradesh marks the celebration of the ancient trade relations with Tibet and central Asia at Rampur Bushahr? / रामपुर बुशहर (हिमाचल प्रदेश) में तिब्बत और मध्य एशिया के साथ प्राचीन व्यापारिक संबंधों का प्रतीक कौन-सा प्रसिद्ध व्यापारिक मेला है?",
+    "options": [
+      "Lavi Fair / लवी मेला",
+      "Minjar Fair / मिंजर मेला",
+      "Mandi Shivratri / मंडी शिवरात्रि",
+      "Renuka Fair / रेणुका मेला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Famous Fairs & Melas of India",
+    "explanation": "Lavi Fair in Rampur Bushahr, Himachal Pradesh, is a 300-year-old trade fair held in November along the historic Indo-Tibetan trade route. / लवी मेला हिमाचल प्रदेश के रामपुर बुशहर में नवंबर में आयोजित होने वाला ऐतिहासिक व्यापार मेला है।",
+    "id": 9050
+  },
+  {
+    "question": "Which festival celebrated in Nagaland is popularly celebrated and hailed as the 'Festival of Festivals'? / नागालैंड में मनाए जाने वाले किस उत्सव को 'त्यौहारों का त्यौहार' (Festival of Festivals) कहा जाता है?",
+    "options": [
+      "Hornbill Festival / हॉर्नबिल महोत्सव",
+      "Wangala Festival / वांगला महोत्सव",
+      "Losar Festival / लोसार महोत्सव",
+      "Moatsu Festival / मोआत्सु महोत्सव"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "The Hornbill Festival is held from 1 to 10 December at Kisama Naga Heritage Village, Nagaland, showcasing the warrior heritage of all Naga tribes. / हॉर्नबिल महोत्सव को 'त्यौहारों का त्यौहार' कहा जाता है जो 1 से 10 दिसंबर तक किसामा (नागालैंड) में मनाया जाता है।",
+    "id": 9051
+  },
+  {
+    "question": "Which harvest festival of the Garo tribe in Meghalaya is famously known as the '100 Drums Festival'? / मेघालय की गारो जनजाति का कौन-सा फसल उत्सव '100 ड्रम महोत्सव' (100 Drums Festival) के रूप में प्रसिद्ध है?",
+    "options": [
+      "Wangala / वांगला",
+      "Nongkrem / नोंगक्रेम",
+      "Shad Suk Mynsiem / शाद सुक मिनसीम",
+      "Behdienkhlam / बेहदीनखलम"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Wangala is known as the '100 Drums Festival' because a hundred traditional long oval drums (Nagras) are beaten simultaneously in sync. / वांगला को '100 ड्रम महोत्सव' कहा जाता है क्योंकि इसमें 100 नगाड़े (ड्रम) एक साथ एक लय में बजाए जाते हैं।",
+    "id": 9052
+  },
+  {
+    "question": "'Bathukamma', celebrated with conical arrangements of seasonal flowers by women in Telangana, is popularly known as the: / तेलंगाना में महिलाओं द्वारा मौसमी फूलों की शंक्वाकार सजावट के साथ मनाया जाने वाला 'बथुकम्मा' किस नाम से प्रसिद्ध है?",
+    "options": [
+      "Floral Festival of India / भारत का पुष्प उत्सव",
+      "Festival of Lights / दीपों का उत्सव",
+      "Festival of Kites / पतंगों का उत्सव",
+      "100 Drums Festival / 100 ड्रम उत्सव"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Bathukamma (meaning 'Mother Goddess come alive') is the grand 9-day floral festival of Telangana culminating on Durgashtami as Saddula Bathukamma. / बथुकम्मा तेलंगाना का प्रसिद्ध फूलों का त्यौहार (Floral Festival) है, जिसमें देवी गौरी के रूप में फूलों का गोपुरम सजाया जाता है।",
+    "id": 9053
+  },
+  {
+    "question": "The famous annual Tantric mela 'Ambubachi' is exclusively associated with which legendary Shakti Peeth? / प्रसिद्ध वार्षिक तांत्रिक 'अंबुवाची मेला' विशेष रूप से किस प्रसिद्ध शक्तिपीठ से जुड़ा हुआ है?",
+    "options": [
+      "Kamakhya Temple, Guwahati / कामाख्या मंदिर, गुवाहाटी",
+      "Kalighat, Kolkata / कालीघाट, कोलकाता",
+      "Tarapith, Bengal / तारापीठ",
+      "Vaishno Devi, Jammu / वैष्णो देवी"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Ambubachi Mela symbolizes the annual menstruation cycle of Goddess Kamakhya, during which temple doors remain closed for three days. / अंबुवाची कामाख्या मंदिर (असम) से जुड़ा है जहाँ तीन दिनों तक मंदिर के कपाट बंद रहते हैं।",
+    "id": 9054
+  },
+  {
+    "question": "The famous 'Hemis Festival' of Ladakh is internationally renowned for which sacred cultural performance? / लद्दाख का प्रसिद्ध 'हेमिस महोत्सव' अंतरराष्ट्रीय स्तर पर किस पवित्र सांस्कृतिक प्रस्तुति के लिए जाना जाता है?",
+    "options": [
+      "Masked Buddhist Cham Dance / मुखौटा बौद्ध छम नृत्य",
+      "Snake Boat Race / सर्प नौका दौड़",
+      "100 Drums Beating / 100 ड्रम वादन",
+      "Kathakali Recital / कथकली प्रदर्शन"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Hemis Festival at Hemis Gompa, Ladakh, celebrates the birth anniversary of Guru Padmasambhava with vibrant sacred masked dances (Cham). / हेमिस महोत्सव लद्दाख की हेमिस गोम्पा में गुरु पद्मसंभव की जयंती पर पवित्र मुखौटा नृत्य (छम) के साथ मनाया जाता है।",
+    "id": 9055
+  },
+  {
+    "question": "The thrilling 'Snake Boat Race' (Vallam Kali / Nehru Trophy) is the iconic hallmark of which festival? / रोमांचक 'सर्प नौका दौड़' (वल्लम कली / नेहरू ट्रॉफी) किस त्यौहार की प्रतिष्ठित पहचान है?",
+    "options": [
+      "Onam (Kerala) / ओणम (केरल)",
+      "Pongal (Tamil Nadu) / पोंगल",
+      "Ugadi (Karnataka) / उगादि",
+      "Thrissur Pooram / त्रिशूर पूरम"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Vallam Kali (Snake Boat Race) using majestic Chundan Vallams is held on the backwaters of Kerala (Punnamada Lake, Alappuzha) during Onam. / ओणम के दौरान केरल के बैकवाटर्स (पुन्नमदा झील, अलपुझा) में विशाल सर्प नौका दौड़ (वल्लम कली) आयोजित होती है।",
+    "id": 9056
+  },
+  {
+    "question": "Which world-famous gathering in Rajasthan is universally recognized as the 'Great Camel Fair'? / राजस्थान के किस विश्वप्रसिद्ध मेले को दुनिया भर में 'ऊंट मेले' (Camel Fair) के रूप में विशेष पहचान प्राप्त है?",
+    "options": [
+      "Pushkar Fair / पुष्कर मेला",
+      "Baneshwar Fair / बेणेश्वर मेला",
+      "Nagaur Fair / नागौर मेला",
+      "Karni Mata Fair / करणी माता मेला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Pushkar Fair is globally famous for trading decorated camels, horse competitions, turbans, and cultural pageantry. / पुष्कर मेले की सबसे मुख्य और विश्वविख्यात पहचान सजे-धजे ऊंटों की खरीद-फरोख्त (Camel Fair) और मटका-दौड़ है।",
+    "id": 9057
+  },
+  {
+    "question": "'Sonepur Mela' in Bihar holds the historic distinction of being: / बिहार के 'सोनपुर मेले' को कौन-सी ऐतिहासिक विशिष्ट पहचान हासिल है?",
+    "options": [
+      "Asia's largest cattle fair / एशिया का सबसे बड़ा पशु मेला",
+      "World's largest handicrafts mela / दुनिया का सबसे बड़ा हस्तशिल्प मेला",
+      "Largest flower mela / सबसे बड़ा पुष्प मेला",
+      "Largest book fair / सबसे बड़ा पुस्तक मेला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Sonepur Mela has the ancient distinction of being Asia's largest cattle and animal trading fair, dating back to Chandragupta Maurya. / सोनपुर मेला एशिया का सबसे बड़ा पशु मेला (Cattle Fair) है, जहां प्राचीन काल में हाथी और घोड़े खरीदे जाते थे।",
+    "id": 9058
+  },
+  {
+    "question": "'Surajkund Mela' organized in Haryana has the distinguished global identity of being the: / हरियाणा में आयोजित होने वाले 'सूरजकुंड मेले' को किस रूप में वैश्विक विशिष्टता प्राप्त है?",
+    "options": [
+      "World's largest international handicrafts mela / दुनिया का सबसे बड़ा अंतर्राष्ट्रीय हस्तशिल्प मेला",
+      "Asia's largest camel fair / एशिया का सबसे बड़ा ऊंट मेला",
+      "India's largest boat race / भारत की सबसे बड़ी नौका दौड़",
+      "Oldest cattle fair / सबसे पुराना मवेशी मेला"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Surajkund International Crafts Mela is recognized as the world's largest crafts fair, showcasing artisans from across Indian states and 20+ nations. / सूरजकुंड मेला दुनिया का सबसे बड़ा अंतर्राष्ट्रीय हस्तशिल्प मेला है, जहां हर साल एक थीम राज्य और पार्टनर देश होता है।",
+    "id": 9059
+  },
+  {
+    "question": "'Bali Jatra' in Cuttack, Odisha, uniquely celebrates and preserves which historical tradition? / कटक (ओडिशा) में 'बाली जात्रा' विशेष रूप से किस ऐतिहासिक परंपरा को संरक्षित और प्रदर्शित करती है?",
+    "options": [
+      "Ancient maritime trade & merchant voyage tradition / प्राचीन समुद्री व्यापार व नौकायन परंपरा",
+      "Masked Buddhist dance tradition / मुखौटा बौद्ध नृत्य परंपरा",
+      "Floral worship tradition / पुष्प पूजा परंपरा",
+      "Elephant procession tradition / गज शोभायात्रा परंपरा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Bali Jatra commemorates the maritime trade voyage of ancient Kalinga merchants (Sadhabas) to Bali, Java, and Sumatra, celebrated by floating toy boats (Boita Bandana). / बाली जात्रा प्राचीन कलिंग नाविकों के जावा-सुमात्रा-बाली समुद्री व्यापार यात्रा की स्मृति में 'बोइता बंदाण' के साथ मनाई जाती है।",
+    "id": 9060
+  },
+  {
+    "question": "The royal procession featuring a 750-kg golden howdah mounted on a decorated elephant (Jumboo Savari) is the grand highlight of: / 750 किलो के सोने के हौदे में चामुंडेश्वरी देवी की सवारी (जम्बू सवारी) किस उत्सव की राजसी शोभायात्रा की पहचान है?",
+    "options": [
+      "Mysuru Dasara (Karnataka) / मैसूरु दशहरा (कर्नाटक)",
+      "Kullu Dussehra / कुल्लू दशहरा",
+      "Thrissur Pooram / त्रिशूर पूरम",
+      "Bastar Dussehra / बस्तर दशहरा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Mysuru Dasara features the royal Jumboo Savari procession from Mysore Palace carrying Goddess Chamundeshwari atop a decorated elephant. / मैसूरु दशहरा कर्नाटक का राज्य उत्सव है, जिसकी राजसी 'जम्बू सवारी' (हाथी पर सोने का हौदा) विश्वप्रसिद्ध है।",
+    "id": 9061
+  },
+  {
+    "question": "Which festival held at Vadakkunnathan Temple in Kerala is internationally renowned for fifty exquisitely decorated elephants and 'Kudamattam' (umbrella-changing competition)? / केरल के वड़क्कुन्नाथन मंदिर में आयोजित होने वाला कौन-सा उत्सव 50 सजे-धजे हाथियों और 'कुदामत्तम' (रंगीन छतरी बदलने की प्रतियोगिता) के लिए प्रसिद्ध है?",
+    "options": [
+      "Thrissur Pooram / त्रिशूर पूरम",
+      "Onam / ओणम",
+      "Vishu / विशु",
+      "Attukal Pongala / अट्टुकल पोंगाल"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Thrissur Pooram is celebrated with decorated tuskers, dynamic Ilanjithara Melam percussion orchestra, and the colorful Kudamattam ritual. / त्रिशूर पूरम को केरल के पूरमों की मां कहा जाता है, जो सजे हुए हाथियों, वाद्यवृंद और रंगीन रेशमी छतरियों (कुदामत्तम) के लिए प्रसिद्ध है।",
+    "id": 9062
+  },
+  {
+    "question": "'Bhagoria' is a colorful tribal spring and matchmaking festival celebrated by which tribal community in Madhya Pradesh? / 'भगोरिया' मध्य प्रदेश में किस जनजातीय समुदाय द्वारा मनाया जाने वाला रंगारंग वसंत एवं हाट उत्सव है?",
+    "options": [
+      "Bhil & Bhilala tribes / भील व भिलाला जनजाति",
+      "Santhal tribe / संथाल जनजाति",
+      "Garo tribe / गारो जनजाति",
+      "Toda tribe / तोड़ा जनजाति"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Bhagoria Haat is celebrated in Jhabua and Alirajpur districts of MP by the Bhil and Bhilala tribes ahead of Holi, famous for traditional flute music and matchmaking. / भगोरिया मध्य प्रदेश के मालवा-निमाड़ क्षेत्र में भील और भिलाला जनजातियों द्वारा होली से पहले हाट लगाकर मनाया जाता है।",
+    "id": 9063
+  },
+  {
+    "question": "'Nuakhai', the harvest festival of western Odisha, is specifically dedicated to the consumption of: / पश्चिमी ओडिशा का फसल उत्सव 'नुआखाई' विशेष रूप से किसके उपभोग के लिए समर्पित है?",
+    "options": [
+      "Newly harvested rice crop (Nabanna) / नई कटी धान (चावल) की पहली फसल",
+      "First mango of spring / वसंत का पहला आम",
+      "New wheat harvest / नए गेहूं की फसल",
+      "Fresh sugarcane juice / गन्ने का ताजा रस"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "On Nuakhai, farmers offer the first grains of the newly harvested paddy to Goddess Samaleswari (Western Odisha) and consume it with family. / नुआखाई के दिन किसान नए कटे धान का पहला अन्न मां समलेश्वरी को अर्पित कर परिवार सहित ग्रहण करते हैं।",
+    "id": 9064
+  },
+  {
+    "question": "Which festival of Manipur is known as 'Manipur's Holi', celebrated for five days and famous for the nocturnal folk dance 'Thabal Chongba'? / मणिपुर का कौन-सा त्यौहार 'मणिपुर की होली' कहलाता है, जो पांच दिनों तक चलता है और रात्रि लोकनृत्य 'थाबल चोंगबा' के लिए प्रसिद्ध है?",
+    "options": [
+      "Yaoshang / याओशांग",
+      "Sangai / शंघाई",
+      "Lai Haraoba / लाई हरोबा",
+      "Ningol Chakouba / निंगोल चाकौबा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Yaoshang is celebrated on the full moon of Lamta (February-March) in Manipur, beginning with burning of the Yaoshang hut and Thabal Chongba (dancing by moonlight). / याओशांग मणिपुर का 5 दिवसीय होली जैसा त्यौहार है जिसमें युवा चांदनी रात में 'थाबल चोंगबा' वृत्त नृत्य करते हैं।",
+    "id": 9065
+  },
+  {
+    "question": "The 75-day long 'Bastar Dussehra' in Chhattisgarh is unique in India because it worships which local goddess instead of Lord Rama's victory? / छत्तीसगढ़ का 75 दिनों तक चलने वाला 'बस्तर दशहरा' भारत में अद्वितीय है क्योंकि इसमें भगवान राम की विजय के बजाय किस देवी की पूजा होती है?",
+    "options": [
+      "Goddess Danteshwari / देवी दंतेश्वरी",
+      "Goddess Samaleswari / देवी समलेश्वरी",
+      "Goddess Kamakhya / देवी कामाख्या",
+      "Goddess Kali / देवी काली"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Bastar Dussehra is the longest festival in India (lasting 75 days) where tribal communities worship local deity Goddess Danteshwari with a massive wooden chariot. / बस्तर दशहरा भारत का सबसे लंबा चलने वाला त्यौहार (75 दिन) है जो बस्तर की कुलदेवी दंतेश्वरी माई को समर्पित है।",
+    "id": 9066
+  },
+  {
+    "question": "'Jallikattu', the traditional bull-taming sporting event, is an integral part of which harvest festival in Tamil Nadu? / पारंपरिक सांडों को वश में करने का खेल 'जल्लीकट्टू' तमिलनाडु के किस फसल उत्सव का अभिन्न अंग है?",
+    "options": [
+      "Mattu Pongal / मट्टू पोंगल",
+      "Bhogi Pongal / भोगी पोंगल",
+      "Kaanum Pongal / कानुम पोंगल",
+      "Surya Pongal / सूर्य पोंगल"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Jallikattu (Eru Thazhuvuthal) is played on Mattu Pongal day in Alanganallur, Palamedu, and Avaniyapuram in Tamil Nadu to celebrate cattle. / जल्लीकट्टू मट्टू पोंगल (पोंगल का तीसरा दिन) के अवसर पर तमिलनाडु में मवेशियों के सम्मान में आयोजित किया जाता है।",
+    "id": 9067
+  },
+  {
+    "question": "'Kambala' is an annual traditional buffalo race organized across muddy paddy fields during the harvest season in which coastal region? / फसल कटाई के मौसम में कीचड़ भरे धान के खेतों में आयोजित होने वाली पारंपरिक भैंस दौड़ 'कंबाला' किस तटीय क्षेत्र में होती है?",
+    "options": [
+      "Coastal Karnataka (Dakshina Kannada & Udupi) / तटीय कर्नाटक (दक्षिण कन्नड़ व उडुपी)",
+      "Kerala backwaters / केरल",
+      "Tamil Nadu / तमिलनाडु",
+      "Andhra coast / आंध्र तट"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Kambala is an annual buffalo race held between November and March in coastal Karnataka, dedicated to Lord Kadri Manjunatha for good harvest. / कंबाला तटीय कर्नाटक के उडुपी और दक्षिण कन्नड़ जिलों में अच्छी फसल के लिए आयोजित होने वाली भैंस दौड़ है।",
+    "id": 9068
+  },
+  {
+    "question": "'Moatsu Mong' is the post-sowing festival celebrated with songs and merrymaking by which Naga tribe in Nagaland? / नागालैंड में बुवाई के बाद किस नागा जनजाति द्वारा 'मोआत्सु मोंग' उत्सव गीतों और उल्लास के साथ मनाया जाता है?",
+    "options": [
+      "Ao Naga tribe / आओ नागा जनजाति",
+      "Angami Naga tribe / अंगामी नागा जनजाति",
+      "Konyak tribe / कोन्याक जनजाति",
+      "Sumi tribe / सुमी जनजाति"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Moatsu is the premier celebration of the Ao tribe in early May after completing seed sowing in their jhum fields. / मोआत्सु नागालैंड की आओ नागा जनजाति का प्रमुख उत्सव है जो खेतों में बीज बोने के बाद मई के पहले सप्ताह में मनाया जाता है।",
+    "id": 9069
+  },
+  {
+    "question": "'Sekrenyi', celebrated as a 10-day purification and sanitization festival before sowing, belongs to which Naga tribe? / बुवाई से पहले 10 दिवसीय शुद्धिकरण उत्सव के रूप में मनाया जाने वाला 'सेक्रेनी' किस नागा जनजाति का त्यौहार है?",
+    "options": [
+      "Angami Naga tribe / अंगामी नागा जनजाति",
+      "Ao tribe / आओ जनजाति",
+      "Garo tribe / गारो जनजाति",
+      "Lotha tribe / लोथा जनजाति"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Sekrenyi (also called Phousanyi) is celebrated in February by the Angami Nagas of Kohima and Dimapur to cleanse the body and soul. / सेक्रेनी अंगामी नागा जनजाति का 10 दिवसीय आत्म-शुद्धिकरण उत्सव है जो फरवरी माह में मनाया जाता है।",
+    "id": 9070
+  },
+  {
+    "question": "Which ancient dance festival of Manipur, meaning 'Merrymaking of the Gods', recounts the creation of the universe by Sanamahi deities? / मणिपुर का कौन-सा प्राचीन नृत्य उत्सव, जिसका अर्थ 'देवताओं का आमोद-प्रमोद' है, ब्रह्मांड के निर्माण की कथा दर्शाता है?",
+    "options": [
+      "Lai Haraoba / लाई हरोबा",
+      "Yaoshang / याओशांग",
+      "Lui-Ngai-Ni / लुई-नगाई-नी",
+      "Ningol Chakouba / निंगोल चाकौबा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Lai Haraoba is an ancient ritual festival of the Meitei people of Manipur featuring Maibi priestesses reenacting cosmic creation. / लाई हरोबा मणिपुर के मैतेई समुदाय का पारंपरिक उत्सव है जिसका अर्थ 'देवताओं का उल्लास' है।",
+    "id": 9071
+  },
+  {
+    "question": "'Lui-Ngai-Ni' is a collective seed-sowing festival celebrated by all Naga tribes inhabiting which state? / किस राज्य में रहने वाली सभी नागा जनजातियों द्वारा एक साथ मनाया जाने वाला बीज बोने का सामूहिक त्यौहार 'लुई-नगाई-नी' है?",
+    "options": [
+      "Manipur / मणिपुर",
+      "Nagaland / नागालैंड",
+      "Mizoram / मिजोरम",
+      "Tripura / त्रिपुरा"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Lui-Ngai-Ni is celebrated every year on 15 February by the Nagas of Manipur as a common seed-sowing festival. / लुई-नगाई-नी मणिपुर के पहाड़ी क्षेत्रों में नागा जनजातियों द्वारा 15 फरवरी को मनाया जाने वाला बीज बोने का त्यौहार है।",
+    "id": 9072
+  },
+  {
+    "question": "'Ganesh Chaturthi' was transformed into a mass public celebration (Sarvajanik Utsav) to unite Indians during the freedom movement by: / स्वतंत्रता आंदोलन के दौरान भारतीयों को एकजुट करने के लिए 'गणेश चतुर्थी' को सार्वजनिक उत्सव का रूप किसने दिया था?",
+    "options": [
+      "Bal Gangadhar Tilak / बाल गंगाधर तिलक",
+      "Gopal Krishna Gokhale / गोपाल कृष्ण गोखले",
+      "Lala Lajpat Rai / लाला लाजपत राय",
+      "Mahatma Gandhi / महात्मा गांधी"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Lokmanya Bal Gangadhar Tilak revived and transformed Ganesh Chaturthi in Maharashtra into a grand public festival in 1893 to foster national unity. / 1893 में लोकमान्य बाल गंगाधर तिलक ने महाराष्ट्र में सार्वजनिक गणेशोत्सव की शुरुआत कर स्वतंत्रता संग्राम में जनचेतना जगाई।",
+    "id": 9073
+  },
+  {
+    "question": "'Danda Nata' and 'Chhau Parva' are traditional spring festival dances performed with extreme ascetic discipline in: / कठोर तपस्या और अनुष्ठानिक अनुशासन के साथ प्रस्तुत किए जाने वाले 'दण्ड नाट' और 'छऊ पर्व' कहाँ के पारंपरिक वसंत उत्सव हैं?",
+    "options": [
+      "Odisha & Eastern India / ओडिशा व पूर्वी भारत",
+      "Kerala / केरल",
+      "Punjab / पंजाब",
+      "Gujarat / गुजरात"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Danda Nata is celebrated in Southern Odisha honoring Goddess Kali and Lord Shiva; Chhau Parva is held in Mayurbhanj (Odisha), Purulia (WB), and Seraikela (Jharkhand). / दण्ड नाट ओडिशा का कठोर तपस्या से भरा लोकपर्व है तथा चैत्र पर्व पर मयूरभंज, पुरुलिया और सरायकेला में छऊ का आयोजन होता है।",
+    "id": 9074
+  },
+  {
+    "question": "'Hemis Gompa', the largest and wealthiest Buddhist monastery in Ladakh where the famous Masked Dance takes place, belongs to which lineage? / 'हेमिस गोम्पा', जहाँ प्रसिद्ध मुखौटा नृत्य होता है, लद्दाख का सबसे बड़ा बौद्ध मठ किस संप्रदाय से संबंधित है?",
+    "options": [
+      "Drukpa Kagyu Lineage / द्रुकपा काग्यू संप्रदाय",
+      "Gelugpa (Yellow Hat) / गेलुगपा",
+      "Nyingma / न्यिंगमा",
+      "Sakya / साक्य"
+    ],
+    "correctIndex": 0,
+    "category": "Static GK: Special Identities & Cultural Festivals",
+    "explanation": "Hemis Monastery belongs to the Drukpa lineage of Tibetan Buddhism, famous for unfurling its giant Thangka painting every 12 years. / हेमिस मठ तिब्बती बौद्ध धर्म के द्रुकपा संप्रदाय का प्रमुख केंद्र है।",
+    "id": 9075
   }
 ]

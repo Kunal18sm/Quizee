@@ -94,7 +94,7 @@
             <div class="reader-card ${recallCls}">
                 <div class="reader-header">
                     <div>
-                        <div class="reader-kicker">${escapeHtml(table.subjectLabel || '')} · ${rows.length} rows</div>
+                        <div class="reader-kicker">${escapeHtml(table.subjectLabel || '')}</div>
                         <h2 class="reader-title">${highlight(table.title, query)}</h2>
                         ${table.description ? `<p class="reader-desc">${highlight(table.description, query)}</p>` : ''}
                     </div>
@@ -210,7 +210,7 @@
             const totalRowHits = matches.reduce((s, m) => s + m.rows.length, 0);
             stage.innerHTML = `
                 <div class="search-banner">
-                    Found <strong>${matches.length}</strong> matching tables (${totalRowHits} rows)${matches.length > 20 ? ' — showing top 20' : ''}
+                    Found <strong>${matches.length}</strong> matching tables ${matches.length > 20 ? ' — showing top 20' : ''}
                 </div>
                 ${shown.map((m) => renderTableHtml(m.table, m.rows, q)).join('')}
             `;
@@ -234,7 +234,6 @@
                             <div class="drill-card-top">
                                 <div style="display:flex; align-items:center; gap:8px;">
                                     <span class="card-icon-badge">${subMeta.icon}</span>
-                                    <span class="drill-card-meta">${t.rows.length} rows</span>
                                 </div>
                                 <span class="drill-card-arrow">→</span>
                             </div>

@@ -3447,7 +3447,7 @@ window.QUIZEE_STUDY_TABLES = [
     "title": "High-Yield Fixed Prepositions Master Table",
     "icon": "📌",
     "badge": "Top SSC Repeaters",
-    "description": "Most frequently tested Fixed Prepositions and common traps ('No Preposition' traps included!).",
+    "description": "Word + Preposition, Verb + Preposition, Noun + Preposition, Special SSC Rules (No Preposition) & Confusing Pairs.",
     "headers": [
       "Word / Adjective / Verb",
       "Fixed Preposition",
@@ -3455,59 +3455,409 @@ window.QUIZEE_STUDY_TABLES = [
     ],
     "rows": [
       [
-        "Senior, Junior, Superior, Inferior, Prior, Prefer",
-        "TO (Never 'than')",
-        "He is senior TO me; I prefer tea TO coffee."
-      ],
-      [
-        "Accused, Acquitted, Devoid, Bereft, Fond, Proud",
+        "Fond OF",
         "OF",
-        "Accused OF theft; Acquitted OF all charges; Devoid OF sense."
+        "He is very fond OF listening to classical music. (Never 'fond to')"
       ],
       [
-        "Abstain, Refrain, Prevent, Prohibit, Debar, Desist",
-        "FROM + V-ing",
-        "Abstain FROM smoking; Prevented him FROM entering."
+        "Afraid OF / Ashamed OF",
+        "OF",
+        "Afraid OF walking in dark; Ashamed OF rude behaviour."
       ],
       [
-        "Cope / Comply / Acquaint / Endowed / Beset",
-        "WITH (Never 'cope up with')",
-        "We must cope WITH difficulties; Comply WITH rules."
+        "Proud OF / Jealous OF",
+        "OF",
+        "Proud OF his achievement; Jealous OF her colleague's success."
       ],
       [
-        "Accede, Adhere, Yield, Succumb, Listen, Addicted",
+        "Guilty OF / Convicted OF",
+        "OF",
+        "Found guilty OF theft and embezzlement."
+      ],
+      [
+        "Capable OF",
+        "OF",
+        "She is fully capable OF solving this difficult problem."
+      ],
+      [
+        "Devoid OF / Bereft OF",
+        "OF",
+        "His argument was completely devoid OF common sense."
+      ],
+      [
+        "Full OF / Aware OF",
+        "OF",
+        "The hall was full OF students; Fully aware OF legal consequences."
+      ],
+      [
+        "Confident OF / Certain OF",
+        "OF",
+        "Confident OF winning the final match; Certain OF victory."
+      ],
+      [
+        "Tired OF / Sick OF",
+        "OF",
+        "Tired OF working continuously; Sick OF listening to excuses."
+      ],
+      [
+        "Senior TO / Junior TO",
+        "TO (Never 'than')",
+        "He is three years senior TO me in service. (NOT 'senior than')"
+      ],
+      [
+        "Superior TO / Inferior TO",
+        "TO (Never 'than')",
+        "Pashmina is superior TO synthetic wool; Inferior TO quality goods."
+      ],
+      [
+        "Preferable TO / Prefer TO",
+        "TO (Never 'more' / 'than')",
+        "Tea is preferable TO coffee; I prefer walking TO riding."
+      ],
+      [
+        "Accustomed TO / Addicted TO",
         "TO",
-        "Accede TO a request; Adhere TO principles; Succumb TO injuries."
+        "Accustomed TO cold weather; Addicted TO playing video games."
       ],
       [
-        "Die OF vs Die FROM vs Die FOR",
-        "OF (Disease) | FROM (Hunger/Wound/Overwork) | FOR (Cause/Country)",
-        "Died OF cancer; Died FROM exhaustion; Died FOR his motherland."
+        "Married TO",
+        "TO (Never 'with')",
+        "She is married TO a prominent doctor. (NOT 'married with')"
       ],
       [
-        "Angry WITH vs Angry AT",
-        "WITH (a person) | AT (something/behaviour)",
-        "I am angry WITH you AT your rude behaviour."
+        "Dedicated TO / Devoted TO",
+        "TO",
+        "Dedicated TO brave martyrs; Devoted TO the welfare of children."
+      ],
+      [
+        "Similar TO / Contrary TO",
+        "TO",
+        "Handwriting similar TO brother's; Actions contrary TO regulations."
+      ],
+      [
+        "Responsible FOR / Suitable FOR",
+        "FOR",
+        "Manager responsible FOR safety; Dress suitable FOR summer."
+      ],
+      [
+        "Eligible FOR / Eager FOR",
+        "FOR",
+        "Eligible FOR the post; Eager FOR vacations to commence."
+      ],
+      [
+        "Sorry FOR / Grateful FOR",
+        "FOR",
+        "Sorry FOR being late; Grateful FOR your timely assistance."
+      ],
+      [
+        "Good AT / Bad AT",
+        "AT (Skill / Ability)",
+        "Good AT Mathematics; Bad AT keeping secrets. (Never 'good in')"
+      ],
+      [
+        "Expert AT / Quick AT",
+        "AT",
+        "Expert AT performing surgeries; Quick AT mental arithmetic calculations."
+      ],
+      [
+        "Efficient AT",
+        "AT",
+        "Highly efficient AT resolving complex customer grievances."
+      ],
+      [
+        "Interested IN / Successful IN",
+        "IN",
+        "Keenly interested IN archaeology; Successful IN clearing SSC CGL."
+      ],
+      [
+        "Deficient IN / Rich IN / Weak IN",
+        "IN",
+        "Deficient IN iron; Rich IN Vitamin C; Weak IN static awareness."
+      ],
+      [
+        "Different FROM",
+        "FROM (Never 'than')",
+        "Indian polity is different FROM the US system. (NOT 'different than')"
+      ],
+      [
+        "Absent FROM / Free FROM",
+        "FROM",
+        "Absent FROM the morning assembly; Free FROM structural defects."
+      ],
+      [
+        "Annoyed WITH / Pleased WITH",
+        "WITH (Person)",
+        "Annoyed WITH his brother; Pleased WITH student's progress."
+      ],
+      [
+        "Satisfied WITH / Familiar WITH",
+        "WITH",
+        "Satisfied WITH the service; Familiar WITH new exam pattern."
+      ],
+      [
+        "Popular WITH / Dependent ON",
+        "WITH / ON",
+        "Popular WITH rural voters; Economy dependent ON monsoon."
+      ],
+      [
+        "Based ON / Keen ON / Insist ON",
+        "ON",
+        "Movie based ON true events; Keen ON learning music; Insist ON paying."
+      ],
+      [
+        "Known AS vs Known FOR",
+        "AS (Identity) | FOR (Quality)",
+        "Known AS 'Missile Man'; Known FOR his integrity."
+      ],
+      [
+        "Abide BY",
+        "BY",
+        "All citizens must abide BY the Constitution and rule of law."
+      ],
+      [
+        "Accuse OF",
+        "OF (Never 'for')",
+        "The cashier was accused OF theft and fraud. (NOT 'accused for')"
       ],
       [
         "Agree WITH vs Agree TO vs Agree ON",
-        "WITH (person) | TO (proposal) | ON (a point)",
-        "Agreed WITH Ram TO his plan ON that point."
+        "WITH (person) | TO (proposal) | ON (subject)",
+        "Agree WITH you; Agree TO the proposal; Agree ON the meeting date."
       ],
       [
-        "Blind IN vs Blind TO",
-        "IN (one eye) | TO (faults/truth)",
-        "Blind IN the right eye; Blind TO his own faults."
+        "Apologize FOR / Apply FOR",
+        "FOR",
+        "Apologize FOR misconduct; Apply FOR the inspector vacancy."
       ],
       [
-        "Confident OF vs Confidence IN",
-        "Confident OF | Confidence IN",
-        "I am confident OF victory; I have confidence IN you."
+        "Believe IN / Belong TO",
+        "IN / TO",
+        "Believe IN hard work; Lands belong TO our ancestors."
       ],
       [
-        "NO Preposition Trap Verbs (Active Voice)",
-        "Discuss, Describe, Order, Emphasize, Comprise, Resemble, Enter, Attack, Marry",
-        "NEVER use about/with/into/on after these in Active Voice! (e.g., Discuss the plan, NOT discuss about)."
+        "Blame FOR / Boast OF",
+        "FOR / OF",
+        "Blame others FOR mistakes; Boast OF his immense wealth."
+      ],
+      [
+        "Care FOR / Complain ABOUT",
+        "FOR / ABOUT",
+        "Care FOR elderly parents; Complain ABOUT poor water supply."
+      ],
+      [
+        "Consist OF / Contribute TO",
+        "OF / TO",
+        "Consists OF five members; Contribute TO national development."
+      ],
+      [
+        "Deal WITH vs Deal IN",
+        "WITH (person/problem) | IN (business/trade)",
+        "Deal WITH difficult situations; Deals IN imported electronic goods."
+      ],
+      [
+        "Differ FROM / Dream OF",
+        "FROM / OF",
+        "Differ FROM colleagues; Dreamed OF becoming a fighter pilot."
+      ],
+      [
+        "Escape FROM / Laugh AT",
+        "FROM / AT",
+        "Escape FROM prison; Impolite to laugh AT someone's mistake."
+      ],
+      [
+        "Listen TO",
+        "TO (Never bare)",
+        "Please listen TO what the teacher is explaining."
+      ],
+      [
+        "Look AT / Look FOR / Look AFTER",
+        "AT / FOR / AFTER",
+        "Look AT the board; Look FOR lost keys; Look AFTER elderly parents."
+      ],
+      [
+        "Object TO / Participate IN",
+        "TO / IN",
+        "Objected TO the leading question; Participate IN sports."
+      ],
+      [
+        "Prevent FROM + V-ing",
+        "FROM",
+        "Prevented the rescue team FROM reaching the flooded village."
+      ],
+      [
+        "Provide WITH",
+        "WITH",
+        "Provided the flood victims WITH blankets and dry rations."
+      ],
+      [
+        "Recover FROM / Refer TO",
+        "FROM / TO",
+        "Recover FROM viral illness; Refer TO Chapter 8 for details."
+      ],
+      [
+        "Rely ON / Remind OF",
+        "ON / OF",
+        "Never rely ON unverified rumors; Reminds me OF childhood days."
+      ],
+      [
+        "Suffer FROM / Succeed IN",
+        "FROM / IN",
+        "Suffering FROM high fever; Succeed IN achieving one's dream."
+      ],
+      [
+        "Wait FOR / Warn AGAINST",
+        "FOR / AGAINST",
+        "Wait FOR the delayed train; Warned AGAINST overspeeding."
+      ],
+      [
+        "Congratulate ON",
+        "ON (Never 'for')",
+        "Congratulated my friend ON his top rank. (NOT 'congratulated for')"
+      ],
+      [
+        "Interfere WITH",
+        "WITH",
+        "Do not interfere WITH official duties of civil servants."
+      ],
+      [
+        "Search FOR / Separate FROM",
+        "FOR / FROM",
+        "Search FOR lost clues; Ridge separates valley FROM desert."
+      ],
+      [
+        "Translate INTO",
+        "INTO",
+        "Ancient Sanskrit epic translated INTO English and French."
+      ],
+      [
+        "Access TO / Addiction TO",
+        "TO",
+        "Equal access TO healthcare; Addiction TO online gambling."
+      ],
+      [
+        "Advantage OF / Cause OF",
+        "OF",
+        "Take full advantage OF free mocks; Exact cause OF the fire."
+      ],
+      [
+        "Affection FOR / Cure FOR / Demand FOR",
+        "FOR",
+        "Affection FOR grandchildren; Cure FOR disease; Demand FOR lithium."
+      ],
+      [
+        "Exception TO / Invitation TO",
+        "TO",
+        "Exception TO the rule; Invitation TO the wedding banquet."
+      ],
+      [
+        "Faith IN / Interest IN",
+        "IN",
+        "Faith IN the power of truth; Deep interest IN modern science."
+      ],
+      [
+        "Solution TO",
+        "TO (Never 'of')",
+        "Diplomatic dialogue is the only solution TO border disputes."
+      ],
+      [
+        "Discuss (NO 'about')",
+        "NO Preposition",
+        "Discuss the project. (INCORRECT: 'discuss about the project')"
+      ],
+      [
+        "Enter (NO 'into' for physical room)",
+        "NO Preposition",
+        "Entered the classroom. (INCORRECT: 'entered into the classroom')"
+      ],
+      [
+        "Return / Revert (NO 'back')",
+        "NO Preposition",
+        "Returned to India; Revert to email. (INCORRECT: 'return back', 'revert back')"
+      ],
+      [
+        "Order (NO 'for' a meal/drink)",
+        "NO Preposition",
+        "Ordered a cup of tea. (INCORRECT: 'ordered for a cup of tea')"
+      ],
+      [
+        "Despite (NO 'of')",
+        "NO Preposition",
+        "Despite his hard work. (INCORRECT: 'Despite of') | Correct: 'In spite of'"
+      ],
+      [
+        "Although (NO 'but')",
+        "NO Preposition",
+        "Although he was ill, he attended. (INCORRECT: 'Although... but')"
+      ],
+      [
+        "Unless (NO 'not')",
+        "NO Preposition",
+        "Unless you work hard. (INCORRECT: 'Unless you do not work hard')"
+      ],
+      [
+        "Comprise (NO 'of' in active voice)",
+        "NO Preposition",
+        "The book comprises ten chapters. (INCORRECT: 'comprises of')"
+      ],
+      [
+        "Resemble (NO 'with')",
+        "NO Preposition",
+        "She resembles her mother. (INCORRECT: 'resembles with her mother')"
+      ],
+      [
+        "Reach (NO 'to')",
+        "NO Preposition",
+        "Reached the railway station. (INCORRECT: 'reached to the station')"
+      ],
+      [
+        "Request (NO 'for')",
+        "NO Preposition",
+        "Requested him to help. (INCORRECT: 'requested for him')"
+      ],
+      [
+        "Emphasize (NO 'on' as verb)",
+        "NO Preposition",
+        "Emphasized the importance of revision. (INCORRECT: 'emphasized on')"
+      ],
+      [
+        "Accompany (NO 'with')",
+        "NO Preposition",
+        "Accompanied his grandfather. (INCORRECT: 'accompanied with')"
+      ],
+      [
+        "Die OF vs Die FROM",
+        "OF (Disease) | FROM (External cause)",
+        "Died OF cancer / cholera (Disease); Died FROM loss of blood / exhaustion."
+      ],
+      [
+        "Made OF vs Made FROM",
+        "OF (Retains identity) | FROM (Chemical change)",
+        "Table made OF wood (physical); Paper made FROM wood pulp (chemical)."
+      ],
+      [
+        "Since vs For",
+        "SINCE (Point of time) | FOR (Period / Duration)",
+        "Since 1947 / since morning; For two years / for 5 hours."
+      ],
+      [
+        "Between vs Among",
+        "BETWEEN (Two) | AMONG (More than two)",
+        "Between two brothers; Relief distributed among hundreds of victims."
+      ],
+      [
+        "Beside vs Besides",
+        "BESIDE (By the side of) | BESIDES (In addition to)",
+        "Sat beside his friend; Besides English, he speaks fluent French."
+      ],
+      [
+        "By vs Until",
+        "BY (Deadline) | UNTIL (Continuation up to time)",
+        "Submit by 5:00 PM (deadline); Library open until midnight (continuation)."
+      ],
+      [
+        "Angry WITH vs Angry AT",
+        "WITH (Person) | AT (Matter/Behaviour)",
+        "Angry WITH him AT his rude careless behaviour."
       ]
     ]
   },
@@ -3855,6 +4205,1664 @@ window.QUIZEE_STUDY_TABLES = [
         "1 Dec / 4 Dec / 10 Dec / 25 Dec",
         "World AIDS / Navy / Human Rights / Good Governance",
         "UDHR (10 Dec 1948) / Atal Bihari Vajpayee (25 Dec)"
+      ]
+    ]
+  },
+  {
+    "id": "gk_important_days_calendar",
+    "subject": "static_gk",
+    "subjectLabel": "Static GK & Culture",
+    "title": "Important National & International Days (January to December Master Calendar)",
+    "icon": "📅",
+    "badge": "Complete 12 Months",
+    "description": "Comprehensive month-wise calendar of high-yield National and International Days frequently asked in SSC CGL, CHSL, and MTS exams.",
+    "headers": [
+      "Month",
+      "Date",
+      "Important Day",
+      "Exam Significance / Theme Fact"
+    ],
+    "rows": [
+      [
+        "January",
+        "9 January",
+        "Pravasi Bharatiya Divas (NRI Day)",
+        "Commemorates the return of Mahatma Gandhi from South Africa to India in 1915."
+      ],
+      [
+        "January",
+        "10 January",
+        "World Hindi Day (Vishwa Hindi Divas)",
+        "Commemorates the first World Hindi Conference held in Nagpur in 1975."
+      ],
+      [
+        "January",
+        "12 January",
+        "National Youth Day",
+        "Birth anniversary of Swami Vivekananda ('Arise, awake, and stop not till the goal is reached')."
+      ],
+      [
+        "January",
+        "15 January",
+        "Indian Army Day",
+        "Commemorates Field Marshal K.M. Cariappa taking over as first Indian Commander-in-Chief in 1949."
+      ],
+      [
+        "January",
+        "23 January",
+        "Parakram Diwas",
+        "Birth anniversary of Netaji Subhas Chandra Bose ('Give me blood and I will give you freedom')."
+      ],
+      [
+        "January",
+        "24 January",
+        "National Girl Child Day",
+        "Promotes awareness on gender equality, female education, nutrition, and child rights."
+      ],
+      [
+        "January",
+        "25 January",
+        "National Voters' Day",
+        "Marks the foundation day of the Election Commission of India (ECI) established on 25 Jan 1950."
+      ],
+      [
+        "January",
+        "25 January",
+        "National Tourism Day",
+        "Promotes tourism and raises awareness about the economic value of India's cultural heritage."
+      ],
+      [
+        "January",
+        "26 January",
+        "Republic Day of India",
+        "Marks the date on which the Constitution of India came into effect on 26 January 1950."
+      ],
+      [
+        "January",
+        "30 January",
+        "Martyrs' Day (Shaheed Diwas)",
+        "Marks the death anniversary of Mahatma Gandhi in 1948."
+      ],
+      [
+        "February",
+        "2 February",
+        "World Wetlands Day",
+        "Marks adoption of the Ramsar Convention on Wetlands in Ramsar, Iran in 1971."
+      ],
+      [
+        "February",
+        "4 February",
+        "World Cancer Day",
+        "Global awareness day organized by Union for International Cancer Control (UICC)."
+      ],
+      [
+        "February",
+        "11 February",
+        "International Day of Women and Girls in Science",
+        "Recognizes the critical role women and girls play in science and technology."
+      ],
+      [
+        "February",
+        "13 February",
+        "World Radio Day",
+        "Celebrates radio as a powerful medium; marks establishment of UN Radio in 1946."
+      ],
+      [
+        "February",
+        "20 February",
+        "World Day of Social Justice",
+        "Promotes social justice, gender equality, human rights, and social protection."
+      ],
+      [
+        "February",
+        "21 February",
+        "International Mother Language Day",
+        "Promotes awareness of linguistic and cultural diversity and multilingualism."
+      ],
+      [
+        "February",
+        "28 February",
+        "National Science Day",
+        "Commemorates the discovery of the 'Raman Effect' by Sir C.V. Raman in 1928 (Nobel Prize 1930)."
+      ],
+      [
+        "March",
+        "3 March",
+        "World Wildlife Day",
+        "Marks adoption of CITES (Convention on International Trade in Endangered Species) in 1973."
+      ],
+      [
+        "March",
+        "8 March",
+        "International Women's Day",
+        "Global day celebrating the social, economic, cultural, and political achievements of women."
+      ],
+      [
+        "March",
+        "15 March",
+        "World Consumer Rights Day",
+        "Inspired by President John F. Kennedy's historic declaration of consumer rights."
+      ],
+      [
+        "March",
+        "16 March",
+        "National Vaccination Day (Immunization Day)",
+        "Marks the first dose of oral polio vaccine administered in India in 1995."
+      ],
+      [
+        "March",
+        "20 March",
+        "International Day of Happiness",
+        "Established by the United Nations to promote happiness as a fundamental human goal."
+      ],
+      [
+        "March",
+        "21 March",
+        "International Day of Forests",
+        "Celebrates and raises awareness of the importance of all types of forests and trees."
+      ],
+      [
+        "March",
+        "22 March",
+        "World Water Day",
+        "Focuses on freshwater conservation and achieving Sustainable Development Goal 6 (Clean Water)."
+      ],
+      [
+        "March",
+        "23 March",
+        "Shaheed Diwas (Martyrdom Day)",
+        "Honours the supreme martyrdom of Bhagat Singh, Sukhdev, and Rajguru at Lahore in 1931."
+      ],
+      [
+        "March",
+        "23 March",
+        "World Meteorological Day",
+        "Commemorates the establishment of the World Meteorological Organization (WMO) in 1950."
+      ],
+      [
+        "March",
+        "24 March",
+        "World Tuberculosis Day",
+        "Commemorates Dr. Robert Koch discovering Mycobacterium tuberculosis in 1882."
+      ],
+      [
+        "April",
+        "5 April",
+        "National Maritime Day",
+        "Commemorates the maiden voyage of SS Loyalty, India's first merchant ship, from Mumbai to London in 1919."
+      ],
+      [
+        "April",
+        "7 April",
+        "World Health Day",
+        "Marks the founding anniversary of the World Health Organization (WHO) in 1948."
+      ],
+      [
+        "April",
+        "14 April",
+        "Ambedkar Jayanti (Equality Day)",
+        "Birth anniversary of Dr. B.R. Ambedkar, Chief Architect of the Indian Constitution."
+      ],
+      [
+        "April",
+        "18 April",
+        "World Heritage Day (Monuments & Sites Day)",
+        "Raises awareness about cultural heritage, historical monuments, and sites of antiquity."
+      ],
+      [
+        "April",
+        "21 April",
+        "National Civil Services Day",
+        "Marks Sardar Vallabhbhai Patel's address to civil servants referring to them as 'Steel Frame of India' in 1947."
+      ],
+      [
+        "April",
+        "22 April",
+        "Earth Day (Mother Earth Day)",
+        "Celebrated since 1970 to demonstrate global support for environmental protection."
+      ],
+      [
+        "April",
+        "24 April",
+        "National Panchayati Raj Day",
+        "Marks enforcement of 73rd Constitutional Amendment Act, 1992 (Part IX, 11th Schedule)."
+      ],
+      [
+        "April",
+        "25 April",
+        "World Malaria Day",
+        "Recognizes global efforts to control and eradicate mosquito-borne malaria."
+      ],
+      [
+        "May",
+        "1 May",
+        "International Labour Day (May Day)",
+        "Commemorates the struggles and historic gains made by workers and the labour movement."
+      ],
+      [
+        "May",
+        "3 May",
+        "World Press Freedom Day",
+        "Marks the anniversary of the Windhoek Declaration; promotes freedom of the press."
+      ],
+      [
+        "May",
+        "8 May",
+        "World Red Cross Day",
+        "Birth anniversary of Henry Dunant, the founder of the International Red Cross (first Nobel Peace laureate)."
+      ],
+      [
+        "May",
+        "11 May",
+        "National Technology Day",
+        "Marks Pokhran-II nuclear tests ('Operation Shakti') conducted successfully on 11 May 1998."
+      ],
+      [
+        "May",
+        "12 May",
+        "International Nurses Day",
+        "Birth anniversary of Florence Nightingale ('The Lady with the Lamp'), pioneer of modern nursing."
+      ],
+      [
+        "May",
+        "15 May",
+        "International Day of Families",
+        "Highlights the importance of families as the fundamental building block of society."
+      ],
+      [
+        "May",
+        "17 May",
+        "World Telecommunication Day",
+        "Marks the signing of the first International Telegraph Convention in 1865."
+      ],
+      [
+        "May",
+        "18 May",
+        "International Museum Day",
+        "Raises awareness of museums as an important means of cultural exchange."
+      ],
+      [
+        "May",
+        "21 May",
+        "Anti-Terrorism Day",
+        "Death anniversary of former Prime Minister Rajiv Gandhi who was assassinated in 1991."
+      ],
+      [
+        "May",
+        "22 May",
+        "International Day for Biological Diversity",
+        "Commemorates adoption of the text of the Convention on Biological Diversity (CBD) in 1992."
+      ],
+      [
+        "May",
+        "31 May",
+        "World No Tobacco Day",
+        "WHO initiative to draw global attention to the health risks associated with tobacco consumption."
+      ],
+      [
+        "June",
+        "5 June",
+        "World Environment Day",
+        "Established by UN at the 1972 Stockholm Conference; the most widely celebrated environmental day."
+      ],
+      [
+        "June",
+        "8 June",
+        "World Oceans Day",
+        "Raises global awareness of the benefits derived from oceans and the duty to use their resources sustainably."
+      ],
+      [
+        "June",
+        "12 June",
+        "World Day Against Child Labour",
+        "Launched by International Labour Organization (ILO) to eliminate child exploitation."
+      ],
+      [
+        "June",
+        "14 June",
+        "World Blood Donor Day",
+        "Birth anniversary of Karl Landsteiner, who discovered the ABO human blood group system."
+      ],
+      [
+        "June",
+        "17 June",
+        "World Day to Combat Desertification & Drought",
+        "Promotes public awareness on international efforts to combat land degradation and drought."
+      ],
+      [
+        "June",
+        "20 June",
+        "World Refugee Day",
+        "Honours the courage, strength, and resilience of millions of refugees forced to flee their homelands."
+      ],
+      [
+        "June",
+        "21 June",
+        "International Day of Yoga",
+        "Adopted by UN in 2014; celebrates the ancient Indian practice of physical and mental harmony."
+      ],
+      [
+        "June",
+        "23 June",
+        "International Olympic Day",
+        "Commemorates the birth of modern Olympic Games at the Sorbonne, Paris in 1894."
+      ],
+      [
+        "June",
+        "26 June",
+        "International Day Against Drug Abuse",
+        "Strengthens global action and cooperation to achieve a society free of illicit drug abuse."
+      ],
+      [
+        "June",
+        "29 June",
+        "National Statistics Day",
+        "Birth anniversary of Prof. Prasanta Chandra Mahalanobis, father of Indian modern statistics (2nd Five Year Plan)."
+      ],
+      [
+        "July",
+        "1 July",
+        "National Doctors' Day",
+        "Honours Dr. Bidhan Chandra Roy (former Chief Minister of West Bengal, physician and Bharat Ratna)."
+      ],
+      [
+        "July",
+        "1 July",
+        "GST Day",
+        "Marks the nationwide rollout of the Goods and Services Tax (GST) under 101st Amendment in 2017."
+      ],
+      [
+        "July",
+        "11 July",
+        "World Population Day",
+        "Established by UNDP in 1989 after the world population reached 5 billion on 11 July 1987."
+      ],
+      [
+        "July",
+        "15 July",
+        "World Youth Skills Day",
+        "Celebrates the importance of equipping young people with technical skills for employment."
+      ],
+      [
+        "July",
+        "26 July",
+        "Kargil Vijay Diwas",
+        "Commemorates India's victory in Operation Vijay during the 1999 Kargil War against Pakistan."
+      ],
+      [
+        "July",
+        "28 July",
+        "World Hepatitis Day",
+        "Birthday of Nobel-laureate scientist Baruch Blumberg, discoverer of hepatitis B virus."
+      ],
+      [
+        "July",
+        "29 July",
+        "International Tiger Day (Global Tiger Day)",
+        "Promotes a global system for protecting the natural habitats of tigers (St. Petersburg Declaration 2010)."
+      ],
+      [
+        "August",
+        "7 August",
+        "National Handloom Day",
+        "Commemorates the launch of the historic Swadeshi Movement at Calcutta Town Hall in 1905."
+      ],
+      [
+        "August",
+        "9 August",
+        "Quit India Movement Day (August Kranti)",
+        "Marks Gandhi's call of 'Do or Die' launched on 9 August 1942 at Gowalia Tank Maidan, Mumbai."
+      ],
+      [
+        "August",
+        "12 August",
+        "International Youth Day",
+        "Celebrates youth contributions to community, global affairs, and sustainable development."
+      ],
+      [
+        "August",
+        "15 August",
+        "Independence Day of India",
+        "Marks India's independence from British colonial rule on 15 August 1947."
+      ],
+      [
+        "August",
+        "20 August",
+        "Sadbhavana Diwas (Harmony Day)",
+        "Birth anniversary of former Prime Minister Rajiv Gandhi; promotes communal harmony."
+      ],
+      [
+        "August",
+        "23 August",
+        "National Space Day",
+        "Marks the historic landing of ISRO's Chandrayaan-3 lander (Vikram) on the Moon's South Pole in 2023."
+      ],
+      [
+        "August",
+        "29 August",
+        "National Sports Day (Rashtriya Khel Divas)",
+        "Birth anniversary of legendary hockey wizard Major Dhyan Chand (won Olympic Golds in 1928, 1932, 1936)."
+      ],
+      [
+        "September",
+        "5 September",
+        "Teachers' Day",
+        "Birth anniversary of Dr. Sarvepalli Radhakrishnan, philosopher, scholar, and India's second President."
+      ],
+      [
+        "September",
+        "8 September",
+        "International Literacy Day",
+        "Declared by UNESCO in 1966 to highlight the importance of literacy to individuals and society."
+      ],
+      [
+        "September",
+        "14 September",
+        "Hindi Diwas (National Hindi Day)",
+        "Marks the adoption of Hindi in Devanagari script as the Official Language of the Union by Constituent Assembly in 1949."
+      ],
+      [
+        "September",
+        "15 September",
+        "Engineers' Day",
+        "Birth anniversary of Sir Mokshagundam Visvesvaraya (Bharat Ratna 1955, chief engineer of Krishna Raja Sagara dam)."
+      ],
+      [
+        "September",
+        "15 September",
+        "International Day of Democracy",
+        "Promotes democratic values, human rights, and representative governance worldwide."
+      ],
+      [
+        "September",
+        "16 September",
+        "World Ozone Day",
+        "Commemorates the signing of the Montreal Protocol on Substances that Deplete the Ozone Layer in 1987."
+      ],
+      [
+        "September",
+        "21 September",
+        "International Day of Peace",
+        "Dedicated to world peace and non-violence; observed with a 24-hour ceasefire across conflict zones."
+      ],
+      [
+        "September",
+        "27 September",
+        "World Tourism Day",
+        "Established by UN World Tourism Organization (UNWTO) to foster awareness of tourism's social value."
+      ],
+      [
+        "September",
+        "29 September",
+        "World Heart Day",
+        "Global campaign by World Heart Federation to inform people about cardiovascular disease prevention."
+      ],
+      [
+        "October",
+        "2 October",
+        "Gandhi Jayanti / International Day of Non-Violence",
+        "Birth anniversary of Mahatma Gandhi (declared International Day of Non-Violence by UN)."
+      ],
+      [
+        "October",
+        "5 October",
+        "World Teachers' Day",
+        "Commemorates the 1966 UNESCO/ILO Recommendation concerning the Status of Teachers."
+      ],
+      [
+        "October",
+        "8 October",
+        "Indian Air Force (IAF) Day",
+        "Marks the official establishment of the Indian Air Force on 8 October 1932."
+      ],
+      [
+        "October",
+        "9 October",
+        "World Post Day",
+        "Marks the anniversary of the establishment of the Universal Postal Union (UPU) in 1874 in Bern, Switzerland."
+      ],
+      [
+        "October",
+        "10 October",
+        "World Mental Health Day",
+        "Global mental health education, awareness, and advocacy against social stigma."
+      ],
+      [
+        "October",
+        "11 October",
+        "International Day of the Girl Child",
+        "Dedicated to promoting girls' empowerment and the fulfillment of their human rights."
+      ],
+      [
+        "October",
+        "16 October",
+        "World Food Day",
+        "Commemorates the founding of the Food and Agriculture Organization (FAO) of the United Nations in 1945."
+      ],
+      [
+        "October",
+        "24 October",
+        "United Nations Day (UN Day)",
+        "Marks the official entry into force of the UN Charter on 24 October 1945."
+      ],
+      [
+        "October",
+        "31 October",
+        "National Unity Day (Rashtriya Ekta Diwas)",
+        "Birth anniversary of Sardar Vallabhbhai Patel ('Iron Man of India'), unifier of 565 princely states."
+      ],
+      [
+        "November",
+        "7 November",
+        "National Cancer Awareness Day",
+        "Marks the birth anniversary of Nobel laureate Madame Marie Curie (co-discoverer of radium and polonium)."
+      ],
+      [
+        "November",
+        "9 November",
+        "National Legal Services Day",
+        "Commemorates the enactment of the Legal Services Authorities Act 1987 (NALSA)."
+      ],
+      [
+        "November",
+        "10 November",
+        "World Science Day for Peace and Development",
+        "Highlights the role of science in society and the need to engage the wider public in debates on science."
+      ],
+      [
+        "November",
+        "11 November",
+        "National Education Day",
+        "Birth anniversary of Maulana Abul Kalam Azad, independent India's first Minister of Education."
+      ],
+      [
+        "November",
+        "14 November",
+        "Children's Day (Bal Diwas)",
+        "Birth anniversary of Pandit Jawaharlal Nehru, independent India's first Prime Minister ('Chacha Nehru')."
+      ],
+      [
+        "November",
+        "14 November",
+        "World Diabetes Day",
+        "Birthday of Sir Frederick Banting, who co-discovered insulin with Charles Best in 1922."
+      ],
+      [
+        "November",
+        "19 November",
+        "World Toilet Day",
+        "UN-recognized day to inspire action to tackle the global sanitation crisis and achieve SDG 6."
+      ],
+      [
+        "November",
+        "19 November",
+        "International Men's Day",
+        "Focuses on men's and boys' health, improving gender relations, and promoting positive male role models."
+      ],
+      [
+        "November",
+        "20 November",
+        "World Children's Day (Universal Children's Day)",
+        "Marks UN General Assembly's adoption of the Declaration and Convention on the Rights of the Child."
+      ],
+      [
+        "November",
+        "26 November",
+        "Constitution Day (Samvidhan Divas)",
+        "Commemorates the adoption of the Constitution of India by the Constituent Assembly on 26 Nov 1949."
+      ],
+      [
+        "November",
+        "26 November",
+        "National Milk Day",
+        "Birth anniversary of Dr. Verghese Kurien, father of the White Revolution in India (Operation Flood)."
+      ],
+      [
+        "December",
+        "1 December",
+        "World AIDS Day",
+        "Global campaign dedicated to raising awareness of the AIDS pandemic caused by the spread of HIV."
+      ],
+      [
+        "December",
+        "2 December",
+        "National Pollution Control Day",
+        "Observed in memory of the thousands who lost their lives in the tragic Bhopal Gas Tragedy on 2-3 Dec 1984."
+      ],
+      [
+        "December",
+        "3 December",
+        "International Day of Persons with Disabilities",
+        "Promotes the rights and well-being of persons with disabilities in all spheres of society."
+      ],
+      [
+        "December",
+        "4 December",
+        "Indian Navy Day",
+        "Celebrates the achievements and role of the naval forces; marks 'Operation Trident' on Karachi harbor in 1971."
+      ],
+      [
+        "December",
+        "5 December",
+        "World Soil Day",
+        "Advocates sustainable management of soil resources; birthday of Thailand's King Bhumibol Adulyadej."
+      ],
+      [
+        "December",
+        "7 December",
+        "Armed Forces Flag Day",
+        "Dedicated to collecting funds from people for the welfare of Armed Forces personnel and veterans."
+      ],
+      [
+        "December",
+        "9 December",
+        "International Anti-Corruption Day",
+        "Promotes awareness on the United Nations Convention Against Corruption (UNCAC)."
+      ],
+      [
+        "December",
+        "10 December",
+        "Human Rights Day",
+        "Commemorates the adoption of the Universal Declaration of Human Rights (UDHR) by UN in 1948."
+      ],
+      [
+        "December",
+        "14 December",
+        "National Energy Conservation Day",
+        "Organized by the Bureau of Energy Efficiency (BEE) to showcase India's achievements in energy efficiency."
+      ],
+      [
+        "December",
+        "16 December",
+        "Vijay Diwas",
+        "Commemorates India's historic victory over Pakistan in 1971 and the unconditional surrender of 93,000 Pakistani soldiers."
+      ],
+      [
+        "December",
+        "22 December",
+        "National Mathematics Day",
+        "Birth anniversary of mathematical genius Srinivasa Ramanujan (fellow of the Royal Society, Cambridge)."
+      ],
+      [
+        "December",
+        "23 December",
+        "National Farmers' Day (Kisan Diwas)",
+        "Birth anniversary of Chaudhary Charan Singh, 5th Prime Minister of India and champion of farmers."
+      ],
+      [
+        "December",
+        "24 December",
+        "National Consumer Day",
+        "Marks the President's assent to the historic Consumer Protection Act on 24 December 1986."
+      ],
+      [
+        "December",
+        "25 December",
+        "Good Governance Day (Sushasan Divas)",
+        "Birth anniversary of former Prime Minister Atal Bihari Vajpayee."
+      ],
+      [
+        "December",
+        "26 December",
+        "Veer Baal Diwas",
+        "Commemorates the supreme sacrifice of Sahibzada Zorawar Singh (9) and Fateh Singh (7), sons of Guru Gobind Singh Ji."
+      ]
+    ]
+  },
+  {
+    "id": "gk_festivals_harvest_state",
+    "subject": "static_gk",
+    "subjectLabel": "Static GK & Culture",
+    "title": "Major Festivals & Harvest Celebrations of India (त्यौहार एवं फसल उत्सव)",
+    "icon": "🎉",
+    "badge": "High Priority for SSC CGL & CHSL",
+    "description": "Complete state-wise and harvest-wise list of major Indian festivals, their cultural significance, tribal roots, and special exam identities.",
+    "headers": [
+      "Festival",
+      "State / Region",
+      "Category / Type",
+      "Special Identity & Exam Facts"
+    ],
+    "rows": [
+      [
+        "Baisakhi",
+        "Punjab & Haryana",
+        "Harvest (Rabi Crop)",
+        "Marks ripening of rabi crops and the founding of the Khalsa Panth in 1699 by Guru Gobind Singh Ji."
+      ],
+      [
+        "Bihu (Bhogali / Magh)",
+        "Assam",
+        "Harvest (Winter)",
+        "Feasting and bonfires (Meji) celebrating the winter harvest. Bohag Bihu (Spring) & Kati Bihu (Autumn) are other forms."
+      ],
+      [
+        "Pongal",
+        "Tamil Nadu",
+        "Harvest (4 Days)",
+        "Four-day festival dedicated to Sun God: Bhogi Pongal, Surya Pongal, Mattu Pongal (Jallikattu), and Kaanum Pongal."
+      ],
+      [
+        "Onam",
+        "Kerala",
+        "Harvest (10 Days)",
+        "Celebrates the homecoming of King Mahabali. Features Vallam Kali (Snake Boat Race), Pookkalam (floral rangoli), and Onasadya feast."
+      ],
+      [
+        "Makar Sankranti",
+        "Pan-India",
+        "Harvest / Solstice",
+        "Celebrated across India: Uttarayan (Gujarat kite flying), Maghi (Punjab), Khichdi (UP/Bihar), Poush Sankranti (Bengal)."
+      ],
+      [
+        "Nuakhai",
+        "Odisha (Western)",
+        "Harvest (Agrarian)",
+        "Consuming the first grains of newly harvested rice (Nabanna) offered to Goddess Samaleswari."
+      ],
+      [
+        "Lohri",
+        "Punjab & Haryana",
+        "Harvest / Winter Solstice",
+        "Celebrated on 13 January with bonfires, sesame seeds, gur, and folk songs marking the end of peak winter."
+      ],
+      [
+        "Nabanna",
+        "West Bengal",
+        "Harvest (Autumn)",
+        "Celebration of the winter Aman paddy harvest with 'nabanna' (new rice preparations) and folk dances."
+      ],
+      [
+        "Vishu",
+        "Kerala & Mahe",
+        "Harvest & Astronomical New Year",
+        "Celebrated in mid-April with Vishukkani (auspicious sighting of gold, grains, fruits) and Vishukaineetam."
+      ],
+      [
+        "Wangala",
+        "Meghalaya",
+        "Harvest (Post-harvest Thanksgiving)",
+        "Known as '100 Drums Festival' of the Garo tribe, dedicated to Sun God Misi Saljong."
+      ],
+      [
+        "Ka Pomblang Nongkrem",
+        "Meghalaya",
+        "Harvest & Thanksgiving",
+        "5-day festival celebrated by the Khasi tribe at Smit for harvest prosperity and community peace."
+      ],
+      [
+        "Gudi Padwa",
+        "Maharashtra",
+        "Harvest & Marathi New Year",
+        "First day of Chaitra month; houses hoist a decorated Gudi (victory flag) symbolizing victory and new harvest."
+      ],
+      [
+        "Hornbill Festival",
+        "Nagaland (Kisama)",
+        "Cultural Extravaganza",
+        "Known as the 'Festival of Festivals' (1–10 Dec), celebrating the heritage of all 17 Naga tribes."
+      ],
+      [
+        "Durga Puja",
+        "West Bengal (Kolkata)",
+        "Religious & Cultural",
+        "Inscribed on UNESCO's Intangible Cultural Heritage List (2021); celebrated with monumental pandals."
+      ],
+      [
+        "Rath Yatra",
+        "Odisha (Puri)",
+        "Chariot Festival",
+        "Annual procession of Lord Jagannath, Balabhadra, and Subhadra to the Gundicha Temple in gigantic wooden chariots."
+      ],
+      [
+        "Chhath Puja",
+        "Bihar & Jharkhand",
+        "Sun Worship",
+        "Rigorous 4-day festival offering Arghya to the setting and rising Sun on river ghats."
+      ],
+      [
+        "Sarhul",
+        "Jharkhand",
+        "Tribal Spring Festival",
+        "Worship of the blooming Sal tree (Sakhua) by the Oraon, Munda, and Ho tribes welcoming spring."
+      ],
+      [
+        "Gangaur",
+        "Rajasthan",
+        "Cultural & Folk",
+        "Celebrated by women worshipping Goddess Gauri (Parvati) and Lord Shiva with clay idols and Ghoomar."
+      ],
+      [
+        "Teej (Haryali / Kajari)",
+        "Rajasthan, Haryana, UP",
+        "Monsoon Festival",
+        "Celebrated during Shravan/Bhadrapada with swings, mehendi, and traditional sweets like Ghevar."
+      ],
+      [
+        "Kullu Dussehra",
+        "Himachal Pradesh",
+        "International Folk Festival",
+        "Begins on Vijayadashami day at Dhalpur Maidan with congregation of over 200 local devtas."
+      ],
+      [
+        "Losar",
+        "Ladakh, Sikkim, Arunachal",
+        "Buddhist New Year",
+        "Tibetan Buddhist New Year celebrated with traditional Metho illumination, masked dances, and feasts."
+      ],
+      [
+        "Hemis Festival",
+        "Ladakh (Hemis Gompa)",
+        "Buddhist Monastic",
+        "Celebrates birth of Guru Padmasambhava with sacred 'Cham' (Masked Buddhist Dance) and giant Thangka."
+      ],
+      [
+        "Thrissur Pooram",
+        "Kerala (Vadakkunnathan)",
+        "Temple Extravaganza",
+        "'Mother of all Poorams' featuring 50 decorated tuskers, Ilanjithara Melam, and Kudamattam (umbrella swap)."
+      ],
+      [
+        "Mysuru Dasara",
+        "Karnataka",
+        "Royal State Festival",
+        "Famous for 'Jumboo Savari' carrying Goddess Chamundeshwari in a 750-kg golden howdah on an elephant."
+      ],
+      [
+        "Ugadi",
+        "Karnataka, AP & Telangana",
+        "New Year & Spring",
+        "First day of Chaitra; celebrated with 'Bevu-Bella' (neem-jaggery) symbolizing bitter and sweet experiences of life."
+      ],
+      [
+        "Bathukamma",
+        "Telangana",
+        "Floral Festival",
+        "9-day festival of seasonal flowers celebrating Goddess Gauri; culminating as Saddula Bathukamma."
+      ],
+      [
+        "Bonalu",
+        "Telangana (Hyderabad)",
+        "Folk Thanksgiving",
+        "Goddess Mahakali worshipped in Ashada month with women carrying decorated brass pots (Bonam)."
+      ],
+      [
+        "Chapchar Kut",
+        "Mizoram",
+        "Spring Post-Jhum Festival",
+        "Celebrated in March after clearing jhum bamboo debris; famous for Cheraw (bamboo dance)."
+      ],
+      [
+        "Yaoshang",
+        "Manipur",
+        "Holi-like Spring Festival",
+        "5-day festival celebrated with Thabal Chongba (moonlight circle dance) and traditional youth sports."
+      ],
+      [
+        "Sangai Festival",
+        "Manipur",
+        "State Tourism & Culture",
+        "Named after Manipur's state animal brow-antlered deer (Sangai), showcasing arts, handlooms, and sports."
+      ],
+      [
+        "Kharchi Puja",
+        "Tripura (Old Agartala)",
+        "Tribal Ancestral",
+        "Week-long festival worshipping the 14 ancestral deities (Chaturdasha Devata)."
+      ],
+      [
+        "Ganesh Chaturthi",
+        "Maharashtra",
+        "Public Folk Festival",
+        "Revived in 1893 by Bal Gangadhar Tilak as a mass nationalist movement; 10-day celebration."
+      ],
+      [
+        "Rann Utsav",
+        "Gujarat (Kutch)",
+        "Cultural Carnival",
+        "Celebrated in the white salt desert of Kutch under full moon nights with music, dance, and handicrafts."
+      ],
+      [
+        "Bhagoria",
+        "Madhya Pradesh",
+        "Tribal Spring / Matchmaking",
+        "Celebrated by Bhil and Bhilala tribes in Jhabua and Alirajpur before Holi as a lively matchmaking haat."
+      ]
+    ]
+  },
+  {
+    "id": "gk_fairs_melas_india",
+    "subject": "static_gk",
+    "subjectLabel": "Static GK & Culture",
+    "title": "Most Important Fairs & Melas of India (भारत के प्रमुख मेले)",
+    "icon": "🎪",
+    "badge": "High Priority for SSC Exams",
+    "description": "Comprehensive list of major Indian fairs, cattle melas, religious congregations, and handicraft exhibitions with locations and exam-critical facts.",
+    "headers": [
+      "Fair / Mela (मेला)",
+      "State / Location",
+      "Key Highlights & Special Features"
+    ],
+    "rows": [
+      [
+        "Pushkar Fair",
+        "Rajasthan (Ajmer)",
+        "World's largest Camel Fair; held on Kartik Purnima beside holy Pushkar Lake and Brahma Temple."
+      ],
+      [
+        "Sonepur Mela",
+        "Bihar (Saran district)",
+        "Asia's largest Cattle Fair; held at confluence of Ganga & Gandak on Kartik Purnima (Harihar Kshetra)."
+      ],
+      [
+        "Kumbh Mela",
+        "Prayagraj, Haridwar, Ujjain, Nashik",
+        "World's largest peaceful human gathering held every 12 years across four sacred river banks; UNESCO inscribed."
+      ],
+      [
+        "Gangasagar Mela",
+        "West Bengal (Sagar Island)",
+        "Second largest pilgrimage gathering after Kumbh; holy dip on Makar Sankranti where Ganga meets Bay of Bengal."
+      ],
+      [
+        "Surajkund International Crafts Mela",
+        "Haryana (Faridabad)",
+        "World's largest crafts mela held every February showcasing Indian and global artisans with a theme state."
+      ],
+      [
+        "Ambubachi Mela",
+        "Assam (Guwahati)",
+        "Celebrates the annual menstruation/fertility cycle of Mother Earth at Kamakhya Temple atop Nilachal Hill."
+      ],
+      [
+        "Tarnetar Fair",
+        "Gujarat (Surendranagar)",
+        "Folk celebration near Trinetreshwar Mahadev temple; famous for Garba, Raas, and intricately embroidered umbrellas."
+      ],
+      [
+        "Baneshwar Fair",
+        "Rajasthan (Dungarpur)",
+        "'Kumbh of the Tribals' held at the Triveni Sangam of Som, Mahi, and Jakham rivers by Bhil tribals on Magh Purnima."
+      ],
+      [
+        "Nauchandi Mela",
+        "Uttar Pradesh (Meerut)",
+        "Celebrated after Holi around Nauchandi Devi temple and Bale Miyan shrine; symbol of Hindu-Muslim unity."
+      ],
+      [
+        "Bateshwar Fair",
+        "Uttar Pradesh (Agra)",
+        "Historic animal trading fair for camels and horses along the Yamuna River beside 108 Shiva temples."
+      ],
+      [
+        "Magh Mela",
+        "Uttar Pradesh (Prayagraj)",
+        "Month-long annual pilgrimage fair held every year in January-February at Triveni Sangam for Kalpavasis."
+      ],
+      [
+        "Bali Jatra",
+        "Odisha (Cuttack)",
+        "Asia's largest open-air trade fair on the Mahanadi River, commemorating ancient Kalinga maritime voyages to Bali & Java."
+      ],
+      [
+        "Medaram Jatara (Sammakka Sarakka)",
+        "Telangana (Mulugu district)",
+        "Asia's largest tribal congregation celebrated biennially by the Koya tribe in Medaram forest."
+      ],
+      [
+        "Nagaur Fair (Ramdev Cattle Fair)",
+        "Rajasthan (Nagaur)",
+        "Second largest animal fair in Rajasthan, famous for Marwari horses, Nagauri bullocks, and camels."
+      ],
+      [
+        "Mandi Shivratri Fair",
+        "Himachal Pradesh (Mandi)",
+        "Historic 7-day international cultural mela where 200+ local village deities congregate at Paddal Ground."
+      ],
+      [
+        "Ramdevra Fair",
+        "Rajasthan (Jaisalmer)",
+        "Honors folk deity Baba Ramdevji at Pokhran; famous for communal harmony and the 'Terah Taali' dance."
+      ]
+    ]
+  },
+  {
+    "id": "hist_one_word_master_revision",
+    "subject": "history",
+    "subjectLabel": "History (Ancient, Medieval, Modern)",
+    "title": "History Rapid-Fire One-Word Master Revision (प्राचीन, मध्यकालीन व आधुनिक इतिहास)",
+    "icon": "📜",
+    "badge": "Very High Priority for SSC Exams",
+    "description": "Complete one-word memory anchors and exam clues covering Ancient, Medieval, and Modern Indian history for fast revision.",
+    "headers": [
+      "Era / Period",
+      "Exam Question / Clue",
+      "One-Word Answer",
+      "Key Exam Facts"
+    ],
+    "rows": [
+      [
+        "Ancient",
+        "Great Bath discovered by?",
+        "R. D. Banerji",
+        "Discovered at Mohenjo-daro in 1922 in Larkana, Sindh."
+      ],
+      [
+        "Ancient",
+        "Harappa discovered by?",
+        "Daya Ram Sahni",
+        "Excavated in 1921 on the Ravi River in Montgomery, Punjab."
+      ],
+      [
+        "Ancient",
+        "Indus Valley script nature?",
+        "Undeciphered",
+        "Pictographic, boustrophedon (right to left alternate)."
+      ],
+      [
+        "Ancient",
+        "Oldest Veda?",
+        "Rigveda",
+        "1,028 suktas and 10 mandalas; world's oldest sacred text."
+      ],
+      [
+        "Ancient",
+        "Gayatri Mantra in which Veda?",
+        "Rigveda",
+        "Composed by Sage Vishwamitra in the 3rd Mandala to Savitri."
+      ],
+      [
+        "Ancient",
+        "24th Tirthankara of Jainism?",
+        "Mahavira",
+        "Vardhamana Mahavira; born at Kundagrama near Vaishali."
+      ],
+      [
+        "Ancient",
+        "1st Tirthankara of Jainism?",
+        "Rishabhanatha",
+        "Also called Adinatha; represented by the Bull symbol."
+      ],
+      [
+        "Ancient",
+        "Buddhism founder?",
+        "Gautama Buddha",
+        "Siddhartha Gautama (Sakyamuni); Four Noble Truths."
+      ],
+      [
+        "Ancient",
+        "Buddha's birthplace?",
+        "Lumbini",
+        "Lumbini grove near Kapilavastu (modern Nepal), 563 BC."
+      ],
+      [
+        "Ancient",
+        "Buddha enlightenment place?",
+        "Bodh Gaya",
+        "Under the Bodhi tree beside Niranjana River at age 35."
+      ],
+      [
+        "Ancient",
+        "Buddha's first sermon?",
+        "Sarnath",
+        "Dharmachakrapravartana delivered at Deer Park to 5 ascetics."
+      ],
+      [
+        "Ancient",
+        "Buddha's death place?",
+        "Kushinagar",
+        "Mahaparinirvana in 483 BC at age 80 in Malla Republic."
+      ],
+      [
+        "Ancient",
+        "First Buddhist Council?",
+        "Rajgir",
+        "483 BC at Sattapanni cave under King Ajatashatru."
+      ],
+      [
+        "Ancient",
+        "Second Buddhist Council?",
+        "Vaishali",
+        "383 BC under King Kalashoka (split into Sthaviras & Mahasanghikas)."
+      ],
+      [
+        "Ancient",
+        "Third Buddhist Council?",
+        "Pataliputra",
+        "250 BC under Emperor Ashoka; codified Abhidhamma Pitaka."
+      ],
+      [
+        "Ancient",
+        "Fourth Buddhist Council?",
+        "Kashmir",
+        "Kundalvana under Kanishka; split into Hinayana and Mahayana."
+      ],
+      [
+        "Ancient",
+        "Maurya dynasty founder?",
+        "Chandragupta Maurya",
+        "Overthrew Nandas in 321 BC with Chanakya's guidance."
+      ],
+      [
+        "Ancient",
+        "Arthashastra author?",
+        "Kautilya",
+        "Chanakya/Vishnugupta; 15-book treatise on statecraft and policy."
+      ],
+      [
+        "Ancient",
+        "Indica author?",
+        "Megasthenes",
+        "Greek ambassador of Seleucus Nicator to Pataliputra."
+      ],
+      [
+        "Ancient",
+        "Ashoka's inscriptions deciphered by?",
+        "James Prinsep",
+        "1837; deciphered Brahmi & Kharosthi edicts of 'Piyadassi'."
+      ],
+      [
+        "Ancient",
+        "Gupta dynasty founder?",
+        "Sri Gupta",
+        "Founded around 275 AD; held title of Maharaja."
+      ],
+      [
+        "Ancient",
+        "India's Napoleon?",
+        "Samudragupta",
+        "Titled by V. A. Smith for his undefeated military campaigns."
+      ],
+      [
+        "Ancient",
+        "Allahabad Prashasti author?",
+        "Harisena",
+        "Court poet composed 33-line eulogy in pure Sanskrit."
+      ],
+      [
+        "Ancient",
+        "Aryabhatiya author?",
+        "Aryabhata",
+        "Discovered Earth's rotation, solar/lunar eclipses, and zero system."
+      ],
+      [
+        "Ancient",
+        "Abhijnanashakuntalam author?",
+        "Kalidasa",
+        "Navaratna of Vikramaditya; 'Shakespeare of India'."
+      ],
+      [
+        "Ancient",
+        "Harshacharita author?",
+        "Banabhatta",
+        "Court poet of Harshavardhana; also authored Kadambari."
+      ],
+      [
+        "Ancient",
+        "Nalanda University founder?",
+        "Kumaragupta I",
+        "5th century AD Gupta Emperor (titled Mahendraditya)."
+      ],
+      [
+        "Medieval",
+        "Slave dynasty founder?",
+        "Qutb-ud-din Aibak",
+        "1206 AD; general of Ghori, ruled from Lahore as 'Lakh Baksh'."
+      ],
+      [
+        "Medieval",
+        "Qutub Minar started by?",
+        "Aibak",
+        "Started in 1199 in honor of Sufi saint Bakhtiyar Kaki."
+      ],
+      [
+        "Medieval",
+        "Qutub Minar completed by?",
+        "Iltutmish",
+        "Completed around 1220 by adding 3 storeys."
+      ],
+      [
+        "Medieval",
+        "First woman ruler of Delhi?",
+        "Razia Sultan",
+        "Daughter of Iltutmish; ruled Delhi 1236–1240 AD."
+      ],
+      [
+        "Medieval",
+        "Market control system introduced by?",
+        "Alauddin Khilji",
+        "Fixed commodity prices, created Shahna-i-Mandi."
+      ],
+      [
+        "Medieval",
+        "Token currency introduced by?",
+        "Muhammad bin Tughlaq",
+        "1329–30; issued bronze coins at par with silver tanka."
+      ],
+      [
+        "Medieval",
+        "Vijayanagara Empire founders?",
+        "Harihara & Bukka",
+        "1336 AD on Tungabhadra River guided by Sage Vidyaranya."
+      ],
+      [
+        "Medieval",
+        "Bahmani Kingdom founder?",
+        "Alauddin Bahman Shah",
+        "1347 AD; Hasan Gangu established capital at Gulbarga."
+      ],
+      [
+        "Medieval",
+        "Mughal Empire founder?",
+        "Babur",
+        "1526 AD; defeated Ibrahim Lodi at 1st Panipat."
+      ],
+      [
+        "Medieval",
+        "Baburnama author?",
+        "Babur",
+        "Autobiography written in Chaghatai Turkish."
+      ],
+      [
+        "Medieval",
+        "Akbarnama author?",
+        "Abul Fazl",
+        "Monumental 3-volume official Persian history of Akbar's reign."
+      ],
+      [
+        "Medieval",
+        "Ain-i-Akbari author?",
+        "Abul Fazl",
+        "3rd volume of Akbarnama detailing administration and society."
+      ],
+      [
+        "Medieval",
+        "Din-i-Ilahi introduced by?",
+        "Akbar",
+        "1582 AD syncretic code of conduct; accepted by Birbal."
+      ],
+      [
+        "Medieval",
+        "Taj Mahal built by?",
+        "Shah Jahan",
+        "White marble tomb for Mumtaz Mahal at Agra (Ahmad Lahori)."
+      ],
+      [
+        "Medieval",
+        "Peacock Throne built by?",
+        "Shah Jahan",
+        "Takht-i-Taus; housed Koh-i-Noor, looted by Nadir Shah in 1739."
+      ],
+      [
+        "Medieval",
+        "Red Fort built by?",
+        "Shah Jahan",
+        "Built 1638–1648 in his new capital Shahjahanabad (Delhi)."
+      ],
+      [
+        "Medieval",
+        "Fatehpur Sikri built by?",
+        "Akbar",
+        "Royal fortified capital; built Buland Darwaza for Gujarat victory."
+      ],
+      [
+        "Medieval",
+        "Grand Trunk Road developed by?",
+        "Sher Shah Suri",
+        "Sadak-e-Azam from Sonargaon to Peshawar with 1,700 sarais."
+      ],
+      [
+        "Medieval",
+        "Sikhism founder?",
+        "Guru Nanak",
+        "Born 1469 at Nankana Sahib; started Langar and Pangat."
+      ],
+      [
+        "Medieval",
+        "Khalsa founded by?",
+        "Guru Gobind Singh",
+        "1699 on Baisakhi at Anandpur Sahib; 5 Ks."
+      ],
+      [
+        "Medieval",
+        "Dasam Granth associated with?",
+        "Guru Gobind Singh",
+        "Spiritual and martial poetry of the 10th Sikh Guru."
+      ],
+      [
+        "Medieval",
+        "Shivaji's coronation year?",
+        "1674 AD",
+        "Coronated as Chhatrapati at Raigad by Pandit Gaga Bhatt."
+      ],
+      [
+        "Medieval",
+        "Maratha Empire founder?",
+        "Shivaji",
+        "Pioneered guerrilla warfare (Ganimi Kava) and Hindavi Swarajya."
+      ],
+      [
+        "Medieval",
+        "Ashtapradhan system introduced by?",
+        "Shivaji",
+        "8-member council of ministers headed by the Peshwa."
+      ],
+      [
+        "Modern",
+        "Battle of Plassey (1757) leader?",
+        "Robert Clive",
+        "Defeated Nawab Siraj-ud-Daulah through Mir Jafar's betrayal."
+      ],
+      [
+        "Modern",
+        "Battle of Buxar (1764) leader?",
+        "Hector Munro",
+        "Defeated combined armies of Mir Qasim, Shuja, and Shah Alam II."
+      ],
+      [
+        "Modern",
+        "Permanent Settlement introduced by?",
+        "Cornwallis",
+        "1793 in Bengal/Bihar; fixed zamindari revenue at 10/11th."
+      ],
+      [
+        "Modern",
+        "Subsidiary Alliance introduced by?",
+        "Wellesley",
+        "1798; first accepted by the Nizam of Hyderabad."
+      ],
+      [
+        "Modern",
+        "Doctrine of Lapse introduced by?",
+        "Dalhousie",
+        "Annexed Satara (1848), Jhansi (1853), Nagpur (1854)."
+      ],
+      [
+        "Modern",
+        "Brahmo Samaj founder?",
+        "Rammohan Roy",
+        "1828 in Calcutta; abolished Sati in 1829."
+      ],
+      [
+        "Modern",
+        "Arya Samaj founder?",
+        "Dayanand Saraswati",
+        "1875 in Bombay; 'Go Back to the Vedas', wrote Satyarth Prakash."
+      ],
+      [
+        "Modern",
+        "Ramakrishna Mission founder?",
+        "Vivekananda",
+        "1897 at Belur Math; disciple of Ramakrishna Paramahamsa."
+      ],
+      [
+        "Modern",
+        "Prarthana Samaj founder?",
+        "Atmaram Pandurang",
+        "1867 in Bombay with guidance from Keshab Chandra Sen."
+      ],
+      [
+        "Modern",
+        "Satyashodhak Samaj founder?",
+        "Jyotiba Phule",
+        "1873 in Pune; wrote Gulamgiri, championed lower castes."
+      ],
+      [
+        "Modern",
+        "Aligarh Movement founder?",
+        "Sir Syed Ahmad Khan",
+        "1875; established MAO College (Aligarh Muslim University)."
+      ],
+      [
+        "Modern",
+        "Indian National Congress founder?",
+        "A. O. Hume",
+        "1885 in Bombay; 72 delegates at Gokuldas Tejpal College."
+      ],
+      [
+        "Modern",
+        "First INC President?",
+        "W. C. Bonnerjee",
+        "Presided over Bombay session in December 1885."
+      ],
+      [
+        "Modern",
+        "Muslim League founded in?",
+        "Dacca (1906)",
+        "Founded under Nawab Salimullah and Aga Khan III."
+      ],
+      [
+        "Modern",
+        "Ghadar Party key leader?",
+        "Lala Hardayal",
+        "1913 in San Francisco; published Ghadar weekly."
+      ],
+      [
+        "Modern",
+        "Home Rule Movement leaders?",
+        "Tilak & Annie Besant",
+        "1916; Tilak in Maharashtra/Karnataka, Besant in Madras."
+      ],
+      [
+        "Modern",
+        "Champaran Satyagraha year?",
+        "1917",
+        "Gandhi's first civil disobedience against Tinkathia system."
+      ],
+      [
+        "Modern",
+        "Jallianwala Bagh massacre officer?",
+        "General Dyer",
+        "13 April 1919 in Amritsar; Hunter Commission investigated."
+      ],
+      [
+        "Modern",
+        "Non-Cooperation Movement year?",
+        "1920",
+        "Launched 1 August 1920; suspended after Chauri Chaura (1922)."
+      ],
+      [
+        "Modern",
+        "Civil Disobedience Movement year?",
+        "1930",
+        "Launched with Dandi Salt March (12 March – 6 April 1930)."
+      ],
+      [
+        "Modern",
+        "Dandi March leader?",
+        "Mahatma Gandhi",
+        "240-mile march from Sabarmati to Dandi with 78 followers."
+      ],
+      [
+        "Modern",
+        "Quit India Movement year?",
+        "1942",
+        "Passed 8 August 1942 in Bombay; 'Do or Die' slogan."
+      ],
+      [
+        "Modern",
+        "Azad Hind Fauj leader?",
+        "Subhas Chandra Bose",
+        "Took command of INA in Singapore in 1943; 'Dilli Chalo'."
+      ],
+      [
+        "Modern",
+        "Indian Independence Act year?",
+        "1947",
+        "Passed 18 July 1947; ended British rule on 15 August 1947."
+      ]
+    ]
+  },
+  {
+    "id": "hist_books_and_battles_master",
+    "subject": "history",
+    "subjectLabel": "History (Ancient, Medieval, Modern)",
+    "title": "Historical Books, Authors & Landmark Battles (ऐतिहासिक पुस्तकें व प्रमुख युद्ध)",
+    "icon": "⚔️",
+    "badge": "High Priority for SSC CGL & CHSL",
+    "description": "Exhaustive table of most-asked ancient and medieval texts, chronicles, authors, and decisive battles with years, winners, and significance.",
+    "headers": [
+      "Category",
+      "Book / Battle Name",
+      "Author / Winner & Key Figures",
+      "Year / Historical Significance"
+    ],
+    "rows": [
+      [
+        "Book",
+        "Rajatarangini",
+        "Kalhana",
+        "1148–1150 AD; First sequential Sanskrit history of Kashmir kings."
+      ],
+      [
+        "Book",
+        "Mudrarakshasa",
+        "Vishakhadatta",
+        "Gupta era; Political Sanskrit drama on Chanakya and Chandragupta Maurya."
+      ],
+      [
+        "Book",
+        "Buddhacharita",
+        "Ashvaghosha",
+        "Kushana era; Sanskrit epic poem on the life of Gautama Buddha."
+      ],
+      [
+        "Book",
+        "Milindapanho",
+        "Anonymous (Nagasena)",
+        "1st century BC; Philosophical Pali dialogues of King Menander I."
+      ],
+      [
+        "Book",
+        "Gita Govinda",
+        "Jayadeva",
+        "12th century; Lyrical Sanskrit poem celebrating Radha and Krishna."
+      ],
+      [
+        "Book",
+        "Prithviraj Raso",
+        "Chand Bardai",
+        "Braj Bhasha epic chronicle on King Prithviraj Chauhan III."
+      ],
+      [
+        "Book",
+        "Padmavat",
+        "Malik Muhammad Jayasi",
+        "1540 AD (Awadhi); Sufi romance of Rani Padmini and Alauddin Khilji."
+      ],
+      [
+        "Book",
+        "Tabaqat-i-Nasiri",
+        "Minhaj-us-Siraj",
+        "1260 AD; Authoritative Persian chronicle of Delhi Sultanate."
+      ],
+      [
+        "Book",
+        "Kitab-ul-Hind",
+        "Al-Biruni",
+        "1030 AD; Arabic encyclopedic survey of Indian sciences, religion & society."
+      ],
+      [
+        "Book",
+        "Tarikh-i-Firoz Shahi",
+        "Ziauddin Barani",
+        "1357 AD; Detailed Persian history from Balban to Firoz Tughlaq."
+      ],
+      [
+        "Book",
+        "Tuzuk-i-Baburi (Baburnama)",
+        "Babur",
+        "Chaghatai Turkish autobiography describing Babur's campaigns and India."
+      ],
+      [
+        "Book",
+        "Humayunama",
+        "Gulbadan Begum",
+        "Persian memoirs by Babur's daughter on the life and exile of Humayun."
+      ],
+      [
+        "Book",
+        "Tuzuk-i-Jahangiri",
+        "Jahangir",
+        "Persian autobiography of Jahangir recording royal decrees and arts."
+      ],
+      [
+        "Book",
+        "Shahnameh",
+        "Firdausi",
+        "1010 AD; Persian national epic of 50,000 couplets for Mahmud Ghaznavi."
+      ],
+      [
+        "Battle",
+        "Battle of Hydaspes",
+        "Alexander won (vs Porus)",
+        "326 BC; Jhelum River; Porus resisted bravely and was reinstated."
+      ],
+      [
+        "Battle",
+        "Kalinga War",
+        "Ashoka won (vs Kalinga)",
+        "261 BC; Massive bloodshed caused Ashoka to adopt Dhamma and non-violence."
+      ],
+      [
+        "Battle",
+        "First Battle of Tarain",
+        "Prithviraj Chauhan won (vs Ghori)",
+        "1191 AD; Near Karnal; routed Muhammad Ghori's initial invasion."
+      ],
+      [
+        "Battle",
+        "Second Battle of Tarain",
+        "Muhammad Ghori won (vs Prithviraj)",
+        "1192 AD; Established Turkish Muslim rule in North India."
+      ],
+      [
+        "Battle",
+        "First Battle of Panipat",
+        "Babur won (vs Ibrahim Lodi)",
+        "1526 AD; Babur used field artillery & Tulughma to found Mughal Empire."
+      ],
+      [
+        "Battle",
+        "Battle of Khanwa",
+        "Babur won (vs Rana Sanga)",
+        "1527 AD; Babur defeated Rajput confederacy and took title of Ghazi."
+      ],
+      [
+        "Battle",
+        "Battle of Chausa",
+        "Sher Shah Suri won (vs Humayun)",
+        "1539 AD; Ganges river bank (Bihar); Sher Khan took title of Sher Shah."
+      ],
+      [
+        "Battle",
+        "Battle of Kannauj (Bilgram)",
+        "Sher Shah Suri won (vs Humayun)",
+        "1540 AD; Humayun fled into exile; Sur Dynasty established."
+      ],
+      [
+        "Battle",
+        "Second Battle of Panipat",
+        "Akbar (Bairam Khan) won (vs Hemu)",
+        "1556 AD; Restored Mughal throne after Hemu was struck in the eye."
+      ],
+      [
+        "Battle",
+        "Battle of Haldighati",
+        "Mughals (Man Singh) vs Maharana Pratap",
+        "1576 AD; Fierce resistance by Maharana Pratap and Chetak."
+      ],
+      [
+        "Battle",
+        "Battle of Plassey",
+        "British (Clive) won (vs Siraj-ud-Daulah)",
+        "1757 AD; Betrayal of Mir Jafar laid foundation of British Raj in Bengal."
+      ],
+      [
+        "Battle",
+        "Battle of Buxar",
+        "British (Munro) won (vs Triple Alliance)",
+        "1764 AD; Decisive victory; Treaty of Allahabad granted Diwani of Bengal."
       ]
     ]
   }

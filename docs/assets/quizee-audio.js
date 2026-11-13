@@ -29,24 +29,32 @@
             });
         }
 
-        function toggleAudio(e) {
+        async function toggleAudio(e) {
             if (e) {
                 e.preventDefault();
                 e.stopPropagation();
             }
+
             if (audio.paused) {
-                audio.currentTime = 0;
-                const playPromise = audio.play();
-                if (playPromise !== undefined) {
-                    playPromise.then(() => {
+                try {
+                    const playPromise = audio.play();
+                    if (playPromise !== undefined) {
+                        await playPromise;
                         setAudioState(true);
-                    }).catch(() => {
+                    }
+                } catch (playErr) {
+                    console.warn('[Quizee Audio] Initial play failed, attempting audio.load():', playErr);
+                    try {
+                        audio.load();
+                        await audio.play();
+                        setAudioState(true);
+                    } catch (retryErr) {
+                        console.error('[Quizee Audio] Playback failed completely:', retryErr);
                         setAudioState(false);
-                    });
+                    }
                 }
             } else {
                 audio.pause();
-                audio.currentTime = 0;
                 setAudioState(false);
             }
         }
@@ -54,6 +62,10 @@
         audio.addEventListener('ended', () => setAudioState(false));
         audio.addEventListener('pause', () => setAudioState(false));
         audio.addEventListener('play', () => setAudioState(true));
+        audio.addEventListener('error', (err) => {
+            console.warn('[Quizee Audio] Audio element error:', err);
+            setAudioState(false);
+        });
 
         audioBtns.forEach((btn) => {
             btn.addEventListener('click', toggleAudio);

@@ -458,8 +458,8 @@ table.clean-table tbody td:first-child {
 }
 
 mark.hl {
-    background: rgba(245, 158, 11, 0.32);
-    color: #fef08a;
+    background: rgba(99, 102, 241, 0.22) !important;
+    color: #e0e7ff !important;
     padding: 0 2px;
     border-radius: 3px;
 }
@@ -533,4 +533,8 @@ mark.hl {
         padding: 10px 12px;
         font-size: 13px;
     }
+}
+
+.drill-card-meta {
+    display: none !important;
 }

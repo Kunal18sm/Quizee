@@ -1,5 +1,5 @@
 // Quizee PWA Offline Service Worker
-const CACHE_NAME = 'quizee-offline-v13';
+const CACHE_NAME = 'quizee-offline-v14';
 
 const PRECACHE_ASSETS = [
     './',
@@ -25,6 +25,8 @@ const PRECACHE_ASSETS = [
     './assets/tables.js',
     './assets/icon.png',
     './assets/favicon.png',
+    './assets/quzeaudio.mp3',
+    './assets/quzeaudio.mpeg',
     './data/all_questions.js',
     './data/byjus_gk_data.js',
     './data/study_tables_data.js',
@@ -72,6 +74,60 @@ self.addEventListener('fetch', (event) => {
     if (!request.url.startsWith('http')) return;
 
     const url = new URL(request.url);
+        // Special handler for Audio files (handles HTTP 206 Range requests for offline media playback)
+    if (url.pathname.endsWith('.mp3') || url.pathname.endsWith('.mpeg') || request.destination === 'audio') {
+        event.respondWith(
+            (async () => {
+                const cache = await caches.open(CACHE_NAME);
+                let cachedResponse = await cache.match(request);
+                if (!cachedResponse) {
+                    cachedResponse = await cache.match(url.pathname) || 
+                                     await cache.match('.' + url.pathname) ||
+                                     await cache.match('./assets/quzeaudio.mp3') ||
+                                     await cache.match('./assets/quzeaudio.mpeg');
+                }
+
+                const rangeHeader = request.headers.get('range');
+                if (rangeHeader && cachedResponse) {
+                    try {
+                        const arrayBuffer = await cachedResponse.arrayBuffer();
+                        const bytesMatch = rangeHeader.match(/bytes=(\d+)-(\d+)?/);
+                        if (bytesMatch) {
+                            const start = parseInt(bytesMatch[1], 10);
+                            const end = bytesMatch[2] ? parseInt(bytesMatch[2], 10) : arrayBuffer.byteLength - 1;
+                            const sliced = arrayBuffer.slice(start, end + 1);
+                            return new Response(sliced, {
+                                status: 206,
+                                statusText: 'Partial Content',
+                                headers: [
+                                    ['Content-Type', cachedResponse.headers.get('Content-Type') || 'audio/mpeg'],
+                                    ['Content-Range', `bytes ${start}-${end}/${arrayBuffer.byteLength}`],
+                                    ['Content-Length', `${sliced.byteLength}`],
+                                    ['Accept-Ranges', 'bytes']
+                                ]
+                            });
+                        }
+                    } catch (e) {
+                        console.warn('[Quizee SW] Range response slice failed, returning full cached audio:', e);
+                    }
+                }
+
+                if (cachedResponse) return cachedResponse;
+
+                try {
+                    const netResponse = await fetch(request);
+                    if (netResponse && (netResponse.status === 200 || netResponse.status === 206)) {
+                        cache.put(request, netResponse.clone());
+                    }
+                    return netResponse;
+                } catch (netErr) {
+                    return cachedResponse || new Response('', { status: 404, statusText: 'Audio Not Found' });
+                }
+            })()
+        );
+        return;
+    }
+
     const isHtmlOrShell = request.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname.endsWith('.css') || url.pathname.endsWith('.js');
 
     if (isHtmlOrShell) {

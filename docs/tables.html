@@ -182,10 +182,93 @@
             .nav-links-desktop { display: none; }
             .hamburger-btn { display: flex; }
         }
+    
+        /* =========================================================
+           STUDY TABLES: COMPLETE PURGE OF YELLOW / AMBER
+           ========================================================= */
+        :root {
+            --accent: #6366f1 !important;
+            --accent-hover: #4f46e5 !important;
+            --accent-tint: rgba(99, 102, 241, 0.12) !important;
+            --accent-border: rgba(99, 102, 241, 0.28) !important;
+            --primary: #6366f1 !important;
+            --primary-glow: #818cf8 !important;
+            --secondary: #4f46e5 !important;
+            --amber: #6366f1 !important;
+        }
+
+        /* Completely hide row count indicators */
+        .drill-card-meta,
+        .reader-kicker .row-count {
+            display: none !important;
+        }
+
+        /* Reader Kicker & Titles: Cool Indigo / Slate */
+        .reader-kicker {
+            color: #818cf8 !important;
+        }
+
+        /* Subject Tab Buttons & Badges: Cool Indigo / Slate (Zero Yellow) */
+        .subject-tab-btn.active {
+            border-color: #6366f1 !important;
+            color: #ffffff !important;
+        }
+
+        .subject-tab-btn.active .tab-svg-icon {
+            color: #818cf8 !important;
+        }
+
+        .subject-tab-btn.active .tab-count-badge {
+            background: rgba(99, 102, 241, 0.16) !important;
+            color: #c7d2fe !important;
+        }
+
+        .sb-subject-btn.active .sb-count {
+            color: #818cf8 !important;
+        }
+
+        .sb-subject-btn.active,
+        .sb-topic-btn.active {
+            border-color: rgba(99, 102, 241, 0.4) !important;
+        }
+
+        /* Drill Cards & Hover: Indigo accents */
+        .drill-card:hover {
+            border-color: rgba(99, 102, 241, 0.4) !important;
+        }
+
+        .drill-card:hover .drill-card-arrow {
+            color: #818cf8 !important;
+        }
+
+        .search-wrap:focus-within,
+        .search-wrap input:focus,
+        .tables-search-input:focus {
+            border-color: #6366f1 !important;
+        }
+
+        /* Search highlights: Cool Indigo / Ice (Zero Yellow) */
+        mark.hl {
+            background: rgba(99, 102, 241, 0.25) !important;
+            color: #e0e7ff !important;
+        }
+
+        /* Memorize / Recall Button: Mint Emerald */
+        .btn-recall.active {
+            background: rgba(16, 185, 129, 0.16) !important;
+            border-color: rgba(16, 185, 129, 0.4) !important;
+            color: #6ee7b7 !important;
+        }
+
+        /* Clean Table Hover */
+        .clean-table tr:hover td {
+            background: rgba(99, 102, 241, 0.05) !important;
+        }
+
     </style>
     <link rel="stylesheet" href="assets/quizee-theme.css?v=7">
 </head>
-<body>
+<body class="page-tables">
     <audio id="quizeAudioPlayer" preload="auto">
         <source src="assets/quzeaudio.mp3" type="audio/mpeg">
         <source src="assets/quzeaudio.mpeg" type="audio/mpeg">

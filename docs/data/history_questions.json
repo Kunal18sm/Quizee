@@ -13306,5 +13306,1331 @@
     "correctIndex": 0,
     "category": "Medieval History: Early Medieval Period & Regional Kingdoms",
     "id": 5524
+  },
+  {
+    "question": "Who discovered the 'Great Bath' (विशाल स्नानागार) at Mohenjo-daro in 1922? / 1922 में मोहनजोदड़ो में 'विशाल स्नानागार' की खोज किसने की थी?",
+    "options": [
+      "R. D. Banerji / आर. डी. बनर्जी",
+      "Daya Ram Sahni / दयाराम साहनी",
+      "John Marshall / जॉन मार्शल",
+      "Alexander Cunningham / अलेक्जेंडर कनिंघम"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Rakhaldas Bandyopadhyay (R. D. Banerji) discovered the site of Mohenjo-daro in Larkana, Sindh, in 1922, finding the Great Bath and Granary. / राखालदास बनर्जी (आर. डी. बनर्जी) ने 1922 में सिंध के लरकाना में मोहनजोदड़ो की खोज की।",
+    "id": 9101
+  },
+  {
+    "question": "Who discovered the Indus Valley Civilization site 'Harappa' in 1921? / 1921 में सिंधु घाटी सभ्यता के स्थल 'हड़प्पा' की खोज किसने की थी?",
+    "options": [
+      "Daya Ram Sahni / दयाराम साहनी",
+      "R. D. Banerji / आर. डी. बनर्जी",
+      "Mackay / मैके",
+      "Suraj Bhan / सूरजभान"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Rai Bahadur Daya Ram Sahni excavated Harappa in Montgomery district (now Sahiwal, Pakistan) on the banks of the Ravi River in 1921. / दयाराम साहनी ने 1921 में रावी नदी के तट पर हड़प्पा की खोज और उत्खनन किया।",
+    "id": 9102
+  },
+  {
+    "question": "What is the nature of the Indus Valley Civilization script? / सिंधु घाटी सभ्यता की लिपि का स्वरूप कैसा है?",
+    "options": [
+      "Undeciphered (Boustrophedon) / अपठित (अभी तक पढ़ी नहीं गई)",
+      "Deciphered Brahmi / पढ़ी गई ब्राह्मी",
+      "Phoenician Alphabet / फोनीशियन वर्णमाला",
+      "Persian Cuneiform / फारसी कीलाक्षर"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "The Harappan pictographic script written right-to-left and alternate boustrophedon remains undeciphered to date. / हड़प्पा लिपि भाव-चित्रात्मक (Pictographic) है जो आज तक पढ़ी नहीं जा सकी है।",
+    "id": 9103
+  },
+  {
+    "question": "Which is the oldest of the four sacred Vedas in Indian literature? / भारतीय साहित्य में चारों पवित्र वेदों में सबसे प्राचीन वेद कौन-सा है?",
+    "options": [
+      "Rigveda / ऋग्वेद",
+      "Samaveda / सामवेद",
+      "Yajurveda / यजुर्वेद",
+      "Atharvaveda / अथर्ववेद"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Rigveda is the oldest religious text in the world, consisting of 1,028 hymns (suktas) organized into 10 mandalas. / ऋग्वेद विश्व का सबसे प्राचीन ग्रंथ है, जिसमें 10 मंडल और 1,028 सूक्त हैं।",
+    "id": 9104
+  },
+  {
+    "question": "The sacred 'Gayatri Mantra' addressed to Savitri is contained in which Veda? / सूर्य देव (सविता) को समर्पित पावन 'गायत्री मंत्र' किस वेद में निहित है?",
+    "options": [
+      "Rigveda (3rd Mandala) / ऋग्वेद (तृतीय मंडल)",
+      "Samaveda / सामवेद",
+      "Yajurveda / यजुर्वेद",
+      "Atharvaveda / अथर्ववेद"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "The Gayatri Mantra was composed by Sage Vishwamitra in the 3rd Mandala of Rigveda. / गायत्री मंत्र की रचना महर्षि विश्वामित्र द्वारा ऋग्वेद के तीसरे मंडल में की गई थी।",
+    "id": 9105
+  },
+  {
+    "question": "Who was the 24th and last Tirthankara of Jainism? / जैन धर्म के 24वें और अंतिम तीर्थंकर कौन थे?",
+    "options": [
+      "Vardhamana Mahavira / वर्धमान महावीर",
+      "Rishabhanatha / ऋषभदेव",
+      "Parshvanatha / पार्श्वनाथ",
+      "Arishtanemi / अरिष्टनेमि"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Vardhamana Mahavira was the 24th Tirthankara born at Kundagrama near Vaishali, attaining Kaivalya under a Sal tree. / वर्धमान महावीर जैन धर्म के 24वें और अंतिम तीर्थंकर थे, जिनका जन्म वैशाली के कुंडग्राम में हुआ था।",
+    "id": 9106
+  },
+  {
+    "question": "Who was the 1st Tirthankara and founder of Jain tradition? / जैन परंपरा के प्रथम तीर्थंकर और संस्थापक कौन थे?",
+    "options": [
+      "Rishabhanatha (Adinatha) / ऋषभदेव (आदिनाथ)",
+      "Parshvanatha / पार्श्वनाथ",
+      "Mahavira / महावीर",
+      "Ajitnatha / अजितनाथ"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Rishabhanatha (also called Adinatha) is revered as the first Tirthankara, symbolized by a Bull. / ऋषभदेव (आदिनाथ) प्रथम तीर्थंकर हैं, जिनका प्रतीक बैल (वृषभ) है।",
+    "id": 9107
+  },
+  {
+    "question": "Who was the founder of Buddhism, originally named Siddhartha? / बौद्ध धर्म के संस्थापक कौन थे, जिनका मूल नाम सिद्धार्थ था?",
+    "options": [
+      "Gautama Buddha / गौतम बुद्ध",
+      "Mahavira / महावीर",
+      "Makkhali Gosala / मक्खलि गोसाल",
+      "Ajita Kesakambali / अजित केशकंबली"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Gautama Buddha (Sakyamuni) founded Buddhism in the 6th century BC propounding the Four Noble Truths and Eightfold Path. / गौतम बुद्ध ने चार आर्य सत्य और अष्टांगिक मार्ग देकर बौद्ध धर्म की स्थापना की।",
+    "id": 9108
+  },
+  {
+    "question": "Where was Gautama Buddha born in 563 BC? / 563 ईसा पूर्व में गौतम बुद्ध का जन्म कहाँ हुआ था?",
+    "options": [
+      "Lumbini (Nepal) / लुंबिनी (नेपाल)",
+      "Bodh Gaya / बोधगया",
+      "Sarnath / सारनाथ",
+      "Kushinagar / कुशीनगर"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Gautama Buddha was born in Lumbini gardens near Kapilavastu (present-day Rupandehi district, Nepal) to King Suddhodana and Queen Maya. / बुद्ध का जन्म कपिलवस्तु के लुंबिनी वन (नेपाल) में शाक्य क्षत्रिय कुल में हुआ था।",
+    "id": 9109
+  },
+  {
+    "question": "Where did Gautama Buddha attain supreme Enlightenment (Nirvana) under the Bodhi tree? / गौतम बुद्ध को बोधि वृक्ष के नीचे ज्ञान (निर्वाण) की प्राप्ति कहाँ हुई थी?",
+    "options": [
+      "Bodh Gaya (Bihar) / बोधगया (बिहार)",
+      "Sarnath / सारनाथ",
+      "Lumbini / लुंबिनी",
+      "Rajgir / राजगीर"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Buddha attained enlightenment at age 35 on the banks of the Niranjana River in Bodh Gaya, Bihar. / बुद्ध को 35 वर्ष की आयु में बिहार के बोधगया में निरंजना (फल्गु) नदी तट पर ज्ञान प्राप्त हुआ।",
+    "id": 9110
+  },
+  {
+    "question": "Where did Gautama Buddha deliver his first sermon, known as 'Dharmachakrapravartana'? / गौतम बुद्ध ने अपना प्रथम उपदेश 'धर्मचक्रप्रवर्तन' कहाँ दिया था?",
+    "options": [
+      "Sarnath (Deer Park) / सारनाथ (ऋषिपत्तन)",
+      "Bodh Gaya / बोधगया",
+      "Shravasti / श्रावस्ती",
+      "Vaishali / वैशाली"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Buddha delivered his first sermon to his five former ascetics at the Deer Park (Isipatana) in Sarnath near Varanasi. / बुद्ध ने अपना पहला धर्मोपदेश सारनाथ (वाराणसी) के मृगदाव में अपने पांच शिष्यों को दिया।",
+    "id": 9111
+  },
+  {
+    "question": "Where did Gautama Buddha attain Mahaparinirvana (death) in 483 BC? / 483 ईसा पूर्व में गौतम बुद्ध का महापरिनिर्वाण (मृत्यु) कहाँ हुआ था?",
+    "options": [
+      "Kushinagar (UP) / कुशीनगर (उत्तर प्रदेश)",
+      "Lumbini / लुंबिनी",
+      "Rajgir / राजगीर",
+      "Pataliputra / पाटलिपुत्र"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Buddha attained Mahaparinirvana at the age of 80 in Kushinagar (capital of the Malla Republic, eastern UP). / बुद्ध ने 80 वर्ष की आयु में उत्तर प्रदेश के कुशीनगर (मल्ल गणराज्य) में महापरिनिर्वाण प्राप्त किया।",
+    "id": 9112
+  },
+  {
+    "question": "Where was the First Buddhist Council held in 483 BC under the patronage of King Ajatashatru? / 483 ईसा पूर्व में राजा अजातशत्रु के संरक्षण में प्रथम बौद्ध संगीति कहाँ आयोजित हुई थी?",
+    "options": [
+      "Rajgir (Sattapanni Cave) / राजगीर (सप्तपर्णी गुफा)",
+      "Vaishali / वैशाली",
+      "Pataliputra / पाटलिपुत्र",
+      "Kashmir / कश्मीर"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "The 1st Council was presided over by Mahakassapa at Rajgir to compile Sutta Pitaka (by Ananda) and Vinaya Pitaka (by Upali). / प्रथम बौद्ध संगीति राजगीर में महाकस्सप की अध्यक्षता में अजातशत्रु के समय हुई थी।",
+    "id": 9113
+  },
+  {
+    "question": "Where was the Second Buddhist Council held in 383 BC under King Kalashoka? / 383 ईसा पूर्व में राजा कालाशोक के शासनकाल में द्वितीय बौद्ध संगीति कहाँ हुई थी?",
+    "options": [
+      "Vaishali / वैशाली",
+      "Rajgir / राजगीर",
+      "Pataliputra / पाटलिपुत्र",
+      "Kundalvana / कुंडलवन"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "The 2nd Council was held at Vaishali presided by Sabakami, where the Buddhist order split into Sthaviravadins and Mahasanghikas. / द्वितीय संगीति वैशाली में सबाकामी की अध्यक्षता में हुई।",
+    "id": 9114
+  },
+  {
+    "question": "Where was the Third Buddhist Council convened in 250 BC under Emperor Ashoka? / 250 ईसा पूर्व में सम्राट अशोक के शासनकाल में तृतीय बौद्ध संगीति कहाँ आयोजित की गई थी?",
+    "options": [
+      "Pataliputra / पाटलिपुत्र",
+      "Vaishali / वैशाली",
+      "Kashmir / कश्मीर",
+      "Rajgir / राजगीर"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "The 3rd Council was held at Pataliputra presided over by Moggaliputta Tissa; the Abhidhamma Pitaka was codified here. / तृतीय संगीति पाटलिपुत्र में मोग्गलिपुत्त तिस्स की अध्यक्षता में अशोक के काल में हुई।",
+    "id": 9115
+  },
+  {
+    "question": "Where was the Fourth Buddhist Council held under King Kanishka, where Buddhism split into Hinayana and Mahayana? / कनिष्क के काल में चतुर्थ बौद्ध संगीति कहाँ हुई थी, जिसमें बौद्ध धर्म हीनयान और महायान में विभाजित हुआ?",
+    "options": [
+      "Kundalvana, Kashmir / कुंडलवन, कश्मीर",
+      "Pataliputra / पाटलिपुत्र",
+      "Rajgir / राजगीर",
+      "Sarnath / सारनाथ"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "The 4th Council was held at Kundalvana (Kashmir) presided by Vasumitra (with Asvaghosa as vice-president) in the 1st century AD. / चतुर्थ बौद्ध संगीति कश्मीर के कुंडलवन में वसुमित्र की अध्यक्षता में कनिष्क के समय आयोजित हुई।",
+    "id": 9116
+  },
+  {
+    "question": "Who was the founder of the Mauryan Empire, who overthrew the Nanda dynasty in 321 BC with the help of Chanakya? / 321 ईसा पूर्व में चाणक्य की सहायता से नंद वंश को उखाड़ फेंकने वाले मौर्य साम्राज्य के संस्थापक कौन थे?",
+    "options": [
+      "Chandragupta Maurya / चंद्रगुप्त मौर्य",
+      "Bindusara / बिंदुसार",
+      "Ashoka / अशोक",
+      "Brihadratha / बृहद्रथ"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Chandragupta Maurya established the Mauryan Empire with his capital at Pataliputra, defeating Seleucus Nicator in 305 BC. / चंद्रगुप्त मौर्य ने चाणक्य की मदद से धनानंद को पराजित कर मौर्य साम्राज्य की स्थापना की।",
+    "id": 9117
+  },
+  {
+    "question": "Who authored the famous ancient treatise on statecraft, economic policy, and military strategy called 'Arthashastra'? / राजनीति, अर्थशास्त्र और युद्ध नीति के प्रसिद्ध प्राचीन ग्रंथ 'अर्थशास्त्र' के रचयिता कौन थे?",
+    "options": [
+      "Kautilya (Chanakya / Vishnugupta) / कौटिल्य (चाणक्य)",
+      "Megasthenes / मेगस्थनीज",
+      "Banabhatta / बाणभट्ट",
+      "Harisena / हरिषेण"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Kautilya (Chanakya), prime minister to Chandragupta Maurya, authored the 15-book Arthashastra in Sanskrit. / चाणक्य (कौटिल्य/विष्णुगुप्त) ने संस्कृत में प्रसिद्ध ग्रंथ अर्थशास्त्र की रचना की।",
+    "id": 9118
+  },
+  {
+    "question": "Who was the Greek ambassador sent by Seleucus Nicator to the court of Chandragupta Maurya who wrote 'Indica'? / सेल्यूकस निकेटर द्वारा चंद्रगुप्त मौर्य के दरबार में भेजा गया वह यूनानी राजदूत कौन था जिसने 'इंडिका' लिखी?",
+    "options": [
+      "Megasthenes / मेगस्थनीज",
+      "Deimachus / डाइमेकस",
+      "Fa-Hien / फाह्यान",
+      "Hiuen Tsang / ह्वेनसांग"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Megasthenes lived at Pataliputra and wrote 'Indica', describing the 7-caste division of Mauryan society and municipal administration. / मेगस्थनीज ने पाटलिपुत्र नगर प्रशासन और भारतीय समाज का वर्णन इंडिका में किया।",
+    "id": 9119
+  },
+  {
+    "question": "Who was the British scholar who first deciphered the Brahmi and Kharosthi inscriptions of Emperor Ashoka in 1837? / 1837 में सम्राट अशोक के ब्राह्मी और खरोष्ठी शिलालेखों को पहली बार पढ़ने वाले ब्रिटिश विद्वान कौन थे?",
+    "options": [
+      "James Prinsep / जेम्स प्रिंसेप",
+      "Alexander Cunningham / अलेक्जेंडर कनिंघम",
+      "William Jones / विलियम जोन्स",
+      "Mortimer Wheeler / मॉर्टिमर व्हीलर"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "James Prinsep, founding editor of the Asiatic Society of Bengal journal, deciphered the Ashokan edicts identifying 'Devanampiya Piyadassi'. / जेम्स प्रिंसेप ने 1837 में अशोक के शिलालेखों की ब्राह्मी लिपि का सफल उद्वाचन किया।",
+    "id": 9120
+  },
+  {
+    "question": "Who was the founder of the Gupta dynasty in Northern India around 275 AD? / लगभग 275 ईस्वी में उत्तरी भारत में गुप्त वंश के संस्थापक कौन थे?",
+    "options": [
+      "Sri Gupta / श्री गुप्त",
+      "Chandragupta I / चंद्रगुप्त प्रथम",
+      "Samudragupta / समुद्रगुप्त",
+      "Skandagupta / स्कंदगुप्त"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Maharaja Sri Gupta founded the Gupta dynasty, followed by Ghatotkacha and the first great ruler Chandragupta I (319 AD). / गुप्त वंश के मूल संस्थापक श्री गुप्त थे जिन्होंने 'महाराज' की उपाधि धारण की थी।",
+    "id": 9121
+  },
+  {
+    "question": "Which Gupta Emperor was hailed as the 'Napoleon of India' by British historian Vincent Smith due to his undefeated military conquests? / अपनी अद्वितीय सैन्य विजयों के कारण ब्रिटिश इतिहासकार वी. ए. स्मिथ द्वारा किस गुप्त सम्राट को 'भारत का नेपोलियन' कहा गया?",
+    "options": [
+      "Samudragupta / समुद्रगुप्त",
+      "Chandragupta II (Vikramaditya) / चंद्रगुप्त द्वितीय",
+      "Kumaragupta I / कुमारगुप्त प्रथम",
+      "Skandagupta / स्कंदगुप्त"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Samudragupta was titled the 'Napoleon of India' by V. A. Smith; he was also called Kaviraja and performed Ashvamedha yajna. / समुद्रगुप्त को वी. ए. स्मिथ ने 'भारत का नेपोलियन' कहा, उनके सिक्कों पर उन्हें वीणा बजाते दिखाया गया है।",
+    "id": 9122
+  },
+  {
+    "question": "Who composed the famous Sanskrit eulogy 'Prayag Prashasti' (Allahabad Pillar Inscription) praising Samudragupta? / समुद्रगुप्त की प्रशंसा में प्रसिद्ध 'प्रयाग प्रशस्ति' (इलाहाबाद स्तंभ लेख) की रचना किसने की थी?",
+    "options": [
+      "Harisena / हरिषेण",
+      "Kalidasa / कालिदास",
+      "Banabhatta / बाणभट्ट",
+      "Ravikirti / रविकीर्ति"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Harisena was the court poet and sandhivigrahika of Samudragupta who composed the 33-line Prayag Prashasti in Champu kavya style. / समुद्रगुप्त के दरबारी कवि हरिषेण ने प्रयाग प्रशस्ति की रचना विशुद्ध संस्कृत में की थी।",
+    "id": 9123
+  },
+  {
+    "question": "Who was the great 5th-century Indian mathematician-astronomer who authored 'Aryabhatiya' and 'Surya Siddhanta'? / 5वीं शताब्दी के महान भारतीय गणितज्ञ-खगोलशास्त्री कौन थे जिन्होंने 'आर्यभटीय' और 'सूर्य सिद्धांत' की रचना की?",
+    "options": [
+      "Aryabhata / आर्यभट",
+      "Varahamihira / वराहमिहिर",
+      "Brahmagupta / ब्रह्मगुप्त",
+      "Bhaskara I / भास्कर प्रथम"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Aryabhata discovered that the Earth rotates on its axis, gave the accurate approximation of Pi (3.1416), and calculated lunar/solar eclipses. / आर्यभट ने पृथ्वी की अपनी धुरी पर घूर्णन और शून्य एवं दशमलव प्रणाली का सिद्धांत प्रतिपादित किया।",
+    "id": 9124
+  },
+  {
+    "question": "Who is celebrated as the 'Shakespeare of India', author of the immortal Sanskrit play 'Abhijnanashakuntalam'? / अमर संस्कृत नाटक 'अभिज्ञानशाकुंतलम्' के रचयिता जिन्हें 'भारत का शेक्सपियर' कहा जाता है, कौन हैं?",
+    "options": [
+      "Kalidasa / कालिदास",
+      "Bhasa / भास",
+      "Bhavabhuti / भवभूति",
+      "Shudraka / शूद्रक"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Mahakavi Kalidasa was one of the Navaratnas in the court of Chandragupta II (Vikramaditya), authoring Shakuntalam, Meghadutam, and Raghuvamsham. / कालिदास चंद्रगुप्त विक्रमादित्य के नवरत्नों में से एक थे जिन्होंने अभिज्ञानशाकुंतलम् और मेघदूतम् की रचना की।",
+    "id": 9125
+  },
+  {
+    "question": "Who was the court poet of King Harshavardhana who wrote the biography 'Harshacharita' and the romance 'Kadambari'? / सम्राट हर्षवर्धन के दरबारी कवि कौन थे जिन्होंने 'हर्षचरित' और विश्व का प्रथम उपन्यास 'कादंबरी' लिखा?",
+    "options": [
+      "Banabhatta / बाणभट्ट",
+      "Harisena / हरिषेण",
+      "Dandin / दंडी",
+      "Bharavi / भारवि"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Banabhatta lived in the 7th century in the court of Kannauj ruler Harshavardhana and authored Harshacharita. / बाणभट्ट सम्राट हर्ष के राजकवि थे जिन्होंने हर्षचरित और कादंबरी की रचना की।",
+    "id": 9126
+  },
+  {
+    "question": "Which Gupta ruler founded the world-renowned ancient 'Nalanda Mahavihara' (University) in Bihar? / बिहार में विश्वप्रसिद्ध प्राचीन 'नालंदा विश्वविद्यालय' की स्थापना किस गुप्त शासक ने की थी?",
+    "options": [
+      "Kumaragupta I (Mahendraditya) / कुमारगुप्त प्रथम (महेंद्रादित्य)",
+      "Samudragupta / समुद्रगुप्त",
+      "Chandragupta II / चंद्रगुप्त द्वितीय",
+      "Skandagupta / स्कंदगुप्त"
+    ],
+    "correctIndex": 0,
+    "category": "History: Ancient History One-Word Revision",
+    "explanation": "Nalanda University was established in the 5th century AD by Kumaragupta I (titled Shakraditya/Mahendraditya) in modern Rajgir/Nalanda, Bihar. / नालंदा महाविहार की स्थापना 5वीं सदी में गुप्त सम्राट कुमारगुप्त प्रथम ने की थी।",
+    "id": 9127
+  },
+  {
+    "question": "Who was the founder of the Slave (Mamluk) Dynasty in Delhi in 1206 AD? / 1206 ईस्वी में दिल्ली में दास (गुलाम/मामलूक) वंश का संस्थापक कौन था?",
+    "options": [
+      "Qutb-ud-din Aibak / कुतुबुद्दीन ऐबक",
+      "Shams-ud-din Iltutmish / शम्सुद्दीन इल्तुतमिश",
+      "Ghiyas-ud-din Balban / गियासुद्दीन बलबन",
+      "Muhammad Ghori / मुहम्मद गोरी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Qutb-ud-din Aibak, trusted general of Ghori, established the Delhi Sultanate in 1206, ruling from Lahore with the title 'Lakh Baksh'. / कुतुबुद्दीन ऐबक ने 1206 में गुलाम वंश की नींव रखी, उसे 'लाख बख्श' (लाखों का दान देने वाला) भी कहा जाता था।",
+    "id": 9128
+  },
+  {
+    "question": "Who started the construction of the famous 'Qutub Minar' in Delhi in honor of Sufi saint Qutbuddin Bakhtiyar Kaki? / सूफी संत कुतुबुद्दीन बख्तियार काकी की स्मृति में दिल्ली में 'कुतुब मीनार' का निर्माण किसने प्रारंभ करवाया था?",
+    "options": [
+      "Qutb-ud-din Aibak / कुतुबुद्दीन ऐबक",
+      "Iltutmish / इल्तुतमिश",
+      "Alauddin Khilji / अलाउद्दीन खिलजी",
+      "Firoz Shah Tughlaq / फिरोज शाह तुगलक"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Qutb-ud-din Aibak started the basement storey around 1199 AD; it was completed by his successor Iltutmish. / कुतुबुद्दीन ऐबक ने 1199 में कुतुब मीनार की पहली मंजिल का निर्माण शुरू करवाया।",
+    "id": 9129
+  },
+  {
+    "question": "Who completed the construction of Qutub Minar by adding three storeys to it? / कुतुब मीनार में तीन मंजिलें और जोड़कर उसका निर्माण किसने पूरा करवाया था?",
+    "options": [
+      "Shams-ud-din Iltutmish / शम्सुद्दीन इल्तुतमिश",
+      "Qutb-ud-din Aibak / कुतुबुद्दीन ऐबक",
+      "Balban / बलबन",
+      "Razia Sultan / रजिया सुल्तान"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Sultan Shams-ud-din Iltutmish completed the construction of Qutub Minar by erecting three more storeys around 1220. / इल्तुतमिश ने कुतुब मीनार का निर्माण कार्य पूरा करवाया था।",
+    "id": 9130
+  },
+  {
+    "question": "Who was the first and only Muslim woman sovereign to rule the Delhi Sultanate (1236–1240 AD)? / दिल्ली सल्तनत पर शासन करने वाली प्रथम और एकमात्र मुस्लिम महिला शासिका (1236-1240 ई.) कौन थीं?",
+    "options": [
+      "Razia Sultan / रजिया सुल्तान",
+      "Nur Jahan / नूरजहाँ",
+      "Chand Bibi / चाँद बीबी",
+      "Mumtaz Mahal / मुमताज महल"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Razia-al-Din (Razia Sultan), daughter of Iltutmish, ruled Delhi defying purdah, wearing male attire (Kuba and Kulah) on horseback. / रजिया सुल्तान इल्तुतमिश की सुयोग्य पुत्री थीं जो दिल्ली की गद्दी पर बैठने वाली पहली महिला शासक बनीं।",
+    "id": 9131
+  },
+  {
+    "question": "Which Delhi Sultan introduced the famous Market Control and Price Regulation System (Shahna-i-Mandi)? / किस दिल्ली सुल्तान ने प्रसिद्ध 'बाजार नियंत्रण एवं मूल्य निर्धारण प्रणाली' (शहना-ए-मंडी) लागू की थी?",
+    "options": [
+      "Alauddin Khilji / अलाउद्दीन खिलजी",
+      "Balban / बलबन",
+      "Muhammad bin Tughlaq / मुहम्मद बिन तुगलक",
+      "Sikandar Lodi / सिकंदर लोदी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Alauddin Khilji fixed prices of all commodities from grains to horses and set up separate markets (Mandi, Sarai-i-Adl) with strict punishment. / अलाउद्दीन खिलजी ने विशाल सेना के रखरखाव के लिए वस्तुओं के दाम निश्चित कर बाजार नियंत्रण लागू किया।",
+    "id": 9132
+  },
+  {
+    "question": "Which Delhi Sultan is famous in history for introducing bronze/brass 'Token Currency' (सांकेतिक मुद्रा) in 1329–30? / 1329-30 ईस्वी में तांबे/कांस्य की 'सांकेतिक मुद्रा' (Token Currency) शुरू करने के लिए कौन-सा सुल्तान प्रसिद्ध है?",
+    "options": [
+      "Muhammad bin Tughlaq / मुहम्मद बिन तुगलक",
+      "Alauddin Khilji / अलाउद्दीन खिलजी",
+      "Firoz Shah Tughlaq / फिरोज शाह तुगलक",
+      "Ibrahim Lodi / इब्राहिम लोदी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Muhammad bin Tughlaq introduced token bronze coins at par with silver tanka, but widespread forgery forced him to withdraw the scheme. / मुहम्मद बिन तुगलक ने सांकेतिक मुद्रा का प्रयोग किया था जो जालसाजी के कारण असफल रहा।",
+    "id": 9133
+  },
+  {
+    "question": "Who were the two brothers who founded the legendary Vijayanagara Empire on the banks of the Tungabhadra River in 1336? / 1336 में तुंगभद्रा नदी के तट पर प्रसिद्ध विजयनगर साम्राज्य की स्थापना करने वाले दो भाई कौन थे?",
+    "options": [
+      "Harihara I and Bukka Raya I / हरिहर और बुक्का",
+      "Krishna Deva Raya & Achyuta Raya / कृष्णदेव राय व अच्युत राय",
+      "Deva Raya I & Deva Raya II / देवराय प्रथम व द्वितीय",
+      "Tirumala & Sadasiva Raya / तिरुमल व सदाशिव राय"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Harihara I and Bukka Raya I established the Sangama dynasty and Vijayanagara capital (Hampi) under the spiritual guidance of Sage Vidyaranya. / संत विद्यारण्य के आशीर्वाद से हरिहर और बुक्का ने 1336 में विजयनगर साम्राज्य की नींव रखी।",
+    "id": 9134
+  },
+  {
+    "question": "Who founded the Bahmani Sultanate in the Deccan in 1347 AD? / 1347 ईस्वी में दक्कन में बहमनी साम्राज्य की स्थापना किसने की थी?",
+    "options": [
+      "Alauddin Bahman Shah (Hasan Gangu) / अलाउद्दीन बहमन शाह (हसन गंगू)",
+      "Firuz Shah Bahmani / फिरोज शाह बहमनी",
+      "Mahmud Gawan / महमूद गवां",
+      "Ahmad Shah / अहमद शाह"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Alauddin Hasan Bahman Shah (Zafar Khan / Hasan Gangu) revolted against Muhammad bin Tughlaq and made Gulbarga his capital. / हसन गंगू ने अलाउद्दीन बहमन शाह की उपाधि धारण कर गुलबर्गा को राजधानी बनाकर बहमनी राज्य स्थापित किया।",
+    "id": 9135
+  },
+  {
+    "question": "Who was the founder of the Mughal Empire in India, establishing it after winning the First Battle of Panipat in 1526? / 1526 में पानीपत की पहली लड़ाई जीतकर भारत में मुग़ल साम्राज्य की स्थापना करने वाले कौन थे?",
+    "options": [
+      "Zahir-ud-din Muhammad Babur / बाबर",
+      "Humayun / हुमायूं",
+      "Akbar / अकबर",
+      "Sher Shah Suri / शेरशाह सूरी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Babur, a descendant of Timur and Genghis Khan from Fergana, defeated Ibrahim Lodi in 1526 using artillery and the Tulughma tactic. / बाबर ने 1526 में पानीपत के प्रथम युद्ध में इब्राहिम लोदी को हराकर मुग़ल साम्राज्य की नींव रखी।",
+    "id": 9136
+  },
+  {
+    "question": "Who authored the famous autobiography 'Baburnama' (Tuzuk-i-Baburi) originally written in Chaghatai Turkish? / मूल रूप से चगताई तुर्की भाषा में रचित प्रसिद्ध आत्मकथा 'बाबरनामा' (तुजुक-ए-बाबरी) के लेखक कौन थे?",
+    "options": [
+      "Babur / बाबर",
+      "Abul Fazl / अबुल फजल",
+      "Gulbadan Begum / गुलबदन बेगम",
+      "Jahangir / जहांगीर"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Babur penned his own memoirs 'Baburnama' in Chaghatai Turkish, which was later translated into Persian by Abdur Rahim Khan-i-Khanan. / बाबर ने अपनी आत्मकथा स्वयं चगताई तुर्की में लिखी जिसमें उसने भारत की प्रकृति का सुंदर वर्णन किया।",
+    "id": 9137
+  },
+  {
+    "question": "Who was the grand court historian and Navaratna of Emperor Akbar who authored 'Akbarnama'? / सम्राट अकबर के प्रसिद्ध दरबारी इतिहासकार और नवरत्न कौन थे जिन्होंने 'अकबरनामा' की रचना की?",
+    "options": [
+      "Abul Fazl / अबुल फजल",
+      "Badauni / बदायूनी",
+      "Faizi / फैजी",
+      "Birbal / बीरबल"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Shaikh Abul Fazl ibn Mubarak authored the monumental 3-volume Akbarnama in Persian recording Akbar's reign. / अबुल फजल ने फारसी भाषा में अकबरनामा की रचना की थी।",
+    "id": 9138
+  },
+  {
+    "question": "Which famous work forms the comprehensive third volume of Akbarnama detailing administration, army, and society? / अकबरनामा का प्रसिद्ध तीसरा खंड कौन-सा है जो मुग़ल प्रशासन, सेना और समाज का विस्तृत विवरण देता है?",
+    "options": [
+      "Ain-i-Akbari (by Abul Fazl) / आइन-ए-अकबरी (अबुल फजल)",
+      "Tuzuk-i-Jahangiri / तुजुक-ए-जहांगीरी",
+      "Padshahnama / पादशाहनामा",
+      "Muntakhab-ut-Tawarikh / मुंतखब-उत-तवारीख"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Ain-i-Akbari was authored by Abul Fazl as the statistical gazetteer and administrative record of Akbar's empire. / आइन-ए-अकबरी अबुल फजल द्वारा रचित अकबरनामा का तीसरा और सबसे महत्वपूर्ण भाग है।",
+    "id": 9139
+  },
+  {
+    "question": "Which Mughal Emperor promulgated the syncretic ethical-religious doctrine called 'Din-i-Ilahi' (Tauhid-i-Ilahi) in 1582? / 1582 में 'दीन-ए-इलाही' (तौहीद-ए-इलाही) नामक सर्वधर्म समभाव की आचार संहिता किस मुग़ल सम्राट ने शुरू की थी?",
+    "options": [
+      "Akbar / अकबर",
+      "Babur / बाबर",
+      "Jahangir / जहांगीर",
+      "Shah Jahan / शाहजहाँ"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Emperor Akbar founded Din-i-Ilahi based on Sulh-i-Kul (universal peace); Raja Birbal was the only Hindu noble to accept it. / अकबर ने सुलह-ए-कुल की नीति के तहत दीन-ए-इलाही की शुरुआत की, जिसे स्वीकारने वाले एकमात्र हिंदू बीरबल थे।",
+    "id": 9140
+  },
+  {
+    "question": "Which Mughal Emperor built the iconic white marble mausoleum 'Taj Mahal' in Agra in memory of Mumtaz Mahal? / मुमताज महल की स्मृति में आगरा में संगमरमर का विश्वप्रसिद्ध 'ताजमहल' किस मुग़ल सम्राट ने बनवाया था?",
+    "options": [
+      "Shah Jahan / शाहजहाँ",
+      "Akbar / अकबर",
+      "Jahangir / जहांगीर",
+      "Aurangzeb / औरंगजेब"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Shah Jahan commissioned the Taj Mahal on the banks of Yamuna (architect: Ustad Ahmad Lahori), completed around 1648–1653. / शाहजहाँ ने अपनी प्रिय बेगम मुमताज की याद में उस्ताद अहमद लाहौरी के निर्देशन में ताजमहल बनवाया।",
+    "id": 9141
+  },
+  {
+    "question": "Who built the legendary jewel-encrusted 'Peacock Throne' (Takht-i-Taus) housing the Koh-i-Noor diamond? / कोहिनूर हीरे से जड़ा प्रसिद्ध 'मयूर सिंहासन' (तख्त-ए-ताऊस) किस मुग़ल सम्राट ने बनवाया था?",
+    "options": [
+      "Shah Jahan / शाहजहाँ",
+      "Akbar / अकबर",
+      "Jahangir / जहांगीर",
+      "Aurangzeb / औरंगजेब"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Shah Jahan commissioned the Peacock Throne, which was later looted by Persian invader Nadir Shah in 1739. / शाहजहाँ ने मयूर सिंहासन बनवाया था, जिसे 1739 में नादिरशाह लूटकर ईरान ले गया।",
+    "id": 9142
+  },
+  {
+    "question": "Which Mughal Emperor commissioned the magnificent 'Red Fort' (Lal Qila) and Jama Masjid in Delhi? / दिल्ली के भव्य 'लाल किला' और जामा मस्जिद का निर्माण किस मुग़ल सम्राट ने करवाया था?",
+    "options": [
+      "Shah Jahan / शाहजहाँ",
+      "Akbar / अकबर",
+      "Humayun / हुमायूं",
+      "Jahangir / जहांगीर"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Shah Jahan shifted the Mughal capital from Agra to Shahjahanabad (Delhi) and built the Red Fort (1638–1648). / शाहजहाँ ने अपनी नई राजधानी शाहजहानाबाद में 1638 से 1648 के बीच लाल किला बनवाया।",
+    "id": 9143
+  },
+  {
+    "question": "Who founded the royal fortified city of 'Fatehpur Sikri' including Buland Darwaza to commemorate his Gujarat victory? / गुजरात विजय के उपलक्ष्य में बुलंद दरवाजा और शाही नगर 'फतेहपुर सीकरी' की स्थापना किसने की थी?",
+    "options": [
+      "Akbar / अकबर",
+      "Babur / बाबर",
+      "Shah Jahan / शाहजहाँ",
+      "Sher Shah Suri / शेरशाह सूरी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Akbar built Fatehpur Sikri near Agra as his capital and erected the 54-meter Buland Darwaza in 1601 celebrating his conquest of Gujarat. / अकबर ने गुजरात विजय की स्मृति में फतेहपुर सीकरी में बुलंद दरवाजा बनवाया था।",
+    "id": 9144
+  },
+  {
+    "question": "Who rebuilt and modernized the famous 'Grand Trunk Road' (Sadak-e-Azam) extending from Sonargaon (Bengal) to Peshawar? / बंगाल के सोनारगांव से पेशावर तक प्रसिद्ध 'ग्रांड ट्रंक रोड' (सड़क-ए-आजम) का निर्माण व जीर्णोद्धार किसने कराया था?",
+    "options": [
+      "Sher Shah Suri / शेरशाह सूरी",
+      "Akbar / अकबर",
+      "Alauddin Khilji / अलाउद्दीन खिलजी",
+      "Lord Dalhousie / लॉर्ड डलहौजी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Sur empire founder Sher Shah Suri developed the historic highway with shaded trees, wells, and 1,700 sarai rest-houses. / शेरशाह सूरी ने सड़क-ए-आजम का पुनर्निर्माण कराया और यात्रियों के लिए 1,700 सरायों का निर्माण करवाया।",
+    "id": 9145
+  },
+  {
+    "question": "Who was the revered first Sikh Guru and founder of Sikhism, born in 1469 at Nankana Sahib? / 1469 में ननकाना साहिब (तलवंडी) में जन्मे सिख धर्म के प्रथम गुरु और संस्थापक कौन थे?",
+    "options": [
+      "Guru Nanak Dev Ji / गुरु नानक देव जी",
+      "Guru Angad Dev Ji / गुरु अंगद देव जी",
+      "Guru Arjan Dev Ji / गुरु अर्जुन देव जी",
+      "Guru Gobind Singh Ji / गुरु गोबिंद सिंह जी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Guru Nanak Dev Ji founded Sikhism propounding 'Ik Onkar' (One Universal God), Langar (community kitchen), and Pangat. / गुरु नानक देव जी ने सिख धर्म की स्थापना की और लंगर व पंगत की प्रथा शुरू की।",
+    "id": 9146
+  },
+  {
+    "question": "Who founded the warrior community 'Khalsa Panth' on Baisakhi day at Anandpur Sahib in 1699? / 1699 में आनंदपुर साहिब में बैसाखी के दिन खालसा पंथ की स्थापना किस सिख गुरु ने की थी?",
+    "options": [
+      "Guru Gobind Singh Ji / गुरु गोबिंद सिंह जी",
+      "Guru Tegh Bahadur Ji / गुरु तेग बहादुर जी",
+      "Guru Hargobind Ji / गुरु हरगोबिंद जी",
+      "Guru Nanak Dev Ji / गुरु नानक देव जी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "The 10th Sikh Guru, Guru Gobind Singh Ji, initiated the Panj Pyare and introduced the 5 Ks (Kesh, Kangha, Kara, Kachera, Kirpan). / दसवें गुरु, गुरु गोबिंद सिंह जी ने 1699 में खालसा पंथ की स्थापना की और 5 ककार अनिवार्य किए।",
+    "id": 9147
+  },
+  {
+    "question": "Which holy scripture containing poetic compositions like Jaap Sahib and Chandi Di Var is attributed to Guru Gobind Singh Ji? / जाप साहिब और चंडी दी वार जैसी रचनाओं से युक्त कौन-सा पवित्र ग्रंथ गुरु गोबिंद सिंह जी से संबंधित है?",
+    "options": [
+      "Dasam Granth / दसम ग्रंथ",
+      "Guru Granth Sahib / गुरु ग्रंथ साहिब",
+      "Japji Sahib / जपुजी साहिब",
+      "Sukhmani Sahib / सुखमनी साहिब"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Dasam Granth (The Book of the Tenth Guru) contains the spiritual and martial writings composed by Guru Gobind Singh Ji. / दसम ग्रंथ सिखों के दसवें गुरु, गुरु गोबिंद सिंह जी की रचनाओं का संग्रह है।",
+    "id": 9148
+  },
+  {
+    "question": "In which historic year was Chhatrapati Shivaji Maharaj crowned as Chhatrapati at Raigad Fort? / रायगढ़ के किले में छत्रपति शिवाजी महाराज का भव्य राज्याभिषेक किस ऐतिहासिक वर्ष हुआ था?",
+    "options": [
+      "1674 AD / 1674 ईस्वी",
+      "1665 AD / 1665 ईस्वी",
+      "1680 AD / 1680 ईस्वी",
+      "1659 AD / 1659 ईस्वी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Shivaji was crowned Chhatrapati on 6 June 1674 at Raigad by Gaga Bhatt of Varanasi, establishing Hindavi Swarajya. / 6 जून 1674 को काशी के विद्वान गागाभट्ट द्वारा रायगढ़ किले में शिवाजी का राज्याभिषेक हुआ।",
+    "id": 9149
+  },
+  {
+    "question": "Who was the legendary founder of the Maratha Empire who championed guerrilla warfare (Ganimi Kava)? / गुरिल्ला युद्ध पद्धति (गनिमी कावा) का कुशलतापूर्वक प्रयोग कर मराठा साम्राज्य की स्थापना किसने की थी?",
+    "options": [
+      "Chhatrapati Shivaji Maharaj / छत्रपति शिवाजी महाराज",
+      "Sambhaji Maharaj / संभाजी महाराज",
+      "Baji Rao I / बाजीराव प्रथम",
+      "Balaji Vishwanath / बालाजी विश्वनाथ"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Chhatrapati Shivaji Maharaj carved out the Maratha Empire from the Sultanates of Bijapur and the Mughals, building a formidable navy and hill forts. / छत्रपति शिवाजी महाराज ने हिंदवी स्वराज्य की स्थापना की और शक्तिशाली नौसेना व दुर्ग बनाए।",
+    "id": 9150
+  },
+  {
+    "question": "What was the council of eight ministers instituted by Chhatrapati Shivaji to administer the Maratha state called? / छत्रपति शिवाजी महाराज द्वारा मराठा शासन संचालन हेतु गठित आठ मंत्रियों की परिषद को क्या कहा जाता था?",
+    "options": [
+      "Ashtapradhan / अष्टप्रधान",
+      "Ashtadiggajas / अष्टदिग्गज",
+      "Navaratnas / नवरत्न",
+      "Panchayat / पंचायत"
+    ],
+    "correctIndex": 0,
+    "category": "History: Medieval History One-Word Revision",
+    "explanation": "Ashtapradhan included Peshwa (Prime Minister), Amatya (Finance), Sachiv (Secretary), Mantri (Interior), Senapati (Commander), Sumant (Foreign), Nyayadhish (Judge), and Panditrao (Charity). / शिवाजी के अष्टप्रधान में पेशवा, अमात्य, वाकयानवीस, सचिव, सुमंत, सेनापति, पंडितराव और न्यायाधीश शामिल थे।",
+    "id": 9151
+  },
+  {
+    "question": "Who commanded the British East India Company forces to victory in the decisive Battle of Plassey in 1757? / 1757 में प्लासी के निर्णायक युद्ध में ब्रिटिश ईस्ट इंडिया कंपनी की सेना का नेतृत्व किसने किया था?",
+    "options": [
+      "Robert Clive / रॉबर्ट क्लाइव",
+      "Hector Munro / हेक्टर मुनरो",
+      "Warren Hastings / वॉरेन हेस्टिंग्स",
+      "Eyre Coote / आयर कूट"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Robert Clive defeated Nawab Siraj-ud-Daulah on 23 June 1757 at Plassey (Palashi, Bengal) with the treacherous help of Mir Jafar. / रॉबर्ट क्लाइव ने मीर जाफर के विश्वासघात की मदद से 1757 में सिराजुद्दौला को हराकर बंगाल में ब्रिटिश सत्ता की नींव रखी।",
+    "id": 9152
+  },
+  {
+    "question": "Who commanded the British forces that defeated the combined army of Mir Qasim, Shuja-ud-Daula, and Shah Alam II in the Battle of Buxar (1764)? / बक्सर के युद्ध (1764) में मीर कासिम, शुजाउद्दौला और शाह आलम द्वितीय की संयुक्त सेना को हराने वाला ब्रिटिश कमांडर कौन था?",
+    "options": [
+      "Hector Munro / मेजर हेक्टर मुनरो",
+      "Robert Clive / रॉबर्ट क्लाइव",
+      "Arthur Wellesley / आर्थर वेलेजली",
+      "Charles Cornwallis / लॉर्ड कॉर्नवालिस"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Major Hector Munro won the Battle of Buxar on 22 October 1764, leading directly to the Treaty of Allahabad (1765) granting Diwani rights to the British. / हेक्टर मुनरो ने बक्सर की लड़ाई जीती, जिसके बाद 1765 की इलाहाबाद संधि से अंग्रेजों को दीवानी अधिकार मिले।",
+    "id": 9153
+  },
+  {
+    "question": "Which Governor-General introduced the 'Permanent Settlement' (Zamindari Bandobast) in Bengal and Bihar in 1793? / 1793 में बंगाल और बिहार में 'स्थायी बंदोबस्त' (जमींदारी व्यवस्था) किस गवर्नर जनरल ने लागू की थी?",
+    "options": [
+      "Lord Cornwallis / लॉर्ड कॉर्नवालिस",
+      "Warren Hastings / वॉरेन हेस्टिंग्स",
+      "Lord Wellesley / लॉर्ड वेलेजली",
+      "Lord William Bentinck / लॉर्ड विलियम बेंटिक"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Lord Cornwallis introduced the Permanent Settlement in 1793 fixing land revenue payable by Zamindars to the company at 10/11th permanently. / लॉर्ड कॉर्नवालिस ने 1793 में जॉन शोर की योजना पर स्थायी बंदोबस्त लागू किया।",
+    "id": 9154
+  },
+  {
+    "question": "Which Governor-General introduced the policy of 'Subsidiary Alliance' (सहायक संधि प्रणाली) in 1798? / 1798 में 'सहायक संधि प्रणाली' (Subsidiary Alliance) किस गवर्नर जनरल ने लागू की थी?",
+    "options": [
+      "Lord Wellesley / लॉर्ड वेलेजली",
+      "Lord Dalhousie / लॉर्ड डलहौजी",
+      "Lord Cornwallis / लॉर्ड कॉर्नवालिस",
+      "Lord Hastings / लॉर्ड हेस्टिंग्स"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Lord Wellesley used the Subsidiary Alliance system to expand British dominance; Nizam of Hyderabad was the first Indian ruler to accept it (1798). / लॉर्ड वेलेजली ने सहायक संधि शुरू की, जिसे सबसे पहले 1798 में हैदराबाद के निजाम ने स्वीकार किया।",
+    "id": 9155
+  },
+  {
+    "question": "Which Governor-General introduced the aggressive annexationist policy known as the 'Doctrine of Lapse' (व्यपगत का सिद्धांत / हड़प नीति)? / 'हड़प नीति' (Doctrine of Lapse / व्यपगत का सिद्धांत) किस गवर्नर जनरल द्वारा लागू की गई थी?",
+    "options": [
+      "Lord Dalhousie / लॉर्ड डलहौजी",
+      "Lord Canning / लॉर्ड कैनिंग",
+      "Lord Curzon / लॉर्ड कर्जन",
+      "Lord Wellesley / लॉर्ड वेलेजली"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Lord Dalhousie annexed Satara (1848), Jaitpur, Sambalpur, Baghat, Udaipur, Jhansi (1853), and Nagpur (1854) under the Doctrine of Lapse. / लॉर्ड डलहौजी ने हड़प नीति के तहत सबसे पहले सतारा (1848) और फिर झांसी व नागपुर का विलय किया।",
+    "id": 9156
+  },
+  {
+    "question": "Who was the father of the modern Indian Renaissance who founded the 'Brahmo Samaj' in Calcutta in 1828? / 1828 में कलकत्ता में 'ब्रह्म समाज' की स्थापना करने वाले भारतीय पुनर्जागरण के अग्रदूत कौन थे?",
+    "options": [
+      "Raja Ram Mohan Roy / राजा राममोहन राय",
+      "Debendranath Tagore / देवेन्द्रनाथ टैगोर",
+      "Keshab Chandra Sen / केशवचंद्र सेन",
+      "Ishwar Chandra Vidyasagar / ईश्वरचंद्र विद्यासागर"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Raja Ram Mohan Roy founded Brahmo Samaj to fight idolatry and sati (abolished in 1829 under Regulation XVII). / राजा राममोहन राय ने मूर्तिपूजा और सती प्रथा के विरोध में 1828 में ब्रह्म समाज की स्थापना की।",
+    "id": 9157
+  },
+  {
+    "question": "Who founded the 'Arya Samaj' in Bombay in 1875 with the rallying cry 'Go Back to the Vedas'? / 1875 में बंबई में 'वेदों की ओर लौटो' के नारे के साथ 'आर्य समाज' की स्थापना किसने की थी?",
+    "options": [
+      "Swami Dayanand Saraswati / स्वामी दयानंद सरस्वती",
+      "Swami Vivekananda / स्वामी विवेकानंद",
+      "Ramakrishna Paramahamsa / रामकृष्ण परमहंस",
+      "Atmaram Pandurang / आत्माराम पांडुरंग"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Swami Dayanand Saraswati (author of 'Satyarth Prakash') founded Arya Samaj rejecting caste orthodoxy and idol worship. / स्वामी दयानंद सरस्वती ने सत्यार्थ प्रकाश की रचना की और 1875 में आर्य समाज की स्थापना की।",
+    "id": 9158
+  },
+  {
+    "question": "Who founded the 'Ramakrishna Mission' in 1897 at Belur Math in honor of his spiritual master? / 1897 में बेलूर मठ में अपने आध्यात्मिक गुरु की स्मृति में 'रामकृष्ण मिशन' की स्थापना किसने की थी?",
+    "options": [
+      "Swami Vivekananda / स्वामी विवेकानंद",
+      "Dayanand Saraswati / दयानंद सरस्वती",
+      "Ramakrishna Paramahamsa / रामकृष्ण परमहंस",
+      "Keshab Chandra Sen / केशवचंद्र सेन"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Swami Vivekananda (Narendranath Datta) founded the Ramakrishna Mission for philanthropic and educational work after his 1893 Chicago Parliament triumph. / स्वामी विवेकानंद ने 1897 में मानव सेवा और आध्यात्मिक उत्थान के लिए रामकृष्ण मिशन की स्थापना की।",
+    "id": 9159
+  },
+  {
+    "question": "Who founded the 'Prarthana Samaj' in Bombay in 1867 with the guidance of Keshab Chandra Sen? / केशवचंद्र सेन की प्रेरणा से 1867 में बंबई में 'प्रार्थना समाज' की स्थापना किसने की थी?",
+    "options": [
+      "Dr. Atmaram Pandurang / डॉ. आत्माराम पांडुरंग",
+      "M. G. Ranade / एम. जी. रानाडे",
+      "Jyotiba Phule / ज्योतिबा फुले",
+      "R. G. Bhandarkar / आर. जी. भंडारकर"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Dr. Atmaram Pandurang founded Prarthana Samaj in 1867, later joined and energized by Mahadev Govind Ranade. / डॉ. आत्माराम पांडुरंग ने 1867 में प्रार्थना समाज की स्थापना की, बाद में एम. जी. रानाडे इसके मुख्य स्तंभ बने।",
+    "id": 9160
+  },
+  {
+    "question": "Who was the pioneering social reformer who founded the 'Satyashodhak Samaj' in Pune in 1873 to liberate oppressed castes? / 1873 में पुणे में शोषित वर्गों के उत्थान हेतु 'सत्यशोधक समाज' की स्थापना किस महान समाज सुधारक ने की थी?",
+    "options": [
+      "Mahatma Jyotiba Phule / महात्मा ज्योतिबा फुले",
+      "B. R. Ambedkar / डॉ. बी. आर. अंबेडकर",
+      "E. V. Ramasamy Periyar / पेरियार",
+      "Gopal Hari Deshmukh / गोपाल हरि देशमुख"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Mahatma Jyotirao Phule (author of 'Gulamgiri') founded Satyashodhak Samaj and opened India's first school for girls in Pune with Savitribai Phule. / ज्योतिबा फुले ने 'गुलामगिरी' पुस्तक लिखी और सत्यशोधक समाज की स्थापना कर समाज सुधार की नींव रखी।",
+    "id": 9161
+  },
+  {
+    "question": "Who founded the 'Aligarh Movement' and established the Muhammadan Anglo-Oriental College (now AMU) in 1875? / 1875 में 'अलीगढ़ आंदोलन' के प्रणेता और मोहम्मडन एंग्लो-ओरिएंटल कॉलेज (वर्तमान AMU) के संस्थापक कौन थे?",
+    "options": [
+      "Sir Syed Ahmad Khan / सर सैयद अहमद खान",
+      "Maulana Abul Kalam Azad / मौलाना अबुल कलाम आजाद",
+      "Muhammad Ali Jinnah / मुहम्मद अली जिन्ना",
+      "Badruddin Tyabji / बदरुद्दीन तैयबजी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Sir Syed Ahmad Khan launched the Aligarh Movement to promote modern western and scientific education among Indian Muslims. / सर सैयद अहमद खान ने वैज्ञानिक सोच और आधुनिक शिक्षा को बढ़ावा देने के लिए अलीगढ़ आंदोलन चलाया।",
+    "id": 9162
+  },
+  {
+    "question": "Who was the retired British civil servant who took the primary initiative to establish the Indian National Congress (INC) in 1885? / 1885 में भारतीय राष्ट्रीय कांग्रेस (INC) की स्थापना की मुख्य पहल करने वाले सेवानिवृत्त ब्रिटिश सिविल सेवक कौन थे?",
+    "options": [
+      "Allan Octavian Hume (A. O. Hume) / ए. ओ. ह्यूम",
+      "Lord Dufferin / लॉर्ड डफरिन",
+      "William Wedderburn / विलियम वेडरबर्न",
+      "David Yule / डेविड यूल"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "A. O. Hume founded the INC in December 1885 at Gokuldas Tejpal Sanskrit College in Bombay with 72 delegates. / ए. ओ. ह्यूम ने 1885 में बंबई में 72 प्रतिनिधियों की उपस्थिति में भारतीय राष्ट्रीय कांग्रेस की स्थापना की।",
+    "id": 9163
+  },
+  {
+    "question": "Who was elected as the First President of the Indian National Congress at its inaugural session in Bombay (1885)? / बंबई में 1885 के प्रथम अधिवेशन में भारतीय राष्ट्रीय कांग्रेस के प्रथम अध्यक्ष कौन चुने गए थे?",
+    "options": [
+      "Womesh Chandra Bonnerjee (W. C. Bonnerjee) / व्योमेश चंद्र बनर्जी",
+      "Dadabhai Naoroji / दादाभाई नौरोजी",
+      "Badruddin Tyabji / बदरुद्दीन तैयबजी",
+      "Surendranath Banerjee / सुरेंद्रनाथ बनर्जी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "W. C. Bonnerjee presided over the very first session of the INC held from 28 to 31 December 1885 in Bombay. / व्योमेश चंद्र बनर्जी (W. C. Bonnerjee) कांग्रेस के पहले अध्यक्ष थे।",
+    "id": 9164
+  },
+  {
+    "question": "In which city was the 'All-India Muslim League' founded on 30 December 1906 under Nawab Salimullah and Aga Khan? / 30 दिसंबर 1906 को नवाब सलीमुल्लाह और आगा खां के नेतृत्व में 'अखिल भारतीय मुस्लिम लीग' की स्थापना किस शहर में हुई थी?",
+    "options": [
+      "Dacca (Dhaka) / ढाका",
+      "Aligarh / अलीगढ़",
+      "Lucknow / लखनऊ",
+      "Lahore / लाहौर"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "The Muslim League was founded at Ahsan Manzil in Dacca (now Dhaka, Bangladesh) with Nawab Salimullah as host and Aga Khan III as first permanent president. / मुस्लिम लीग की स्थापना 1906 में ढाका में हुई थी और आगा खां इसके पहले स्थायी अध्यक्ष बने।",
+    "id": 9165
+  },
+  {
+    "question": "Who was the intellectual founder and key leader of the revolutionary 'Ghadar Party' founded in San Francisco in 1913? / 1913 में सैन फ्रांसिस्को में क्रांतिकारी 'गदर पार्टी' के संस्थापक और मुख्य बौद्धिक नेता कौन थे?",
+    "options": [
+      "Lala Hardayal / लाला हरदयाल",
+      "Sohan Singh Bhakna / सोहन सिंह भकना",
+      "Kartar Singh Sarabha / करतार सिंह सराभा",
+      "Rash Behari Bose / रास बिहारी बोस"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Lala Hardayal, along with President Sohan Singh Bhakna, established the Pacific Coast Hindustan Association (Ghadar Party) publishing the newspaper 'Ghadar'. / लाला हरदयाल ने 1913 में सैन फ्रांसिस्को (अमेरिका) में गदर पार्टी की स्थापना की।",
+    "id": 9166
+  },
+  {
+    "question": "Who were the two prominent leaders who launched the 'Home Rule League Movement' in India in 1916? / 1916 में भारत में 'होम रूल लीग आंदोलन' शुरू करने वाले दो प्रमुख नेता कौन थे?",
+    "options": [
+      "Bal Gangadhar Tilak and Annie Besant / बाल गंगाधर तिलक व एनी बेसेंट",
+      "Mahatma Gandhi and Nehru / महात्मा गांधी व नेहरू",
+      "Gopal Krishna Gokhale and Tilak / गोखले व तिलक",
+      "Subhas Chandra Bose and Patel / सुभाष चंद्र बोस व पटेल"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Tilak launched his League at Belgaum in April 1916, while Annie Besant established her League at Madras in September 1916. / बाल गंगाधर तिलक ने अप्रैल 1916 में बेलगाम से और एनी बेसेंट ने सितंबर 1916 में मद्रास से होम रूल आंदोलन चलाया।",
+    "id": 9167
+  },
+  {
+    "question": "In which year did Mahatma Gandhi launch his first Satyagraha in India for indigo farmers at Champaran (Bihar)? / महात्मा गांधी ने बिहार के चंपारण में नील किसानों के लिए अपना पहला सत्याग्रह किस वर्ष शुरू किया था?",
+    "options": [
+      "1917 / 1917",
+      "1915 / 1915",
+      "1918 / 1918",
+      "1919 / 1919"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Champaran Satyagraha (1917) was Gandhi's first civil disobedience movement against the oppressive Tinkathia system, invited by Raj Kumar Shukla. / राजकुमार शुक्ल के निमंत्रण पर गांधीजी ने 1917 में चंपारण में तिनकठिया प्रथा के विरोध में सत्याग्रह किया।",
+    "id": 9168
+  },
+  {
+    "question": "Which British military officer ordered indiscriminate firing on unarmed peaceful gathering at Jallianwala Bagh on 13 April 1919? / 13 अप्रैल 1919 को जलियांवाला बाग में निहत्थे शांतिपूर्ण जनसमूह पर अंधाधुंध गोलियां चलाने का आदेश किस ब्रिटिश अधिकारी ने दिया था?",
+    "options": [
+      "General Reginald Dyer / जनरल रेजिनाल्ड डायर",
+      "Michael O'Dwyer / माइकल ओ'डायर",
+      "General Campbell / जनरल कैंपबेल",
+      "Sir John Simon / जॉन साइमन"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Brigadier-General Reginald Dyer blocked the exit and opened fire on the Baisakhi gathering at Jallianwala Bagh, Amritsar. / ब्रिगेडियर जनरल डायर ने जलियांवाला बाग में शांतिपूर्ण सभा पर गोलियां चलवाईं; हंटर कमीशन ने इसकी जांच की।",
+    "id": 9169
+  },
+  {
+    "question": "In which year was the nationwide 'Non-Cooperation Movement' (असहयोग आंदोलन) officially launched by Mahatma Gandhi? / महात्मा गांधी द्वारा राष्ट्रव्यापी 'असहयोग आंदोलन' आधिकारिक तौर पर किस वर्ष शुरू किया गया था?",
+    "options": [
+      "1920 / 1920",
+      "1919 / 1919",
+      "1922 / 1922",
+      "1925 / 1925"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "The Non-Cooperation Movement was launched on 1 August 1920 (the day Lokmanya Tilak passed away) and suspended after the Chauri Chaura incident in February 1922. / 1 अगस्त 1920 को असहयोग आंदोलन शुरू हुआ और चौरी-चौरा की घटना के बाद इसे वापस ले लिया गया।",
+    "id": 9170
+  },
+  {
+    "question": "In which historic year did Mahatma Gandhi launch the 'Civil Disobedience Movement' (सविनय अवज्ञा आंदोलन) with the Salt Satyagraha? / महात्मा गांधी ने नमक सत्याग्रह के साथ किस ऐतिहासिक वर्ष में 'सविनय अवज्ञा आंदोलन' शुरू किया था?",
+    "options": [
+      "1930 / 1930",
+      "1928 / 1928",
+      "1932 / 1932",
+      "1942 / 1942"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "The Civil Disobedience Movement commenced on 12 March 1930 with the historic Dandi March from Sabarmati Ashram to Dandi coast. / 12 मार्च 1930 को साबरमती आश्रम से दांडी मार्च शुरू हुआ और 6 अप्रैल 1930 को नमक कानून तोड़कर आंदोलन आरंभ हुआ।",
+    "id": 9171
+  },
+  {
+    "question": "Who led the 240-mile historic 'Dandi March' from Sabarmati to Dandi to break the British salt tax monopoly in 1930? / 1930 में ब्रिटिश नमक कानून तोड़ने के लिए साबरमती से दांडी तक 240 मील लंबी ऐतिहासिक 'दांडी यात्रा' का नेतृत्व किसने किया था?",
+    "options": [
+      "Mahatma Gandhi / महात्मा गांधी",
+      "Jawaharlal Nehru / जवाहरलाल नेहरू",
+      "Sardar Vallabhbhai Patel / सरदार वल्लभभाई पटेल",
+      "Subhas Chandra Bose / सुभाष चंद्र बोस"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Mahatma Gandhi and 78 chosen followers marched for 24 days, reaching Dandi on 5 April and breaking the salt law on 6 April 1930. / महात्मा गांधी ने 78 अनुयायियों के साथ 24 दिनों की पदयात्रा कर दांडी में नमक बनाकर कानून तोड़ा।",
+    "id": 9172
+  },
+  {
+    "question": "In which year was the 'Quit India Movement' (भारत छोड़ो आंदोलन) launched with the famous slogan 'Do or Die' (करो या मरो)? / प्रसिद्ध नारे 'करो या मरो' के साथ 'भारत छोड़ो आंदोलन' किस वर्ष शुरू किया गया था?",
+    "options": [
+      "1942 / 1942",
+      "1940 / 1940",
+      "1945 / 1945",
+      "1946 / 1946"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "The Quit India Resolution was passed on 8 August 1942 at Gowalia Tank Maidan (August Kranti Maidan) in Bombay. / 8 अगस्त 1942 को बंबई के गोवालिया टैंक मैदान से गांधीजी ने 'करो या मरो' का नारा देकर आंदोलन शुरू किया।",
+    "id": 9173
+  },
+  {
+    "question": "Which charismatic nationalist leader revived the 'Azad Hind Fauj' (Indian National Army) and gave the war cry 'Give me blood and I will give you freedom'? / 'तुम मुझे खून दो, मैं तुम्हें आजादी दूंगा' का नारा देकर 'आजाद हिंद फौज' का पुनर्गठन किस महान राष्ट्रवादी नेता ने किया था?",
+    "options": [
+      "Netaji Subhas Chandra Bose / नेताजी सुभाष चंद्र बोस",
+      "Bhagat Singh / भगत सिंह",
+      "Rash Behari Bose / रास बिहारी बोस",
+      "Captain Mohan Singh / कैप्टन मोहन सिंह"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Netaji Subhas Chandra Bose took command of the INA in Singapore in 1943, forming the Provisional Government of Free India (Arzi Hukumat-e-Azad Hind). / नेताजी सुभाष चंद्र बोस ने 1943 में सिंगापुर में आजाद हिंद फौज की कमान संभाली और 'दिल्ली चलो' का आह्वान किया।",
+    "id": 9174
+  },
+  {
+    "question": "In which year was the 'Indian Independence Act' passed by the British Parliament, ending 200 years of colonial rule? / ब्रिटिश संसद द्वारा किस वर्ष 'भारतीय स्वतंत्रता अधिनियम' पारित किया गया, जिसने 200 वर्षों के औपनिवेशिक शासन का अंत किया?",
+    "options": [
+      "1947 / 1947",
+      "1946 / 1946",
+      "1950 / 1950",
+      "1948 / 1948"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "The Indian Independence Act received royal assent on 18 July 1947, partitioning British India into India and Pakistan effective 15 August 1947. / 18 जुलाई 1947 को ब्रिटिश संसद ने भारतीय स्वतंत्रता अधिनियम पारित किया, जिससे 15 अगस्त 1947 को भारत स्वतंत्र हुआ।",
+    "id": 9175
+  },
+  {
+    "question": "Who was the First Governor-General of independent India in 1947? / 1947 में स्वतंत्र भारत के प्रथम गवर्नर-जनरल कौन बने थे?",
+    "options": [
+      "Lord Mountbatten / लॉर्ड माउंटबेटन",
+      "C. Rajagopalachari / सी. राजगोपालाचारी",
+      "Dr. Rajendra Prasad / डॉ. राजेंद्र प्रसाद",
+      "Jawaharlal Nehru / जवाहरलाल नेहरू"
+    ],
+    "correctIndex": 0,
+    "category": "History: Modern History & Freedom Movement One-Word Revision",
+    "explanation": "Lord Louis Mountbatten was the first Governor-General of independent India, while C. Rajagopalachari was the first and only Indian Governor-General. / स्वतंत्र भारत के पहले गवर्नर-जनरल लॉर्ड माउंटबेटन थे और पहले भारतीय गवर्नर-जनरल सी. राजगोपालाचारी थे।",
+    "id": 9176
+  },
+  {
+    "question": "Who authored the 12th-century Sanskrit chronicle 'Rajatarangini' (The River of Kings), recording the history of Kashmir? / 12वीं शताब्दी में कश्मीर के क्रमबद्ध इतिहास पर संस्कृत ग्रंथ 'राजतरंगिणी' की रचना किसने की थी?",
+    "options": [
+      "Kalhana / कल्हण",
+      "Bilhana / बिल्हण",
+      "Jayanaka / जयानक",
+      "Hemachandra / हेमचंद्र"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Kalhana composed Rajatarangini in 1148–1150 AD, regarded as India's first genuine historical text written in sequential verse. / कल्हण ने 12वीं सदी में संस्कृत में राजतरंगिणी लिखी, जिसे भारत का पहला प्रामाणिक ऐतिहासिक ग्रंथ माना जाता है।",
+    "id": 9177
+  },
+  {
+    "question": "Who authored the political drama 'Mudrarakshasa' detailing Chanakya's ascent and the installation of Chandragupta Maurya? / चाणक्य की कूटनीति और चंद्रगुप्त मौर्य के राज्यारोहण पर आधारित प्रसिद्ध राजनीतिक नाटक 'मुद्राराक्षस' के लेखक कौन हैं?",
+    "options": [
+      "Vishakhadatta / विशाखदत्त",
+      "Kalidasa / कालिदास",
+      "Bhasa / भास",
+      "Shudraka / शूद्रक"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Vishakhadatta authored Mudrarakshasa and Devichandraguptam in the Gupta era. / विशाखदत्त ने गुप्त काल में मुद्राराक्षस और देवीचंद्रगुप्तम् की रचना की थी।",
+    "id": 9178
+  },
+  {
+    "question": "Who wrote the epic biography of the Buddha in Sanskrit epic poetry called 'Buddhacharita'? / भगवान बुद्ध के जीवन पर संस्कृत महाकाव्य 'बुद्धचरित' के लेखक कौन थे?",
+    "options": [
+      "Ashvaghosha / अश्वघोष",
+      "Nagarjuna / नागार्जुन",
+      "Vasumitra / वसुमित्र",
+      "Asanga / असंग"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Ashvaghosha, court poet of Kushana King Kanishka, authored Buddhacharita and Saundarananda in classical Sanskrit. / अश्वघोष कनिष्क के राजकवि थे जिन्होंने बुद्धचरित और सौंदरनंद की रचना की।",
+    "id": 9179
+  },
+  {
+    "question": "The famous philosophical dialogue 'Milindapanho' (Questions of King Menander) records philosophical discussions between Indo-Greek King Menander I and which Buddhist sage? / 'मिलिंदपन्हो' में इंडो-ग्रीक राजा मिनांडर (मिलिंद) और किस बौद्ध भिक्षु के बीच दार्शनिक संवाद दर्ज है?",
+    "options": [
+      "Nagasena / नागसेन",
+      "Moggaliputta Tissa / मोग्गलिपुत्त तिस्स",
+      "Upagupta / उपगुप्त",
+      "Dharmakirti / धर्मकीर्ति"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Milindapanho is an anonymous Pali Buddhist text recording the debate leading King Menander I to convert to Buddhism. / मिलिंदपन्हो पालि भाषा का ग्रंथ है जिसमें राजा मिलिंद और बौद्ध भिक्षु नागसेन के बीच संवाद है।",
+    "id": 9180
+  },
+  {
+    "question": "Who authored the lyrical Sanskrit masterpiece 'Gita Govinda' celebrating the divine love of Radha and Krishna? / राधा और कृष्ण के पावन प्रेम का वर्णन करने वाले अमर संस्कृत गीतिकाव्य 'गीत गोविंद' के रचयिता कौन थे?",
+    "options": [
+      "Jayadeva / जयदेव",
+      "Vidyapati / विद्यापति",
+      "Chandidas / चंडीदास",
+      "Chaitanya Mahaprabhu / चैतन्य महाप्रभु"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Poet Jayadeva served in the 12th-century court of Sena ruler Lakshmana Sena of Bengal and authored Gita Govinda. / महाकवि जयदेव बंगाल के शासक लक्ष्मण सेन के दरबारी कवि थे जिन्होंने गीत गोविंद की रचना की।",
+    "id": 9181
+  },
+  {
+    "question": "Who composed the monumental Braj Bhasha epic poem 'Prithviraj Raso' recounting the chivalry and life of Prithviraj Chauhan? / पृथ्वीराज चौहान के जीवन और शौर्य पर आधारित महाकाव्य 'पृथ्वीराज रासो' की रचना किसने की थी?",
+    "options": [
+      "Chand Bardai / चंदबरदाई",
+      "Jaganik / जगनिक",
+      "Amir Khusrau / अमीर खुसरो",
+      "Malik Muhammad Jayasi / मलिक मुहम्मद जायसी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Chand Bardai, the court poet and close friend of Rajput King Prithviraj Chauhan III, authored Prithviraj Raso. / चंदबरदाई पृथ्वीराज चौहान के दरबारी कवि और सखा थे जिन्होंने पृथ्वीराज रासो लिखा।",
+    "id": 9182
+  },
+  {
+    "question": "Who composed the Awadhi Sufi epic 'Padmavat' in 1540 describing Rani Padmini and Alauddin Khilji's siege of Chittor? / रानी पद्मिनी और अलाउद्दीन खिलजी के चित्तौड़ घेराव का वर्णन करने वाले अवधी सूफी महाकाव्य 'पद्मावत' (1540) के रचयिता कौन थे?",
+    "options": [
+      "Malik Muhammad Jayasi / मलिक मुहम्मद जायसी",
+      "Amir Khusrau / अमीर खुसरो",
+      "Abdul Rahim Khan-i-Khanan / रहीम",
+      "Raskhan / रसखान"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Malik Muhammad Jayasi wrote Padmavat during the reign of Sher Shah Suri in 1540 AD in Awadhi language. / मलिक मुहम्मद जायसी ने शेरशाह सूरी के शासनकाल में 1540 में पद्मावत की रचना की थी।",
+    "id": 9183
+  },
+  {
+    "question": "Who authored 'Tabaqat-i-Nasiri', the authoritative Persian history of the Delhi Sultanate dedicated to Sultan Nasir-ud-din Mahmud? / सुल्तान नासिरुद्दीन महमूद को समर्पित दिल्ली सल्तनत के प्रामाणिक फारसी इतिहास 'तबकात-ए-नासिरी' के लेखक कौन थे?",
+    "options": [
+      "Minhaj-us-Siraj / मिन्हाज-उस-सिराज",
+      "Ziauddin Barani / जियाउद्दीन बरनी",
+      "Shams-i Siraj Afif / शम्स-ए-सिराज अफीफ",
+      "Ibn Battuta / इब्न बतूता"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Minhaj-us-Siraj Juzjani authored Tabaqat-i-Nasiri in 1260 AD, recording the early Mamluk Sultanate up to Nasiruddin Mahmud. / मिन्हाज-उस-सिराज ने 1260 में गुलाम वंश के शासनकाल का विस्तृत वर्णन तबकात-ए-नासिरी में किया।",
+    "id": 9184
+  },
+  {
+    "question": "Which encyclopedic Arabic work on Indian philosophy, science, religion, and astronomy was authored by Al-Biruni around 1030 AD? / 1030 ईस्वी के आसपास अल-बरूनी द्वारा भारतीय दर्शन, विज्ञान, धर्म और खगोलशास्त्र पर लिखी गई प्रसिद्ध अरबी पुस्तक कौन-सी है?",
+    "options": [
+      "Kitab-ul-Hind (Tahqiq ma li'l-Hind) / किताब-उल-हिंद (तहकीक-ए-हिंद)",
+      "Tarikh-i-Hind / तारीख-ए-हिंद",
+      "Rihla / रेहला",
+      "Safar-nama / सफरनामा"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Al-Biruni traveled to India accompanying Mahmud of Ghazni and penned Kitab-ul-Hind examining 11th-century Indian civilization. / अल-बरूनी ने महमूद गजनवी के समय भारत आकर अरबी में किताब-उल-हिंद लिखी।",
+    "id": 9185
+  },
+  {
+    "question": "Who authored 'Tarikh-i-Firoz Shahi', detailing the reigns of Delhi Sultans from Ghiyas-ud-din Balban to Firoz Shah Tughlaq? / बलबन से लेकर फिरोज शाह तुगलक तक के दिल्ली सुल्तानों का इतिहास बताने वाली प्रसिद्ध पुस्तक 'तारीख-ए-फिरोजशाही' के रचयिता कौन थे?",
+    "options": [
+      "Ziauddin Barani / जियाउद्दीन बरनी",
+      "Minhaj-us-Siraj / मिन्हाज-उस-सिराज",
+      "Amir Khusrau / अमीर खुसरो",
+      "Al-Biruni / अल-बरूनी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Ziauddin Barani completed Tarikh-i-Firoz Shahi in 1357 AD; he also authored Fatwa-i-Jahandari on Islamic statecraft. / जियाउद्दीन बरनी ने 1357 में तारीख-ए-फिरोजशाही और फतवा-ए-जहांदारी की रचना की।",
+    "id": 9186
+  },
+  {
+    "question": "Who authored the historical biography 'Humayunama' providing intimate insights into the life of Mughal Emperor Humayun? / मुग़ल सम्राट हुमायूं के जीवन पर प्रामाणिक संस्मरण 'हुमायूंनामा' की रचना किसने की थी?",
+    "options": [
+      "Gulbadan Begum / गुलबदन बेगम",
+      "Nur Jahan / नूरजहाँ",
+      "Jahanara Begum / जहांआरा",
+      "Mumtaz Mahal / मुमताज महल"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Gulbadan Begum, daughter of Babur and sister of Humayun, authored Humayunama in Persian at the request of Emperor Akbar. / बाबर की पुत्री और हुमायूं की बहन गुलबदन बेगम ने अकबर के कहने पर हुमायूंनामा लिखा।",
+    "id": 9187
+  },
+  {
+    "question": "Who authored the Persian autobiography 'Tuzuk-i-Jahangiri' (Jahangirnama)? / फारसी आत्मकथा 'तुजुक-ए-जहांगीरी' (जहांगीरनामा) के रचयिता कौन थे?",
+    "options": [
+      "Jahangir / जहांगीर",
+      "Shah Jahan / शाहजहाँ",
+      "Akbar / अकबर",
+      "Abul Fazl / अबुल फजल"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Mughal Emperor Jahangir (Nur-ud-din Muhammad Salim) penned his own memoirs recording his royal decrees, paintings, and natural flora. / सम्राट जहांगीर ने अपनी आत्मकथा तुजुक-ए-जहांगीरी फारसी भाषा में स्वयं लिखी।",
+    "id": 9188
+  },
+  {
+    "question": "Who composed the Persian national epic 'Shahnameh' (Book of Kings) in the court of Sultan Mahmud of Ghazni? / सुल्तान महमूद गजनवी के दरबार में फारसी के अमर महाकाव्य 'शाहनामा' (Book of Kings) की रचना किसने की थी?",
+    "options": [
+      "Firdausi / फिरदौसी",
+      "Al-Biruni / अल-बरूनी",
+      "Omar Khayyam / उमर खय्याम",
+      "Saadi / सादी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Hakim Abul-Qasim Firdausi Tus spent over 30 years composing the 50,000-couplet Shahnameh, known as the Homer of the East. / फिरदौसी ने फारसी का अमर महाकाव्य शाहनामा लिखा, उन्हें 'पूर्व का होमर' कहा जाता है।",
+    "id": 9189
+  },
+  {
+    "question": "In which historic battle in 326 BC did Alexander the Great defeat King Porus on the banks of the Jhelum River? / 326 ईसा पूर्व में झेलम नदी के तट पर सिकंदर महान ने राजा पोरस को किस ऐतिहासिक युद्ध में पराजित किया था?",
+    "options": [
+      "Battle of the Hydaspes (वितस्ता का युद्ध) / हाइडेस्पीज का युद्ध",
+      "Battle of Kalinga / कलिंग युद्ध",
+      "Battle of Gaugamela / गौगामेला का युद्ध",
+      "Battle of Pelusium / पेलुसियम का युद्ध"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "The Battle of the Hydaspes (Jhelum) took place in 326 BC; impressed by Porus's bravery, Alexander reinstated him as satrap. / 326 ईसा पूर्व में झेलम (हाइडेस्पीज) के युद्ध में पोरस के शौर्य से प्रभावित होकर सिकंदर ने उसका राज्य लौटा दिया।",
+    "id": 9190
+  },
+  {
+    "question": "In which year was the bloody 'Kalinga War' fought, which transformed Emperor Ashoka into an apostle of non-violence and Dhamma? / सम्राट अशोक को अहिंसा और धम्म का अनुयायी बनाने वाला विनाशकारी 'कलिंग युद्ध' किस वर्ष लड़ा गया था?",
+    "options": [
+      "261 BC / 261 ईसा पूर्व",
+      "269 BC / 269 ईसा पूर्व",
+      "326 BC / 326 ईसा पूर्व",
+      "232 BC / 232 ईसा पूर्व"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Fought in 261 BC (8th year of Ashoka's coronation), recorded in Rock Edict XIII; Ashoka abandoned Bherighosha for Dhammaghosha. / 261 ईसा पूर्व में कलिंग युद्ध के भारी रक्तपात को देखकर अशोक ने भेरीघोष त्याग कर धम्मघोष अपनाया (13वां शिलालेख)।",
+    "id": 9191
+  },
+  {
+    "question": "In the 'First Battle of Tarain' (1191 AD), who defeated the Ghurid invader Muhammad Ghori? / 1191 ईस्वी में 'तराइन के प्रथम युद्ध' में घोरी आक्रांता मुहम्मद गोरी को किसने पराजित किया था?",
+    "options": [
+      "Prithviraj Chauhan (Prithviraj III) / पृथ्वीराज चौहान",
+      "Jaichand / जयचंद",
+      "Maharana Pratap / महाराणा प्रताप",
+      "Rana Sanga / राणा सांगा"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Prithviraj Chauhan routed Muhammad Ghori at Tarain (near Karnal, Haryana) in 1191 AD. / 1191 में तराइन के पहले युद्ध में पृथ्वीराज चौहान ने मुहम्मद गोरी को बुरी तरह परास्त किया।",
+    "id": 9192
+  },
+  {
+    "question": "Who defeated Prithviraj Chauhan in the 'Second Battle of Tarain' (1192 AD), laying the foundation of Muslim rule in North India? / 1192 ईस्वी में 'तराइन के द्वितीय युद्ध' में पृथ्वीराज चौहान को हराकर उत्तर भारत में तुर्क सत्ता की नींव किसने रखी?",
+    "options": [
+      "Muhammad Ghori / मुहम्मद गोरी",
+      "Mahmud of Ghazni / महमूद गजनवी",
+      "Qutb-ud-din Aibak / कुतुबुद्दीन ऐबक",
+      "Alauddin Khilji / अलाउद्दीन खिलजी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Muhammad Ghori defeated Prithviraj Chauhan in 1192 at Tarain with superior cavalry tactics, establishing Turkish dominion in Delhi. / 1192 में तराइन के दूसरे युद्ध में मुहम्मद गोरी विजयी रहा जिससे दिल्ली सल्तनत का मार्ग प्रशस्त हुआ।",
+    "id": 9193
+  },
+  {
+    "question": "In the 'First Battle of Panipat' (21 April 1526), Babur defeated which last Sultan of Delhi? / 21 अप्रैल 1526 को 'पानीपत की पहली लड़ाई' में बाबर ने दिल्ली के किस अंतिम सुल्तान को पराजित किया था?",
+    "options": [
+      "Ibrahim Lodi / इब्राहिम लोदी",
+      "Sikandar Lodi / सिकंदर लोदी",
+      "Bahlul Lodi / बहलोल लोदी",
+      "Daulat Khan Lodi / दौलत खां लोदी"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Babur utilized cannons (Topkhana) and the Ottoman Tulughma wheeling flank to destroy Ibrahim Lodi's huge army at Panipat. / बाबर ने बारूद, तोपों और तुलुगमा रणनीति से इब्राहिम लोदी को हराकर मुग़ल सत्ता स्थापित की।",
+    "id": 9194
+  },
+  {
+    "question": "In the 'Battle of Khanwa' (1527 AD), Babur defeated which valiant Rajput ruler of Mewar after declaring Jihad? / 1527 ईस्वी में 'खानवा के युद्ध' में जिहाद का नारा देकर बाबर ने मेवाड़ के किस वीर राजपूत शासक को हराया था?",
+    "options": [
+      "Rana Sanga (Maharana Sangram Singh) / राणा सांगा",
+      "Maharana Pratap / महाराणा प्रताप",
+      "Rana Kumbha / राणा कुंभा",
+      "Raja Man Singh / राजा मानसिंह"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Babur defeated Rana Sanga at Khanwa (near Bharatpur) in March 1527 and assumed the title of 'Ghazi'. / 1527 में खानवा के मैदान में बाबर ने राणा सांगा के शक्तिशाली संघ को हराकर 'गाजी' की उपाधि ली।",
+    "id": 9195
+  },
+  {
+    "question": "In the 'Battle of Chausa' (1539 AD), who decisively defeated Mughal Emperor Humayun on the banks of the Ganges? / 1539 ईस्वी में 'चौसा के युद्ध' में गंगा तट पर मुग़ल सम्राट हुमायूं को किसने करारी शिकस्त दी थी?",
+    "options": [
+      "Sher Shah Suri (Sher Khan) / शेरशाह सूरी",
+      "Bahadur Shah of Gujarat / बहादुर शाह",
+      "Islam Shah / इस्लाम शाह",
+      "Hemu / हेमु"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Sher Khan routed Humayun at Chausa (Buxar, Bihar) on 26 June 1539 and assumed the royal title of 'Sher Shah'. / शेर खां ने चौसा में हुमायूं को हराया और 'शेरशाह' की पदवी धारण कर अपने नाम के सिक्के चलाए।",
+    "id": 9196
+  },
+  {
+    "question": "In the 'Battle of Kannauj' (Battle of Bilgram, 1540 AD), who defeated Humayun, forcing him to flee India in exile? / 1540 ईस्वी में 'कन्नौज (बिलग्राम) के युद्ध' में हुमायूं को हराकर भारत छोड़ने और निर्वासित होने पर किसने विवश किया था?",
+    "options": [
+      "Sher Shah Suri / शेरशाह सूरी",
+      "Kamran Mirza / कामरान मिर्जा",
+      "Askari / अस्करी",
+      "Maldeo Rathore / मालदेव"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Sher Shah Suri decisively defeated Humayun at Kannauj in May 1540, establishing the Second Afghan Empire (Sur Dynasty) in Delhi. / कन्नौज के युद्ध में हुमायूं को हराकर शेरशाह सूरी ने दिल्ली और आगरा पर अधिकार कर सूर साम्राज्य स्थापित किया।",
+    "id": 9197
+  },
+  {
+    "question": "In the 'Second Battle of Panipat' (5 November 1556), Akbar's regent Bairam Khan defeated which Hindu general and ruler? / 5 नवंबर 1556 को 'पानीपत की दूसरी लड़ाई' में अकबर के संरक्षक बैरम खां ने किस हिंदू सेनापति व शासक को पराजित किया था?",
+    "options": [
+      "Hemu (Hemchandra Vikramaditya) / हेमु (हेमचंद्र विक्रमादित्य)",
+      "Rana Sanga / राणा सांगा",
+      "Baz Bahadur / बाज बहादुर",
+      "Rani Durgavati / रानी दुर्गावती"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Hemu, who had captured Delhi and assumed the title of Vikramaditya, was struck by an arrow in the eye at Panipat II and defeated. / पानीपत के दूसरे युद्ध में हेमचंद्र विक्रमादित्य (हेमू) की आंख में तीर लगने से मुग़लों की जीत हुई।",
+    "id": 9198
+  },
+  {
+    "question": "The legendary 'Battle of Haldighati' was fought in 1576 between Maharana Pratap of Mewar and the Mughal army commanded by: / 1576 में ऐतिहासिक 'हल्दीघाटी का युद्ध' मेवाड़ के महाराणा प्रताप और किसके नेतृत्व वाली मुग़ल सेना के बीच लड़ा गया था?",
+    "options": [
+      "Raja Man Singh I of Amber / राजा मानसिंह प्रथम",
+      "Bairam Khan / बैरम खां",
+      "Todar Mal / टोडरमल",
+      "Asaf Khan / आसफ खां"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Fought on 18 June 1576 in Rajasthan, Maharana Pratap riding his faithful horse Chetak fiercely resisted the Mughal forces led by Man Singh. / 18 जून 1576 को हल्दीघाटी के दर्रे में महाराणा प्रताप ने मुग़ल सेनापति मानसिंह के विरुद्ध अदम्य शौर्य दिखाया।",
+    "id": 9199
+  },
+  {
+    "question": "In the 'Battle of Plassey' (23 June 1757), which Nawab of Bengal was betrayed by his commander-in-chief Mir Jafar and defeated by the British? / 23 जून 1757 को 'प्लासी के युद्ध' में बंगाल के किस नवाब को उसके मीर बख्शी मीर जाफर ने धोखा दिया जिसके कारण अंग्रेजों की जीत हुई?",
+    "options": [
+      "Nawab Siraj-ud-Daulah / नवाब सिराजुद्दौला",
+      "Mir Qasim / मीर कासिम",
+      "Alivardi Khan / अलीवर्दी खां",
+      "Shuja-ud-Daula / शुजाउद्दौला"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Robert Clive's conspiracy with Mir Jafar, Rai Durlabh, and Jagat Seth led to the capture and execution of Nawab Siraj-ud-Daulah. / रॉबर्ट क्लाइव ने मीर जाफर और जगत सेठ के षड्यंत्र से सिराजुद्दौला को परास्त किया।",
+    "id": 9200
+  },
+  {
+    "question": "In the decisive 'Battle of Buxar' (22 October 1764), the British forces under Hector Munro defeated the combined confederacy of: / 22 अक्टूबर 1764 को 'बक्सर के निर्णायक युद्ध' में हेक्टर मुनरो के नेतृत्व में ब्रिटिश सेना ने किसकी संयुक्त सेना को हराया था?",
+    "options": [
+      "Mir Qasim, Shuja-ud-Daula & Shah Alam II / मीर कासिम, शुजाउद्दौला व शाह आलम द्वितीय",
+      "Siraj-ud-Daulah & French / सिराजुद्दौला व फ्रांसीसी",
+      "Tipu Sultan & Marathas / टीपू सुल्तान व मराठा",
+      "Nizam of Hyderabad & Haidar Ali / निजाम व हैदर अली"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "Buxar was a pitched military contest that firmly established British paramountcy over Bengal, Bihar, and Awadh. / बक्सर की ऐतिहासिक विजय ने अंग्रेजों को भारत की निर्विवाद सैन्य और राजनीतिक शक्ति बना दिया।",
+    "id": 9201
+  },
+  {
+    "question": "In which battle in 1760 did the British force under Sir Eyre Coote decisively defeat the French in India (Third Carnatic War)? / 1760 में किस युद्ध में सर आयर कूट के नेतृत्व में ब्रिटिश सेना ने फ्रांसीसियों को निर्णायक रूप से हराया (तृतीय कर्नाटक युद्ध)?",
+    "options": [
+      "Battle of Wandiwash (वांडीवाश का युद्ध) / वांडीवाश का युद्ध",
+      "Battle of Plassey / प्लासी का युद्ध",
+      "Battle of Buxar / बक्सर का युद्ध",
+      "Battle of Ambur / अंबूर का युद्ध"
+    ],
+    "correctIndex": 0,
+    "category": "History: Important Historical Books & Historic Battles",
+    "explanation": "The Battle of Wandiwash (1760) shattered the French colonial ambitions in India, ending with the Treaty of Paris (1763). / 1760 में वांडीवाश के युद्ध में अंग्रेजों ने फ्रांसीसी सेनापति काउंट डी लाली को हराकर फ्रांसीसी चुनौती समाप्त कर दी।",
+    "id": 9202
   }
 ]

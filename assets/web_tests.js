@@ -47,6 +47,7 @@
 
     function cleanCategoryName(catName, subjectName) {
         if (!catName) return subjectName;
+        if (catName.startsWith('Polity:')) return catName.replace('Polity:', '').trim();
         if (catName.startsWith('Math:')) return catName.replace('Math:', '').trim();
         if (catName.startsWith('English:')) return catName.replace('English:', '').trim();
         if (catName.startsWith('Modern History:')) return catName.replace('Modern History:', '').trim() + ' (Modern)';
@@ -674,6 +675,29 @@
             expBox.style.display = 'none';
         }
 
+        // Keep translate button synced with state
+        const trBtn = document.getElementById('btnTestTranslate');
+        if (trBtn) {
+            trBtn.classList.toggle('active-hindi', activeTest.isHindiMode);
+            trBtn.textContent = activeTest.isHindiMode ? 'A / अ English' : 'अ / A Hindi';
+        }
+
+        // If in Hindi mode and question has no embedded Hindi or cached translation, fetch translation in background
+        if (activeTest.isHindiMode && !translationCache[q.id] && (!q.question_hi || !q.options_hi)) {
+            const embedded = extractEmbeddedHindiQuestion(q);
+            if (embedded && /[ऀ-ॿ]/.test(embedded.question)) {
+                translationCache[q.id] = embedded;
+            } else {
+                fetchGoogleTranslate(q.question).then(async (trQ) => {
+                    const trOpts = await Promise.all((q.options || []).map(o => fetchGoogleTranslate(o)));
+                    translationCache[q.id] = { question: trQ, options: trOpts };
+                    if (activeTest.isOpen && activeTest.currentIndex === index && activeTest.isHindiMode) {
+                        renderQuestionTextAndOptions(q);
+                    }
+                }).catch(() => {});
+            }
+        }
+
         renderQuestionTextAndOptions(q);
 
         const skipBtn = document.getElementById('btnTestSkip');
@@ -706,10 +730,16 @@
                 displayOpts = translationCache[q.id].options;
             } else {
                 const embedded = extractEmbeddedHindiQuestion(q);
-                if (embedded) {
+                if (embedded && /[ऀ-ॿ]/.test(embedded.question)) {
                     displayQ = embedded.question;
                     displayOpts = embedded.options;
                 }
+            }
+        } else {
+            const eng = extractEmbeddedEnglishQuestion(q);
+            if (eng) {
+                displayQ = eng.question;
+                displayOpts = eng.options;
             }
         }
 
@@ -729,6 +759,34 @@
             btn.addEventListener('click', () => handleOptionSelected(i));
             optionsBox.appendChild(btn);
         });
+    }
+
+        function extractEmbeddedEnglishQuestion(q) {
+        if (!q || !q.question) return null;
+        let engQ = q.question;
+        const qParts = q.question.split('/');
+        if (qParts.length > 1 && /[ऀ-ॿ]/.test(qParts[1]) && /[a-zA-Z]/.test(qParts[0])) {
+            engQ = qParts[0].trim();
+        }
+
+        const engOpts = (q.options || []).map(opt => {
+            const parts = opt.split('/');
+            if (parts.length > 1 && /[ऀ-ॿ]/.test(parts[1]) && /[a-zA-Z0-9]/.test(parts[0])) {
+                return parts[0].trim();
+            }
+            return opt;
+        });
+
+        return { question: engQ, options: engOpts };
+    }
+
+    function extractCleanExplanation(rawExp, isHindi) {
+        if (!rawExp) return '';
+        const parts = rawExp.split('/');
+        if (parts.length > 1 && /[ऀ-ॿ]/.test(parts[1]) && /[a-zA-Z]/.test(parts[0])) {
+            return isHindi ? parts.slice(1).join('/').trim() : parts[0].trim();
+        }
+        return rawExp;
     }
 
     function extractEmbeddedHindiQuestion(q) {
@@ -869,6 +927,13 @@
         const isMath = q.category && q.category.toLowerCase().includes('math');
         const badgeLabel = isMath ? 'SSC CGL Math Formula & Trick' : 'Solution & Explanation';
 
+        let expText = q.explanation;
+        if (activeTest.isHindiMode && q.explanation_hi) {
+            expText = q.explanation_hi;
+        } else if (q.explanation) {
+            expText = extractCleanExplanation(q.explanation, activeTest.isHindiMode);
+        }
+
         expBox.innerHTML = `
             <div class="active-explanation-card">
                 <div class="active-exp-header">
@@ -876,7 +941,7 @@
                     <span class="active-exp-pill">Formula Breakdown</span>
                 </div>
                 <div class="active-exp-content">
-                    ${formatExplanationText(q.explanation)}
+                    ${formatExplanationText(expText)}
                 </div>
             </div>
         `;
@@ -1037,6 +1102,10 @@
         }
 
         renderQuestionTextAndOptions(currentQ);
+        const expBox = document.getElementById('webQuestionExplanation');
+        if (expBox && expBox.style.display !== 'none') {
+            showQuestionExplanation(currentQ);
+        }
     }
 
     async function fetchGoogleTranslate(text) {
@@ -1090,6 +1159,7 @@
     window.confirmExitTest = confirmExitTest;
     window.closeWebTest = closeWebTest;
     window.toggleTestLanguage = toggleTestLanguage;
+    window.startPracticeTest = launchWebTest;
     window.handleSkipQuestion = handleSkipQuestion;
     window.handleNextQuestion = handleNextQuestion;
 
