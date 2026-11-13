@@ -9,7 +9,7 @@
 
     <!-- PWA & Offline Support -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#6366f1">
+    <meta name="theme-color" content="#141415">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,7 +18,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/tables.css?v=2">
 
@@ -182,8 +182,13 @@
             .hamburger-btn { display: flex; }
         }
     </style>
+    <link rel="stylesheet" href="assets/quizee-theme.css?v=7">
 </head>
 <body>
+    <audio id="quizeAudioPlayer" preload="auto">
+        <source src="assets/quzeaudio.mp3" type="audio/mpeg">
+        <source src="assets/quzeaudio.mpeg" type="audio/mpeg">
+    </audio>
 
     <header class="site-header">
         <div class="nav-container">
@@ -195,99 +200,87 @@
 
                 <div class="nav-links-desktop">
                     <a href="index.html" class="nav-btn">Home</a>
-                    <a href="index.html#daily-quiz" class="nav-btn">Daily 5</a>
                     <a href="index.html#online-tests" class="nav-btn">Topic Sets</a>
                     <a href="mock-tests.html" class="nav-btn">Full Mocks</a>
                     <a href="byjus-gk.html" class="nav-btn">BYJU'S GK</a>
                     <a href="tables.html" class="nav-btn nav-btn-active">Study Tables</a>
+                    <button class="nav-btn-audio quize-audio-btn" type="button" title="Play Quizee Music">
+                        <span class="audio-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
+                        <span class="audio-btn-text">Music</span>
+                    </button>
                     <a href="quizee.apk" download="quizee.apk" class="nav-btn nav-btn-primary">Download APK</a>
                 </div>
 
-                <button class="hamburger-btn" id="tablesMobileToggle" aria-label="Menu">
-                    <span></span><span></span><span></span>
-                </button>
+                <div class="nav-mobile-actions">
+                    <button class="nav-btn-mobile-audio quize-audio-btn" type="button" aria-label="Play Music" title="Play Quizee Music">
+                        <span class="audio-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
+                    </button>
+                    <button class="hamburger-btn" id="tablesMobileToggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
             </nav>
         </div>
 
         <div class="mobile-drawer" id="tablesMobileDrawer">
-            <a href="index.html" class="mobile-nav-link">🏠 Home</a>
-            <a href="index.html#daily-quiz" class="mobile-nav-link">✨ Daily 5 Quiz</a>
-            <a href="index.html#online-tests" class="mobile-nav-link">📚 Topic Practice Sets</a>
-            <a href="mock-tests.html" class="mobile-nav-link">🎯 Full Mock Tests</a>
-            <a href="byjus-gk.html" class="mobile-nav-link">🏛️ BYJU'S GK</a>
-            <a href="tables.html" class="mobile-nav-link active">📊 Study Tables</a>
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="index.html#online-tests" class="mobile-nav-link">Topic Practice Sets</a>
+            <a href="mock-tests.html" class="mobile-nav-link">Full Mock Tests</a>
+            <a href="byjus-gk.html" class="mobile-nav-link">BYJU'S GK</a>
+            <a href="tables.html" class="mobile-nav-link active">Study Tables</a>
         </div>
     </header>
 
     <main class="tables-shell">
-        <!-- Simple Compact Top Bar -->
+        <!-- Compact Top Bar -->
         <div class="tables-topbar">
             <div class="topbar-title-group">
-                <h1>📊 Study Tables</h1>
-                <span class="topbar-sub">Select a subject &amp; topic to read cleanly</span>
+                <h1>Study Tables</h1>
             </div>
 
             <div class="topbar-controls">
                 <div class="search-wrap">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
-                    <input type="text" id="tablesSearchInput" placeholder="Search topic or fact (e.g. Vitamin, Bihu, Art 32, Dam)..." autocomplete="off">
-                    <button type="button" id="btnClearSearch" class="btn-clear" title="Clear">✕</button>
+                    <input type="text" id="tablesSearchInput" placeholder="Search topic or fact" autocomplete="off">
+                    <button type="button" id="btnClearSearch" class="btn-clear" title="Clear">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
                 </div>
 
-                <button type="button" id="btnRecallToggle" class="btn-recall" title="Hide answer columns so you can test yourself">
-                    🧠 Hide Answers
+                <button type="button" id="btnRecallToggle" class="btn-recall" style="display:none;" title="Hide answer columns so you can test yourself">
+                    Hide Answers
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Subject & Topic Selectors (Visible on small screens) -->
-        <div class="mobile-selectors">
-            <div class="mobile-select-group">
-                <label for="mobileSubjectSelect">Subject</label>
-                <select id="mobileSubjectSelect"></select>
-            </div>
-            <div class="mobile-select-group">
-                <label for="mobileTopicSelect">Topic</label>
-                <select id="mobileTopicSelect"></select>
-            </div>
-        </div>
-
-        <!-- Clean 2-Column Workspace -->
-        <div class="tables-workspace">
-            <!-- Left Sidebar: Subjects & Topics -->
-            <aside class="tables-sidebar">
-                <div class="sidebar-section">
-                    <div class="sidebar-heading">Subjects</div>
-                    <div class="sidebar-subjects" id="sidebarSubjects"></div>
-                </div>
-
-                <div class="sidebar-section sidebar-topics-wrap">
-                    <div class="sidebar-heading" id="sidebarTopicHeading">Topics</div>
-                    <div class="sidebar-topics" id="sidebarTopics"></div>
-                </div>
-            </aside>
-
-            <!-- Right Main Reader: Shows Selected Clean Table (or Search Results) -->
-            <section class="tables-reader" id="tablesReader">
-                <!-- Populated cleanly via JS -->
-            </section>
-        </div>
+        <!-- Step-by-Step Drill-Down Stage (Subjects -> Topics -> Table Reader) -->
+        <div id="tablesBreadcrumb" class="drill-breadcrumb" style="display:none;"></div>
+        <section id="tablesStage" class="tables-stage"></section>
     </main>
 
     <button type="button" id="btnBackToTop" class="btn-back-top" aria-label="Back to Top">↑</button>
 
     <script src="data/study_tables_data.js"></script>
     <script src="data/byjus_gk_data.js"></script>
-    <script src="assets/tables.js?v=2"></script>
+    <script src="assets/tables.js?v=5"></script>
     <script>
+        const tablesToggle = document.getElementById('tablesMobileToggle');
+        const tablesDrawer = document.getElementById('tablesMobileDrawer');
+        if (tablesToggle && tablesDrawer) {
+            tablesToggle.addEventListener('click', () => {
+                tablesToggle.classList.toggle('active');
+                tablesDrawer.classList.toggle('active');
+            });
+        }
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => {});
             });
         }
     </script>
+    <script src="assets/quizee-audio.js?v=1"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 
     <!-- PWA & 100% Offline Support -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#6366f1">
+    <meta name="theme-color" content="#141415">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,7 +18,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/byjus_gk.css">
@@ -228,8 +228,13 @@
             color: #c7d2fe;
         }
     </style>
+    <link rel="stylesheet" href="assets/quizee-theme.css?v=7">
 </head>
 <body>
+    <audio id="quizeAudioPlayer" preload="auto">
+        <source src="assets/quzeaudio.mp3" type="audio/mpeg">
+        <source src="assets/quzeaudio.mpeg" type="audio/mpeg">
+    </audio>
 
     <!-- Header Navigation -->
     <header class="site-header">
@@ -242,76 +247,64 @@
 
                 <div class="nav-links-desktop">
                     <a href="index.html" class="nav-btn">Home</a>
-                    <a href="index.html#daily-quiz" class="nav-btn">Daily 5</a>
                     <a href="index.html#online-tests" class="nav-btn">Topic Sets</a>
                     <a href="mock-tests.html" class="nav-btn">Full Mocks</a>
                     <a href="byjus-gk.html" class="nav-btn nav-btn-active">BYJU'S GK</a>
                     <a href="tables.html" class="nav-btn">Study Tables</a>
+                    <button class="nav-btn-audio quize-audio-btn" type="button" title="Play Quizee Music">
+                        <span class="audio-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
+                        <span class="audio-btn-text">Music</span>
+                    </button>
                     <a href="quizee.apk" download="quizee.apk" class="nav-btn nav-btn-primary">Download APK</a>
                 </div>
 
-                <button class="hamburger-btn" id="byjusMobileToggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div class="nav-mobile-actions">
+                    <button class="nav-btn-mobile-audio quize-audio-btn" type="button" aria-label="Play Music" title="Play Quizee Music">
+                        <span class="audio-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
+                    </button>
+                    <button class="hamburger-btn" id="byjusMobileToggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
             </nav>
         </div>
 
         <div class="mobile-drawer" id="byjusMobileDrawer">
             <a href="index.html" class="mobile-nav-link">
-                <span>🏠 Home</span>
-            </a>
-            <a href="index.html#daily-quiz" class="mobile-nav-link">
-                <span>✨ Daily 5 Quiz</span>
+                <span>Home</span>
             </a>
             <a href="index.html#online-tests" class="mobile-nav-link">
-                <span>📚 Topic Practice Sets</span>
+                <span>Topic Practice Sets</span>
             </a>
             <a href="mock-tests.html" class="mobile-nav-link">
-                <span>🎯 60 Full Mock Tests</span>
+                <span>60 Full Mock Tests</span>
             </a>
             <a href="byjus-gk.html" class="mobile-nav-link active">
-                <span>🏛️ BYJU'S Static GK</span>
+                <span>BYJU'S Static GK</span>
             </a>
             <a href="tables.html" class="mobile-nav-link">
-                <span>📊 Master Study Tables</span>
+                <span>Master Study Tables</span>
             </a>
-            <a href="quizee.apk" download="quizee.apk" class="mobile-nav-link" style="background:rgba(99,102,241,0.25); color:#fff; font-weight:700;">
-                <span>📥 Download Quizee APK</span>
+            <a href="quizee.apk" download="quizee.apk" class="mobile-nav-link" style="background:var(--text-main); color:var(--bg-dark); font-weight:500;">
+                <span>Download Quizee APK</span>
             </a>
         </div>
     </header>
 
     <div class="byjus-page-wrapper">
 
-        <!-- Hero Section -->
+        <!-- Compact Header Bar -->
         <section class="byjus-hero">
-            <h1 class="byjus-hero-title">BYJU'S Static GK <span>Quiz Hub</span></h1>
-            <p class="byjus-hero-sub">
-                58 High-Yield Topics &bull; 1,260+ MCQs &bull; Bilingual &bull; Complete Study Tables
-            </p>
-
-            <!-- Metrics -->
-            <div class="byjus-metrics-banner">
-                <div class="byjus-metric-chip">
-                    <span>📚 <strong>58</strong> Topics</span>
-                </div>
-                <div class="byjus-metric-chip">
-                    <span id="byjusTotalQuestionsBadge">📝 <strong>1,260+</strong> MCQs</span>
-                </div>
-                <div class="byjus-metric-chip">
-                    <span>🌐 <strong>Bilingual</strong></span>
-                </div>
-                <div class="byjus-metric-chip">
-                    <span>⚡ <strong>Offline Ready</strong></span>
-                </div>
+            <div>
+                <h1 class="byjus-hero-title">BYJU'S Static GK <span>Quiz Hub</span></h1>
+                <p class="byjus-hero-sub" id="byjusTotalQuestionsBadge">58 topics · 1,260+ MCQs · Bilingual</p>
             </div>
 
-            <!-- Action buttons -->
             <div class="byjus-hero-actions">
                 <button class="btn-byjus-primary" onclick="window.startMegaMixedQuiz(30)">
-                    <span>🎲 Start Mixed Quiz (30 Qs)</span>
+                    <span>Start mixed quiz (30 Qs)</span>
                 </button>
             </div>
         </section>
@@ -319,11 +312,11 @@
         <!-- Search & Category Filters -->
         <section class="byjus-controls-wrap" id="topicSection">
             <div class="byjus-search-box">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
-                <input type="text" id="byjusSearchInput" class="byjus-search-input" placeholder="Search by topic name (e.g., Countries & Capitals, Prasad Scheme, IPL, Rivers, Coal Mines)...">
+                <input type="text" id="byjusSearchInput" class="byjus-search-input" placeholder="Search topic">
             </div>
 
             <!-- Categories Tabs -->
@@ -364,7 +357,7 @@
                 </div>
 
                 <div class="byjus-header-right">
-                    <span class="byjus-timer-pill" id="byjusQuizTimer">⏱️ 00:00</span>
+                    <span class="byjus-timer-pill" id="byjusQuizTimer">00:00</span>
                     <span class="byjus-score-pill" id="byjusQuizScorePill">Score: 0</span>
                     <button class="btn-byjus-lang" id="byjusBtnLanguage" onclick="window.byjusToggleLanguage()">अ Hindi View</button>
                 </div>
@@ -397,21 +390,20 @@
 
                 <!-- Footer Bar -->
                 <div class="byjus-modal-footer">
-                    <button class="btn-byjus-skip" id="byjusBtnSkip" onclick="window.byjusSkipQuestion()">Skip Question</button>
-                    <button class="btn-byjus-next" id="byjusBtnNext" onclick="window.byjusNextQuestion()" disabled>Next Question ➔</button>
+                    <button class="btn-byjus-skip" id="byjusBtnSkip" onclick="window.byjusSkipQuestion()">Skip question</button>
+                    <button class="btn-byjus-next" id="byjusBtnNext" onclick="window.byjusNextQuestion()" disabled>Next question</button>
                 </div>
             </div>
 
             <!-- Test Results View -->
             <div id="byjusResultsView" class="byjus-results-container" style="display:none;">
-                <div class="byjus-res-emoji">🎉</div>
-                <h3 class="byjus-res-title">Quiz Completed!</h3>
-                <div class="byjus-res-sub">Static GK Session Performance Summary</div>
+                <h3 class="byjus-res-title">Quiz completed</h3>
+                <div class="byjus-res-sub">Static GK session summary</div>
 
                 <div class="byjus-score-box">
                     <div class="byjus-score-digits" id="byjusResScoreDigits">8 / 8</div>
                     <div class="byjus-accuracy-chip" id="byjusResAccuracy">100% Accuracy</div>
-                    <div class="byjus-results-badge" id="byjusResBadge">🏆 Outstanding! Master Level</div>
+                    <div class="byjus-results-badge" id="byjusResBadge">Master Level</div>
 
                     <div class="byjus-metrics-summary">
                         <div>
@@ -493,7 +485,7 @@
 
     <!-- Scripts -->
     <script src="data/byjus_gk_data.js"></script>
-    <script src="assets/byjus_gk.js"></script>
+    <script src="assets/byjus_gk.js?v=4"></script>
     <script>
         // Mobile menu toggle
         const toggleBtn = document.getElementById('byjusMobileToggle');
@@ -504,5 +496,6 @@
             });
         }
     </script>
+    <script src="assets/quizee-audio.js?v=1"></script>
 </body>
 </html>

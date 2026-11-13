@@ -85,47 +85,43 @@
    ONLINE TESTS SECTION (SPACIOUS & MINIMAL)
    ========================================================= */
 .tests-portal-section {
-    padding: 80px 0 60px;
+    padding: 64px 0;
     position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.06) 0%, rgba(11, 15, 25, 0) 70%);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 64px;
 }
 
 .portal-header-box {
     text-align: center;
     max-width: 600px;
-    margin: 0 auto 36px;
+    margin: 0 auto 32px;
 }
 .portal-badge {
     display: inline-block;
-    background: rgba(99, 102, 241, 0.12);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    color: #a5b4fc;
-    padding: 5px 14px;
-    border-radius: 20px;
-    font-size: 11.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
+    background: var(--bg-raised);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
     margin-bottom: 12px;
 }
 .portal-title {
-    font-size: clamp(26px, 4vw, 36px);
-    font-weight: 800;
-    line-height: 1.25;
-    letter-spacing: -0.6px;
-    margin-bottom: 10px;
-    color: #f8fafc;
+    font-size: clamp(24px, 4vw, 32px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    color: var(--text-main);
 }
 .portal-title span {
-    background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--accent);
 }
 .portal-desc {
     font-size: 15px;
-    color: #94a3b8;
+    color: var(--text-secondary);
     line-height: 1.5;
 }
 
@@ -133,14 +129,14 @@
 .portal-resume-banner {
     display: none;
     max-width: 640px;
-    margin: 0 auto 32px;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(20, 28, 43, 0.9) 100%);
-    border: 1px solid rgba(129, 140, 248, 0.35);
-    border-radius: 14px;
-    padding: 14px 18px;
+    margin: 0 auto 24px;
+    background: var(--card-bg);
+    border: 1px solid var(--accent-border);
+    border-radius: 12px;
+    padding: 16px;
     align-items: center;
     justify-content: space-between;
-    gap: 14px;
+    gap: 16px;
 }
 .resume-info {
     display: flex;
@@ -148,31 +144,46 @@
     gap: 12px;
 }
 .resume-icon-circle {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    background: rgba(99, 102, 241, 0.2);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--bg-raised);
+    border: 1px solid var(--card-border);
+    color: var(--accent);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
     flex-shrink: 0;
 }
 .resume-title {
-    font-size: 13.5px;
-    font-weight: 700;
-    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-main);
 }
 .resume-meta {
-    font-size: 12px;
-    color: #94a3b8;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
 }
 .resume-meta b {
-    color: #10b981;
+    color: var(--correct-green);
+    font-weight: 500;
 }
 .btn-resume {
-    background: #6366f1;
-    color: #ffffff;
+    background: var(--text-main);
+    color: var(--bg-dark);
+    border: none;
+    height: 36px;
+    padding: 0 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 140ms var(--ease-out);
+}
+.btn-resume:hover {
+    background: #ffffff;
+}
     border: none;
     padding: 8px 16px;
     border-radius: 8px;
@@ -281,20 +292,21 @@
 }
 .portal-search-input {
     width: 100%;
-    background: #141c2b;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    padding: 12px 18px 12px 42px;
-    font-size: 13.5px;
-    color: #f8fafc;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    height: 44px;
+    padding: 0 36px 0 40px;
+    font-size: 14px;
+    color: var(--text-main);
     outline: none;
-    transition: all 0.2s ease;
+    transition: border-color 140ms var(--ease-out), background-color 140ms var(--ease-out);
     font-family: inherit;
     box-sizing: border-box;
 }
 .portal-search-input:focus {
-    border-color: #818cf8;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    border-color: var(--accent);
+    background: var(--bg-raised);
 }
 .portal-search-icon {
     position: absolute;
@@ -334,22 +346,21 @@
 }
 
 .web-topic-card {
-    background: #141c2b;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-    padding: 22px;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 160ms var(--ease-out), background-color 160ms var(--ease-out);
     display: flex;
     flex-direction: column;
 }
 .web-topic-card:hover {
-    border-color: rgba(129, 140, 248, 0.4);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-color: var(--card-border-strong);
+    background: #1d1d20;
 }
 .web-topic-card.selected {
-    border-color: #818cf8;
-    background: linear-gradient(180deg, rgba(99, 102, 241, 0.08) 0%, #141c2b 100%);
+    border-color: var(--accent-border);
+    background: var(--bg-raised);
 }
 
 .topic-card-top {
@@ -358,9 +369,9 @@
     gap: 12px;
 }
 .topic-select-checkbox {
-    width: 18px;
-    height: 18px;
-    accent-color: #6366f1;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent);
     cursor: pointer;
     margin-top: 3px;
     flex-shrink: 0;
@@ -369,55 +380,59 @@
     flex: 1;
 }
 .topic-card-title {
-    font-size: 15.5px;
-    font-weight: 700;
-    color: #f8fafc;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-main);
     line-height: 1.35;
 }
 .topic-card-meta {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
     font-size: 12px;
-    color: #94a3b8;
-    margin-top: 3px;
-    font-weight: 500;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 400;
 }
 
 .topic-completion-pill {
-    padding: 3px 8px;
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+    padding: 2px 8px;
     border-radius: 6px;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 500;
     white-space: nowrap;
 }
 .completion-unattempted {
-    background: rgba(148, 163, 184, 0.1);
-    color: #94a3b8;
+    background: var(--bg-raised);
+    color: var(--text-muted);
 }
 .completion-mastered {
-    background: rgba(16, 185, 129, 0.15);
-    color: #10b981;
+    background: rgba(76, 195, 138, 0.14);
+    color: var(--correct-green);
 }
 .completion-good {
-    background: rgba(99, 102, 241, 0.15);
-    color: #818cf8;
+    background: var(--accent-tint);
+    color: var(--accent);
 }
 .completion-progress {
-    background: rgba(245, 158, 11, 0.15);
-    color: #f59e0b;
+    background: var(--accent-tint);
+    color: var(--accent);
 }
 
 /* Progress Track */
 .topic-progress-track {
     height: 4px;
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--bg-raised);
     border-radius: 4px;
     overflow: hidden;
-    margin: 14px 0 16px;
+    margin: 16px 0;
 }
 .topic-progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #6366f1 0%, #10b981 100%);
+    background: var(--accent);
     border-radius: 4px;
-    transition: width 0.3s ease;
+    transition: width 300ms var(--ease-out);
 }
 
 /* Action Buttons */
@@ -432,19 +447,20 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    background: rgba(99, 102, 241, 0.12);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    color: #818cf8;
-    padding: 9px 12px;
-    border-radius: 10px;
-    font-size: 12.5px;
-    font-weight: 700;
+    background: var(--bg-raised);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 140ms var(--ease-out), border-color 140ms var(--ease-out);
 }
 .btn-toggle-sets:hover {
-    background: rgba(99, 102, 241, 0.22);
-    border-color: #818cf8;
+    background: #2b2b2e;
+    border-color: var(--card-border-strong);
     color: #ffffff;
 }
 .btn-topic-drill {
@@ -452,20 +468,21 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    background: #1c273a;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #cbd5e1;
-    padding: 9px 14px;
-    border-radius: 10px;
-    font-size: 12.5px;
-    font-weight: 600;
+    background: transparent;
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 140ms var(--ease-out), color 140ms var(--ease-out), border-color 140ms var(--ease-out);
 }
 .btn-topic-drill:hover {
-    background: #243147;
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.2);
+    background: var(--bg-raised);
+    color: var(--text-main);
+    border-color: var(--card-border-strong);
 }
 
 /* =========================================================
@@ -490,16 +507,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 14px;
-    background: #182233;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    padding: 10px 12px;
+    background: var(--bg-deep);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
     gap: 10px;
-    transition: all 0.15s ease;
+    transition: border-color 140ms var(--ease-out), background-color 140ms var(--ease-out);
 }
 .web-set-card:hover {
-    border-color: rgba(129, 140, 248, 0.3);
-    background: #1d293d;
+    border-color: var(--card-border-strong);
+    background: var(--bg-raised);
 }
 .set-card-left {
     display: flex;
@@ -566,35 +583,35 @@
     flex-shrink: 0;
 }
 .btn-set-50 {
-    background: rgba(99, 102, 241, 0.12);
-    border: 1px solid rgba(99, 102, 241, 0.25);
-    color: #818cf8;
-    padding: 6px 11px;
-    border-radius: 8px;
-    font-size: 11.5px;
-    font-weight: 700;
+    background: var(--bg-raised);
+    border: 1px solid var(--card-border);
+    color: var(--text-secondary);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: background-color 140ms var(--ease-out), color 140ms var(--ease-out);
     white-space: nowrap;
 }
 .btn-set-50:hover {
-    background: rgba(99, 102, 241, 0.25);
-    color: #ffffff;
+    background: #2e2e32;
+    color: var(--text-main);
 }
 .btn-set-full {
-    background: #6366f1;
+    background: var(--text-main);
     border: none;
-    color: #ffffff;
-    padding: 6px 13px;
-    border-radius: 8px;
-    font-size: 11.5px;
-    font-weight: 700;
+    color: var(--bg-dark);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: background-color 140ms var(--ease-out);
     white-space: nowrap;
 }
 .btn-set-full:hover {
-    background: #4f46e5;
+    background: #ffffff;
 }
 
 /* =========================================================
@@ -606,12 +623,11 @@
     left: 50%;
     transform: translateX(-50%);
     width: min(680px, 92vw);
-    background: rgba(20, 28, 43, 0.95);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(129, 140, 248, 0.4);
-    border-radius: 16px;
-    padding: 12px 18px;
-    box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(99, 102, 241, 0.2);
+    background: var(--card-bg);
+    border: 1px solid var(--accent-border);
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
     z-index: 999;
     display: none;
 }

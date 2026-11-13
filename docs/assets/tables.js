@@ -1,20 +1,21 @@
-// Clean Master-Detail Study Tables Reader
+// Study Tables Reader: Subject Tabs -> Topic Cards -> Table Reader (matches Topic Sets UX)
 (function () {
     'use strict';
 
     const SUBJECTS = [
-        { key: 'static_gk', name: 'Static GK & Culture', icon: '🏛️' },
-        { key: 'science', name: 'Biology & Science', icon: '🧬' },
-        { key: 'polity', name: 'Polity & Articles', icon: '⚖️' },
-        { key: 'geography', name: 'Geography & Dams', icon: '🌍' },
-        { key: 'history', name: 'History & Sites', icon: '🏺' },
-        { key: 'economics', name: 'Economics & RBI', icon: '📈' },
-        { key: 'math', name: 'Mathematics', icon: '📐' },
-        { key: 'english', name: 'English Grammar', icon: '📖' },
-        { key: 'byjus_archive', name: "BYJU'S GK Tables", icon: '📚' }
+        { key: 'static_gk', name: 'Static GK & Culture', desc: 'Dances, festivals, temples, parks, exercises', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>' },
+        { key: 'science', name: 'Biology & Science', desc: 'Vitamins, diseases, organs, physics & chemistry', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3"/></svg>' },
+        { key: 'polity', name: 'Polity & Articles', desc: 'Constitution parts, schedules, amendments, bodies', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 7h14"/><path d="M5 7l-2 6h4l-2-6z"/><path d="M19 7l-2 6h4l-2-6z"/></svg>' },
+        { key: 'geography', name: 'Geography & Dams', desc: 'Rivers, dams, passes, soils, biosphere reserves', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>' },
+        { key: 'history', name: 'History & Sites', desc: 'Indus Valley, dynasties, freedom movement, battles', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22h18"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><polygon points="12 2 20 7 4 7"/></svg>' },
+        { key: 'economics', name: 'Economics & RBI', desc: 'Five-year plans, RBI, budgets, schemes', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>' },
+        { key: 'math', name: 'Mathematics', desc: 'Geometry, trigonometry, algebra, mensuration formulas', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>' },
+        { key: 'english', name: 'English Grammar', desc: 'Fixed prepositions, phrasal verbs, rules', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>' },
+        { key: 'byjus_archive', name: "BYJU'S GK Tables", desc: 'Reference fact tables from static GK archive', icon: '<svg class="tab-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>' }
     ];
 
     let allTables = [];
+    let viewMode = 'topics'; // 'topics' | 'reader'
     let selectedSubject = 'static_gk';
     let selectedTableId = null;
     let searchQuery = '';
@@ -72,9 +73,8 @@
                     allTables.push({
                         id: `byjus_${topic.id}_${idx + 1}`,
                         subject: 'byjus_archive',
-                        subjectLabel: `BYJU'S Archive • ${topic.category || 'GK'}`,
+                        subjectLabel: topic.category || "BYJU'S GK",
                         title: stList.length > 1 ? `${topic.title} (Part ${idx + 1})` : topic.title,
-                        icon: topic.icon || '📌',
                         description: topic.description || '',
                         headers: normH,
                         rows: normR
@@ -82,77 +82,10 @@
                 });
             });
         }
-
-        const firstInSub = getTablesForSubject(selectedSubject)[0];
-        selectedTableId = firstInSub ? firstInSub.id : (allTables[0] ? allTables[0].id : null);
     }
 
     function getTablesForSubject(subKey) {
         return allTables.filter((t) => t.subject === subKey);
-    }
-
-    function renderSidebarAndMobile() {
-        const subWrap = document.getElementById('sidebarSubjects');
-        const topicWrap = document.getElementById('sidebarTopics');
-        const topicHeading = document.getElementById('sidebarTopicHeading');
-        const mSub = document.getElementById('mobileSubjectSelect');
-        const mTopic = document.getElementById('mobileTopicSelect');
-
-        // 1. Desktop Subjects
-        if (subWrap) {
-            subWrap.innerHTML = SUBJECTS.map((s) => {
-                const cnt = getTablesForSubject(s.key).length;
-                const active = s.key === selectedSubject ? 'active' : '';
-                return `
-                    <button type="button" class="sb-subject-btn ${active}" data-sub="${s.key}">
-                        <span class="sb-subject-left"><span>${s.icon}</span><span>${escapeHtml(s.name)}</span></span>
-                        <span class="sb-count">${cnt}</span>
-                    </button>
-                `;
-            }).join('');
-
-            subWrap.querySelectorAll('.sb-subject-btn').forEach((btn) => {
-                btn.addEventListener('click', () => {
-                    selectSubject(btn.getAttribute('data-sub'));
-                });
-            });
-        }
-
-        // 2. Desktop Topics for active subject
-        const topics = getTablesForSubject(selectedSubject);
-        const subMeta = SUBJECTS.find((s) => s.key === selectedSubject);
-        if (topicHeading && subMeta) {
-            topicHeading.textContent = `${subMeta.name} (${topics.length})`;
-        }
-
-        if (topicWrap) {
-            topicWrap.innerHTML = topics.map((t) => {
-                const active = t.id === selectedTableId ? 'active' : '';
-                return `
-                    <button type="button" class="sb-topic-btn ${active}" data-id="${t.id}">
-                        ${escapeHtml(t.title)}
-                    </button>
-                `;
-            }).join('');
-
-            topicWrap.querySelectorAll('.sb-topic-btn').forEach((btn) => {
-                btn.addEventListener('click', () => {
-                    selectTable(btn.getAttribute('data-id'));
-                });
-            });
-        }
-
-        // 3. Mobile Selectors
-        if (mSub) {
-            mSub.innerHTML = SUBJECTS.map((s) =>
-                `<option value="${s.key}" ${s.key === selectedSubject ? 'selected' : ''}>${s.icon} ${escapeHtml(s.name)}</option>`
-            ).join('');
-        }
-        if (mTopic) {
-            mTopic.innerHTML = topics.map((t) =>
-                `<option value="${t.id}" ${t.id === selectedTableId ? 'selected' : ''}>${escapeHtml(t.title)}</option>`
-            ).join('');
-        }
     }
 
     function renderTableHtml(table, rows, query) {
@@ -161,12 +94,12 @@
             <div class="reader-card ${recallCls}">
                 <div class="reader-header">
                     <div>
-                        <div class="reader-kicker">${escapeHtml(table.subjectLabel)} • ${rows.length} rows</div>
-                        <h2 class="reader-title">${table.icon || '📋'} ${highlight(table.title, query)}</h2>
+                        <div class="reader-kicker">${escapeHtml(table.subjectLabel || '')} · ${rows.length} rows</div>
+                        <h2 class="reader-title">${highlight(table.title, query)}</h2>
                         ${table.description ? `<p class="reader-desc">${highlight(table.description, query)}</p>` : ''}
                     </div>
                 </div>
-                ${recallMode ? '<div class="recall-banner">🧠 Memorize Mode ON — Tap or hover blurred cells to reveal answers</div>' : ''}
+                ${recallMode ? '<div class="recall-banner">Recall mode on — tap or hover blurred cells to reveal answers</div>' : ''}
                 <div class="table-scroll-x">
                     <table class="clean-table">
                         <thead>
@@ -195,18 +128,73 @@
         });
     }
 
-    function renderReader() {
-        const reader = document.getElementById('tablesReader');
-        if (!reader) return;
+    function renderBreadcrumb() {
+        const bc = document.getElementById('tablesBreadcrumb');
+        const recallBtn = document.getElementById('btnRecallToggle');
+        if (!bc) return;
 
+        if (recallBtn) {
+            const showRecall = viewMode === 'reader' || searchQuery.trim().length > 0;
+            recallBtn.style.display = showRecall ? 'inline-flex' : 'none';
+        }
+
+        if (searchQuery.trim().length > 0) {
+            bc.style.display = 'none';
+            bc.innerHTML = '';
+            return;
+        }
+
+        const subMeta = SUBJECTS.find((s) => s.key === selectedSubject) || SUBJECTS[0];
+
+        if (viewMode === 'topics') {
+            bc.style.display = 'flex';
+            bc.className = 'subject-tabs-row';
+            bc.style.marginBottom = '22px';
+            bc.innerHTML = SUBJECTS.map((s) => {
+                const cnt = getTablesForSubject(s.key).length;
+                const active = s.key === selectedSubject ? 'active' : '';
+                return `
+                    <button type="button" class="subject-tab-btn ${active}" data-sub="${s.key}">
+                        ${s.icon}
+                        <span>${escapeHtml(s.name)}</span>
+                        <span class="tab-count-badge">${cnt}</span>
+                    </button>
+                `;
+            }).join('');
+
+            bc.querySelectorAll('.subject-tab-btn').forEach((btn) => {
+                btn.addEventListener('click', () => goTopics(btn.getAttribute('data-sub')));
+            });
+            return;
+        }
+
+        if (viewMode === 'reader') {
+            const activeTable = allTables.find((t) => t.id === selectedTableId);
+            bc.style.display = 'flex';
+            bc.className = 'drill-breadcrumb';
+            bc.style.marginBottom = '20px';
+            bc.innerHTML = `
+                <button type="button" class="drill-back-btn" id="bcBackTopics">← ${escapeHtml(subMeta.name)}</button>
+                <span class="drill-sep">/</span>
+                <span class="drill-current">${activeTable ? escapeHtml(activeTable.title) : 'Table'}</span>
+            `;
+            document.getElementById('bcBackTopics').addEventListener('click', () => goTopics(selectedSubject));
+        }
+    }
+
+    function renderStage() {
+        const stage = document.getElementById('tablesStage');
+        if (!stage) return;
+
+        renderBreadcrumb();
         const q = searchQuery.trim();
 
-        // Mode A: Search Active
+        // Search Mode
         if (q.length > 0) {
             const ql = q.toLowerCase();
             const matches = [];
             allTables.forEach((t) => {
-                const metaMatch = `${t.title} ${t.subjectLabel} ${t.description || ''}`.toLowerCase().includes(ql);
+                const metaMatch = `${t.title} ${t.subjectLabel || ''} ${t.description || ''}`.toLowerCase().includes(ql);
                 const rowMatches = t.rows.filter((r) => r.some((c) => String(c).toLowerCase().includes(ql)));
                 if (metaMatch || rowMatches.length > 0) {
                     matches.push({ table: t, rows: rowMatches.length > 0 ? rowMatches : t.rows });
@@ -214,101 +202,112 @@
             });
 
             if (matches.length === 0) {
-                reader.innerHTML = `
-                    <div class="empty-box">
-                        <p>No tables or rows matched "<strong>${escapeHtml(q)}</strong>". Try another keyword.</p>
-                    </div>
-                `;
+                stage.innerHTML = `<div class="empty-box"><p>No tables or rows matched "<strong>${escapeHtml(q)}</strong>".</p></div>`;
                 return;
             }
 
             const shown = matches.slice(0, 20);
             const totalRowHits = matches.reduce((s, m) => s + m.rows.length, 0);
-            reader.innerHTML = `
+            stage.innerHTML = `
                 <div class="search-banner">
-                    Found <strong>${matches.length}</strong> matching tables (${totalRowHits} rows) for "<strong>${escapeHtml(q)}</strong>"${matches.length > 20 ? ' — showing top 20' : ''}
+                    Found <strong>${matches.length}</strong> matching tables (${totalRowHits} rows)${matches.length > 20 ? ' — showing top 20' : ''}
                 </div>
                 ${shown.map((m) => renderTableHtml(m.table, m.rows, q)).join('')}
             `;
-            wireRecallCells(reader);
+            wireRecallCells(stage);
             return;
         }
 
-        // Mode B: Clean Single Topic View
+        // Step 1: Topics Grid for Selected Subject
+        if (viewMode === 'topics' || viewMode === 'subjects') {
+            const subMeta = SUBJECTS.find((s) => s.key === selectedSubject) || SUBJECTS[0];
+            const topics = getTablesForSubject(subMeta.key);
+            if (topics.length === 0) {
+                stage.innerHTML = `<div class="empty-box"><p>No tables available in this subject.</p></div>`;
+                return;
+            }
+
+            stage.innerHTML = `
+                <div class="drill-grid">
+                    ${topics.map((t) => `
+                        <button type="button" class="drill-card" data-id="${t.id}">
+                            <div class="drill-card-top">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span class="card-icon-badge">${subMeta.icon}</span>
+                                    <span class="drill-card-meta">${t.rows.length} rows</span>
+                                </div>
+                                <span class="drill-card-arrow">→</span>
+                            </div>
+                            <div class="drill-card-title">${escapeHtml(t.title)}</div>
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+            stage.querySelectorAll('.drill-card[data-id]').forEach((btn) => {
+                btn.addEventListener('click', () => goReader(btn.getAttribute('data-id')));
+            });
+            return;
+        }
+
+        // Step 3: Clean Full-Width Table Reader
         const topics = getTablesForSubject(selectedSubject);
         const currentIdx = Math.max(0, topics.findIndex((t) => t.id === selectedTableId));
         const activeTable = topics[currentIdx];
 
         if (!activeTable) {
-            reader.innerHTML = `<div class="empty-box"><p>No tables available for this subject.</p></div>`;
+            goTopics(selectedSubject);
             return;
         }
 
         const prevTopic = currentIdx > 0 ? topics[currentIdx - 1] : null;
         const nextTopic = currentIdx < topics.length - 1 ? topics[currentIdx + 1] : null;
 
-        reader.innerHTML = `
+        stage.innerHTML = `
             ${renderTableHtml(activeTable, activeTable.rows, '')}
             <div class="reader-nav-footer">
                 <button type="button" class="btn-topic-nav" id="btnPrevTopic" ${prevTopic ? '' : 'disabled'}>
-                    ← ${prevTopic ? escapeHtml(prevTopic.title) : 'Start of Subject'}
+                    ← ${prevTopic ? escapeHtml(prevTopic.title) : 'Start'}
                 </button>
                 <button type="button" class="btn-topic-nav" id="btnNextTopic" ${nextTopic ? '' : 'disabled'}>
-                    ${nextTopic ? escapeHtml(nextTopic.title) : 'End of Subject'} →
+                    ${nextTopic ? escapeHtml(nextTopic.title) : 'End'} →
                 </button>
             </div>
         `;
-
-        wireRecallCells(reader);
+        wireRecallCells(stage);
 
         const prevBtn = document.getElementById('btnPrevTopic');
         const nextBtn = document.getElementById('btnNextTopic');
-        if (prevBtn && prevTopic) {
-            prevBtn.addEventListener('click', () => selectTable(prevTopic.id, true));
-        }
-        if (nextBtn && nextTopic) {
-            nextBtn.addEventListener('click', () => selectTable(nextTopic.id, true));
-        }
+        if (prevBtn && prevTopic) prevBtn.addEventListener('click', () => goReader(prevTopic.id));
+        if (nextBtn && nextTopic) nextBtn.addEventListener('click', () => goReader(nextTopic.id));
     }
 
-    function selectSubject(subKey) {
+    function goSubjects() {
+        viewMode = 'subjects';
+        selectedSubject = null;
+        selectedTableId = null;
+        renderStage();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goTopics(subKey) {
         selectedSubject = subKey;
-        const first = getTablesForSubject(subKey)[0];
-        selectedTableId = first ? first.id : null;
-        // Clear search when choosing a subject so user enters clean reader mode
-        if (searchQuery) {
-            searchQuery = '';
-            const inp = document.getElementById('tablesSearchInput');
-            const clr = document.getElementById('btnClearSearch');
-            if (inp) inp.value = '';
-            if (clr) clr.classList.remove('visible');
-        }
-        renderSidebarAndMobile();
-        renderReader();
+        selectedTableId = null;
+        viewMode = 'topics';
+        renderStage();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function selectTable(tableId, scrollUp) {
+    function goReader(tableId) {
         selectedTableId = tableId;
-        if (searchQuery) {
-            searchQuery = '';
-            const inp = document.getElementById('tablesSearchInput');
-            const clr = document.getElementById('btnClearSearch');
-            if (inp) inp.value = '';
-            if (clr) clr.classList.remove('visible');
-        }
-        renderSidebarAndMobile();
-        renderReader();
-        if (scrollUp) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        viewMode = 'reader';
+        renderStage();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function setupEvents() {
         const searchInp = document.getElementById('tablesSearchInput');
         const clearBtn = document.getElementById('btnClearSearch');
         const recallBtn = document.getElementById('btnRecallToggle');
-        const mSub = document.getElementById('mobileSubjectSelect');
-        const mTopic = document.getElementById('mobileTopicSelect');
         const backTop = document.getElementById('btnBackToTop');
         const mobileMenuBtn = document.getElementById('tablesMobileToggle');
         const mobileDrawer = document.getElementById('tablesMobileDrawer');
@@ -317,7 +316,7 @@
             searchInp.addEventListener('input', (e) => {
                 searchQuery = e.target.value;
                 if (clearBtn) clearBtn.classList.toggle('visible', searchQuery.trim().length > 0);
-                renderReader();
+                renderStage();
             });
         }
 
@@ -326,7 +325,7 @@
                 searchQuery = '';
                 if (searchInp) searchInp.value = '';
                 clearBtn.classList.remove('visible');
-                renderReader();
+                renderStage();
             });
         }
 
@@ -334,17 +333,9 @@
             recallBtn.addEventListener('click', () => {
                 recallMode = !recallMode;
                 recallBtn.classList.toggle('active', recallMode);
-                recallBtn.textContent = recallMode ? '👁️ Show Answers' : '🧠 Hide Answers';
-                renderReader();
+                recallBtn.textContent = recallMode ? 'Show Answers' : 'Hide Answers';
+                renderStage();
             });
-        }
-
-        if (mSub) {
-            mSub.addEventListener('change', (e) => selectSubject(e.target.value));
-        }
-
-        if (mTopic) {
-            mTopic.addEventListener('change', (e) => selectTable(e.target.value, true));
         }
 
         if (backTop) {
@@ -362,7 +353,6 @@
     document.addEventListener('DOMContentLoaded', () => {
         loadTables();
         setupEvents();
-        renderSidebarAndMobile();
-        renderReader();
+        renderStage();
     });
 })();
