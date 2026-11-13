@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSC CGL Master Syllabus Task Manager — Subject & Topic Tracker | Quizee</title>
+    <meta name="description" content="Free offline SSC CGL Syllabus Checklist & Task Manager. Track and mark your completed topics in GK, English, Maths & Reasoning. 100% offline auto-save.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- PWA & Offline Support -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#141415">
+    <meta name="color-scheme" content="dark">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Quizee Tasks">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="assets/quizee-theme.css?v=8">
+
+    <style>
+        :root {
+            --bg-deep: #0f0f10;
+            --bg-dark: #141415;
+            --card-bg: #19191b;
+            --bg-raised: #232325;
+            --card-border: rgba(237, 237, 237, 0.08);
+            --card-border-strong: rgba(237, 237, 237, 0.14);
+            --text-main: #ededed;
+            --text-secondary: #a1a1a6;
+            --text-muted: #85858b;
+            --accent: #f59e0b;
+            --accent-hover: #fbbf24;
+            --accent-tint: rgba(245, 158, 11, 0.12);
+            --accent-border: rgba(245, 158, 11, 0.28);
+            --correct-green: #4cc38a;
+            --green-tint: rgba(76, 195, 138, 0.12);
+            --wrong-red: #e5484d;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            line-height: 1.5;
+            padding-bottom: 70px;
+        }
+
+        .main-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+
+        /* Top Progress Hub */
+        .task-hero-card {
+            background: linear-gradient(180deg, #1d1d20 0%, #171719 100%);
+            border: 1px solid var(--card-border-strong);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-top-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .hero-title-area h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-title-area p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            max-width: 600px;
+        }
+
+        .hero-badge-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            background: var(--accent-tint);
+            border: 1px solid var(--accent-border);
+            color: var(--accent);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        /* Progress Stats Bar */
+        .progress-stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stat-mini-box {
+            background: var(--bg-deep);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-mini-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.03em;
+            margin-bottom: 4px;
+        }
+
+        .stat-mini-val {
+            font-size: 20px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-main);
+        }
+
+        .stat-mini-val.accent {
+            color: var(--accent);
+        }
+
+        .stat-mini-val.green {
+            color: var(--correct-green);
+        }
+
+        .hero-progressbar-wrap {
+            margin-bottom: 12px;
+        }
+
+        .progress-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .progress-percent-text {
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent);
+            font-size: 16px;
+        }
+
+        .progress-track {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f59e0b 0%, #10b981 100%);
+            border-radius: 999px;
+            width: 0%;
+            transition: width 0.35s ease;
+        }
+
+        .hero-action-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .task-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 8px;
+            background: var(--bg-raised);
+            border: 1px solid var(--card-border-strong);
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            font-family: inherit;
+        }
+
+        .task-action-btn:hover {
+            border-color: var(--accent-border);
+            background: #2b2b2e;
+        }
+
+        .task-action-btn.btn-primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #000;
+            font-weight: 600;
+        }
+
+        .task-action-btn.btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .task-action-btn.btn-danger {
+            color: #f87171;
+            border-color: rgba(239, 68, 68, 0.25);
+        }
+
+        .task-action-btn.btn-danger:hover {
+            background: rgba(239, 68, 68, 0.12);
+            border-color: rgba(239, 68, 68, 0.4);
+        }
+
+        /* Search & Filter Bar */
+        .controls-sticky-bar {
+            position: sticky;
+            top: 60px;
+            z-index: 40;
+            background: rgba(20, 20, 21, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 12px 0;
+            margin-bottom: 20px;
+        }
+
+        .search-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-box-wrap {
+            flex: 1;
+            min-width: 240px;
+            position: relative;
+        }
+
+        .search-box-wrap svg {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .task-search-input {
+            width: 100%;
+            height: 42px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 0 14px 0 38px;
+            color: var(--text-main);
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.15s ease;
+        }
+
+        .task-search-input:focus {
+            border-color: var(--accent);
+        }
+
+        .task-search-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* Filter Pills */
+        .filter-tabs-row {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            margin-top: 10px;
+            scrollbar-width: none;
+        }
+
+        .filter-tabs-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .sub-tab-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 999px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            font-family: inherit;
+        }
+
+        .sub-tab-btn:hover {
+            border-color: var(--card-border-strong);
+            color: var(--text-main);
+        }
+
+        .sub-tab-btn.active {
+            background: var(--accent-tint);
+            border-color: var(--accent-border);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .sub-tab-btn .badge-num {
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .sub-tab-btn.active .badge-num {
+            background: rgba(245, 158, 11, 0.25);
+            color: var(--accent);
+        }
+
+        /* Category Section Cards */
+        .category-section {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .category-header {
+            padding: 16px 20px;
+            background: var(--bg-deep);
+            border-bottom: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .category-header:hover {
+            background: #151517;
+        }
+
+        .category-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex: 1;
+        }
+
+        .category-subject-tag {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 6px;
+            letter-spacing: 0.02em;
+        }
+
+        .tag-gk { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .tag-english { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+        .tag-maths { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .tag-reasoning { background: rgba(20, 184, 166, 0.15); color: #2dd4bf; border: 1px solid rgba(20, 184, 166, 0.3); }
+
+        .category-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .category-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .category-count {
+            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: var(--bg-raised);
+        }
+
+        .category-toggle-arrow {
+            color: var(--text-muted);
+            transition: transform 0.2s ease;
+        }
+
+        .category-section.collapsed .category-toggle-arrow {
+            transform: rotate(-90deg);
+        }
+
+        .category-section.collapsed .task-list-body {
+            display: none;
+        }
+
+        /* Task Item Row */
+        .task-list-body {
+            padding: 6px 0;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            transition: background 0.15s ease;
+            position: relative;
+        }
+
+        .task-item:last-child {
+            border-bottom: none;
+        }
+
+        .task-item:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .task-item.completed {
+            background: rgba(76, 195, 138, 0.03);
+        }
+
+        /* Custom Checkbox */
+        .task-cb-wrap {
+            margin-top: 2px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .task-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 2px solid #4a4a50;
+            border-radius: 6px;
+            background: var(--bg-deep);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+            outline: none;
+        }
+
+        .task-checkbox:hover {
+            border-color: var(--accent);
+        }
+
+        .task-checkbox:checked {
+            background: var(--correct-green);
+            border-color: var(--correct-green);
+        }
+
+        .task-checkbox:checked::after {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 10px;
+            border: solid #000;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            margin-bottom: 2px;
+        }
+
+        .task-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .task-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 3px;
+            transition: color 0.15s ease;
+        }
+
+        .task-item.completed .task-title {
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .task-desc {
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+
+        .task-item.completed .task-desc {
+            color: #65656b;
+        }
+
+        .task-actions {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .completed-pill {
+            display: none;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+            background: var(--green-tint);
+            border: 1px solid rgba(76, 195, 138, 0.3);
+            color: var(--correct-green);
+        }
+
+        .task-item.completed .completed-pill {
+            display: inline-block;
+        }
+
+        .delete-custom-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: color 0.15s;
+        }
+
+        .delete-custom-btn:hover {
+            color: #f87171;
+        }
+
+        /* Modal for adding custom task */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: #1a1a1c;
+            border: 1px solid var(--card-border-strong);
+            border-radius: 16px;
+            padding: 24px;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+            transform: scale(0.95);
+            transition: transform 0.2s ease;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .modal-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            height: 40px;
+            background: var(--bg-deep);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 0 12px;
+            color: var(--text-main);
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        .form-input:focus, .form-select:focus {
+            border-color: var(--accent);
+        }
+
+        .modal-btn-row {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 48px 16px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state svg {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .empty-state h3 {
+            font-size: 16px;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-top-row {
+                flex-direction: column;
+            }
+            .task-hero-card {
+                padding: 18px;
+            }
+            .controls-sticky-bar {
+                top: 56px;
+            }
+            .category-header {
+                padding: 12px 14px;
+            }
+            .task-item {
+                padding: 10px 14px;
+                gap: 12px;
+            }
+            .task-title {
+                font-size: 14px;
+            }
+            .task-desc {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="quizeAudioPlayer" preload="auto">
+        <source src="assets/quzeaudio.mp3" type="audio/mpeg">
+        <source src="assets/quzeaudio.mpeg" type="audio/mpeg">
+    </audio>
+
+    <!-- Unified Header Navigation -->
+    <header class="site-header">
+        <div class="nav-container">
+            <nav class="navbar">
+                <a href="index.html" class="logo-wrap">
+                    <img src="assets/icon.png" alt="Quizee Icon">
+                    <span class="logo-text">Quizee</span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="nav-links-desktop">
+                    <a href="index.html" class="nav-btn">Home</a>
+                    <a href="index.html#online-tests" class="nav-btn">Topic Sets</a>
+                    <a href="mock-tests.html" class="nav-btn">Full Mocks</a>
+                    <a href="byjus-gk.html" class="nav-btn">BYJU'S GK</a>
+                    <a href="tables.html" class="nav-btn">Study Tables</a>
+                    <a href="tasks.html" class="nav-btn nav-btn-active">Tasks</a>
+                    <button class="nav-btn-audio quize-audio-btn" type="button" title="Play Quizee Music">
+                        <span class="audio-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
+                        <span class="audio-btn-text">Music</span>
+                    </button>
+                    <a href="quizee.apk" download="quizee.apk" class="nav-btn nav-btn-primary">Download APK</a>
+                </div>
+
+                <!-- Mobile Actions -->
+                <div class="nav-mobile-actions">
+                    <button class="nav-btn-mobile-audio quize-audio-btn" type="button" aria-label="Play Music" title="Play Quizee Music">
+                        <span class="audio-btn-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
+                    </button>
+                    <a href="quizee.apk" download="quizee.apk" class="nav-btn-mobile-download">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        <span>APK</span>
+                    </a>
+                    <button id="mobileMenuBtn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                        <span class="bar bar-1"></span>
+                        <span class="bar bar-2"></span>
+                        <span class="bar bar-3"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileDrawer" class="mobile-drawer" aria-hidden="true">
+            <div class="mobile-drawer-inner">
+                <a href="index.html" class="mobile-nav-item">
+                    <span class="mobile-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span>
+                    <span>Home</span>
+                </a>
+                <a href="index.html#online-tests" class="mobile-nav-item">
+                    <span class="mobile-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg></span>
+                    <span>Topic Practice Sets</span>
+                </a>
+                <a href="mock-tests.html" class="mobile-nav-item">
+                    <span class="mobile-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span>
+                    <span>60 Full Mock Tests</span>
+                </a>
+                <a href="byjus-gk.html" class="mobile-nav-item">
+                    <span class="mobile-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"></path><path d="M5 21V7l7-4 7 4v14"></path><path d="M9 21v-8h6v8"></path></svg></span>
+                    <span>BYJU'S Static GK</span>
+                </a>
+                <a href="tables.html" class="mobile-nav-item">
+                    <span class="mobile-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></span>
+                    <span>Master Study Tables</span>
+                </a>
+                <a href="tasks.html" class="mobile-nav-item mobile-item-highlight">
+                    <span class="mobile-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></span>
+                    <span>Syllabus Task Manager</span>
+                </a>
+                <a href="quizee.apk" download="quizee.apk" class="mobile-btn-download">
+                    Download Quizee APK
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+        <!-- Hero / Progress Card -->
+        <section class="task-hero-card">
+            <div class="hero-top-row">
+                <div class="hero-title-area">
+                    <div style="margin-bottom: 8px;">
+                        <span class="hero-badge-tag">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            SSC CGL Complete Syllabus Tracker
+                        </span>
+                    </div>
+                    <h1>
+                        Topic-Wise Task Manager
+                    </h1>
+                    <p>
+                        Mark your daily preparation progress topic by topic across GK, English, Maths & Reasoning. Progress is saved automatically on this device.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="progress-stat-grid">
+                <div class="stat-mini-box">
+                    <span class="stat-mini-label">Total Topics</span>
+                    <span class="stat-mini-val" id="statTotalTopics">0</span>
+                </div>
+                <div class="stat-mini-box">
+                    <span class="stat-mini-label">Completed</span>
+                    <span class="stat-mini-val green" id="statCompletedTopics">0</span>
+                </div>
+                <div class="stat-mini-box">
+                    <span class="stat-mini-label">Remaining</span>
+                    <span class="stat-mini-val accent" id="statRemainingTopics">0</span>
+                </div>
+                <div class="stat-mini-box">
+                    <span class="stat-mini-label">Completion</span>
+                    <span class="stat-mini-val" id="statPercentage">0%</span>
+                </div>
+            </div>
+
+            <!-- Main Progress Bar -->
+            <div class="hero-progressbar-wrap">
+                <div class="progress-meta">
+                    <span style="color:var(--text-secondary); font-size:13px;">Overall Syllabus Coverage</span>
+                    <span class="progress-percent-text" id="progressPercentNum">0%</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressBarFill"></div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hero-action-buttons">
+                <button class="task-action-btn btn-primary" onclick="openCustomTaskModal()">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    <span>Add Custom Topic</span>
+                </button>
+                <button class="task-action-btn" onclick="toggleAllAccordions()">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 13 12 18 17 13"></polyline><polyline points="7 6 12 11 17 6"></polyline></svg>
+                    <span id="expandAllBtnText">Expand All</span>
+                </button>
+                <button class="task-action-btn" onclick="shareProgressSummary()">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                    <span>Copy Progress</span>
+                </button>
+                <button class="task-action-btn btn-danger" onclick="confirmResetTasks()">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                    <span>Reset Progress</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Sticky Controls Bar -->
+        <div class="controls-sticky-bar">
+            <div class="search-row">
+                <div class="search-box-wrap">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="taskSearchInput" class="task-search-input" placeholder="Search any topic (e.g. folk dance, vitamins, voice, geometry, dams, andolans)..." oninput="handleSearch(this.value)">
+                </div>
+
+                <div style="display:flex; gap:8px;">
+                    <button class="sub-tab-btn active" id="filterStatusAll" onclick="setStatusFilter('all')">All</button>
+                    <button class="sub-tab-btn" id="filterStatusPending" onclick="setStatusFilter('pending')">Pending</button>
+                    <button class="sub-tab-btn" id="filterStatusCompleted" onclick="setStatusFilter('completed')">Done</button>
+                </div>
+            </div>
+
+            <!-- Subject Category Tabs -->
+            <div class="filter-tabs-row" id="subjectTabsContainer">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+
+        <!-- Task Sections List Container -->
+        <div id="taskSectionsContainer">
+            <!-- Dynamic Category Cards will render here -->
+        </div>
+
+        <div id="noResultsState" class="empty-state" style="display: none;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <h3>No matching topics found</h3>
+            <p>Try searching with another keyword or clear the search filter.</p>
+            <button class="task-action-btn" style="margin-top: 14px;" onclick="clearSearch()">Clear Search</button>
+        </div>
+    </main>
+
+    <!-- Modal for Adding Custom Topic -->
+    <div class="modal-overlay" id="customTaskModal">
+        <div class="modal-card">
+            <h3 class="modal-title">Add Custom Syllabus Topic</h3>
+            <p class="modal-desc">Add a personal topic, chapter, or revision item to your task list.</p>
+
+            <div class="form-group">
+                <label class="form-label" for="customSubjectSelect">Select Subject</label>
+                <select id="customSubjectSelect" class="form-select">
+                    <option value="gk">General Studies (GK / GS)</option>
+                    <option value="english">English Language</option>
+                    <option value="maths">Quantitative Aptitude (Maths)</option>
+                    <option value="reasoning">General Intelligence & Reasoning</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="customTaskTitle">Topic Name</label>
+                <input type="text" id="customTaskTitle" class="form-input" placeholder="e.g. Current Affairs 2024-2025 Top 500 MCQs">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="customTaskDesc">Key Details / Notes (Optional)</label>
+                <input type="text" id="customTaskDesc" class="form-input" placeholder="e.g. Sports awards, summits, military exercises revision">
+            </div>
+
+            <div class="modal-btn-row">
+                <button type="button" class="task-action-btn" onclick="closeCustomTaskModal()">Cancel</button>
+                <button type="button" class="task-action-btn btn-primary" onclick="saveCustomTask()">Save Topic</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="assets/quizee-audio.js?v=1"></script>
+    <script>
+        // Default Predefined Syllabus Curriculum for SSC CGL
+        const DEFAULT_CURRICULUM = [
+            {
+                subjectId: "gk",
+                subjectName: "General Studies (GK/GS)",
+                tagClass: "tag-gk",
+                categories: [
+                    {
+                        id: "static_art_culture",
+                        name: "Static GK — Art, Culture & Heritage",
+                        tasks: [
+                            { id: "gk_dances", title: "All Classical & Folk Dances of India", desc: "8 Classical dances, State-wise folk dances (Chhau, Bihu, Lavani, Rouff, Garba, Ghoomar, Kalbelia, Yakshagana, etc.)" },
+                            { id: "gk_festivals", title: "All Major Festivals & Fairs of India", desc: "State-wise cultural festivals (Hornbill, Losar, Pongal, Onam, Hemis, Ambubachi, Pushkar Fair, Surajkund Mela)" },
+                            { id: "gk_instruments", title: "Musical Instruments & Famous Maestros", desc: "Sitar (Pt. Ravi Shankar), Sarod (Amjad Ali Khan), Shehnai (Bismillah Khan), Flute (Hariprasad Chaurasia), Tabla (Zakir Hussain), Santoor (Shiv Kumar Sharma)" },
+                            { id: "gk_gharanas", title: "Music Gharanas & Classical Vocalists", desc: "Gwalior, Kirana, Agra, Patiala, Banaras Gharanas; Dhrupad, Khayal, Thumri exponents" },
+                            { id: "gk_temples_monuments", title: "Important Temples, Monuments & Their Builders", desc: "Khajuraho (Chandela), Konark Sun Temple (Narasimhadeva I), Brihadisvara (Rajaraja I Chola), Kailasa Temple (Rashtrakuta Krishna I), Shore Temple (Pallavas), Red Fort & Taj Mahal (Shah Jahan)" },
+                            { id: "gk_unesco", title: "UNESCO World Heritage Sites in India", desc: "All 42+ cultural & natural sites, Dholavira, Ramappa Temple, Santiniketan, Sacred Ensembles of Hoysalas, year of inscription" }
+                        ]
+                    },
+                    {
+                        id: "static_geog_env",
+                        name: "Static GK — Environment, Dams, Parks & Superlatives",
+                        tasks: [
+                            { id: "gk_dams_rivers", title: "All Major Dams, Reservoirs & Rivers", desc: "Tehri (Bhagirathi), Hirakud (Mahanadi), Bhakra Nangal (Satluj), Sardar Sarovar (Narmada), Nagarjuna Sagar (Krishna), Idukki (Periyar)" },
+                            { id: "gk_national_parks", title: "National Parks, Wildlife Sanctuaries & Tiger Reserves", desc: "Jim Corbett, Kaziranga (one-horned rhino), Gir (Asiatic lion), Keibul Lamjao (floating park), Sundarbans, Project Tiger & Elephant reserves" },
+                            { id: "gk_ramsar_biosphere", title: "Biosphere Reserves & Ramsar Wetland Sites", desc: "18 Biosphere reserves (Nilgiri, Nanda Devi, Sundarbans, Gulf of Mannar), key Ramsar sites (Chilika, Keoladeo, Vembanad, Bhoj)" },
+                            { id: "gk_census2011", title: "Census 2011 Key Data & Demographics", desc: "Literacy rate, sex ratio, population density, highest/lowest populated states, child sex ratio, decadal growth rate" },
+                            { id: "gk_first_india", title: "First in India & Superlatives (Male/Female/Places)", desc: "First President, PM, CJI, Governor, Lok Sabha Speaker, Nobel Laureates, Highest peak (K2 / Kangchenjunga), longest river, largest lake" },
+                            { id: "gk_sports_trophies", title: "Sports, Cups, Trophies & Terminology", desc: "Ranji, Duleep, Santosh, Thomas/Uber Cup, Davis Cup, Durand Cup, Ryder Cup, sports terms, number of players on field" },
+                            { id: "gk_awards_honors", title: "Major National & International Awards", desc: "Bharat Ratna, Padma Awards, Param Vir Chakra, Dadasaheb Phalke, Jnanpith, Booker Prize, Nobel Prize, Abel Prize" },
+                            { id: "gk_books_authors", title: "Important Books & Authors (Historical & Famous)", desc: "Arthashastra, Indica, Rajatarangini, Ain-i-Akbari, Discovery of India, Wings of Fire, My Experiments with Truth, recent award winners" },
+                            { id: "gk_days_themes", title: "Important National & International Days & Themes", desc: "Environment Day (June 5), Water Day (March 22), Earth Day (April 22), Science Day (Feb 28), Constitution Day (Nov 26), Yoga Day (June 21)" },
+                            { id: "gk_defense_space", title: "Defense Exercises, Space Centres & Research Stations", desc: "Surya Kiran, Yudh Abhyas, Malabar, Varuna, Garuda; ISRO centres (VSSC, SDSC Sriharikota, URSC), Antarctic research stations (Maitri, Bharati)" }
+                        ]
+                    },
+                    {
+                        id: "history_modern",
+                        name: "History — Freedom Movement, Andolans & Modern India",
+                        tasks: [
+                            { id: "hist_wars_battles", title: "All Historic Battles & Wars of India", desc: "Battle of Tarain (1191, 1192), Panipat (1526, 1556, 1761), Khanwa (1527), Chausa (1539), Talikota (1565), Plassey (1757), Buxar (1764), Anglo-Maratha & Anglo-Mysore wars" },
+                            { id: "hist_andolans_movements", title: "All Major Andolans & Freedom Movements (1857-1947)", desc: "1857 Revolt & leaders, Swadeshi (1905), Champaran (1917), Kheda (1918), Non-Cooperation & Khilafat (1920), Civil Disobedience & Dandi March (1930), Quit India Movement (1942)" },
+                            { id: "hist_inc_sessions", title: "Key Indian National Congress (INC) Sessions & Presidents", desc: "1885 Bombay (W.C. Bonnerjee), 1906 Calcutta (Swaraj), 1907 Surat split, 1916 Lucknow pact, 1924 Belgaum (Mahatma Gandhi), 1925 Kanpur (Sarojini Naidu), 1929 Lahore (Purna Swaraj), 1931 Karachi (Fundamental Rights), 1938/39 Haripura & Tripuri (Subhash Chandra Bose)" },
+                            { id: "hist_revolutionary", title: "Revolutionary Movements, Leaders & Kakori / HSRA", desc: "Bhagat Singh, Chandrashekhar Azad, Sukhdev, Rajguru, HSRA, Kakori Action (1925), Chittagong Armoury Raid (Surya Sen), Ghadar Party (Lala Har Dayal)" },
+                            { id: "hist_social_reform", title: "Socio-Religious Reform Movements & Founders", desc: "Brahmo Samaj (Raja Ram Mohan Roy), Arya Samaj (Swami Dayananda Saraswati), Ramakrishna Mission (Swami Vivekananda), Satyashodhak Samaj (Jyotirao Phule), Young Bengal (Derozio), Aligarh Movement (Sir Syed Ahmad Khan)" },
+                            { id: "hist_viceroys_policies", title: "Governor-Generals, Viceroys & Major Acts", desc: "Warren Hastings, Lord Cornwallis (Permanent Settlement), Wellesley (Subsidiary Alliance), Dalhousie (Doctrine of Lapse & Railways 1853), Canning (1857 Revolt), Ripon (Father of Local Self Govt), Curzon (Partition of Bengal 1905), Mountbatten (Partition Plan)" }
+                        ]
+                    },
+                    {
+                        id: "history_ancient_medieval",
+                        name: "History — Ancient & Medieval Dynasties",
+                        tasks: [
+                            { id: "hist_ivc", title: "Indus Valley Civilization (IVC Sites & Discoveries)", desc: "Harappa (Daya Ram Sahni), Mohenjo-daro (Great Bath, Dancing Girl), Lothal (Dockyard), Kalibangan (Ploughed field), Dholavira (Water reservoir, sign board), Rakhigarhi" },
+                            { id: "hist_vedic_religions", title: "Vedic Period, Buddhism & Jainism", desc: "Rigvedic rivers & deities, 4 Vedas; Gautama Buddha, 4 Noble Truths, 4 Buddhist Councils (Rajgriha, Vaishali, Pataliputra, Kundalvana); Mahavira, 24 Tirthankaras & Jain Councils" },
+                            { id: "hist_mauryan_gupta", title: "Mauryan, Gupta & Post-Mauryan Empires", desc: "Chandragupta Maurya, Ashoka's Major Rock Edicts & Kalinga War; Kanishka (Kushana, Saka Era 78 AD); Chandragupta I, Samudragupta (Napoleon of India, Prayag Prashasti), Chandragupta II (Navratnas, Fa-Hien visit)" },
+                            { id: "hist_delhi_sultanate", title: "Delhi Sultanate (5 Dynasties & Key Rulers)", desc: "Slave (Qutbuddin Aibak, Iltutmish, Razia Sultana, Balban), Khilji (Alauddin Khilji - Market reforms), Tughlaq (Muhammad bin Tughlaq, Firoz Shah Tughlaq), Sayyid, Lodi (Ibrahim Lodi)" },
+                            { id: "hist_mughal_maratha", title: "Mughal Empire, Vijayanagara & Marathas", desc: "Babur, Humayun, Akbar (Din-i-Ilahi, Mansabdari, Navratnas), Jahangir, Shah Jahan, Aurangzeb; Vijayanagara (Harihara & Bukka, Krishnadevaraya); Chhatrapati Shivaji Maharaj & Ashtapradhan" }
+                        ]
+                    },
+                    {
+                        id: "polity_constitution",
+                        name: "Indian Polity & Constitution",
+                        tasks: [
+                            { id: "pol_making_sources", title: "Making of the Constitution & Sources Borrowed", desc: "Constituent Assembly (Dec 9 1946, Dr. Rajendra Prasad, Dr. B.R. Ambedkar), Drafting Committee, Sources borrowed from UK, USA, USSR, Ireland, Australia, Canada, Germany, South Africa" },
+                            { id: "pol_preamble_schedules_parts", title: "Preamble, All 12 Schedules & All 25 Parts", desc: "Preamble keywords (Sovereign, Socialist, Secular, Democratic, Republic), 42nd Amendment 1976; 12 Schedules (7th - 3 Lists, 8th - 22 Languages, 10th - Anti-defection, 11th/12th - Panchayats/Municipalities); All Parts" },
+                            { id: "pol_fundamental_rights", title: "Fundamental Rights (Articles 12 to 35) & Writs", desc: "Right to Equality (14-18), Freedom (19-22), Against Exploitation (23-24), Religion (25-28), Cultural & Educational (29-30), Constitutional Remedies (Art 32 - Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto)" },
+                            { id: "pol_dpsp_duties", title: "Directive Principles (DPSP Art 36-51) & Fundamental Duties (Art 51A)", desc: "Socialistic, Gandhian & Liberal-Intellectual principles (Art 40 Panchayats, Art 44 Uniform Civil Code, Art 45 Early childhood care, Art 50 Separation of Judiciary); 11 Fundamental Duties (Swaran Singh Committee, 86th Amendment)" },
+                            { id: "pol_president_executives", title: "President, Vice President, PM & Governor", desc: "President qualifications, election & impeachment (Art 61), pardoning powers (Art 72), ordinance power (Art 123); Governor powers (Art 161, Art 213); Council of Ministers & Attorney General (Art 76)" },
+                            { id: "pol_parliament_judiciary", title: "Parliament (Lok Sabha / Rajya Sabha) & Judiciary", desc: "Composition of Lok Sabha & Rajya Sabha, Speaker, Money Bill (Art 110), Annual Financial Statement (Art 112), Joint sitting (Art 108); Supreme Court (Art 124-147) & High Courts (Art 214-231)" },
+                            { id: "pol_amendments_emergency", title: "Important Constitutional Amendments & Emergency", desc: "National Emergency (Art 352), President's Rule (Art 356), Financial Emergency (Art 360); Major Amendments: 1st, 7th, 24th, 42nd (Mini Constitution), 44th, 52nd (Anti-Defection), 61st (Voting age 18), 73rd/74th, 86th (RTE Art 21A), 101st (GST), 103rd (EWS), 105th, 106th (Nari Shakti Vandan)" },
+                            { id: "pol_bodies_panchayat", title: "Constitutional & Statutory Bodies & Panchayati Raj", desc: "Election Commission (Art 324), CAG (Art 148), UPSC (Art 315), Finance Commission (Art 280); NITI Aayog, NHRC, CVC, CBI, Lokpal; Balwant Rai Mehta Committee & 3-Tier Panchayati Raj" }
+                        ]
+                    },
+                    {
+                        id: "science_biology",
+                        name: "Science — Biology & Human Physiology",
+                        tasks: [
+                            { id: "bio_vitamins", title: "All Vitamins, Scientific Names & Deficiency Diseases", desc: "Fat soluble (A - Retinol, Night blindness; D - Calciferol, Rickets; E - Tocopherol; K - Phylloquinone, Blood clotting); Water soluble (B-Complex: B1 Thiamine/Beriberi, B2 Riboflavin, B3 Niacin/Pellagra, B12 Cyanocobalamin; C - Ascorbic acid/Scurvy)" },
+                            { id: "bio_human_organs", title: "Human Organ Systems (Circulation, Digestion, Respiration)", desc: "Heart anatomy, double circulation, blood groups (ABO, Rh factor, Universal donor O- and recipient AB+), blood cells (RBC, WBC, Platelets); Digestive enzymes (Amylase, Pepsin, Trypsin, Lipase, Bile)" },
+                            { id: "bio_endocrine", title: "Endocrine System & Major Hormones", desc: "Pituitary (Master gland, Growth hormone), Thyroid (Thyroxine, Goitre/Iodine), Pancreas (Insulin & Glucagon, Diabetes), Adrenal (Adrenaline - Fight or flight), Parathyroid, Reproductive hormones" },
+                            { id: "bio_diseases", title: "Human Diseases & Pathogens (Bacteria, Virus, Fungus, Protozoa)", desc: "Bacterial (TB, Cholera, Typhoid, Tetanus, Plague), Viral (Polio, Rabies, Measles, Dengue, AIDS, Hepatitis), Protozoan (Malaria - Plasmodium, Kala-Azar - Leishmania), Fungal (Ringworm, Athlete's foot)" },
+                            { id: "bio_cell_genetics", title: "Cell Biology, Organelles & Plant Physiology", desc: "Prokaryotic vs Eukaryotic cells, Mitochondria (Powerhouse), Ribosomes (Protein factory), Lysosomes (Suicide bags); Photosynthesis (Chloroplast), Xylem & Phloem, Plant hormones (Auxins, Gibberellins, Cytokinins, Abscisic acid)" }
+                        ]
+                    },
+                    {
+                        id: "science_chemistry_physics",
+                        name: "Science — Chemistry & Physics",
+                        tasks: [
+                            { id: "chem_common_names", title: "Common & Chemical Names of Household Compounds", desc: "Baking Soda (Sodium bicarbonate NaHCO3), Washing Soda (Na2CO3.10H2O), Bleaching Powder (CaOCl2), Plaster of Paris (CaSO4.1/2H2O), Quick Lime (CaO), Slaked Lime (Ca(OH)2), Caustic Soda (NaOH), Laughing Gas (N2O)" },
+                            { id: "chem_periodic_metals", title: "Periodic Table, Metals, Non-metals, Alloys & Ores", desc: "Mendeleev vs Modern Periodic Law (Henry Moseley), Groups & Periods; Ores: Bauxite (Al), Hematite/Magnetite (Fe), Cinnabar (Hg), Galena (Pb); Alloys: Brass (Cu+Zn), Bronze (Cu+Sn), Solder (Pb+Sn), Stainless Steel" },
+                            { id: "chem_acids_bases", title: "Acids, Bases, Salts & Organic Allotropes", desc: "Natural acids (Citric, Acetic/Vinegar, Formic/Ant sting, Lactic, Tartaric, Oxalic); pH Scale, Litmus, Phenolphthalein; Allotropes of Carbon (Diamond, Graphite, Fullerenes, Graphene)" },
+                            { id: "phy_units_dimensions", title: "SI Units, Dimensions & Scientific Instruments", desc: "7 Base SI units, derived units (Newton, Joule, Watt, Pascal, Hertz, Tesla, Weber, Coulomb); Instruments: Barometer (Atmospheric pressure), Altimeter, Ammeter, Galvanometer, Hygrometer (Humidity), Sphygmomanometer" },
+                            { id: "phy_motion_optics_sound", title: "Laws of Motion, Gravitation, Optics & Sound", desc: "Newton's 3 Laws, Momentum, Friction; Kepler's Laws, Escape Velocity (11.2 km/s on Earth); Optics: Concave/Convex mirrors and lenses, Total Internal Reflection (Optical fiber, Mirage), Eye defects (Myopia - Concave, Hypermetropia - Convex); Sound: Speed in solids/liquids/gases, Infrasonic & Ultrasonic waves, Doppler effect" }
+                        ]
+                    },
+                    {
+                        id: "geography_india_world",
+                        name: "Geography — Physical, Rivers, Climate & World",
+                        tasks: [
+                            { id: "geog_physiography", title: "Physiographic Divisions & Mountain Passes of India", desc: "Greater, Lesser & Outer Himalayas (Shiwalik); Highest Peaks (Kangchenjunga, Nanda Devi, Anamudi - South India); Major Passes (Zoji La, Shipki La, Nathu La, Rohtang, Banihal, Palghat, Bhorghat)" },
+                            { id: "geog_river_systems", title: "Indian Drainage Systems & River Tributaries", desc: "Indus system (Jhelum, Chenab, Ravi, Beas, Satluj); Ganga system (Yamuna, Son, Gomti, Ghaghara, Gandak, Kosi); Brahmaputra (Dihang, Subansiri, Teesta); Peninsular (Godavari - Dakshin Ganga, Krishna, Cauvery, Narmada - Rift valley, Tapi)" },
+                            { id: "geog_climate_soils", title: "Climate, Monsoons, Soils & Agriculture of India", desc: "Southwest Monsoon mechanism, El Niño / La Niña, Western Disturbances; Soils: Alluvial (Khadar & Bhangar), Black (Regur / Cotton soil), Red, Laterite; Crop seasons (Kharif, Rabi, Zaid) & Leading producing states" },
+                            { id: "geog_minerals_transport", title: "Minerals, Industries & National Transport", desc: "Chota Nagpur Plateau (Ruhr of India), Kolar Gold Fields, Mumbai High petroleum; Golden Quadrilateral, National Waterways (NW-1 Ganga Haldia-Prayagraj), Major Seaports (Kandla, Nhava Sheva, Paradip, Visakhapatnam)" },
+                            { id: "geog_world", title: "World Geography, Straits, Oceans & Atmosphere", desc: "7 Continents, Oceans & Oceanic Ridges; Important Straits (Malacca, Hormuz, Gibraltar, Bering, Palk); Deserts (Sahara, Atacama, Gobi, Kalahari); Atmospheric layers (Troposphere, Stratosphere/Ozone, Mesosphere, Thermosphere/Ionosphere)" }
+                        ]
+                    },
+                    {
+                        id: "economics_schemes",
+                        name: "Economics, Banking & Government Schemes",
+                        tasks: [
+                            { id: "econ_national_income", title: "National Income, GDP, GNP & Inflation", desc: "GDP vs GNP vs NNP at factor cost and market price; Real vs Nominal GDP; Inflation types (Creeping, Galloping, Hyperinflation), CPI, WPI, GDP Deflator" },
+                            { id: "econ_rbi_banking", title: "RBI, Monetary Policy & Banking Structure", desc: "RBI established 1935 (Hilton Young Commission), Nationalized 1949; Monetary Policy tools: Repo Rate, Reverse Repo Rate, CRR, SLR, MSF, Bank Rate; Types of Money (M1, M2, M3, M4); Base rate & MCLR" },
+                            { id: "econ_budget_plans", title: "Union Budget, Fiscal Policy & Five-Year Plans", desc: "Revenue vs Capital Budget, Revenue Deficit, Fiscal Deficit, Primary Deficit; 1st Plan (Harrod-Domar), 2nd Plan (Mahalanobis / Heavy Industry), 12th Plan; NITI Aayog (Jan 1, 2015, Structure & Governing Council)" },
+                            { id: "econ_schemes", title: "Flagship Government Welfare Schemes & Programs", desc: "PM-KISAN, Ayushman Bharat (PM-JAY), PM Jan Dhan Yojana, PM Awas Yojana, Atal Pension Yojana, Jal Jeevan Mission, MGNREGA, Stand-Up / Make in India, Production Linked Incentive (PLI)" }
+                        ]
+                    }
+                ]
+            },
+            {
+                subjectId: "english",
+                subjectName: "English Language & Comprehension",
+                tagClass: "tag-english",
+                categories: [
+                    {
+                        id: "eng_grammar_core",
+                        name: "English Grammar — Golden Rules & Concepts",
+                        tasks: [
+                            { id: "eng_subject_verb", title: "Subject-Verb Agreement (All Golden Rules)", desc: "Singular/Plural subject rules, 'Either...or', 'Neither...nor', 'Not only...but also', 'As well as', 'Along with', Collective nouns, Indefinite pronouns ('Each', 'Every', 'Someone')" },
+                            { id: "eng_nouns_pronouns", title: "Noun & Pronoun Rules & Common Errors", desc: "Uncountable nouns (Scenery, Information, Furniture, Advice, Luggage), Plural only nouns (Scissors, Trousers, Spectacles); Relative pronouns ('Who' vs 'Whom', 'Which' vs 'That'), Reflexive pronouns" },
+                            { id: "eng_tenses_conditionals", title: "Tenses & Conditional Sentences", desc: "Present, Past & Future tense usage; Since vs For; Conditional clauses: Zero, 1st, 2nd (If + V2, Would + V1), and 3rd conditional (If + Had + V3, Would have + V3)" },
+                            { id: "eng_prepositions", title: "Prepositions & Fixed Preposition Collocations", desc: "In/At/On (Time & Place), Between vs Among, Beside vs Besides; Fixed Prepositions: Accused of, Prevent from, Prohibit from, Insist on, Senior to, Prefer to, Abstain from, Congratulate on" },
+                            { id: "eng_voice", title: "Active & Passive Voice (Complete Mastery)", desc: "Rules for Simple, Continuous & Perfect tenses, Modal verbs, Interrogative sentences ('Who' -> 'By whom'), Imperative sentences ('Let + object + be + V3'), Sentences with two objects" },
+                            { id: "eng_narration", title: "Direct & Indirect Speech (Narration Rules)", desc: "Rules of changing Reporting Verb (Say/Tell), tense shifts, change in pronouns, adverbs of time and place (Today -> That day, Now -> Then, Here -> There), Interrogative & Exclamatory sentences" },
+                            { id: "eng_modifiers", title: "Adjectives, Adverbs & Conjunctions", desc: "Degrees of comparison, 'Little' vs 'A little' vs 'The little', 'Few' vs 'A few' vs 'The few'; Inversion with negative adverbs (Hardly/Scarcely...when, No sooner...than, Seldom); Correlative conjunctions (Lest...should)" }
+                        ]
+                    },
+                    {
+                        id: "eng_vocab_comp",
+                        name: "English Vocabulary & Reading Comprehension",
+                        tasks: [
+                            { id: "eng_oneword", title: "High-Yield One Word Substitutions (500+ Words)", desc: "Phobias, Manias, Killing/Crimes (-cide: Regicide, Homicide, Matricide), Government forms (-cracy / -archy), Specialists & Medical terms, Personality traits (Introvert, Extrovert, Altruist, Misanthrope)" },
+                            { id: "eng_idioms", title: "Repeated Idioms & Phrases in SSC Exams", desc: "Break a leg, Bite the bullet, At the eleventh hour, Apple of discord, Once in a blue moon, Spill the beans, Burn the midnight oil, Achilles' heel, Under the weather" },
+                            { id: "eng_syn_ant", title: "Synonyms & Antonyms (Root Words & High-Frequency)", desc: "Root words (Bene-, Mal-, Chron-, Path-, Anthrop-), Contextual word usage, confusing words / Homophones (Principal/Principle, Compliment/Complement, Stationer/Stationary)" },
+                            { id: "eng_spelling", title: "Spelling Errors & Tricky Words", desc: "Double letter words (Accommodation, Bureaucracy, Harassment, Embarrassment, Millennium, Conscientious, Maintenance, Lieutenant, Questionnaire)" },
+                            { id: "eng_cloze_test", title: "Cloze Test Solving Techniques", desc: "Reading whole passage for tone and tense, Eliminating incorrect options, Collocations, Preposition associations, Connector clues" },
+                            { id: "eng_parajumbles", title: "Para Jumbles / Sentence Rearrangement (P-Q-R-S)", desc: "Identifying opening sentence (Noun/Independent), Pronoun linking, Chronological indicators (First, Then, Finally), Cause-and-effect connectors" },
+                            { id: "eng_comprehension", title: "Reading Comprehension Passages", desc: "Skimming & Scanning, Finding central theme/title, Direct factual questions, Vocabulary-in-context questions, Tone of author" }
+                        ]
+                    }
+                ]
+            },
+            {
+                subjectId: "maths",
+                subjectName: "Quantitative Aptitude (Mathematics)",
+                tagClass: "tag-maths",
+                categories: [
+                    {
+                        id: "math_arithmetic",
+                        name: "Arithmetic Mathematics — Concepts & Shortcuts",
+                        tasks: [
+                            { id: "math_percentage", title: "Percentage & Fractional Equivalence", desc: "Standard fraction to percentage table (1/2 to 1/20), Successive percentage change (x + y + xy/100), Price-consumption-expenditure questions" },
+                            { id: "math_profit_loss", title: "Profit, Loss & Discount", desc: "CP, SP, MP, Profit/Loss %, Successive discounts, Marked price markup, Dishonest shopkeeper & false weight concept, Free goods (Buy x Get y Free)" },
+                            { id: "math_si_ci", title: "Simple Interest (SI) & Compound Interest (CI)", desc: "SI formulas, Rate & Time variations; CI annual/half-yearly compounding, Difference between CI and SI for 2 years (P*(R/100)^2) and 3 years, CI Installments" },
+                            { id: "math_ratio_mix", title: "Ratio, Proportion, Mixture & Alligation", desc: "Duplicate/Sub-duplicate ratio, Fourth & Mean proportional; Age word problems, Partnership with capital & investment duration; Rule of Alligation & Replacement method" },
+                            { id: "math_time_work", title: "Time & Work, Pipes & Cisterns", desc: "Efficiency method & LCM approach, Alternate days work, Man-days-hours (M1*D1*H1/W1 = M2*D2*H2/W2), Work & Wages; Inlet and drain pipe problems" },
+                            { id: "math_tsd_trains", title: "Time, Speed, Distance, Trains & Boats", desc: "Average speed (2xy/(x+y)), Relative speed; Trains crossing poles, platforms and moving people; Upstream & downstream boat problems (Speed of boat = (u+v)/2, Speed of stream = (u-v)/2)" },
+                            { id: "math_average", title: "Average & Weighted Average", desc: "Deviation method for fast calculation, Inclusion & exclusion of members, Replacement of people, Batting & Bowling average in cricket" }
+                        ]
+                    },
+                    {
+                        id: "math_advanced",
+                        name: "Advanced Mathematics — Formulas & Theorems",
+                        tasks: [
+                            { id: "math_number_system", title: "Number System, Divisibility & Remainder Theorems", desc: "Unit digit calculation (Cyclicity of 4), Number of trailing zeros, Divisibility rules (2, 3, 4, 7, 8, 9, 11, 13, 72, 88), Wilson & Euler Remainder Theorems, Prime numbers" },
+                            { id: "math_lcm_hcf", title: "LCM, HCF & Simplification (VBODMAS)", desc: "Product of two numbers = LCM * HCF, LCM and HCF of fractions, Finding smallest/greatest number leaving same remainder, Surds and Indices simplification" },
+                            { id: "math_algebra", title: "Algebra: Identities, Polynomials & Equations", desc: "(a+b+c)^2, a^3+b^3+c^3 - 3abc identities (if a+b+c=0 then a^3+b^3+c^3=3abc), x + 1/x = k standard results for x^2+1/x^2, x^3+1/x^3, Quadratic roots (Alpha + Beta, Alpha*Beta)" },
+                            { id: "math_trigonometry", title: "Trigonometry & Heights and Distances", desc: "Trigonometric ratios table (0°, 30°, 45°, 60°, 90°), Standard identities (sin^2 + cos^2 = 1, sec^2 - tan^2 = 1, cosec^2 - cot^2 = 1), Min/Max values (a sinθ + b cosθ); Elevation & Depression problems (30°-60°-90° ratio: 1:√3:2)" },
+                            { id: "math_geometry", title: "Geometry: Lines, Angles, Triangles & Circles", desc: "Triangle centers (Incenter, Circumcenter, Orthocenter, Centroid), Congruence & Similarity, Angle bisector theorem, Apollonius theorem; Circle properties: Tangent-secant theorem, Alternate segment theorem, Cyclic quadrilateral" },
+                            { id: "math_mensuration", title: "Mensuration 2D & 3D (Complete Formulas)", desc: "2D: Equilateral triangle, Rhombus, Trapezium, Circular sectors; 3D: Cube, Cuboid, Cylinder, Cone (Slant height, CSA, TSA, Volume), Sphere & Hemisphere, Frustum of cone, Prism & Pyramid" },
+                            { id: "math_coordinate_di", title: "Coordinate Geometry & Data Interpretation (DI)", desc: "Distance formula, Section formula, Midpoint, Slope of line (m = -a/b, Parallel m1=m2, Perpendicular m1*m2=-1), Area of triangle; DI: Pie charts, Bar graphs, Tables, Histograms" }
+                        ]
+                    }
+                ]
+            },
+            {
+                subjectId: "reasoning",
+                subjectName: "General Intelligence & Reasoning",
+                tagClass: "tag-reasoning",
+                categories: [
+                    {
+                        id: "reas_verbal",
+                        name: "Verbal Reasoning — Logic & Analytical",
+                        tasks: [
+                            { id: "reas_analogy_class", title: "Analogy & Classification (Odd One Out)", desc: "Word-based analogy (Capital-country, Tool-worker, Synonym-antonym), Number-based operations (Square, cube, prime patterns), Letter-based pattern checks" },
+                            { id: "reas_coding", title: "Coding-Decoding & Alphabet Positions", desc: "Forward & backward letter positions (A=1..Z=26, Reverse pair EJOTY / AZ BY CX), Letter shifting, Cross coding, Number coding, Matrix coding" },
+                            { id: "reas_series", title: "Number, Alphabet & Mixed Series", desc: "Step difference, Double step difference, Alternating series, Fibonacci sequence, Continuous letter patterns (e.g., _a_b_a_b)" },
+                            { id: "reas_blood_relations", title: "Blood Relations (Family Tree & Coded)", desc: "Generational family tree diagrams, Indicating to a person/photo problems, Coded relations (A + B means A is father of B)" },
+                            { id: "reas_direction", title: "Direction & Distance Sense", desc: "8 Cardinal directions, Left/Right turns, Shortest straight line distance (Pythagoras theorem a^2+b^2=c^2), Morning & Evening shadow questions" },
+                            { id: "reas_syllogism", title: "Syllogism (Venn Diagram Method)", desc: "Statements: All, Some, No, Some Not; Rules for valid conclusions, Either-Or conditions (Complementary pairs), Possibility cases" },
+                            { id: "reas_venn", title: "Logical Venn Diagrams & Word Groups", desc: "Three-entity Venn representations (e.g., Doctors, Men, Engineers), Geometric Venn questions (Count numbers inside circle but outside rectangle)" },
+                            { id: "reas_order_ranking", title: "Order, Ranking & Seating Arrangement", desc: "Total = (Left + Right) - 1, Position interchange questions; Linear seating arrangement (Single row, North/South facing), Circular seating arrangement" },
+                            { id: "reas_clock_calendar", title: "Clock & Calendar", desc: "Angle between clock hands (θ = |30H - 11/2 M|), Reflex angle, Mirror reflection; Calendar: Odd days calculation, Leap year rules (400-year rule), Day matching in a century" }
+                        ]
+                    },
+                    {
+                        id: "reas_nonverbal",
+                        name: "Non-Verbal Reasoning & Figure Logic",
+                        tasks: [
+                            { id: "reas_dice_cubes", title: "Dice & Cubes", desc: "Standard dice (Sum of opposite faces = 7) vs Ordinary dice; Common face rule, Two common faces rule, Open unfolded dice folding, Painted cube cuts" },
+                            { id: "reas_paper_folding", title: "Paper Folding & Paper Cutting", desc: "Symmetry lines, Folding steps, Unfolding visualization, Punch hole reflection" },
+                            { id: "reas_mirror_water", title: "Mirror Images & Water Images", desc: "Horizontal flip (Left becomes Right) for mirror image, Vertical flip (Top becomes Bottom) for water image; Letter and figure reflections" },
+                            { id: "reas_embedded_counting", title: "Embedded Figures & Counting of Figures", desc: "Finding hidden shape inside complex figure, Figure completion; Counting triangles (Base division, Medians, Square diagonals), Counting squares & rectangles" },
+                            { id: "reas_critical", title: "Critical Reasoning: Statement & Assumptions / Conclusions", desc: "Statement and Assumptions (Valid premises), Statement and Arguments (Strong vs Weak), Statement and Conclusions (Definite deduction)" }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        // State Management
+        const STORAGE_KEY_CHECKED = 'quizee_tasks_checked_v1';
+        const STORAGE_KEY_CUSTOM = 'quizee_tasks_custom_v1';
+
+        let checkedMap = {};
+        let customTasks = [];
+        let currentSubjectFilter = 'all';
+        let currentStatusFilter = 'all';
+        let searchQuery = '';
+        let allAccordionsExpanded = true;
+
+        // Initialize from localStorage
+        function loadStorage() {
+            try {
+                const savedChecks = localStorage.getItem(STORAGE_KEY_CHECKED);
+                if (savedChecks) checkedMap = JSON.parse(savedChecks);
+            } catch (e) {
+                console.error("Failed to load saved checks", e);
+                checkedMap = {};
+            }
+
+            try {
+                const savedCustom = localStorage.getItem(STORAGE_KEY_CUSTOM);
+                if (savedCustom) customTasks = JSON.parse(savedCustom);
+            } catch (e) {
+                console.error("Failed to load custom tasks", e);
+                customTasks = [];
+            }
+        }
+
+        function saveChecks() {
+            try {
+                localStorage.setItem(STORAGE_KEY_CHECKED, JSON.stringify(checkedMap));
+            } catch (e) {
+                console.error("Failed to save checked tasks", e);
+            }
+        }
+
+        function saveCustomTasksToStorage() {
+            try {
+                localStorage.setItem(STORAGE_KEY_CUSTOM, JSON.stringify(customTasks));
+            } catch (e) {
+                console.error("Failed to save custom tasks", e);
+            }
+        }
+
+        // Get unified list combining default curriculum and custom tasks
+        function getCombinedCurriculum() {
+            // Deep clone default curriculum
+            const curriculum = JSON.parse(JSON.stringify(DEFAULT_CURRICULUM));
+
+            // Inject custom tasks into respective subjects
+            if (customTasks && customTasks.length > 0) {
+                customTasks.forEach(task => {
+                    const sub = curriculum.find(s => s.subjectId === task.subjectId);
+                    if (sub) {
+                        let customCat = sub.categories.find(c => c.id === `${task.subjectId}_custom`);
+                        if (!customCat) {
+                            customCat = {
+                                id: `${task.subjectId}_custom`,
+                                name: "My Custom Topics",
+                                tasks: []
+                            };
+                            sub.categories.push(customCat);
+                        }
+                        customCat.tasks.push(task);
+                    }
+                });
+            }
+
+            return curriculum;
+        }
+
+        // Render Subject Filter Tabs
+        function renderSubjectTabs() {
+            const curriculum = getCombinedCurriculum();
+            const container = document.getElementById('subjectTabsContainer');
+            if (!container) return;
+
+            let totalAll = 0;
+            let doneAll = 0;
+
+            curriculum.forEach(sub => {
+                sub.categories.forEach(cat => {
+                    cat.tasks.forEach(t => {
+                        totalAll++;
+                        if (checkedMap[t.id]) doneAll++;
+                    });
+                });
+            });
+
+            let html = `
+                <button class="sub-tab-btn ${currentSubjectFilter === 'all' ? 'active' : ''}" onclick="setSubjectFilter('all')">
+                    <span>All Subjects</span>
+                    <span class="badge-num">${doneAll}/${totalAll}</span>
+                </button>
+            `;
+
+            curriculum.forEach(sub => {
+                let subTotal = 0;
+                let subDone = 0;
+                sub.categories.forEach(cat => {
+                    cat.tasks.forEach(t => {
+                        subTotal++;
+                        if (checkedMap[t.id]) subDone++;
+                    });
+                });
+
+                html += `
+                    <button class="sub-tab-btn ${currentSubjectFilter === sub.subjectId ? 'active' : ''}" onclick="setSubjectFilter('${sub.subjectId}')">
+                        <span>${sub.subjectName}</span>
+                        <span class="badge-num">${subDone}/${subTotal}</span>
+                    </button>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Render Task List
+        function renderTasks() {
+            const curriculum = getCombinedCurriculum();
+            const container = document.getElementById('taskSectionsContainer');
+            const noResultsState = document.getElementById('noResultsState');
+
+            let totalTopicsCount = 0;
+            let completedTopicsCount = 0;
+
+            // Compute global stats
+            curriculum.forEach(sub => {
+                sub.categories.forEach(cat => {
+                    cat.tasks.forEach(t => {
+                        totalTopicsCount++;
+                        if (checkedMap[t.id]) completedTopicsCount++;
+                    });
+                });
+            });
+
+            const remainingTopicsCount = totalTopicsCount - completedTopicsCount;
+            const overallPct = totalTopicsCount > 0 ? Math.round((completedTopicsCount / totalTopicsCount) * 100) : 0;
+
+            // Update stats cards
+            document.getElementById('statTotalTopics').textContent = totalTopicsCount;
+            document.getElementById('statCompletedTopics').textContent = completedTopicsCount;
+            document.getElementById('statRemainingTopics').textContent = remainingTopicsCount;
+            document.getElementById('statPercentage').textContent = overallPct + '%';
+            document.getElementById('progressPercentNum').textContent = overallPct + '%';
+            document.getElementById('progressBarFill').style.width = overallPct + '%';
+
+            let visibleCategoriesCount = 0;
+            let html = '';
+
+            curriculum.forEach(sub => {
+                // Apply subject tab filter
+                if (currentSubjectFilter !== 'all' && sub.subjectId !== currentSubjectFilter) {
+                    return;
+                }
+
+                sub.categories.forEach(cat => {
+                    // Filter tasks inside this category
+                    const filteredTasks = cat.tasks.filter(t => {
+                        const isDone = !!checkedMap[t.id];
+
+                        // Status filter
+                        if (currentStatusFilter === 'pending' && isDone) return false;
+                        if (currentStatusFilter === 'completed' && !isDone) return false;
+
+                        // Search query
+                        if (searchQuery.trim()) {
+                            const q = searchQuery.toLowerCase();
+                            const matchTitle = (t.title || '').toLowerCase().includes(q);
+                            const matchDesc = (t.desc || '').toLowerCase().includes(q);
+                            const matchCat = (cat.name || '').toLowerCase().includes(q);
+                            const matchSub = (sub.subjectName || '').toLowerCase().includes(q);
+                            if (!matchTitle && !matchDesc && !matchCat && !matchSub) return false;
+                        }
+
+                        return true;
+                    });
+
+                    if (filteredTasks.length === 0) return;
+
+                    visibleCategoriesCount++;
+
+                    // Category stats
+                    const catTotal = cat.tasks.length;
+                    const catDone = cat.tasks.filter(t => checkedMap[t.id]).length;
+
+                    html += `
+                        <section class="category-section ${allAccordionsExpanded ? '' : 'collapsed'}" id="cat_section_${cat.id}">
+                            <div class="category-header" onclick="toggleCategory('${cat.id}')">
+                                <div class="category-title-wrap">
+                                    <span class="category-subject-tag ${sub.tagClass}">${sub.subjectName.split(' ')[0]}</span>
+                                    <span class="category-title">${cat.name}</span>
+                                </div>
+                                <div class="category-meta">
+                                    <span class="category-count">${catDone} / ${catTotal}</span>
+                                    <svg class="category-toggle-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                            </div>
+                            <div class="task-list-body">
+                    `;
+
+                    filteredTasks.forEach(task => {
+                        const isCompleted = !!checkedMap[task.id];
+                        const isCustom = !!task.isCustom;
+
+                        html += `
+                            <div class="task-item ${isCompleted ? 'completed' : ''}" id="task_row_${task.id}">
+                                <div class="task-cb-wrap">
+                                    <input type="checkbox" class="task-checkbox" id="cb_${task.id}" ${isCompleted ? 'checked' : ''} onchange="toggleTask('${task.id}', this.checked)">
+                                </div>
+                                <div class="task-content">
+                                    <div class="task-title">${task.title}</div>
+                                    ${task.desc ? `<div class="task-desc">${task.desc}</div>` : ''}
+                                </div>
+                                <div class="task-actions">
+                                    <span class="completed-pill">Done</span>
+                                    ${isCustom ? `
+                                        <button class="delete-custom-btn" title="Delete custom topic" onclick="deleteCustomTask('${task.id}')">
+                                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                        </button>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    html += `
+                            </div>
+                        </section>
+                    `;
+                });
+            });
+
+            container.innerHTML = html;
+
+            if (visibleCategoriesCount === 0) {
+                noResultsState.style.display = 'block';
+            } else {
+                noResultsState.style.display = 'none';
+            }
+
+            renderSubjectTabs();
+        }
+
+        // Toggle Single Task Checkbox
+        function toggleTask(taskId, isChecked) {
+            if (isChecked) {
+                checkedMap[taskId] = true;
+            } else {
+                delete checkedMap[taskId];
+            }
+            saveChecks();
+            renderTasks();
+        }
+
+        // Toggle Category Accordion
+        function toggleCategory(catId) {
+            const sec = document.getElementById(`cat_section_${catId}`);
+            if (sec) {
+                sec.classList.toggle('collapsed');
+            }
+        }
+
+        // Expand / Collapse All
+        function toggleAllAccordions() {
+            allAccordionsExpanded = !allAccordionsExpanded;
+            const btnText = document.getElementById('expandAllBtnText');
+            if (btnText) {
+                btnText.textContent = allAccordionsExpanded ? 'Collapse All' : 'Expand All';
+            }
+            const sections = document.querySelectorAll('.category-section');
+            sections.forEach(sec => {
+                if (allAccordionsExpanded) {
+                    sec.classList.remove('collapsed');
+                } else {
+                    sec.classList.add('collapsed');
+                }
+            });
+        }
+
+        // Search Filter
+        function handleSearch(val) {
+            searchQuery = val;
+            renderTasks();
+        }
+
+        function clearSearch() {
+            const input = document.getElementById('taskSearchInput');
+            if (input) input.value = '';
+            searchQuery = '';
+            renderTasks();
+        }
+
+        // Subject Tab Filter
+        function setSubjectFilter(subId) {
+            currentSubjectFilter = subId;
+            renderTasks();
+        }
+
+        // Status Filter (All / Pending / Done)
+        function setStatusFilter(status) {
+            currentStatusFilter = status;
+            ['filterStatusAll', 'filterStatusPending', 'filterStatusCompleted'].forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) btn.classList.remove('active');
+            });
+            if (status === 'all') document.getElementById('filterStatusAll').classList.add('active');
+            if (status === 'pending') document.getElementById('filterStatusPending').classList.add('active');
+            if (status === 'completed') document.getElementById('filterStatusCompleted').classList.add('active');
+            renderTasks();
+        }
+
+        // Custom Task Modal Handlers
+        function openCustomTaskModal() {
+            document.getElementById('customTaskModal').classList.add('active');
+            document.getElementById('customTaskTitle').focus();
+        }
+
+        function closeCustomTaskModal() {
+            document.getElementById('customTaskModal').classList.remove('active');
+            document.getElementById('customTaskTitle').value = '';
+            document.getElementById('customTaskDesc').value = '';
+        }
+
+        function saveCustomTask() {
+            const subjectId = document.getElementById('customSubjectSelect').value;
+            const title = document.getElementById('customTaskTitle').value.trim();
+            const desc = document.getElementById('customTaskDesc').value.trim();
+
+            if (!title) {
+                alert("Please enter a topic title.");
+                return;
+            }
+
+            const newTask = {
+                id: 'custom_' + Date.now(),
+                subjectId: subjectId,
+                title: title,
+                desc: desc,
+                isCustom: true
+            };
+
+            customTasks.push(newTask);
+            saveCustomTasksToStorage();
+            closeCustomTaskModal();
+            renderTasks();
+        }
+
+        function deleteCustomTask(taskId) {
+            if (confirm("Delete this custom topic?")) {
+                customTasks = customTasks.filter(t => t.id !== taskId);
+                delete checkedMap[taskId];
+                saveCustomTasksToStorage();
+                saveChecks();
+                renderTasks();
+            }
+        }
+
+        // Share / Copy Progress Summary
+        function shareProgressSummary() {
+            const total = document.getElementById('statTotalTopics').textContent;
+            const done = document.getElementById('statCompletedTopics').textContent;
+            const pct = document.getElementById('statPercentage').textContent;
+
+            const text = `🎯 Quizee SSC CGL Syllabus Progress: ${done}/${total} topics completed (${pct})! Keep grinding! 💪\nPractice offline at: ${window.location.origin}${window.location.pathname}`;
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert("Progress summary copied to clipboard! You can share it anywhere.");
+                }).catch(() => {
+                    prompt("Copy your progress summary:", text);
+                });
+            } else {
+                prompt("Copy your progress summary:", text);
+            }
+        }
+
+        // Reset All Progress Confirmation
+        function confirmResetTasks() {
+            if (confirm("Are you sure you want to reset all completed checkboxes? (Your custom added topics will be kept).")) {
+                checkedMap = {};
+                saveChecks();
+                renderTasks();
+            }
+        }
+
+        // Mobile Hamburger Drawer Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileDrawer = document.getElementById('mobileDrawer');
+        if (mobileMenuBtn && mobileDrawer) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isOpen = mobileDrawer.classList.toggle('is-open');
+                mobileMenuBtn.classList.toggle('active', isOpen);
+                mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+            });
+        }
+
+        // On Load Init
+        window.addEventListener('DOMContentLoaded', () => {
+            loadStorage();
+            renderTasks();
+        });
+    </script>
+</body>
+</html>

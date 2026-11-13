@@ -72,6 +72,7 @@ jobs:
           cp mock-tests.html docs/mock-tests.html || true
           cp byjus-gk.html docs/byjus-gk.html || true
           cp tables.html docs/tables.html || true
+          cp tasks.html docs/tasks.html || true
           cp sw.js docs/sw.js || true
           cp manifest.json docs/manifest.json || true
           cp -r assets/* docs/assets/ || true

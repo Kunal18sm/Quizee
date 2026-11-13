@@ -1,5 +1,5 @@
 // Quizee PWA Offline Service Worker
-const CACHE_NAME = 'quizee-offline-v12';
+const CACHE_NAME = 'quizee-offline-v13';
 
 const PRECACHE_ASSETS = [
     './',
@@ -7,6 +7,7 @@ const PRECACHE_ASSETS = [
     './mock-tests.html',
     './byjus-gk.html',
     './tables.html',
+    './tasks.html',
     './assets/quizee-theme.css?v=8',
     './assets/quizee-theme.css',
     './assets/quizee-audio.js?v=1',
@@ -87,6 +88,7 @@ self.addEventListener('fetch', (event) => {
                     return caches.match(request).then((cached) => {
                         if (cached) return cached;
                         if (request.mode === 'navigate') {
+                            if (request.url.includes('tasks')) return caches.match('./tasks.html');
                             if (request.url.includes('tables')) return caches.match('./tables.html');
                             if (request.url.includes('byjus-gk')) return caches.match('./byjus-gk.html');
                             if (request.url.includes('mock-tests')) return caches.match('./mock-tests.html');
