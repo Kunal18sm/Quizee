@@ -1,5 +1,5 @@
 // Quizee PWA Offline Service Worker
-const CACHE_NAME = 'quizee-offline-v14';
+const CACHE_NAME = 'quizee-offline-v15';
 
 const PRECACHE_ASSETS = [
     './',
@@ -10,7 +10,7 @@ const PRECACHE_ASSETS = [
     './tasks.html',
     './assets/quizee-theme.css?v=8',
     './assets/quizee-theme.css',
-    './assets/quizee-audio.js?v=1',
+    './assets/quizee-audio.js?v=2',
     './assets/quizee-audio.js',
     './assets/web_tests.css?v=4.6',
     './assets/web_tests.css',
@@ -27,6 +27,7 @@ const PRECACHE_ASSETS = [
     './assets/favicon.png',
     './assets/quzeaudio.mp3',
     './assets/quzeaudio.mpeg',
+    './assets/Vocalise2.mp3',
     './data/all_questions.js',
     './data/byjus_gk_data.js',
     './data/study_tables_data.js',
@@ -81,10 +82,12 @@ self.addEventListener('fetch', (event) => {
                 const cache = await caches.open(CACHE_NAME);
                 let cachedResponse = await cache.match(request);
                 if (!cachedResponse) {
+                    const filename = url.pathname.split('/').pop();
                     cachedResponse = await cache.match(url.pathname) || 
                                      await cache.match('.' + url.pathname) ||
+                                     await cache.match('./assets/' + filename) ||
                                      await cache.match('./assets/quzeaudio.mp3') ||
-                                     await cache.match('./assets/quzeaudio.mpeg');
+                                     await cache.match('./assets/Vocalise2.mp3');
                 }
 
                 const rangeHeader = request.headers.get('range');

@@ -1389,6 +1389,10 @@ nav.navbar,
     cursor: pointer;
     box-shadow: none !important;
     transition: border-color 140ms var(--ease-out), background-color 140ms var(--ease-out), color 140ms var(--ease-out);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    position: relative;
 }
 
 .nav-btn-mobile-audio {
@@ -1397,6 +1401,7 @@ nav.navbar,
     padding: 0;
     justify-content: center;
     border-radius: 9px;
+    position: relative;
 }
 
 .nav-btn-audio:hover,
@@ -1409,6 +1414,82 @@ nav.navbar,
     background: var(--accent-tint) !important;
     border-color: var(--accent-border) !important;
     color: var(--accent) !important;
+}
+
+.audio-btn-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 15px;
+    height: 15px;
+    padding: 0 3px;
+    border-radius: 999px;
+    background: var(--accent, #6366f1);
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    border: 1.5px solid var(--bg-surface, #0f1218);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 140ms ease, transform 140ms ease;
+    pointer-events: none;
+}
+
+.quize-audio-btn.is-playing .audio-btn-badge {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Audio toast notification */
+#quizee-audio-toast {
+    position: fixed;
+    top: 66px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background: rgba(18, 22, 31, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(99, 102, 241, 0.25);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: var(--text-main, #f0f3f8);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+    font-size: 13px;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#quizee-audio-toast.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+#quizee-audio-toast .audio-toast-main {
+    color: var(--text-main, #f0f3f8);
+    font-weight: 600;
+    font-size: 12.5px;
+}
+
+#quizee-audio-toast .audio-toast-sub {
+    font-size: 11px;
+    color: var(--text-muted, #94a3b8);
+    font-weight: 400;
 }
 
 /* =========================================================
